@@ -4,9 +4,9 @@
 
 #include "ColorWidget.h"
 
-#include <QDebug>
-#include <QtWidgets/QColorDialog>
-#include <QtWidgets/QVBoxLayout>
+#include <QColorDialog>
+#include <QPushButton>
+#include <QVBoxLayout>
 
 ColorWidget::ColorWidget(QWidget *parent) : QWidget(parent) {
   auto *layout = new QVBoxLayout(this);

@@ -2,7 +2,9 @@
 #include "ui_mainwindow.h"
 
 #include <QRadioButton>
+#include <QSpinBox>
 
+#include "Widgets/ColorWidget.h"
 #include "Widgets/LeftSideBar.h"
 
 MainWindow::MainWindow(QWidget *parent)
@@ -22,11 +24,11 @@ MainWindow::MainWindow(QWidget *parent)
   QObject::connect(ui->leftSideBarContent->m_gridButton, &QRadioButton::clicked,
                    m_drawWidget, &DrawWidget::showGrid);
 
+  connect(ui->leftSideBarContent->m_gridSpacingSpinBox,
+          SIGNAL(valueChanged(int)), m_drawWidget, SLOT(setGridSpacing(int)));
 
   setCentralWidget(m_drawWidget);
-
 }
 
 MainWindow::~MainWindow() { delete ui; }
 
-void MainWindow::hoi(QString str) { qDebug() << str << "ASDSADSA"; }

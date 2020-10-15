@@ -6,8 +6,9 @@
 #define GOTIKZ_POLYLINE_H
 
 #include "Drawable.h"
+
+#include <QPointF>
 #include <QVector>
-#include <QtCore/QPointF>
 
 class PolyLine_Stream;
 

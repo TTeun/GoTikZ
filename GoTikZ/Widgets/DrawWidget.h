@@ -5,7 +5,6 @@
 
 #include "Drawable/StreamDrawable.h"
 
-#include <QDebug>
 #include <vector>
 
 class DrawWidget : public QWidget {
@@ -17,8 +16,9 @@ public:
 
 public slots:
   void typeChanged(DRAW_TYPE type);
-  void colorChanged(QColor color);
+  void colorChanged(const QColor &color);
   void showGrid(bool show);
+  void setGridSpacing(int spacing);
 
 protected:
   void paintEvent(QPaintEvent *e) final;
@@ -35,6 +35,8 @@ private:
   void drawGrid(QPainter *painter);
 
   void snap(const QPointF &mousePoint);
+
+  void setStreamDrawable();
 
   std::unique_ptr<StreamDrawable> m_streamDrawable = nullptr;
 

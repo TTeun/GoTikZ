@@ -4,6 +4,7 @@
 
 #include "Math.h"
 
+#include <QPoint>
 #include <cmath>
 
 namespace Math {

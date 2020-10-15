@@ -10,7 +10,7 @@
 #include <QPainter>
 
 Circle::Circle(const Circle_Stream &circleStream)
-    : Drawable(circleStream.m_color), m_center(circleStream.m_center),
+    : Drawable(circleStream.m_pen), m_center(circleStream.m_center),
       m_radius(circleStream.m_radius) {}
 
 void Circle::draw(QPainter *painter) {

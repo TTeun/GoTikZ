@@ -6,7 +6,7 @@
 #define GOTIKZ_LINE_H
 
 #include "Drawable.h"
-#include <QtCore/QPointF>
+#include <QPointF>
 
 class Line_Stream;
 

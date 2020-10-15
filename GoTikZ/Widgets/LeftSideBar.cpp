@@ -12,6 +12,7 @@
 #include <QVBoxLayout>
 #include <QtWidgets/QColorDialog>
 #include <QtWidgets/QPushButton>
+#include <QtWidgets/QSpinBox>
 
 LeftSideBar::LeftSideBar(QWidget *parent) : QWidget(parent) {
   auto *layout = new QVBoxLayout(this);
@@ -90,8 +91,13 @@ void LeftSideBar::buildViewGroupBox() {
   radioButton->setChecked(true);
   radioButton->setText("Grid");
 
-  groupBoxLayout->addWidget(radioButton);
-  groupBox->setSizePolicy(QSizePolicy::Maximum, QSizePolicy::Maximum);
+  auto *spinBox = new QSpinBox();
+  spinBox->setValue(10);
+  m_gridSpacingSpinBox = spinBox;
 
+  groupBoxLayout->addWidget(radioButton);
+  groupBoxLayout->addWidget(spinBox);
+
+  groupBox->setSizePolicy(QSizePolicy::Maximum, QSizePolicy::Maximum);
   layout()->addWidget(groupBox);
 }

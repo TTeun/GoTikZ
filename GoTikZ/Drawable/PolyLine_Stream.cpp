@@ -3,13 +3,13 @@
 //
 
 #include "PolyLine_Stream.h"
-#include <Math/Math.h>
 
 #include "PolyLine.h"
 #include "QPainter"
+#include <Math/Math.h>
 
-PolyLine_Stream::PolyLine_Stream(QPointF point, const QColor &color)
-    : StreamDrawable(color) {
+PolyLine_Stream::PolyLine_Stream(QPointF point, const QPen &pen)
+    : StreamDrawable(pen) {
   m_points.push_back(point);
   m_points.push_back(point);
 }
@@ -35,7 +35,7 @@ Drawable *PolyLine_Stream::drawable() { return new PolyLine(*this); }
 std::pair<double, QPointF> PolyLine_Stream::snap(QPointF point) {
   auto snapData =
       std::pair<double, QPointF>(std::numeric_limits<double>::max(), point);
-  for (long i = 0; i != m_points.size() - 1; ++i) {
+  for (long i = 0; i != m_points.size() - 2; ++i) {
     const auto &el = m_points[i];
     if (Math::magnitude(point - el) < snapData.first) {
       snapData = {Math::magnitude(point - el), el};

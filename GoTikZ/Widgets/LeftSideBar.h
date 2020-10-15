@@ -7,14 +7,14 @@
 
 #include <QWidget>
 
-#include <QDebug>
-#include <QtWidgets/QAbstractButton>
-#include <QtWidgets/QGroupBox>
-
-#include "ColorWidget.h"
-#include "Widgets/drawwidget.h"
+#include "Widgets/DrawWidget.h"
 
 class QRadioButton;
+class ColorWidget;
+class QButtonGroup;
+class QAbstractButton;
+class QGroupBox;
+class QSpinBox;
 
 class LeftSideBar : public QWidget {
   Q_OBJECT
@@ -24,6 +24,7 @@ public:
   QButtonGroup *m_buttonGroup;
   ColorWidget *m_colorWidget;
   QRadioButton *m_gridButton;
+  QSpinBox *m_gridSpacingSpinBox;
 
 signals:
   void typeChanged(DrawWidget::DRAW_TYPE type);

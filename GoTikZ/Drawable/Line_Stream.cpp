@@ -5,7 +5,6 @@
 #include "Line_Stream.h"
 
 #include "Line.h"
-#include <Math/Math.h>
 #include <QPainter>
 
 void Line_Stream::stream(const QPointF &point) {
@@ -26,6 +25,7 @@ bool Line_Stream::addPoint(const QPointF &point, bool forceEnd) {
 }
 
 Drawable *Line_Stream::drawable() { return new Line(*this); }
+
 std::pair<double, QPointF> Line_Stream::snap(QPointF point) {
-  return {Math::distance(point, m_point1), m_point1};
+  return {std::numeric_limits<double>::max(), point};
 }

@@ -6,7 +6,8 @@
 #define GOTIKZ_POINT_H
 
 #include "Drawable.h"
-#include <QtCore/QPointF>
+
+#include <QPointF>
 
 class Point : public Drawable {
 public:

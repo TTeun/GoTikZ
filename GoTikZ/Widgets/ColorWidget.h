@@ -5,8 +5,9 @@
 #ifndef GOTIKZ_COLORWIDGET_H
 #define GOTIKZ_COLORWIDGET_H
 
-#include <QtWidgets/QPushButton>
 #include <QtWidgets/QWidget>
+
+class QPushButton;
 
 class ColorWidget : public QWidget {
   Q_OBJECT

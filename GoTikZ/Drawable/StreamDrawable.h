@@ -6,11 +6,12 @@
 #define GOTIKZ_STREAMDRAWABLE_H
 
 #include "Drawable.h"
-#include <QtCore/QPointF>
+
+class QPointF;
 
 class StreamDrawable : public Drawable {
 public:
-  StreamDrawable(const QColor &color) : Drawable(color) {}
+  StreamDrawable(const QPen &pen) : Drawable(pen) {}
 
   virtual void stream(const QPointF &point) = 0;
 

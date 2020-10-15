@@ -2,7 +2,6 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-#include <QtWidgets/QAbstractButton>
 
 class DrawWidget;
 class LeftSideBar;
@@ -19,9 +18,6 @@ class MainWindow : public QMainWindow {
 public:
   explicit MainWindow(QWidget *parent = nullptr);
   ~MainWindow() override;
-
-public slots:
-  void hoi(QString str);
 
 private:
   Ui::MainWindow *ui;

@@ -1,4 +1,4 @@
-#include "drawwidget.h"
+#include "DrawWidget.h"
 
 #include <Drawable/Point.h>
 #include <Drawable/StreamDrawableFactory.h>
@@ -32,16 +32,7 @@ void DrawWidget::paintEvent(QPaintEvent *e) {
 void DrawWidget::mousePressEvent(QMouseEvent *event) {
   snap(event->localPos());
   if (not m_streamDrawable) {
-    switch (m_drawType) {
-    case DRAW_TYPE::POINT:
-      m_drawables.push_back(
-          std::unique_ptr<Drawable>(new Point(m_mousePoint, m_color)));
-      break;
-    default:
-      m_streamDrawable.reset(
-          StreamDrawableFactory::make(m_mousePoint, m_drawType, m_color));
-      break;
-    }
+    setStreamDrawable();
   } else {
     if (m_streamDrawable->addPoint(m_mousePoint,
                                    event->button() == Qt::RightButton)) {
@@ -90,10 +81,10 @@ void DrawWidget::snap(const QPointF &mousePoint) {
     m_mousePoint = mousePoint;
   }
 }
-void DrawWidget::colorChanged(QColor color) { m_color = color; }
+void DrawWidget::colorChanged(const QColor &color) { m_color = color; }
 
 void DrawWidget::drawGrid(QPainter *painter) {
-  painter->setPen(QPen{QColor{200, 200, 200}, 1});
+  painter->setPen(QPen{QColor{220, 221, 228}, 1});
   for (size_t i = 0; i * m_gridSize < width(); ++i) {
     painter->drawLine(i * m_gridSize, 0, i * m_gridSize, height());
   }
@@ -105,4 +96,25 @@ void DrawWidget::drawGrid(QPainter *painter) {
 void DrawWidget::showGrid(bool show) {
   m_showGrid = show;
   emit(updateSignal());
+}
+
+void DrawWidget::setGridSpacing(int spacing) {
+  if (spacing == 0) {
+    return;
+  }
+  m_gridSize = spacing;
+  emit(updateSignal());
+}
+
+void DrawWidget::setStreamDrawable() {
+  switch (m_drawType) {
+  case DRAW_TYPE::POINT:
+    m_drawables.push_back(
+        std::unique_ptr<Drawable>(new Point(m_mousePoint, m_color)));
+    break;
+  default:
+    m_streamDrawable.reset(StreamDrawableFactory::make(m_mousePoint, m_drawType,
+                                                       QPen(m_color, 2)));
+    break;
+  }
 }

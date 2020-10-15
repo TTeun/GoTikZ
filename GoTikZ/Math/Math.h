@@ -5,7 +5,7 @@
 #ifndef GOTIKZ_MATH_H
 #define GOTIKZ_MATH_H
 
-#include <QtCore/QPointF>
+class QPointF;
 
 namespace Math {
 

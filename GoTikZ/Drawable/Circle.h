@@ -5,9 +5,9 @@
 #ifndef GOTIKZ_CIRCLE_H
 #define GOTIKZ_CIRCLE_H
 
-#include <QtCore/QPointF>
-
 #include "Drawable.h"
+
+#include <QPointF>
 
 class Circle_Stream;
 

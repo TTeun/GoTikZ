@@ -7,14 +7,14 @@
 
 #include "StreamDrawable.h"
 
-#include <QtCore/QPointF>
+#include <QPointF>
 
 class Line;
 
 class Line_Stream : public StreamDrawable {
 public:
-  Line_Stream(const QPointF &point, const QColor &color)
-      : StreamDrawable(color), m_point1(point) {}
+  Line_Stream(const QPointF &point, const QPen &pen)
+      : StreamDrawable(pen), m_point1(point) {}
 
   void stream(const QPointF &point) override;
   bool addPoint(const QPointF &point, bool forceEnd = false) override;

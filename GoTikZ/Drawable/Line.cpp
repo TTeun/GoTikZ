@@ -9,7 +9,7 @@
 #include <QPainter>
 
 Line::Line(const Line_Stream &lineStream)
-    : Drawable(lineStream.m_color), m_point1(lineStream.m_point1),
+    : Drawable(lineStream.m_pen), m_point1(lineStream.m_point1),
       m_point2(lineStream.m_point2) {}
 
 void Line::draw(QPainter *painter) {

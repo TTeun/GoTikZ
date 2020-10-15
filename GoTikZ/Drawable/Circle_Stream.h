@@ -7,12 +7,12 @@
 
 #include "StreamDrawable.h"
 
-#include <QtCore/QPointF>
+#include <QPointF>
 
 class Circle_Stream : public StreamDrawable {
 public:
-  explicit Circle_Stream(const QPointF &point, QColor color)
-      : StreamDrawable(std::move(color)), m_center(point) {}
+  explicit Circle_Stream(const QPointF &point, QPen pen)
+      : StreamDrawable(std::move(pen)), m_center(point) {}
 
   void stream(const QPointF &point) override;
 

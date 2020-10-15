@@ -10,7 +10,7 @@
 #include <QPainter>
 
 PolyLine::PolyLine(const PolyLine_Stream &polyLineStream)
-    : Drawable(polyLineStream.m_color), m_points(polyLineStream.m_points) {
+    : Drawable(polyLineStream.m_pen), m_points(polyLineStream.m_points) {
   assert(m_points.size() > 2);
   m_points.resize(m_points.size() - 1ul);
 }

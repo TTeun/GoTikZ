@@ -3,8 +3,8 @@
 //
 
 #include "Circle_Stream.h"
-#include "Circle.h"
 
+#include "Circle.h"
 #include <Math/Math.h>
 #include <QPainter>
 

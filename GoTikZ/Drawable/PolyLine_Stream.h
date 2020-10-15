@@ -7,17 +7,15 @@
 
 #include "StreamDrawable.h"
 
-#include <QPointF>
 #include <QVector>
 
 class PolyLine;
 
 class PolyLine_Stream : public StreamDrawable {
-
-  friend PolyLine;
+  friend class PolyLine;
 
 public:
-  PolyLine_Stream(QPointF point, const QColor &color);
+  PolyLine_Stream(QPointF point, const QPen &pen);
 
   void draw(QPainter *painter) override;
   void stream(const QPointF &point) override;

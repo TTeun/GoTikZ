@@ -5,22 +5,20 @@
 #ifndef GOTIKZ_DRAWABLE_H
 #define GOTIKZ_DRAWABLE_H
 
-#include <QColor>
-#include <QPainter>
-#include <QPointF>
-#include <tuple>
+#include <QPen>
 
 class QPainter;
 
 class Drawable {
 public:
-  explicit Drawable(const QColor &color) : m_color(color) {}
+  explicit Drawable(QPen pen);
 
-  virtual void draw(QPainter *painter) { painter->setPen(QPen{m_color, 2}); };
+  virtual void draw(QPainter *painter);
+  ;
 
   virtual std::pair<double, QPointF> snap(QPointF point) = 0;
 
-  QColor m_color;
+  QPen m_pen;
 };
 
 #endif // GOTIKZ_DRAWABLE_H

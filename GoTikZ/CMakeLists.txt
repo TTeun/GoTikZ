@@ -35,8 +35,8 @@ find_package(Qt${QT_VERSION_MAJOR} COMPONENTS Widgets REQUIRED)
     mainwindow.cpp
     mainwindow.h
     mainwindow.ui
-          Widgets/drawwidget.cpp
-          Widgets/drawwidget.h
-          Drawable/Drawable.h Drawable/Line.cpp Drawable/Line.h Drawable/StreamDrawable.h Drawable/Line_Stream.cpp Drawable/Line_Stream.h Drawable/Circle_Stream.cpp Drawable/Circle_Stream.h Drawable/Circle.cpp Drawable/Circle.h Widgets/LeftSideBar.cpp Widgets/LeftSideBar.h Drawable/Point.cpp Drawable/Point.h Drawable/PolyLine_Stream.cpp Drawable/PolyLine_Stream.h Drawable/PolyLine.cpp Drawable/PolyLine.h Drawable/StreamDrawableFactory.cpp Drawable/StreamDrawableFactory.h Math/Math.h Math/Math.cpp Widgets/ColorWidget.cpp Widgets/ColorWidget.h)
+          Widgets/DrawWidget.cpp
+          Widgets/DrawWidget.h
+          Drawable/Drawable.h Drawable/Line.cpp Drawable/Line.h Drawable/StreamDrawable.h Drawable/Line_Stream.cpp Drawable/Line_Stream.h Drawable/Circle_Stream.cpp Drawable/Circle_Stream.h Drawable/Circle.cpp Drawable/Circle.h Widgets/LeftSideBar.cpp Widgets/LeftSideBar.h Drawable/Point.cpp Drawable/Point.h Drawable/PolyLine_Stream.cpp Drawable/PolyLine_Stream.h Drawable/PolyLine.cpp Drawable/PolyLine.h Drawable/StreamDrawableFactory.cpp Drawable/StreamDrawableFactory.h Math/Math.h Math/Math.cpp Widgets/ColorWidget.cpp Widgets/ColorWidget.h Drawable/Drawable.cpp)
 
 target_link_libraries(GoTikZ PRIVATE Qt${QT_VERSION_MAJOR}::Widgets)
