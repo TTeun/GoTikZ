@@ -14,6 +14,8 @@
 #include "ColorWidget.h"
 #include "Widgets/drawwidget.h"
 
+class QRadioButton;
+
 class LeftSideBar : public QWidget {
   Q_OBJECT
 
@@ -21,6 +23,7 @@ public:
   explicit LeftSideBar(QWidget *parent = 0);
   QButtonGroup *m_buttonGroup;
   ColorWidget *m_colorWidget;
+  QRadioButton *m_gridButton;
 
 signals:
   void typeChanged(DrawWidget::DRAW_TYPE type);
@@ -30,12 +33,12 @@ public slots:
   void typeClicked(QAbstractButton *button);
 
 private:
+  void buildViewGroupBox();
   void buildTypeGroupBox();
   void buildPenGroupBox();
 
   void addTypeButton(QGroupBox *groupbox, QButtonGroup *buttonGroup,
                      const QString &title, bool selected);
-
 };
 
 #endif // GOTIKZ_LEFTSIDEBAR_H

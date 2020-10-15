@@ -18,6 +18,7 @@ void Circle::draw(QPainter *painter) {
   painter->drawEllipse(m_center.x() - m_radius, m_center.y() - m_radius,
                        2 * m_radius, 2 * m_radius);
 }
+
 std::pair<double, QPointF> Circle::snap(QPointF point) {
   const auto difference = point - m_center;
   const auto closest =

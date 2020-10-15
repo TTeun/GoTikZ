@@ -86,7 +86,7 @@
     <bool>false</bool>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color: rgb(100, 238, 236)</string>
+    <string notr="true">background-color: rgb(225, 225, 225)</string>
    </property>
    <property name="features">
     <set>QDockWidget::DockWidgetFloatable|QDockWidget::DockWidgetMovable</set>

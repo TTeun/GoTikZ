@@ -18,6 +18,7 @@ public:
 public slots:
   void typeChanged(DRAW_TYPE type);
   void colorChanged(QColor color);
+  void showGrid(bool show);
 
 protected:
   void paintEvent(QPaintEvent *e) final;
@@ -31,6 +32,8 @@ signals:
   void updateSignal();
 
 private:
+  void drawGrid(QPainter *painter);
+
   void snap(const QPointF &mousePoint);
 
   std::unique_ptr<StreamDrawable> m_streamDrawable = nullptr;
@@ -42,6 +45,9 @@ private:
   QPointF m_mousePoint;
 
   QColor m_color = QColor{0, 0, 0};
+
+  bool m_showGrid;
+  int m_gridSize = 10;
 };
 
 #endif // DRAWWIDGET_H

@@ -4,6 +4,7 @@
 #include <Drawable/StreamDrawableFactory.h>
 #include <QMouseEvent>
 #include <QPainter>
+#include <QtWidgets/QStyleOption>
 
 DrawWidget::DrawWidget(QWidget *parent) : QWidget(parent) {
   setMouseTracking(true);
@@ -11,6 +12,12 @@ DrawWidget::DrawWidget(QWidget *parent) : QWidget(parent) {
 
 void DrawWidget::paintEvent(QPaintEvent *e) {
   QPainter painter(this);
+  QBrush brush(Qt::white);
+  painter.fillRect(this->rect(), brush);
+  if (m_showGrid) {
+    drawGrid(&painter);
+  }
+
   if (m_streamDrawable) {
     m_streamDrawable->draw(&painter);
   }
@@ -83,8 +90,19 @@ void DrawWidget::snap(const QPointF &mousePoint) {
     m_mousePoint = mousePoint;
   }
 }
-void DrawWidget::colorChanged(QColor color) {
-  m_color = color;
+void DrawWidget::colorChanged(QColor color) { m_color = color; }
 
-  qDebug() << "Asdsadd";
+void DrawWidget::drawGrid(QPainter *painter) {
+  painter->setPen(QPen{QColor{200, 200, 200}, 1});
+  for (size_t i = 0; i * m_gridSize < width(); ++i) {
+    painter->drawLine(i * m_gridSize, 0, i * m_gridSize, height());
+  }
+  for (size_t i = 0; i * m_gridSize < width(); ++i) {
+    painter->drawLine(0, i * m_gridSize, width(), i * m_gridSize);
+  }
+}
+
+void DrawWidget::showGrid(bool show) {
+  m_showGrid = show;
+  emit(updateSignal());
 }
