@@ -9,4 +9,4 @@
 
 Drawable::Drawable(QPen pen) : m_pen(std::move(pen)) {}
 
-void Drawable::draw(QPainter *painter) { painter->setPen(m_pen); }
+void Drawable::draw(QPainter* painter) { painter->setPen(m_pen); }

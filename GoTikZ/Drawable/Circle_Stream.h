@@ -9,26 +9,26 @@
 
 #include <QPointF>
 
-class Circle_Stream : public StreamDrawable {
+class Circle_Stream : public StreamDrawable
+{
 public:
-  explicit Circle_Stream(const QPointF &point, QPen pen)
-      : StreamDrawable(std::move(pen)), m_center(point) {}
+    explicit Circle_Stream(const QPointF& point, const QPen& pen) : StreamDrawable(pen), m_center(point) {}
 
-  void stream(const QPointF &point) override;
+    void stream(const QPointF& point) override;
 
-  bool addPoint(const QPointF &point, bool forceEnd) override;
+    bool addPoint(const QPointF& point, bool forceEnd) override;
 
-  Drawable *drawable() override;
+    Drawable* drawable() override;
 
-  void draw(QPainter *painter) override;
+    void draw(QPainter* painter) override;
 
-  std::pair<double, QPointF> snap(QPointF point) override;
+    std::pair<double, QPointF> snap(QPointF point) override;
 
 private:
-  friend class Circle;
+    friend class Circle;
 
-  QPointF m_center;
-  double m_radius = 0.0;
+    QPointF m_center;
+    double m_radius = 0.0;
 };
 
 #endif // GOTIKZ_CIRCLE_STREAM_H

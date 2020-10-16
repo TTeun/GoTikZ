@@ -6,22 +6,24 @@
 #define GOTIKZ_LINE_H
 
 #include "Drawable.h"
+
 #include <QPointF>
 
 class Line_Stream;
 
-class Line : public Drawable {
+class Line : public Drawable
+{
 
 public:
-  explicit Line(const Line_Stream &lineStream);
+    explicit Line(const Line_Stream& lineStream);
 
-  void draw(QPainter *painter) override;
+    void draw(QPainter* painter) override;
 
-  std::pair<double, QPointF> snap(QPointF point) override;
+    std::pair<double, QPointF> snap(QPointF point) override;
 
 private:
-  QPointF m_point1;
-  QPointF m_point2;
+    QPointF m_point1;
+    QPointF m_point2;
 };
 
 #endif // GOTIKZ_LINE_H

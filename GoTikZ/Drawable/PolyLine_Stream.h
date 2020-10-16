@@ -11,20 +11,21 @@
 
 class PolyLine;
 
-class PolyLine_Stream : public StreamDrawable {
-  friend class PolyLine;
+class PolyLine_Stream : public StreamDrawable
+{
+    friend class PolyLine;
 
 public:
-  PolyLine_Stream(QPointF point, const QPen &pen);
+    PolyLine_Stream(const QPointF& point, const QPen& pen);
 
-  void draw(QPainter *painter) override;
-  void stream(const QPointF &point) override;
-  bool addPoint(const QPointF &point, bool forceEnd = false) override;
-  Drawable *drawable() override;
-  std::pair<double, QPointF> snap(QPointF point) override;
+    void draw(QPainter* painter) override;
+    void stream(const QPointF& point) override;
+    bool addPoint(const QPointF& point, bool forceEnd) override;
+    Drawable* drawable() override;
+    std::pair<double, QPointF> snap(QPointF point) override;
 
 private:
-  QVector<QPointF> m_points;
+    QVector<QPointF> m_points;
 };
 
 #endif // GOTIKZ_POLYLINE_STREAM_H

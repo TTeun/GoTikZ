@@ -9,21 +9,22 @@
 
 class QPushButton;
 
-class ColorWidget : public QWidget {
-  Q_OBJECT
+class ColorWidget : public QWidget
+{
+    Q_OBJECT
 
 public:
-  ColorWidget(QWidget *parent = 0);
+    explicit ColorWidget(QWidget* parent = 0);
 
 private slots:
-  void getColor();
+    void getColor();
 
 signals:
-  void colorUpdated(QColor color);
+    void colorUpdated(QColor color);
 
 private:
-  QColor m_color;
-  QPushButton *m_pushButton;
+    QColor m_color;
+    QPushButton* m_pushButton;
 };
 
 #endif // GOTIKZ_COLORWIDGET_H

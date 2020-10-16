@@ -9,16 +9,17 @@
 
 #include <QPointF>
 
-class Point : public Drawable {
+class Point : public Drawable
+{
 public:
-  Point(QPointF point, const QColor &color) : Drawable(color), m_point(point) {}
+    Point(QPointF point, const QPen& pen) : Drawable(pen), m_point(point) {}
 
-  void draw(QPainter *painter) override;
+    void draw(QPainter* painter) override;
 
-  std::pair<double, QPointF> snap(QPointF point) override;
+    std::pair<double, QPointF> snap(QPointF point) override;
 
 private:
-  QPointF m_point;
+    QPointF m_point;
 };
 
 #endif // GOTIKZ_POINT_H

@@ -7,11 +7,12 @@
 
 class QPointF;
 
-namespace Math {
+namespace Math
+{
 
-double magnitude(const QPointF &point);
+double magnitude(const QPointF& point);
 
-double distance(const QPointF &point1, const QPointF &point2);
+double distance(const QPointF& point1, const QPointF& point2);
 
 } // namespace Math
 
