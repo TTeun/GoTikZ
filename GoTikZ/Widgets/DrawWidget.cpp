@@ -1,12 +1,17 @@
 #include "DrawWidget.h"
 
+#include "../Actions/AddPrimitiveAction.h"
+
 #include <Drawable/Point.h>
 #include <Drawable/StreamDrawableFactory.h>
 #include <QMouseEvent>
 #include <QPainter>
 #include <QtWidgets/QStyleOption>
 
-DrawWidget::DrawWidget(QWidget* parent) : QWidget(parent) { setMouseTracking(true); }
+DrawWidget::DrawWidget(QWidget* parent) : ActionWidget(parent)
+{
+    setMouseTracking(true);
+}
 
 void DrawWidget::paintEvent(QPaintEvent* e)
 {
@@ -43,6 +48,7 @@ void DrawWidget::mousePressEvent(QMouseEvent* event)
         if (m_streamDrawable->addPoint(m_mousePoint, event->button() == Qt::RightButton))
         {
             m_drawables.push_back(std::unique_ptr<Drawable>(m_streamDrawable->drawable()));
+            emit actionDone(new AddPrimitiveAction(m_drawables.back()->index()), true, true);
             m_streamDrawable.reset(nullptr);
         }
     }
@@ -57,20 +63,6 @@ void DrawWidget::mouseMoveEvent(QMouseEvent* event)
         m_streamDrawable->stream(m_mousePoint);
     }
     emit(updateSignal());
-}
-
-void DrawWidget::typeChanged(DrawWidget::DRAW_TYPE type)
-{
-    if (type == m_drawType)
-    {
-        return;
-    }
-    m_drawType = type;
-    if (m_streamDrawable)
-    {
-        m_streamDrawable.reset(nullptr);
-        updateSignal();
-    }
 }
 
 void DrawWidget::snap(const QPointF& mousePoint)
@@ -97,7 +89,10 @@ void DrawWidget::snap(const QPointF& mousePoint)
         m_mousePoint = mousePoint;
     }
 }
-void DrawWidget::colorChanged(const QColor& color) { m_color = color; }
+void DrawWidget::colorChanged(const QColor& color)
+{
+    m_color = color;
+}
 
 void DrawWidget::drawGrid(QPainter* painter)
 {
@@ -132,8 +127,9 @@ void DrawWidget::setStreamDrawable()
 {
     switch (m_drawType)
     {
-        case DRAW_TYPE::POINT:
+        case PRIMITIVE_TYPE::POINT:
             m_drawables.push_back(std::unique_ptr<Drawable>(new Point(m_mousePoint, QPen(m_color, 5))));
+            emit actionDone(new AddPrimitiveAction(m_drawables.back()->index()), true, true);
             break;
         default:
             m_streamDrawable.reset(StreamDrawableFactory::make(m_mousePoint, m_drawType, QPen(m_color, 2)));

@@ -9,18 +9,25 @@
 
 class QPainter;
 
-class Drawable
-{
-protected:
-    explicit Drawable(QPen  pen);
+class Drawable {
+  protected:
+    explicit Drawable(QPen pen);
 
-public:
+  public:
     virtual void draw(QPainter* painter);
 
     virtual std::pair<double, QPointF> snap(QPointF point) = 0;
 
-protected:
+    size_t index() const {
+        return m_index;
+    }
+
+  protected:
     QPen m_pen;
+
+  private:
+    size_t        m_index;
+    static size_t s_maxIndex;
 };
 
 #endif // GOTIKZ_DRAWABLE_H

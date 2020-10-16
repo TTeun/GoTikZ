@@ -9,16 +9,16 @@
 
 #include <QPointF>
 
-class Point : public Drawable
-{
-public:
-    Point(QPointF point, const QPen& pen) : Drawable(pen), m_point(point) {}
+class Point : public Drawable {
+  public:
+    Point(QPointF point, const QPen& pen) : Drawable(pen), m_point(point) {
+    }
 
     void draw(QPainter* painter) override;
 
     std::pair<double, QPointF> snap(QPointF point) override;
 
-private:
+  private:
     QPointF m_point;
 };
 

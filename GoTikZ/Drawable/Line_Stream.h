@@ -11,18 +11,18 @@
 
 class Line;
 
-class Line_Stream : public StreamDrawable
-{
-public:
-    Line_Stream(const QPointF& point, const QPen& pen) : StreamDrawable(pen), m_point1(point) {}
+class Line_Stream : public StreamDrawable {
+  public:
+    Line_Stream(const QPointF& point, const QPen& pen) : StreamDrawable(pen), m_point1(point) {
+    }
 
-    void stream(const QPointF& point) override;
-    bool addPoint(const QPointF& point, bool forceEnd) override;
-    Drawable* drawable() override;
-    void draw(QPainter* painter) override;
+    void                       stream(const QPointF& point) override;
+    bool                       addPoint(const QPointF& point, bool forceEnd) override;
+    Drawable*                  drawable() override;
+    void                       draw(QPainter* painter) override;
     std::pair<double, QPointF> snap(QPointF point) override;
 
-private:
+  private:
     friend class Line;
 
     QPointF m_point1;

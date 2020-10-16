@@ -10,20 +10,17 @@
 #include <QPainter>
 
 Circle::Circle(const Circle_Stream& circleStream)
-    : Drawable(circleStream.m_pen), m_center(circleStream.m_center), m_radius(circleStream.m_radius)
-{
+    : Drawable(circleStream.m_pen), m_center(circleStream.m_center), m_radius(circleStream.m_radius) {
 }
 
-void Circle::draw(QPainter* painter)
-{
+void Circle::draw(QPainter* painter) {
     Drawable::draw(painter);
     painter->drawEllipse(m_center.x() - m_radius, m_center.y() - m_radius, 2 * m_radius, 2 * m_radius);
 }
 
-std::pair<double, QPointF> Circle::snap(QPointF point)
-{
+std::pair<double, QPointF> Circle::snap(QPointF point) {
     const auto difference = point - m_center;
-    const auto closest = m_center + m_radius * difference / Math::magnitude(difference);
+    const auto closest    = m_center + m_radius * difference / Math::magnitude(difference);
 
     return {Math::magnitude(point - closest), closest};
 }

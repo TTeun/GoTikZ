@@ -12,16 +12,15 @@
 
 class PolyLine_Stream;
 
-class PolyLine : public Drawable
-{
-public:
+class PolyLine : public Drawable {
+  public:
     explicit PolyLine(const PolyLine_Stream& polyLineStream);
 
     void draw(QPainter* painter) override;
 
     std::pair<double, QPointF> snap(QPointF point) override;
 
-private:
+  private:
     QVector<QPointF> m_points;
 };
 

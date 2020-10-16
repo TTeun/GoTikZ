@@ -8,7 +8,7 @@ set(CMAKE_AUTOUIC ON)
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
 
-set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_STANDARD 14)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Werror -pedantic")
@@ -34,9 +34,9 @@ find_package(Qt${QT_VERSION_MAJOR} COMPONENTS Widgets REQUIRED)
     main.cpp
           MainWindow.cpp
           MainWindow.h
-    mainwindow.ui
+          mainwindow.ui
           Widgets/DrawWidget.cpp
           Widgets/DrawWidget.h
-          Drawable/Drawable.h Drawable/Line.cpp Drawable/Line.h Drawable/StreamDrawable.h Drawable/Line_Stream.cpp Drawable/Line_Stream.h Drawable/Circle_Stream.cpp Drawable/Circle_Stream.h Drawable/Circle.cpp Drawable/Circle.h Widgets/LeftSideBar.cpp Widgets/LeftSideBar.h Drawable/Point.cpp Drawable/Point.h Drawable/PolyLine_Stream.cpp Drawable/PolyLine_Stream.h Drawable/PolyLine.cpp Drawable/PolyLine.h Drawable/StreamDrawableFactory.cpp Drawable/StreamDrawableFactory.h Math/Math.h Math/Math.cpp Widgets/ColorWidget.cpp Widgets/ColorWidget.h Drawable/Drawable.cpp)
+          Drawable/Drawable.h Drawable/Line.cpp Drawable/Line.h Drawable/StreamDrawable.h Drawable/Line_Stream.cpp Drawable/Line_Stream.h Drawable/Circle_Stream.cpp Drawable/Circle_Stream.h Drawable/Circle.cpp Drawable/Circle.h Widgets/LeftSideBar.cpp Widgets/LeftSideBar.h Drawable/Point.cpp Drawable/Point.h Drawable/PolyLine_Stream.cpp Drawable/PolyLine_Stream.h Drawable/PolyLine.cpp Drawable/PolyLine.h Drawable/StreamDrawableFactory.cpp Drawable/StreamDrawableFactory.h Math/Math.h Math/Math.cpp Widgets/ColorWidget.cpp Widgets/ColorWidget.h Drawable/Drawable.cpp Actions/ActionHandler.cpp Actions/ActionHandler.h Actions/Action.cpp Actions/Action.h Actions/AddPrimitiveAction.cpp Actions/AddPrimitiveAction.h Widgets/PrimitiveSelectWidget.cpp Widgets/PrimitiveSelectWidget.h Widgets/ActionWidget.cpp Widgets/ActionWidget.h Actions/ChangePrimitiveAction.cpp Actions/ChangePrimitiveAction.h)
 
 target_link_libraries(GoTikZ PRIVATE Qt${QT_VERSION_MAJOR}::Widgets)

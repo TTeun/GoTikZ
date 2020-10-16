@@ -7,8 +7,7 @@
 
 class QPointF;
 
-namespace Math
-{
+namespace Math {
 
 double magnitude(const QPointF& point);
 

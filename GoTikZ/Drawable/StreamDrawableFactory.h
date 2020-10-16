@@ -10,10 +10,9 @@
 class QPointF;
 class StreamDrawable;
 
-class StreamDrawableFactory
-{
-public:
-    static StreamDrawable* make(const QPointF& point, DrawWidget::DRAW_TYPE type, const QPen& pen);
+class StreamDrawableFactory {
+  public:
+    static StreamDrawable* make(const QPointF& point, DrawWidget::PRIMITIVE_TYPE type, const QPen& pen);
 };
 
 #endif // GOTIKZ_STREAMDRAWABLEFACTORY_H

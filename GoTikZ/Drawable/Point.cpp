@@ -7,10 +7,11 @@
 #include <Math/Math.h>
 #include <QPainter>
 
-void Point::draw(QPainter* painter)
-{
+void Point::draw(QPainter* painter) {
     Drawable::draw(painter);
     painter->drawPoint(m_point);
 }
 
-std::pair<double, QPointF> Point::snap(QPointF point) { return {Math::magnitude(point - m_point), m_point}; }
+std::pair<double, QPointF> Point::snap(QPointF point) {
+    return {Math::magnitude(point - m_point), m_point};
+}

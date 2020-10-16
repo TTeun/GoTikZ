@@ -1,61 +1,58 @@
 #ifndef DRAWWIDGET_H
 #define DRAWWIDGET_H
 
+#include "ActionWidget.h"
 #include "Drawable/StreamDrawable.h"
 
+#include <Actions/Action.h>
 #include <QWidget>
 #include <vector>
 
-class DrawWidget : public QWidget
-{
+class AddPrimitiveAction;
+
+class DrawWidget : public ActionWidget {
     Q_OBJECT
-public:
+  public:
     explicit DrawWidget(QWidget* parent = nullptr);
 
-    enum class DRAW_TYPE
-    {
-        LINE,
-        POINT,
-        CIRCLE,
-        POLY_LINE
-    };
+    enum class PRIMITIVE_TYPE { LINE, POINT, CIRCLE, POLY_LINE };
 
-public slots:
-    void typeChanged(DRAW_TYPE type);
+  public slots:
     void colorChanged(const QColor& color);
     void showGrid(bool show);
     void setGridSpacing(int spacing);
 
-protected:
+    void setPrimitiveType(PRIMITIVE_TYPE newType) {
+        m_drawType = newType;
+    }
+
+    PRIMITIVE_TYPE primitiveType() const {
+        return m_drawType;
+    }
+
+  protected:
     void paintEvent(QPaintEvent* e) final;
-
     void mousePressEvent(QMouseEvent* event) override;
-
     void mouseMoveEvent(QMouseEvent* event) override;
 
-signals:
-
+  signals:
     void updateSignal();
 
-private:
+  private:
     void drawGrid(QPainter* painter);
 
     void snap(const QPointF& mousePoint);
 
     void setStreamDrawable();
 
-    std::unique_ptr<StreamDrawable> m_streamDrawable = nullptr;
-
+    friend class AddPrimitiveAction;
+    std::unique_ptr<StreamDrawable>        m_streamDrawable = nullptr;
     std::vector<std::unique_ptr<Drawable>> m_drawables;
-
-    DRAW_TYPE m_drawType = DRAW_TYPE::LINE;
-
-    QPointF m_mousePoint;
-
-    QColor m_color = QColor{0, 0, 0};
-
-    bool m_showGrid = true;
-    int m_gridSize = 10;
+    PRIMITIVE_TYPE                         m_drawType = PRIMITIVE_TYPE::LINE;
+    QPointF                                m_mousePoint;
+    QColor                                 m_color    = QColor{0, 0, 0};
+    bool                                   m_showGrid = true;
+    int                                    m_gridSize = 10;
 };
 
 #endif // DRAWWIDGET_H

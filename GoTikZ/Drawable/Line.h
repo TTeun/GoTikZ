@@ -11,17 +11,16 @@
 
 class Line_Stream;
 
-class Line : public Drawable
-{
+class Line : public Drawable {
 
-public:
+  public:
     explicit Line(const Line_Stream& lineStream);
 
     void draw(QPainter* painter) override;
 
     std::pair<double, QPointF> snap(QPointF point) override;
 
-private:
+  private:
     QPointF m_point1;
     QPointF m_point2;
 };

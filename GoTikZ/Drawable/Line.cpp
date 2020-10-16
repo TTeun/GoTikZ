@@ -10,26 +10,20 @@
 #include <QPainter>
 
 Line::Line(const Line_Stream& lineStream)
-    : Drawable(lineStream.m_pen), m_point1(lineStream.m_point1), m_point2(lineStream.m_point2)
-{
+    : Drawable(lineStream.m_pen), m_point1(lineStream.m_point1), m_point2(lineStream.m_point2) {
 }
 
-void Line::draw(QPainter* painter)
-{
+void Line::draw(QPainter* painter) {
     Drawable::draw(painter);
     painter->drawLine(m_point1, m_point2);
 }
 
-std::pair<double, QPointF> Line::snap(QPointF point)
-{
+std::pair<double, QPointF> Line::snap(QPointF point) {
     const double d1 = Math::magnitude(point - m_point1);
     const double d2 = Math::magnitude(point - m_point2);
-    if (d1 < d2)
-    {
+    if (d1 < d2) {
         return {d1, m_point1};
-    }
-    else
-    {
+    } else {
         return {d2, m_point2};
     }
 }

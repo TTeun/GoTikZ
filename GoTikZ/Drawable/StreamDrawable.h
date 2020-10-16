@@ -9,17 +9,17 @@
 
 class QPointF;
 
-class StreamDrawable : public Drawable
-{
-protected:
-    explicit StreamDrawable(const QPen& pen) : Drawable(pen) {}
+class StreamDrawable : public Drawable {
+  protected:
+    explicit StreamDrawable(const QPen& pen) : Drawable(pen) {
+    }
 
-public:
-    virtual void stream(const QPointF& point) = 0;
-    virtual bool addPoint(const QPointF& point, bool forceEnd) = 0;
-    virtual Drawable* drawable() = 0;
+  public:
+    virtual void      stream(const QPointF& point)                  = 0;
+    virtual bool      addPoint(const QPointF& point, bool forceEnd) = 0;
+    virtual Drawable* drawable()                                    = 0;
 
-protected:
+  protected:
     bool m_shouldDraw = false;
 };
 

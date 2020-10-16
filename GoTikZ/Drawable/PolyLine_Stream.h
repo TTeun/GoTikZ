@@ -11,20 +11,19 @@
 
 class PolyLine;
 
-class PolyLine_Stream : public StreamDrawable
-{
+class PolyLine_Stream : public StreamDrawable {
     friend class PolyLine;
 
-public:
+  public:
     PolyLine_Stream(const QPointF& point, const QPen& pen);
 
-    void draw(QPainter* painter) override;
-    void stream(const QPointF& point) override;
-    bool addPoint(const QPointF& point, bool forceEnd) override;
-    Drawable* drawable() override;
+    void                       draw(QPainter* painter) override;
+    void                       stream(const QPointF& point) override;
+    bool                       addPoint(const QPointF& point, bool forceEnd) override;
+    Drawable*                  drawable() override;
     std::pair<double, QPointF> snap(QPointF point) override;
 
-private:
+  private:
     QVector<QPointF> m_points;
 };
 

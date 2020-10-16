@@ -7,6 +7,13 @@
 #include <QPainter>
 #include <utility>
 
-Drawable::Drawable(QPen pen) : m_pen(std::move(pen)) {}
+size_t Drawable::s_maxIndex = 0;
 
-void Drawable::draw(QPainter* painter) { painter->setPen(m_pen); }
+Drawable::Drawable(QPen pen) : m_pen(std::move(pen)) {
+    m_index = s_maxIndex;
+    ++s_maxIndex;
+}
+
+void Drawable::draw(QPainter* painter) {
+    painter->setPen(m_pen);
+}
