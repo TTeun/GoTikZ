@@ -5,17 +5,17 @@
 #ifndef GOTIKZ_ADDPRIMITIVEACTION_H
 #define GOTIKZ_ADDPRIMITIVEACTION_H
 
-#include "Action.h"
 #include "Drawable/Drawable.h"
+#include "UndoableAction.h"
 
 class ActionHandler;
 
-class AddPrimitiveAction : public Action {
+class AddPrimitiveAction : public UndoableAction {
 
   public:
     AddPrimitiveAction(size_t indexOfPrimitive);
 
-    void redoAction(ActionHandler* actionHandler) override;
+    void doAction(ActionHandler* actionHandler) override;
 
     void undoAction(ActionHandler* actionHandler) override;
 

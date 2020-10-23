@@ -6,18 +6,17 @@
 
 #include "ActionHandler.h"
 
+#include <QDebug>
+
 ChangePrimitiveAction::ChangePrimitiveAction(DrawWidget::PRIMITIVE_TYPE newPrimitive)
     : Action(ACTION_TYPE::CHANGE_PRIMITIVE_TYPE), m_newPrimitive(newPrimitive) {
 }
 
-void ChangePrimitiveAction::redoAction(ActionHandler* actionHandler) {
+void ChangePrimitiveAction::doAction(ActionHandler* actionHandler) {
+    qDebug() << "asdas22222";
     actionHandler->drawWidget()->setPrimitiveType(m_newPrimitive);
 }
 
 QString ChangePrimitiveAction::toString() {
     return QString("Change primitive type");
-}
-
-void ChangePrimitiveAction::undoAction(ActionHandler* actionHandler) {
-    assert(false);
 }

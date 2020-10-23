@@ -7,6 +7,7 @@
 
 #include <QWidget>
 
+class UndoableAction;
 class Action;
 
 class ActionWidget : public QWidget {
@@ -16,7 +17,8 @@ class ActionWidget : public QWidget {
     explicit ActionWidget(QWidget* parent);
 
   signals:
-    void actionDone(Action* action, bool isAlreadyDone, bool canBeUndone);
+    void undoableActionDone(UndoableAction* action, bool isAlreadyDone, bool canBeUndone);
+    void actionDone(Action* action);
 };
 
 #endif // GOTIKZ_ACTIONWIDGET_H

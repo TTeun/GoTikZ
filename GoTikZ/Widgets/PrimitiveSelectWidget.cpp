@@ -71,14 +71,16 @@ void PrimitiveSelectWidget::addTypeButton(QGroupBox* groupbox, const QString& ti
     groupbox->layout()->addWidget(radioButton);
 }
 void PrimitiveSelectWidget::primitiveSelected(QAbstractButton* button) {
+    m_buttonGroup->blockSignals(false);
+    qDebug() << "asdsa";
     if (button->text() == QString("Point")) {
-        emit actionDone(new ChangePrimitiveAction(DrawWidget::PRIMITIVE_TYPE::POINT), false, false);
+        emit actionDone(new ChangePrimitiveAction(DrawWidget::PRIMITIVE_TYPE::POINT));
     } else if (button->text() == QString("Line")) {
-        emit actionDone(new ChangePrimitiveAction(DrawWidget::PRIMITIVE_TYPE::LINE), false, false);
+        emit actionDone(new ChangePrimitiveAction(DrawWidget::PRIMITIVE_TYPE::LINE));
     } else if (button->text() == QString("Circle")) {
-        emit actionDone(new ChangePrimitiveAction(DrawWidget::PRIMITIVE_TYPE::CIRCLE), false, false);
+        emit actionDone(new ChangePrimitiveAction(DrawWidget::PRIMITIVE_TYPE::CIRCLE));
     } else if (button->text() == QString("PolyLine")) {
-        emit actionDone(new ChangePrimitiveAction(DrawWidget::PRIMITIVE_TYPE::POLY_LINE), false, false);
+        emit actionDone(new ChangePrimitiveAction(DrawWidget::PRIMITIVE_TYPE::POLY_LINE));
     } else {
     }
 }

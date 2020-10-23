@@ -5,17 +5,15 @@
 #ifndef GOTIKZ_CHANGEPRIMITIVEACTION_H
 #define GOTIKZ_CHANGEPRIMITIVEACTION_H
 
-#include "Action.h"
+#include "UndoableAction.h"
 
 #include <Widgets/DrawWidget.h>
 
 class ChangePrimitiveAction : public Action {
 
   public:
-    ChangePrimitiveAction(DrawWidget::PRIMITIVE_TYPE newPrimitive);
-
-    void redoAction(ActionHandler* actionHandler) override;
-    void undoAction(ActionHandler* actionHandler) override;
+    explicit ChangePrimitiveAction(DrawWidget::PRIMITIVE_TYPE newPrimitive);
+    void doAction(ActionHandler* actionHandler) override;
 
     QString toString() override;
 

@@ -2,33 +2,26 @@
 #define DRAWWIDGET_H
 
 #include "ActionWidget.h"
+#include "Actions/UndoableAction.h"
 #include "Drawable/StreamDrawable.h"
 
-#include <Actions/Action.h>
 #include <QWidget>
 #include <vector>
-
-class AddPrimitiveAction;
 
 class DrawWidget : public ActionWidget {
     Q_OBJECT
   public:
     explicit DrawWidget(QWidget* parent = nullptr);
 
+    void      addDrawable(Drawable* drawable);
+    Drawable* removeDrawable(const size_t index);
+
     enum class PRIMITIVE_TYPE { LINE, POINT, CIRCLE, POLY_LINE };
 
   public slots:
-    void colorChanged(const QColor& color);
-    void showGrid(bool show);
-    void setGridSpacing(int spacing);
-
-    void setPrimitiveType(PRIMITIVE_TYPE newType) {
-        m_drawType = newType;
-    }
-
-    PRIMITIVE_TYPE primitiveType() const {
-        return m_drawType;
-    }
+    void           colorChanged(const QColor& color);
+    void           setPrimitiveType(PRIMITIVE_TYPE newType);
+    PRIMITIVE_TYPE primitiveType() const;
 
   protected:
     void paintEvent(QPaintEvent* e) final;
@@ -45,7 +38,6 @@ class DrawWidget : public ActionWidget {
 
     void setStreamDrawable();
 
-    friend class AddPrimitiveAction;
     std::unique_ptr<StreamDrawable>        m_streamDrawable = nullptr;
     std::vector<std::unique_ptr<Drawable>> m_drawables;
     PRIMITIVE_TYPE                         m_drawType = PRIMITIVE_TYPE::LINE;

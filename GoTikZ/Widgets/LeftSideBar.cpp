@@ -19,10 +19,12 @@ LeftSideBar::LeftSideBar(QWidget* parent) : QWidget(parent) {
     auto* layout = new QVBoxLayout(this);
 
     m_primitiveSelectionWidget = new PrimitiveSelectWidget(this);
+    m_gridSettingWidget        = new GridSettingWidget(this);
     layout->addWidget(m_primitiveSelectionWidget);
+    layout->addWidget(m_gridSettingWidget);
     setLayout(layout);
 
-    buildViewGroupBox();
+    //    buildViewGroupBox();
     buildPenGroupBox();
 }
 
@@ -39,27 +41,5 @@ void LeftSideBar::buildPenGroupBox() {
 
     groupBoxLayout->addWidget(colorWidget);
 
-    layout()->addWidget(groupBox);
-}
-
-void LeftSideBar::buildViewGroupBox() {
-    auto* groupBox       = new QGroupBox(this);
-    auto* groupBoxLayout = new QVBoxLayout(groupBox);
-    groupBox->setLayout(groupBoxLayout);
-    groupBox->setTitle("View");
-
-    auto* radioButton = new QRadioButton(groupBox);
-    m_gridButton      = radioButton;
-    radioButton->setChecked(true);
-    radioButton->setText("Grid");
-
-    auto* spinBox = new QSpinBox();
-    spinBox->setValue(10);
-    m_gridSpacingSpinBox = spinBox;
-
-    groupBoxLayout->addWidget(radioButton);
-    groupBoxLayout->addWidget(spinBox);
-
-    groupBox->setSizePolicy(QSizePolicy::Maximum, QSizePolicy::Maximum);
     layout()->addWidget(groupBox);
 }

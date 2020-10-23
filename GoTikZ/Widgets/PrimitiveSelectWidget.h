@@ -11,7 +11,7 @@
 #include <QtWidgets/QButtonGroup>
 #include <QtWidgets/QGroupBox>
 
-class Action;
+class UndoableAction;
 
 class PrimitiveSelectWidget : public ActionWidget {
     Q_OBJECT

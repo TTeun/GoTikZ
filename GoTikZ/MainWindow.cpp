@@ -20,9 +20,9 @@ MainWindow::MainWindow(QWidget* parent) : QMainWindow(parent), ui(new Ui::MainWi
     QObject::connect(drawWidget, &DrawWidget::updateSignal, this,
                      static_cast<void (QMainWindow::*)(void)>(&QMainWindow::update));
     QObject::connect(leftSideBar->m_colorWidget, &ColorWidget::colorUpdated, drawWidget, &DrawWidget::colorChanged);
-    QObject::connect(leftSideBar->m_gridButton, &QRadioButton::clicked, drawWidget, &DrawWidget::showGrid);
-    QObject::connect(leftSideBar->m_gridSpacingSpinBox, static_cast<void (QSpinBox::*)(int)>(&QSpinBox::valueChanged),
-                     drawWidget, &DrawWidget::setGridSpacing);
+//    QObject::connect(leftSideBar->m_gridButton, &QRadioButton::clicked, drawWidget, &DrawWidget::showGrid);
+//    QObject::connect(leftSideBar->m_gridSpacingSpinBox, static_cast<void (QSpinBox::*)(int)>(&QSpinBox::valueChanged),
+//                     drawWidget, &DrawWidget::setGridSpacing);
 
     setCentralWidget(drawWidget);
 }
@@ -58,11 +58,9 @@ void MainWindow::keyPressEvent(QKeyEvent* event) {
             switch (event->key()) {
                 case Qt::Key_Z:
                     m_actionHandler->undoAction();
-                    qDebug() << "Z pressed";
                     break;
                 case Qt::Key_R:
                     m_actionHandler->redoAction();
-                    qDebug() << "R pressed";
                     break;
 
                 default:

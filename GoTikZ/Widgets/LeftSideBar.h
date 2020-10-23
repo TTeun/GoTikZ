@@ -5,6 +5,7 @@
 #ifndef GOTIKZ_LEFTSIDEBAR_H
 #define GOTIKZ_LEFTSIDEBAR_H
 
+#include "GridSettingWidget.h"
 #include "PrimitiveSelectWidget.h"
 #include "Widgets/DrawWidget.h"
 
@@ -23,12 +24,10 @@ class LeftSideBar : public QWidget {
   public:
     explicit LeftSideBar(QWidget* parent = 0);
     ColorWidget*           m_colorWidget;
-    QRadioButton*          m_gridButton;
-    QSpinBox*              m_gridSpacingSpinBox;
     PrimitiveSelectWidget* m_primitiveSelectionWidget;
+    GridSettingWidget*     m_gridSettingWidget;
 
   private:
-    void buildViewGroupBox();
     void buildPenGroupBox();
 };
 

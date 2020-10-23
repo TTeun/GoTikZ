@@ -13,11 +13,10 @@ class Action {
   public:
     enum class ACTION_TYPE { ADD_PRIMITIVE, CHANGE_PRIMITIVE_TYPE };
 
-    Action(ACTION_TYPE type);
-    ~Action() = default;
+    Action(ACTION_TYPE type) : m_actionType(type) {
+    }
 
-    virtual void redoAction(ActionHandler* actionHandler) = 0;
-    virtual void undoAction(ActionHandler* actionHandler) = 0;
+    virtual void doAction(ActionHandler* actionHandler) = 0;
 
   public:
     virtual QString toString() = 0;

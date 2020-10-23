@@ -21,26 +21,28 @@ void ActionHandler::redoAction() {
     if (m_redoStack.empty()) {
         return;
     }
-    m_redoStack.top()->redoAction(this);
+    m_redoStack.top()->doAction(this);
     m_undoStack.push(std::move(m_redoStack.top()));
     m_redoStack.pop();
 }
 
-void ActionHandler::addAction(Action* action, bool isAlreadyDone, bool canBeUndone) {
+void ActionHandler::addAction(UndoableAction* action, bool isAlreadyDone, bool canBeUndone) {
     if (not isAlreadyDone) {
-        action->redoAction(this);
+        action->doAction(this);
     }
     if (canBeUndone) {
         qDebug() << "Added an action: " + action->toString();
-        m_undoStack.push(std::unique_ptr<Action>(action));
+        m_undoStack.push(std::unique_ptr<UndoableAction>(action));
         m_redoStack = {};
     }
 }
 
 ActionHandler::ActionHandler(DrawWidget* drawWidget, PrimitiveSelectWidget* primitiveTypeSelectWidget)
     : m_drawWidget(drawWidget), m_primitiveTypeSelectWidget(primitiveTypeSelectWidget) {
-    QObject::connect(m_drawWidget, &DrawWidget::actionDone, this, &ActionHandler::addAction);
-    QObject::connect(primitiveTypeSelectWidget, &PrimitiveSelectWidget::actionDone, this, &ActionHandler::addAction);
+    QObject::connect(m_drawWidget, &DrawWidget::undoableActionDone, this, &ActionHandler::addAction);
+    QObject::connect(primitiveTypeSelectWidget, &PrimitiveSelectWidget::undoableActionDone, this,
+                     &ActionHandler::addAction);
+    QObject::connect(primitiveTypeSelectWidget, &PrimitiveSelectWidget::actionDone, this, &ActionHandler::doAction);
 }
 
 DrawWidget* ActionHandler::drawWidget() {
@@ -49,4 +51,9 @@ DrawWidget* ActionHandler::drawWidget() {
 
 PrimitiveSelectWidget* ActionHandler::primitiveTypeSelectWidget() {
     return m_primitiveTypeSelectWidget;
+}
+
+void ActionHandler::doAction(Action* action) {
+    action->doAction(this);
+    qDebug() << "AdsaDA";
 }
