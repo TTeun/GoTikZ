@@ -15,16 +15,12 @@ MainWindow::MainWindow(QWidget* parent) : QMainWindow(parent), ui(new Ui::MainWi
     ui->setupUi(this);
     auto* leftSideBar = ui->leftSideBarContent;
     auto* drawWidget  = ui->widget;
-    m_actionHandler   = std::make_unique<ActionHandler>(drawWidget, leftSideBar->m_primitiveSelectionWidget);
+    m_actionHandler   = std::make_unique<ActionHandler>(drawWidget, leftSideBar);
 
     QObject::connect(drawWidget, &DrawWidget::updateSignal, this,
                      static_cast<void (QMainWindow::*)(void)>(&QMainWindow::update));
-    QObject::connect(leftSideBar->m_colorWidget, &ColorWidget::colorUpdated, drawWidget, &DrawWidget::colorChanged);
-//    QObject::connect(leftSideBar->m_gridButton, &QRadioButton::clicked, drawWidget, &DrawWidget::showGrid);
-//    QObject::connect(leftSideBar->m_gridSpacingSpinBox, static_cast<void (QSpinBox::*)(int)>(&QSpinBox::valueChanged),
-//                     drawWidget, &DrawWidget::setGridSpacing);
-
     setCentralWidget(drawWidget);
+    m_actionHandler->init();
 }
 
 MainWindow::~MainWindow() {

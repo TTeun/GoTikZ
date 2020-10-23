@@ -17,7 +17,7 @@ class ActionWidget : public QWidget {
     explicit ActionWidget(QWidget* parent);
 
   signals:
-    void undoableActionDone(UndoableAction* action, bool isAlreadyDone, bool canBeUndone);
+    void undoableActionDone(UndoableAction* action, bool isAlreadyDone);
     void actionDone(Action* action);
 };
 

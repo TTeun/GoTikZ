@@ -5,11 +5,12 @@
 #ifndef GOTIKZ_GRIDSETTINGWIDGET_H
 #define GOTIKZ_GRIDSETTINGWIDGET_H
 
+#include "../Actions/ChangeGridAction.h"
 #include "ActionWidget.h"
+#include "States/GridState.h"
 
 #include <QtWidgets/QCheckBox>
 #include <QtWidgets/QSpinBox>
-#include <States/GridState.h>
 
 class GridSettingWidget : public ActionWidget {
 
@@ -17,6 +18,9 @@ class GridSettingWidget : public ActionWidget {
     explicit GridSettingWidget(QWidget* parent = 0);
 
   private:
+    void setSpacing(int spacing);
+    void setShowGrid(bool show);
+
     QSpinBox*  m_gridSpacingSpinBox;
     QCheckBox* m_showGridCheckBox;
     GridState  m_gridState;

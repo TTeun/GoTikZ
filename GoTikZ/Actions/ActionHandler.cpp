@@ -4,9 +4,26 @@
 
 #include "ActionHandler.h"
 
+#include "Widgets/DrawWidget.h"
+#include "Widgets/LeftSideBar.h"
+#include "Widgets/PrimitiveSelectWidget.h"
+
 #include <QDebug>
-#include <Widgets/DrawWidget.h>
-#include <Widgets/PrimitiveSelectWidget.h>
+
+ActionHandler::ActionHandler(DrawWidget* drawWidget, LeftSideBar* leftSideBar)
+    : m_drawWidget(drawWidget), m_leftSideBar(leftSideBar) {
+}
+
+void ActionHandler::init() {
+    QObject::connect(m_drawWidget, &DrawWidget::undoableActionDone, this, &ActionHandler::addAction);
+    QObject::connect(m_leftSideBar->primitiveSelectWidget(), &PrimitiveSelectWidget::undoableActionDone, this,
+                     &ActionHandler::addAction);
+    QObject::connect(m_leftSideBar->primitiveSelectWidget(), &PrimitiveSelectWidget::actionDone, this,
+                     &ActionHandler::doAction);
+    QObject::connect(m_leftSideBar->gridSettingWidget(), &GridSettingWidget::actionDone, this,
+                     &ActionHandler::doAction);
+    QObject::connect(m_leftSideBar->penWidget(), &PenWidget::actionDone, this, &ActionHandler::doAction);
+}
 
 void ActionHandler::undoAction() {
     if (m_undoStack.empty()) {
@@ -26,23 +43,13 @@ void ActionHandler::redoAction() {
     m_redoStack.pop();
 }
 
-void ActionHandler::addAction(UndoableAction* action, bool isAlreadyDone, bool canBeUndone) {
+void ActionHandler::addAction(UndoableAction* action, bool isAlreadyDone) {
     if (not isAlreadyDone) {
         action->doAction(this);
     }
-    if (canBeUndone) {
-        qDebug() << "Added an action: " + action->toString();
-        m_undoStack.push(std::unique_ptr<UndoableAction>(action));
-        m_redoStack = {};
-    }
-}
-
-ActionHandler::ActionHandler(DrawWidget* drawWidget, PrimitiveSelectWidget* primitiveTypeSelectWidget)
-    : m_drawWidget(drawWidget), m_primitiveTypeSelectWidget(primitiveTypeSelectWidget) {
-    QObject::connect(m_drawWidget, &DrawWidget::undoableActionDone, this, &ActionHandler::addAction);
-    QObject::connect(primitiveTypeSelectWidget, &PrimitiveSelectWidget::undoableActionDone, this,
-                     &ActionHandler::addAction);
-    QObject::connect(primitiveTypeSelectWidget, &PrimitiveSelectWidget::actionDone, this, &ActionHandler::doAction);
+    qDebug() << "Added an action: " + action->toString();
+    m_undoStack.push(std::unique_ptr<UndoableAction>(action));
+    m_redoStack = {};
 }
 
 DrawWidget* ActionHandler::drawWidget() {
@@ -50,10 +57,9 @@ DrawWidget* ActionHandler::drawWidget() {
 }
 
 PrimitiveSelectWidget* ActionHandler::primitiveTypeSelectWidget() {
-    return m_primitiveTypeSelectWidget;
+    return m_leftSideBar->primitiveSelectWidget();
 }
 
 void ActionHandler::doAction(Action* action) {
     action->doAction(this);
-    qDebug() << "AdsaDA";
 }

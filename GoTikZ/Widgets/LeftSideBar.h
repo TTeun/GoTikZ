@@ -6,6 +6,7 @@
 #define GOTIKZ_LEFTSIDEBAR_H
 
 #include "GridSettingWidget.h"
+#include "PenWidget.h"
 #include "PrimitiveSelectWidget.h"
 #include "Widgets/DrawWidget.h"
 
@@ -23,12 +24,21 @@ class LeftSideBar : public QWidget {
 
   public:
     explicit LeftSideBar(QWidget* parent = 0);
-    ColorWidget*           m_colorWidget;
     PrimitiveSelectWidget* m_primitiveSelectionWidget;
     GridSettingWidget*     m_gridSettingWidget;
+    PenWidget*             m_penWidget;
 
-  private:
-    void buildPenGroupBox();
+    PrimitiveSelectWidget* primitiveSelectWidget() const {
+        return m_primitiveSelectionWidget;
+    }
+
+    GridSettingWidget* gridSettingWidget() const {
+        return m_gridSettingWidget;
+    }
+
+    PenWidget* penWidget() const {
+        return m_penWidget;
+    }
 };
 
 #endif // GOTIKZ_LEFTSIDEBAR_H

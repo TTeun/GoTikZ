@@ -7,7 +7,7 @@
 
 #include <cstddef>
 class GridState {
-
+  public:
     bool showGrid() const;
 
     size_t gridSpacing() const;

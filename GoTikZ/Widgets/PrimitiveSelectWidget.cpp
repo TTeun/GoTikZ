@@ -27,7 +27,8 @@ PrimitiveSelectWidget::PrimitiveSelectWidget(QWidget* parent) : ActionWidget(par
     addTypeButton(groupBox, "Point", false);
     addTypeButton(groupBox, "PolyLine", false);
 
-    connect(m_buttonGroup, SIGNAL(buttonClicked(QAbstractButton*)), this, SLOT(primitiveSelected(QAbstractButton*)));
+    QObject::connect(m_buttonGroup, static_cast<void (QButtonGroup::*)(QAbstractButton*)>(&QButtonGroup::buttonClicked),
+                     this, &PrimitiveSelectWidget::primitiveSelected);
 
     groupBox->setSizePolicy(QSizePolicy::Maximum, QSizePolicy::Maximum);
     layout->addWidget(groupBox);
@@ -70,9 +71,9 @@ void PrimitiveSelectWidget::addTypeButton(QGroupBox* groupbox, const QString& ti
     m_buttonGroup->setId(radioButton, m_buttonGroup->buttons().size() - 1);
     groupbox->layout()->addWidget(radioButton);
 }
+
 void PrimitiveSelectWidget::primitiveSelected(QAbstractButton* button) {
     m_buttonGroup->blockSignals(false);
-    qDebug() << "asdsa";
     if (button->text() == QString("Point")) {
         emit actionDone(new ChangePrimitiveAction(DrawWidget::PRIMITIVE_TYPE::POINT));
     } else if (button->text() == QString("Line")) {

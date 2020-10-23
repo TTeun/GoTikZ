@@ -11,7 +11,7 @@ class ActionHandler;
 
 class Action {
   public:
-    enum class ACTION_TYPE { ADD_PRIMITIVE, CHANGE_PRIMITIVE_TYPE };
+    enum class ACTION_TYPE { ADD_PRIMITIVE, CHANGE_PRIMITIVE_TYPE, CHANGE_GRID_STATE, CHANGE_PEN };
 
     Action(ACTION_TYPE type) : m_actionType(type) {
     }

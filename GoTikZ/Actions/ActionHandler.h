@@ -8,26 +8,28 @@
 #include "UndoableAction.h"
 
 #include <QtCore/QObject>
+#include <Widgets/PrimitiveSelectWidget.h>
 #include <memory>
 #include <stack>
 
 class DrawWidget;
-class PrimitiveSelectWidget;
+class LeftSideBar;
 
 class ActionHandler : public QObject {
     Q_OBJECT
 
   public:
-    ActionHandler(DrawWidget* drawWidget, PrimitiveSelectWidget* primitiveTypeSelectWidget);
+    ActionHandler(DrawWidget* drawWidget, LeftSideBar* leftSideBar);
     ~ActionHandler() = default;
 
+    void                   init();
     void                   undoAction();
     void                   redoAction();
     DrawWidget*            drawWidget();
     PrimitiveSelectWidget* primitiveTypeSelectWidget();
 
   public slots:
-    void addAction(UndoableAction* action, bool isAlreadyDone, bool canBeUndone);
+    void addAction(UndoableAction* action, bool isAlreadyDone);
 
     void doAction(Action* action);
 
@@ -35,8 +37,8 @@ class ActionHandler : public QObject {
     std::stack<std::unique_ptr<UndoableAction>> m_undoStack;
     std::stack<std::unique_ptr<UndoableAction>> m_redoStack;
 
-    DrawWidget*            m_drawWidget;
-    PrimitiveSelectWidget* m_primitiveTypeSelectWidget;
+    DrawWidget*  m_drawWidget;
+    LeftSideBar* m_leftSideBar;
 };
 
 #endif // GOTIKZ_ACTIONHANDLER_H

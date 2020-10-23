@@ -14,7 +14,6 @@
 class UndoableAction;
 
 class PrimitiveSelectWidget : public ActionWidget {
-    Q_OBJECT
   public:
     explicit PrimitiveSelectWidget(QWidget* parent = 0);
     void setSelectedButton(DrawWidget::PRIMITIVE_TYPE type);

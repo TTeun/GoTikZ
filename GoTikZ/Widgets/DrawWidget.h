@@ -6,6 +6,7 @@
 #include "Drawable/StreamDrawable.h"
 
 #include <QWidget>
+#include <States/GridState.h>
 #include <vector>
 
 class DrawWidget : public ActionWidget {
@@ -22,6 +23,8 @@ class DrawWidget : public ActionWidget {
     void           colorChanged(const QColor& color);
     void           setPrimitiveType(PRIMITIVE_TYPE newType);
     PRIMITIVE_TYPE primitiveType() const;
+    void           setGridState(GridState newGridState);
+    void           setPen(QPen pen);
 
   protected:
     void paintEvent(QPaintEvent* e) final;
@@ -33,18 +36,16 @@ class DrawWidget : public ActionWidget {
 
   private:
     void drawGrid(QPainter* painter);
-
     void snap(const QPointF& mousePoint);
-
     void setStreamDrawable();
 
     std::unique_ptr<StreamDrawable>        m_streamDrawable = nullptr;
     std::vector<std::unique_ptr<Drawable>> m_drawables;
     PRIMITIVE_TYPE                         m_drawType = PRIMITIVE_TYPE::LINE;
     QPointF                                m_mousePoint;
-    QColor                                 m_color    = QColor{0, 0, 0};
-    bool                                   m_showGrid = true;
-    int                                    m_gridSize = 10;
+    QColor                                 m_color = QColor{0, 0, 0};
+    GridState                              m_gridState;
+    QPen                                   m_pen;
 };
 
 #endif // DRAWWIDGET_H

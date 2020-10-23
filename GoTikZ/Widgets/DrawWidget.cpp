@@ -4,9 +4,10 @@
 
 #include <Drawable/Point.h>
 #include <Drawable/StreamDrawableFactory.h>
+#include <QDebug>
 #include <QMouseEvent>
 #include <QPainter>
-#include <QtWidgets/QStyleOption>
+#include <QStyleOption>
 
 DrawWidget::DrawWidget(QWidget* parent) : ActionWidget(parent) {
     setMouseTracking(true);
@@ -16,7 +17,7 @@ void DrawWidget::paintEvent(QPaintEvent* e) {
     QPainter painter(this);
     QBrush   brush(Qt::white);
     painter.fillRect(this->rect(), brush);
-    if (m_showGrid) {
+    if (m_gridState.showGrid()) {
         drawGrid(&painter);
     }
 
@@ -38,7 +39,7 @@ void DrawWidget::mousePressEvent(QMouseEvent* event) {
     } else {
         if (m_streamDrawable->addPoint(m_mousePoint, event->button() == Qt::RightButton)) {
             m_drawables.push_back(std::unique_ptr<Drawable>(m_streamDrawable->drawable()));
-            emit undoableActionDone(new AddPrimitiveAction(m_drawables.back()->index()), true, true);
+            emit undoableActionDone(new AddPrimitiveAction(m_drawables.back()->index()), true);
             m_streamDrawable.reset(nullptr);
         }
     }
@@ -76,22 +77,23 @@ void DrawWidget::colorChanged(const QColor& color) {
 
 void DrawWidget::drawGrid(QPainter* painter) {
     painter->setPen(QPen{QColor{220, 221, 228}, 1});
-    for (size_t i = 0; static_cast<int>(i * m_gridSize) < width(); ++i) {
-        painter->drawLine(i * m_gridSize, 0, i * m_gridSize, height());
+    const auto gridSpacing = m_gridState.gridSpacing();
+    for (size_t i = 0; static_cast<int>(i * gridSpacing) < width(); ++i) {
+        painter->drawLine(i * gridSpacing, 0, i * gridSpacing, height());
     }
-    for (size_t i = 0; static_cast<int>(i * m_gridSize) < width(); ++i) {
-        painter->drawLine(0, i * m_gridSize, width(), i * m_gridSize);
+    for (size_t i = 0; static_cast<int>(i * gridSpacing) < width(); ++i) {
+        painter->drawLine(0, i * gridSpacing, width(), i * gridSpacing);
     }
 }
 
 void DrawWidget::setStreamDrawable() {
     switch (m_drawType) {
         case PRIMITIVE_TYPE::POINT:
-            m_drawables.push_back(std::unique_ptr<Drawable>(new Point(m_mousePoint, QPen(m_color, 5))));
-            emit undoableActionDone(new AddPrimitiveAction(m_drawables.back()->index()), true, true);
+            m_drawables.push_back(std::unique_ptr<Drawable>(new Point(m_mousePoint, m_pen)));
+            emit undoableActionDone(new AddPrimitiveAction(m_drawables.back()->index()), true);
             break;
         default:
-            m_streamDrawable.reset(StreamDrawableFactory::make(m_mousePoint, m_drawType, QPen(m_color, 2)));
+            m_streamDrawable.reset(StreamDrawableFactory::make(m_mousePoint, m_drawType, m_pen));
             break;
     }
     emit(updateSignal());
@@ -122,4 +124,12 @@ Drawable* DrawWidget::removeDrawable(const size_t index) {
     assert(returnPointer != nullptr);
     emit(updateSignal());
     return returnPointer;
+}
+void DrawWidget::setGridState(GridState newGridState) {
+    m_gridState = newGridState;
+    emit(updateSignal());
+}
+
+void DrawWidget::setPen(QPen pen) {
+    m_pen = pen;
 }
