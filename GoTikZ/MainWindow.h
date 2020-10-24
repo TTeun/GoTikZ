@@ -3,13 +3,8 @@
 
 #include <Actions/ActionHandler.h>
 #include <QMainWindow>
-//#include "Widgets/RightSideBar.h"
 
-QT_BEGIN_NAMESPACE
-namespace Ui {
-class MainWindow;
-}
-QT_END_NAMESPACE
+class LeftSideBar;
 
 class MainWindow : public QMainWindow {
     Q_OBJECT
@@ -21,8 +16,7 @@ class MainWindow : public QMainWindow {
     void keyPressEvent(QKeyEvent* event) override;
 
   private:
-    Ui::MainWindow* ui;
-
     std::unique_ptr<ActionHandler> m_actionHandler;
+    LeftSideBar*                   m_leftSideBar;
 };
 #endif // MAINWINDOW_H
