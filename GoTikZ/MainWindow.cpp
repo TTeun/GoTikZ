@@ -10,8 +10,9 @@
 MainWindow::MainWindow(QWidget* parent) : QMainWindow(parent), ui(new Ui::MainWindow) {
     ui->setupUi(this);
     auto* leftSideBar = ui->leftSideBarContent;
-    auto* drawWidget  = ui->widget;
-    m_actionHandler   = std::make_unique<ActionHandler>(drawWidget, leftSideBar);
+
+    auto* drawWidget = ui->widget;
+    m_actionHandler  = std::make_unique<ActionHandler>(drawWidget, leftSideBar);
 
     QObject::connect(drawWidget, &DrawWidget::updateSignal, this,
                      static_cast<void (QMainWindow::*)(void)>(&QMainWindow::update));

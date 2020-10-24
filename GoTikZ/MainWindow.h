@@ -3,6 +3,7 @@
 
 #include <Actions/ActionHandler.h>
 #include <QMainWindow>
+//#include "Widgets/RightSideBar.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui {

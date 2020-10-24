@@ -102,18 +102,19 @@
    </property>
   </action>
   <zorder>leftSideBar</zorder>
+  <zorder>rightSideBar</zorder>
  </widget>
  <customwidgets>
   <customwidget>
    <class>DrawWidget</class>
    <extends>QWidget</extends>
-   <header>Widgets/DrawWidget.h</header>
+   <header location="global">Widgets/DrawWidget.h</header>
    <container>1</container>
   </customwidget>
   <customwidget>
    <class>LeftSideBar</class>
    <extends>QWidget</extends>
-   <header>Widgets/LeftSideBar.h</header>
+   <header location="global">Widgets/LeftSideBar.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>
