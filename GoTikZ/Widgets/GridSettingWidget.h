@@ -16,7 +16,7 @@ class QCheckBox;
 class GridSettingWidget : public ActionWidget, public GroupBoxWidget {
 
   public:
-    explicit GridSettingWidget(QWidget* parent = 0);
+    explicit GridSettingWidget(QWidget* parent);
 
   private:
     void setSpacing(int spacing);

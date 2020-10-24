@@ -7,17 +7,14 @@
 
 #include "GroupBoxWidget.h"
 
-#include <QWidget>
-
 class PenWidget;
 class PrimitiveSelectWidget;
 class GridSettingWidget;
 
-class LeftSideBar : public QWidget, public GroupBoxWidget {
-    Q_OBJECT
+class LeftSideBar : public GroupBoxWidget {
 
   public:
-    explicit LeftSideBar(QWidget* parent = 0);
+    explicit LeftSideBar(QWidget* parent);
     PrimitiveSelectWidget* m_primitiveSelectionWidget;
     GridSettingWidget*     m_gridSettingWidget;
     PenWidget*             m_penWidget;

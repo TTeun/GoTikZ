@@ -9,10 +9,15 @@
 #include <States/GridState.h>
 #include <vector>
 
-class DrawWidget : public ActionWidget {
+class DrawWidget : public QWidget{
     Q_OBJECT
+
+signals:
+  void undoableActionDone(UndoableAction* action, bool isAlreadyDone);
+  void actionDone(Action* action);
+
   public:
-    explicit DrawWidget(QWidget* parent = nullptr);
+    explicit DrawWidget(QWidget* parent);
 
     void      addDrawable(Drawable* drawable);
     Drawable* removeDrawable(const size_t index);

@@ -10,15 +10,17 @@
 
 #include <QLayout>
 
-LeftSideBar::LeftSideBar(QWidget* parent) : QWidget(parent) {
-    auto* layout = GroupBoxWidget::init(this, "Settings")->layout();
+LeftSideBar::LeftSideBar(QWidget* parent) : GroupBoxWidget(parent, "Settings") {
+    auto* contentsLayout = layout();
 
-    m_primitiveSelectionWidget = new PrimitiveSelectWidget(this);
-    m_gridSettingWidget        = new GridSettingWidget(this);
-    m_penWidget                = new PenWidget(this);
-    layout->addWidget(m_primitiveSelectionWidget);
-    layout->addWidget(m_gridSettingWidget);
-    layout->addWidget(m_penWidget);
+    m_primitiveSelectionWidget = new PrimitiveSelectWidget(nullptr);
+    m_gridSettingWidget        = new GridSettingWidget(nullptr);
+    m_penWidget                = new PenWidget(nullptr);
+    contentsLayout->addWidget(m_primitiveSelectionWidget->m_groupBox);
+    contentsLayout->addWidget(m_gridSettingWidget->groupBox());
+    contentsLayout->addWidget(m_penWidget->groupBox());
+
+    m_groupBox->resize(80,400);
 }
 
 PrimitiveSelectWidget* LeftSideBar::primitiveSelectWidget() const {
@@ -33,4 +35,3 @@ PenWidget* LeftSideBar::penWidget() const {
     return m_penWidget;
 }
 
-//}

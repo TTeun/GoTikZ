@@ -11,14 +11,31 @@
 #include <QLayout>
 #include <QRadioButton>
 
-PrimitiveSelectWidget::PrimitiveSelectWidget(QWidget* parent) : ActionWidget(parent) {
-    auto* groupBox = GroupBoxWidget::init(this, "Primitive");
-    m_buttonGroup  = new QButtonGroup(groupBox);
+PrimitiveSelectWidget::PrimitiveSelectWidget(QWidget* parent) {
+    m_groupBox = new QGroupBox();
+    m_groupBox->setTitle( "Primitive");
+    auto* layout         = new QVBoxLayout(parent);
+    layout->setSpacing(0);
+    layout->setMargin(2);
+    m_groupBox->setLayout(layout);
+    m_groupBox->setStyleSheet(QString::fromUtf8("background-color: rgb(238, 238, 238)"));
 
-    addTypeButton(groupBox, "Line", true);
-    addTypeButton(groupBox, "Circle", false);
-    addTypeButton(groupBox, "Point", false);
-    addTypeButton(groupBox, "PolyLine", false);
+    QSizePolicy sizePolicy(QSizePolicy::Preferred, QSizePolicy::Preferred);
+    sizePolicy.setHorizontalStretch(0);
+    sizePolicy.setVerticalStretch(0);
+    m_groupBox->setSizePolicy(sizePolicy);
+
+    m_groupBox->setAlignment(Qt::AlignTop);
+    m_groupBox->setAlignment(Qt::AlignLeft | Qt::AlignTop);
+
+
+
+    m_buttonGroup  = new QButtonGroup( m_groupBox );
+
+    addTypeButton( "Line", true);
+    addTypeButton( "Circle", false);
+    addTypeButton( "Point", false);
+    addTypeButton( "PolyLine", false);
 
     QObject::connect(m_buttonGroup, static_cast<void (QButtonGroup::*)(QAbstractButton*)>(&QButtonGroup::buttonClicked),
                      this, &PrimitiveSelectWidget::primitiveSelected);
@@ -52,13 +69,13 @@ void PrimitiveSelectWidget::setSelectedButton(DrawWidget::PRIMITIVE_TYPE type) {
     assert(false);
 }
 
-void PrimitiveSelectWidget::addTypeButton(QGroupBox* groupbox, const QString& title, bool selected) {
-    auto* radioButton = new QRadioButton(groupbox);
+void PrimitiveSelectWidget::addTypeButton(const QString& title, bool selected) {
+    auto* radioButton = new QRadioButton(m_groupBox);
     radioButton->setChecked(selected);
     radioButton->setText(title);
     m_buttonGroup->addButton(radioButton);
     m_buttonGroup->setId(radioButton, m_buttonGroup->buttons().size() - 1);
-    groupbox->layout()->addWidget(radioButton);
+   m_groupBox->layout()->addWidget(radioButton);
 }
 
 void PrimitiveSelectWidget::primitiveSelected(QAbstractButton* button) {

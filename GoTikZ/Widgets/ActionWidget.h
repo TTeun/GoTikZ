@@ -5,16 +5,16 @@
 #ifndef GOTIKZ_ACTIONWIDGET_H
 #define GOTIKZ_ACTIONWIDGET_H
 
-#include <QWidget>
+#include <QObject>
 
 class UndoableAction;
 class Action;
 
-class ActionWidget : public QWidget {
+class ActionWidget : public QObject {
     Q_OBJECT
 
   protected:
-    explicit ActionWidget(QWidget* parent);
+    explicit ActionWidget() = default;
 
   signals:
     void undoableActionDone(UndoableAction* action, bool isAlreadyDone);

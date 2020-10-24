@@ -9,10 +9,10 @@
 
 #include <QWidget>
 
-class RightSideBar : public QWidget, public GroupBoxWidget {
+class RightSideBar : public GroupBoxWidget {
 
   public:
-    explicit RightSideBar(QWidget* parent = 0);
+    explicit RightSideBar(QWidget* parent);
 };
 
 #endif // GOTIKZ_LEFTSIDEBAR_H

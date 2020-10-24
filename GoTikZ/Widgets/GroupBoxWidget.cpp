@@ -8,24 +8,28 @@
 #include <QVBoxLayout>
 #include <QWidget>
 
-QGroupBox* GroupBoxWidget::init(QWidget* parent, const QString& title) {
+GroupBoxWidget::GroupBoxWidget(QWidget *parent, QString title) : m_groupBox( new QGroupBox(parent))
+{
+    m_groupBox->setTitle(title);
     auto* layout         = new QVBoxLayout(parent);
-    auto* groupBox       = new QGroupBox(parent);
-    auto* groupBoxLayout = new QVBoxLayout(groupBox);
-    groupBoxLayout->setSpacing(0);
-    groupBoxLayout->setMargin(0);
+    layout->setSpacing(0);
+    layout->setMargin(2);
+    m_groupBox->setLayout(layout);
+    m_groupBox->setStyleSheet(QString::fromUtf8("background-color: rgb(238, 238, 238)"));
 
-    groupBox->setLayout(groupBoxLayout);
-    groupBox->setTitle(title);
-    groupBox->setStyleSheet(QString::fromUtf8("background-color: rgb(238, 238, 238)"));
-
-    QSizePolicy sizePolicy(QSizePolicy::Maximum, QSizePolicy::Maximum);
+    QSizePolicy sizePolicy(QSizePolicy::Preferred, QSizePolicy::Preferred);
     sizePolicy.setHorizontalStretch(0);
     sizePolicy.setVerticalStretch(0);
-    sizePolicy.setHeightForWidth(groupBox->sizePolicy().hasHeightForWidth());
-    groupBox->setSizePolicy(sizePolicy);
+    m_groupBox->setSizePolicy(sizePolicy);
 
-    layout->addWidget(groupBox, 0, Qt::AlignTop);
-    parent->setLayout(layout);
-    return groupBox;
+    m_groupBox->setAlignment(Qt::AlignTop);
+    m_groupBox->setAlignment(Qt::AlignLeft | Qt::AlignTop);
+}
+
+QGroupBox *GroupBoxWidget::groupBox(){
+    return m_groupBox;
+}
+
+QLayout *GroupBoxWidget::layout(){
+    return m_groupBox->layout();
 }

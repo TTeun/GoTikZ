@@ -14,12 +14,16 @@ class ColorWidget;
 
 class PenWidget : public ActionWidget, public GroupBoxWidget {
 
+    Q_OBJECT
+
   public:
-    explicit PenWidget(QWidget* parent = 0);
+    explicit PenWidget(QWidget* parent);
     PenWidget(size_t indexOfPrimitive, QWidget* parent = 0);
 
-  private:
+ private slots:
     void setColor(QColor color);
+
+  private:
     void setWidth(int width);
     void create();
 

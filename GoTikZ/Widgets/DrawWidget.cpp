@@ -7,7 +7,7 @@
 #include <QMouseEvent>
 #include <QPainter>
 
-DrawWidget::DrawWidget(QWidget* parent) : ActionWidget(parent) {
+DrawWidget::DrawWidget(QWidget* parent) : QWidget(parent) {
     setMouseTracking(true);
 }
 

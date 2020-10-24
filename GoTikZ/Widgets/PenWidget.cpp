@@ -11,23 +11,23 @@
 #include <QSpinBox>
 #include <QLayout>
 
-PenWidget::PenWidget(QWidget* parent) : ActionWidget(parent) {
+PenWidget::PenWidget(QWidget* parent) : GroupBoxWidget(parent, "Pen") {
     create();
 }
 
 PenWidget::PenWidget(size_t indexOfPrimitive, QWidget* parent)
-    : ActionWidget(parent), m_indexOfPrimitive(indexOfPrimitive) {
+    : GroupBoxWidget(parent, "Pen"), m_indexOfPrimitive(indexOfPrimitive) {
     create();
 }
 
 void PenWidget::create() {
-    auto* contentsLayout = GroupBoxWidget::init(this, "Pen")->layout();
+    auto* contentsLayout = layout();
 
-    auto* colorWidget = new ColorWidget(this);
+    auto* colorWidget = new ColorWidget(m_groupBox);
     QObject::connect(colorWidget, &ColorWidget::colorUpdated, this, &PenWidget::setColor);
     contentsLayout->addWidget(colorWidget);
 
-    auto* spinBox = new QSpinBox(this);
+    auto* spinBox = new QSpinBox(m_groupBox);
     spinBox->setValue(3);
     spinBox->setMinimum(1);
     QObject::connect(spinBox, static_cast<void (QSpinBox::*)(int)>(&QSpinBox::valueChanged), this,

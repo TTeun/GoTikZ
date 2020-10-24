@@ -15,17 +15,20 @@ class UndoableAction;
 class QButtonGroup;
 class QAbstractButton;
 
-class PrimitiveSelectWidget : public ActionWidget, public GroupBoxWidget {
+class PrimitiveSelectWidget : public ActionWidget {
   public:
-    explicit PrimitiveSelectWidget(QWidget* parent = 0);
+    explicit PrimitiveSelectWidget(QWidget* parent);
 
     void setSelectedButton(DrawWidget::PRIMITIVE_TYPE type);
+
+    QGroupBox* m_groupBox;
+
 
   public slots:
     void primitiveSelected(QAbstractButton* button);
 
   private:
-    void addTypeButton(QGroupBox* groupbox, const QString& title, bool selected);
+    void addTypeButton( const QString& title, bool selected);
 
     QButtonGroup* m_buttonGroup;
 };

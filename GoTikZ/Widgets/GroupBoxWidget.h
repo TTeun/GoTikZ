@@ -5,16 +5,24 @@
 #ifndef GOTIKZ_GROUPBOXWIDGET_H
 #define GOTIKZ_GROUPBOXWIDGET_H
 
+#include <QGroupBox>
+
 class QWidget;
-class QGroupBox;
 class QString;
 
 class GroupBoxWidget {
 
   public:
-    GroupBoxWidget() = default;
+    GroupBoxWidget(QWidget* parent, QString title);
 
-    QGroupBox* init(QWidget* parent, const QString& title);
+    QGroupBox* groupBox();
+
+    QLayout* layout();
+
+    protected:
+
+    QGroupBox* m_groupBox;
+
 };
 
 #endif // GOTIKZ_GROUPBOXWIDGET_H

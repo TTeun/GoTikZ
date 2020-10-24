@@ -9,16 +9,16 @@
 #include <QtWidgets/QSpinBox>
 #include <QtWidgets/QVBoxLayout>
 
-GridSettingWidget::GridSettingWidget(QWidget* parent) : ActionWidget(parent) {
-    auto* contentsLayout = GroupBoxWidget::init(this, "Grid")->layout();
+GridSettingWidget::GridSettingWidget(QWidget* parent) : GroupBoxWidget(parent, "Grid") {
+    auto* contentsLayout = m_groupBox->layout();
 
-    m_showGridCheckBox = new QCheckBox(this);
+    m_showGridCheckBox = new QCheckBox(m_groupBox);
     m_showGridCheckBox->setChecked(true);
     m_showGridCheckBox->setText("Grid");
     QObject::connect(m_showGridCheckBox, &QCheckBox::toggled, this, &GridSettingWidget::setShowGrid);
     contentsLayout->addWidget(m_showGridCheckBox);
 
-    m_gridSpacingSpinBox = new QSpinBox(this);
+    m_gridSpacingSpinBox = new QSpinBox(m_groupBox);
     m_gridSpacingSpinBox->setValue(10);
     QObject::connect(m_gridSpacingSpinBox, static_cast<void (QSpinBox::*)(int)>(&QSpinBox::valueChanged), this,
                      &GridSettingWidget::setSpacing);

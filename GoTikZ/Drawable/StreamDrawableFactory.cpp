@@ -23,4 +23,5 @@ StreamDrawable* StreamDrawableFactory::make(const QPointF& point, DrawWidget::PR
         default:
             assert(false);
     }
+    return nullptr;
 }

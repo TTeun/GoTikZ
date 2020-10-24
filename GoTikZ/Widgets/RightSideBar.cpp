@@ -8,9 +8,8 @@
 #include <QLayout>
 #include <QtWidgets/QPushButton>
 
-RightSideBar::RightSideBar(QWidget* parent) : QWidget(parent) {
-    auto* layout = GroupBoxWidget::init(this, "Settings")->layout();
-
-    auto* pb = new QPushButton(this);
-    layout->addWidget(pb);
+RightSideBar::RightSideBar(QWidget* parent) : GroupBoxWidget(parent, "Right") {
+    auto* thisLayout = layout();
+    auto* pb = new QPushButton(m_groupBox);
+    thisLayout->addWidget(pb);
 }
