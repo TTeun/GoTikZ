@@ -7,8 +7,7 @@
 
 #include "UndoableAction.h"
 
-#include <QtCore/QObject>
-#include <Widgets/PrimitiveSelectWidget.h>
+#include <QObject>
 #include <memory>
 #include <stack>
 
@@ -22,11 +21,10 @@ class ActionHandler : public QObject {
     ActionHandler(DrawWidget* drawWidget, LeftSideBar* leftSideBar);
     ~ActionHandler() = default;
 
-    void                   init();
-    void                   undoAction();
-    void                   redoAction();
-    DrawWidget*            drawWidget();
-    PrimitiveSelectWidget* primitiveTypeSelectWidget();
+    void        init();
+    void        undoAction();
+    void        redoAction();
+    DrawWidget* drawWidget();
 
   public slots:
     void addAction(UndoableAction* action, bool isAlreadyDone);

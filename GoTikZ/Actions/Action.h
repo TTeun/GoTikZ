@@ -5,21 +5,18 @@
 #ifndef GOTIKZ_ACTION_H
 #define GOTIKZ_ACTION_H
 
-#include <QtCore/QString>
+#include <QString>
 
 class ActionHandler;
 
 class Action {
-  public:
+  protected:
     enum class ACTION_TYPE { ADD_PRIMITIVE, CHANGE_PRIMITIVE_TYPE, CHANGE_GRID_STATE, CHANGE_PEN };
 
-    Action(ACTION_TYPE type) : m_actionType(type) {
-    }
-
-    virtual void doAction(ActionHandler* actionHandler) = 0;
+    explicit Action(ACTION_TYPE type);
 
   public:
-    virtual QString toString() = 0;
+    virtual void doAction(ActionHandler* actionHandler) = 0;
 
   protected:
     ACTION_TYPE m_actionType;

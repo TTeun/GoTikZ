@@ -5,21 +5,15 @@
 #ifndef GOTIKZ_LEFTSIDEBAR_H
 #define GOTIKZ_LEFTSIDEBAR_H
 
-#include "GridSettingWidget.h"
-#include "PenWidget.h"
-#include "PrimitiveSelectWidget.h"
-#include "Widgets/DrawWidget.h"
+#include "GroupBoxWidget.h"
 
 #include <QWidget>
 
-class QRadioButton;
-class ColorWidget;
-class QButtonGroup;
-class QAbstractButton;
-class QGroupBox;
-class QSpinBox;
+class PenWidget;
+class PrimitiveSelectWidget;
+class GridSettingWidget;
 
-class LeftSideBar : public QWidget {
+class LeftSideBar : public QWidget, public GroupBoxWidget {
     Q_OBJECT
 
   public:
@@ -28,17 +22,9 @@ class LeftSideBar : public QWidget {
     GridSettingWidget*     m_gridSettingWidget;
     PenWidget*             m_penWidget;
 
-    PrimitiveSelectWidget* primitiveSelectWidget() const {
-        return m_primitiveSelectionWidget;
-    }
-
-    GridSettingWidget* gridSettingWidget() const {
-        return m_gridSettingWidget;
-    }
-
-    PenWidget* penWidget() const {
-        return m_penWidget;
-    }
+    PrimitiveSelectWidget* primitiveSelectWidget() const;
+    GridSettingWidget*     gridSettingWidget() const;
+    PenWidget*             penWidget() const;
 };
 
 #endif // GOTIKZ_LEFTSIDEBAR_H

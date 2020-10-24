@@ -13,7 +13,3 @@ PenChangeAction::PenChangeAction(const QPen& pen, size_t indexOfPrimitive)
 void PenChangeAction::doAction(ActionHandler* actionHandler) {
     actionHandler->drawWidget()->setPen(m_pen);
 }
-
-QString PenChangeAction::toString() {
-    return "Change pen action";
-}

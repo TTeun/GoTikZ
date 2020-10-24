@@ -4,10 +4,8 @@
 
 #include <Drawable/Point.h>
 #include <Drawable/StreamDrawableFactory.h>
-#include <QDebug>
 #include <QMouseEvent>
 #include <QPainter>
-#include <QStyleOption>
 
 DrawWidget::DrawWidget(QWidget* parent) : ActionWidget(parent) {
     setMouseTracking(true);
@@ -70,9 +68,6 @@ void DrawWidget::snap(const QPointF& mousePoint) {
     } else {
         m_mousePoint = mousePoint;
     }
-}
-void DrawWidget::colorChanged(const QColor& color) {
-    m_color = color;
 }
 
 void DrawWidget::drawGrid(QPainter* painter) {

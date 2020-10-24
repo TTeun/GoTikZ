@@ -9,21 +9,20 @@
 
 class QPushButton;
 
-class ColorWidget : public QWidget
-{
+class ColorWidget : public QWidget {
     Q_OBJECT
 
-public:
+  public:
     explicit ColorWidget(QWidget* parent = 0);
 
-private slots:
+  private slots:
     void getColor();
 
-signals:
+  signals:
     void colorUpdated(QColor color);
 
-private:
-    QColor m_color;
+  private:
+    QColor       m_color;
     QPushButton* m_pushButton;
 };
 

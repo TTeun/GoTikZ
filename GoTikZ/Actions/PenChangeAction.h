@@ -7,14 +7,13 @@
 
 #include "Action.h"
 
-#include <QtGui/QPen>
+#include <QPen>
 
 class PenChangeAction : public Action {
   public:
     PenChangeAction(const QPen& pen, size_t indexOfPrimitive);
 
-    void    doAction(ActionHandler* actionHandler) override;
-    QString toString() override;
+    void doAction(ActionHandler* actionHandler) override;
 
   private:
     QPen   m_pen;

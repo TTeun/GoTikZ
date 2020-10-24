@@ -3,4 +3,7 @@
   <component name="CMakeWorkspace" PROJECT_DIR="$PROJECT_DIR$/GoTikZ">
     <contentRoot DIR="$PROJECT_DIR$" />
   </component>
+  <component name="ProjectPlainTextFileTypeManager">
+    <file url="file://$PROJECT_DIR$/GoTikZ/mainwindow.ui" />
+  </component>
 </project>

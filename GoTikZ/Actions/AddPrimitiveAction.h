@@ -19,9 +19,6 @@ class AddPrimitiveAction : public UndoableAction {
 
     void undoAction(ActionHandler* actionHandler) override;
 
-  protected:
-    QString toString() override;
-
   private:
     const size_t              m_indexOfPrimitive;
     std::unique_ptr<Drawable> m_drawable;

@@ -7,17 +7,19 @@
 
 #include "ActionWidget.h"
 #include "DrawWidget.h"
+#include "GroupBoxWidget.h"
 
-#include <QtWidgets/QButtonGroup>
-#include <QtWidgets/QGroupBox>
+#include <QGroupBox>
 
 class UndoableAction;
+class QButtonGroup;
+class QAbstractButton;
 
-class PrimitiveSelectWidget : public ActionWidget {
+class PrimitiveSelectWidget : public ActionWidget, public GroupBoxWidget {
   public:
     explicit PrimitiveSelectWidget(QWidget* parent = 0);
-    void setSelectedButton(DrawWidget::PRIMITIVE_TYPE type);
 
+    void setSelectedButton(DrawWidget::PRIMITIVE_TYPE type);
 
   public slots:
     void primitiveSelected(QAbstractButton* button);

@@ -2,14 +2,10 @@
 
 #include "Actions/ChangePrimitiveAction.h"
 #include "Widgets/ColorWidget.h"
-#include "Widgets/LeftSideBar.h"
+#include "Widgets/PrimitiveSelectWidget.h"
 #include "ui_mainwindow.h"
 
-#include <QDebug>
 #include <QKeyEvent>
-#include <QRadioButton>
-#include <QSpinBox>
-#include <memory>
 
 MainWindow::MainWindow(QWidget* parent) : QMainWindow(parent), ui(new Ui::MainWindow) {
     ui->setupUi(this);

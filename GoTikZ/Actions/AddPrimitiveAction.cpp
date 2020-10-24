@@ -20,7 +20,3 @@ void AddPrimitiveAction::undoAction(ActionHandler* actionHandler) {
     m_drawable =
         static_cast<std::unique_ptr<Drawable>>(actionHandler->drawWidget()->removeDrawable(m_indexOfPrimitive));
 }
-
-QString AddPrimitiveAction::toString() {
-    return "AddPrimitive UndoableAction. Index  = " + QString::number(m_indexOfPrimitive);
-}

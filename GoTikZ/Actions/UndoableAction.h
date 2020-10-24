@@ -7,10 +7,11 @@
 
 #include "Action.h"
 
-
 class UndoableAction : public Action {
+  protected:
+    explicit UndoableAction(ACTION_TYPE type);
+
   public:
-    UndoableAction(ACTION_TYPE type);
     ~UndoableAction() = default;
 
     virtual void undoAction(ActionHandler* actionHandler) = 0;

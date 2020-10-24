@@ -11,11 +11,9 @@
 class ChangeGridAction : public Action {
 
   public:
-    ChangeGridAction(GridState gridState) : Action(ACTION_TYPE::CHANGE_GRID_STATE), m_gridState(gridState) {
-    }
+    explicit ChangeGridAction(GridState gridState);
 
-    void    doAction(ActionHandler* actionHandler) override;
-    QString toString() override;
+    void doAction(ActionHandler* actionHandler) override;
 
   private:
     const GridState m_gridState;

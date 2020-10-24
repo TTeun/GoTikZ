@@ -3,3 +3,6 @@
 //
 
 #include "Action.h"
+
+Action::Action(Action::ACTION_TYPE type) : m_actionType(type) {
+}

@@ -16,15 +16,13 @@ class DrawWidget : public ActionWidget {
 
     void      addDrawable(Drawable* drawable);
     Drawable* removeDrawable(const size_t index);
-
     enum class PRIMITIVE_TYPE { LINE, POINT, CIRCLE, POLY_LINE };
+    PRIMITIVE_TYPE primitiveType() const;
 
   public slots:
-    void           colorChanged(const QColor& color);
-    void           setPrimitiveType(PRIMITIVE_TYPE newType);
-    PRIMITIVE_TYPE primitiveType() const;
-    void           setGridState(GridState newGridState);
-    void           setPen(QPen pen);
+    void setPrimitiveType(PRIMITIVE_TYPE newType);
+    void setGridState(GridState newGridState);
+    void setPen(QPen pen);
 
   protected:
     void paintEvent(QPaintEvent* e) final;
@@ -43,7 +41,6 @@ class DrawWidget : public ActionWidget {
     std::vector<std::unique_ptr<Drawable>> m_drawables;
     PRIMITIVE_TYPE                         m_drawType = PRIMITIVE_TYPE::LINE;
     QPointF                                m_mousePoint;
-    QColor                                 m_color = QColor{0, 0, 0};
     GridState                              m_gridState;
     QPen                                   m_pen;
 };

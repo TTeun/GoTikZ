@@ -6,21 +6,14 @@
 
 #include "../Actions/ChangePrimitiveAction.h"
 
-#include <QDebug>
-#include <QtWidgets/QButtonGroup>
-#include <QtWidgets/QGroupBox>
-#include <QtWidgets/QRadioButton>
-#include <QtWidgets/QVBoxLayout>
+#include <QButtonGroup>
+#include <QGroupBox>
+#include <QLayout>
+#include <QRadioButton>
 
 PrimitiveSelectWidget::PrimitiveSelectWidget(QWidget* parent) : ActionWidget(parent) {
-    auto* layout = new QVBoxLayout(this);
-
-    auto* groupBox       = new QGroupBox(this);
-    auto* groupBoxLayout = new QVBoxLayout(groupBox);
-    groupBox->setLayout(groupBoxLayout);
-    groupBox->setTitle("Primitive");
-
-    m_buttonGroup = new QButtonGroup(groupBox);
+    auto* groupBox = GroupBoxWidget::init(this, "Primitive");
+    m_buttonGroup  = new QButtonGroup(groupBox);
 
     addTypeButton(groupBox, "Line", true);
     addTypeButton(groupBox, "Circle", false);
@@ -29,10 +22,6 @@ PrimitiveSelectWidget::PrimitiveSelectWidget(QWidget* parent) : ActionWidget(par
 
     QObject::connect(m_buttonGroup, static_cast<void (QButtonGroup::*)(QAbstractButton*)>(&QButtonGroup::buttonClicked),
                      this, &PrimitiveSelectWidget::primitiveSelected);
-
-    groupBox->setSizePolicy(QSizePolicy::Maximum, QSizePolicy::Maximum);
-    layout->addWidget(groupBox);
-    setLayout(layout);
 }
 
 void PrimitiveSelectWidget::setSelectedButton(DrawWidget::PRIMITIVE_TYPE type) {
@@ -73,7 +62,7 @@ void PrimitiveSelectWidget::addTypeButton(QGroupBox* groupbox, const QString& ti
 }
 
 void PrimitiveSelectWidget::primitiveSelected(QAbstractButton* button) {
-    m_buttonGroup->blockSignals(false);
+    //    m_buttonGroup->blockSignals(false);
     if (button->text() == QString("Point")) {
         emit actionDone(new ChangePrimitiveAction(DrawWidget::PRIMITIVE_TYPE::POINT));
     } else if (button->text() == QString("Line")) {

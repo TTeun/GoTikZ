@@ -5,23 +5,21 @@
 #include <QMainWindow>
 
 QT_BEGIN_NAMESPACE
-namespace Ui
-{
+namespace Ui {
 class MainWindow;
 }
 QT_END_NAMESPACE
 
-class MainWindow : public QMainWindow
-{
+class MainWindow : public QMainWindow {
     Q_OBJECT
 
-public:
+  public:
     explicit MainWindow(QWidget* parent = nullptr);
     ~MainWindow() override;
 
     void keyPressEvent(QKeyEvent* event) override;
 
-private:
+  private:
     Ui::MainWindow* ui;
 
     std::unique_ptr<ActionHandler> m_actionHandler;

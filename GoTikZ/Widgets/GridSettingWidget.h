@@ -7,12 +7,13 @@
 
 #include "../Actions/ChangeGridAction.h"
 #include "ActionWidget.h"
+#include "GroupBoxWidget.h"
 #include "States/GridState.h"
 
-#include <QtWidgets/QCheckBox>
-#include <QtWidgets/QSpinBox>
+class QSpinBox;
+class QCheckBox;
 
-class GridSettingWidget : public ActionWidget {
+class GridSettingWidget : public ActionWidget, public GroupBoxWidget {
 
   public:
     explicit GridSettingWidget(QWidget* parent = 0);

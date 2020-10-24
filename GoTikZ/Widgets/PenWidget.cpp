@@ -7,10 +7,9 @@
 #include "../Actions/PenChangeAction.h"
 #include "ColorWidget.h"
 
-#include <QDebug>
 #include <QGroupBox>
 #include <QSpinBox>
-#include <QVBoxLayout>
+#include <QLayout>
 
 PenWidget::PenWidget(QWidget* parent) : ActionWidget(parent) {
     create();
@@ -22,27 +21,18 @@ PenWidget::PenWidget(size_t indexOfPrimitive, QWidget* parent)
 }
 
 void PenWidget::create() {
-    auto* layout = new QVBoxLayout(this);
-
-    auto* groupBox       = new QGroupBox(this);
-    auto* groupBoxLayout = new QVBoxLayout(groupBox);
-    groupBox->setLayout(groupBoxLayout);
-    groupBox->setTitle("Pen");
+    auto* contentsLayout = GroupBoxWidget::init(this, "Pen")->layout();
 
     auto* colorWidget = new ColorWidget(this);
     QObject::connect(colorWidget, &ColorWidget::colorUpdated, this, &PenWidget::setColor);
+    contentsLayout->addWidget(colorWidget);
 
     auto* spinBox = new QSpinBox(this);
     spinBox->setValue(3);
     spinBox->setMinimum(1);
     QObject::connect(spinBox, static_cast<void (QSpinBox::*)(int)>(&QSpinBox::valueChanged), this,
                      &PenWidget::setWidth);
-
-    groupBoxLayout->addWidget(colorWidget);
-    groupBoxLayout->addWidget(spinBox);
-    groupBox->setSizePolicy(QSizePolicy::Maximum, QSizePolicy::Maximum);
-    layout->addWidget(groupBox);
-    setLayout(layout);
+    contentsLayout->addWidget(spinBox);
 }
 
 void PenWidget::setColor(QColor color) {

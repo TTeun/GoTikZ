@@ -6,15 +6,13 @@
 #define GOTIKZ_GRIDSTATE_H
 
 #include <cstddef>
+
 class GridState {
   public:
-    bool showGrid() const;
-
+    bool   showGrid() const;
     size_t gridSpacing() const;
-
-    void setShowGrid(bool show);
-
-    void setGridSpacing(size_t spacing);
+    void   setShowGrid(bool show);
+    void   setGridSpacing(size_t spacing);
 
   private:
     bool   m_showGrid    = true;

@@ -4,10 +4,14 @@
 
 #include "LeftSideBar.h"
 
-#include <QVBoxLayout>
+#include "GridSettingWidget.h"
+#include "PenWidget.h"
+#include "PrimitiveSelectWidget.h"
+
+#include <QLayout>
 
 LeftSideBar::LeftSideBar(QWidget* parent) : QWidget(parent) {
-    auto* layout = new QVBoxLayout(this);
+    auto* layout = GroupBoxWidget::init(this, "Settings")->layout();
 
     m_primitiveSelectionWidget = new PrimitiveSelectWidget(this);
     m_gridSettingWidget        = new GridSettingWidget(this);
@@ -15,7 +19,18 @@ LeftSideBar::LeftSideBar(QWidget* parent) : QWidget(parent) {
     layout->addWidget(m_primitiveSelectionWidget);
     layout->addWidget(m_gridSettingWidget);
     layout->addWidget(m_penWidget);
-    setLayout(layout);
+}
+
+PrimitiveSelectWidget* LeftSideBar::primitiveSelectWidget() const {
+    return m_primitiveSelectionWidget;
+}
+
+GridSettingWidget* LeftSideBar::gridSettingWidget() const {
+    return m_gridSettingWidget;
+}
+
+PenWidget* LeftSideBar::penWidget() const {
+    return m_penWidget;
 }
 
 //}

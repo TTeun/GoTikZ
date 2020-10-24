@@ -5,10 +5,10 @@
 #include "ActionHandler.h"
 
 #include "Widgets/DrawWidget.h"
+#include "Widgets/GridSettingWidget.h"
 #include "Widgets/LeftSideBar.h"
+#include "Widgets/PenWidget.h"
 #include "Widgets/PrimitiveSelectWidget.h"
-
-#include <QDebug>
 
 ActionHandler::ActionHandler(DrawWidget* drawWidget, LeftSideBar* leftSideBar)
     : m_drawWidget(drawWidget), m_leftSideBar(leftSideBar) {
@@ -47,17 +47,12 @@ void ActionHandler::addAction(UndoableAction* action, bool isAlreadyDone) {
     if (not isAlreadyDone) {
         action->doAction(this);
     }
-    qDebug() << "Added an action: " + action->toString();
     m_undoStack.push(std::unique_ptr<UndoableAction>(action));
     m_redoStack = {};
 }
 
 DrawWidget* ActionHandler::drawWidget() {
     return m_drawWidget;
-}
-
-PrimitiveSelectWidget* ActionHandler::primitiveTypeSelectWidget() {
-    return m_leftSideBar->primitiveSelectWidget();
 }
 
 void ActionHandler::doAction(Action* action) {
