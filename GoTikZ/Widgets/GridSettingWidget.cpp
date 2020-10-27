@@ -9,7 +9,7 @@
 #include <QtWidgets/QSpinBox>
 #include <QtWidgets/QVBoxLayout>
 
-GridSettingWidget::GridSettingWidget(QWidget* parent) : GroupBoxWidget(parent, "Grid") {
+GridSettingWidget::GridSettingWidget(QWidget* parent) : GroupBoxContainer(parent, "Grid") {
     auto* contentsLayout = m_groupBox->layout();
 
     m_showGridCheckBox = new QCheckBox(m_groupBox);

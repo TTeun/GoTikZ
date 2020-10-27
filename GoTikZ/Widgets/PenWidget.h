@@ -6,13 +6,13 @@
 #define GOTIKZ_PENWIDGET_H
 
 #include "ActionWidget.h"
-#include "GroupBoxWidget.h"
+#include "GroupBoxContainer.h"
 
 #include <QPen>
 
 class ColorWidget;
 
-class PenWidget : public ActionWidget, public GroupBoxWidget {
+class PenWidget : public ActionWidget, public GroupBoxContainer {
 
     Q_OBJECT
 

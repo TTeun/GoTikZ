@@ -5,13 +5,13 @@
 #ifndef GOTIKZ_LEFTSIDEBAR_H
 #define GOTIKZ_LEFTSIDEBAR_H
 
-#include "GroupBoxWidget.h"
+#include "GroupBoxContainer.h"
 
 class PenWidget;
 class PrimitiveSelectWidget;
 class GridSettingWidget;
 
-class LeftSideBar : public GroupBoxWidget {
+class LeftSideBar : public GroupBoxContainer {
 
   public:
     explicit LeftSideBar(QWidget* parent);

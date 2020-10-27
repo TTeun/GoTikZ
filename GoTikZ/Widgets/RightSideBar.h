@@ -5,11 +5,11 @@
 #ifndef GOTIKZ_LEFTSIDEBAR_H
 #define GOTIKZ_LEFTSIDEBAR_H
 
-#include "GroupBoxWidget.h"
+#include "GroupBoxContainer.h"
 
 #include <QWidget>
 
-class RightSideBar : public GroupBoxWidget {
+class RightSideBar : public GroupBoxContainer {
 
   public:
     explicit RightSideBar(QWidget* parent);

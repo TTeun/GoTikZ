@@ -11,12 +11,12 @@
 #include <QSpinBox>
 #include <QLayout>
 
-PenWidget::PenWidget(QWidget* parent) : GroupBoxWidget(parent, "Pen") {
+PenWidget::PenWidget(QWidget* parent) : GroupBoxContainer(parent, "Pen") {
     create();
 }
 
 PenWidget::PenWidget(size_t indexOfPrimitive, QWidget* parent)
-    : GroupBoxWidget(parent, "Pen"), m_indexOfPrimitive(indexOfPrimitive) {
+    : GroupBoxContainer(parent, "Pen"), m_indexOfPrimitive(indexOfPrimitive) {
     create();
 }
 

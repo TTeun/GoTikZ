@@ -10,7 +10,7 @@
 
 #include <QLayout>
 
-LeftSideBar::LeftSideBar(QWidget* parent) : GroupBoxWidget(parent, "Settings") {
+LeftSideBar::LeftSideBar(QWidget* parent) : GroupBoxContainer(parent, "Settings") {
     auto* contentsLayout = layout();
 
     m_primitiveSelectionWidget = new PrimitiveSelectWidget(nullptr);

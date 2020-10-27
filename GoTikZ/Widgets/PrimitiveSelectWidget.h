@@ -7,7 +7,7 @@
 
 #include "ActionWidget.h"
 #include "DrawWidget.h"
-#include "GroupBoxWidget.h"
+#include "GroupBoxContainer.h"
 
 #include <QGroupBox>
 
