@@ -42,3 +42,7 @@ QPointF Circle::center() const {
 void Circle::setCenter(const QPointF& newCenter) {
     m_center = newCenter;
 }
+
+void Circle::setRadius(double newRadius) {
+    m_radius = newRadius;
+}

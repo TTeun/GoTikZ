@@ -109,7 +109,6 @@ void ActionHandler::keyPressEvent(QKeyEvent* event) {
                         MOUSE_POINTER_TYPE::SELECT); // Also sends signal
                     break;
             }
-
             break;
         case Qt::ControlModifier:
             switch (event->key()) {
@@ -128,6 +127,7 @@ void ActionHandler::keyPressEvent(QKeyEvent* event) {
 
 void ActionHandler::setEditWidget(GroupBoxContainer* widget) {
     QLayoutItem* item;
+
     while ((item = m_rightSideBar->layout()->takeAt(0)) != nullptr) {
         delete item->widget();
         delete item;

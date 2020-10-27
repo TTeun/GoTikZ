@@ -22,6 +22,16 @@ class Line : public Drawable {
 
     double dist(const QPointF& point) const override;
 
+    GroupBoxContainer* toWidget(ActionHandler* actionHandler) override;
+
+    QPointF point1() const;
+
+    QPointF point2() const;
+
+    void setPoint1(QPointF newPoint);
+
+    void setPoint2(QPointF newPoint);
+
   private:
     QPointF m_point1;
     QPointF m_point2;

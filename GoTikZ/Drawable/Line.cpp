@@ -8,6 +8,7 @@
 
 #include <Math/Math.h>
 #include <QPainter>
+#include <Widgets/DrawableEditWidgets/LineEditWidget.h>
 
 Line::Line(const LineStream& lineStream)
     : Drawable(lineStream.m_pen), m_point1(lineStream.m_point1), m_point2(lineStream.m_point2) {
@@ -29,4 +30,23 @@ std::pair<double, QPointF> Line::snap(QPointF point) {
 }
 double Line::dist(const QPointF& point) const {
     return std::min(Math::distance(point, m_point1), Math::distance(point, m_point2));
+}
+
+void Line::setPoint1(QPointF newPoint) {
+    m_point1 = newPoint;
+}
+
+void Line::setPoint2(QPointF newPoint) {
+    m_point2 = newPoint;
+}
+
+QPointF Line::point1() const {
+    return m_point1;
+}
+
+QPointF Line::point2() const {
+    return m_point2;
+}
+GroupBoxContainer* Line::toWidget(ActionHandler* actionHandler) {
+    return new LineEditWidget(this, actionHandler);
 }

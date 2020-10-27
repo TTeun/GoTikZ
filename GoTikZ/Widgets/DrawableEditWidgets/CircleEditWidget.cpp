@@ -17,9 +17,22 @@ CircleEditWidget::CircleEditWidget(Circle* circle, ActionHandler* actionHandler)
     QObject::connect(centerWidget, &XyWidget::sendValues, this, &CircleEditWidget::setCenter);
 
     contentsLayout->addWidget(centerWidget);
+
+    auto* radiusSpinBox = new QSpinBox();
+    radiusSpinBox->setMaximum(std::numeric_limits<int>::max());
+    radiusSpinBox->setValue(circle->radius());
+
+    QObject::connect(radiusSpinBox, static_cast<void (QSpinBox::*)(int)>(&QSpinBox::valueChanged), this,
+                     &CircleEditWidget::setRadius);
+    contentsLayout->addWidget(radiusSpinBox);
 }
 
 void CircleEditWidget::setCenter(QPointF newCenter) {
     m_circle->setCenter(newCenter);
+    m_actionHandler->draw();
+}
+
+void CircleEditWidget::setRadius(double newCenter) {
+    m_circle->setRadius(newCenter);
     m_actionHandler->draw();
 }

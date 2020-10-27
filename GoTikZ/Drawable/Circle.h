@@ -25,7 +25,13 @@ class Circle : public Drawable {
 
     QPointF center() const;
 
+    double radius() const {
+        return m_radius;
+    }
+
     void setCenter(const QPointF& newCenter);
+
+    void setRadius(double newRadius);
 
   private:
     QPointF m_center;

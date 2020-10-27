@@ -5,6 +5,7 @@
 #ifndef GOTIKZ_GROUPBOXCONTAINER_H
 #define GOTIKZ_GROUPBOXCONTAINER_H
 
+#include <QDebug>
 #include <QGroupBox>
 
 class QWidget;
