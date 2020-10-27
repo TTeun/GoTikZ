@@ -8,13 +8,13 @@
 #include <cmath>
 
 namespace Math {
-double magnitude(const QPointF& point) {
+double magnitude(const QPoint& point) {
     const auto x = point.x();
     const auto y = point.y();
     return std::sqrt(x * x + y * y);
 }
 
-double distance(const QPointF& point1, const QPointF& point2) {
+double distance(const QPoint& point1, const QPoint& point2) {
     return magnitude(point2 - point1);
 }
 

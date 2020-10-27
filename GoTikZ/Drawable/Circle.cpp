@@ -19,14 +19,14 @@ void Circle::draw(QPainter* painter, DRAW_FLAGS drawFlag) const {
     painter->drawEllipse(m_center.x() - m_radius, m_center.y() - m_radius, 2 * m_radius, 2 * m_radius);
 }
 
-std::pair<double, QPointF> Circle::snap(QPointF point) {
+std::pair<double, QPoint> Circle::snap(QPoint point) {
     const auto difference = point - m_center;
     const auto closest    = m_center + m_radius * difference / Math::magnitude(difference);
 
     return {Math::magnitude(point - closest), closest};
 }
 
-double Circle::dist(const QPointF& point) const {
+double Circle::dist(const QPoint& point) const {
     const double distToCenter = Math::distance(point, m_center);
     return std::abs(distToCenter - m_radius);
 }
@@ -35,11 +35,11 @@ GroupBoxContainer* Circle::toWidget(ActionHandler* actionHandler) {
     return new CircleEditWidget(this, actionHandler);
 }
 
-QPointF Circle::center() const {
+QPoint Circle::center() const {
     return m_center;
 }
 
-void Circle::setCenter(const QPointF& newCenter) {
+void Circle::setCenter(const QPoint& newCenter) {
     m_center = newCenter;
 }
 

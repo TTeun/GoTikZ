@@ -13,13 +13,13 @@ class XyWidget : public QWidget {
     Q_OBJECT
 
   public:
-    explicit XyWidget(const QPointF& point, const QString& value = "");
+    explicit XyWidget(const QPoint& point, const QString& value = "");
 
   private slots:
     void valuesChanged(int dummy);
 
   signals:
-    void sendValues(QPointF points);
+    void sendValues(QPoint points);
 
   private:
     QSpinBox* m_xButton;

@@ -7,28 +7,28 @@
 
 #include "StreamDrawable.h"
 
-#include <QPointF>
+#include <QPoint>
 
 class CircleStream : public StreamDrawable {
   public:
-    explicit CircleStream(const QPointF& point, const QPen& pen) : StreamDrawable(pen), m_center(point) {
+    explicit CircleStream(const QPoint& point, const QPen& pen) : StreamDrawable(pen), m_center(point) {
     }
 
-    void stream(const QPointF& point) override;
+    void stream(const QPoint& point) override;
 
-    bool addPoint(const QPointF& point, bool forceEnd) override;
+    bool addPoint(const QPoint& point, bool forceEnd) override;
 
     Drawable* drawable() override;
 
     void draw(QPainter* painter, DRAW_FLAGS drawFlag) const override;
 
-    std::pair<double, QPointF> snap(QPointF point) override;
-    double                     dist(const QPointF& point) const override;
+    std::pair<double, QPoint> snap(QPoint point) override;
+    double                     dist(const QPoint& point) const override;
 
   private:
     friend class Circle;
 
-    QPointF m_center;
+    QPoint m_center;
     double  m_radius = 0.0;
 };
 

@@ -5,13 +5,13 @@
 #ifndef GOTIKZ_MATH_H
 #define GOTIKZ_MATH_H
 
-class QPointF;
+class QPoint;
 
 namespace Math {
 
-double magnitude(const QPointF& point);
+double magnitude(const QPoint& point);
 
-double distance(const QPointF& point1, const QPointF& point2);
+double distance(const QPoint& point1, const QPoint& point2);
 
 } // namespace Math
 

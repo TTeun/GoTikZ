@@ -12,10 +12,10 @@ void Point::draw(QPainter* painter, DRAW_FLAGS drawFlag) const {
     painter->drawPoint(m_point);
 }
 
-std::pair<double, QPointF> Point::snap(QPointF point) {
+std::pair<double, QPoint> Point::snap(QPoint point) {
     return {Math::magnitude(point - m_point), m_point};
 }
 
-double Point::dist(const QPointF& point) const {
+double Point::dist(const QPoint& point) const {
     return Math::distance(point, m_point);
 }

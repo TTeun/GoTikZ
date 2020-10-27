@@ -15,17 +15,17 @@ class PolyLineStream : public StreamDrawable {
     friend class PolyLine;
 
   public:
-    PolyLineStream(const QPointF& point, const QPen& pen);
+    PolyLineStream(const QPoint& point, const QPen& pen);
 
     void                       draw(QPainter* painter, DRAW_FLAGS drawFlag) const override;
-    void                       stream(const QPointF& point) override;
-    bool                       addPoint(const QPointF& point, bool forceEnd) override;
+    void                       stream(const QPoint& point) override;
+    bool                       addPoint(const QPoint& point, bool forceEnd) override;
     Drawable*                  drawable() override;
-    std::pair<double, QPointF> snap(QPointF point) override;
-    double                     dist(const QPointF& point) const override;
+    std::pair<double, QPoint> snap(QPoint point) override;
+    double                     dist(const QPoint& point) const override;
 
   private:
-    std::vector<QPointF> m_points;
+    std::vector<QPoint> m_points;
 };
 
 #endif // GOTIKZ_POLYLINESTREAM_H

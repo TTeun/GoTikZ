@@ -28,7 +28,7 @@ class DrawWidget : public QWidget {
 
   private:
     void           drawGrid(QPainter* painter);
-    QPointF        m_mousePoint;
+    QPoint        m_mousePoint;
     GridState      m_gridState;
     const Model*   m_model;
     ActionHandler* m_actionHandler;

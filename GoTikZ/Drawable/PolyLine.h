@@ -7,7 +7,7 @@
 
 #include "Drawable.h"
 
-#include <QPointF>
+#include <QPoint>
 #include <vector>
 
 class PolyLineStream;
@@ -18,12 +18,12 @@ class PolyLine : public Drawable {
 
     void draw(QPainter* painter, DRAW_FLAGS drawFlag) const override;
 
-    std::pair<double, QPointF> snap(QPointF point) override;
+    std::pair<double, QPoint> snap(QPoint point) override;
 
-    double dist(const QPointF& point) const override;
+    double dist(const QPoint& point) const override;
 
   private:
-    std::vector<QPointF> m_points;
+    std::vector<QPoint> m_points;
 };
 
 #endif // GOTIKZ_POLYLINE_H

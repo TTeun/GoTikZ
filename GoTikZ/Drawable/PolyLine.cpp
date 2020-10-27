@@ -23,8 +23,8 @@ void PolyLine::draw(QPainter* painter, DRAW_FLAGS drawFlag) const {
     }
 }
 
-std::pair<double, QPointF> PolyLine::snap(QPointF point) {
-    auto initial = std::pair<double, QPointF>(std::numeric_limits<double>::max(), point);
+std::pair<double, QPoint> PolyLine::snap(QPoint point) {
+    auto initial = std::pair<double, QPoint>(std::numeric_limits<double>::max(), point);
     for (auto& el : m_points) {
         if (Math::magnitude(point - el) < initial.first) {
             initial = {Math::magnitude(point - el), el};
@@ -33,10 +33,10 @@ std::pair<double, QPointF> PolyLine::snap(QPointF point) {
     return initial;
 }
 
-double PolyLine::dist(const QPointF& point) const {
+double PolyLine::dist(const QPoint& point) const {
     double result = std::numeric_limits<double>::max();
     for (const auto& el : m_points) {
-        result = std::min(Math::distance(point, el.toPoint()), result);
+        result = std::min(Math::distance(point, el), result);
     }
     return result;
 }

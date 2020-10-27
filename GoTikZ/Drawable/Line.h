@@ -7,7 +7,7 @@
 
 #include "Drawable.h"
 
-#include <QPointF>
+#include <QPoint>
 
 class LineStream;
 
@@ -18,23 +18,23 @@ class Line : public Drawable {
 
     void draw(QPainter* painter, DRAW_FLAGS drawFlag) const override;
 
-    std::pair<double, QPointF> snap(QPointF point) override;
+    std::pair<double, QPoint> snap(QPoint point) override;
 
-    double dist(const QPointF& point) const override;
+    double dist(const QPoint& point) const override;
 
     GroupBoxContainer* toWidget(ActionHandler* actionHandler) override;
 
-    QPointF point1() const;
+    QPoint point1() const;
 
-    QPointF point2() const;
+    QPoint point2() const;
 
-    void setPoint1(const QPointF& newPoint);
+    void setPoint1(const QPoint& newPoint);
 
-    void setPoint2(const QPointF& newPoint);
+    void setPoint2(const QPoint& newPoint);
 
   private:
-    QPointF m_point1;
-    QPointF m_point2;
+    QPoint m_point1;
+    QPoint m_point2;
 };
 
 #endif // GOTIKZ_LINE_H

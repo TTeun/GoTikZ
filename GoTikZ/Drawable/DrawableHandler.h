@@ -28,21 +28,21 @@ class DrawableHandler {
 
     const std::vector<std::unique_ptr<Drawable>>& drawables();
 
-    bool addPointToStreamDrawable(const QPointF& point, bool forceEnd);
+    bool addPointToStreamDrawable(const QPoint& point, bool forceEnd);
 
     void finalizeStreamDrawable();
 
-    void stream(const QPointF& point);
+    void stream(const QPoint& point);
 
-    QPointF snap(const QPointF& mousePoint) const;
+    QPoint snap(const QPoint& mousePoint) const;
 
     void clearSelected();
 
-    void highlightClosest(const QPointF& point);
+    void highlightClosest(const QPoint& point);
 
-    Drawable* selectClosest(const QPointF& point);
+    Drawable* selectClosest(const QPoint& point);
 
-    Drawable* getClosest(const QPointF& point);
+    Drawable* getClosest(const QPoint& point);
 
     void stopStreaming();
 

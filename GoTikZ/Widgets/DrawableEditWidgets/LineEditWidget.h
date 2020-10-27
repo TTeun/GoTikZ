@@ -19,8 +19,8 @@ class LineEditWidget : public QObject, public GroupBoxContainer {
     LineEditWidget(Line* line, ActionHandler* actionHandler);
 
   public slots:
-    void setPoint1(QPointF newPoint);
-    void setPoint2(QPointF newPoint);
+    void setPoint1(QPoint newPoint);
+    void setPoint2(QPoint newPoint);
 
   private:
     Line*          m_line;

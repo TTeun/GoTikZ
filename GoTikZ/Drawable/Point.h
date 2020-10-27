@@ -7,20 +7,20 @@
 
 #include "Drawable.h"
 
-#include <QPointF>
+#include <QPoint>
 
 class Point : public Drawable {
   public:
-    Point(QPointF point, const QPen& pen) : Drawable(pen), m_point(point) {
+    Point(QPoint point, const QPen& pen) : Drawable(pen), m_point(point) {
     }
 
     void draw(QPainter* painter, DRAW_FLAGS drawFlag) const override;
 
-    std::pair<double, QPointF> snap(QPointF point) override;
-    double                     dist(const QPointF& point) const override;
+    std::pair<double, QPoint> snap(QPoint point) override;
+    double                     dist(const QPoint& point) const override;
 
   private:
-    QPointF m_point;
+    QPoint m_point;
 };
 
 #endif // GOTIKZ_POINT_H

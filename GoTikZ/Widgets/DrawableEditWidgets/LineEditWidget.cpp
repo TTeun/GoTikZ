@@ -30,12 +30,12 @@ LineEditWidget::LineEditWidget(Line* line, ActionHandler* actionHandler)
     contentsLayout->addWidget(penWidget->groupBox());
 }
 
-void LineEditWidget::setPoint1(QPointF newPoint) {
+void LineEditWidget::setPoint1(QPoint newPoint) {
     m_line->setPoint1(newPoint);
     m_actionHandler->draw();
 }
 
-void LineEditWidget::setPoint2(QPointF newPoint) {
+void LineEditWidget::setPoint2(QPoint newPoint) {
     m_line->setPoint2(newPoint);
     m_actionHandler->draw();
 }

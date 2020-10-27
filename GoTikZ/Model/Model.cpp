@@ -26,14 +26,14 @@ DrawableHandler& Model::drawableHandler() {
 
 void Model::mousePressEvent(QMouseEvent* event) {
     if (m_mousePointerType == MOUSE_POINTER_TYPE::SELECT) {
-        auto* selected = m_drawableHandler.selectClosest(event->localPos());
+        auto* selected = m_drawableHandler.selectClosest(QPoint(event->localPos().x(), event->localPos().y()));
         if (selected != nullptr) {
             m_actionHandler->setEditWidget(selected->toWidget(m_actionHandler));
         }
         return;
     }
 
-    QPointF m_mousePoint = m_drawableHandler.snap(event->localPos());
+    QPoint m_mousePoint = m_drawableHandler.snap(QPoint(event->localPos().x(), event->localPos().y()));
     if (not m_drawableHandler.isStreaming()) {
         switch (m_mousePointerType) {
             case MOUSE_POINTER_TYPE::POINT:
@@ -53,11 +53,11 @@ void Model::mousePressEvent(QMouseEvent* event) {
 }
 
 void Model::mouseMoveEvent(QMouseEvent* event) {
-    QPointF m_mousePoint = m_drawableHandler.snap(event->localPos());
+    QPoint m_mousePoint = m_drawableHandler.snap(QPoint(event->localPos().x(), event->localPos().y()));
     if (m_drawableHandler.isStreaming()) {
         m_drawableHandler.stream(m_mousePoint);
     } else if (m_mousePointerType == MOUSE_POINTER_TYPE::SELECT) {
-        m_drawableHandler.highlightClosest(event->localPos());
+        m_drawableHandler.highlightClosest(QPoint(event->localPos().x(), event->localPos().y()));
     }
 }
 

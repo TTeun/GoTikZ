@@ -33,7 +33,7 @@ CircleEditWidget::CircleEditWidget(Circle* circle, ActionHandler* actionHandler)
     contentsLayout->addWidget(penWidget->groupBox());
 }
 
-void CircleEditWidget::setCenter(QPointF newCenter) {
+void CircleEditWidget::setCenter(QPoint newCenter) {
     m_circle->setCenter(newCenter);
     m_actionHandler->draw();
 }
