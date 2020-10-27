@@ -6,8 +6,8 @@
 
 #include "../../Actions/ActionHandler.h"
 #include "../../Drawable/Line.h"
-
-#include <Widgets/AuxWidgets/XyWidget.h>
+#include "Widgets/AuxWidgets/XyWidget.h"
+#include "Widgets/PenWidget.h"
 
 LineEditWidget::LineEditWidget(Line* line, ActionHandler* actionHandler)
     : GroupBoxContainer(nullptr, "Line"), m_line(line), m_actionHandler(actionHandler) {
@@ -21,6 +21,10 @@ LineEditWidget::LineEditWidget(Line* line, ActionHandler* actionHandler)
 
     contentsLayout->addWidget(point1Widget);
     contentsLayout->addWidget(point2Widget);
+
+    PenWidget* penWidget = new PenWidget(nullptr, line->index(), m_line->pen());
+    QObject::connect(penWidget, &PenWidget::actionDone, m_actionHandler, &ActionHandler::doAction);
+    contentsLayout->addWidget(penWidget->groupBox());
 }
 
 void LineEditWidget::setPoint1(QPointF newPoint) {

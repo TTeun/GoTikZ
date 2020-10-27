@@ -9,6 +9,7 @@
 
 #include <QLayout>
 #include <Widgets/AuxWidgets/XyWidget.h>
+#include <Widgets/PenWidget.h>
 
 CircleEditWidget::CircleEditWidget(Circle* circle, ActionHandler* actionHandler)
     : GroupBoxContainer(nullptr, "Circle"), m_actionHandler(actionHandler), m_circle(circle) {
@@ -25,6 +26,10 @@ CircleEditWidget::CircleEditWidget(Circle* circle, ActionHandler* actionHandler)
     QObject::connect(radiusSpinBox, static_cast<void (QSpinBox::*)(int)>(&QSpinBox::valueChanged), this,
                      &CircleEditWidget::setRadius);
     contentsLayout->addWidget(radiusSpinBox);
+
+    PenWidget* penWidget = new PenWidget(nullptr, circle->index(), m_circle->pen());
+    QObject::connect(penWidget, &PenWidget::actionDone, m_actionHandler, &ActionHandler::doAction);
+    contentsLayout->addWidget(penWidget->groupBox());
 }
 
 void CircleEditWidget::setCenter(QPointF newCenter) {

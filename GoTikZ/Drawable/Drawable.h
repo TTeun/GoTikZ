@@ -22,8 +22,10 @@ class Drawable {
     virtual double                     dist(const QPointF& point) const = 0;
     virtual std::pair<double, QPointF> snap(QPointF point)              = 0;
     size_t                             index() const;
+    virtual GroupBoxContainer*         toWidget(ActionHandler* actionHandler);
+    void                               setPen(const QPen& pen);
 
-    virtual GroupBoxContainer* toWidget(ActionHandler* actionHandler);
+    const QPen& pen() const;
 
   protected:
     QPen m_pen;

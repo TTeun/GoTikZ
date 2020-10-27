@@ -64,6 +64,7 @@ DrawWidget* ActionHandler::drawWidget() {
 
 void ActionHandler::doAction(Action* action) {
     action->doAction(this);
+    draw();
 }
 
 void ActionHandler::draw() {

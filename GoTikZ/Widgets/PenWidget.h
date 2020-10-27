@@ -18,7 +18,7 @@ class PenWidget : public ActionWidget, public GroupBoxContainer {
 
   public:
     explicit PenWidget(QWidget* parent);
-    PenWidget(size_t indexOfPrimitive, QWidget* parent = 0);
+    PenWidget(QWidget* parent, size_t indexOfPrimitive, const QPen& pen);
 
   private slots:
     void setColor(QColor color);

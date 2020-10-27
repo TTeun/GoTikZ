@@ -4,6 +4,8 @@
 
 #include "MainWindow.h"
 
+#include "Widgets/GroupBoxContainer.h"
+
 MainWindow::MainWindow()
     : QMainWindow(nullptr), m_actionHandler(this), m_model(&m_actionHandler),
       m_mainWidget(new MainWidget(this, &m_model, &m_actionHandler)) {
@@ -12,6 +14,8 @@ MainWindow::MainWindow()
                          &m_model);
 
     resize(800, 600);
+
+    GroupBoxContainer g(nullptr, "as");
 }
 
 void MainWindow::keyPressEvent(QKeyEvent* event) {

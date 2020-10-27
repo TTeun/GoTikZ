@@ -15,20 +15,20 @@ PenWidget::PenWidget(QWidget* parent) : GroupBoxContainer(parent, "Pen") {
     create();
 }
 
-PenWidget::PenWidget(size_t indexOfPrimitive, QWidget* parent)
-    : GroupBoxContainer(parent, "Pen"), m_indexOfPrimitive(indexOfPrimitive) {
+PenWidget::PenWidget(QWidget* parent, size_t indexOfPrimitive, const QPen& pen)
+    : GroupBoxContainer(parent, "Pen"), m_indexOfPrimitive(indexOfPrimitive), m_pen(pen) {
     create();
 }
 
 void PenWidget::create() {
     auto* contentsLayout = layout();
 
-    auto* colorWidget = new ColorWidget(groupBox());
+    auto* colorWidget = new ColorWidget(groupBox(), m_pen.color());
     QObject::connect(colorWidget, &ColorWidget::colorUpdated, this, &PenWidget::setColor);
     contentsLayout->addWidget(colorWidget);
 
     auto* spinBox = new QSpinBox(groupBox());
-    spinBox->setValue(3);
+    spinBox->setValue(m_pen.width());
     spinBox->setMinimum(1);
     QObject::connect(spinBox, static_cast<void (QSpinBox::*)(int)>(&QSpinBox::valueChanged), this,
                      &PenWidget::setWidth);

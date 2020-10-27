@@ -129,3 +129,13 @@ Drawable* DrawableHandler::selectClosest(const QPointF& point) {
 void DrawableHandler::stopStreaming() {
     m_streamDrawable.reset(nullptr);
 }
+
+void DrawableHandler::setPen(const QPen& pen, size_t indexOfDrawable) {
+    for (auto& el : m_drawables) {
+        if (el->index() == indexOfDrawable) {
+            el->setPen(pen);
+            return;
+        }
+    }
+    assert(false);
+}

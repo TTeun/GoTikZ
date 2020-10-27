@@ -17,6 +17,10 @@ class GroupBoxContainer {
   public:
     GroupBoxContainer(QWidget* parent, QString title);
 
+    ~GroupBoxContainer() {
+        qDebug() << "dood\n";
+    }
+
     QGroupBox* groupBox();
 
     QLayout* layout();

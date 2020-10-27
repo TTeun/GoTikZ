@@ -37,3 +37,11 @@ size_t Drawable::index() const {
 GroupBoxContainer* Drawable::toWidget(ActionHandler* actionHandler) {
     return new GroupBoxContainer(nullptr, "stubb");
 }
+
+void Drawable::setPen(const QPen& pen) {
+    m_pen = pen;
+}
+
+const QPen& Drawable::pen() const {
+    return m_pen;
+}

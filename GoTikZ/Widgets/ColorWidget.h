@@ -13,7 +13,7 @@ class ColorWidget : public QWidget {
     Q_OBJECT
 
   public:
-    explicit ColorWidget(QWidget* parent);
+    explicit ColorWidget(QWidget* parent, const QColor& color = QColor(0, 0, 0));
 
   private slots:
     void getColor();

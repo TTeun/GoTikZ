@@ -46,6 +46,8 @@ class DrawableHandler {
 
     void stopStreaming();
 
+    void setPen(const QPen& pen, size_t indexOfDrawable);
+
   private:
     std::unique_ptr<StreamDrawable>        m_streamDrawable = nullptr;
     std::vector<std::unique_ptr<Drawable>> m_drawables;

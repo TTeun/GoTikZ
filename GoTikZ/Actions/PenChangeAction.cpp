@@ -13,5 +13,9 @@ PenChangeAction::PenChangeAction(const QPen& pen, size_t indexOfPrimitive)
 }
 
 void PenChangeAction::doAction(ActionHandler* actionHandler) {
-    actionHandler->model()->setPen(m_pen);
+    if (m_indexOfPrimitive == std::numeric_limits<size_t>::max()) {
+        actionHandler->model()->setPen(m_pen);
+    } else {
+        actionHandler->model()->drawableHandler().setPen(m_pen, m_indexOfPrimitive);
+    }
 }
