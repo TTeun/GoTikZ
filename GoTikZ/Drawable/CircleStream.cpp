@@ -14,7 +14,7 @@ void CircleStream::stream(const QPointF& point) {
     m_shouldDraw = true;
 }
 
-void CircleStream::draw(QPainter* painter) {
+void CircleStream::draw(QPainter* painter) const {
     Drawable::draw(painter);
     if (m_shouldDraw) {
         painter->drawEllipse(m_center.x() - m_radius, m_center.y() - m_radius, 2 * m_radius, 2 * m_radius);

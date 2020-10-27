@@ -22,8 +22,8 @@ class MainWindow : public QMainWindow {
 
   private:
     ActionHandler m_actionHandler;
-    MainWidget*   m_mainWidget;
     Model         m_model;
+    MainWidget*   m_mainWidget;
 };
 
 #endif // GOTIKZ_MAINWINDOW_H

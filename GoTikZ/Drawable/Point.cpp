@@ -7,7 +7,7 @@
 #include <Math/Math.h>
 #include <QPainter>
 
-void Point::draw(QPainter* painter) {
+void Point::draw(QPainter* painter) const {
     Drawable::draw(painter);
     painter->drawPoint(m_point);
 }

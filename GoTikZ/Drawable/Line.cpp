@@ -13,7 +13,7 @@ Line::Line(const LineStream& lineStream)
     : Drawable(lineStream.m_pen), m_point1(lineStream.m_point1), m_point2(lineStream.m_point2) {
 }
 
-void Line::draw(QPainter* painter) {
+void Line::draw(QPainter* painter) const {
     Drawable::draw(painter);
     painter->drawLine(m_point1, m_point2);
 }

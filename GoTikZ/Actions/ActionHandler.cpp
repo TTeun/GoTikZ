@@ -14,18 +14,18 @@
 ActionHandler::ActionHandler(MainWindow* mainWindow) : m_mainWindow(mainWindow) {
 }
 
-void ActionHandler::init(DrawWidget* drawWidget, LeftSideBar* leftSideBar) {
+void ActionHandler::init(DrawWidget* drawWidget, LeftSideBar* leftSideBar, Model* model) {
     m_drawWidget  = drawWidget;
-    m_leftSideBar = leftSideBar;
+    m_model       = model;
 
-    QObject::connect(m_drawWidget, &DrawWidget::undoableActionDone, this, &ActionHandler::addAction);
-    QObject::connect(m_leftSideBar->primitiveSelectWidget(), &PrimitiveSelectWidget::undoableActionDone, this,
+    //    QObject::connect(m_drawWidget, &DrawWidget::undoableActionDone, this, &ActionHandler::addAction);
+    QObject::connect(leftSideBar->primitiveSelectWidget(), &PrimitiveSelectWidget::undoableActionDone, this,
                      &ActionHandler::addAction);
-    QObject::connect(m_leftSideBar->primitiveSelectWidget(), &PrimitiveSelectWidget::actionDone, this,
+    QObject::connect(leftSideBar->primitiveSelectWidget(), &PrimitiveSelectWidget::actionDone, this,
                      &ActionHandler::doAction);
-    QObject::connect(m_leftSideBar->gridSettingWidget(), &GridSettingWidget::actionDone, this,
+    QObject::connect(leftSideBar->gridSettingWidget(), &GridSettingWidget::actionDone, this,
                      &ActionHandler::doAction);
-    QObject::connect(m_leftSideBar->penWidget(), &PenWidget::actionDone, this, &ActionHandler::doAction);
+    QObject::connect(leftSideBar->penWidget(), &PenWidget::actionDone, this, &ActionHandler::doAction);
 }
 
 void ActionHandler::undoAction() {
@@ -57,10 +57,25 @@ void ActionHandler::addAction(UndoableAction* action, bool isAlreadyDone) {
 DrawWidget* ActionHandler::drawWidget() {
     return m_drawWidget;
 }
+
 void ActionHandler::doAction(Action* action) {
     action->doAction(this);
 }
 
 void ActionHandler::draw() {
     m_mainWindow->repaint();
+}
+
+void ActionHandler::mousePressEvent(QMouseEvent* event) {
+    m_model->mousePressEvent(event);
+    draw();
+}
+
+void ActionHandler::mouseMoveEvent(QMouseEvent* event) {
+    m_model->mouseMoveEvent(event);
+    draw();
+}
+
+Model* ActionHandler::model() {
+    return m_model;
 }

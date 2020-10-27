@@ -10,25 +10,16 @@
 #include <States/GridState.h>
 #include <vector>
 
+class Model;
+
 class DrawWidget : public QWidget {
     Q_OBJECT
 
-  signals:
-    void undoableActionDone(UndoableAction* action, bool isAlreadyDone);
-    void actionDone(Action* action);
+  public:
+    DrawWidget(QWidget* parent, Model* model, ActionHandler* actionHandler);
 
   public:
-    explicit DrawWidget(QWidget* parent);
-
-    void      addDrawable(Drawable* drawable);
-    Drawable* removeDrawable(size_t index);
-    enum class PRIMITIVE_TYPE { LINE, POINT, CIRCLE, POLY_LINE };
-    PRIMITIVE_TYPE primitiveType() const;
-
-  public slots:
-    void setPrimitiveType(PRIMITIVE_TYPE newType);
     void setGridState(GridState newGridState);
-    void setPen(QPen pen);
 
   protected:
     void paintEvent(QPaintEvent* e) final;
@@ -40,13 +31,10 @@ class DrawWidget : public QWidget {
 
   private:
     void           drawGrid(QPainter* painter);
-    void           setStreamDrawable();
     QPointF        m_mousePoint;
     GridState      m_gridState;
-    PRIMITIVE_TYPE m_drawType = PRIMITIVE_TYPE::LINE;
-    QPen           m_drawPen  = QPen(Qt::black, 3);
-
-    DrawableHandler m_drawableHandler;
+    const Model*   m_model;
+    ActionHandler* m_actionHandler;
 };
 
 #endif // GOTIKZ_DRAWWIDGET_H

@@ -13,4 +13,5 @@ ChangeGridAction::ChangeGridAction(GridState gridState)
 
 void ChangeGridAction::doAction(ActionHandler* actionHandler) {
     actionHandler->drawWidget()->setGridState(m_gridState);
+    actionHandler->draw();
 }

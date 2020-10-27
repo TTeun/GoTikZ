@@ -14,7 +14,7 @@ PolyLineStream::PolyLineStream(const QPointF& point, const QPen& pen) : StreamDr
     m_points.push_back(point);
 }
 
-void PolyLineStream::draw(QPainter* painter) {
+void PolyLineStream::draw(QPainter* painter) const{
     assert(m_points.size() > 1);
     Drawable::draw(painter);
     for (size_t i = 1; i != m_points.size(); ++i) {

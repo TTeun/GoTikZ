@@ -7,6 +7,7 @@
 
 #include "UndoableAction.h"
 
+#include <QMouseEvent>
 #include <QObject>
 #include <memory>
 #include <stack>
@@ -14,6 +15,7 @@
 class DrawWidget;
 class LeftSideBar;
 class MainWindow;
+class Model;
 
 class ActionHandler : public QObject {
     Q_OBJECT
@@ -22,12 +24,16 @@ class ActionHandler : public QObject {
     ActionHandler(MainWindow* mainWindow);
     ~ActionHandler() = default;
 
-    void        init(DrawWidget* drawWidget, LeftSideBar* leftSideBar);
+    void        init(DrawWidget* drawWidget, LeftSideBar* leftSideBar, Model* model);
     void        undoAction();
     void        redoAction();
     DrawWidget* drawWidget();
+    Model* model();
 
-        void draw();
+    void draw();
+
+    void mousePressEvent(QMouseEvent* event);
+    void mouseMoveEvent(QMouseEvent* event);
 
   public slots:
     void addAction(UndoableAction* action, bool isAlreadyDone);
@@ -40,7 +46,7 @@ class ActionHandler : public QObject {
 
     DrawWidget*  m_drawWidget;
     MainWindow*  m_mainWindow;
-    LeftSideBar* m_leftSideBar;
+    Model*       m_model;
 };
 
 #endif // GOTIKZ_ACTIONHANDLER_H

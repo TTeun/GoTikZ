@@ -4,7 +4,7 @@
 
 #include "DrawableHandler.h"
 
-void DrawableHandler::draw(QPainter* painter) {
+void DrawableHandler::draw(QPainter* painter) const {
     for (const auto& el : m_drawables) {
         el->draw(painter);
     }
@@ -63,7 +63,7 @@ void DrawableHandler::stream(const QPointF& point) {
     m_streamDrawable->stream(point);
 }
 
-QPointF DrawableHandler::snap(const QPointF& mousePoint) {
+QPointF DrawableHandler::snap(const QPointF& mousePoint) const {
     std::pair<double, QPointF> snapData{std::numeric_limits<double>::max(), mousePoint};
     if (m_streamDrawable) {
         snapData = m_streamDrawable->snap(mousePoint);

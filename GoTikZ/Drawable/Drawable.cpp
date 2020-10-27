@@ -14,7 +14,7 @@ Drawable::Drawable(QPen pen) : m_pen(std::move(pen)) {
     ++s_maxIndex;
 }
 
-void Drawable::draw(QPainter* painter) {
+void Drawable::draw(QPainter* painter) const{
     painter->setPen(m_pen);
 }
 

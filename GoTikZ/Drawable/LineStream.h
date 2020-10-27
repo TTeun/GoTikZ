@@ -19,7 +19,7 @@ class LineStream : public StreamDrawable {
     void                       stream(const QPointF& point) override;
     bool                       addPoint(const QPointF& point, bool forceEnd) override;
     Drawable*                  drawable() override;
-    void                       draw(QPainter* painter) override;
+    void                       draw(QPainter* painter) const override;
     std::pair<double, QPointF> snap(QPointF point) override;
 
   private:

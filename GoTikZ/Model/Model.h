@@ -7,17 +7,29 @@
 
 #include "Drawable/DrawableHandler.h"
 
+#include <QMouseEvent>
+
+class ActionHandler;
+
 class Model {
 
   public:
-    Model() = default;
+    explicit Model(ActionHandler* actionHandler);
 
-    const DrawableHandler& drawableHandler() const {
-        return m_drawableHandler;
-    }
+    const DrawableHandler& drawableHandler() const;
+    DrawableHandler&       drawableHandler();
+    void                   mousePressEvent(QMouseEvent* event);
+    void                   mouseMoveEvent(QMouseEvent* event);
+    void                   setPen(const QPen& pen);
+
+    void setPrimitiveType(Drawable::PRIMITIVE_TYPE newType);
 
   private:
     DrawableHandler m_drawableHandler;
+    ActionHandler*  m_actionHandler;
+
+    QPen                     m_drawPen  = QPen(Qt::black, 3);
+    Drawable::PRIMITIVE_TYPE m_drawType = Drawable::PRIMITIVE_TYPE::LINE;
 };
 
 #endif // GOTIKZ_MODEL_H

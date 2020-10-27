@@ -11,11 +11,11 @@
 class ChangePrimitiveAction : public Action {
 
   public:
-    explicit ChangePrimitiveAction(DrawWidget::PRIMITIVE_TYPE newPrimitive);
+    explicit ChangePrimitiveAction(Drawable::PRIMITIVE_TYPE newPrimitive);
     void doAction(ActionHandler* actionHandler) override;
 
   private:
-    const DrawWidget::PRIMITIVE_TYPE m_newPrimitive;
+    const Drawable::PRIMITIVE_TYPE m_newPrimitive;
 };
 
 #endif // GOTIKZ_CHANGEPRIMITIVEACTION_H

@@ -6,14 +6,14 @@
 #include <QWidget>
 
 class LeftSideBar;
+class Model;
 
 class MainWidget : public QWidget {
     Q_OBJECT
 
   public:
-    explicit MainWidget(QWidget* parent = nullptr);
+    explicit MainWidget(QWidget* parent, Model* model, ActionHandler* actionHandler);
     ~MainWidget() override;
-
 
     DrawWidget* drawWidget() {
         return m_drawWidget;

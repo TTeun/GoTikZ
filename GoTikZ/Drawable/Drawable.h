@@ -14,7 +14,9 @@ class Drawable {
     explicit Drawable(QPen pen);
 
   public:
-    virtual void draw(QPainter* painter);
+    enum class PRIMITIVE_TYPE { LINE, POINT, CIRCLE, POLY_LINE };
+
+    virtual void draw(QPainter* painter) const;
 
     virtual std::pair<double, QPointF> snap(QPointF point) = 0;
 

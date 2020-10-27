@@ -13,7 +13,7 @@ void LineStream::stream(const QPointF& point) {
     m_shouldDraw = true;
 }
 
-void LineStream::draw(QPainter* painter) {
+void LineStream::draw(QPainter* painter) const {
     Drawable::draw(painter);
     if (m_shouldDraw) {
         painter->drawLine(m_point1, m_point2);

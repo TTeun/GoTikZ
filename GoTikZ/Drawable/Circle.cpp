@@ -13,7 +13,7 @@ Circle::Circle(const CircleStream& circleStream)
     : Drawable(circleStream.m_pen), m_center(circleStream.m_center), m_radius(circleStream.m_radius) {
 }
 
-void Circle::draw(QPainter* painter) {
+void Circle::draw(QPainter* painter) const {
     Drawable::draw(painter);
     painter->drawEllipse(m_center.x() - m_radius, m_center.y() - m_radius, 2 * m_radius, 2 * m_radius);
 }

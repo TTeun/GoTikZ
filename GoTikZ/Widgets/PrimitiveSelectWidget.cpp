@@ -13,8 +13,8 @@
 
 PrimitiveSelectWidget::PrimitiveSelectWidget(QWidget* parent) {
     m_groupBox = new QGroupBox();
-    m_groupBox->setTitle( "Primitive");
-    auto* layout         = new QVBoxLayout(parent);
+    m_groupBox->setTitle("Primitive");
+    auto* layout = new QVBoxLayout(parent);
     layout->setSpacing(0);
     layout->setMargin(2);
     m_groupBox->setLayout(layout);
@@ -28,32 +28,30 @@ PrimitiveSelectWidget::PrimitiveSelectWidget(QWidget* parent) {
     m_groupBox->setAlignment(Qt::AlignTop);
     m_groupBox->setAlignment(Qt::AlignLeft | Qt::AlignTop);
 
+    m_buttonGroup = new QButtonGroup(m_groupBox);
 
-
-    m_buttonGroup  = new QButtonGroup( m_groupBox );
-
-    addTypeButton( "Line", true);
-    addTypeButton( "Circle", false);
-    addTypeButton( "Point", false);
-    addTypeButton( "PolyLine", false);
+    addTypeButton("Line", true);
+    addTypeButton("Circle", false);
+    addTypeButton("Point", false);
+    addTypeButton("PolyLine", false);
 
     QObject::connect(m_buttonGroup, static_cast<void (QButtonGroup::*)(QAbstractButton*)>(&QButtonGroup::buttonClicked),
                      this, &PrimitiveSelectWidget::primitiveSelected);
 }
 
-void PrimitiveSelectWidget::setSelectedButton(DrawWidget::PRIMITIVE_TYPE type) {
+void PrimitiveSelectWidget::setSelectedButton(Drawable::PRIMITIVE_TYPE type) {
     QString string;
     switch (type) {
-        case DrawWidget::PRIMITIVE_TYPE::LINE:
+        case Drawable::PRIMITIVE_TYPE::LINE:
             string = "Line";
             break;
-        case DrawWidget::PRIMITIVE_TYPE::POINT:
+        case Drawable::PRIMITIVE_TYPE::POINT:
             string = "Point";
             break;
-        case DrawWidget::PRIMITIVE_TYPE::CIRCLE:
+        case Drawable::PRIMITIVE_TYPE::CIRCLE:
             string = "Circle";
             break;
-        case DrawWidget::PRIMITIVE_TYPE::POLY_LINE:
+        case Drawable::PRIMITIVE_TYPE::POLY_LINE:
             string = "PolyLine";
             break;
     }
@@ -75,19 +73,19 @@ void PrimitiveSelectWidget::addTypeButton(const QString& title, bool selected) {
     radioButton->setText(title);
     m_buttonGroup->addButton(radioButton);
     m_buttonGroup->setId(radioButton, m_buttonGroup->buttons().size() - 1);
-   m_groupBox->layout()->addWidget(radioButton);
+    m_groupBox->layout()->addWidget(radioButton);
 }
 
 void PrimitiveSelectWidget::primitiveSelected(QAbstractButton* button) {
     //    m_buttonGroup->blockSignals(false);
     if (button->text() == QString("Point")) {
-        emit actionDone(new ChangePrimitiveAction(DrawWidget::PRIMITIVE_TYPE::POINT));
+        emit actionDone(new ChangePrimitiveAction(Drawable::PRIMITIVE_TYPE::POINT));
     } else if (button->text() == QString("Line")) {
-        emit actionDone(new ChangePrimitiveAction(DrawWidget::PRIMITIVE_TYPE::LINE));
+        emit actionDone(new ChangePrimitiveAction(Drawable::PRIMITIVE_TYPE::LINE));
     } else if (button->text() == QString("Circle")) {
-        emit actionDone(new ChangePrimitiveAction(DrawWidget::PRIMITIVE_TYPE::CIRCLE));
+        emit actionDone(new ChangePrimitiveAction(Drawable::PRIMITIVE_TYPE::CIRCLE));
     } else if (button->text() == QString("PolyLine")) {
-        emit actionDone(new ChangePrimitiveAction(DrawWidget::PRIMITIVE_TYPE::POLY_LINE));
+        emit actionDone(new ChangePrimitiveAction(Drawable::PRIMITIVE_TYPE::POLY_LINE));
     } else {
     }
 }

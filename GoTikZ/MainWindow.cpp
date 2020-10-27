@@ -11,9 +11,11 @@
 
 #include <QKeyEvent>
 
-MainWindow::MainWindow() : QMainWindow(nullptr), m_actionHandler(this), m_mainWidget(new MainWidget(this)) {
+MainWindow::MainWindow()
+    : QMainWindow(nullptr), m_actionHandler(this), m_model(&m_actionHandler),
+      m_mainWidget(new MainWidget(this, &m_model, &m_actionHandler)) {
     setCentralWidget(m_mainWidget);
-    m_actionHandler.init(m_mainWidget->drawWidget(), m_mainWidget->leftSideBar());
+    m_actionHandler.init(m_mainWidget->drawWidget(), m_mainWidget->leftSideBar(), &m_model);
 
     resize(800, 600);
 }
@@ -24,19 +26,19 @@ void MainWindow::keyPressEvent(QKeyEvent* event) {
             switch (event->key()) {
                 case Qt::Key_P:
                     m_mainWidget->leftSideBar()->m_primitiveSelectionWidget->setSelectedButton(
-                        DrawWidget::PRIMITIVE_TYPE::POINT);
+                        Drawable::PRIMITIVE_TYPE::POINT); // Also sends signal
                     break;
                 case Qt::Key_L:
                     m_mainWidget->leftSideBar()->m_primitiveSelectionWidget->setSelectedButton(
-                        DrawWidget::PRIMITIVE_TYPE::LINE);
+                        Drawable::PRIMITIVE_TYPE::LINE); // Also sends signal
                     break;
                 case Qt::Key_C:
                     m_mainWidget->leftSideBar()->m_primitiveSelectionWidget->setSelectedButton(
-                        DrawWidget::PRIMITIVE_TYPE::CIRCLE);
+                        Drawable::PRIMITIVE_TYPE::CIRCLE); // Also sends signal
                     break;
                 case Qt::Key_Y:
                     m_mainWidget->leftSideBar()->m_primitiveSelectionWidget->setSelectedButton(
-                        DrawWidget::PRIMITIVE_TYPE::POLY_LINE);
+                        Drawable::PRIMITIVE_TYPE::POLY_LINE); // Also sends signal
                     break;
             }
 

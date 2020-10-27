@@ -16,7 +16,7 @@ class Line : public Drawable {
   public:
     explicit Line(const LineStream& lineStream);
 
-    void draw(QPainter* painter) override;
+    void draw(QPainter* painter)const override;
 
     std::pair<double, QPointF> snap(QPointF point) override;
 

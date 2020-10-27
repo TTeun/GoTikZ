@@ -16,7 +16,7 @@ class PolyLine : public Drawable {
   public:
     explicit PolyLine(const PolyLineStream& polyLineStream);
 
-    void draw(QPainter* painter) override;
+    void draw(QPainter* painter) const override;
 
     std::pair<double, QPointF> snap(QPointF point) override;
 

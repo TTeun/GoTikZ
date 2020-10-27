@@ -15,7 +15,7 @@ class Circle : public Drawable {
   public:
     explicit Circle(const CircleStream& circleStream);
 
-    void draw(QPainter* painter) override;
+    void draw(QPainter* painter)const override;
 
     std::pair<double, QPointF> snap(QPointF point) override;
 

@@ -16,7 +16,7 @@ class DrawableHandler {
   public:
     DrawableHandler() = default;
 
-    void draw(QPainter* painter);
+    void draw(QPainter* painter) const;
 
     void addDrawable(Drawable* drawable);
 
@@ -34,7 +34,7 @@ class DrawableHandler {
 
     void stream(const QPointF& point);
 
-    QPointF snap(const QPointF& mousePoint);
+    QPointF snap(const QPointF& mousePoint) const;
 
   private:
     std::unique_ptr<StreamDrawable>        m_streamDrawable = nullptr;

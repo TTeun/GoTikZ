@@ -19,7 +19,7 @@ class PrimitiveSelectWidget : public ActionWidget {
   public:
     explicit PrimitiveSelectWidget(QWidget* parent);
 
-    void setSelectedButton(DrawWidget::PRIMITIVE_TYPE type);
+    void setSelectedButton(Drawable::PRIMITIVE_TYPE type);
 
     QGroupBox* m_groupBox;
 
