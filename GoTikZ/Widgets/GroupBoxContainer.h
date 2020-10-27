@@ -20,7 +20,7 @@ class GroupBoxContainer {
 
     QLayout* layout();
 
-  protected:
+  private:
     QGroupBox* m_groupBox;
 };
 

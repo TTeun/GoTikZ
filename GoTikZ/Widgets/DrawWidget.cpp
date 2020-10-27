@@ -76,7 +76,7 @@ void DrawWidget::drawGrid(QPainter* painter) {
     for (size_t i = 0; static_cast<int>(i * gridSpacing) < width(); ++i) {
         painter->drawLine(i * gridSpacing, 0, i * gridSpacing, height());
     }
-    for (size_t i = 0; static_cast<int>(i * gridSpacing) < width(); ++i) {
+    for (size_t i = 0; static_cast<int>(i * gridSpacing) < height(); ++i) {
         painter->drawLine(0, i * gridSpacing, width(), i * gridSpacing);
     }
 }
@@ -84,11 +84,11 @@ void DrawWidget::drawGrid(QPainter* painter) {
 void DrawWidget::setStreamDrawable() {
     switch (m_drawType) {
         case PRIMITIVE_TYPE::POINT:
-            m_drawables.push_back(std::unique_ptr<Drawable>(new Point(m_mousePoint, m_pen)));
+            m_drawables.push_back(std::unique_ptr<Drawable>(new Point(m_mousePoint, m_drawPen)));
             emit undoableActionDone(new AddPrimitiveAction(m_drawables.back()->index()), true);
             break;
         default:
-            m_streamDrawable.reset(StreamDrawableFactory::make(m_mousePoint, m_drawType, m_pen));
+            m_streamDrawable.reset(StreamDrawableFactory::make(m_mousePoint, m_drawType, m_drawPen));
             break;
     }
     emit(updateSignal());
@@ -120,11 +120,12 @@ Drawable* DrawWidget::removeDrawable(const size_t index) {
     emit(updateSignal());
     return returnPointer;
 }
+
 void DrawWidget::setGridState(GridState newGridState) {
     m_gridState = newGridState;
     emit(updateSignal());
 }
 
 void DrawWidget::setPen(QPen pen) {
-    m_pen = pen;
+    m_drawPen = pen;
 }

@@ -1,4 +1,4 @@
-#include "MainWindow.h"
+#include "MainWidget.h"
 
 #include "Actions/ChangePrimitiveAction.h"
 #include "Widgets/ColorWidget.h"
@@ -9,26 +9,29 @@
 #include <QKeyEvent>
 #include <QPushButton>
 
-MainWindow::MainWindow(QWidget* parent) : QMainWindow(parent) {
-    auto* drawWidget = new DrawWidget(this);
+MainWidget::MainWidget(QWidget* parent) : QWidget(parent) {
+    auto* layout = new QHBoxLayout(this);
+    setLayout(layout);
 
-    m_leftSideBar = new LeftSideBar(this);
-    m_leftSideBar->groupBox()->setMinimumSize(50, 50);
-    layout()->addWidget(m_leftSideBar->groupBox());
-    m_actionHandler = std::make_unique<ActionHandler>(drawWidget, m_leftSideBar);
+    m_leftSideBar = new LeftSideBar(nullptr);
+    layout->addWidget(m_leftSideBar->groupBox());
+
+    auto* drawWidget = new DrawWidget(nullptr);
+    layout->addWidget(drawWidget);
 
     QObject::connect(drawWidget, &DrawWidget::updateSignal, this,
-                     static_cast<void (QMainWindow::*)(void)>(&QMainWindow::update));
-    setCentralWidget(drawWidget);
+                     static_cast<void (QWidget::*)(void)>(&QWidget::update));
+
+    m_actionHandler = std::make_unique<ActionHandler>(drawWidget, m_leftSideBar);
     m_actionHandler->init();
 
     resize(800, 600);
 }
 
-MainWindow::~MainWindow() {
+MainWidget::~MainWidget() {
 }
 
-void MainWindow::keyPressEvent(QKeyEvent* event) {
+void MainWidget::keyPressEvent(QKeyEvent* event) {
     switch (event->modifiers()) {
         case Qt::NoModifier:
             switch (event->key()) {

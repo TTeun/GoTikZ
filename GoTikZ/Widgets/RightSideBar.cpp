@@ -10,6 +10,6 @@
 
 RightSideBar::RightSideBar(QWidget* parent) : GroupBoxContainer(parent, "Right") {
     auto* thisLayout = layout();
-    auto* pb = new QPushButton(m_groupBox);
+    auto* pb = new QPushButton(groupBox());
     thisLayout->addWidget(pb);
 }

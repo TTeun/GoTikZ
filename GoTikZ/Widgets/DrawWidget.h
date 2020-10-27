@@ -1,5 +1,5 @@
-#ifndef DRAWWIDGET_H
-#define DRAWWIDGET_H
+#ifndef GOTIKZ_DRAWWIDGET_H
+#define GOTIKZ_DRAWWIDGET_H
 
 #include "ActionWidget.h"
 #include "Actions/UndoableAction.h"
@@ -9,12 +9,12 @@
 #include <States/GridState.h>
 #include <vector>
 
-class DrawWidget : public QWidget{
+class DrawWidget : public QWidget {
     Q_OBJECT
 
-signals:
-  void undoableActionDone(UndoableAction* action, bool isAlreadyDone);
-  void actionDone(Action* action);
+  signals:
+    void undoableActionDone(UndoableAction* action, bool isAlreadyDone);
+    void actionDone(Action* action);
 
   public:
     explicit DrawWidget(QWidget* parent);
@@ -44,10 +44,10 @@ signals:
 
     std::unique_ptr<StreamDrawable>        m_streamDrawable = nullptr;
     std::vector<std::unique_ptr<Drawable>> m_drawables;
-    PRIMITIVE_TYPE                         m_drawType = PRIMITIVE_TYPE::LINE;
     QPointF                                m_mousePoint;
     GridState                              m_gridState;
-    QPen                                   m_pen;
+    PRIMITIVE_TYPE                         m_drawType = PRIMITIVE_TYPE::LINE;
+    QPen                                   m_drawPen  = QPen(Qt::black, 3);
 };
 
-#endif // DRAWWIDGET_H
+#endif // GOTIKZ_DRAWWIDGET_H

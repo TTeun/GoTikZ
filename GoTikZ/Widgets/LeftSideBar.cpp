@@ -20,7 +20,8 @@ LeftSideBar::LeftSideBar(QWidget* parent) : GroupBoxContainer(parent, "Settings"
     contentsLayout->addWidget(m_gridSettingWidget->groupBox());
     contentsLayout->addWidget(m_penWidget->groupBox());
 
-    m_groupBox->resize(80,400);
+    contentsLayout->setAlignment(Qt::AlignTop);
+
 }
 
 PrimitiveSelectWidget* LeftSideBar::primitiveSelectWidget() const {

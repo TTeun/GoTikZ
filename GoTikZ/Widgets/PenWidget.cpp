@@ -8,8 +8,8 @@
 #include "ColorWidget.h"
 
 #include <QGroupBox>
-#include <QSpinBox>
 #include <QLayout>
+#include <QSpinBox>
 
 PenWidget::PenWidget(QWidget* parent) : GroupBoxContainer(parent, "Pen") {
     create();
@@ -23,11 +23,11 @@ PenWidget::PenWidget(size_t indexOfPrimitive, QWidget* parent)
 void PenWidget::create() {
     auto* contentsLayout = layout();
 
-    auto* colorWidget = new ColorWidget(m_groupBox);
+    auto* colorWidget = new ColorWidget(groupBox());
     QObject::connect(colorWidget, &ColorWidget::colorUpdated, this, &PenWidget::setColor);
     contentsLayout->addWidget(colorWidget);
 
-    auto* spinBox = new QSpinBox(m_groupBox);
+    auto* spinBox = new QSpinBox(groupBox());
     spinBox->setValue(3);
     spinBox->setMinimum(1);
     QObject::connect(spinBox, static_cast<void (QSpinBox::*)(int)>(&QSpinBox::valueChanged), this,
