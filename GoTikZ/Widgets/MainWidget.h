@@ -1,11 +1,12 @@
 #ifndef GOTIKZ_MAINWIDGET_H
 #define GOTIKZ_MAINWIDGET_H
 
-#include "Actions/ActionHandler.h"
-
 #include <QWidget>
 
+class RightSideBar;
 class LeftSideBar;
+class ActionHandler;
+class DrawWidget;
 class Model;
 
 class MainWidget : public QWidget {
@@ -23,9 +24,14 @@ class MainWidget : public QWidget {
         return m_leftSideBar;
     }
 
+    RightSideBar* rightSideBar() {
+        return m_rightSideBar;
+    }
+
   private:
-    LeftSideBar* m_leftSideBar;
-    DrawWidget*  m_drawWidget;
+    RightSideBar* m_rightSideBar;
+    LeftSideBar*  m_leftSideBar;
+    DrawWidget*   m_drawWidget;
 };
 
 #endif // GOTIKZ_MAINWIDGET_H

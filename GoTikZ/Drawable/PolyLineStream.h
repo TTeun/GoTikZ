@@ -17,11 +17,12 @@ class PolyLineStream : public StreamDrawable {
   public:
     PolyLineStream(const QPointF& point, const QPen& pen);
 
-    void                       draw(QPainter* painter) const override;
+    void                       draw(QPainter* painter, DRAW_FLAGS drawFlag) const override;
     void                       stream(const QPointF& point) override;
     bool                       addPoint(const QPointF& point, bool forceEnd) override;
     Drawable*                  drawable() override;
     std::pair<double, QPointF> snap(QPointF point) override;
+    double                     dist(const QPointF& point) const override;
 
   private:
     std::vector<QPointF> m_points;

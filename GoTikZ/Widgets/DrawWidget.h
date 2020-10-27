@@ -2,15 +2,12 @@
 #define GOTIKZ_DRAWWIDGET_H
 
 #include "ActionWidget.h"
-#include "Actions/UndoableAction.h"
-#include "Drawable/DrawableHandler.h"
-#include "Drawable/StreamDrawable.h"
+#include "States/GridState.h"
 
 #include <QWidget>
-#include <States/GridState.h>
-#include <vector>
 
 class Model;
+class ActionHandler;
 
 class DrawWidget : public QWidget {
     Q_OBJECT

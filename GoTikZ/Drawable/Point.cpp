@@ -7,11 +7,15 @@
 #include <Math/Math.h>
 #include <QPainter>
 
-void Point::draw(QPainter* painter) const {
-    Drawable::draw(painter);
+void Point::draw(QPainter* painter, DRAW_FLAGS drawFlag) const {
+    Drawable::draw(painter, drawFlag);
     painter->drawPoint(m_point);
 }
 
 std::pair<double, QPointF> Point::snap(QPointF point) {
     return {Math::magnitude(point - m_point), m_point};
+}
+
+double Point::dist(const QPointF& point) const {
+    return Math::distance(point, m_point);
 }

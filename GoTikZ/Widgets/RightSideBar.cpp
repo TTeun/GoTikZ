@@ -7,9 +7,9 @@
 #include <QGroupBox>
 #include <QLayout>
 #include <QtWidgets/QPushButton>
+#include <Widgets/AuxWidgets/XyWidget.h>
 
-RightSideBar::RightSideBar(QWidget* parent) : GroupBoxContainer(parent, "Right") {
-    auto* thisLayout = layout();
-    auto* pb = new QPushButton(groupBox());
-    thisLayout->addWidget(pb);
+RightSideBar::RightSideBar(QWidget* parent) : GroupBoxContainer(parent, "Edit") {
+//    auto* l = layout();
+//    l->addWidget(new XyWidget("center"));
 }

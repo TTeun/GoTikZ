@@ -8,20 +8,20 @@
 #include "GroupBoxContainer.h"
 
 class PenWidget;
-class PrimitiveSelectWidget;
+class MousePointerTypeSelectWidget;
 class GridSettingWidget;
 
 class LeftSideBar : public GroupBoxContainer {
 
   public:
     explicit LeftSideBar(QWidget* parent);
-    PrimitiveSelectWidget* m_primitiveSelectionWidget;
-    GridSettingWidget*     m_gridSettingWidget;
-    PenWidget*             m_penWidget;
+    MousePointerTypeSelectWidget* m_mousePointerTypeSelectWidget;
+    GridSettingWidget*            m_gridSettingWidget;
+    PenWidget*                    m_penWidget;
 
-    PrimitiveSelectWidget* primitiveSelectWidget() const;
-    GridSettingWidget*     gridSettingWidget() const;
-    PenWidget*             penWidget() const;
+    MousePointerTypeSelectWidget* mousePointerTypeSelect() const;
+    GridSettingWidget*            gridSettingWidget() const;
+    PenWidget*                    penWidget() const;
 };
 
 #endif // GOTIKZ_LEFTSIDEBAR_H

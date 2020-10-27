@@ -10,6 +10,7 @@
 #include <Actions/AddPrimitiveAction.h>
 #include <Drawable/Point.h>
 #include <Drawable/StreamDrawableFactory.h>
+#include <QDebug>
 
 Model::Model(ActionHandler* actionHandler) : m_actionHandler(actionHandler) {
     assert(m_actionHandler);
@@ -24,15 +25,24 @@ DrawableHandler& Model::drawableHandler() {
 }
 
 void Model::mousePressEvent(QMouseEvent* event) {
+    if (m_mousePointerType == MOUSE_POINTER_TYPE::SELECT) {
+        auto* selected = m_drawableHandler.selectClosest(event->localPos());
+        if (selected != nullptr) {
+            m_actionHandler->setEditWidget(selected->toWidget(m_actionHandler));
+        }
+        return;
+    }
+
     QPointF m_mousePoint = m_drawableHandler.snap(event->localPos());
     if (not m_drawableHandler.isStreaming()) {
-        switch (m_drawType) {
-            case Drawable::PRIMITIVE_TYPE::POINT:
+        switch (m_mousePointerType) {
+            case MOUSE_POINTER_TYPE::POINT:
                 m_drawableHandler.addDrawable(new Point(m_mousePoint, m_drawPen));
                 m_actionHandler->addAction(new AddPrimitiveAction(m_drawableHandler.drawables().back()->index()), true);
                 break;
             default:
-                m_drawableHandler.addStreamDrawable(StreamDrawableFactory::make(m_mousePoint, m_drawType, m_drawPen));
+                m_drawableHandler.addStreamDrawable(
+                    StreamDrawableFactory::make(m_mousePoint, m_mousePointerType, m_drawPen));
                 break;
         }
     } else {
@@ -46,6 +56,8 @@ void Model::mouseMoveEvent(QMouseEvent* event) {
     QPointF m_mousePoint = m_drawableHandler.snap(event->localPos());
     if (m_drawableHandler.isStreaming()) {
         m_drawableHandler.stream(m_mousePoint);
+    } else if (m_mousePointerType == MOUSE_POINTER_TYPE::SELECT) {
+        m_drawableHandler.highlightClosest(event->localPos());
     }
 }
 
@@ -53,6 +65,10 @@ void Model::setPen(const QPen& pen) {
     m_drawPen = pen;
 }
 
-void Model::setPrimitiveType(Drawable::PRIMITIVE_TYPE newType) {
-    m_drawType = newType;
+void Model::setMousePointerType(MOUSE_POINTER_TYPE newType) {
+    if (m_drawableHandler.isStreaming()) {
+        m_drawableHandler.stopStreaming();
+    }
+
+    m_mousePointerType = newType;
 }

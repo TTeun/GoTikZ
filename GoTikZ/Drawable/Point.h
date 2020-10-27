@@ -14,9 +14,10 @@ class Point : public Drawable {
     Point(QPointF point, const QPen& pen) : Drawable(pen), m_point(point) {
     }
 
-    void draw(QPainter* painter) const override;
+    void draw(QPainter* painter, DRAW_FLAGS drawFlag) const override;
 
     std::pair<double, QPointF> snap(QPointF point) override;
+    double                     dist(const QPointF& point) const override;
 
   private:
     QPointF m_point;

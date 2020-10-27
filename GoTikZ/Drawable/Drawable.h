@@ -8,19 +8,22 @@
 #include <QPen>
 
 class QPainter;
+class ActionHandler;
+class GroupBoxContainer;
 
 class Drawable {
   protected:
     explicit Drawable(QPen pen);
 
   public:
-    enum class PRIMITIVE_TYPE { LINE, POINT, CIRCLE, POLY_LINE };
+    enum class DRAW_FLAGS { NONE, SELECTED, HIGHLIGHTED };
 
-    virtual void draw(QPainter* painter) const;
+    virtual void                       draw(QPainter* painter, DRAW_FLAGS drawFlag) const;
+    virtual double                     dist(const QPointF& point) const = 0;
+    virtual std::pair<double, QPointF> snap(QPointF point)              = 0;
+    size_t                             index() const;
 
-    virtual std::pair<double, QPointF> snap(QPointF point) = 0;
-
-    size_t index() const;
+    virtual GroupBoxContainer* toWidget(ActionHandler* actionHandler);
 
   protected:
     QPen m_pen;

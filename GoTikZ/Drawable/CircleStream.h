@@ -20,9 +20,10 @@ class CircleStream : public StreamDrawable {
 
     Drawable* drawable() override;
 
-    void draw(QPainter* painter) const override;
+    void draw(QPainter* painter, DRAW_FLAGS drawFlag) const override;
 
     std::pair<double, QPointF> snap(QPointF point) override;
+    double                     dist(const QPointF& point) const override;
 
   private:
     friend class Circle;

@@ -5,10 +5,10 @@
 #ifndef GOTIKZ_GROUPBOXCONTAINER_H
 #define GOTIKZ_GROUPBOXCONTAINER_H
 
+#include <QGroupBox>
 
 class QWidget;
 class QString;
-class QGroupBox;
 class QLayout;
 
 class GroupBoxContainer {

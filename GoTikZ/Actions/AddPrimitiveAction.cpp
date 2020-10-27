@@ -14,6 +14,7 @@ AddPrimitiveAction::AddPrimitiveAction(size_t indexOfPrimitive)
 
 void AddPrimitiveAction::doAction(ActionHandler* actionHandler) {
     actionHandler->model()->drawableHandler().addDrawable(m_drawable.release());
+    actionHandler->model()->drawableHandler().clearSelected();
     assert(m_drawable == nullptr);
     actionHandler->draw();
 }
@@ -21,5 +22,6 @@ void AddPrimitiveAction::doAction(ActionHandler* actionHandler) {
 void AddPrimitiveAction::undoAction(ActionHandler* actionHandler) {
     m_drawable = static_cast<std::unique_ptr<Drawable>>(
         actionHandler->model()->drawableHandler().removeDrawable(m_indexOfPrimitive));
+    actionHandler->model()->drawableHandler().clearSelected();
     actionHandler->draw();
 }

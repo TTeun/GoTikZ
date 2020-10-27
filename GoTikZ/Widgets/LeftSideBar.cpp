@@ -5,27 +5,26 @@
 #include "LeftSideBar.h"
 
 #include "GridSettingWidget.h"
+#include "MousePointerTypeSelectWidget.h"
 #include "PenWidget.h"
-#include "PrimitiveSelectWidget.h"
 
 #include <QLayout>
 
 LeftSideBar::LeftSideBar(QWidget* parent) : GroupBoxContainer(parent, "Settings") {
     auto* contentsLayout = layout();
 
-    m_primitiveSelectionWidget = new PrimitiveSelectWidget(nullptr);
-    m_gridSettingWidget        = new GridSettingWidget(nullptr);
-    m_penWidget                = new PenWidget(nullptr);
-    contentsLayout->addWidget(m_primitiveSelectionWidget->m_groupBox);
+    m_mousePointerTypeSelectWidget = new MousePointerTypeSelectWidget(nullptr);
+    m_gridSettingWidget            = new GridSettingWidget(nullptr);
+    m_penWidget                    = new PenWidget(nullptr);
+    contentsLayout->addWidget(m_mousePointerTypeSelectWidget->groupBox());
     contentsLayout->addWidget(m_gridSettingWidget->groupBox());
     contentsLayout->addWidget(m_penWidget->groupBox());
 
     contentsLayout->setAlignment(Qt::AlignTop);
-
 }
 
-PrimitiveSelectWidget* LeftSideBar::primitiveSelectWidget() const {
-    return m_primitiveSelectionWidget;
+MousePointerTypeSelectWidget* LeftSideBar::mousePointerTypeSelect() const {
+    return m_mousePointerTypeSelectWidget;
 }
 
 GridSettingWidget* LeftSideBar::gridSettingWidget() const {
@@ -35,4 +34,3 @@ GridSettingWidget* LeftSideBar::gridSettingWidget() const {
 PenWidget* LeftSideBar::penWidget() const {
     return m_penWidget;
 }
-

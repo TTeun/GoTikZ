@@ -12,7 +12,7 @@ GroupBoxContainer::GroupBoxContainer(QWidget* parent, QString title) : m_groupBo
     m_groupBox->setTitle(title);
     auto* layout = new QVBoxLayout(parent);
     layout->setSpacing(0);
-    layout->setMargin(0);
+    layout->setMargin(2);
     m_groupBox->setLayout(layout);
     m_groupBox->setStyleSheet(QString::fromUtf8("background-color: rgb(238, 238, 238)"));
 

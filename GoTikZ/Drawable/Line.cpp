@@ -13,8 +13,8 @@ Line::Line(const LineStream& lineStream)
     : Drawable(lineStream.m_pen), m_point1(lineStream.m_point1), m_point2(lineStream.m_point2) {
 }
 
-void Line::draw(QPainter* painter) const {
-    Drawable::draw(painter);
+void Line::draw(QPainter* painter, DRAW_FLAGS drawFlag) const {
+    Drawable::draw(painter, drawFlag);
     painter->drawLine(m_point1, m_point2);
 }
 
@@ -26,4 +26,7 @@ std::pair<double, QPointF> Line::snap(QPointF point) {
     } else {
         return {d2, m_point2};
     }
+}
+double Line::dist(const QPointF& point) const {
+    return std::min(Math::distance(point, m_point1), Math::distance(point, m_point2));
 }

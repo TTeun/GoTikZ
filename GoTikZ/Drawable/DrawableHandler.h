@@ -36,9 +36,21 @@ class DrawableHandler {
 
     QPointF snap(const QPointF& mousePoint) const;
 
+    void clearSelected();
+
+    void highlightClosest(const QPointF& point);
+
+    Drawable* selectClosest(const QPointF& point);
+
+    Drawable* getClosest(const QPointF& point);
+
+    void stopStreaming();
+
   private:
     std::unique_ptr<StreamDrawable>        m_streamDrawable = nullptr;
     std::vector<std::unique_ptr<Drawable>> m_drawables;
+    std::vector<Drawable*>                 m_selectedDrawables;
+    std::vector<Drawable*>                 m_highlightedDrawables;
 };
 
 #endif // GOTIKZ_DRAWABLEHANDLER_H

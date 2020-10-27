@@ -11,7 +11,7 @@ class ActionHandler;
 
 class Action {
   protected:
-    enum class ACTION_TYPE { ADD_PRIMITIVE, CHANGE_PRIMITIVE_TYPE, CHANGE_GRID_STATE, CHANGE_PEN };
+    enum class ACTION_TYPE { ADD_PRIMITIVE, CHANGE_MOUSE_POINTER_TYPE, CHANGE_GRID_STATE, CHANGE_PEN };
 
     explicit Action(ACTION_TYPE type);
 
