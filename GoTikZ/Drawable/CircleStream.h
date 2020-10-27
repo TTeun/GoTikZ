@@ -2,16 +2,16 @@
 // Created by pc on 15-10-20.
 //
 
-#ifndef GOTIKZ_CIRCLE_STREAM_H
-#define GOTIKZ_CIRCLE_STREAM_H
+#ifndef GOTIKZ_CIRCLESTREAM_H
+#define GOTIKZ_CIRCLESTREAM_H
 
 #include "StreamDrawable.h"
 
 #include <QPointF>
 
-class Circle_Stream : public StreamDrawable {
+class CircleStream : public StreamDrawable {
   public:
-    explicit Circle_Stream(const QPointF& point, const QPen& pen) : StreamDrawable(pen), m_center(point) {
+    explicit CircleStream(const QPointF& point, const QPen& pen) : StreamDrawable(pen), m_center(point) {
     }
 
     void stream(const QPointF& point) override;
@@ -31,4 +31,4 @@ class Circle_Stream : public StreamDrawable {
     double  m_radius = 0.0;
 };
 
-#endif // GOTIKZ_CIRCLE_STREAM_H
+#endif // GOTIKZ_CIRCLESTREAM_H

@@ -2,8 +2,8 @@
 // Created by pc on 15-10-20.
 //
 
-#ifndef GOTIKZ_LINE_STREAM_H
-#define GOTIKZ_LINE_STREAM_H
+#ifndef GOTIKZ_LINESTREAM_H
+#define GOTIKZ_LINESTREAM_H
 
 #include "StreamDrawable.h"
 
@@ -11,9 +11,9 @@
 
 class Line;
 
-class Line_Stream : public StreamDrawable {
+class LineStream : public StreamDrawable {
   public:
-    Line_Stream(const QPointF& point, const QPen& pen) : StreamDrawable(pen), m_point1(point) {
+    LineStream(const QPointF& point, const QPen& pen) : StreamDrawable(pen), m_point1(point) {
     }
 
     void                       stream(const QPointF& point) override;
@@ -29,4 +29,4 @@ class Line_Stream : public StreamDrawable {
     QPointF m_point2;
 };
 
-#endif // GOTIKZ_LINE_STREAM_H
+#endif // GOTIKZ_LINESTREAM_H

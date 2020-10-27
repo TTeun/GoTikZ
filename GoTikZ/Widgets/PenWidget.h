@@ -20,7 +20,7 @@ class PenWidget : public ActionWidget, public GroupBoxContainer {
     explicit PenWidget(QWidget* parent);
     PenWidget(size_t indexOfPrimitive, QWidget* parent = 0);
 
- private slots:
+  private slots:
     void setColor(QColor color);
 
   private:
@@ -28,7 +28,7 @@ class PenWidget : public ActionWidget, public GroupBoxContainer {
     void create();
 
     size_t m_indexOfPrimitive = std::numeric_limits<size_t>::max();
-    QPen   m_pen;
+    QPen   m_pen              = QPen(Qt::black, 3);
 };
 
 #endif // GOTIKZ_PENWIDGET_H

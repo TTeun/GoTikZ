@@ -4,21 +4,21 @@
 
 #include "StreamDrawableFactory.h"
 
-#include "Circle_Stream.h"
-#include "Line_Stream.h"
-#include "PolyLine_Stream.h"
+#include "CircleStream.h"
+#include "LineStream.h"
+#include "PolyLineStream.h"
 
 StreamDrawable* StreamDrawableFactory::make(const QPointF& point, DrawWidget::PRIMITIVE_TYPE type, const QPen& pen) {
     assert(type != DrawWidget::PRIMITIVE_TYPE::POINT);
     switch (type) {
         case DrawWidget::PRIMITIVE_TYPE::LINE:
-            return new Line_Stream(point, pen);
+            return new LineStream(point, pen);
             break;
         case DrawWidget::PRIMITIVE_TYPE::CIRCLE:
-            return new Circle_Stream(point, pen);
+            return new CircleStream(point, pen);
             break;
         case DrawWidget::PRIMITIVE_TYPE::POLY_LINE:
-            return new PolyLine_Stream(point, pen);
+            return new PolyLineStream(point, pen);
             break;
         default:
             assert(false);

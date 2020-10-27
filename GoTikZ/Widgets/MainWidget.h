@@ -1,8 +1,9 @@
 #ifndef GOTIKZ_MAINWIDGET_H
 #define GOTIKZ_MAINWIDGET_H
 
-#include <Actions/ActionHandler.h>
-#include <QMainWindow>
+#include "Actions/ActionHandler.h"
+
+#include <QWidget>
 
 class LeftSideBar;
 
@@ -13,11 +14,18 @@ class MainWidget : public QWidget {
     explicit MainWidget(QWidget* parent = nullptr);
     ~MainWidget() override;
 
-    void keyPressEvent(QKeyEvent* event) override;
+
+    DrawWidget* drawWidget() {
+        return m_drawWidget;
+    }
+
+    LeftSideBar* leftSideBar() {
+        return m_leftSideBar;
+    }
 
   private:
-    std::unique_ptr<ActionHandler> m_actionHandler;
-    LeftSideBar*                   m_leftSideBar;
+    LeftSideBar* m_leftSideBar;
+    DrawWidget*  m_drawWidget;
 };
 
 #endif // GOTIKZ_MAINWIDGET_H

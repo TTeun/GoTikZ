@@ -17,3 +17,7 @@ Drawable::Drawable(QPen pen) : m_pen(std::move(pen)) {
 void Drawable::draw(QPainter* painter) {
     painter->setPen(m_pen);
 }
+
+size_t Drawable::index() const {
+    return m_index;
+}

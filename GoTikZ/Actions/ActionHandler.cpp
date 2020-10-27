@@ -4,17 +4,20 @@
 
 #include "ActionHandler.h"
 
+#include "MainWindow.h"
 #include "Widgets/DrawWidget.h"
 #include "Widgets/GridSettingWidget.h"
 #include "Widgets/LeftSideBar.h"
 #include "Widgets/PenWidget.h"
 #include "Widgets/PrimitiveSelectWidget.h"
 
-ActionHandler::ActionHandler(DrawWidget* drawWidget, LeftSideBar* leftSideBar)
-    : m_drawWidget(drawWidget), m_leftSideBar(leftSideBar) {
+ActionHandler::ActionHandler(MainWindow* mainWindow) : m_mainWindow(mainWindow) {
 }
 
-void ActionHandler::init() {
+void ActionHandler::init(DrawWidget* drawWidget, LeftSideBar* leftSideBar) {
+    m_drawWidget  = drawWidget;
+    m_leftSideBar = leftSideBar;
+
     QObject::connect(m_drawWidget, &DrawWidget::undoableActionDone, this, &ActionHandler::addAction);
     QObject::connect(m_leftSideBar->primitiveSelectWidget(), &PrimitiveSelectWidget::undoableActionDone, this,
                      &ActionHandler::addAction);
@@ -54,7 +57,10 @@ void ActionHandler::addAction(UndoableAction* action, bool isAlreadyDone) {
 DrawWidget* ActionHandler::drawWidget() {
     return m_drawWidget;
 }
-
 void ActionHandler::doAction(Action* action) {
     action->doAction(this);
+}
+
+void ActionHandler::draw() {
+    m_mainWindow->repaint();
 }

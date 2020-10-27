@@ -2,20 +2,20 @@
 // Created by pc on 15-10-20.
 //
 
-#ifndef GOTIKZ_POLYLINE_STREAM_H
-#define GOTIKZ_POLYLINE_STREAM_H
+#ifndef GOTIKZ_POLYLINESTREAM_H
+#define GOTIKZ_POLYLINESTREAM_H
 
 #include "StreamDrawable.h"
 
-#include <QVector>
+#include <vector>
 
 class PolyLine;
 
-class PolyLine_Stream : public StreamDrawable {
+class PolyLineStream : public StreamDrawable {
     friend class PolyLine;
 
   public:
-    PolyLine_Stream(const QPointF& point, const QPen& pen);
+    PolyLineStream(const QPointF& point, const QPen& pen);
 
     void                       draw(QPainter* painter) override;
     void                       stream(const QPointF& point) override;
@@ -24,7 +24,7 @@ class PolyLine_Stream : public StreamDrawable {
     std::pair<double, QPointF> snap(QPointF point) override;
 
   private:
-    QVector<QPointF> m_points;
+    std::vector<QPointF> m_points;
 };
 
-#endif // GOTIKZ_POLYLINE_STREAM_H
+#endif // GOTIKZ_POLYLINESTREAM_H

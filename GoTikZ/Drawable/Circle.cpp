@@ -4,12 +4,12 @@
 
 #include "Circle.h"
 
-#include "Circle_Stream.h"
+#include "CircleStream.h"
 
 #include <Math/Math.h>
 #include <QPainter>
 
-Circle::Circle(const Circle_Stream& circleStream)
+Circle::Circle(const CircleStream& circleStream)
     : Drawable(circleStream.m_pen), m_center(circleStream.m_center), m_radius(circleStream.m_radius) {
 }
 

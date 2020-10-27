@@ -18,9 +18,7 @@ class Drawable {
 
     virtual std::pair<double, QPointF> snap(QPointF point) = 0;
 
-    size_t index() const {
-        return m_index;
-    }
+    size_t index() const;
 
   protected:
     QPen m_pen;

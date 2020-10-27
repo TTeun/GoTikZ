@@ -8,20 +8,20 @@
 #include "Drawable.h"
 
 #include <QPointF>
-#include <QVector>
+#include <vector>
 
-class PolyLine_Stream;
+class PolyLineStream;
 
 class PolyLine : public Drawable {
   public:
-    explicit PolyLine(const PolyLine_Stream& polyLineStream);
+    explicit PolyLine(const PolyLineStream& polyLineStream);
 
     void draw(QPainter* painter) override;
 
     std::pair<double, QPointF> snap(QPointF point) override;
 
   private:
-    QVector<QPointF> m_points;
+    std::vector<QPointF> m_points;
 };
 
 #endif // GOTIKZ_POLYLINE_H

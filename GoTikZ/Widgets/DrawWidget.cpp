@@ -19,55 +19,36 @@ void DrawWidget::paintEvent(QPaintEvent* e) {
         drawGrid(&painter);
     }
 
-    if (m_streamDrawable) {
-        m_streamDrawable->draw(&painter);
-    }
-    for (auto& drawable : m_drawables) {
-        drawable->draw(&painter);
-    }
+    m_drawableHandler.draw(&painter);
+    //    if (m_streamDrawable) {
+    //        m_streamDrawable->draw(&painter);
+    //    }
+    //    for (auto& drawable : m_drawables) {
+    //        drawable->draw(&painter);
+    //    }
     painter.setPen(QPen{Qt::black, 3});
     painter.drawLine(m_mousePoint - QPointF{0, 8}, m_mousePoint + QPointF{0, 8});
     painter.drawLine(m_mousePoint - QPointF{8, 0}, m_mousePoint + QPointF{8, 0});
 }
 
 void DrawWidget::mousePressEvent(QMouseEvent* event) {
-    snap(event->localPos());
-    if (not m_streamDrawable) {
+    m_mousePoint = m_drawableHandler.snap(event->localPos());
+    if (not m_drawableHandler.isStreaming()) {
         setStreamDrawable();
     } else {
-        if (m_streamDrawable->addPoint(m_mousePoint, event->button() == Qt::RightButton)) {
-            m_drawables.push_back(std::unique_ptr<Drawable>(m_streamDrawable->drawable()));
-            emit undoableActionDone(new AddPrimitiveAction(m_drawables.back()->index()), true);
-            m_streamDrawable.reset(nullptr);
+        if (m_drawableHandler.addPointToStreamDrawable(m_mousePoint, event->button() == Qt::RightButton)) {
+            emit undoableActionDone(new AddPrimitiveAction(m_drawableHandler.drawables().back()->index()), true);
         }
     }
     emit(updateSignal());
 }
 
 void DrawWidget::mouseMoveEvent(QMouseEvent* event) {
-    snap(event->localPos());
-    if (m_streamDrawable != nullptr) {
-        m_streamDrawable->stream(m_mousePoint);
+    m_mousePoint = m_drawableHandler.snap(event->localPos());
+    if (m_drawableHandler.isStreaming()) {
+        m_drawableHandler.stream(m_mousePoint);
     }
     emit(updateSignal());
-}
-
-void DrawWidget::snap(const QPointF& mousePoint) {
-    std::pair<double, QPointF> snapData{std::numeric_limits<double>::max(), mousePoint};
-    if (m_streamDrawable) {
-        snapData = m_streamDrawable->snap(mousePoint);
-    }
-    for (auto& el : m_drawables) {
-        const auto currentSnap = el->snap(mousePoint);
-        if (currentSnap.first < snapData.first) {
-            snapData = currentSnap;
-        }
-    }
-    if (snapData.first < 20) {
-        m_mousePoint = snapData.second;
-    } else {
-        m_mousePoint = mousePoint;
-    }
 }
 
 void DrawWidget::drawGrid(QPainter* painter) {
@@ -84,11 +65,11 @@ void DrawWidget::drawGrid(QPainter* painter) {
 void DrawWidget::setStreamDrawable() {
     switch (m_drawType) {
         case PRIMITIVE_TYPE::POINT:
-            m_drawables.push_back(std::unique_ptr<Drawable>(new Point(m_mousePoint, m_drawPen)));
-            emit undoableActionDone(new AddPrimitiveAction(m_drawables.back()->index()), true);
+            m_drawableHandler.addDrawable(new Point(m_mousePoint, m_drawPen));
+            emit undoableActionDone(new AddPrimitiveAction(m_drawableHandler.drawables().back()->index()), true);
             break;
         default:
-            m_streamDrawable.reset(StreamDrawableFactory::make(m_mousePoint, m_drawType, m_drawPen));
+            m_drawableHandler.addStreamDrawable(StreamDrawableFactory::make(m_mousePoint, m_drawType, m_drawPen));
             break;
     }
     emit(updateSignal());
@@ -103,22 +84,12 @@ DrawWidget::PRIMITIVE_TYPE DrawWidget::primitiveType() const {
 }
 
 void DrawWidget::addDrawable(Drawable* drawable) {
-    m_drawables.push_back(std::unique_ptr<Drawable>(drawable));
+    m_drawableHandler.addDrawable(drawable);
     emit(updateSignal());
 }
 
 Drawable* DrawWidget::removeDrawable(const size_t index) {
-    Drawable* returnPointer = nullptr;
-    for (auto it = m_drawables.begin(); it != m_drawables.end(); ++it) {
-        if ((*it)->index() == index) {
-            returnPointer = it->release();
-            m_drawables.erase(it);
-            break;
-        }
-    }
-    assert(returnPointer != nullptr);
-    emit(updateSignal());
-    return returnPointer;
+    return m_drawableHandler.removeDrawable(index);
 }
 
 void DrawWidget::setGridState(GridState newGridState) {

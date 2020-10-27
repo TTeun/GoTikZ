@@ -9,11 +9,11 @@
 
 #include <QPointF>
 
-class Circle_Stream;
+class CircleStream;
 
 class Circle : public Drawable {
   public:
-    explicit Circle(const Circle_Stream& circleStream);
+    explicit Circle(const CircleStream& circleStream);
 
     void draw(QPainter* painter) override;
 

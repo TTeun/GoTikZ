@@ -13,18 +13,21 @@
 
 class DrawWidget;
 class LeftSideBar;
+class MainWindow;
 
 class ActionHandler : public QObject {
     Q_OBJECT
 
   public:
-    ActionHandler(DrawWidget* drawWidget, LeftSideBar* leftSideBar);
+    ActionHandler(MainWindow* mainWindow);
     ~ActionHandler() = default;
 
-    void        init();
+    void        init(DrawWidget* drawWidget, LeftSideBar* leftSideBar);
     void        undoAction();
     void        redoAction();
     DrawWidget* drawWidget();
+
+        void draw();
 
   public slots:
     void addAction(UndoableAction* action, bool isAlreadyDone);
@@ -36,6 +39,7 @@ class ActionHandler : public QObject {
     std::stack<std::unique_ptr<UndoableAction>> m_redoStack;
 
     DrawWidget*  m_drawWidget;
+    MainWindow*  m_mainWindow;
     LeftSideBar* m_leftSideBar;
 };
 

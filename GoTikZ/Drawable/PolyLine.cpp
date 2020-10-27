@@ -4,12 +4,12 @@
 
 #include "PolyLine.h"
 
-#include "PolyLine_Stream.h"
+#include "PolyLineStream.h"
 
 #include <Math/Math.h>
 #include <QPainter>
 
-PolyLine::PolyLine(const PolyLine_Stream& polyLineStream)
+PolyLine::PolyLine(const PolyLineStream& polyLineStream)
     : Drawable(polyLineStream.m_pen), m_points(polyLineStream.m_points) {
     assert(m_points.size() > 2);
     m_points.resize(m_points.size() - 1ul);
@@ -18,7 +18,7 @@ PolyLine::PolyLine(const PolyLine_Stream& polyLineStream)
 void PolyLine::draw(QPainter* painter) {
     assert(m_points.size() > 1);
     Drawable::draw(painter);
-    for (long i = 1; i != m_points.size(); ++i) {
+    for (size_t i = 1; i != m_points.size(); ++i) {
         painter->drawLine(m_points[i - 1], m_points[i]);
     }
 }

@@ -9,12 +9,12 @@
 
 #include <QPointF>
 
-class Line_Stream;
+class LineStream;
 
 class Line : public Drawable {
 
   public:
-    explicit Line(const Line_Stream& lineStream);
+    explicit Line(const LineStream& lineStream);
 
     void draw(QPainter* painter) override;
 

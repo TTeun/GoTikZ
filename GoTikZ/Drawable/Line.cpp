@@ -4,12 +4,12 @@
 
 #include "Line.h"
 
-#include "Line_Stream.h"
+#include "LineStream.h"
 
 #include <Math/Math.h>
 #include <QPainter>
 
-Line::Line(const Line_Stream& lineStream)
+Line::Line(const LineStream& lineStream)
     : Drawable(lineStream.m_pen), m_point1(lineStream.m_point1), m_point2(lineStream.m_point2) {
 }
 

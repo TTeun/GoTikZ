@@ -3,6 +3,7 @@
 
 #include "ActionWidget.h"
 #include "Actions/UndoableAction.h"
+#include "Drawable/DrawableHandler.h"
 #include "Drawable/StreamDrawable.h"
 
 #include <QWidget>
@@ -20,7 +21,7 @@ class DrawWidget : public QWidget {
     explicit DrawWidget(QWidget* parent);
 
     void      addDrawable(Drawable* drawable);
-    Drawable* removeDrawable(const size_t index);
+    Drawable* removeDrawable(size_t index);
     enum class PRIMITIVE_TYPE { LINE, POINT, CIRCLE, POLY_LINE };
     PRIMITIVE_TYPE primitiveType() const;
 
@@ -38,16 +39,14 @@ class DrawWidget : public QWidget {
     void updateSignal();
 
   private:
-    void drawGrid(QPainter* painter);
-    void snap(const QPointF& mousePoint);
-    void setStreamDrawable();
+    void           drawGrid(QPainter* painter);
+    void           setStreamDrawable();
+    QPointF        m_mousePoint;
+    GridState      m_gridState;
+    PRIMITIVE_TYPE m_drawType = PRIMITIVE_TYPE::LINE;
+    QPen           m_drawPen  = QPen(Qt::black, 3);
 
-    std::unique_ptr<StreamDrawable>        m_streamDrawable = nullptr;
-    std::vector<std::unique_ptr<Drawable>> m_drawables;
-    QPointF                                m_mousePoint;
-    GridState                              m_gridState;
-    PRIMITIVE_TYPE                         m_drawType = PRIMITIVE_TYPE::LINE;
-    QPen                                   m_drawPen  = QPen(Qt::black, 3);
+    DrawableHandler m_drawableHandler;
 };
 
 #endif // GOTIKZ_DRAWWIDGET_H
