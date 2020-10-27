@@ -28,9 +28,9 @@ class Line : public Drawable {
 
     QPointF point2() const;
 
-    void setPoint1(QPointF newPoint);
+    void setPoint1(const QPointF& newPoint);
 
-    void setPoint2(QPointF newPoint);
+    void setPoint2(const QPointF& newPoint);
 
   private:
     QPointF m_point1;

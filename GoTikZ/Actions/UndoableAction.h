@@ -9,7 +9,7 @@
 
 class UndoableAction : public Action {
   protected:
-    explicit UndoableAction(ACTION_TYPE type);
+    explicit UndoableAction();
 
   public:
     ~UndoableAction() = default;

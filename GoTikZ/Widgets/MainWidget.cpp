@@ -1,10 +1,10 @@
 #include "MainWidget.h"
 
-#include "Actions/ChangeMousePointerTypeAction.h"
 #include "DrawWidget.h"
 #include "Widgets/LeftSideBar.h"
 #include "Widgets/RightSideBar.h"
 
+#include <QGroupBox>
 #include <QHBoxLayout>
 
 MainWidget::MainWidget(QWidget* parent, Model* model, ActionHandler* actionHandler) : QWidget(parent) {

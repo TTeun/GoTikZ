@@ -24,8 +24,8 @@ class ActionHandler : public QObject {
     Q_OBJECT
 
   public:
-    ActionHandler(MainWindow* mainWindow);
-    ~ActionHandler() = default;
+    explicit ActionHandler(MainWindow* mainWindow);
+    ~ActionHandler() override = default;
 
     void        init(DrawWidget* drawWidget, LeftSideBar* leftSideBar, RightSideBar* rightSideBar, Model* model);
     void        undoAction();

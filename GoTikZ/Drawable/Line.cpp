@@ -32,11 +32,11 @@ double Line::dist(const QPointF& point) const {
     return std::min(Math::distance(point, m_point1), Math::distance(point, m_point2));
 }
 
-void Line::setPoint1(QPointF newPoint) {
+void Line::setPoint1(const QPointF& newPoint) {
     m_point1 = newPoint;
 }
 
-void Line::setPoint2(QPointF newPoint) {
+void Line::setPoint2(const QPointF& newPoint) {
     m_point2 = newPoint;
 }
 

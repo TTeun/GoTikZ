@@ -109,6 +109,8 @@ void ActionHandler::keyPressEvent(QKeyEvent* event) {
                     m_leftSideBar->m_mousePointerTypeSelectWidget->setSelectedButton(
                         MOUSE_POINTER_TYPE::SELECT); // Also sends signal
                     break;
+                default:
+                    break;
             }
             break;
         case Qt::ControlModifier:
@@ -122,6 +124,8 @@ void ActionHandler::keyPressEvent(QKeyEvent* event) {
                 default:
                     break;
             }
+            break;
+        default:
             break;
     }
 }

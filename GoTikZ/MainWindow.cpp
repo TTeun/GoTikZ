@@ -14,8 +14,6 @@ MainWindow::MainWindow()
                          &m_model);
 
     resize(800, 600);
-
-    GroupBoxContainer g(nullptr, "as");
 }
 
 void MainWindow::keyPressEvent(QKeyEvent* event) {

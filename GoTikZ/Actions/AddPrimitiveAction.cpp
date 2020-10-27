@@ -8,8 +8,7 @@
 #include "Model/Model.h"
 #include "Widgets/DrawWidget.h"
 
-AddPrimitiveAction::AddPrimitiveAction(size_t indexOfPrimitive)
-    : UndoableAction(ACTION_TYPE::ADD_PRIMITIVE), m_indexOfPrimitive(indexOfPrimitive) {
+AddPrimitiveAction::AddPrimitiveAction(size_t indexOfPrimitive) : m_indexOfPrimitive(indexOfPrimitive) {
 }
 
 void AddPrimitiveAction::doAction(ActionHandler* actionHandler) {

@@ -7,8 +7,7 @@
 #include "../Widgets/DrawWidget.h"
 #include "ActionHandler.h"
 
-ChangeGridAction::ChangeGridAction(GridState gridState)
-    : Action(ACTION_TYPE::CHANGE_GRID_STATE), m_gridState(gridState) {
+ChangeGridAction::ChangeGridAction(GridState gridState) : m_gridState(gridState) {
 }
 
 void ChangeGridAction::doAction(ActionHandler* actionHandler) {

@@ -22,11 +22,10 @@ class MousePointerTypeSelectWidget : public ActionWidget, public GroupBoxContain
     void setSelectedButton(MOUSE_POINTER_TYPE type);
 
   public slots:
-
     void mousePointerTypeButtonClicked(QAbstractButton* button);
 
   private:
-    void          addTypeButton(const QString& title, bool selected);
+    void addTypeButton(const QString& title, bool selected);
 
     QButtonGroup* m_buttonGroup;
 };

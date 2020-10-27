@@ -4,6 +4,9 @@
 
 #include "XyWidget.h"
 
+#include <QLabel>
+#include <QVBoxLayout>
+
 XyWidget::XyWidget(const QPointF& point, const QString& value) {
     auto* layout = new QHBoxLayout(this);
     layout->setSpacing(0);

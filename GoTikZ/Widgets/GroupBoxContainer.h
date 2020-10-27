@@ -6,20 +6,16 @@
 #define GOTIKZ_GROUPBOXCONTAINER_H
 
 #include <QDebug>
-#include <QGroupBox>
 
 class QWidget;
 class QString;
 class QLayout;
+class QGroupBox;
 
 class GroupBoxContainer {
 
   public:
     GroupBoxContainer(QWidget* parent, QString title);
-
-    ~GroupBoxContainer() {
-        qDebug() << "dood\n";
-    }
 
     QGroupBox* groupBox();
 

@@ -11,7 +11,7 @@
 
 class PenChangeAction : public Action {
   public:
-    PenChangeAction(const QPen& pen, size_t indexOfPrimitive);
+    PenChangeAction(QPen  pen, size_t indexOfPrimitive);
 
     void doAction(ActionHandler* actionHandler) override;
 

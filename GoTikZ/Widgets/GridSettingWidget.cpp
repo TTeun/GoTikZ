@@ -27,7 +27,7 @@ GridSettingWidget::GridSettingWidget(QWidget* parent) : GroupBoxContainer(parent
 
 void GridSettingWidget::setSpacing(int spacing) {
     assert(spacing >= 0);
-    m_gridState.setGridSpacing(spacing);
+    m_gridState.setGridSpacing(static_cast<size_t>(spacing));
     emit actionDone(new ChangeGridAction(m_gridState));
 }
 

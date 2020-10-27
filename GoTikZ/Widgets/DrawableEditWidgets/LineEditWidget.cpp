@@ -9,6 +9,9 @@
 #include "Widgets/AuxWidgets/XyWidget.h"
 #include "Widgets/PenWidget.h"
 
+#include <QGroupBox>
+#include <QLayout>
+
 LineEditWidget::LineEditWidget(Line* line, ActionHandler* actionHandler)
     : GroupBoxContainer(nullptr, "Line"), m_line(line), m_actionHandler(actionHandler) {
     auto* contentsLayout = layout();
@@ -22,7 +25,7 @@ LineEditWidget::LineEditWidget(Line* line, ActionHandler* actionHandler)
     contentsLayout->addWidget(point1Widget);
     contentsLayout->addWidget(point2Widget);
 
-    PenWidget* penWidget = new PenWidget(nullptr, line->index(), m_line->pen());
+    auto* penWidget = new PenWidget(nullptr, line->index(), m_line->pen());
     QObject::connect(penWidget, &PenWidget::actionDone, m_actionHandler, &ActionHandler::doAction);
     contentsLayout->addWidget(penWidget->groupBox());
 }

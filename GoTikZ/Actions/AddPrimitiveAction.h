@@ -13,7 +13,7 @@ class ActionHandler;
 class AddPrimitiveAction : public UndoableAction {
 
   public:
-    AddPrimitiveAction(size_t indexOfPrimitive);
+    explicit AddPrimitiveAction(size_t indexOfPrimitive);
 
     void doAction(ActionHandler* actionHandler) override;
 

@@ -8,7 +8,7 @@
 #include "Model/Model.h"
 
 ChangeMousePointerTypeAction::ChangeMousePointerTypeAction(MOUSE_POINTER_TYPE newPrimitive)
-    : Action(ACTION_TYPE::CHANGE_MOUSE_POINTER_TYPE), m_newPrimitive(newPrimitive) {
+    : m_newPrimitive(newPrimitive) {
 }
 
 void ChangeMousePointerTypeAction::doAction(ActionHandler* actionHandler) {

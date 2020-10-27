@@ -5,9 +5,7 @@
 #ifndef GOTIKZ_XYWIDGET_H
 #define GOTIKZ_XYWIDGET_H
 
-#include <QLabel>
 #include <QSpinBox>
-#include <QVBoxLayout>
 #include <QWidget>
 
 class XyWidget : public QWidget {

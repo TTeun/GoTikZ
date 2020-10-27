@@ -11,8 +11,7 @@
 #include <QLayout>
 #include <QRadioButton>
 
-MousePointerTypeSelectWidget::MousePointerTypeSelectWidget(QWidget* parent) : GroupBoxContainer(nullptr, "Mouse") {
-
+MousePointerTypeSelectWidget::MousePointerTypeSelectWidget(QWidget* parent) : GroupBoxContainer(nullptr, "Mode") {
     m_buttonGroup = new QButtonGroup();
 
     addTypeButton("Line", true);
@@ -45,7 +44,7 @@ void MousePointerTypeSelectWidget::setSelectedButton(MOUSE_POINTER_TYPE type) {
             break;
     }
 
-    const size_t numberOfButtons = m_buttonGroup->buttons().size();
+    const size_t numberOfButtons = static_cast<const size_t>(m_buttonGroup->buttons().size());
     for (size_t i = 0; i != numberOfButtons; ++i) {
         if (m_buttonGroup->button(i)->text() == string) {
             m_buttonGroup->button(i)->setChecked(true);

@@ -4,5 +4,5 @@
 
 #include "UndoableAction.h"
 
-UndoableAction::UndoableAction(UndoableAction::ACTION_TYPE type) : Action(type) {
+UndoableAction::UndoableAction() : Action() {
 }

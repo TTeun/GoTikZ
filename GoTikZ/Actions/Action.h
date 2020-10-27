@@ -11,15 +11,10 @@ class ActionHandler;
 
 class Action {
   protected:
-    enum class ACTION_TYPE { ADD_PRIMITIVE, CHANGE_MOUSE_POINTER_TYPE, CHANGE_GRID_STATE, CHANGE_PEN };
-
-    explicit Action(ACTION_TYPE type);
+    Action() = default;
 
   public:
     virtual void doAction(ActionHandler* actionHandler) = 0;
-
-  protected:
-    ACTION_TYPE m_actionType;
 };
 
 #endif // GOTIKZ_ACTION_H
