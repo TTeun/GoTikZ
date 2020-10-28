@@ -18,6 +18,7 @@ class Transform {
     void    addToScaleParameter(double addend);
     void    applyTransform(QPainter& painter);
     QPointF invertTransform(const QPointF& point);
+    double  scale() const;
 
   private:
     double  m_scaleParameter = 0;

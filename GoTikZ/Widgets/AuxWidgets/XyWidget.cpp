@@ -29,6 +29,8 @@ XyWidget::XyWidget(const QPointF& point, const QString& value) {
 
     m_xButton->setMaximum(std::numeric_limits<int>::max());
     m_yButton->setMaximum(std::numeric_limits<int>::max());
+    m_xButton->setMinimum(std::numeric_limits<int>::min());
+    m_yButton->setMinimum(std::numeric_limits<int>::min());
 
     m_xButton->setValue(point.x());
     m_yButton->setValue(point.y());

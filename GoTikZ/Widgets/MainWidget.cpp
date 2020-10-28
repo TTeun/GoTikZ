@@ -19,10 +19,6 @@ MainWidget::MainWidget(QWidget* parent, Model* model, ActionHandler* actionHandl
 
     m_rightSideBar = new RightSideBar(nullptr);
     layout->addWidget(m_rightSideBar->groupBox());
-
-    QObject::connect(m_drawWidget, &DrawWidget::updateSignal, this,
-                     static_cast<void (QWidget::*)(void)>(&QWidget::update));
 }
 
-MainWidget::~MainWidget() {
-}
+MainWidget::~MainWidget() = default;

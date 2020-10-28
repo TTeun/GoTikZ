@@ -32,3 +32,7 @@ void Transform::addToScaleParameter(double addend) {
     m_scaleParameter += addend;
     m_scale = std::pow(1.1, m_scaleParameter);
 }
+
+double Transform::scale() const {
+    return m_scale;
+}

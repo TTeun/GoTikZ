@@ -1,9 +1,9 @@
 #ifndef GOTIKZ_DRAWWIDGET_H
 #define GOTIKZ_DRAWWIDGET_H
 
-#include "../Aux/Transform.h"
 #include "ActionWidget.h"
 #include "States/GridState.h"
+#include "States/Transform.h"
 
 #include <QWidget>
 
@@ -18,9 +18,7 @@ class DrawWidget : public QWidget {
 
   public:
     void       setGridState(GridState newGridState);
-    Transform& transform() {
-        return m_transform;
-    }
+    Transform& transform();
 
   protected:
     void paintEvent(QPaintEvent* e) final;
@@ -28,11 +26,9 @@ class DrawWidget : public QWidget {
     void mouseMoveEvent(QMouseEvent* event) override;
     void wheelEvent(QWheelEvent* event) override;
 
-  signals:
-    void updateSignal();
-
   private:
-    void           drawGrid(QPainter* painter);
+    void drawGrid(QPainter* painter);
+
     QPointF        m_mousePoint;
     GridState      m_gridState;
     Transform      m_transform;
