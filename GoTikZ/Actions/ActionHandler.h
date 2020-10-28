@@ -8,6 +8,7 @@
 #include "UndoableAction.h"
 
 #include <QObject>
+#include <QtCore/QPointF>
 #include <memory>
 #include <stack>
 
@@ -16,9 +17,11 @@ class LeftSideBar;
 class RightSideBar;
 class MainWindow;
 class Model;
+class QWheelEvent;
 class GroupBoxContainer;
 class QMouseEvent;
 class QKeyEvent;
+class MainWidget;
 
 class ActionHandler : public QObject {
     Q_OBJECT
@@ -27,7 +30,7 @@ class ActionHandler : public QObject {
     explicit ActionHandler(MainWindow* mainWindow);
     ~ActionHandler() override = default;
 
-    void        init(DrawWidget* drawWidget, LeftSideBar* leftSideBar, RightSideBar* rightSideBar, Model* model);
+    void        init(MainWidget* mainWidget, Model* model);
     void        undoAction();
     void        redoAction();
     DrawWidget* drawWidget();
@@ -37,7 +40,10 @@ class ActionHandler : public QObject {
 
     void mousePressEvent(QMouseEvent* event);
     void mouseMoveEvent(QMouseEvent* event);
+    void wheelEvent(QWheelEvent* event);
     void keyPressEvent(QKeyEvent* event);
+    void keyPressEventNoModifier(QKeyEvent* event);
+    void keyPressEventWithCtrl(QKeyEvent* event);
 
     void setEditWidget(GroupBoxContainer* widget);
 
@@ -55,6 +61,8 @@ class ActionHandler : public QObject {
     RightSideBar* m_rightSideBar;
     MainWindow*   m_mainWindow;
     Model*        m_model;
+
+    QPointF m_previousMousePoint;
 };
 
 #endif // GOTIKZ_ACTIONHANDLER_H

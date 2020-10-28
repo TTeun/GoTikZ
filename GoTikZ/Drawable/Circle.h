@@ -7,7 +7,7 @@
 
 #include "Drawable.h"
 
-#include <QPoint>
+#include <QPointF>
 
 class CircleStream;
 
@@ -17,24 +17,24 @@ class Circle : public Drawable {
 
     void draw(QPainter* painter, DRAW_FLAGS drawFlag) const override;
 
-    std::pair<double, QPoint> snap(QPoint point) override;
+    std::pair<double, QPointF> snap(QPointF point) override;
 
-    double dist(const QPoint& point) const override;
+    double dist(const QPointF& point) const override;
 
     GroupBoxContainer* toWidget(ActionHandler* actionHandler) override;
 
-    QPoint center() const;
+    QPointF center() const;
 
     double radius() const {
         return m_radius;
     }
 
-    void setCenter(const QPoint& newCenter);
+    void setCenter(const QPointF& newCenter);
 
     void setRadius(double newRadius);
 
   private:
-    QPoint m_center;
+    QPointF m_center;
     double  m_radius;
 };
 

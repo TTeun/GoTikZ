@@ -26,38 +26,64 @@ DrawableHandler& Model::drawableHandler() {
 
 void Model::mousePressEvent(QMouseEvent* event) {
     if (m_mousePointerType == MOUSE_POINTER_TYPE::SELECT) {
-        auto* selected = m_drawableHandler.selectClosest(QPoint(event->localPos().x(), event->localPos().y()));
-        if (selected != nullptr) {
-            m_actionHandler->setEditWidget(selected->toWidget(m_actionHandler));
+        mouseSelectEvent(event);
+    } else {
+        if (event->button() == Qt::RightButton || event->button() == Qt::LeftButton) {
+            m_drawableHandler.clearSelected();
+            mouseCreateEvent(event);
         }
-        return;
     }
+}
 
-    QPoint m_mousePoint = m_drawableHandler.snap(QPoint(event->localPos().x(), event->localPos().y()));
+void Model::mouseSelectEvent(QMouseEvent* event) {
+    auto* selected = m_drawableHandler.selectClosest(mousePointInWorldCoordinates(event->localPos()));
+    if (selected != nullptr) {
+        m_actionHandler->setEditWidget(selected->toWidget(m_actionHandler));
+    }
+}
+
+void Model::mouseCreateEvent(QMouseEvent* event) {
+    assert(m_mousePointerType != MOUSE_POINTER_TYPE::SELECT);
+    const QPointF snappedPoint = m_drawableHandler.snap(mousePointInWorldCoordinates(event->localPos()));
     if (not m_drawableHandler.isStreaming()) {
         switch (m_mousePointerType) {
             case MOUSE_POINTER_TYPE::POINT:
-                m_drawableHandler.addDrawable(new Point(m_mousePoint, m_drawPen));
+                m_drawableHandler.addDrawable(new Point(snappedPoint, m_drawPen));
                 m_actionHandler->addAction(new AddPrimitiveAction(m_drawableHandler.drawables().back()->index()), true);
                 break;
             default:
                 m_drawableHandler.addStreamDrawable(
-                    StreamDrawableFactory::make(m_mousePoint, m_mousePointerType, m_drawPen));
+                    StreamDrawableFactory::make(snappedPoint, m_mousePointerType, m_drawPen));
                 break;
         }
     } else {
-        if (m_drawableHandler.addPointToStreamDrawable(m_mousePoint, event->button() == Qt::RightButton)) {
+        if (m_drawableHandler.addPointToStreamDrawable(snappedPoint, event->button() == Qt::RightButton)) {
             m_actionHandler->addAction(new AddPrimitiveAction(m_drawableHandler.drawables().back()->index()), true);
         }
     }
 }
 
 void Model::mouseMoveEvent(QMouseEvent* event) {
-    QPoint m_mousePoint = m_drawableHandler.snap(QPoint(event->localPos().x(), event->localPos().y()));
+    switch (event->buttons()) {
+        case Qt::NoButton:
+            //            qDebug() << "No button";
+            break;
+        case Qt::RightButton:
+            //            qDebug() << "Right button";
+            break;
+        case Qt::LeftButton:
+            //            qDebug() << "Left button";
+            break;
+        case Qt::MiddleButton:
+            //            qDebug() << "Middle button";
+            break;
+    }
+
+    QPointF m_mousePoint = m_drawableHandler.snap(mousePointInWorldCoordinates(event->localPos()));
     if (m_drawableHandler.isStreaming()) {
         m_drawableHandler.stream(m_mousePoint);
     } else if (m_mousePointerType == MOUSE_POINTER_TYPE::SELECT) {
-        m_drawableHandler.highlightClosest(QPoint(event->localPos().x(), event->localPos().y()));
+        m_drawableHandler.highlightClosest(mousePointInWorldCoordinates(event->localPos()));
     }
 }
 
@@ -71,4 +97,8 @@ void Model::setMousePointerType(MOUSE_POINTER_TYPE newType) {
     }
 
     m_mousePointerType = newType;
+}
+
+QPointF Model::mousePointInWorldCoordinates(const QPointF& mousePoint) {
+    return m_actionHandler->drawWidget()->transform().invertTransform(mousePoint);
 }

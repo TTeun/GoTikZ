@@ -5,13 +5,23 @@
 #ifndef GOTIKZ_MATH_H
 #define GOTIKZ_MATH_H
 
-class QPoint;
+#include <tuple>
+
+class QPointF;
 
 namespace Math {
 
-double magnitude(const QPoint& point);
+double magnitudeSquared(const QPointF& point);
 
-double distance(const QPoint& point1, const QPoint& point2);
+double distanceSquared(const QPointF& point1, const QPointF& point2);
+
+double magnitude(const QPointF& point);
+
+double distance(const QPointF& point1, const QPointF& point2);
+
+double dot(const QPointF& point1, const QPointF& point2);
+
+double pointToLineDistance(std::pair<const QPointF&, const QPointF&> line, const QPointF& point);
 
 } // namespace Math
 

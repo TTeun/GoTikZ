@@ -18,7 +18,7 @@ class CircleEditWidget : public QObject, public GroupBoxContainer {
     CircleEditWidget(Circle* circle, ActionHandler* actionHandler);
 
   public slots:
-    void setCenter(QPoint newCenter);
+    void setCenter(QPointF newCenter);
     void setRadius(double newRadius);
 
   private:

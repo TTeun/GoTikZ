@@ -54,7 +54,7 @@ const std::vector<std::unique_ptr<Drawable>>& DrawableHandler::drawables() {
     return m_drawables;
 }
 
-bool DrawableHandler::addPointToStreamDrawable(const QPoint& point, bool forceEnd) {
+bool DrawableHandler::addPointToStreamDrawable(const QPointF& point, bool forceEnd) {
     assert(m_streamDrawable);
     bool streamingDone = m_streamDrawable->addPoint(point, forceEnd);
     if (streamingDone) {
@@ -69,13 +69,13 @@ void DrawableHandler::finalizeStreamDrawable() {
     m_streamDrawable.reset(nullptr);
 }
 
-void DrawableHandler::stream(const QPoint& point) {
+void DrawableHandler::stream(const QPointF& point) {
     assert(m_streamDrawable);
     m_streamDrawable->stream(point);
 }
 
-QPoint DrawableHandler::snap(const QPoint& mousePoint) const {
-    std::pair<double, QPoint> snapData{std::numeric_limits<double>::max(), mousePoint};
+QPointF DrawableHandler::snap(const QPointF& mousePoint) const {
+    std::pair<double, QPointF> snapData{std::numeric_limits<double>::max(), mousePoint};
     if (m_streamDrawable) {
         snapData = m_streamDrawable->snap(mousePoint);
     }
@@ -94,9 +94,10 @@ QPoint DrawableHandler::snap(const QPoint& mousePoint) const {
 
 void DrawableHandler::clearSelected() {
     m_selectedDrawables.clear();
+    m_highlightedDrawables.clear();
 }
 
-void DrawableHandler::highlightClosest(const QPoint& point) {
+void DrawableHandler::highlightClosest(const QPointF& point) {
     auto* closest = getClosest(point);
     if (closest == nullptr) {
         return;
@@ -104,7 +105,7 @@ void DrawableHandler::highlightClosest(const QPoint& point) {
     m_highlightedDrawables = {closest};
 }
 
-Drawable* DrawableHandler::getClosest(const QPoint& point) {
+Drawable* DrawableHandler::getClosest(const QPointF& point) {
     if (m_drawables.empty()) {
         return nullptr;
     }
@@ -117,7 +118,7 @@ Drawable* DrawableHandler::getClosest(const QPoint& point) {
     return closest;
 }
 
-Drawable* DrawableHandler::selectClosest(const QPoint& point) {
+Drawable* DrawableHandler::selectClosest(const QPointF& point) {
     auto* closest = getClosest(point);
     if (closest == nullptr) {
         return nullptr;

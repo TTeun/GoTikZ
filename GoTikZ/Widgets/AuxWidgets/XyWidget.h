@@ -5,7 +5,7 @@
 #ifndef GOTIKZ_XYWIDGET_H
 #define GOTIKZ_XYWIDGET_H
 
-#include <QSpinBox>
+#include <QDoubleSpinBox>
 #include <QWidget>
 
 class XyWidget : public QWidget {
@@ -13,17 +13,17 @@ class XyWidget : public QWidget {
     Q_OBJECT
 
   public:
-    explicit XyWidget(const QPoint& point, const QString& value = "");
+    explicit XyWidget(const QPointF& point, const QString& value = "");
 
   private slots:
     void valuesChanged(int dummy);
 
   signals:
-    void sendValues(QPoint points);
+    void sendValues(QPointF points);
 
   private:
-    QSpinBox* m_xButton;
-    QSpinBox* m_yButton;
+    QDoubleSpinBox* m_xButton;
+    QDoubleSpinBox* m_yButton;
 };
 
 #endif // GOTIKZ_XYWIDGET_H

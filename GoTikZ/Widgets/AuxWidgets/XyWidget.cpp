@@ -7,15 +7,15 @@
 #include <QLabel>
 #include <QVBoxLayout>
 
-XyWidget::XyWidget(const QPoint& point, const QString& value) {
+XyWidget::XyWidget(const QPointF& point, const QString& value) {
     auto* layout = new QHBoxLayout(this);
     layout->setSpacing(0);
-    m_xButton = new QSpinBox(this);
-    m_yButton = new QSpinBox(this);
+    m_xButton = new QDoubleSpinBox(this);
+    m_yButton = new QDoubleSpinBox(this);
 
-    QObject::connect(m_xButton, static_cast<void (QSpinBox::*)(int)>(&QSpinBox::valueChanged), this,
+    QObject::connect(m_xButton, static_cast<void (QDoubleSpinBox::*)(double)>(&QDoubleSpinBox::valueChanged), this,
                      &XyWidget::valuesChanged);
-    QObject::connect(m_yButton, static_cast<void (QSpinBox::*)(int)>(&QSpinBox::valueChanged), this,
+    QObject::connect(m_yButton, static_cast<void (QDoubleSpinBox::*)(double)>(&QDoubleSpinBox::valueChanged), this,
                      &XyWidget::valuesChanged);
 
     m_xButton->setButtonSymbols(QAbstractSpinBox::NoButtons);
@@ -42,7 +42,7 @@ XyWidget::XyWidget(const QPoint& point, const QString& value) {
 }
 
 void XyWidget::valuesChanged(int dummy) {
-    const int x = m_xButton->value();
-    const int y = m_yButton->value();
-    emit      sendValues(QPoint(x, y));
+    const double x = m_xButton->value();
+    const double y = m_yButton->value();
+    emit         sendValues(QPointF(x, y));
 }

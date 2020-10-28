@@ -4,6 +4,8 @@
 
 #include "GridSettingWidget.h"
 
+#include "../Actions/ChangeGridAction.h"
+
 #include <QtWidgets/QCheckBox>
 #include <QtWidgets/QGroupBox>
 #include <QtWidgets/QSpinBox>
@@ -19,7 +21,7 @@ GridSettingWidget::GridSettingWidget(QWidget* parent) : GroupBoxContainer(parent
     contentsLayout->addWidget(m_showGridCheckBox);
 
     m_gridSpacingSpinBox = new QSpinBox(groupBox());
-    m_gridSpacingSpinBox->setValue(10);
+    m_gridSpacingSpinBox->setValue(m_gridState.gridSpacing());
     QObject::connect(m_gridSpacingSpinBox, static_cast<void (QSpinBox::*)(int)>(&QSpinBox::valueChanged), this,
                      &GridSettingWidget::setSpacing);
     contentsLayout->addWidget(m_gridSpacingSpinBox);

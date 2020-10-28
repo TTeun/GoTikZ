@@ -9,7 +9,7 @@
 
 #include <Math/Math.h>
 
-PolyLineStream::PolyLineStream(const QPoint& point, const QPen& pen) : StreamDrawable(pen) {
+PolyLineStream::PolyLineStream(const QPointF& point, const QPen& pen) : StreamDrawable(pen) {
     m_points.push_back(point);
     m_points.push_back(point);
 }
@@ -22,11 +22,11 @@ void PolyLineStream::draw(QPainter* painter, DRAW_FLAGS drawFlag) const {
     }
 }
 
-void PolyLineStream::stream(const QPoint& point) {
+void PolyLineStream::stream(const QPointF& point) {
     m_points.back() = point;
 }
 
-bool PolyLineStream::addPoint(const QPoint& point, bool forceEnd) {
+bool PolyLineStream::addPoint(const QPointF& point, bool forceEnd) {
     m_points.back() = point;
     m_points.push_back(point);
     return forceEnd;
@@ -36,8 +36,8 @@ Drawable* PolyLineStream::drawable() {
     return new PolyLine(*this);
 }
 
-std::pair<double, QPoint> PolyLineStream::snap(QPoint point) {
-    auto snapData = std::pair<double, QPoint>(std::numeric_limits<double>::max(), point);
+std::pair<double, QPointF> PolyLineStream::snap(QPointF point) {
+    auto snapData = std::pair<double, QPointF>(std::numeric_limits<double>::max(), point);
     for (size_t i = 0; i != m_points.size() - 2; ++i) {
         const auto& el = m_points[i];
         if (Math::magnitude(point - el) < snapData.first) {
@@ -46,7 +46,7 @@ std::pair<double, QPoint> PolyLineStream::snap(QPoint point) {
     }
     return snapData;
 }
-double PolyLineStream::dist(const QPoint& point) const {
+double PolyLineStream::dist(const QPointF& point) const {
     double result = std::numeric_limits<double>::max();
     for (const auto& el : m_points) {
         result = std::min(Math::distance(point, el), result);

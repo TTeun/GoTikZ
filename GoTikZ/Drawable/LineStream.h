@@ -7,28 +7,28 @@
 
 #include "StreamDrawable.h"
 
-#include <QPoint>
+#include <QPointF>
 
 class Line;
 
 class LineStream : public StreamDrawable {
   public:
-    LineStream(const QPoint& point, const QPen& pen) : StreamDrawable(pen), m_point1(point) {
+    LineStream(const QPointF& point, const QPen& pen) : StreamDrawable(pen), m_point1(point) {
     }
 
-    void                       stream(const QPoint& point) override;
-    bool                       addPoint(const QPoint& point, bool forceEnd) override;
+    void                       stream(const QPointF& point) override;
+    bool                       addPoint(const QPointF& point, bool forceEnd) override;
     Drawable*                  drawable() override;
     void                       draw(QPainter* painter, DRAW_FLAGS drawFlag) const override;
-    std::pair<double, QPoint> snap(QPoint point) override;
+    std::pair<double, QPointF> snap(QPointF point) override;
 
-    double dist(const QPoint& point) const override;
+    double dist(const QPointF& point) const override;
 
   private:
     friend class Line;
 
-    QPoint m_point1;
-    QPoint m_point2;
+    QPointF m_point1;
+    QPointF m_point2;
 };
 
 #endif // GOTIKZ_LINESTREAM_H

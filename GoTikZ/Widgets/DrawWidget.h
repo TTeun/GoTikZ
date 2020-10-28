@@ -1,6 +1,7 @@
 #ifndef GOTIKZ_DRAWWIDGET_H
 #define GOTIKZ_DRAWWIDGET_H
 
+#include "../Aux/Transform.h"
 #include "ActionWidget.h"
 #include "States/GridState.h"
 
@@ -16,20 +17,25 @@ class DrawWidget : public QWidget {
     DrawWidget(QWidget* parent, Model* model, ActionHandler* actionHandler);
 
   public:
-    void setGridState(GridState newGridState);
+    void       setGridState(GridState newGridState);
+    Transform& transform() {
+        return m_transform;
+    }
 
   protected:
     void paintEvent(QPaintEvent* e) final;
     void mousePressEvent(QMouseEvent* event) override;
     void mouseMoveEvent(QMouseEvent* event) override;
+    void wheelEvent(QWheelEvent* event) override;
 
   signals:
     void updateSignal();
 
   private:
     void           drawGrid(QPainter* painter);
-    QPoint        m_mousePoint;
+    QPointF        m_mousePoint;
     GridState      m_gridState;
+    Transform      m_transform;
     const Model*   m_model;
     ActionHandler* m_actionHandler;
 };

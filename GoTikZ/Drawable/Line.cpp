@@ -18,8 +18,7 @@ void Line::draw(QPainter* painter, DRAW_FLAGS drawFlag) const {
     Drawable::draw(painter, drawFlag);
     painter->drawLine(m_point1, m_point2);
 }
-
-std::pair<double, QPoint> Line::snap(QPoint point) {
+std::pair<double, QPointF> Line::snap(QPointF point) {
     const double d1 = Math::magnitude(point - m_point1);
     const double d2 = Math::magnitude(point - m_point2);
     if (d1 < d2) {
@@ -28,23 +27,23 @@ std::pair<double, QPoint> Line::snap(QPoint point) {
         return {d2, m_point2};
     }
 }
-double Line::dist(const QPoint& point) const {
-    return std::min(Math::distance(point, m_point1), Math::distance(point, m_point2));
+
+double Line::dist(const QPointF& point) const {
+    return Math::pointToLineDistance({m_point1, m_point2}, point);
 }
 
-void Line::setPoint1(const QPoint& newPoint) {
+void Line::setPoint1(const QPointF& newPoint) {
     m_point1 = newPoint;
 }
 
-void Line::setPoint2(const QPoint& newPoint) {
+void Line::setPoint2(const QPointF& newPoint) {
     m_point2 = newPoint;
 }
 
-QPoint Line::point1() const {
+QPointF Line::point1() const {
     return m_point1;
 }
-
-QPoint Line::point2() const {
+QPointF Line::point2() const {
     return m_point2;
 }
 GroupBoxContainer* Line::toWidget(ActionHandler* actionHandler) {

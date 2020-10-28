@@ -20,9 +20,13 @@ class Model {
     DrawableHandler&       drawableHandler();
 
     void mousePressEvent(QMouseEvent* event);
+    void mouseSelectEvent(QMouseEvent* event);
+    void mouseCreateEvent(QMouseEvent* event);
     void mouseMoveEvent(QMouseEvent* event);
     void setPen(const QPen& pen);
     void setMousePointerType(MOUSE_POINTER_TYPE newType);
+
+    QPointF mousePointInWorldCoordinates(const QPointF& mousePoint);
 
   private:
     DrawableHandler m_drawableHandler;

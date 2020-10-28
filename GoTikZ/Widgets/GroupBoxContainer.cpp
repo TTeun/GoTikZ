@@ -14,7 +14,6 @@ GroupBoxContainer::GroupBoxContainer(QWidget* parent, QString title) : m_groupBo
     layout->setSpacing(0);
     layout->setMargin(2);
     m_groupBox->setLayout(layout);
-    m_groupBox->setStyleSheet(QString::fromUtf8("background-color: rgb(238, 238, 238)"));
 
     QSizePolicy sizePolicy(QSizePolicy::Maximum, QSizePolicy::Maximum);
     m_groupBox->setSizePolicy(sizePolicy);

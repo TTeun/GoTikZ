@@ -21,6 +21,7 @@ PenWidget::PenWidget(QWidget* parent, size_t indexOfPrimitive, const QPen& pen)
 }
 
 void PenWidget::create() {
+    m_pen.setJoinStyle(Qt::RoundJoin);
     auto* contentsLayout = layout();
 
     auto* colorWidget = new ColorWidget(groupBox(), m_pen.color());
@@ -35,7 +36,7 @@ void PenWidget::create() {
     contentsLayout->addWidget(spinBox);
 }
 
-void PenWidget::setColor(QColor color) {
+void PenWidget::setColor(const QColor& color) {
     m_pen.setColor(color);
     emit actionDone(new PenChangeAction(m_pen, m_indexOfPrimitive));
 }

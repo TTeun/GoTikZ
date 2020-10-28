@@ -7,7 +7,7 @@
 
 #include "Drawable.h"
 
-class QPoint;
+class QPointF;
 
 class StreamDrawable : public Drawable {
   protected:
@@ -15,8 +15,8 @@ class StreamDrawable : public Drawable {
     }
 
   public:
-    virtual void      stream(const QPoint& point)                  = 0;
-    virtual bool      addPoint(const QPoint& point, bool forceEnd) = 0;
+    virtual void      stream(const QPointF& point)                  = 0;
+    virtual bool      addPoint(const QPointF& point, bool forceEnd) = 0;
     virtual Drawable* drawable()                                    = 0;
 
   protected:

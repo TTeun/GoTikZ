@@ -8,7 +8,7 @@
 #include "LineStream.h"
 #include "PolyLineStream.h"
 
-StreamDrawable* StreamDrawableFactory::make(const QPoint& point, MOUSE_POINTER_TYPE type, const QPen& pen) {
+StreamDrawable* StreamDrawableFactory::make(const QPointF& point, MOUSE_POINTER_TYPE type, const QPen& pen) {
     assert(type != MOUSE_POINTER_TYPE::POINT);
     switch (type) {
         case MOUSE_POINTER_TYPE::LINE:

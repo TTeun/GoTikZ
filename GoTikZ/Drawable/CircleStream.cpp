@@ -9,7 +9,7 @@
 #include <Math/Math.h>
 #include <QPainter>
 
-void CircleStream::stream(const QPoint& point) {
+void CircleStream::stream(const QPointF& point) {
     m_radius     = Math::distance(m_center, point);
     m_shouldDraw = true;
 }
@@ -21,7 +21,7 @@ void CircleStream::draw(QPainter* painter, DRAW_FLAGS drawFlag) const {
     }
 }
 
-bool CircleStream::addPoint(const QPoint& point, bool forceEnd) {
+bool CircleStream::addPoint(const QPointF& point, bool forceEnd) {
     m_radius = Math::distance(m_center, point);
     return true;
 }
@@ -30,11 +30,11 @@ Drawable* CircleStream::drawable() {
     return new Circle(*this);
 }
 
-std::pair<double, QPoint> CircleStream::snap(QPoint point) {
-    return {std::numeric_limits<double>::max(), QPoint()};
+std::pair<double, QPointF> CircleStream::snap(QPointF point) {
+    return {std::numeric_limits<double>::max(), QPointF()};
 }
 
-double CircleStream::dist(const QPoint& point) const {
+double CircleStream::dist(const QPointF& point) const {
     const double distToCenter = Math::distance(point, m_center);
     return std::abs(distToCenter - m_radius);
 }

@@ -18,24 +18,19 @@ void DrawWidget::paintEvent(QPaintEvent* e) {
     QPainter painter(this);
     QBrush   brush(Qt::white);
     painter.fillRect(this->rect(), brush);
+    painter.save();
+    m_transform.applyTransform(painter);
     if (m_gridState.showGrid()) {
         drawGrid(&painter);
     }
 
     painter.setPen(QPen{Qt::black, 3});
-    painter.drawLine(m_mousePoint - QPoint{0, 8}, m_mousePoint + QPoint{0, 8});
-    painter.drawLine(m_mousePoint - QPoint{8, 0}, m_mousePoint + QPoint{8, 0});
     m_model->drawableHandler().draw(&painter);
-}
 
-void DrawWidget::mousePressEvent(QMouseEvent* event) {
-    m_mousePoint = m_model->drawableHandler().snap(QPoint(event->localPos().x(), event->localPos().y()));
-    m_actionHandler->mousePressEvent(event);
-}
-
-void DrawWidget::mouseMoveEvent(QMouseEvent* event) {
-    m_mousePoint = m_model->drawableHandler().snap(QPoint(event->localPos().x(), event->localPos().y()));
-    m_actionHandler->mouseMoveEvent(event);
+    painter.restore();
+    painter.setPen(QPen{Qt::black, 2});
+    painter.drawLine(m_mousePoint - QPointF{0, 8}, m_mousePoint + QPointF{0, 8});
+    painter.drawLine(m_mousePoint - QPointF{8, 0}, m_mousePoint + QPointF{8, 0});
 }
 
 void DrawWidget::drawGrid(QPainter* painter) {
@@ -51,4 +46,18 @@ void DrawWidget::drawGrid(QPainter* painter) {
 
 void DrawWidget::setGridState(GridState newGridState) {
     m_gridState = newGridState;
+}
+
+void DrawWidget::mousePressEvent(QMouseEvent* event) {
+    m_mousePoint = m_model->drawableHandler().snap(event->localPos());
+    m_actionHandler->mousePressEvent(event);
+}
+
+void DrawWidget::mouseMoveEvent(QMouseEvent* event) {
+    m_mousePoint = m_model->drawableHandler().snap(event->localPos());
+    m_actionHandler->mouseMoveEvent(event);
+}
+
+void DrawWidget::wheelEvent(QWheelEvent* event) {
+    m_actionHandler->wheelEvent(event);
 }
