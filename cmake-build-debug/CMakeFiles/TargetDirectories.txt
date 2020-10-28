@@ -1,0 +1,4 @@
+/home/pc/MEGAsync/C++/clion/GoTikZ/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/pc/MEGAsync/C++/clion/GoTikZ/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/pc/MEGAsync/C++/clion/GoTikZ/cmake-build-debug/CMakeFiles/GoTikZ.dir
+/home/pc/MEGAsync/C++/clion/GoTikZ/cmake-build-debug/CMakeFiles/GoTikZ_autogen.dir

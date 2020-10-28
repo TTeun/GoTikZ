@@ -55,7 +55,7 @@ double PolyLineStream::dist(const QPointF& point) const {
     return result;
 }
 
-void PolyLineStream::translate(const QPointF translation) {
+void PolyLineStream::translate(const QPointF& translation) {
     for (auto& el : m_points){
         el += translation;
     }

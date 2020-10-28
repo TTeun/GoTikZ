@@ -5,14 +5,14 @@
 #ifndef GOTIKZ_LINEEDITWIDGET_H
 #define GOTIKZ_LINEEDITWIDGET_H
 
-#include "Widgets/GroupBoxContainer.h"
+#include "Widgets/AuxWidgets/GroupBoxContainer.h"
 
-#include <QObject>
+#include <QWidget>
 
 class Line;
 class ActionHandler;
 
-class LineEditWidget : public QObject, public GroupBoxContainer {
+class LineEditWidget : public QWidget, public GroupBoxContainer {
     Q_OBJECT
 
   public:

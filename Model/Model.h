@@ -21,7 +21,7 @@ class Model {
 
     void mousePressEvent(QMouseEvent* event);
     void mouseSelectEvent(QMouseEvent* event);
-    void mouseCreateEvent(QMouseEvent* event);
+    void mouseCreateEvent(const QPointF& snappedPoint);
     void mouseMoveEvent(QMouseEvent* event);
     void setPen(const QPen& pen);
     void setMousePointerType(MOUSE_POINTER_TYPE newType);

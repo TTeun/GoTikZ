@@ -11,15 +11,20 @@
 #include <QLayout>
 #include <QToolBox>
 
-LeftSideBar::LeftSideBar(QWidget* parent) : GroupBoxContainer(parent, "Settings") {
-    auto* contentsLayout = layout();
+LeftSideBar::LeftSideBar(QWidget* parent) : QWidget(parent), GroupBoxContainer(parent, "Settings") {
+    setLayout(new QVBoxLayout(this));
 
-    m_mousePointerTypeSelectWidget = new MousePointerTypeSelectWidget(groupBox());
-    m_gridSettingWidget            = new GridSettingWidget(groupBox());
-    m_penWidget                    = new PenWidget(groupBox());
-    contentsLayout->addWidget(m_mousePointerTypeSelectWidget->groupBox());
-    contentsLayout->addWidget(m_gridSettingWidget->groupBox());
-    contentsLayout->addWidget(m_penWidget->groupBox());
+    QSizePolicy sizePolicy(QSizePolicy::Maximum, QSizePolicy::Maximum);
+    setSizePolicy(sizePolicy);
+
+    auto* contentsLayout           = m_groupBox->layout();
+    m_mousePointerTypeSelectWidget = new MousePointerTypeSelectWidget(m_groupBox);
+    m_gridSettingWidget            = new GridSettingWidget(m_groupBox);
+    m_penWidget                    = new PenWidget(m_groupBox);
+    contentsLayout->addWidget(m_mousePointerTypeSelectWidget);
+    contentsLayout->addWidget(m_gridSettingWidget);
+    contentsLayout->addWidget(m_penWidget);
+    layout()->addWidget(m_groupBox);
 }
 
 MousePointerTypeSelectWidget* LeftSideBar::mousePointerTypeSelect() const {

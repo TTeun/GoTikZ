@@ -20,12 +20,12 @@ class Line : public Drawable {
     void                       draw(QPainter* painter, DRAW_FLAGS drawFlag, const Transform& transform) const override;
     std::pair<double, QPointF> snap(QPointF point) override;
     double                     dist(const QPointF& point) const override;
-    GroupBoxContainer*         toWidget(ActionHandler* actionHandler) override;
+    QWidget*                   toWidget(ActionHandler* actionHandler) override;
     QPointF                    point1() const;
     QPointF                    point2() const;
     void                       setPoint1(const QPointF& newPoint);
     void                       setPoint2(const QPointF& newPoint);
-    void translate(const QPointF translation) override {
+    void translate(const QPointF& translation) override {
         m_point1 += translation;
         m_point2 += translation;
     }

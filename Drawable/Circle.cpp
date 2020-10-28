@@ -4,9 +4,9 @@
 
 #include "Circle.h"
 
+#include "../States/Transform.h"
 #include "CircleStream.h"
 #include "Widgets/DrawableEditWidgets/CircleEditWidget.h"
-#include "../States/Transform.h"
 
 #include <Math/Math.h>
 #include <QPainter>
@@ -15,9 +15,10 @@ Circle::Circle(const CircleStream& circleStream)
     : Drawable(circleStream.m_pen), m_center(circleStream.m_center), m_radius(circleStream.m_radius) {
 }
 
-void Circle::draw(QPainter* painter, DRAW_FLAGS drawFlag, const Transform &transform) const {
+void Circle::draw(QPainter* painter, DRAW_FLAGS drawFlag, const Transform& transform) const {
     Drawable::draw(painter, drawFlag, transform);
-    painter->drawEllipse(transform.applyTransform(m_center),  m_radius * transform.scale(),  m_radius * transform.scale());
+    painter->drawEllipse(transform.applyTransform(m_center), m_radius * transform.scale(),
+                         m_radius * transform.scale());
 }
 
 std::pair<double, QPointF> Circle::snap(QPointF point) {
@@ -32,7 +33,7 @@ double Circle::dist(const QPointF& point) const {
     return std::abs(distToCenter - m_radius);
 }
 
-GroupBoxContainer* Circle::toWidget(ActionHandler* actionHandler) {
+QWidget* Circle::toWidget(ActionHandler* actionHandler) {
     return new CircleEditWidget(this, actionHandler);
 }
 
@@ -50,4 +51,7 @@ void Circle::setCenter(const QPointF& newCenter) {
 
 void Circle::setRadius(double newRadius) {
     m_radius = newRadius;
+}
+void Circle::translate(const QPointF& translation) {
+    m_center += translation;
 }

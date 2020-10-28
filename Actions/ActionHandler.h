@@ -37,7 +37,6 @@ class ActionHandler : public QObject {
     Model*      model();
 
     void draw();
-
     void mousePressEvent(QMouseEvent* event);
     void mouseMoveEvent(QMouseEvent* event);
     void wheelEvent(QWheelEvent* event, QPointF mousePosition);
@@ -45,22 +44,24 @@ class ActionHandler : public QObject {
     void keyPressEventNoModifier(QKeyEvent* event);
     void keyPressEventWithCtrl(QKeyEvent* event);
 
-    void setEditWidget(GroupBoxContainer* widget);
+    void setEditWidget(QWidget* widget);
 
   public slots:
     void addAction(UndoableAction* action, bool isAlreadyDone);
-
     void doAction(Action* action);
+
+  signals:
+    void updateRightSideBar();
 
   private:
     std::stack<std::unique_ptr<UndoableAction>> m_undoStack;
     std::stack<std::unique_ptr<UndoableAction>> m_redoStack;
 
-    DrawWidget*   m_drawWidget;
-    LeftSideBar*  m_leftSideBar;
-    RightSideBar* m_rightSideBar;
+    DrawWidget*   m_drawWidget{};
+    LeftSideBar*  m_leftSideBar{};
+    RightSideBar* m_rightSideBar{};
     MainWindow*   m_mainWindow;
-    Model*        m_model;
+    Model*        m_model{};
 
     QPointF m_previousMousePoint;
 };

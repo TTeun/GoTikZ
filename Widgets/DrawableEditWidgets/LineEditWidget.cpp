@@ -14,7 +14,10 @@
 
 LineEditWidget::LineEditWidget(Line* line, ActionHandler* actionHandler)
     : GroupBoxContainer(nullptr, "Line"), m_line(line), m_actionHandler(actionHandler) {
-    auto* contentsLayout = layout();
+    auto* contentsLayout = m_groupBox->layout();
+
+    setLayout(new QHBoxLayout(this));
+    layout()->addWidget(m_groupBox);
 
     auto* point1Widget = new XyWidget(m_line->point1(), "p1");
     QObject::connect(point1Widget, &XyWidget::sendValues, this, &LineEditWidget::setPoint1);
@@ -27,7 +30,7 @@ LineEditWidget::LineEditWidget(Line* line, ActionHandler* actionHandler)
 
     auto* penWidget = new PenWidget(nullptr, line->index(), m_line->pen());
     QObject::connect(penWidget, &PenWidget::actionDone, m_actionHandler, &ActionHandler::doAction);
-    contentsLayout->addWidget(penWidget->groupBox());
+    contentsLayout->addWidget(penWidget);
 }
 
 void LineEditWidget::setPoint1(QPointF newPoint) {

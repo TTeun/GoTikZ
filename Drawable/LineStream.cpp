@@ -41,7 +41,7 @@ double LineStream::dist(const QPointF& point) const {
     return std::min(Math::distance(point, m_point1), Math::distance(point, m_point2));
 }
 
-void LineStream::translate(const QPointF translation)  {
+void LineStream::translate(const QPointF& translation)  {
     m_point1 += translation;
     m_point2 += translation;
 }

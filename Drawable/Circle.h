@@ -15,18 +15,15 @@ class Circle : public Drawable {
   public:
     explicit Circle(const CircleStream& circleStream);
 
-    void draw(QPainter* painter, DRAW_FLAGS drawFlag, const Transform& transform) const override;
+    void                       draw(QPainter* painter, DRAW_FLAGS drawFlag, const Transform& transform) const override;
     std::pair<double, QPointF> snap(QPointF point) override;
-    double dist(const QPointF& point) const override;
-    GroupBoxContainer* toWidget(ActionHandler* actionHandler) override;
-   QPointF center() const;
-   double radius() const;
-    void setCenter(const QPointF& newCenter);
-    void setRadius(double newRadius);
-    void translate(const QPointF translation) override {
-        m_center += translation;
-    }
-
+    double                     dist(const QPointF& point) const override;
+    QWidget*                   toWidget(ActionHandler* actionHandler) override;
+    QPointF                    center() const;
+    double                     radius() const;
+    void                       setCenter(const QPointF& newCenter);
+    void                       setRadius(double newRadius);
+    void                       translate(const QPointF& translation) override;
 
   private:
     QPointF m_center;

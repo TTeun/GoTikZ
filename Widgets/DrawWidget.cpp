@@ -1,6 +1,5 @@
 #include "DrawWidget.h"
 
-#include "../Math/Math.h"
 #include "Actions/ActionHandler.h"
 #include "Model/Model.h"
 
@@ -23,13 +22,11 @@ void DrawWidget::paintEvent(QPaintEvent* e) {
     if (m_gridState.showGrid()) {
         drawGrid(&painter);
     }
-
     painter.setPen(QPen{Qt::black, 3});
 
     const auto& drawableHandler = m_model->drawableHandler();
 
-
-    for (const auto& el : drawableHandler.selectedDrawables() ) {
+    for (const auto& el : drawableHandler.selectedDrawables()) {
         el->draw(&painter, Drawable::DRAW_FLAGS::SELECTED, m_transform);
     }
 

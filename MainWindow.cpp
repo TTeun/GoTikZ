@@ -4,9 +4,9 @@
 
 #include "MainWindow.h"
 
-#include "Widgets/GroupBoxContainer.h"
+#include "Widgets/AuxWidgets/GroupBoxContainer.h"
 
-MainWindow::MainWindow()
+        MainWindow::MainWindow()
     : QMainWindow(nullptr), m_actionHandler(this), m_model(&m_actionHandler),
       m_mainWidget(new MainWidget(this, &m_model, &m_actionHandler)) {
     setCentralWidget(m_mainWidget);

@@ -20,9 +20,9 @@ class Point : public Drawable {
     double                     dist(const QPointF& point) const override;
     void                       setPoint(const QPointF& newPoint);
     QPointF                    point() const;
-    GroupBoxContainer* toWidget(ActionHandler* actionHandler) override;
+    QWidget*                   toWidget(ActionHandler* actionHandler) override;
 
-    void translate(const QPointF translation) override;
+    void translate(const QPointF& translation) override;
 
 
   private:

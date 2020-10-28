@@ -42,7 +42,7 @@ double PolyLine::dist(const QPointF& point) const {
     return result;
 }
 
-void PolyLine::translate(const QPointF translation) {
+void PolyLine::translate(const QPointF& translation) {
     for (auto& el : m_points){
         el += translation;
     }

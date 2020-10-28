@@ -15,6 +15,8 @@ class XyWidget : public QWidget {
   public:
     explicit XyWidget(const QPointF& point, const QString& value = "");
 
+    void setValues(const QPointF& values);
+
   private slots:
     void valuesChanged(int dummy);
 

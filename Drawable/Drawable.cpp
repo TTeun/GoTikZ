@@ -4,9 +4,8 @@
 
 #include "Drawable.h"
 
-#include "../Widgets/GroupBoxContainer.h"
-
 #include <QPainter>
+#include <QWidget>
 #include <utility>
 
 size_t Drawable::s_maxIndex = 0;
@@ -17,22 +16,22 @@ Drawable::Drawable(QPen pen) : m_pen(std::move(pen)) {
     ++s_maxIndex;
 }
 
-void Drawable::draw(QPainter* painter, DRAW_FLAGS drawFlag, const Transform &transform) const {
+void Drawable::draw(QPainter* painter, DRAW_FLAGS drawFlag, const Transform& transform) const {
     painter->setRenderHint(QPainter::Antialiasing, true);
     switch (drawFlag) {
         case DRAW_FLAGS::NONE:
             painter->setPen(m_pen);
             break;
-        case DRAW_FLAGS::SELECTED:
-            static auto selectedPen = QPen(Qt::green, m_pen.width() + 2);
+        case DRAW_FLAGS::SELECTED: {
+            auto selectedPen = QPen(Qt::green, m_pen.width() + 2);
             selectedPen.setCapStyle(Qt::RoundCap);
             painter->setPen(selectedPen);
-            break;
-        case DRAW_FLAGS::HIGHLIGHTED:
-            static auto highlightedPen = QPen(m_pen.color(), m_pen.width() + 2);
+        } break;
+        case DRAW_FLAGS::HIGHLIGHTED: {
+            auto highlightedPen = QPen(m_pen.color(), m_pen.width() * 1.4 + 2);
             highlightedPen.setCapStyle(Qt::RoundCap);
             painter->setPen(highlightedPen);
-            break;
+        } break;
     }
 }
 
@@ -40,8 +39,8 @@ size_t Drawable::index() const {
     return m_index;
 }
 
-GroupBoxContainer* Drawable::toWidget(ActionHandler* actionHandler) {
-    return new GroupBoxContainer(nullptr, "stubb");
+QWidget* Drawable::toWidget(ActionHandler* actionHandler) {
+    return new QWidget(nullptr);
 }
 
 void Drawable::setPen(const QPen& pen) {

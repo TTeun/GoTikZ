@@ -6,7 +6,7 @@
 #define GOTIKZ_PENWIDGET_H
 
 #include "ActionWidget.h"
-#include "GroupBoxContainer.h"
+#include "Widgets/AuxWidgets/GroupBoxContainer.h"
 
 #include <QPen>
 

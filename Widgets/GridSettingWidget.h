@@ -6,8 +6,8 @@
 #define GOTIKZ_GRIDSETTINGWIDGET_H
 
 #include "ActionWidget.h"
-#include "GroupBoxContainer.h"
 #include "States/GridState.h"
+#include "Widgets/AuxWidgets/GroupBoxContainer.h"
 
 class QSpinBox;
 class QCheckBox;

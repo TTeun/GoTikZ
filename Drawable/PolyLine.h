@@ -22,7 +22,7 @@ class PolyLine : public Drawable {
 
     double dist(const QPointF& point) const override;
 
-    void translate(const QPointF translation) override;
+    void translate(const QPointF& translation) override;
 
 
   private:

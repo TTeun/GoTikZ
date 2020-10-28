@@ -31,10 +31,10 @@ QPointF Point::point() const {
     return m_point;
 }
 
-GroupBoxContainer* Point::toWidget(ActionHandler* actionHandler) {
+QWidget* Point::toWidget(ActionHandler* actionHandler) {
     return new PointEditWidget(this, actionHandler);
 }
 
-void Point::translate(const QPointF translation) {
+void Point::translate(const QPointF& translation) {
     m_point += translation;
 }

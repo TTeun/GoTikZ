@@ -25,9 +25,7 @@ class CircleStream : public StreamDrawable {
     std::pair<double, QPointF> snap(QPointF point) override;
     double                     dist(const QPointF& point) const override;
 
-    void translate(const QPointF translation) override {
-        m_center += translation;
-    }
+    void translate(const QPointF& translation) override;
 
 
   private:

@@ -76,7 +76,19 @@ void ActionHandler::mousePressEvent(QMouseEvent* event) {
     if (!m_mainWindow->hasFocus()) {
         m_mainWindow->setFocus();
     }
-    m_model->mousePressEvent(event);
+    switch (event->buttons()) {
+        case Qt::NoButton:
+            break;
+        case Qt::RightButton:
+            m_model->mousePressEvent(event);
+            break;
+        case Qt::LeftButton:
+            m_model->mousePressEvent(event);
+            break;
+        case Qt::MiddleButton:
+            break;
+    }
+
     draw();
 }
 
@@ -87,6 +99,9 @@ void ActionHandler::mouseMoveEvent(QMouseEvent* event) {
             m_model->mouseMoveEvent(event);
             break;
         case Qt::RightButton:
+            m_model->drawableHandler().translateSelected((newMousePoint - m_previousMousePoint) /
+                                                         m_drawWidget->transform().scale());
+            emit updateRightSideBar();
             break;
         case Qt::LeftButton:
             break;
@@ -172,13 +187,9 @@ void ActionHandler::keyPressEventWithCtrl(QKeyEvent* event) {
     }
 }
 
-void ActionHandler::setEditWidget(GroupBoxContainer* widget) {
-    QLayoutItem* item;
-
-    while ((item = m_rightSideBar->layout()->takeAt(0)) != nullptr) {
-        delete item->widget();
-        delete item;
-    }
-    m_rightSideBar->layout()->addWidget(widget->groupBox());
+void ActionHandler::setEditWidget(QWidget* widget) {
+    widget->setObjectName("EditWidget");
+    m_rightSideBar->clearWidget();
+    m_rightSideBar->addWidget(widget);
     draw();
 }

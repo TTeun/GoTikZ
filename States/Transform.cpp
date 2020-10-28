@@ -19,7 +19,7 @@ QPointF Transform::translation() const {
     return m_translation;
 }
 
-QPointF Transform::invertTransform(const QPointF& point) const{
+QPointF Transform::invertTransform(const QPointF& point) const {
     return QPointF{point.x() / m_scale, point.y() / m_scale} - m_translation / m_scale;
 }
 
@@ -32,7 +32,7 @@ double Transform::scale() const {
     return m_scale;
 }
 
-QPointF Transform::applyTransform(QPointF point) const{
+QPointF Transform::applyTransform(QPointF point) const {
     point *= m_scale;
     return point + m_translation;
 }

@@ -21,19 +21,21 @@ PenWidget::PenWidget(QWidget* parent, size_t indexOfPrimitive, const QPen& pen)
 }
 
 void PenWidget::create() {
+    setLayout(new QHBoxLayout(this));
     m_pen.setJoinStyle(Qt::RoundJoin);
-    auto* contentsLayout = layout();
+    auto* contentsLayout = m_groupBox->layout();
 
-    auto* colorWidget = new ColorWidget(groupBox(), m_pen.color());
+    auto* colorWidget = new ColorWidget(this, m_pen.color());
     QObject::connect(colorWidget, &ColorWidget::colorUpdated, this, &PenWidget::setColor);
     contentsLayout->addWidget(colorWidget);
 
-    auto* spinBox = new QSpinBox(groupBox());
+    auto* spinBox = new QSpinBox(this);
     spinBox->setValue(m_pen.width());
     spinBox->setMinimum(1);
     QObject::connect(spinBox, static_cast<void (QSpinBox::*)(int)>(&QSpinBox::valueChanged), this,
                      &PenWidget::setWidth);
     contentsLayout->addWidget(spinBox);
+    layout()->addWidget(m_groupBox);
 }
 
 void PenWidget::setColor(const QColor& color) {

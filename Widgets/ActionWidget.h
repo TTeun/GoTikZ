@@ -5,12 +5,12 @@
 #ifndef GOTIKZ_ACTIONWIDGET_H
 #define GOTIKZ_ACTIONWIDGET_H
 
-#include <QObject>
+#include <QWidget>
 
 class UndoableAction;
 class Action;
 
-class ActionWidget : public QObject {
+class ActionWidget : public QWidget {
     Q_OBJECT
 
   protected:

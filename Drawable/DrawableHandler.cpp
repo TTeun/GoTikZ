@@ -15,7 +15,7 @@ void DrawableHandler::addStreamDrawable(StreamDrawable* streamDrawable) {
     m_streamDrawable.reset(streamDrawable);
 }
 
-bool DrawableHandler::isStreaming()  const {
+bool DrawableHandler::isStreaming() const {
     return m_streamDrawable != nullptr;
 }
 
@@ -135,14 +135,26 @@ size_t DrawableHandler::indexOfSelectedDrawable() const {
     return m_selectedDrawables.front()->index();
 }
 
-const std::vector<Drawable *> &DrawableHandler::selectedDrawables() const {
+const std::vector<Drawable*>& DrawableHandler::selectedDrawables() const {
     return m_selectedDrawables;
 }
 
-const std::vector<Drawable *> &DrawableHandler::highlightedDrawables() const {
+const std::vector<Drawable*>& DrawableHandler::highlightedDrawables() const {
     return m_highlightedDrawables;
 }
 
-const StreamDrawable *DrawableHandler::streamDrawable() const{
+const StreamDrawable* DrawableHandler::streamDrawable() const {
     return m_streamDrawable.get();
+}
+
+void DrawableHandler::translateAll(const QPointF& translation) {
+    for (auto& el : m_drawables) {
+        el->translate(translation);
+    }
+}
+
+void DrawableHandler::translateSelected(const QPointF& translation) {
+    for (auto& el : m_selectedDrawables) {
+        el->translate(translation);
+    }
 }

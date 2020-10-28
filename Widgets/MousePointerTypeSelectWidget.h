@@ -6,8 +6,8 @@
 #define GOTIKZ_MOUSEPOINTERTYPESELECTWIDGET_H
 
 #include "ActionWidget.h"
-#include "GroupBoxContainer.h"
 #include "Model/MousePointerTypeEnum.h"
+#include "Widgets/AuxWidgets/GroupBoxContainer.h"
 
 #include <QGroupBox>
 

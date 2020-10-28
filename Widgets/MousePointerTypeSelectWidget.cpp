@@ -12,6 +12,7 @@
 #include <QRadioButton>
 
 MousePointerTypeSelectWidget::MousePointerTypeSelectWidget(QWidget* parent) : GroupBoxContainer(nullptr, "Mode") {
+    setLayout(new QHBoxLayout(this));
     m_buttonGroup = new QButtonGroup();
 
     addTypeButton("Line", true);
@@ -22,6 +23,7 @@ MousePointerTypeSelectWidget::MousePointerTypeSelectWidget(QWidget* parent) : Gr
 
     QObject::connect(m_buttonGroup, static_cast<void (QButtonGroup::*)(QAbstractButton*)>(&QButtonGroup::buttonClicked),
                      this, &MousePointerTypeSelectWidget::mousePointerTypeButtonClicked);
+    layout()->addWidget(m_groupBox);
 }
 
 void MousePointerTypeSelectWidget::setSelectedButton(MOUSE_POINTER_TYPE type) {
@@ -56,12 +58,12 @@ void MousePointerTypeSelectWidget::setSelectedButton(MOUSE_POINTER_TYPE type) {
 }
 
 void MousePointerTypeSelectWidget::addTypeButton(const QString& title, bool selected) {
-    auto* radioButton = new QRadioButton(groupBox());
+    auto* radioButton = new QRadioButton(m_groupBox);
     radioButton->setChecked(selected);
     radioButton->setText(title);
     m_buttonGroup->addButton(radioButton);
     m_buttonGroup->setId(radioButton, m_buttonGroup->buttons().size() - 1);
-    layout()->addWidget(radioButton);
+    m_groupBox->layout()->addWidget(radioButton);
 }
 
 void MousePointerTypeSelectWidget::mousePointerTypeButtonClicked(QAbstractButton* button) {

@@ -48,6 +48,6 @@ QPointF Line::point1() const {
 QPointF Line::point2() const {
     return m_point2;
 }
-GroupBoxContainer* Line::toWidget(ActionHandler* actionHandler) {
+QWidget* Line::toWidget(ActionHandler* actionHandler) {
     return new LineEditWidget(this, actionHandler);
 }

@@ -5,13 +5,14 @@
 #ifndef GOTIKZ_POINTEDITWIDGET_H
 #define GOTIKZ_POINTEDITWIDGET_H
 
-#include <QObject>
-#include <Widgets/GroupBoxContainer.h>
+#include "Widgets/AuxWidgets/GroupBoxContainer.h"
+
+#include <QWidget>
 
 class Point;
 class ActionHandler;
 
-class PointEditWidget : public QObject, public GroupBoxContainer {
+class PointEditWidget : public QWidget, public GroupBoxContainer {
     Q_OBJECT
 
   public:

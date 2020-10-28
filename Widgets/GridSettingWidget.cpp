@@ -12,19 +12,21 @@
 #include <QtWidgets/QVBoxLayout>
 
 GridSettingWidget::GridSettingWidget(QWidget* parent) : GroupBoxContainer(parent, "Grid") {
-    auto* contentsLayout = layout();
+    setLayout(new QHBoxLayout(this));
+    auto* contentsLayout = m_groupBox->layout();
 
-    m_showGridCheckBox = new QCheckBox(groupBox());
+    m_showGridCheckBox = new QCheckBox(this);
     m_showGridCheckBox->setChecked(true);
     m_showGridCheckBox->setText("Grid");
     QObject::connect(m_showGridCheckBox, &QCheckBox::toggled, this, &GridSettingWidget::setShowGrid);
     contentsLayout->addWidget(m_showGridCheckBox);
 
-    m_gridSpacingSpinBox = new QSpinBox(groupBox());
+    m_gridSpacingSpinBox = new QSpinBox(this);
     m_gridSpacingSpinBox->setValue(m_gridState.gridSpacing());
     QObject::connect(m_gridSpacingSpinBox, static_cast<void (QSpinBox::*)(int)>(&QSpinBox::valueChanged), this,
                      &GridSettingWidget::setSpacing);
     contentsLayout->addWidget(m_gridSpacingSpinBox);
+    layout()->addWidget(m_groupBox);
 }
 
 void GridSettingWidget::setSpacing(int spacing) {
