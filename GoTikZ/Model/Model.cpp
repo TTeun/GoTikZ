@@ -29,7 +29,7 @@ void Model::mousePressEvent(QMouseEvent* event) {
         mouseSelectEvent(event);
     } else {
         if (event->button() == Qt::RightButton || event->button() == Qt::LeftButton) {
-            m_drawableHandler.clearSelected();
+            m_drawableHandler.clearSelectedAndHighlighted();
             mouseCreateEvent(event);
         }
     }
@@ -99,6 +99,6 @@ void Model::setMousePointerType(MOUSE_POINTER_TYPE newType) {
     m_mousePointerType = newType;
 }
 
-QPointF Model::mousePointInWorldCoordinates(const QPointF& mousePoint) {
+QPointF Model::mousePointInWorldCoordinates(const QPointF& mousePoint) const{
     return m_actionHandler->drawWidget()->transform().invertTransform(mousePoint);
 }

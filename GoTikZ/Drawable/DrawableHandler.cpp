@@ -7,16 +7,16 @@
 #include <QPainter>
 
 void DrawableHandler::draw(QPainter* painter) const {
+    for (const auto& el : m_selectedDrawables) {
+        el->draw(painter, Drawable::DRAW_FLAGS::SELECTED);
+    }
+
     for (const auto& el : m_drawables) {
         el->draw(painter, Drawable::DRAW_FLAGS::NONE);
     }
 
     for (const auto& el : m_highlightedDrawables) {
         el->draw(painter, Drawable::DRAW_FLAGS::HIGHLIGHTED);
-    }
-
-    for (const auto& el : m_selectedDrawables) {
-        el->draw(painter, Drawable::DRAW_FLAGS::SELECTED);
     }
 
     if (m_streamDrawable) {
@@ -92,7 +92,7 @@ QPointF DrawableHandler::snap(const QPointF& mousePoint) const {
     }
 }
 
-void DrawableHandler::clearSelected() {
+void DrawableHandler::clearSelectedAndHighlighted() {
     m_selectedDrawables.clear();
     m_highlightedDrawables.clear();
 }
@@ -102,7 +102,11 @@ void DrawableHandler::highlightClosest(const QPointF& point) {
     if (closest == nullptr) {
         return;
     }
-    m_highlightedDrawables = {closest};
+    if (std::find(m_selectedDrawables.begin(), m_selectedDrawables.end(), closest) == m_selectedDrawables.end()) {
+        m_highlightedDrawables = {closest};
+    } else {
+        m_highlightedDrawables.clear();
+    }
 }
 
 Drawable* DrawableHandler::getClosest(const QPointF& point) {
@@ -124,6 +128,7 @@ Drawable* DrawableHandler::selectClosest(const QPointF& point) {
         return nullptr;
     }
     m_selectedDrawables = {closest};
+    m_highlightedDrawables.clear();
     return closest;
 }
 
@@ -139,4 +144,11 @@ void DrawableHandler::setPen(const QPen& pen, size_t indexOfDrawable) {
         }
     }
     assert(false);
+}
+
+size_t DrawableHandler::indexOfSelectedDrawable() const {
+    if (m_selectedDrawables.empty()) {
+        return std::numeric_limits<size_t>::max();
+    }
+    return m_selectedDrawables.front()->index();
 }

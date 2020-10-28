@@ -4,6 +4,7 @@
 
 #include "ActionHandler.h"
 
+#include "DeletePrimitiveAction.h"
 #include "MainWindow.h"
 #include "Widgets/DrawWidget.h"
 #include "Widgets/GridSettingWidget.h"
@@ -97,8 +98,10 @@ void ActionHandler::mouseMoveEvent(QMouseEvent* event) {
     m_previousMousePoint = event->localPos();
 }
 
-void ActionHandler::wheelEvent(QWheelEvent* event) {
+void ActionHandler::wheelEvent(QWheelEvent* event, QPointF mousePosition) {
+    const auto mouseInWorld = m_model->mousePointInWorldCoordinates(mousePosition);
     m_drawWidget->transform().addToScaleParameter(event->angleDelta().y() / 100);
+    m_drawWidget->transform().setTranslation(mousePosition - m_drawWidget->transform().scale() * mouseInWorld);
     draw();
 }
 
@@ -145,6 +148,12 @@ void ActionHandler::keyPressEventNoModifier(QKeyEvent* event) {
         case Qt::Key_Escape:
             m_model->drawableHandler().stopStreaming();
             break;
+        case Qt::Key_Delete: {
+            size_t indexOfSelected = m_model->drawableHandler().indexOfSelectedDrawable();
+            if (indexOfSelected != std::numeric_limits<size_t>::max()) {
+                addAction(new DeletePrimitiveAction(indexOfSelected), false);
+            }
+        } break;
         default:
             break;
     }

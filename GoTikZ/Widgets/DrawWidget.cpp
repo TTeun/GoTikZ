@@ -29,9 +29,7 @@ void DrawWidget::paintEvent(QPaintEvent* e) {
     m_model->drawableHandler().draw(&painter);
 
     painter.restore();
-    painter.setPen(QPen{Qt::black, 2});
-    painter.drawLine(m_mousePoint - QPointF{0, 8}, m_mousePoint + QPointF{0, 8});
-    painter.drawLine(m_mousePoint - QPointF{8, 0}, m_mousePoint + QPointF{8, 0});
+    drawMousePointer(&painter);
 }
 
 void DrawWidget::drawGrid(QPainter* painter) {
@@ -42,6 +40,10 @@ void DrawWidget::drawGrid(QPainter* painter) {
     const int    gridSpacing       = m_gridState.gridSpacing();
     const int    scaledGridSpacing = gridSpacing * scale;
 
+    if (scaledGridSpacing == 0) {
+        return;
+    }
+
     for (int i = -dy / scaledGridSpacing; dy + i * scaledGridSpacing < height(); ++i) {
         painter->drawLine(0, dy + i * scaledGridSpacing, width(), dy + i * scaledGridSpacing);
     }
@@ -50,14 +52,20 @@ void DrawWidget::drawGrid(QPainter* painter) {
     }
 
     painter->setPen(QPen{Qt::black, 3});
-    const int sideLineInterval = std::max(1, 150 / scaledGridSpacing);
-    const int i_start          = -dy / scaledGridSpacing;
+    int sideLineInterval = 1;
+    while (sideLineInterval * scaledGridSpacing < 50) {
+        sideLineInterval *= 2;
+        assert(sideLineInterval < std::numeric_limits<int>::max() / 4);
+    }
+
+    const int i_start = -dy / scaledGridSpacing;
     for (int i = sideLineInterval * std::floor(i_start / sideLineInterval); dy + i * scaledGridSpacing < height();
          i += sideLineInterval) {
         painter->drawLine(0, dy + i * scaledGridSpacing, 5, dy + i * scaledGridSpacing);
         painter->drawText(10, dy + i * scaledGridSpacing + 6, QString::number(i * gridSpacing, 10));
         painter->drawLine(width() - 5, dy + i * scaledGridSpacing, width(), dy + i * scaledGridSpacing);
     }
+
     const int j_start = -dx / scaledGridSpacing;
     for (int j = sideLineInterval * std::floor(j_start / sideLineInterval); dx + j * scaledGridSpacing < width();
          j += sideLineInterval) {
@@ -70,6 +78,10 @@ void DrawWidget::drawGrid(QPainter* painter) {
     painter->drawLine(0, height(), width(), height());
     painter->drawLine(0, 0, 0, height());
     painter->drawLine(width(), 0, width(), height());
+
+    painter->setPen(QPen{QColor(190, 190, 190), 1, Qt::DashLine});
+    painter->drawLine(0, m_mousePoint.y(), width(), m_mousePoint.y());
+    painter->drawLine(m_mousePoint.x(), 0, m_mousePoint.x(), height());
 }
 
 void DrawWidget::setGridState(GridState newGridState) {
@@ -77,19 +89,31 @@ void DrawWidget::setGridState(GridState newGridState) {
 }
 
 void DrawWidget::mousePressEvent(QMouseEvent* event) {
-    m_mousePoint = m_model->drawableHandler().snap(event->localPos());
+    m_mousePoint = event->localPos();
     m_actionHandler->mousePressEvent(event);
 }
 
 void DrawWidget::mouseMoveEvent(QMouseEvent* event) {
-    m_mousePoint = m_model->drawableHandler().snap(event->localPos());
+    m_mousePoint = event->localPos();
     m_actionHandler->mouseMoveEvent(event);
 }
 
 void DrawWidget::wheelEvent(QWheelEvent* event) {
-    m_actionHandler->wheelEvent(event);
+    m_actionHandler->wheelEvent(event, m_mousePoint);
 }
 
 Transform& DrawWidget::transform() {
     return m_transform;
+}
+
+void DrawWidget::drawMousePointer(QPainter* painter) {
+    const auto snappedMousePoint = m_transform.applyTransform(
+        m_model->drawableHandler().snap(m_model->mousePointInWorldCoordinates(m_mousePoint)));
+    painter->setPen(QPen{Qt::gray, 3});
+    painter->drawLine(snappedMousePoint - QPointF{0, 8}, snappedMousePoint + QPointF{0, 8});
+    painter->drawLine(snappedMousePoint - QPointF{8, 0}, snappedMousePoint + QPointF{8, 0});
+
+    painter->setPen(QPen{Qt::black, 3});
+    painter->drawLine(m_mousePoint - QPointF{0, 8}, m_mousePoint + QPointF{0, 8});
+    painter->drawLine(m_mousePoint - QPointF{8, 0}, m_mousePoint + QPointF{8, 0});
 }

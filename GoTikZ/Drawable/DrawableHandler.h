@@ -16,37 +16,23 @@ class DrawableHandler {
   public:
     DrawableHandler() = default;
 
-    void draw(QPainter* painter) const;
-
-    void addDrawable(Drawable* drawable);
-
-    void addStreamDrawable(StreamDrawable* streamDrawable);
-
-    bool isStreaming();
-
-    Drawable* removeDrawable(size_t index);
-
+    void                                          draw(QPainter* painter) const;
+    void                                          addDrawable(Drawable* drawable);
+    void                                          addStreamDrawable(StreamDrawable* streamDrawable);
+    bool                                          isStreaming();
+    Drawable*                                     removeDrawable(size_t index);
     const std::vector<std::unique_ptr<Drawable>>& drawables();
-
-    bool addPointToStreamDrawable(const QPointF& point, bool forceEnd);
-
-    void finalizeStreamDrawable();
-
-    void stream(const QPointF& point);
-
-    QPointF snap(const QPointF& mousePoint) const;
-
-    void clearSelected();
-
-    void highlightClosest(const QPointF& point);
-
-    Drawable* selectClosest(const QPointF& point);
-
-    Drawable* getClosest(const QPointF& point);
-
-    void stopStreaming();
-
-    void setPen(const QPen& pen, size_t indexOfDrawable);
+    bool                                          addPointToStreamDrawable(const QPointF& point, bool forceEnd);
+    void                                          finalizeStreamDrawable();
+    void                                          stream(const QPointF& point);
+    QPointF                                       snap(const QPointF& mousePoint) const;
+    void                                          clearSelectedAndHighlighted();
+    void                                          highlightClosest(const QPointF& point);
+    Drawable*                                     selectClosest(const QPointF& point);
+    Drawable*                                     getClosest(const QPointF& point);
+    void                                          stopStreaming();
+    void                                          setPen(const QPen& pen, size_t indexOfDrawable);
+    size_t                                        indexOfSelectedDrawable() const;
 
   private:
     std::unique_ptr<StreamDrawable>        m_streamDrawable = nullptr;

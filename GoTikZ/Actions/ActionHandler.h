@@ -40,7 +40,7 @@ class ActionHandler : public QObject {
 
     void mousePressEvent(QMouseEvent* event);
     void mouseMoveEvent(QMouseEvent* event);
-    void wheelEvent(QWheelEvent* event);
+    void wheelEvent(QWheelEvent* event, QPointF mousePosition);
     void keyPressEvent(QKeyEvent* event);
     void keyPressEventNoModifier(QKeyEvent* event);
     void keyPressEventWithCtrl(QKeyEvent* event);

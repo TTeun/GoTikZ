@@ -36,3 +36,8 @@ void Transform::addToScaleParameter(double addend) {
 double Transform::scale() const {
     return m_scale;
 }
+
+QPointF Transform::applyTransform(QPointF point) {
+    point *= m_scale;
+    return point + m_translation;
+}

@@ -26,7 +26,7 @@ class Model {
     void setPen(const QPen& pen);
     void setMousePointerType(MOUSE_POINTER_TYPE newType);
 
-    QPointF mousePointInWorldCoordinates(const QPointF& mousePoint);
+    QPointF mousePointInWorldCoordinates(const QPointF& mousePoint) const;
 
   private:
     DrawableHandler m_drawableHandler;
