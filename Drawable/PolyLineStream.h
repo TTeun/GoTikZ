@@ -9,6 +9,10 @@
 
 #include <vector>
 
+namespace View {
+    class Transform;
+}
+
 class PolyLine;
 
 class PolyLineStream : public StreamDrawable {
@@ -17,15 +21,14 @@ class PolyLineStream : public StreamDrawable {
   public:
     PolyLineStream(const QPointF& point, const QPen& pen);
 
-    void                       draw(QPainter* painter, DRAW_FLAGS drawFlag, const Transform& transform) const override;
-    void                       stream(const QPointF& point) override;
-    bool                       addPoint(const QPointF& point, bool forceEnd) override;
-    Drawable*                  drawable() override;
+    void      draw(QPainter* painter, DRAW_FLAGS drawFlag, const View::Transform& transform) const override;
+    void      stream(const QPointF& point) override;
+    bool      addPoint(const QPointF& point, bool forceEnd) override;
+    Drawable* drawable() override;
     std::pair<double, QPointF> snap(QPointF point) override;
     double                     dist(const QPointF& point) const override;
 
     void translate(const QPointF& translation) override;
-
 
   private:
     std::vector<QPointF> m_points;

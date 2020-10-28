@@ -4,6 +4,9 @@
 
 #include "Drawable.h"
 
+#include "../Controller/Actions/ActionHandler.h"
+#include "View/Transform.h"
+
 #include <QPainter>
 #include <QWidget>
 #include <utility>
@@ -16,7 +19,7 @@ Drawable::Drawable(QPen pen) : m_pen(std::move(pen)) {
     ++s_maxIndex;
 }
 
-void Drawable::draw(QPainter* painter, DRAW_FLAGS drawFlag, const Transform& transform) const {
+void Drawable::draw(QPainter* painter, DRAW_FLAGS drawFlag, const View::Transform& transform) const {
     painter->setRenderHint(QPainter::Antialiasing, true);
     switch (drawFlag) {
         case DRAW_FLAGS::NONE:
@@ -39,7 +42,7 @@ size_t Drawable::index() const {
     return m_index;
 }
 
-QWidget* Drawable::toWidget(ActionHandler* actionHandler) {
+QWidget* Drawable::toWidget(Controller::ActionHandler* actionHandler) {
     return new QWidget(nullptr);
 }
 

@@ -4,5 +4,7 @@
 
 #include "UndoableAction.h"
 
+#include "Action.h"
+
 UndoableAction::UndoableAction() : Action() {
 }

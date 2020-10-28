@@ -246,106 +246,103 @@
 		<Unit filename="/home/pc/MEGAsync/C++/clion/GoTikZ/Model/MousePointerTypeEnum.h">
 			<Option target="GoTikZ"/>
 		</Unit>
-		<Unit filename="/home/pc/MEGAsync/C++/clion/GoTikZ/States/GridState.cpp">
+		<Unit filename="/home/pc/MEGAsync/C++/clion/GoTikZ/View/GridState.cpp">
 			<Option target="GoTikZ"/>
 		</Unit>
-		<Unit filename="/home/pc/MEGAsync/C++/clion/GoTikZ/States/GridState.h">
+		<Unit filename="/home/pc/MEGAsync/C++/clion/GoTikZ/View/GridState.h">
 			<Option target="GoTikZ"/>
 		</Unit>
-		<Unit filename="/home/pc/MEGAsync/C++/clion/GoTikZ/States/Transform.cpp">
+		<Unit filename="/home/pc/MEGAsync/C++/clion/GoTikZ/View/Transform.cpp">
 			<Option target="GoTikZ"/>
 		</Unit>
-		<Unit filename="/home/pc/MEGAsync/C++/clion/GoTikZ/States/Transform.h">
+		<Unit filename="/home/pc/MEGAsync/C++/clion/GoTikZ/View/Transform.h">
 			<Option target="GoTikZ"/>
 		</Unit>
-		<Unit filename="/home/pc/MEGAsync/C++/clion/GoTikZ/Widgets/ActionWidget.cpp">
+		<Unit filename="/home/pc/MEGAsync/C++/clion/GoTikZ/View/Widgets/ActionWidget.h">
 			<Option target="GoTikZ"/>
 		</Unit>
-		<Unit filename="/home/pc/MEGAsync/C++/clion/GoTikZ/Widgets/ActionWidget.h">
+		<Unit filename="/home/pc/MEGAsync/C++/clion/GoTikZ/View/Widgets/AuxWidgets/GroupBoxContainer.cpp">
 			<Option target="GoTikZ"/>
 		</Unit>
-		<Unit filename="/home/pc/MEGAsync/C++/clion/GoTikZ/Widgets/AuxWidgets/GroupBoxContainer.cpp">
+		<Unit filename="/home/pc/MEGAsync/C++/clion/GoTikZ/View/Widgets/AuxWidgets/GroupBoxContainer.h">
 			<Option target="GoTikZ"/>
 		</Unit>
-		<Unit filename="/home/pc/MEGAsync/C++/clion/GoTikZ/Widgets/AuxWidgets/GroupBoxContainer.h">
+		<Unit filename="/home/pc/MEGAsync/C++/clion/GoTikZ/View/Widgets/AuxWidgets/XyWidget.cpp">
 			<Option target="GoTikZ"/>
 		</Unit>
-		<Unit filename="/home/pc/MEGAsync/C++/clion/GoTikZ/Widgets/AuxWidgets/XyWidget.cpp">
+		<Unit filename="/home/pc/MEGAsync/C++/clion/GoTikZ/View/Widgets/AuxWidgets/XyWidget.h">
 			<Option target="GoTikZ"/>
 		</Unit>
-		<Unit filename="/home/pc/MEGAsync/C++/clion/GoTikZ/Widgets/AuxWidgets/XyWidget.h">
+		<Unit filename="/home/pc/MEGAsync/C++/clion/GoTikZ/View/Widgets/ColorWidget.cpp">
 			<Option target="GoTikZ"/>
 		</Unit>
-		<Unit filename="/home/pc/MEGAsync/C++/clion/GoTikZ/Widgets/ColorWidget.cpp">
+		<Unit filename="/home/pc/MEGAsync/C++/clion/GoTikZ/View/Widgets/ColorWidget.h">
 			<Option target="GoTikZ"/>
 		</Unit>
-		<Unit filename="/home/pc/MEGAsync/C++/clion/GoTikZ/Widgets/ColorWidget.h">
+		<Unit filename="/home/pc/MEGAsync/C++/clion/GoTikZ/View/Widgets/DrawWidget.cpp">
 			<Option target="GoTikZ"/>
 		</Unit>
-		<Unit filename="/home/pc/MEGAsync/C++/clion/GoTikZ/Widgets/DrawWidget.cpp">
+		<Unit filename="/home/pc/MEGAsync/C++/clion/GoTikZ/View/Widgets/DrawWidget.h">
 			<Option target="GoTikZ"/>
 		</Unit>
-		<Unit filename="/home/pc/MEGAsync/C++/clion/GoTikZ/Widgets/DrawWidget.h">
+		<Unit filename="/home/pc/MEGAsync/C++/clion/GoTikZ/View/Widgets/DrawableEditWidgets/CircleEditWidget.cpp">
 			<Option target="GoTikZ"/>
 		</Unit>
-		<Unit filename="/home/pc/MEGAsync/C++/clion/GoTikZ/Widgets/DrawableEditWidgets/CircleEditWidget.cpp">
+		<Unit filename="/home/pc/MEGAsync/C++/clion/GoTikZ/View/Widgets/DrawableEditWidgets/CircleEditWidget.h">
 			<Option target="GoTikZ"/>
 		</Unit>
-		<Unit filename="/home/pc/MEGAsync/C++/clion/GoTikZ/Widgets/DrawableEditWidgets/CircleEditWidget.h">
+		<Unit filename="/home/pc/MEGAsync/C++/clion/GoTikZ/View/Widgets/DrawableEditWidgets/LineEditWidget.cpp">
 			<Option target="GoTikZ"/>
 		</Unit>
-		<Unit filename="/home/pc/MEGAsync/C++/clion/GoTikZ/Widgets/DrawableEditWidgets/LineEditWidget.cpp">
+		<Unit filename="/home/pc/MEGAsync/C++/clion/GoTikZ/View/Widgets/DrawableEditWidgets/LineEditWidget.h">
 			<Option target="GoTikZ"/>
 		</Unit>
-		<Unit filename="/home/pc/MEGAsync/C++/clion/GoTikZ/Widgets/DrawableEditWidgets/LineEditWidget.h">
+		<Unit filename="/home/pc/MEGAsync/C++/clion/GoTikZ/View/Widgets/DrawableEditWidgets/PointEditWidget.cpp">
 			<Option target="GoTikZ"/>
 		</Unit>
-		<Unit filename="/home/pc/MEGAsync/C++/clion/GoTikZ/Widgets/DrawableEditWidgets/PointEditWidget.cpp">
+		<Unit filename="/home/pc/MEGAsync/C++/clion/GoTikZ/View/Widgets/DrawableEditWidgets/PointEditWidget.h">
 			<Option target="GoTikZ"/>
 		</Unit>
-		<Unit filename="/home/pc/MEGAsync/C++/clion/GoTikZ/Widgets/DrawableEditWidgets/PointEditWidget.h">
+		<Unit filename="/home/pc/MEGAsync/C++/clion/GoTikZ/View/Widgets/DrawableEditWidgets/PolyLineEditWidget.cpp">
 			<Option target="GoTikZ"/>
 		</Unit>
-		<Unit filename="/home/pc/MEGAsync/C++/clion/GoTikZ/Widgets/DrawableEditWidgets/PolyLineEditWidget.cpp">
+		<Unit filename="/home/pc/MEGAsync/C++/clion/GoTikZ/View/Widgets/DrawableEditWidgets/PolyLineEditWidget.h">
 			<Option target="GoTikZ"/>
 		</Unit>
-		<Unit filename="/home/pc/MEGAsync/C++/clion/GoTikZ/Widgets/DrawableEditWidgets/PolyLineEditWidget.h">
+		<Unit filename="/home/pc/MEGAsync/C++/clion/GoTikZ/View/Widgets/GridSettingWidget.cpp">
 			<Option target="GoTikZ"/>
 		</Unit>
-		<Unit filename="/home/pc/MEGAsync/C++/clion/GoTikZ/Widgets/GridSettingWidget.cpp">
+		<Unit filename="/home/pc/MEGAsync/C++/clion/GoTikZ/View/Widgets/GridSettingWidget.h">
 			<Option target="GoTikZ"/>
 		</Unit>
-		<Unit filename="/home/pc/MEGAsync/C++/clion/GoTikZ/Widgets/GridSettingWidget.h">
+		<Unit filename="/home/pc/MEGAsync/C++/clion/GoTikZ/View/Widgets/LeftSideBar.cpp">
 			<Option target="GoTikZ"/>
 		</Unit>
-		<Unit filename="/home/pc/MEGAsync/C++/clion/GoTikZ/Widgets/LeftSideBar.cpp">
+		<Unit filename="/home/pc/MEGAsync/C++/clion/GoTikZ/View/Widgets/LeftSideBar.h">
 			<Option target="GoTikZ"/>
 		</Unit>
-		<Unit filename="/home/pc/MEGAsync/C++/clion/GoTikZ/Widgets/LeftSideBar.h">
+		<Unit filename="/home/pc/MEGAsync/C++/clion/GoTikZ/View/Widgets/MainWidget.cpp">
 			<Option target="GoTikZ"/>
 		</Unit>
-		<Unit filename="/home/pc/MEGAsync/C++/clion/GoTikZ/Widgets/MainWidget.cpp">
+		<Unit filename="/home/pc/MEGAsync/C++/clion/GoTikZ/View/Widgets/MainWidget.h">
 			<Option target="GoTikZ"/>
 		</Unit>
-		<Unit filename="/home/pc/MEGAsync/C++/clion/GoTikZ/Widgets/MainWidget.h">
+		<Unit filename="/home/pc/MEGAsync/C++/clion/GoTikZ/View/Widgets/MousePointerTypeSelectWidget.cpp">
 			<Option target="GoTikZ"/>
 		</Unit>
-		<Unit filename="/home/pc/MEGAsync/C++/clion/GoTikZ/Widgets/MousePointerTypeSelectWidget.cpp">
+		<Unit filename="/home/pc/MEGAsync/C++/clion/GoTikZ/View/Widgets/MousePointerTypeSelectWidget.h">
 			<Option target="GoTikZ"/>
 		</Unit>
-		<Unit filename="/home/pc/MEGAsync/C++/clion/GoTikZ/Widgets/MousePointerTypeSelectWidget.h">
+		<Unit filename="/home/pc/MEGAsync/C++/clion/GoTikZ/View/Widgets/PenWidget.cpp">
 			<Option target="GoTikZ"/>
 		</Unit>
-		<Unit filename="/home/pc/MEGAsync/C++/clion/GoTikZ/Widgets/PenWidget.cpp">
+		<Unit filename="/home/pc/MEGAsync/C++/clion/GoTikZ/View/Widgets/PenWidget.h">
 			<Option target="GoTikZ"/>
 		</Unit>
-		<Unit filename="/home/pc/MEGAsync/C++/clion/GoTikZ/Widgets/PenWidget.h">
+		<Unit filename="/home/pc/MEGAsync/C++/clion/GoTikZ/View/Widgets/RightSideBar.cpp">
 			<Option target="GoTikZ"/>
 		</Unit>
-		<Unit filename="/home/pc/MEGAsync/C++/clion/GoTikZ/Widgets/RightSideBar.cpp">
-			<Option target="GoTikZ"/>
-		</Unit>
-		<Unit filename="/home/pc/MEGAsync/C++/clion/GoTikZ/Widgets/RightSideBar.h">
+		<Unit filename="/home/pc/MEGAsync/C++/clion/GoTikZ/View/Widgets/RightSideBar.h">
 			<Option target="GoTikZ"/>
 		</Unit>
 		<Unit filename="/home/pc/MEGAsync/C++/clion/GoTikZ/cmake-build-debug/GoTikZ_autogen/mocs_compilation.cpp">

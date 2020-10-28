@@ -8,9 +8,15 @@
 #include <QPen>
 
 class QPainter;
-class ActionHandler;
+namespace Controller {
+    class ActionHandler;
+}
+
+namespace View {
+    class Transform;
+}
+
 class GroupBoxContainer;
-class Transform;
 
 class Drawable {
   protected:
@@ -19,11 +25,11 @@ class Drawable {
   public:
     enum class DRAW_FLAGS { NONE, SELECTED, HIGHLIGHTED };
 
-    virtual void                       draw(QPainter* painter, DRAW_FLAGS drawFlag, const Transform& transform) const;
+    virtual void                       draw(QPainter* painter, DRAW_FLAGS drawFlag, const View::Transform& transform) const;
     virtual double                     dist(const QPointF& point) const = 0;
     virtual std::pair<double, QPointF> snap(QPointF point)              = 0;
     size_t                             index() const;
-    virtual QWidget*                   toWidget(ActionHandler* actionHandler);
+    virtual QWidget*                   toWidget(Controller::ActionHandler* actionHandler);
     void                               setPen(const QPen& pen);
 
     virtual void translate(const QPointF& translation) = 0;

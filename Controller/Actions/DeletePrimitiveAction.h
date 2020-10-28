@@ -5,6 +5,7 @@
 #ifndef GOTIKZ_DELETEPRIMITIVEACTION_H
 #define GOTIKZ_DELETEPRIMITIVEACTION_H
 
+#include "ActionHandler.h"
 #include "Drawable/Drawable.h"
 #include "UndoableAction.h"
 
@@ -15,8 +16,8 @@ class DeletePrimitiveAction : public UndoableAction {
   public:
     explicit DeletePrimitiveAction(size_t indexOfPrimitive);
 
-    void doAction(ActionHandler* actionHandler) override;
-    void undoAction(ActionHandler* actionHandler) override;
+    void doAction(Controller::ActionHandler* actionHandler) override;
+    void undoAction(Controller::ActionHandler* actionHandler) override;
 
   private:
     const size_t              m_indexOfPrimitive;

@@ -5,12 +5,12 @@
 #include "ChangeGridAction.h"
 
 #include "ActionHandler.h"
-#include "Widgets/DrawWidget.h"
+#include "View/Widgets/DrawWidget.h"
 
-ChangeGridAction::ChangeGridAction(GridState gridState) : m_gridState(gridState) {
+ChangeGridAction::ChangeGridAction(View::GridState gridState) : m_gridState(gridState) {
 }
 
-void ChangeGridAction::doAction(ActionHandler* actionHandler) {
+void ChangeGridAction::doAction(Controller::ActionHandler* actionHandler) {
     actionHandler->drawWidget()->setGridState(m_gridState);
     actionHandler->draw();
 }

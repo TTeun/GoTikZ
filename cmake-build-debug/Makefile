@@ -750,464 +750,437 @@ Model/MousePointerTypeEnum.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoTikZ.dir/build.make CMakeFiles/GoTikZ.dir/Model/MousePointerTypeEnum.cpp.s
 .PHONY : Model/MousePointerTypeEnum.cpp.s
 
-States/GridState.o: States/GridState.cpp.o
+View/GridState.o: View/GridState.cpp.o
 
-.PHONY : States/GridState.o
-
-# target to build an object file
-States/GridState.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoTikZ.dir/build.make CMakeFiles/GoTikZ.dir/States/GridState.cpp.o
-.PHONY : States/GridState.cpp.o
-
-States/GridState.i: States/GridState.cpp.i
-
-.PHONY : States/GridState.i
-
-# target to preprocess a source file
-States/GridState.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoTikZ.dir/build.make CMakeFiles/GoTikZ.dir/States/GridState.cpp.i
-.PHONY : States/GridState.cpp.i
-
-States/GridState.s: States/GridState.cpp.s
-
-.PHONY : States/GridState.s
-
-# target to generate assembly for a file
-States/GridState.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoTikZ.dir/build.make CMakeFiles/GoTikZ.dir/States/GridState.cpp.s
-.PHONY : States/GridState.cpp.s
-
-States/Transform.o: States/Transform.cpp.o
-
-.PHONY : States/Transform.o
+.PHONY : View/GridState.o
 
 # target to build an object file
-States/Transform.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoTikZ.dir/build.make CMakeFiles/GoTikZ.dir/States/Transform.cpp.o
-.PHONY : States/Transform.cpp.o
+View/GridState.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoTikZ.dir/build.make CMakeFiles/GoTikZ.dir/View/GridState.cpp.o
+.PHONY : View/GridState.cpp.o
 
-States/Transform.i: States/Transform.cpp.i
+View/GridState.i: View/GridState.cpp.i
 
-.PHONY : States/Transform.i
+.PHONY : View/GridState.i
 
 # target to preprocess a source file
-States/Transform.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoTikZ.dir/build.make CMakeFiles/GoTikZ.dir/States/Transform.cpp.i
-.PHONY : States/Transform.cpp.i
+View/GridState.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoTikZ.dir/build.make CMakeFiles/GoTikZ.dir/View/GridState.cpp.i
+.PHONY : View/GridState.cpp.i
 
-States/Transform.s: States/Transform.cpp.s
+View/GridState.s: View/GridState.cpp.s
 
-.PHONY : States/Transform.s
+.PHONY : View/GridState.s
 
 # target to generate assembly for a file
-States/Transform.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoTikZ.dir/build.make CMakeFiles/GoTikZ.dir/States/Transform.cpp.s
-.PHONY : States/Transform.cpp.s
+View/GridState.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoTikZ.dir/build.make CMakeFiles/GoTikZ.dir/View/GridState.cpp.s
+.PHONY : View/GridState.cpp.s
 
-Widgets/ActionWidget.o: Widgets/ActionWidget.cpp.o
+View/Transform.o: View/Transform.cpp.o
 
-.PHONY : Widgets/ActionWidget.o
+.PHONY : View/Transform.o
 
 # target to build an object file
-Widgets/ActionWidget.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoTikZ.dir/build.make CMakeFiles/GoTikZ.dir/Widgets/ActionWidget.cpp.o
-.PHONY : Widgets/ActionWidget.cpp.o
+View/Transform.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoTikZ.dir/build.make CMakeFiles/GoTikZ.dir/View/Transform.cpp.o
+.PHONY : View/Transform.cpp.o
 
-Widgets/ActionWidget.i: Widgets/ActionWidget.cpp.i
+View/Transform.i: View/Transform.cpp.i
 
-.PHONY : Widgets/ActionWidget.i
+.PHONY : View/Transform.i
 
 # target to preprocess a source file
-Widgets/ActionWidget.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoTikZ.dir/build.make CMakeFiles/GoTikZ.dir/Widgets/ActionWidget.cpp.i
-.PHONY : Widgets/ActionWidget.cpp.i
+View/Transform.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoTikZ.dir/build.make CMakeFiles/GoTikZ.dir/View/Transform.cpp.i
+.PHONY : View/Transform.cpp.i
 
-Widgets/ActionWidget.s: Widgets/ActionWidget.cpp.s
+View/Transform.s: View/Transform.cpp.s
 
-.PHONY : Widgets/ActionWidget.s
+.PHONY : View/Transform.s
 
 # target to generate assembly for a file
-Widgets/ActionWidget.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoTikZ.dir/build.make CMakeFiles/GoTikZ.dir/Widgets/ActionWidget.cpp.s
-.PHONY : Widgets/ActionWidget.cpp.s
+View/Transform.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoTikZ.dir/build.make CMakeFiles/GoTikZ.dir/View/Transform.cpp.s
+.PHONY : View/Transform.cpp.s
 
-Widgets/AuxWidgets/GroupBoxContainer.o: Widgets/AuxWidgets/GroupBoxContainer.cpp.o
+View/Widgets/AuxWidgets/GroupBoxContainer.o: View/Widgets/AuxWidgets/GroupBoxContainer.cpp.o
 
-.PHONY : Widgets/AuxWidgets/GroupBoxContainer.o
+.PHONY : View/Widgets/AuxWidgets/GroupBoxContainer.o
 
 # target to build an object file
-Widgets/AuxWidgets/GroupBoxContainer.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoTikZ.dir/build.make CMakeFiles/GoTikZ.dir/Widgets/AuxWidgets/GroupBoxContainer.cpp.o
-.PHONY : Widgets/AuxWidgets/GroupBoxContainer.cpp.o
+View/Widgets/AuxWidgets/GroupBoxContainer.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoTikZ.dir/build.make CMakeFiles/GoTikZ.dir/View/Widgets/AuxWidgets/GroupBoxContainer.cpp.o
+.PHONY : View/Widgets/AuxWidgets/GroupBoxContainer.cpp.o
 
-Widgets/AuxWidgets/GroupBoxContainer.i: Widgets/AuxWidgets/GroupBoxContainer.cpp.i
+View/Widgets/AuxWidgets/GroupBoxContainer.i: View/Widgets/AuxWidgets/GroupBoxContainer.cpp.i
 
-.PHONY : Widgets/AuxWidgets/GroupBoxContainer.i
+.PHONY : View/Widgets/AuxWidgets/GroupBoxContainer.i
 
 # target to preprocess a source file
-Widgets/AuxWidgets/GroupBoxContainer.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoTikZ.dir/build.make CMakeFiles/GoTikZ.dir/Widgets/AuxWidgets/GroupBoxContainer.cpp.i
-.PHONY : Widgets/AuxWidgets/GroupBoxContainer.cpp.i
+View/Widgets/AuxWidgets/GroupBoxContainer.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoTikZ.dir/build.make CMakeFiles/GoTikZ.dir/View/Widgets/AuxWidgets/GroupBoxContainer.cpp.i
+.PHONY : View/Widgets/AuxWidgets/GroupBoxContainer.cpp.i
 
-Widgets/AuxWidgets/GroupBoxContainer.s: Widgets/AuxWidgets/GroupBoxContainer.cpp.s
+View/Widgets/AuxWidgets/GroupBoxContainer.s: View/Widgets/AuxWidgets/GroupBoxContainer.cpp.s
 
-.PHONY : Widgets/AuxWidgets/GroupBoxContainer.s
+.PHONY : View/Widgets/AuxWidgets/GroupBoxContainer.s
 
 # target to generate assembly for a file
-Widgets/AuxWidgets/GroupBoxContainer.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoTikZ.dir/build.make CMakeFiles/GoTikZ.dir/Widgets/AuxWidgets/GroupBoxContainer.cpp.s
-.PHONY : Widgets/AuxWidgets/GroupBoxContainer.cpp.s
+View/Widgets/AuxWidgets/GroupBoxContainer.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoTikZ.dir/build.make CMakeFiles/GoTikZ.dir/View/Widgets/AuxWidgets/GroupBoxContainer.cpp.s
+.PHONY : View/Widgets/AuxWidgets/GroupBoxContainer.cpp.s
 
-Widgets/AuxWidgets/XyWidget.o: Widgets/AuxWidgets/XyWidget.cpp.o
+View/Widgets/AuxWidgets/XyWidget.o: View/Widgets/AuxWidgets/XyWidget.cpp.o
 
-.PHONY : Widgets/AuxWidgets/XyWidget.o
+.PHONY : View/Widgets/AuxWidgets/XyWidget.o
 
 # target to build an object file
-Widgets/AuxWidgets/XyWidget.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoTikZ.dir/build.make CMakeFiles/GoTikZ.dir/Widgets/AuxWidgets/XyWidget.cpp.o
-.PHONY : Widgets/AuxWidgets/XyWidget.cpp.o
+View/Widgets/AuxWidgets/XyWidget.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoTikZ.dir/build.make CMakeFiles/GoTikZ.dir/View/Widgets/AuxWidgets/XyWidget.cpp.o
+.PHONY : View/Widgets/AuxWidgets/XyWidget.cpp.o
 
-Widgets/AuxWidgets/XyWidget.i: Widgets/AuxWidgets/XyWidget.cpp.i
+View/Widgets/AuxWidgets/XyWidget.i: View/Widgets/AuxWidgets/XyWidget.cpp.i
 
-.PHONY : Widgets/AuxWidgets/XyWidget.i
+.PHONY : View/Widgets/AuxWidgets/XyWidget.i
 
 # target to preprocess a source file
-Widgets/AuxWidgets/XyWidget.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoTikZ.dir/build.make CMakeFiles/GoTikZ.dir/Widgets/AuxWidgets/XyWidget.cpp.i
-.PHONY : Widgets/AuxWidgets/XyWidget.cpp.i
+View/Widgets/AuxWidgets/XyWidget.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoTikZ.dir/build.make CMakeFiles/GoTikZ.dir/View/Widgets/AuxWidgets/XyWidget.cpp.i
+.PHONY : View/Widgets/AuxWidgets/XyWidget.cpp.i
 
-Widgets/AuxWidgets/XyWidget.s: Widgets/AuxWidgets/XyWidget.cpp.s
+View/Widgets/AuxWidgets/XyWidget.s: View/Widgets/AuxWidgets/XyWidget.cpp.s
 
-.PHONY : Widgets/AuxWidgets/XyWidget.s
+.PHONY : View/Widgets/AuxWidgets/XyWidget.s
 
 # target to generate assembly for a file
-Widgets/AuxWidgets/XyWidget.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoTikZ.dir/build.make CMakeFiles/GoTikZ.dir/Widgets/AuxWidgets/XyWidget.cpp.s
-.PHONY : Widgets/AuxWidgets/XyWidget.cpp.s
+View/Widgets/AuxWidgets/XyWidget.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoTikZ.dir/build.make CMakeFiles/GoTikZ.dir/View/Widgets/AuxWidgets/XyWidget.cpp.s
+.PHONY : View/Widgets/AuxWidgets/XyWidget.cpp.s
 
-Widgets/ColorWidget.o: Widgets/ColorWidget.cpp.o
+View/Widgets/ColorWidget.o: View/Widgets/ColorWidget.cpp.o
 
-.PHONY : Widgets/ColorWidget.o
+.PHONY : View/Widgets/ColorWidget.o
 
 # target to build an object file
-Widgets/ColorWidget.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoTikZ.dir/build.make CMakeFiles/GoTikZ.dir/Widgets/ColorWidget.cpp.o
-.PHONY : Widgets/ColorWidget.cpp.o
+View/Widgets/ColorWidget.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoTikZ.dir/build.make CMakeFiles/GoTikZ.dir/View/Widgets/ColorWidget.cpp.o
+.PHONY : View/Widgets/ColorWidget.cpp.o
 
-Widgets/ColorWidget.i: Widgets/ColorWidget.cpp.i
+View/Widgets/ColorWidget.i: View/Widgets/ColorWidget.cpp.i
 
-.PHONY : Widgets/ColorWidget.i
+.PHONY : View/Widgets/ColorWidget.i
 
 # target to preprocess a source file
-Widgets/ColorWidget.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoTikZ.dir/build.make CMakeFiles/GoTikZ.dir/Widgets/ColorWidget.cpp.i
-.PHONY : Widgets/ColorWidget.cpp.i
+View/Widgets/ColorWidget.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoTikZ.dir/build.make CMakeFiles/GoTikZ.dir/View/Widgets/ColorWidget.cpp.i
+.PHONY : View/Widgets/ColorWidget.cpp.i
 
-Widgets/ColorWidget.s: Widgets/ColorWidget.cpp.s
+View/Widgets/ColorWidget.s: View/Widgets/ColorWidget.cpp.s
 
-.PHONY : Widgets/ColorWidget.s
+.PHONY : View/Widgets/ColorWidget.s
 
 # target to generate assembly for a file
-Widgets/ColorWidget.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoTikZ.dir/build.make CMakeFiles/GoTikZ.dir/Widgets/ColorWidget.cpp.s
-.PHONY : Widgets/ColorWidget.cpp.s
+View/Widgets/ColorWidget.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoTikZ.dir/build.make CMakeFiles/GoTikZ.dir/View/Widgets/ColorWidget.cpp.s
+.PHONY : View/Widgets/ColorWidget.cpp.s
 
-Widgets/DrawWidget.o: Widgets/DrawWidget.cpp.o
+View/Widgets/DrawWidget.o: View/Widgets/DrawWidget.cpp.o
 
-.PHONY : Widgets/DrawWidget.o
+.PHONY : View/Widgets/DrawWidget.o
 
 # target to build an object file
-Widgets/DrawWidget.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoTikZ.dir/build.make CMakeFiles/GoTikZ.dir/Widgets/DrawWidget.cpp.o
-.PHONY : Widgets/DrawWidget.cpp.o
+View/Widgets/DrawWidget.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoTikZ.dir/build.make CMakeFiles/GoTikZ.dir/View/Widgets/DrawWidget.cpp.o
+.PHONY : View/Widgets/DrawWidget.cpp.o
 
-Widgets/DrawWidget.i: Widgets/DrawWidget.cpp.i
+View/Widgets/DrawWidget.i: View/Widgets/DrawWidget.cpp.i
 
-.PHONY : Widgets/DrawWidget.i
+.PHONY : View/Widgets/DrawWidget.i
 
 # target to preprocess a source file
-Widgets/DrawWidget.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoTikZ.dir/build.make CMakeFiles/GoTikZ.dir/Widgets/DrawWidget.cpp.i
-.PHONY : Widgets/DrawWidget.cpp.i
+View/Widgets/DrawWidget.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoTikZ.dir/build.make CMakeFiles/GoTikZ.dir/View/Widgets/DrawWidget.cpp.i
+.PHONY : View/Widgets/DrawWidget.cpp.i
 
-Widgets/DrawWidget.s: Widgets/DrawWidget.cpp.s
+View/Widgets/DrawWidget.s: View/Widgets/DrawWidget.cpp.s
 
-.PHONY : Widgets/DrawWidget.s
+.PHONY : View/Widgets/DrawWidget.s
 
 # target to generate assembly for a file
-Widgets/DrawWidget.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoTikZ.dir/build.make CMakeFiles/GoTikZ.dir/Widgets/DrawWidget.cpp.s
-.PHONY : Widgets/DrawWidget.cpp.s
+View/Widgets/DrawWidget.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoTikZ.dir/build.make CMakeFiles/GoTikZ.dir/View/Widgets/DrawWidget.cpp.s
+.PHONY : View/Widgets/DrawWidget.cpp.s
 
-Widgets/DrawableEditWidgets/CircleEditWidget.o: Widgets/DrawableEditWidgets/CircleEditWidget.cpp.o
+View/Widgets/DrawableEditWidgets/CircleEditWidget.o: View/Widgets/DrawableEditWidgets/CircleEditWidget.cpp.o
 
-.PHONY : Widgets/DrawableEditWidgets/CircleEditWidget.o
+.PHONY : View/Widgets/DrawableEditWidgets/CircleEditWidget.o
 
 # target to build an object file
-Widgets/DrawableEditWidgets/CircleEditWidget.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoTikZ.dir/build.make CMakeFiles/GoTikZ.dir/Widgets/DrawableEditWidgets/CircleEditWidget.cpp.o
-.PHONY : Widgets/DrawableEditWidgets/CircleEditWidget.cpp.o
+View/Widgets/DrawableEditWidgets/CircleEditWidget.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoTikZ.dir/build.make CMakeFiles/GoTikZ.dir/View/Widgets/DrawableEditWidgets/CircleEditWidget.cpp.o
+.PHONY : View/Widgets/DrawableEditWidgets/CircleEditWidget.cpp.o
 
-Widgets/DrawableEditWidgets/CircleEditWidget.i: Widgets/DrawableEditWidgets/CircleEditWidget.cpp.i
+View/Widgets/DrawableEditWidgets/CircleEditWidget.i: View/Widgets/DrawableEditWidgets/CircleEditWidget.cpp.i
 
-.PHONY : Widgets/DrawableEditWidgets/CircleEditWidget.i
+.PHONY : View/Widgets/DrawableEditWidgets/CircleEditWidget.i
 
 # target to preprocess a source file
-Widgets/DrawableEditWidgets/CircleEditWidget.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoTikZ.dir/build.make CMakeFiles/GoTikZ.dir/Widgets/DrawableEditWidgets/CircleEditWidget.cpp.i
-.PHONY : Widgets/DrawableEditWidgets/CircleEditWidget.cpp.i
+View/Widgets/DrawableEditWidgets/CircleEditWidget.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoTikZ.dir/build.make CMakeFiles/GoTikZ.dir/View/Widgets/DrawableEditWidgets/CircleEditWidget.cpp.i
+.PHONY : View/Widgets/DrawableEditWidgets/CircleEditWidget.cpp.i
 
-Widgets/DrawableEditWidgets/CircleEditWidget.s: Widgets/DrawableEditWidgets/CircleEditWidget.cpp.s
+View/Widgets/DrawableEditWidgets/CircleEditWidget.s: View/Widgets/DrawableEditWidgets/CircleEditWidget.cpp.s
 
-.PHONY : Widgets/DrawableEditWidgets/CircleEditWidget.s
+.PHONY : View/Widgets/DrawableEditWidgets/CircleEditWidget.s
 
 # target to generate assembly for a file
-Widgets/DrawableEditWidgets/CircleEditWidget.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoTikZ.dir/build.make CMakeFiles/GoTikZ.dir/Widgets/DrawableEditWidgets/CircleEditWidget.cpp.s
-.PHONY : Widgets/DrawableEditWidgets/CircleEditWidget.cpp.s
+View/Widgets/DrawableEditWidgets/CircleEditWidget.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoTikZ.dir/build.make CMakeFiles/GoTikZ.dir/View/Widgets/DrawableEditWidgets/CircleEditWidget.cpp.s
+.PHONY : View/Widgets/DrawableEditWidgets/CircleEditWidget.cpp.s
 
-Widgets/DrawableEditWidgets/LineEditWidget.o: Widgets/DrawableEditWidgets/LineEditWidget.cpp.o
+View/Widgets/DrawableEditWidgets/LineEditWidget.o: View/Widgets/DrawableEditWidgets/LineEditWidget.cpp.o
 
-.PHONY : Widgets/DrawableEditWidgets/LineEditWidget.o
+.PHONY : View/Widgets/DrawableEditWidgets/LineEditWidget.o
 
 # target to build an object file
-Widgets/DrawableEditWidgets/LineEditWidget.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoTikZ.dir/build.make CMakeFiles/GoTikZ.dir/Widgets/DrawableEditWidgets/LineEditWidget.cpp.o
-.PHONY : Widgets/DrawableEditWidgets/LineEditWidget.cpp.o
+View/Widgets/DrawableEditWidgets/LineEditWidget.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoTikZ.dir/build.make CMakeFiles/GoTikZ.dir/View/Widgets/DrawableEditWidgets/LineEditWidget.cpp.o
+.PHONY : View/Widgets/DrawableEditWidgets/LineEditWidget.cpp.o
 
-Widgets/DrawableEditWidgets/LineEditWidget.i: Widgets/DrawableEditWidgets/LineEditWidget.cpp.i
+View/Widgets/DrawableEditWidgets/LineEditWidget.i: View/Widgets/DrawableEditWidgets/LineEditWidget.cpp.i
 
-.PHONY : Widgets/DrawableEditWidgets/LineEditWidget.i
+.PHONY : View/Widgets/DrawableEditWidgets/LineEditWidget.i
 
 # target to preprocess a source file
-Widgets/DrawableEditWidgets/LineEditWidget.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoTikZ.dir/build.make CMakeFiles/GoTikZ.dir/Widgets/DrawableEditWidgets/LineEditWidget.cpp.i
-.PHONY : Widgets/DrawableEditWidgets/LineEditWidget.cpp.i
+View/Widgets/DrawableEditWidgets/LineEditWidget.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoTikZ.dir/build.make CMakeFiles/GoTikZ.dir/View/Widgets/DrawableEditWidgets/LineEditWidget.cpp.i
+.PHONY : View/Widgets/DrawableEditWidgets/LineEditWidget.cpp.i
 
-Widgets/DrawableEditWidgets/LineEditWidget.s: Widgets/DrawableEditWidgets/LineEditWidget.cpp.s
+View/Widgets/DrawableEditWidgets/LineEditWidget.s: View/Widgets/DrawableEditWidgets/LineEditWidget.cpp.s
 
-.PHONY : Widgets/DrawableEditWidgets/LineEditWidget.s
+.PHONY : View/Widgets/DrawableEditWidgets/LineEditWidget.s
 
 # target to generate assembly for a file
-Widgets/DrawableEditWidgets/LineEditWidget.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoTikZ.dir/build.make CMakeFiles/GoTikZ.dir/Widgets/DrawableEditWidgets/LineEditWidget.cpp.s
-.PHONY : Widgets/DrawableEditWidgets/LineEditWidget.cpp.s
+View/Widgets/DrawableEditWidgets/LineEditWidget.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoTikZ.dir/build.make CMakeFiles/GoTikZ.dir/View/Widgets/DrawableEditWidgets/LineEditWidget.cpp.s
+.PHONY : View/Widgets/DrawableEditWidgets/LineEditWidget.cpp.s
 
-Widgets/DrawableEditWidgets/PointEditWidget.o: Widgets/DrawableEditWidgets/PointEditWidget.cpp.o
+View/Widgets/DrawableEditWidgets/PointEditWidget.o: View/Widgets/DrawableEditWidgets/PointEditWidget.cpp.o
 
-.PHONY : Widgets/DrawableEditWidgets/PointEditWidget.o
+.PHONY : View/Widgets/DrawableEditWidgets/PointEditWidget.o
 
 # target to build an object file
-Widgets/DrawableEditWidgets/PointEditWidget.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoTikZ.dir/build.make CMakeFiles/GoTikZ.dir/Widgets/DrawableEditWidgets/PointEditWidget.cpp.o
-.PHONY : Widgets/DrawableEditWidgets/PointEditWidget.cpp.o
+View/Widgets/DrawableEditWidgets/PointEditWidget.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoTikZ.dir/build.make CMakeFiles/GoTikZ.dir/View/Widgets/DrawableEditWidgets/PointEditWidget.cpp.o
+.PHONY : View/Widgets/DrawableEditWidgets/PointEditWidget.cpp.o
 
-Widgets/DrawableEditWidgets/PointEditWidget.i: Widgets/DrawableEditWidgets/PointEditWidget.cpp.i
+View/Widgets/DrawableEditWidgets/PointEditWidget.i: View/Widgets/DrawableEditWidgets/PointEditWidget.cpp.i
 
-.PHONY : Widgets/DrawableEditWidgets/PointEditWidget.i
+.PHONY : View/Widgets/DrawableEditWidgets/PointEditWidget.i
 
 # target to preprocess a source file
-Widgets/DrawableEditWidgets/PointEditWidget.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoTikZ.dir/build.make CMakeFiles/GoTikZ.dir/Widgets/DrawableEditWidgets/PointEditWidget.cpp.i
-.PHONY : Widgets/DrawableEditWidgets/PointEditWidget.cpp.i
+View/Widgets/DrawableEditWidgets/PointEditWidget.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoTikZ.dir/build.make CMakeFiles/GoTikZ.dir/View/Widgets/DrawableEditWidgets/PointEditWidget.cpp.i
+.PHONY : View/Widgets/DrawableEditWidgets/PointEditWidget.cpp.i
 
-Widgets/DrawableEditWidgets/PointEditWidget.s: Widgets/DrawableEditWidgets/PointEditWidget.cpp.s
+View/Widgets/DrawableEditWidgets/PointEditWidget.s: View/Widgets/DrawableEditWidgets/PointEditWidget.cpp.s
 
-.PHONY : Widgets/DrawableEditWidgets/PointEditWidget.s
+.PHONY : View/Widgets/DrawableEditWidgets/PointEditWidget.s
 
 # target to generate assembly for a file
-Widgets/DrawableEditWidgets/PointEditWidget.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoTikZ.dir/build.make CMakeFiles/GoTikZ.dir/Widgets/DrawableEditWidgets/PointEditWidget.cpp.s
-.PHONY : Widgets/DrawableEditWidgets/PointEditWidget.cpp.s
+View/Widgets/DrawableEditWidgets/PointEditWidget.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoTikZ.dir/build.make CMakeFiles/GoTikZ.dir/View/Widgets/DrawableEditWidgets/PointEditWidget.cpp.s
+.PHONY : View/Widgets/DrawableEditWidgets/PointEditWidget.cpp.s
 
-Widgets/DrawableEditWidgets/PolyLineEditWidget.o: Widgets/DrawableEditWidgets/PolyLineEditWidget.cpp.o
+View/Widgets/DrawableEditWidgets/PolyLineEditWidget.o: View/Widgets/DrawableEditWidgets/PolyLineEditWidget.cpp.o
 
-.PHONY : Widgets/DrawableEditWidgets/PolyLineEditWidget.o
+.PHONY : View/Widgets/DrawableEditWidgets/PolyLineEditWidget.o
 
 # target to build an object file
-Widgets/DrawableEditWidgets/PolyLineEditWidget.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoTikZ.dir/build.make CMakeFiles/GoTikZ.dir/Widgets/DrawableEditWidgets/PolyLineEditWidget.cpp.o
-.PHONY : Widgets/DrawableEditWidgets/PolyLineEditWidget.cpp.o
+View/Widgets/DrawableEditWidgets/PolyLineEditWidget.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoTikZ.dir/build.make CMakeFiles/GoTikZ.dir/View/Widgets/DrawableEditWidgets/PolyLineEditWidget.cpp.o
+.PHONY : View/Widgets/DrawableEditWidgets/PolyLineEditWidget.cpp.o
 
-Widgets/DrawableEditWidgets/PolyLineEditWidget.i: Widgets/DrawableEditWidgets/PolyLineEditWidget.cpp.i
+View/Widgets/DrawableEditWidgets/PolyLineEditWidget.i: View/Widgets/DrawableEditWidgets/PolyLineEditWidget.cpp.i
 
-.PHONY : Widgets/DrawableEditWidgets/PolyLineEditWidget.i
+.PHONY : View/Widgets/DrawableEditWidgets/PolyLineEditWidget.i
 
 # target to preprocess a source file
-Widgets/DrawableEditWidgets/PolyLineEditWidget.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoTikZ.dir/build.make CMakeFiles/GoTikZ.dir/Widgets/DrawableEditWidgets/PolyLineEditWidget.cpp.i
-.PHONY : Widgets/DrawableEditWidgets/PolyLineEditWidget.cpp.i
+View/Widgets/DrawableEditWidgets/PolyLineEditWidget.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoTikZ.dir/build.make CMakeFiles/GoTikZ.dir/View/Widgets/DrawableEditWidgets/PolyLineEditWidget.cpp.i
+.PHONY : View/Widgets/DrawableEditWidgets/PolyLineEditWidget.cpp.i
 
-Widgets/DrawableEditWidgets/PolyLineEditWidget.s: Widgets/DrawableEditWidgets/PolyLineEditWidget.cpp.s
+View/Widgets/DrawableEditWidgets/PolyLineEditWidget.s: View/Widgets/DrawableEditWidgets/PolyLineEditWidget.cpp.s
 
-.PHONY : Widgets/DrawableEditWidgets/PolyLineEditWidget.s
+.PHONY : View/Widgets/DrawableEditWidgets/PolyLineEditWidget.s
 
 # target to generate assembly for a file
-Widgets/DrawableEditWidgets/PolyLineEditWidget.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoTikZ.dir/build.make CMakeFiles/GoTikZ.dir/Widgets/DrawableEditWidgets/PolyLineEditWidget.cpp.s
-.PHONY : Widgets/DrawableEditWidgets/PolyLineEditWidget.cpp.s
+View/Widgets/DrawableEditWidgets/PolyLineEditWidget.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoTikZ.dir/build.make CMakeFiles/GoTikZ.dir/View/Widgets/DrawableEditWidgets/PolyLineEditWidget.cpp.s
+.PHONY : View/Widgets/DrawableEditWidgets/PolyLineEditWidget.cpp.s
 
-Widgets/GridSettingWidget.o: Widgets/GridSettingWidget.cpp.o
+View/Widgets/GridSettingWidget.o: View/Widgets/GridSettingWidget.cpp.o
 
-.PHONY : Widgets/GridSettingWidget.o
+.PHONY : View/Widgets/GridSettingWidget.o
 
 # target to build an object file
-Widgets/GridSettingWidget.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoTikZ.dir/build.make CMakeFiles/GoTikZ.dir/Widgets/GridSettingWidget.cpp.o
-.PHONY : Widgets/GridSettingWidget.cpp.o
+View/Widgets/GridSettingWidget.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoTikZ.dir/build.make CMakeFiles/GoTikZ.dir/View/Widgets/GridSettingWidget.cpp.o
+.PHONY : View/Widgets/GridSettingWidget.cpp.o
 
-Widgets/GridSettingWidget.i: Widgets/GridSettingWidget.cpp.i
+View/Widgets/GridSettingWidget.i: View/Widgets/GridSettingWidget.cpp.i
 
-.PHONY : Widgets/GridSettingWidget.i
+.PHONY : View/Widgets/GridSettingWidget.i
 
 # target to preprocess a source file
-Widgets/GridSettingWidget.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoTikZ.dir/build.make CMakeFiles/GoTikZ.dir/Widgets/GridSettingWidget.cpp.i
-.PHONY : Widgets/GridSettingWidget.cpp.i
+View/Widgets/GridSettingWidget.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoTikZ.dir/build.make CMakeFiles/GoTikZ.dir/View/Widgets/GridSettingWidget.cpp.i
+.PHONY : View/Widgets/GridSettingWidget.cpp.i
 
-Widgets/GridSettingWidget.s: Widgets/GridSettingWidget.cpp.s
+View/Widgets/GridSettingWidget.s: View/Widgets/GridSettingWidget.cpp.s
 
-.PHONY : Widgets/GridSettingWidget.s
+.PHONY : View/Widgets/GridSettingWidget.s
 
 # target to generate assembly for a file
-Widgets/GridSettingWidget.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoTikZ.dir/build.make CMakeFiles/GoTikZ.dir/Widgets/GridSettingWidget.cpp.s
-.PHONY : Widgets/GridSettingWidget.cpp.s
+View/Widgets/GridSettingWidget.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoTikZ.dir/build.make CMakeFiles/GoTikZ.dir/View/Widgets/GridSettingWidget.cpp.s
+.PHONY : View/Widgets/GridSettingWidget.cpp.s
 
-Widgets/LeftSideBar.o: Widgets/LeftSideBar.cpp.o
+View/Widgets/LeftSideBar.o: View/Widgets/LeftSideBar.cpp.o
 
-.PHONY : Widgets/LeftSideBar.o
+.PHONY : View/Widgets/LeftSideBar.o
 
 # target to build an object file
-Widgets/LeftSideBar.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoTikZ.dir/build.make CMakeFiles/GoTikZ.dir/Widgets/LeftSideBar.cpp.o
-.PHONY : Widgets/LeftSideBar.cpp.o
+View/Widgets/LeftSideBar.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoTikZ.dir/build.make CMakeFiles/GoTikZ.dir/View/Widgets/LeftSideBar.cpp.o
+.PHONY : View/Widgets/LeftSideBar.cpp.o
 
-Widgets/LeftSideBar.i: Widgets/LeftSideBar.cpp.i
+View/Widgets/LeftSideBar.i: View/Widgets/LeftSideBar.cpp.i
 
-.PHONY : Widgets/LeftSideBar.i
+.PHONY : View/Widgets/LeftSideBar.i
 
 # target to preprocess a source file
-Widgets/LeftSideBar.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoTikZ.dir/build.make CMakeFiles/GoTikZ.dir/Widgets/LeftSideBar.cpp.i
-.PHONY : Widgets/LeftSideBar.cpp.i
+View/Widgets/LeftSideBar.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoTikZ.dir/build.make CMakeFiles/GoTikZ.dir/View/Widgets/LeftSideBar.cpp.i
+.PHONY : View/Widgets/LeftSideBar.cpp.i
 
-Widgets/LeftSideBar.s: Widgets/LeftSideBar.cpp.s
+View/Widgets/LeftSideBar.s: View/Widgets/LeftSideBar.cpp.s
 
-.PHONY : Widgets/LeftSideBar.s
+.PHONY : View/Widgets/LeftSideBar.s
 
 # target to generate assembly for a file
-Widgets/LeftSideBar.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoTikZ.dir/build.make CMakeFiles/GoTikZ.dir/Widgets/LeftSideBar.cpp.s
-.PHONY : Widgets/LeftSideBar.cpp.s
+View/Widgets/LeftSideBar.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoTikZ.dir/build.make CMakeFiles/GoTikZ.dir/View/Widgets/LeftSideBar.cpp.s
+.PHONY : View/Widgets/LeftSideBar.cpp.s
 
-Widgets/MainWidget.o: Widgets/MainWidget.cpp.o
+View/Widgets/MainWidget.o: View/Widgets/MainWidget.cpp.o
 
-.PHONY : Widgets/MainWidget.o
+.PHONY : View/Widgets/MainWidget.o
 
 # target to build an object file
-Widgets/MainWidget.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoTikZ.dir/build.make CMakeFiles/GoTikZ.dir/Widgets/MainWidget.cpp.o
-.PHONY : Widgets/MainWidget.cpp.o
+View/Widgets/MainWidget.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoTikZ.dir/build.make CMakeFiles/GoTikZ.dir/View/Widgets/MainWidget.cpp.o
+.PHONY : View/Widgets/MainWidget.cpp.o
 
-Widgets/MainWidget.i: Widgets/MainWidget.cpp.i
+View/Widgets/MainWidget.i: View/Widgets/MainWidget.cpp.i
 
-.PHONY : Widgets/MainWidget.i
+.PHONY : View/Widgets/MainWidget.i
 
 # target to preprocess a source file
-Widgets/MainWidget.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoTikZ.dir/build.make CMakeFiles/GoTikZ.dir/Widgets/MainWidget.cpp.i
-.PHONY : Widgets/MainWidget.cpp.i
+View/Widgets/MainWidget.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoTikZ.dir/build.make CMakeFiles/GoTikZ.dir/View/Widgets/MainWidget.cpp.i
+.PHONY : View/Widgets/MainWidget.cpp.i
 
-Widgets/MainWidget.s: Widgets/MainWidget.cpp.s
+View/Widgets/MainWidget.s: View/Widgets/MainWidget.cpp.s
 
-.PHONY : Widgets/MainWidget.s
+.PHONY : View/Widgets/MainWidget.s
 
 # target to generate assembly for a file
-Widgets/MainWidget.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoTikZ.dir/build.make CMakeFiles/GoTikZ.dir/Widgets/MainWidget.cpp.s
-.PHONY : Widgets/MainWidget.cpp.s
+View/Widgets/MainWidget.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoTikZ.dir/build.make CMakeFiles/GoTikZ.dir/View/Widgets/MainWidget.cpp.s
+.PHONY : View/Widgets/MainWidget.cpp.s
 
-Widgets/MousePointerTypeSelectWidget.o: Widgets/MousePointerTypeSelectWidget.cpp.o
+View/Widgets/MousePointerTypeSelectWidget.o: View/Widgets/MousePointerTypeSelectWidget.cpp.o
 
-.PHONY : Widgets/MousePointerTypeSelectWidget.o
+.PHONY : View/Widgets/MousePointerTypeSelectWidget.o
 
 # target to build an object file
-Widgets/MousePointerTypeSelectWidget.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoTikZ.dir/build.make CMakeFiles/GoTikZ.dir/Widgets/MousePointerTypeSelectWidget.cpp.o
-.PHONY : Widgets/MousePointerTypeSelectWidget.cpp.o
+View/Widgets/MousePointerTypeSelectWidget.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoTikZ.dir/build.make CMakeFiles/GoTikZ.dir/View/Widgets/MousePointerTypeSelectWidget.cpp.o
+.PHONY : View/Widgets/MousePointerTypeSelectWidget.cpp.o
 
-Widgets/MousePointerTypeSelectWidget.i: Widgets/MousePointerTypeSelectWidget.cpp.i
+View/Widgets/MousePointerTypeSelectWidget.i: View/Widgets/MousePointerTypeSelectWidget.cpp.i
 
-.PHONY : Widgets/MousePointerTypeSelectWidget.i
+.PHONY : View/Widgets/MousePointerTypeSelectWidget.i
 
 # target to preprocess a source file
-Widgets/MousePointerTypeSelectWidget.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoTikZ.dir/build.make CMakeFiles/GoTikZ.dir/Widgets/MousePointerTypeSelectWidget.cpp.i
-.PHONY : Widgets/MousePointerTypeSelectWidget.cpp.i
+View/Widgets/MousePointerTypeSelectWidget.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoTikZ.dir/build.make CMakeFiles/GoTikZ.dir/View/Widgets/MousePointerTypeSelectWidget.cpp.i
+.PHONY : View/Widgets/MousePointerTypeSelectWidget.cpp.i
 
-Widgets/MousePointerTypeSelectWidget.s: Widgets/MousePointerTypeSelectWidget.cpp.s
+View/Widgets/MousePointerTypeSelectWidget.s: View/Widgets/MousePointerTypeSelectWidget.cpp.s
 
-.PHONY : Widgets/MousePointerTypeSelectWidget.s
+.PHONY : View/Widgets/MousePointerTypeSelectWidget.s
 
 # target to generate assembly for a file
-Widgets/MousePointerTypeSelectWidget.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoTikZ.dir/build.make CMakeFiles/GoTikZ.dir/Widgets/MousePointerTypeSelectWidget.cpp.s
-.PHONY : Widgets/MousePointerTypeSelectWidget.cpp.s
+View/Widgets/MousePointerTypeSelectWidget.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoTikZ.dir/build.make CMakeFiles/GoTikZ.dir/View/Widgets/MousePointerTypeSelectWidget.cpp.s
+.PHONY : View/Widgets/MousePointerTypeSelectWidget.cpp.s
 
-Widgets/PenWidget.o: Widgets/PenWidget.cpp.o
+View/Widgets/PenWidget.o: View/Widgets/PenWidget.cpp.o
 
-.PHONY : Widgets/PenWidget.o
+.PHONY : View/Widgets/PenWidget.o
 
 # target to build an object file
-Widgets/PenWidget.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoTikZ.dir/build.make CMakeFiles/GoTikZ.dir/Widgets/PenWidget.cpp.o
-.PHONY : Widgets/PenWidget.cpp.o
+View/Widgets/PenWidget.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoTikZ.dir/build.make CMakeFiles/GoTikZ.dir/View/Widgets/PenWidget.cpp.o
+.PHONY : View/Widgets/PenWidget.cpp.o
 
-Widgets/PenWidget.i: Widgets/PenWidget.cpp.i
+View/Widgets/PenWidget.i: View/Widgets/PenWidget.cpp.i
 
-.PHONY : Widgets/PenWidget.i
+.PHONY : View/Widgets/PenWidget.i
 
 # target to preprocess a source file
-Widgets/PenWidget.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoTikZ.dir/build.make CMakeFiles/GoTikZ.dir/Widgets/PenWidget.cpp.i
-.PHONY : Widgets/PenWidget.cpp.i
+View/Widgets/PenWidget.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoTikZ.dir/build.make CMakeFiles/GoTikZ.dir/View/Widgets/PenWidget.cpp.i
+.PHONY : View/Widgets/PenWidget.cpp.i
 
-Widgets/PenWidget.s: Widgets/PenWidget.cpp.s
+View/Widgets/PenWidget.s: View/Widgets/PenWidget.cpp.s
 
-.PHONY : Widgets/PenWidget.s
+.PHONY : View/Widgets/PenWidget.s
 
 # target to generate assembly for a file
-Widgets/PenWidget.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoTikZ.dir/build.make CMakeFiles/GoTikZ.dir/Widgets/PenWidget.cpp.s
-.PHONY : Widgets/PenWidget.cpp.s
+View/Widgets/PenWidget.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoTikZ.dir/build.make CMakeFiles/GoTikZ.dir/View/Widgets/PenWidget.cpp.s
+.PHONY : View/Widgets/PenWidget.cpp.s
 
-Widgets/RightSideBar.o: Widgets/RightSideBar.cpp.o
+View/Widgets/RightSideBar.o: View/Widgets/RightSideBar.cpp.o
 
-.PHONY : Widgets/RightSideBar.o
+.PHONY : View/Widgets/RightSideBar.o
 
 # target to build an object file
-Widgets/RightSideBar.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoTikZ.dir/build.make CMakeFiles/GoTikZ.dir/Widgets/RightSideBar.cpp.o
-.PHONY : Widgets/RightSideBar.cpp.o
+View/Widgets/RightSideBar.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoTikZ.dir/build.make CMakeFiles/GoTikZ.dir/View/Widgets/RightSideBar.cpp.o
+.PHONY : View/Widgets/RightSideBar.cpp.o
 
-Widgets/RightSideBar.i: Widgets/RightSideBar.cpp.i
+View/Widgets/RightSideBar.i: View/Widgets/RightSideBar.cpp.i
 
-.PHONY : Widgets/RightSideBar.i
+.PHONY : View/Widgets/RightSideBar.i
 
 # target to preprocess a source file
-Widgets/RightSideBar.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoTikZ.dir/build.make CMakeFiles/GoTikZ.dir/Widgets/RightSideBar.cpp.i
-.PHONY : Widgets/RightSideBar.cpp.i
+View/Widgets/RightSideBar.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoTikZ.dir/build.make CMakeFiles/GoTikZ.dir/View/Widgets/RightSideBar.cpp.i
+.PHONY : View/Widgets/RightSideBar.cpp.i
 
-Widgets/RightSideBar.s: Widgets/RightSideBar.cpp.s
+View/Widgets/RightSideBar.s: View/Widgets/RightSideBar.cpp.s
 
-.PHONY : Widgets/RightSideBar.s
+.PHONY : View/Widgets/RightSideBar.s
 
 # target to generate assembly for a file
-Widgets/RightSideBar.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoTikZ.dir/build.make CMakeFiles/GoTikZ.dir/Widgets/RightSideBar.cpp.s
-.PHONY : Widgets/RightSideBar.cpp.s
+View/Widgets/RightSideBar.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoTikZ.dir/build.make CMakeFiles/GoTikZ.dir/View/Widgets/RightSideBar.cpp.s
+.PHONY : View/Widgets/RightSideBar.cpp.s
 
 main.o: main.cpp.o
 
@@ -1312,57 +1285,54 @@ help:
 	@echo "... Model/MousePointerTypeEnum.o"
 	@echo "... Model/MousePointerTypeEnum.i"
 	@echo "... Model/MousePointerTypeEnum.s"
-	@echo "... States/GridState.o"
-	@echo "... States/GridState.i"
-	@echo "... States/GridState.s"
-	@echo "... States/Transform.o"
-	@echo "... States/Transform.i"
-	@echo "... States/Transform.s"
-	@echo "... Widgets/ActionWidget.o"
-	@echo "... Widgets/ActionWidget.i"
-	@echo "... Widgets/ActionWidget.s"
-	@echo "... Widgets/AuxWidgets/GroupBoxContainer.o"
-	@echo "... Widgets/AuxWidgets/GroupBoxContainer.i"
-	@echo "... Widgets/AuxWidgets/GroupBoxContainer.s"
-	@echo "... Widgets/AuxWidgets/XyWidget.o"
-	@echo "... Widgets/AuxWidgets/XyWidget.i"
-	@echo "... Widgets/AuxWidgets/XyWidget.s"
-	@echo "... Widgets/ColorWidget.o"
-	@echo "... Widgets/ColorWidget.i"
-	@echo "... Widgets/ColorWidget.s"
-	@echo "... Widgets/DrawWidget.o"
-	@echo "... Widgets/DrawWidget.i"
-	@echo "... Widgets/DrawWidget.s"
-	@echo "... Widgets/DrawableEditWidgets/CircleEditWidget.o"
-	@echo "... Widgets/DrawableEditWidgets/CircleEditWidget.i"
-	@echo "... Widgets/DrawableEditWidgets/CircleEditWidget.s"
-	@echo "... Widgets/DrawableEditWidgets/LineEditWidget.o"
-	@echo "... Widgets/DrawableEditWidgets/LineEditWidget.i"
-	@echo "... Widgets/DrawableEditWidgets/LineEditWidget.s"
-	@echo "... Widgets/DrawableEditWidgets/PointEditWidget.o"
-	@echo "... Widgets/DrawableEditWidgets/PointEditWidget.i"
-	@echo "... Widgets/DrawableEditWidgets/PointEditWidget.s"
-	@echo "... Widgets/DrawableEditWidgets/PolyLineEditWidget.o"
-	@echo "... Widgets/DrawableEditWidgets/PolyLineEditWidget.i"
-	@echo "... Widgets/DrawableEditWidgets/PolyLineEditWidget.s"
-	@echo "... Widgets/GridSettingWidget.o"
-	@echo "... Widgets/GridSettingWidget.i"
-	@echo "... Widgets/GridSettingWidget.s"
-	@echo "... Widgets/LeftSideBar.o"
-	@echo "... Widgets/LeftSideBar.i"
-	@echo "... Widgets/LeftSideBar.s"
-	@echo "... Widgets/MainWidget.o"
-	@echo "... Widgets/MainWidget.i"
-	@echo "... Widgets/MainWidget.s"
-	@echo "... Widgets/MousePointerTypeSelectWidget.o"
-	@echo "... Widgets/MousePointerTypeSelectWidget.i"
-	@echo "... Widgets/MousePointerTypeSelectWidget.s"
-	@echo "... Widgets/PenWidget.o"
-	@echo "... Widgets/PenWidget.i"
-	@echo "... Widgets/PenWidget.s"
-	@echo "... Widgets/RightSideBar.o"
-	@echo "... Widgets/RightSideBar.i"
-	@echo "... Widgets/RightSideBar.s"
+	@echo "... View/GridState.o"
+	@echo "... View/GridState.i"
+	@echo "... View/GridState.s"
+	@echo "... View/Transform.o"
+	@echo "... View/Transform.i"
+	@echo "... View/Transform.s"
+	@echo "... View/Widgets/AuxWidgets/GroupBoxContainer.o"
+	@echo "... View/Widgets/AuxWidgets/GroupBoxContainer.i"
+	@echo "... View/Widgets/AuxWidgets/GroupBoxContainer.s"
+	@echo "... View/Widgets/AuxWidgets/XyWidget.o"
+	@echo "... View/Widgets/AuxWidgets/XyWidget.i"
+	@echo "... View/Widgets/AuxWidgets/XyWidget.s"
+	@echo "... View/Widgets/ColorWidget.o"
+	@echo "... View/Widgets/ColorWidget.i"
+	@echo "... View/Widgets/ColorWidget.s"
+	@echo "... View/Widgets/DrawWidget.o"
+	@echo "... View/Widgets/DrawWidget.i"
+	@echo "... View/Widgets/DrawWidget.s"
+	@echo "... View/Widgets/DrawableEditWidgets/CircleEditWidget.o"
+	@echo "... View/Widgets/DrawableEditWidgets/CircleEditWidget.i"
+	@echo "... View/Widgets/DrawableEditWidgets/CircleEditWidget.s"
+	@echo "... View/Widgets/DrawableEditWidgets/LineEditWidget.o"
+	@echo "... View/Widgets/DrawableEditWidgets/LineEditWidget.i"
+	@echo "... View/Widgets/DrawableEditWidgets/LineEditWidget.s"
+	@echo "... View/Widgets/DrawableEditWidgets/PointEditWidget.o"
+	@echo "... View/Widgets/DrawableEditWidgets/PointEditWidget.i"
+	@echo "... View/Widgets/DrawableEditWidgets/PointEditWidget.s"
+	@echo "... View/Widgets/DrawableEditWidgets/PolyLineEditWidget.o"
+	@echo "... View/Widgets/DrawableEditWidgets/PolyLineEditWidget.i"
+	@echo "... View/Widgets/DrawableEditWidgets/PolyLineEditWidget.s"
+	@echo "... View/Widgets/GridSettingWidget.o"
+	@echo "... View/Widgets/GridSettingWidget.i"
+	@echo "... View/Widgets/GridSettingWidget.s"
+	@echo "... View/Widgets/LeftSideBar.o"
+	@echo "... View/Widgets/LeftSideBar.i"
+	@echo "... View/Widgets/LeftSideBar.s"
+	@echo "... View/Widgets/MainWidget.o"
+	@echo "... View/Widgets/MainWidget.i"
+	@echo "... View/Widgets/MainWidget.s"
+	@echo "... View/Widgets/MousePointerTypeSelectWidget.o"
+	@echo "... View/Widgets/MousePointerTypeSelectWidget.i"
+	@echo "... View/Widgets/MousePointerTypeSelectWidget.s"
+	@echo "... View/Widgets/PenWidget.o"
+	@echo "... View/Widgets/PenWidget.i"
+	@echo "... View/Widgets/PenWidget.s"
+	@echo "... View/Widgets/RightSideBar.o"
+	@echo "... View/Widgets/RightSideBar.i"
+	@echo "... View/Widgets/RightSideBar.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

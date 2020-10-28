@@ -5,9 +5,14 @@
 #ifndef GOTIKZ_LINE_H
 #define GOTIKZ_LINE_H
 
+#include "../Controller/Actions/ActionHandler.h"
 #include "Drawable.h"
 
 #include <QPointF>
+
+namespace View {
+    class Transform;
+}
 
 class LineStream;
 
@@ -17,19 +22,18 @@ class Line : public Drawable {
     explicit Line(const LineStream& lineStream);
     Line(const QPointF& point1, const QPointF& point2);
 
-    void                       draw(QPainter* painter, DRAW_FLAGS drawFlag, const Transform& transform) const override;
+    void draw(QPainter* painter, DRAW_FLAGS drawFlag, const View::Transform& transform) const override;
     std::pair<double, QPointF> snap(QPointF point) override;
     double                     dist(const QPointF& point) const override;
-    QWidget*                   toWidget(ActionHandler* actionHandler) override;
+    QWidget*                   toWidget(Controller::ActionHandler* actionHandler) override;
     QPointF                    point1() const;
     QPointF                    point2() const;
     void                       setPoint1(const QPointF& newPoint);
     void                       setPoint2(const QPointF& newPoint);
-    void translate(const QPointF& translation) override {
+    void                       translate(const QPointF& translation) override {
         m_point1 += translation;
         m_point2 += translation;
     }
-
 
   private:
     QPointF m_point1;

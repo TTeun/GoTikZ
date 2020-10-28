@@ -6,9 +6,8 @@
 
 #include "LineStream.h"
 #include "Math/Math.h"
-#include "Widgets/DrawableEditWidgets/LineEditWidget.h"
-
-#include"../States/Transform.h"
+#include "View/Transform.h"
+#include "View/Widgets/DrawableEditWidgets/LineEditWidget.h"
 
 #include <QPainter>
 
@@ -16,7 +15,7 @@ Line::Line(const LineStream& lineStream)
     : Drawable(lineStream.m_pen), m_point1(lineStream.m_point1), m_point2(lineStream.m_point2) {
 }
 
-void Line::draw(QPainter* painter, DRAW_FLAGS drawFlag, const Transform &transform) const {
+void Line::draw(QPainter* painter, DRAW_FLAGS drawFlag, const View::Transform& transform) const {
     Drawable::draw(painter, drawFlag, transform);
     painter->drawLine(transform.applyTransform(m_point1), transform.applyTransform(m_point2));
 }
@@ -48,6 +47,6 @@ QPointF Line::point1() const {
 QPointF Line::point2() const {
     return m_point2;
 }
-QWidget* Line::toWidget(ActionHandler* actionHandler) {
+QWidget* Line::toWidget(Controller::ActionHandler* actionHandler) {
     return new LineEditWidget(this, actionHandler);
 }

@@ -6,17 +6,21 @@
 #define GOTIKZ_CHANGEGRIDACTION_H
 
 #include "Action.h"
-#include "States/GridState.h"
+#include "View/GridState.h"
+
+namespace Controller {
+    class ActionHandler;
+}
 
 class ChangeGridAction : public Action {
 
   public:
-    explicit ChangeGridAction(GridState gridState);
+    explicit ChangeGridAction(View::GridState gridState);
 
-    void doAction(ActionHandler* actionHandler) override;
+    void doAction(Controller::ActionHandler* actionHandler) override;
 
   private:
-    const GridState m_gridState;
+    const View::GridState m_gridState;
 };
 
 #endif // GOTIKZ_CHANGEGRIDACTION_H

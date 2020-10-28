@@ -9,6 +9,10 @@
 
 #include <QPointF>
 
+namespace View {
+    class Transform;
+}
+
 class Line;
 
 class LineStream : public StreamDrawable {
@@ -19,12 +23,11 @@ class LineStream : public StreamDrawable {
     void                       stream(const QPointF& point) override;
     bool                       addPoint(const QPointF& point, bool forceEnd) override;
     Drawable*                  drawable() override;
-    void                       draw(QPainter* painter, DRAW_FLAGS drawFlag, const Transform& transform) const override;
+    void                       draw(QPainter* painter, DRAW_FLAGS drawFlag, const View::Transform& transform) const override;
     std::pair<double, QPointF> snap(QPointF point) override;
 
     double dist(const QPointF& point) const override;
-    void translate(const QPointF& translation) override;
-
+    void   translate(const QPointF& translation) override;
 
   private:
     friend class Line;

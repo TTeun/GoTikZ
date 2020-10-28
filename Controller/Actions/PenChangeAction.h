@@ -6,6 +6,7 @@
 #define GOTIKZ_PENCHANGEACTION_H
 
 #include "Action.h"
+#include "ActionHandler.h"
 
 #include <QPen>
 
@@ -13,7 +14,7 @@ class PenChangeAction : public Action {
   public:
     PenChangeAction(QPen  pen, size_t indexOfPrimitive);
 
-    void doAction(ActionHandler* actionHandler) override;
+    void doAction(Controller::ActionHandler* actionHandler) override;
 
   private:
     QPen   m_pen;

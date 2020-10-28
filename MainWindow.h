@@ -7,9 +7,12 @@
 
 #include "Controller/Actions/ActionHandler.h"
 #include "Model/Model.h"
-#include "Widgets/MainWidget.h"
 
 #include <QMainWindow>
+
+namespace View {
+    class MainWidget;
+}
 
 class MainWindow : public QMainWindow {
 
@@ -21,9 +24,9 @@ class MainWindow : public QMainWindow {
     void keyPressEvent(QKeyEvent* event) override;
 
   private:
-    ActionHandler m_actionHandler;
-    Model         m_model;
-    MainWidget*   m_mainWidget;
+    Controller::ActionHandler m_actionHandler;
+    Model                     m_model;
+    View::MainWidget*         m_mainWidget;
 };
 
 #endif // GOTIKZ_MAINWINDOW_H

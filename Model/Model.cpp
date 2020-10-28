@@ -6,13 +6,13 @@
 
 #include "../Controller/Actions/ActionHandler.h"
 #include "../Controller/Actions/AddPrimitiveAction.h"
-#include "../Widgets/DrawWidget.h"
+#include "View/Widgets/DrawWidget.h"
 
 #include <Drawable/Point.h>
 #include <Drawable/StreamDrawableFactory.h>
 #include <QDebug>
 
-Model::Model(ActionHandler* actionHandler) : m_actionHandler(actionHandler) {
+Model::Model(Controller::ActionHandler* actionHandler) : m_actionHandler(actionHandler) {
     assert(m_actionHandler);
 }
 

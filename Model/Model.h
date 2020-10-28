@@ -5,16 +5,19 @@
 #ifndef GOTIKZ_MODEL_H
 #define GOTIKZ_MODEL_H
 
+#include "../Controller/Actions/ActionHandler.h"
 #include "Drawable/DrawableHandler.h"
 #include "Model/MousePointerTypeEnum.h"
 
 #include <QMouseEvent>
 
+namespace Controller {
 class ActionHandler;
+}
 
 class Model {
   public:
-    explicit Model(ActionHandler* actionHandler);
+    explicit Model(Controller::ActionHandler* actionHandler);
 
     const DrawableHandler& drawableHandler() const;
     DrawableHandler&       drawableHandler();
@@ -27,10 +30,10 @@ class Model {
     QPointF                mousePointInWorldCoordinates(const QPointF& mousePoint) const;
 
   private:
-    DrawableHandler    m_drawableHandler;
-    ActionHandler*     m_actionHandler;
-    QPen               m_drawPen          = QPen(Qt::black, 3);
-    MOUSE_POINTER_TYPE m_mousePointerType = MOUSE_POINTER_TYPE::LINE;
+    DrawableHandler            m_drawableHandler;
+    Controller::ActionHandler* m_actionHandler;
+    QPen                       m_drawPen          = QPen(Qt::black, 3);
+    MOUSE_POINTER_TYPE         m_mousePointerType = MOUSE_POINTER_TYPE::LINE;
 };
 
 #endif // GOTIKZ_MODEL_H

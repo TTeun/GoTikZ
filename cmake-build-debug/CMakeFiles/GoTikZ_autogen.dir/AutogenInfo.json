@@ -125,89 +125,89 @@
 			"EXHL2H62WB/moc_MousePointerTypeEnum.cpp"
 		],
 		[
-			"/home/pc/MEGAsync/C++/clion/GoTikZ/States/GridState.h",
+			"/home/pc/MEGAsync/C++/clion/GoTikZ/View/GridState.h",
 			"MU",
-			"DR2JYKUZ7B/moc_GridState.cpp"
+			"WB4RFHLAU6/moc_GridState.cpp"
 		],
 		[
-			"/home/pc/MEGAsync/C++/clion/GoTikZ/States/Transform.h",
+			"/home/pc/MEGAsync/C++/clion/GoTikZ/View/Transform.h",
 			"MU",
-			"DR2JYKUZ7B/moc_Transform.cpp"
+			"WB4RFHLAU6/moc_Transform.cpp"
 		],
 		[
-			"/home/pc/MEGAsync/C++/clion/GoTikZ/Widgets/ActionWidget.h",
+			"/home/pc/MEGAsync/C++/clion/GoTikZ/View/Widgets/ActionWidget.h",
 			"MU",
-			"WHF3XMZT5M/moc_ActionWidget.cpp"
+			"4X73NCSS6Q/moc_ActionWidget.cpp"
 		],
 		[
-			"/home/pc/MEGAsync/C++/clion/GoTikZ/Widgets/AuxWidgets/GroupBoxContainer.h",
+			"/home/pc/MEGAsync/C++/clion/GoTikZ/View/Widgets/AuxWidgets/GroupBoxContainer.h",
 			"MU",
-			"OLTXVEW5EJ/moc_GroupBoxContainer.cpp"
+			"GD3JBH3X4T/moc_GroupBoxContainer.cpp"
 		],
 		[
-			"/home/pc/MEGAsync/C++/clion/GoTikZ/Widgets/AuxWidgets/XyWidget.h",
+			"/home/pc/MEGAsync/C++/clion/GoTikZ/View/Widgets/AuxWidgets/XyWidget.h",
 			"MU",
-			"OLTXVEW5EJ/moc_XyWidget.cpp"
+			"GD3JBH3X4T/moc_XyWidget.cpp"
 		],
 		[
-			"/home/pc/MEGAsync/C++/clion/GoTikZ/Widgets/ColorWidget.h",
+			"/home/pc/MEGAsync/C++/clion/GoTikZ/View/Widgets/ColorWidget.h",
 			"MU",
-			"WHF3XMZT5M/moc_ColorWidget.cpp"
+			"4X73NCSS6Q/moc_ColorWidget.cpp"
 		],
 		[
-			"/home/pc/MEGAsync/C++/clion/GoTikZ/Widgets/DrawWidget.h",
+			"/home/pc/MEGAsync/C++/clion/GoTikZ/View/Widgets/DrawWidget.h",
 			"MU",
-			"WHF3XMZT5M/moc_DrawWidget.cpp"
+			"4X73NCSS6Q/moc_DrawWidget.cpp"
 		],
 		[
-			"/home/pc/MEGAsync/C++/clion/GoTikZ/Widgets/DrawableEditWidgets/CircleEditWidget.h",
+			"/home/pc/MEGAsync/C++/clion/GoTikZ/View/Widgets/DrawableEditWidgets/CircleEditWidget.h",
 			"MU",
-			"PXR4AUYPGL/moc_CircleEditWidget.cpp"
+			"ZPQCQFJ6CM/moc_CircleEditWidget.cpp"
 		],
 		[
-			"/home/pc/MEGAsync/C++/clion/GoTikZ/Widgets/DrawableEditWidgets/LineEditWidget.h",
+			"/home/pc/MEGAsync/C++/clion/GoTikZ/View/Widgets/DrawableEditWidgets/LineEditWidget.h",
 			"MU",
-			"PXR4AUYPGL/moc_LineEditWidget.cpp"
+			"ZPQCQFJ6CM/moc_LineEditWidget.cpp"
 		],
 		[
-			"/home/pc/MEGAsync/C++/clion/GoTikZ/Widgets/DrawableEditWidgets/PointEditWidget.h",
+			"/home/pc/MEGAsync/C++/clion/GoTikZ/View/Widgets/DrawableEditWidgets/PointEditWidget.h",
 			"MU",
-			"PXR4AUYPGL/moc_PointEditWidget.cpp"
+			"ZPQCQFJ6CM/moc_PointEditWidget.cpp"
 		],
 		[
-			"/home/pc/MEGAsync/C++/clion/GoTikZ/Widgets/DrawableEditWidgets/PolyLineEditWidget.h",
+			"/home/pc/MEGAsync/C++/clion/GoTikZ/View/Widgets/DrawableEditWidgets/PolyLineEditWidget.h",
 			"MU",
-			"PXR4AUYPGL/moc_PolyLineEditWidget.cpp"
+			"ZPQCQFJ6CM/moc_PolyLineEditWidget.cpp"
 		],
 		[
-			"/home/pc/MEGAsync/C++/clion/GoTikZ/Widgets/GridSettingWidget.h",
+			"/home/pc/MEGAsync/C++/clion/GoTikZ/View/Widgets/GridSettingWidget.h",
 			"MU",
-			"WHF3XMZT5M/moc_GridSettingWidget.cpp"
+			"4X73NCSS6Q/moc_GridSettingWidget.cpp"
 		],
 		[
-			"/home/pc/MEGAsync/C++/clion/GoTikZ/Widgets/LeftSideBar.h",
+			"/home/pc/MEGAsync/C++/clion/GoTikZ/View/Widgets/LeftSideBar.h",
 			"MU",
-			"WHF3XMZT5M/moc_LeftSideBar.cpp"
+			"4X73NCSS6Q/moc_LeftSideBar.cpp"
 		],
 		[
-			"/home/pc/MEGAsync/C++/clion/GoTikZ/Widgets/MainWidget.h",
+			"/home/pc/MEGAsync/C++/clion/GoTikZ/View/Widgets/MainWidget.h",
 			"MU",
-			"WHF3XMZT5M/moc_MainWidget.cpp"
+			"4X73NCSS6Q/moc_MainWidget.cpp"
 		],
 		[
-			"/home/pc/MEGAsync/C++/clion/GoTikZ/Widgets/MousePointerTypeSelectWidget.h",
+			"/home/pc/MEGAsync/C++/clion/GoTikZ/View/Widgets/MousePointerTypeSelectWidget.h",
 			"MU",
-			"WHF3XMZT5M/moc_MousePointerTypeSelectWidget.cpp"
+			"4X73NCSS6Q/moc_MousePointerTypeSelectWidget.cpp"
 		],
 		[
-			"/home/pc/MEGAsync/C++/clion/GoTikZ/Widgets/PenWidget.h",
+			"/home/pc/MEGAsync/C++/clion/GoTikZ/View/Widgets/PenWidget.h",
 			"MU",
-			"WHF3XMZT5M/moc_PenWidget.cpp"
+			"4X73NCSS6Q/moc_PenWidget.cpp"
 		],
 		[
-			"/home/pc/MEGAsync/C++/clion/GoTikZ/Widgets/RightSideBar.h",
+			"/home/pc/MEGAsync/C++/clion/GoTikZ/View/Widgets/RightSideBar.h",
 			"MU",
-			"WHF3XMZT5M/moc_RightSideBar.cpp"
+			"4X73NCSS6Q/moc_RightSideBar.cpp"
 		]
 	],
 	"HEADER_EXTENSIONS" : [ "h", "hh", "h++", "hm", "hpp", "hxx", "in", "txx" ],
@@ -316,47 +316,61 @@
 			"/home/pc/MEGAsync/C++/clion/GoTikZ/Model/MousePointerTypeEnum.cpp",
 			"MU"
 		],
-		[ "/home/pc/MEGAsync/C++/clion/GoTikZ/States/GridState.cpp", "MU" ],
-		[ "/home/pc/MEGAsync/C++/clion/GoTikZ/States/Transform.cpp", "MU" ],
-		[ "/home/pc/MEGAsync/C++/clion/GoTikZ/Widgets/ActionWidget.cpp", "MU" ],
+		[ "/home/pc/MEGAsync/C++/clion/GoTikZ/View/GridState.cpp", "MU" ],
+		[ "/home/pc/MEGAsync/C++/clion/GoTikZ/View/Transform.cpp", "MU" ],
 		[
-			"/home/pc/MEGAsync/C++/clion/GoTikZ/Widgets/AuxWidgets/GroupBoxContainer.cpp",
+			"/home/pc/MEGAsync/C++/clion/GoTikZ/View/Widgets/AuxWidgets/GroupBoxContainer.cpp",
 			"MU"
 		],
 		[
-			"/home/pc/MEGAsync/C++/clion/GoTikZ/Widgets/AuxWidgets/XyWidget.cpp",
-			"MU"
-		],
-		[ "/home/pc/MEGAsync/C++/clion/GoTikZ/Widgets/ColorWidget.cpp", "MU" ],
-		[ "/home/pc/MEGAsync/C++/clion/GoTikZ/Widgets/DrawWidget.cpp", "MU" ],
-		[
-			"/home/pc/MEGAsync/C++/clion/GoTikZ/Widgets/DrawableEditWidgets/CircleEditWidget.cpp",
+			"/home/pc/MEGAsync/C++/clion/GoTikZ/View/Widgets/AuxWidgets/XyWidget.cpp",
 			"MU"
 		],
 		[
-			"/home/pc/MEGAsync/C++/clion/GoTikZ/Widgets/DrawableEditWidgets/LineEditWidget.cpp",
+			"/home/pc/MEGAsync/C++/clion/GoTikZ/View/Widgets/ColorWidget.cpp",
 			"MU"
 		],
 		[
-			"/home/pc/MEGAsync/C++/clion/GoTikZ/Widgets/DrawableEditWidgets/PointEditWidget.cpp",
+			"/home/pc/MEGAsync/C++/clion/GoTikZ/View/Widgets/DrawWidget.cpp",
 			"MU"
 		],
 		[
-			"/home/pc/MEGAsync/C++/clion/GoTikZ/Widgets/DrawableEditWidgets/PolyLineEditWidget.cpp",
+			"/home/pc/MEGAsync/C++/clion/GoTikZ/View/Widgets/DrawableEditWidgets/CircleEditWidget.cpp",
 			"MU"
 		],
 		[
-			"/home/pc/MEGAsync/C++/clion/GoTikZ/Widgets/GridSettingWidget.cpp",
+			"/home/pc/MEGAsync/C++/clion/GoTikZ/View/Widgets/DrawableEditWidgets/LineEditWidget.cpp",
 			"MU"
 		],
-		[ "/home/pc/MEGAsync/C++/clion/GoTikZ/Widgets/LeftSideBar.cpp", "MU" ],
-		[ "/home/pc/MEGAsync/C++/clion/GoTikZ/Widgets/MainWidget.cpp", "MU" ],
 		[
-			"/home/pc/MEGAsync/C++/clion/GoTikZ/Widgets/MousePointerTypeSelectWidget.cpp",
+			"/home/pc/MEGAsync/C++/clion/GoTikZ/View/Widgets/DrawableEditWidgets/PointEditWidget.cpp",
 			"MU"
 		],
-		[ "/home/pc/MEGAsync/C++/clion/GoTikZ/Widgets/PenWidget.cpp", "MU" ],
-		[ "/home/pc/MEGAsync/C++/clion/GoTikZ/Widgets/RightSideBar.cpp", "MU" ],
+		[
+			"/home/pc/MEGAsync/C++/clion/GoTikZ/View/Widgets/DrawableEditWidgets/PolyLineEditWidget.cpp",
+			"MU"
+		],
+		[
+			"/home/pc/MEGAsync/C++/clion/GoTikZ/View/Widgets/GridSettingWidget.cpp",
+			"MU"
+		],
+		[
+			"/home/pc/MEGAsync/C++/clion/GoTikZ/View/Widgets/LeftSideBar.cpp",
+			"MU"
+		],
+		[
+			"/home/pc/MEGAsync/C++/clion/GoTikZ/View/Widgets/MainWidget.cpp",
+			"MU"
+		],
+		[
+			"/home/pc/MEGAsync/C++/clion/GoTikZ/View/Widgets/MousePointerTypeSelectWidget.cpp",
+			"MU"
+		],
+		[ "/home/pc/MEGAsync/C++/clion/GoTikZ/View/Widgets/PenWidget.cpp", "MU" ],
+		[
+			"/home/pc/MEGAsync/C++/clion/GoTikZ/View/Widgets/RightSideBar.cpp",
+			"MU"
+		],
 		[ "/home/pc/MEGAsync/C++/clion/GoTikZ/main.cpp", "MU" ]
 	],
 	"UIC_OPTIONS" : [],

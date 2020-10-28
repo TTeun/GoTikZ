@@ -10,20 +10,23 @@
 #include <QPointF>
 #include <vector>
 
+namespace View {
+    class Transform;
+}
+
 class PolyLineStream;
 
 class PolyLine : public Drawable {
   public:
     explicit PolyLine(const PolyLineStream& polyLineStream);
 
-    void draw(QPainter* painter, DRAW_FLAGS drawFlag, const Transform& transform) const override;
+    void draw(QPainter* painter, DRAW_FLAGS drawFlag, const View::Transform& transform) const override;
 
     std::pair<double, QPointF> snap(QPointF point) override;
 
     double dist(const QPointF& point) const override;
 
     void translate(const QPointF& translation) override;
-
 
   private:
     std::vector<QPointF> m_points;

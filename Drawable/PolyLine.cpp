@@ -5,7 +5,7 @@
 #include "PolyLine.h"
 
 #include "PolyLineStream.h"
-#include"../States/Transform.h"
+#include "View/Transform.h"
 
 #include <Math/Math.h>
 #include <QPainter>
@@ -16,7 +16,7 @@ PolyLine::PolyLine(const PolyLineStream& polyLineStream)
     m_points.resize(m_points.size() - 1ul);
 }
 
-void PolyLine::draw(QPainter* painter, DRAW_FLAGS drawFlag, const Transform &transform) const {
+void PolyLine::draw(QPainter* painter, DRAW_FLAGS drawFlag, const View::Transform &transform) const {
     assert(m_points.size() > 1);
     Drawable::draw(painter, drawFlag, transform);
     for (size_t i = 1; i != m_points.size(); ++i) {

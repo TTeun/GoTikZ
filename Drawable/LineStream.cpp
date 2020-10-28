@@ -5,9 +5,7 @@
 #include "LineStream.h"
 
 #include "Line.h"
-
-#include"../States/Transform.h"
-
+#include "View/Transform.h"
 
 #include <Math/Math.h>
 #include <QPainter>
@@ -17,7 +15,7 @@ void LineStream::stream(const QPointF& point) {
     m_shouldDraw = true;
 }
 
-void LineStream::draw(QPainter* painter, DRAW_FLAGS drawFlag, const Transform &transform) const {
+void LineStream::draw(QPainter* painter, DRAW_FLAGS drawFlag, const View::Transform& transform) const {
     Drawable::draw(painter, drawFlag, transform);
     if (m_shouldDraw) {
         painter->drawLine(transform.applyTransform(m_point1), transform.applyTransform(m_point2));
@@ -41,7 +39,7 @@ double LineStream::dist(const QPointF& point) const {
     return std::min(Math::distance(point, m_point1), Math::distance(point, m_point2));
 }
 
-void LineStream::translate(const QPointF& translation)  {
+void LineStream::translate(const QPointF& translation) {
     m_point1 += translation;
     m_point2 += translation;
 }

@@ -11,7 +11,7 @@ ChangeMousePointerTypeAction::ChangeMousePointerTypeAction(MOUSE_POINTER_TYPE ne
     : m_newPrimitive(newPrimitive) {
 }
 
-void ChangeMousePointerTypeAction::doAction(ActionHandler* actionHandler) {
+void ChangeMousePointerTypeAction::doAction(Controller::ActionHandler* actionHandler) {
     actionHandler->model()->setMousePointerType(m_newPrimitive);
     actionHandler->model()->drawableHandler().clearSelectedAndHighlighted();
 }

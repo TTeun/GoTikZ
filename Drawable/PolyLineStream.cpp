@@ -3,19 +3,19 @@
 //
 
 #include "PolyLineStream.h"
-#include"../States/Transform.h"
-
-#include "PolyLine.h"
-#include <QPainter>
 
 #include "Math/Math.h"
+#include "PolyLine.h"
+#include "View/Transform.h"
+
+#include <QPainter>
 
 PolyLineStream::PolyLineStream(const QPointF& point, const QPen& pen) : StreamDrawable(pen) {
     m_points.push_back(point);
     m_points.push_back(point);
 }
 
-void PolyLineStream::draw(QPainter* painter, DRAW_FLAGS drawFlag, const Transform &transform) const {
+void PolyLineStream::draw(QPainter* painter, DRAW_FLAGS drawFlag, const View::Transform& transform) const {
     assert(m_points.size() > 1);
     Drawable::draw(painter, drawFlag, transform);
     for (size_t i = 1; i != m_points.size(); ++i) {
@@ -56,7 +56,7 @@ double PolyLineStream::dist(const QPointF& point) const {
 }
 
 void PolyLineStream::translate(const QPointF& translation) {
-    for (auto& el : m_points){
+    for (auto& el : m_points) {
         el += translation;
     }
 }

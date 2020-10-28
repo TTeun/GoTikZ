@@ -5,9 +5,14 @@
 #ifndef GOTIKZ_CIRCLE_H
 #define GOTIKZ_CIRCLE_H
 
+#include "../Controller/Actions/ActionHandler.h"
 #include "Drawable.h"
 
 #include <QPointF>
+
+namespace View {
+    class Transform;
+}
 
 class CircleStream;
 
@@ -15,10 +20,10 @@ class Circle : public Drawable {
   public:
     explicit Circle(const CircleStream& circleStream);
 
-    void                       draw(QPainter* painter, DRAW_FLAGS drawFlag, const Transform& transform) const override;
+    void draw(QPainter* painter, DRAW_FLAGS drawFlag, const View::Transform& transform) const override;
     std::pair<double, QPointF> snap(QPointF point) override;
     double                     dist(const QPointF& point) const override;
-    QWidget*                   toWidget(ActionHandler* actionHandler) override;
+    QWidget*                   toWidget(Controller::ActionHandler* actionHandler) override;
     QPointF                    center() const;
     double                     radius() const;
     void                       setCenter(const QPointF& newCenter);
