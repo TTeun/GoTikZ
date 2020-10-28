@@ -6,10 +6,10 @@
 
 #include "Controller/Actions/ChangeGridAction.h"
 
-#include <QtWidgets/QCheckBox>
-#include <QtWidgets/QGroupBox>
-#include <QtWidgets/QSpinBox>
-#include <QtWidgets/QVBoxLayout>
+#include <QCheckBox>
+#include <QGroupBox>
+#include <QSpinBox>
+#include <QVBoxLayout>
 
 View::GridSettingWidget::GridSettingWidget(QWidget* parent) : GroupBoxContainer(parent, "Grid") {
     setLayout(new QHBoxLayout(this));
@@ -32,10 +32,10 @@ View::GridSettingWidget::GridSettingWidget(QWidget* parent) : GroupBoxContainer(
 void View::GridSettingWidget::setSpacing(int spacing) {
     assert(spacing >= 0);
     m_gridState.setGridSpacing(static_cast<size_t>(spacing));
-    emit actionDone(new ChangeGridAction(m_gridState));
+    emit actionDone(new Controller::ChangeGridAction(m_gridState));
 }
 
 void View::GridSettingWidget::setShowGrid(bool show) {
     m_gridState.setShowGrid(show);
-    emit actionDone(new ChangeGridAction(m_gridState));
+    emit actionDone(new Controller::ChangeGridAction(m_gridState));
 }

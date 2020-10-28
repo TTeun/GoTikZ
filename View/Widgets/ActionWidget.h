@@ -9,8 +9,10 @@
 
 #include <QWidget>
 
-class UndoableAction;
-class Action;
+namespace Controller {
+    class UndoableAction;
+    class Action;
+} // namespace Controller
 
 namespace View {
     class ActionWidget : public QWidget {
@@ -20,8 +22,8 @@ namespace View {
         explicit ActionWidget() = default;
 
       signals:
-        void undoableActionDone(UndoableAction* action, bool isAlreadyDone);
-        void actionDone(Action* action);
+        void undoableActionDone(Controller::UndoableAction* action, bool isAlreadyDone);
+        void actionDone(Controller::Action* action);
     };
 } // namespace View
 

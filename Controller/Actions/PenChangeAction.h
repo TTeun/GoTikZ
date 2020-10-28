@@ -10,15 +10,17 @@
 
 #include <QPen>
 
-class PenChangeAction : public Action {
-  public:
-    PenChangeAction(QPen  pen, size_t indexOfPrimitive);
+namespace Controller {
+    class PenChangeAction : public Action {
+      public:
+        PenChangeAction(QPen pen, size_t indexOfPrimitive);
 
-    void doAction(Controller::ActionHandler* actionHandler) override;
+        void doAction(ActionHandler* actionHandler) override;
 
-  private:
-    QPen   m_pen;
-    size_t m_indexOfPrimitive;
-};
+      private:
+        QPen   m_pen;
+        size_t m_indexOfPrimitive;
+    };
+} // namespace Controller
 
 #endif // GOTIKZ_PENCHANGEACTION_H

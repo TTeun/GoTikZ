@@ -10,17 +10,17 @@
 
 namespace Controller {
     class ActionHandler;
-}
 
-class ChangeGridAction : public Action {
+    class ChangeGridAction : public Action {
 
-  public:
-    explicit ChangeGridAction(View::GridState gridState);
+      public:
+        explicit ChangeGridAction(View::GridState gridState);
 
-    void doAction(Controller::ActionHandler* actionHandler) override;
+        void doAction(ActionHandler* actionHandler) override;
 
-  private:
-    const View::GridState m_gridState;
-};
+      private:
+        const View::GridState m_gridState;
+    };
+} // namespace Controller
 
 #endif // GOTIKZ_CHANGEGRIDACTION_H

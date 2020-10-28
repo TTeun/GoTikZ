@@ -7,11 +7,11 @@
 #include "ActionHandler.h"
 #include "Model/Model.h"
 
-ChangeMousePointerTypeAction::ChangeMousePointerTypeAction(MOUSE_POINTER_TYPE newPrimitive)
+Controller::ChangeMousePointerTypeAction::ChangeMousePointerTypeAction(MOUSE_POINTER_TYPE newPrimitive)
     : m_newPrimitive(newPrimitive) {
 }
 
-void ChangeMousePointerTypeAction::doAction(Controller::ActionHandler* actionHandler) {
+void Controller::ChangeMousePointerTypeAction::doAction(Controller::ActionHandler* actionHandler) {
     actionHandler->model()->setMousePointerType(m_newPrimitive);
     actionHandler->model()->drawableHandler().clearSelectedAndHighlighted();
 }

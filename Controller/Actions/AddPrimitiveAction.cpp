@@ -8,17 +8,19 @@
 #include "Model/Model.h"
 #include "View/Widgets/DrawWidget.h"
 
-AddPrimitiveAction::AddPrimitiveAction(size_t indexOfPrimitive) : m_indexOfPrimitive(indexOfPrimitive) {
+Controller::AddPrimitiveAction::AddPrimitiveAction(size_t indexOfPrimitive) : m_indexOfPrimitive(indexOfPrimitive) {
 }
 
-void AddPrimitiveAction::doAction(Controller::ActionHandler* actionHandler) {
+void Controller::AddPrimitiveAction::doAction(Controller::ActionHandler* actionHandler) {
+    qDebug() << "Do";
     actionHandler->model()->drawableHandler().addDrawable(m_drawable.release());
     actionHandler->model()->drawableHandler().clearSelectedAndHighlighted();
     assert(m_drawable == nullptr);
     actionHandler->draw();
 }
 
-void AddPrimitiveAction::undoAction(Controller::ActionHandler* actionHandler) {
+void Controller::AddPrimitiveAction::undoAction(Controller::ActionHandler* actionHandler) {
+    qDebug() << "Undo";
     m_drawable = static_cast<std::unique_ptr<Drawable>>(
         actionHandler->model()->drawableHandler().removeDrawable(m_indexOfPrimitive));
     actionHandler->model()->drawableHandler().clearSelectedAndHighlighted();

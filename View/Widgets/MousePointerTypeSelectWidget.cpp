@@ -70,19 +70,19 @@ void View::MousePointerTypeSelectWidget::mousePointerTypeButtonClicked(QAbstract
     auto type = mousePointerTypeFromString(button->text());
     switch (type) {
         case MOUSE_POINTER_TYPE::POINT:
-            emit actionDone(new ChangeMousePointerTypeAction(MOUSE_POINTER_TYPE::POINT));
+            emit actionDone(new Controller::ChangeMousePointerTypeAction(MOUSE_POINTER_TYPE::POINT));
             break;
         case MOUSE_POINTER_TYPE::LINE:
-            emit actionDone(new ChangeMousePointerTypeAction(MOUSE_POINTER_TYPE::LINE));
+            emit actionDone(new Controller::ChangeMousePointerTypeAction(MOUSE_POINTER_TYPE::LINE));
             break;
         case MOUSE_POINTER_TYPE::CIRCLE:
-            emit actionDone(new ChangeMousePointerTypeAction(MOUSE_POINTER_TYPE::CIRCLE));
+            emit actionDone(new Controller::ChangeMousePointerTypeAction(MOUSE_POINTER_TYPE::CIRCLE));
             break;
         case MOUSE_POINTER_TYPE::POLY_LINE:
-            emit actionDone(new ChangeMousePointerTypeAction(MOUSE_POINTER_TYPE::POLY_LINE));
+            emit actionDone(new Controller::ChangeMousePointerTypeAction(MOUSE_POINTER_TYPE::POLY_LINE));
             break;
         case MOUSE_POINTER_TYPE::SELECT:
-            emit actionDone(new ChangeMousePointerTypeAction(MOUSE_POINTER_TYPE::SELECT));
+            emit actionDone(new Controller::ChangeMousePointerTypeAction(MOUSE_POINTER_TYPE::SELECT));
             break;
     }
 }

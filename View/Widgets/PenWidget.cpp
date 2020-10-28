@@ -40,11 +40,11 @@ void View::PenWidget::create() {
 
 void View::PenWidget::setColor(const QColor& color) {
     m_pen.setColor(color);
-    emit actionDone(new PenChangeAction(m_pen, m_indexOfPrimitive));
+    emit actionDone(new Controller::PenChangeAction(m_pen, m_indexOfPrimitive));
 }
 
 void View::PenWidget::setWidth(int width) {
     assert(width > 0);
     m_pen.setWidth(width);
-    emit actionDone(new PenChangeAction(m_pen, m_indexOfPrimitive));
+    emit actionDone(new Controller::PenChangeAction(m_pen, m_indexOfPrimitive));
 }

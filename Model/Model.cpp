@@ -35,6 +35,8 @@ void Model::mousePressEvent(QMouseEvent* event) {
         } else if (event->button() == Qt::RightButton) {
             if (m_drawableHandler.isStreaming()) {
                 m_drawableHandler.addPointToStreamDrawable(snappedPoint, true);
+                m_actionHandler->addAction(
+                    new Controller::AddPrimitiveAction(m_drawableHandler.drawables().back()->index()), true);
             }
         }
     }
@@ -53,7 +55,8 @@ void Model::mouseCreateEvent(const QPointF& snappedPoint) {
         switch (m_mousePointerType) {
             case MOUSE_POINTER_TYPE::POINT:
                 m_drawableHandler.addDrawable(new Point(snappedPoint, m_drawPen));
-                m_actionHandler->addAction(new AddPrimitiveAction(m_drawableHandler.drawables().back()->index()), true);
+                m_actionHandler->addAction(
+                    new Controller::AddPrimitiveAction(m_drawableHandler.drawables().back()->index()), true);
                 break;
             default:
                 m_drawableHandler.addStreamDrawable(
@@ -61,7 +64,10 @@ void Model::mouseCreateEvent(const QPointF& snappedPoint) {
                 break;
         }
     } else {
-        m_drawableHandler.addPointToStreamDrawable(snappedPoint, false);
+        if (m_drawableHandler.addPointToStreamDrawable(snappedPoint, false)) {
+            m_actionHandler->addAction(
+                new Controller::AddPrimitiveAction(m_drawableHandler.drawables().back()->index()), true);
+        }
     }
 }
 

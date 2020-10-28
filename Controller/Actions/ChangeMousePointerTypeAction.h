@@ -9,14 +9,16 @@
 #include "ActionHandler.h"
 #include "Model/MousePointerTypeEnum.h"
 
-class ChangeMousePointerTypeAction : public Action {
+namespace Controller {
+    class ChangeMousePointerTypeAction : public Action {
 
-  public:
-    explicit ChangeMousePointerTypeAction(MOUSE_POINTER_TYPE newPrimitive);
-    void doAction(Controller::ActionHandler* actionHandler) override;
+      public:
+        explicit ChangeMousePointerTypeAction(MOUSE_POINTER_TYPE newPrimitive);
+        void doAction(ActionHandler* actionHandler) override;
 
-  private:
-    const MOUSE_POINTER_TYPE m_newPrimitive;
-};
+      private:
+        const MOUSE_POINTER_TYPE m_newPrimitive;
+    };
+} // namespace Controller
 
 #endif // GOTIKZ_CHANGEMOUSEPOINTERTYPEACTION_H

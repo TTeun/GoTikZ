@@ -9,14 +9,13 @@
 
 namespace Controller {
     class ActionHandler;
+    class Action {
+      protected:
+        Action() = default;
+
+      public:
+        virtual void doAction(ActionHandler* actionHandler) = 0;
+    };
 } // namespace Controller
-
-class Action {
-  protected:
-    Action() = default;
-
-  public:
-    virtual void doAction(Controller::ActionHandler* actionHandler) = 0;
-};
 
 #endif // GOTIKZ_ACTION_H

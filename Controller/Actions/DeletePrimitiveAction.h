@@ -11,17 +11,19 @@
 
 class ActionHandler;
 
-class DeletePrimitiveAction : public UndoableAction {
+namespace Controller {
+    class DeletePrimitiveAction : public UndoableAction {
 
-  public:
-    explicit DeletePrimitiveAction(size_t indexOfPrimitive);
+      public:
+        explicit DeletePrimitiveAction(size_t indexOfPrimitive);
 
-    void doAction(Controller::ActionHandler* actionHandler) override;
-    void undoAction(Controller::ActionHandler* actionHandler) override;
+        void doAction(ActionHandler* actionHandler) override;
+        void undoAction(ActionHandler* actionHandler) override;
 
-  private:
-    const size_t              m_indexOfPrimitive;
-    std::unique_ptr<Drawable> m_drawable;
-};
+      private:
+        const size_t              m_indexOfPrimitive;
+        std::unique_ptr<Drawable> m_drawable;
+    };
+} // namespace Controller
 
 #endif // GOTIKZ_DELETEPRIMITIVEACTION_H

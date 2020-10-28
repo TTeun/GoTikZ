@@ -6,5 +6,5 @@
 
 #include "Action.h"
 
-UndoableAction::UndoableAction() : Action() {
+Controller::UndoableAction::UndoableAction() : Action() {
 }
