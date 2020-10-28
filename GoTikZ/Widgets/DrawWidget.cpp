@@ -53,7 +53,7 @@ void DrawWidget::drawGrid(QPainter* painter) {
 
     painter->setPen(QPen{Qt::black, 3});
     int sideLineInterval = 1;
-    while (sideLineInterval * scaledGridSpacing < 50) {
+    while (sideLineInterval * scaledGridSpacing < 70) {
         sideLineInterval *= 2;
         assert(sideLineInterval < std::numeric_limits<int>::max() / 4);
     }

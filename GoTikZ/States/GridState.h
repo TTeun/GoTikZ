@@ -16,7 +16,7 @@ class GridState {
 
   private:
     bool   m_showGrid    = true;
-    size_t m_gridSpacing = 20;
+    size_t m_gridSpacing = 50;
 };
 
 #endif // GOTIKZ_GRIDSTATE_H
