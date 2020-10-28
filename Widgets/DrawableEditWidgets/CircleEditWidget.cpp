@@ -5,7 +5,7 @@
 #include "CircleEditWidget.h"
 
 #include "../../Drawable/Circle.h"
-#include "Actions/ActionHandler.h"
+#include "../../Controller/Actions/ActionHandler.h"
 #include "Widgets/AuxWidgets/XyWidget.h"
 #include "Widgets/PenWidget.h"
 

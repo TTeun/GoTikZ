@@ -8,7 +8,7 @@
 #include "UndoableAction.h"
 
 #include <QObject>
-#include <QtCore/QPointF>
+#include <QPointF>
 #include <memory>
 #include <stack>
 
@@ -39,7 +39,7 @@ class ActionHandler : public QObject {
     void draw();
     void mousePressEvent(QMouseEvent* event);
     void mouseMoveEvent(QMouseEvent* event);
-    void wheelEvent(QWheelEvent* event, QPointF mousePosition);
+    void wheelEvent(QWheelEvent* event, const QPointF& mousePosition);
     void keyPressEvent(QKeyEvent* event);
     void keyPressEventNoModifier(QKeyEvent* event);
     void keyPressEventWithCtrl(QKeyEvent* event);

@@ -4,7 +4,7 @@
 
 #include "LineEditWidget.h"
 
-#include "../../Actions/ActionHandler.h"
+#include "../../Controller/Actions/ActionHandler.h"
 #include "../../Drawable/Line.h"
 #include "Widgets/AuxWidgets/XyWidget.h"
 #include "Widgets/PenWidget.h"

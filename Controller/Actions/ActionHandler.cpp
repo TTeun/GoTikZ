@@ -113,7 +113,7 @@ void ActionHandler::mouseMoveEvent(QMouseEvent* event) {
     m_previousMousePoint = event->localPos();
 }
 
-void ActionHandler::wheelEvent(QWheelEvent* event, QPointF mousePosition) {
+void ActionHandler::wheelEvent(QWheelEvent* event, const QPointF& mousePosition) {
     const auto mouseInWorld = m_model->mousePointInWorldCoordinates(mousePosition);
     m_drawWidget->transform().addToScaleParameter(event->angleDelta().y() / 100);
     m_drawWidget->transform().setTranslation(mousePosition - m_drawWidget->transform().scale() * mouseInWorld);

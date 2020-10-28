@@ -5,7 +5,7 @@
 #ifndef GOTIKZ_MAINWINDOW_H
 #define GOTIKZ_MAINWINDOW_H
 
-#include "Actions/ActionHandler.h"
+#include "Controller/Actions/ActionHandler.h"
 #include "Model/Model.h"
 #include "Widgets/MainWidget.h"
 

@@ -4,9 +4,9 @@
 
 #include "PenChangeAction.h"
 
-#include "../Widgets/DrawWidget.h"
 #include "ActionHandler.h"
 #include "Model/Model.h"
+#include "Widgets/DrawWidget.h"
 
 PenChangeAction::PenChangeAction(QPen pen, size_t indexOfPrimitive)
     : m_pen(std::move(pen)), m_indexOfPrimitive(indexOfPrimitive) {

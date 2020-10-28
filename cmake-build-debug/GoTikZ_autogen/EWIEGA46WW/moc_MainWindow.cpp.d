@@ -1,8 +1,8 @@
 /home/pc/MEGAsync/C++/clion/GoTikZ/cmake-build-debug/GoTikZ_autogen/EWIEGA46WW/moc_MainWindow.cpp: /home/pc/MEGAsync/C++/clion/GoTikZ/MainWindow.h \
   /home/pc/MEGAsync/C++/clion/GoTikZ/cmake-build-debug/GoTikZ_autogen/moc_predefs.h \
-  /home/pc/MEGAsync/C++/clion/GoTikZ/Actions/Action.h \
-  /home/pc/MEGAsync/C++/clion/GoTikZ/Actions/ActionHandler.h \
-  /home/pc/MEGAsync/C++/clion/GoTikZ/Actions/UndoableAction.h \
+  /home/pc/MEGAsync/C++/clion/GoTikZ/Controller/Actions/Action.h \
+  /home/pc/MEGAsync/C++/clion/GoTikZ/Controller/Actions/ActionHandler.h \
+  /home/pc/MEGAsync/C++/clion/GoTikZ/Controller/Actions/UndoableAction.h \
   /home/pc/MEGAsync/C++/clion/GoTikZ/Drawable/Drawable.h \
   /home/pc/MEGAsync/C++/clion/GoTikZ/Drawable/DrawableHandler.h \
   /home/pc/MEGAsync/C++/clion/GoTikZ/Drawable/StreamDrawable.h \

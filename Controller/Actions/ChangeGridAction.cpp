@@ -4,8 +4,8 @@
 
 #include "ChangeGridAction.h"
 
-#include "../Widgets/DrawWidget.h"
 #include "ActionHandler.h"
+#include "Widgets/DrawWidget.h"
 
 ChangeGridAction::ChangeGridAction(GridState gridState) : m_gridState(gridState) {
 }

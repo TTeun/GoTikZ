@@ -4,7 +4,7 @@
 
 #include "PointEditWidget.h"
 
-#include "../../Actions/ActionHandler.h"
+#include "../../Controller/Actions/ActionHandler.h"
 #include "../../Drawable/Point.h"
 #include "Widgets/AuxWidgets/XyWidget.h"
 #include "Widgets/PenWidget.h"

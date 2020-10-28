@@ -18,20 +18,17 @@ class Model {
 
     const DrawableHandler& drawableHandler() const;
     DrawableHandler&       drawableHandler();
-
-    void mousePressEvent(QMouseEvent* event);
-    void mouseSelectEvent(QMouseEvent* event);
-    void mouseCreateEvent(const QPointF& snappedPoint);
-    void mouseMoveEvent(QMouseEvent* event);
-    void setPen(const QPen& pen);
-    void setMousePointerType(MOUSE_POINTER_TYPE newType);
-
-    QPointF mousePointInWorldCoordinates(const QPointF& mousePoint) const;
+    void                   mousePressEvent(QMouseEvent* event);
+    void                   mouseSelectEvent(QMouseEvent* event);
+    void                   mouseCreateEvent(const QPointF& snappedPoint);
+    void                   mouseMoveEvent(QMouseEvent* event);
+    void                   setPen(const QPen& pen);
+    void                   setMousePointerType(MOUSE_POINTER_TYPE newType);
+    QPointF                mousePointInWorldCoordinates(const QPointF& mousePoint) const;
 
   private:
-    DrawableHandler m_drawableHandler;
-    ActionHandler*  m_actionHandler;
-
+    DrawableHandler    m_drawableHandler;
+    ActionHandler*     m_actionHandler;
     QPen               m_drawPen          = QPen(Qt::black, 3);
     MOUSE_POINTER_TYPE m_mousePointerType = MOUSE_POINTER_TYPE::LINE;
 };

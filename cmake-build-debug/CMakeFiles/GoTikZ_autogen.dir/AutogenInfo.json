@@ -10,44 +10,44 @@
 	"HEADERS" : 
 	[
 		[
-			"/home/pc/MEGAsync/C++/clion/GoTikZ/Actions/Action.h",
+			"/home/pc/MEGAsync/C++/clion/GoTikZ/Controller/Actions/Action.h",
 			"MU",
-			"7ODZH2JGIQ/moc_Action.cpp"
+			"DDMX5RIXQU/moc_Action.cpp"
 		],
 		[
-			"/home/pc/MEGAsync/C++/clion/GoTikZ/Actions/ActionHandler.h",
+			"/home/pc/MEGAsync/C++/clion/GoTikZ/Controller/Actions/ActionHandler.h",
 			"MU",
-			"7ODZH2JGIQ/moc_ActionHandler.cpp"
+			"DDMX5RIXQU/moc_ActionHandler.cpp"
 		],
 		[
-			"/home/pc/MEGAsync/C++/clion/GoTikZ/Actions/AddPrimitiveAction.h",
+			"/home/pc/MEGAsync/C++/clion/GoTikZ/Controller/Actions/AddPrimitiveAction.h",
 			"MU",
-			"7ODZH2JGIQ/moc_AddPrimitiveAction.cpp"
+			"DDMX5RIXQU/moc_AddPrimitiveAction.cpp"
 		],
 		[
-			"/home/pc/MEGAsync/C++/clion/GoTikZ/Actions/ChangeGridAction.h",
+			"/home/pc/MEGAsync/C++/clion/GoTikZ/Controller/Actions/ChangeGridAction.h",
 			"MU",
-			"7ODZH2JGIQ/moc_ChangeGridAction.cpp"
+			"DDMX5RIXQU/moc_ChangeGridAction.cpp"
 		],
 		[
-			"/home/pc/MEGAsync/C++/clion/GoTikZ/Actions/ChangeMousePointerTypeAction.h",
+			"/home/pc/MEGAsync/C++/clion/GoTikZ/Controller/Actions/ChangeMousePointerTypeAction.h",
 			"MU",
-			"7ODZH2JGIQ/moc_ChangeMousePointerTypeAction.cpp"
+			"DDMX5RIXQU/moc_ChangeMousePointerTypeAction.cpp"
 		],
 		[
-			"/home/pc/MEGAsync/C++/clion/GoTikZ/Actions/DeletePrimitiveAction.h",
+			"/home/pc/MEGAsync/C++/clion/GoTikZ/Controller/Actions/DeletePrimitiveAction.h",
 			"MU",
-			"7ODZH2JGIQ/moc_DeletePrimitiveAction.cpp"
+			"DDMX5RIXQU/moc_DeletePrimitiveAction.cpp"
 		],
 		[
-			"/home/pc/MEGAsync/C++/clion/GoTikZ/Actions/PenChangeAction.h",
+			"/home/pc/MEGAsync/C++/clion/GoTikZ/Controller/Actions/PenChangeAction.h",
 			"MU",
-			"7ODZH2JGIQ/moc_PenChangeAction.cpp"
+			"DDMX5RIXQU/moc_PenChangeAction.cpp"
 		],
 		[
-			"/home/pc/MEGAsync/C++/clion/GoTikZ/Actions/UndoableAction.h",
+			"/home/pc/MEGAsync/C++/clion/GoTikZ/Controller/Actions/UndoableAction.h",
 			"MU",
-			"7ODZH2JGIQ/moc_UndoableAction.cpp"
+			"DDMX5RIXQU/moc_UndoableAction.cpp"
 		],
 		[
 			"/home/pc/MEGAsync/C++/clion/GoTikZ/Drawable/Circle.h",
@@ -262,28 +262,34 @@
 	"SETTINGS_FILE" : "/home/pc/MEGAsync/C++/clion/GoTikZ/cmake-build-debug/CMakeFiles/GoTikZ_autogen.dir/AutogenUsed.txt",
 	"SOURCES" : 
 	[
-		[ "/home/pc/MEGAsync/C++/clion/GoTikZ/Actions/ActionHandler.cpp", "MU" ],
 		[
-			"/home/pc/MEGAsync/C++/clion/GoTikZ/Actions/AddPrimitiveAction.cpp",
+			"/home/pc/MEGAsync/C++/clion/GoTikZ/Controller/Actions/ActionHandler.cpp",
 			"MU"
 		],
 		[
-			"/home/pc/MEGAsync/C++/clion/GoTikZ/Actions/ChangeGridAction.cpp",
+			"/home/pc/MEGAsync/C++/clion/GoTikZ/Controller/Actions/AddPrimitiveAction.cpp",
 			"MU"
 		],
 		[
-			"/home/pc/MEGAsync/C++/clion/GoTikZ/Actions/ChangeMousePointerTypeAction.cpp",
+			"/home/pc/MEGAsync/C++/clion/GoTikZ/Controller/Actions/ChangeGridAction.cpp",
 			"MU"
 		],
 		[
-			"/home/pc/MEGAsync/C++/clion/GoTikZ/Actions/DeletePrimitiveAction.cpp",
+			"/home/pc/MEGAsync/C++/clion/GoTikZ/Controller/Actions/ChangeMousePointerTypeAction.cpp",
 			"MU"
 		],
 		[
-			"/home/pc/MEGAsync/C++/clion/GoTikZ/Actions/PenChangeAction.cpp",
+			"/home/pc/MEGAsync/C++/clion/GoTikZ/Controller/Actions/DeletePrimitiveAction.cpp",
 			"MU"
 		],
-		[ "/home/pc/MEGAsync/C++/clion/GoTikZ/Actions/UndoableAction.cpp", "MU" ],
+		[
+			"/home/pc/MEGAsync/C++/clion/GoTikZ/Controller/Actions/PenChangeAction.cpp",
+			"MU"
+		],
+		[
+			"/home/pc/MEGAsync/C++/clion/GoTikZ/Controller/Actions/UndoableAction.cpp",
+			"MU"
+		],
 		[ "/home/pc/MEGAsync/C++/clion/GoTikZ/Drawable/Circle.cpp", "MU" ],
 		[ "/home/pc/MEGAsync/C++/clion/GoTikZ/Drawable/CircleStream.cpp", "MU" ],
 		[ "/home/pc/MEGAsync/C++/clion/GoTikZ/Drawable/Drawable.cpp", "MU" ],

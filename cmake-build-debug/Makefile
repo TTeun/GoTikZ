@@ -156,194 +156,194 @@ GoTikZ_autogen/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoTikZ_autogen.dir/build.make CMakeFiles/GoTikZ_autogen.dir/build
 .PHONY : GoTikZ_autogen/fast
 
-Actions/ActionHandler.o: Actions/ActionHandler.cpp.o
+Controller/Actions/ActionHandler.o: Controller/Actions/ActionHandler.cpp.o
 
-.PHONY : Actions/ActionHandler.o
-
-# target to build an object file
-Actions/ActionHandler.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoTikZ.dir/build.make CMakeFiles/GoTikZ.dir/Actions/ActionHandler.cpp.o
-.PHONY : Actions/ActionHandler.cpp.o
-
-Actions/ActionHandler.i: Actions/ActionHandler.cpp.i
-
-.PHONY : Actions/ActionHandler.i
-
-# target to preprocess a source file
-Actions/ActionHandler.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoTikZ.dir/build.make CMakeFiles/GoTikZ.dir/Actions/ActionHandler.cpp.i
-.PHONY : Actions/ActionHandler.cpp.i
-
-Actions/ActionHandler.s: Actions/ActionHandler.cpp.s
-
-.PHONY : Actions/ActionHandler.s
-
-# target to generate assembly for a file
-Actions/ActionHandler.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoTikZ.dir/build.make CMakeFiles/GoTikZ.dir/Actions/ActionHandler.cpp.s
-.PHONY : Actions/ActionHandler.cpp.s
-
-Actions/AddPrimitiveAction.o: Actions/AddPrimitiveAction.cpp.o
-
-.PHONY : Actions/AddPrimitiveAction.o
+.PHONY : Controller/Actions/ActionHandler.o
 
 # target to build an object file
-Actions/AddPrimitiveAction.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoTikZ.dir/build.make CMakeFiles/GoTikZ.dir/Actions/AddPrimitiveAction.cpp.o
-.PHONY : Actions/AddPrimitiveAction.cpp.o
+Controller/Actions/ActionHandler.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoTikZ.dir/build.make CMakeFiles/GoTikZ.dir/Controller/Actions/ActionHandler.cpp.o
+.PHONY : Controller/Actions/ActionHandler.cpp.o
 
-Actions/AddPrimitiveAction.i: Actions/AddPrimitiveAction.cpp.i
+Controller/Actions/ActionHandler.i: Controller/Actions/ActionHandler.cpp.i
 
-.PHONY : Actions/AddPrimitiveAction.i
+.PHONY : Controller/Actions/ActionHandler.i
 
 # target to preprocess a source file
-Actions/AddPrimitiveAction.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoTikZ.dir/build.make CMakeFiles/GoTikZ.dir/Actions/AddPrimitiveAction.cpp.i
-.PHONY : Actions/AddPrimitiveAction.cpp.i
+Controller/Actions/ActionHandler.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoTikZ.dir/build.make CMakeFiles/GoTikZ.dir/Controller/Actions/ActionHandler.cpp.i
+.PHONY : Controller/Actions/ActionHandler.cpp.i
 
-Actions/AddPrimitiveAction.s: Actions/AddPrimitiveAction.cpp.s
+Controller/Actions/ActionHandler.s: Controller/Actions/ActionHandler.cpp.s
 
-.PHONY : Actions/AddPrimitiveAction.s
+.PHONY : Controller/Actions/ActionHandler.s
 
 # target to generate assembly for a file
-Actions/AddPrimitiveAction.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoTikZ.dir/build.make CMakeFiles/GoTikZ.dir/Actions/AddPrimitiveAction.cpp.s
-.PHONY : Actions/AddPrimitiveAction.cpp.s
+Controller/Actions/ActionHandler.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoTikZ.dir/build.make CMakeFiles/GoTikZ.dir/Controller/Actions/ActionHandler.cpp.s
+.PHONY : Controller/Actions/ActionHandler.cpp.s
 
-Actions/ChangeGridAction.o: Actions/ChangeGridAction.cpp.o
+Controller/Actions/AddPrimitiveAction.o: Controller/Actions/AddPrimitiveAction.cpp.o
 
-.PHONY : Actions/ChangeGridAction.o
+.PHONY : Controller/Actions/AddPrimitiveAction.o
 
 # target to build an object file
-Actions/ChangeGridAction.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoTikZ.dir/build.make CMakeFiles/GoTikZ.dir/Actions/ChangeGridAction.cpp.o
-.PHONY : Actions/ChangeGridAction.cpp.o
+Controller/Actions/AddPrimitiveAction.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoTikZ.dir/build.make CMakeFiles/GoTikZ.dir/Controller/Actions/AddPrimitiveAction.cpp.o
+.PHONY : Controller/Actions/AddPrimitiveAction.cpp.o
 
-Actions/ChangeGridAction.i: Actions/ChangeGridAction.cpp.i
+Controller/Actions/AddPrimitiveAction.i: Controller/Actions/AddPrimitiveAction.cpp.i
 
-.PHONY : Actions/ChangeGridAction.i
+.PHONY : Controller/Actions/AddPrimitiveAction.i
 
 # target to preprocess a source file
-Actions/ChangeGridAction.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoTikZ.dir/build.make CMakeFiles/GoTikZ.dir/Actions/ChangeGridAction.cpp.i
-.PHONY : Actions/ChangeGridAction.cpp.i
+Controller/Actions/AddPrimitiveAction.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoTikZ.dir/build.make CMakeFiles/GoTikZ.dir/Controller/Actions/AddPrimitiveAction.cpp.i
+.PHONY : Controller/Actions/AddPrimitiveAction.cpp.i
 
-Actions/ChangeGridAction.s: Actions/ChangeGridAction.cpp.s
+Controller/Actions/AddPrimitiveAction.s: Controller/Actions/AddPrimitiveAction.cpp.s
 
-.PHONY : Actions/ChangeGridAction.s
+.PHONY : Controller/Actions/AddPrimitiveAction.s
 
 # target to generate assembly for a file
-Actions/ChangeGridAction.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoTikZ.dir/build.make CMakeFiles/GoTikZ.dir/Actions/ChangeGridAction.cpp.s
-.PHONY : Actions/ChangeGridAction.cpp.s
+Controller/Actions/AddPrimitiveAction.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoTikZ.dir/build.make CMakeFiles/GoTikZ.dir/Controller/Actions/AddPrimitiveAction.cpp.s
+.PHONY : Controller/Actions/AddPrimitiveAction.cpp.s
 
-Actions/ChangeMousePointerTypeAction.o: Actions/ChangeMousePointerTypeAction.cpp.o
+Controller/Actions/ChangeGridAction.o: Controller/Actions/ChangeGridAction.cpp.o
 
-.PHONY : Actions/ChangeMousePointerTypeAction.o
+.PHONY : Controller/Actions/ChangeGridAction.o
 
 # target to build an object file
-Actions/ChangeMousePointerTypeAction.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoTikZ.dir/build.make CMakeFiles/GoTikZ.dir/Actions/ChangeMousePointerTypeAction.cpp.o
-.PHONY : Actions/ChangeMousePointerTypeAction.cpp.o
+Controller/Actions/ChangeGridAction.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoTikZ.dir/build.make CMakeFiles/GoTikZ.dir/Controller/Actions/ChangeGridAction.cpp.o
+.PHONY : Controller/Actions/ChangeGridAction.cpp.o
 
-Actions/ChangeMousePointerTypeAction.i: Actions/ChangeMousePointerTypeAction.cpp.i
+Controller/Actions/ChangeGridAction.i: Controller/Actions/ChangeGridAction.cpp.i
 
-.PHONY : Actions/ChangeMousePointerTypeAction.i
+.PHONY : Controller/Actions/ChangeGridAction.i
 
 # target to preprocess a source file
-Actions/ChangeMousePointerTypeAction.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoTikZ.dir/build.make CMakeFiles/GoTikZ.dir/Actions/ChangeMousePointerTypeAction.cpp.i
-.PHONY : Actions/ChangeMousePointerTypeAction.cpp.i
+Controller/Actions/ChangeGridAction.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoTikZ.dir/build.make CMakeFiles/GoTikZ.dir/Controller/Actions/ChangeGridAction.cpp.i
+.PHONY : Controller/Actions/ChangeGridAction.cpp.i
 
-Actions/ChangeMousePointerTypeAction.s: Actions/ChangeMousePointerTypeAction.cpp.s
+Controller/Actions/ChangeGridAction.s: Controller/Actions/ChangeGridAction.cpp.s
 
-.PHONY : Actions/ChangeMousePointerTypeAction.s
+.PHONY : Controller/Actions/ChangeGridAction.s
 
 # target to generate assembly for a file
-Actions/ChangeMousePointerTypeAction.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoTikZ.dir/build.make CMakeFiles/GoTikZ.dir/Actions/ChangeMousePointerTypeAction.cpp.s
-.PHONY : Actions/ChangeMousePointerTypeAction.cpp.s
+Controller/Actions/ChangeGridAction.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoTikZ.dir/build.make CMakeFiles/GoTikZ.dir/Controller/Actions/ChangeGridAction.cpp.s
+.PHONY : Controller/Actions/ChangeGridAction.cpp.s
 
-Actions/DeletePrimitiveAction.o: Actions/DeletePrimitiveAction.cpp.o
+Controller/Actions/ChangeMousePointerTypeAction.o: Controller/Actions/ChangeMousePointerTypeAction.cpp.o
 
-.PHONY : Actions/DeletePrimitiveAction.o
+.PHONY : Controller/Actions/ChangeMousePointerTypeAction.o
 
 # target to build an object file
-Actions/DeletePrimitiveAction.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoTikZ.dir/build.make CMakeFiles/GoTikZ.dir/Actions/DeletePrimitiveAction.cpp.o
-.PHONY : Actions/DeletePrimitiveAction.cpp.o
+Controller/Actions/ChangeMousePointerTypeAction.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoTikZ.dir/build.make CMakeFiles/GoTikZ.dir/Controller/Actions/ChangeMousePointerTypeAction.cpp.o
+.PHONY : Controller/Actions/ChangeMousePointerTypeAction.cpp.o
 
-Actions/DeletePrimitiveAction.i: Actions/DeletePrimitiveAction.cpp.i
+Controller/Actions/ChangeMousePointerTypeAction.i: Controller/Actions/ChangeMousePointerTypeAction.cpp.i
 
-.PHONY : Actions/DeletePrimitiveAction.i
+.PHONY : Controller/Actions/ChangeMousePointerTypeAction.i
 
 # target to preprocess a source file
-Actions/DeletePrimitiveAction.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoTikZ.dir/build.make CMakeFiles/GoTikZ.dir/Actions/DeletePrimitiveAction.cpp.i
-.PHONY : Actions/DeletePrimitiveAction.cpp.i
+Controller/Actions/ChangeMousePointerTypeAction.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoTikZ.dir/build.make CMakeFiles/GoTikZ.dir/Controller/Actions/ChangeMousePointerTypeAction.cpp.i
+.PHONY : Controller/Actions/ChangeMousePointerTypeAction.cpp.i
 
-Actions/DeletePrimitiveAction.s: Actions/DeletePrimitiveAction.cpp.s
+Controller/Actions/ChangeMousePointerTypeAction.s: Controller/Actions/ChangeMousePointerTypeAction.cpp.s
 
-.PHONY : Actions/DeletePrimitiveAction.s
+.PHONY : Controller/Actions/ChangeMousePointerTypeAction.s
 
 # target to generate assembly for a file
-Actions/DeletePrimitiveAction.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoTikZ.dir/build.make CMakeFiles/GoTikZ.dir/Actions/DeletePrimitiveAction.cpp.s
-.PHONY : Actions/DeletePrimitiveAction.cpp.s
+Controller/Actions/ChangeMousePointerTypeAction.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoTikZ.dir/build.make CMakeFiles/GoTikZ.dir/Controller/Actions/ChangeMousePointerTypeAction.cpp.s
+.PHONY : Controller/Actions/ChangeMousePointerTypeAction.cpp.s
 
-Actions/PenChangeAction.o: Actions/PenChangeAction.cpp.o
+Controller/Actions/DeletePrimitiveAction.o: Controller/Actions/DeletePrimitiveAction.cpp.o
 
-.PHONY : Actions/PenChangeAction.o
+.PHONY : Controller/Actions/DeletePrimitiveAction.o
 
 # target to build an object file
-Actions/PenChangeAction.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoTikZ.dir/build.make CMakeFiles/GoTikZ.dir/Actions/PenChangeAction.cpp.o
-.PHONY : Actions/PenChangeAction.cpp.o
+Controller/Actions/DeletePrimitiveAction.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoTikZ.dir/build.make CMakeFiles/GoTikZ.dir/Controller/Actions/DeletePrimitiveAction.cpp.o
+.PHONY : Controller/Actions/DeletePrimitiveAction.cpp.o
 
-Actions/PenChangeAction.i: Actions/PenChangeAction.cpp.i
+Controller/Actions/DeletePrimitiveAction.i: Controller/Actions/DeletePrimitiveAction.cpp.i
 
-.PHONY : Actions/PenChangeAction.i
+.PHONY : Controller/Actions/DeletePrimitiveAction.i
 
 # target to preprocess a source file
-Actions/PenChangeAction.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoTikZ.dir/build.make CMakeFiles/GoTikZ.dir/Actions/PenChangeAction.cpp.i
-.PHONY : Actions/PenChangeAction.cpp.i
+Controller/Actions/DeletePrimitiveAction.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoTikZ.dir/build.make CMakeFiles/GoTikZ.dir/Controller/Actions/DeletePrimitiveAction.cpp.i
+.PHONY : Controller/Actions/DeletePrimitiveAction.cpp.i
 
-Actions/PenChangeAction.s: Actions/PenChangeAction.cpp.s
+Controller/Actions/DeletePrimitiveAction.s: Controller/Actions/DeletePrimitiveAction.cpp.s
 
-.PHONY : Actions/PenChangeAction.s
+.PHONY : Controller/Actions/DeletePrimitiveAction.s
 
 # target to generate assembly for a file
-Actions/PenChangeAction.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoTikZ.dir/build.make CMakeFiles/GoTikZ.dir/Actions/PenChangeAction.cpp.s
-.PHONY : Actions/PenChangeAction.cpp.s
+Controller/Actions/DeletePrimitiveAction.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoTikZ.dir/build.make CMakeFiles/GoTikZ.dir/Controller/Actions/DeletePrimitiveAction.cpp.s
+.PHONY : Controller/Actions/DeletePrimitiveAction.cpp.s
 
-Actions/UndoableAction.o: Actions/UndoableAction.cpp.o
+Controller/Actions/PenChangeAction.o: Controller/Actions/PenChangeAction.cpp.o
 
-.PHONY : Actions/UndoableAction.o
+.PHONY : Controller/Actions/PenChangeAction.o
 
 # target to build an object file
-Actions/UndoableAction.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoTikZ.dir/build.make CMakeFiles/GoTikZ.dir/Actions/UndoableAction.cpp.o
-.PHONY : Actions/UndoableAction.cpp.o
+Controller/Actions/PenChangeAction.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoTikZ.dir/build.make CMakeFiles/GoTikZ.dir/Controller/Actions/PenChangeAction.cpp.o
+.PHONY : Controller/Actions/PenChangeAction.cpp.o
 
-Actions/UndoableAction.i: Actions/UndoableAction.cpp.i
+Controller/Actions/PenChangeAction.i: Controller/Actions/PenChangeAction.cpp.i
 
-.PHONY : Actions/UndoableAction.i
+.PHONY : Controller/Actions/PenChangeAction.i
 
 # target to preprocess a source file
-Actions/UndoableAction.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoTikZ.dir/build.make CMakeFiles/GoTikZ.dir/Actions/UndoableAction.cpp.i
-.PHONY : Actions/UndoableAction.cpp.i
+Controller/Actions/PenChangeAction.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoTikZ.dir/build.make CMakeFiles/GoTikZ.dir/Controller/Actions/PenChangeAction.cpp.i
+.PHONY : Controller/Actions/PenChangeAction.cpp.i
 
-Actions/UndoableAction.s: Actions/UndoableAction.cpp.s
+Controller/Actions/PenChangeAction.s: Controller/Actions/PenChangeAction.cpp.s
 
-.PHONY : Actions/UndoableAction.s
+.PHONY : Controller/Actions/PenChangeAction.s
 
 # target to generate assembly for a file
-Actions/UndoableAction.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoTikZ.dir/build.make CMakeFiles/GoTikZ.dir/Actions/UndoableAction.cpp.s
-.PHONY : Actions/UndoableAction.cpp.s
+Controller/Actions/PenChangeAction.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoTikZ.dir/build.make CMakeFiles/GoTikZ.dir/Controller/Actions/PenChangeAction.cpp.s
+.PHONY : Controller/Actions/PenChangeAction.cpp.s
+
+Controller/Actions/UndoableAction.o: Controller/Actions/UndoableAction.cpp.o
+
+.PHONY : Controller/Actions/UndoableAction.o
+
+# target to build an object file
+Controller/Actions/UndoableAction.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoTikZ.dir/build.make CMakeFiles/GoTikZ.dir/Controller/Actions/UndoableAction.cpp.o
+.PHONY : Controller/Actions/UndoableAction.cpp.o
+
+Controller/Actions/UndoableAction.i: Controller/Actions/UndoableAction.cpp.i
+
+.PHONY : Controller/Actions/UndoableAction.i
+
+# target to preprocess a source file
+Controller/Actions/UndoableAction.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoTikZ.dir/build.make CMakeFiles/GoTikZ.dir/Controller/Actions/UndoableAction.cpp.i
+.PHONY : Controller/Actions/UndoableAction.cpp.i
+
+Controller/Actions/UndoableAction.s: Controller/Actions/UndoableAction.cpp.s
+
+.PHONY : Controller/Actions/UndoableAction.s
+
+# target to generate assembly for a file
+Controller/Actions/UndoableAction.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoTikZ.dir/build.make CMakeFiles/GoTikZ.dir/Controller/Actions/UndoableAction.cpp.s
+.PHONY : Controller/Actions/UndoableAction.cpp.s
 
 Drawable/Circle.o: Drawable/Circle.cpp.o
 
@@ -1246,27 +1246,27 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... GoTikZ_autogen"
 	@echo "... GoTikZ"
-	@echo "... Actions/ActionHandler.o"
-	@echo "... Actions/ActionHandler.i"
-	@echo "... Actions/ActionHandler.s"
-	@echo "... Actions/AddPrimitiveAction.o"
-	@echo "... Actions/AddPrimitiveAction.i"
-	@echo "... Actions/AddPrimitiveAction.s"
-	@echo "... Actions/ChangeGridAction.o"
-	@echo "... Actions/ChangeGridAction.i"
-	@echo "... Actions/ChangeGridAction.s"
-	@echo "... Actions/ChangeMousePointerTypeAction.o"
-	@echo "... Actions/ChangeMousePointerTypeAction.i"
-	@echo "... Actions/ChangeMousePointerTypeAction.s"
-	@echo "... Actions/DeletePrimitiveAction.o"
-	@echo "... Actions/DeletePrimitiveAction.i"
-	@echo "... Actions/DeletePrimitiveAction.s"
-	@echo "... Actions/PenChangeAction.o"
-	@echo "... Actions/PenChangeAction.i"
-	@echo "... Actions/PenChangeAction.s"
-	@echo "... Actions/UndoableAction.o"
-	@echo "... Actions/UndoableAction.i"
-	@echo "... Actions/UndoableAction.s"
+	@echo "... Controller/Actions/ActionHandler.o"
+	@echo "... Controller/Actions/ActionHandler.i"
+	@echo "... Controller/Actions/ActionHandler.s"
+	@echo "... Controller/Actions/AddPrimitiveAction.o"
+	@echo "... Controller/Actions/AddPrimitiveAction.i"
+	@echo "... Controller/Actions/AddPrimitiveAction.s"
+	@echo "... Controller/Actions/ChangeGridAction.o"
+	@echo "... Controller/Actions/ChangeGridAction.i"
+	@echo "... Controller/Actions/ChangeGridAction.s"
+	@echo "... Controller/Actions/ChangeMousePointerTypeAction.o"
+	@echo "... Controller/Actions/ChangeMousePointerTypeAction.i"
+	@echo "... Controller/Actions/ChangeMousePointerTypeAction.s"
+	@echo "... Controller/Actions/DeletePrimitiveAction.o"
+	@echo "... Controller/Actions/DeletePrimitiveAction.i"
+	@echo "... Controller/Actions/DeletePrimitiveAction.s"
+	@echo "... Controller/Actions/PenChangeAction.o"
+	@echo "... Controller/Actions/PenChangeAction.i"
+	@echo "... Controller/Actions/PenChangeAction.s"
+	@echo "... Controller/Actions/UndoableAction.o"
+	@echo "... Controller/Actions/UndoableAction.i"
+	@echo "... Controller/Actions/UndoableAction.s"
 	@echo "... Drawable/Circle.o"
 	@echo "... Drawable/Circle.i"
 	@echo "... Drawable/Circle.s"

@@ -1,6 +1,6 @@
 #include "DrawWidget.h"
 
-#include "Actions/ActionHandler.h"
+#include "../Controller/Actions/ActionHandler.h"
 #include "Model/Model.h"
 
 #include <QMouseEvent>

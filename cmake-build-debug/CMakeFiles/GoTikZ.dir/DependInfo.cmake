@@ -4,13 +4,13 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/pc/MEGAsync/C++/clion/GoTikZ/Actions/ActionHandler.cpp" "/home/pc/MEGAsync/C++/clion/GoTikZ/cmake-build-debug/CMakeFiles/GoTikZ.dir/Actions/ActionHandler.cpp.o"
-  "/home/pc/MEGAsync/C++/clion/GoTikZ/Actions/AddPrimitiveAction.cpp" "/home/pc/MEGAsync/C++/clion/GoTikZ/cmake-build-debug/CMakeFiles/GoTikZ.dir/Actions/AddPrimitiveAction.cpp.o"
-  "/home/pc/MEGAsync/C++/clion/GoTikZ/Actions/ChangeGridAction.cpp" "/home/pc/MEGAsync/C++/clion/GoTikZ/cmake-build-debug/CMakeFiles/GoTikZ.dir/Actions/ChangeGridAction.cpp.o"
-  "/home/pc/MEGAsync/C++/clion/GoTikZ/Actions/ChangeMousePointerTypeAction.cpp" "/home/pc/MEGAsync/C++/clion/GoTikZ/cmake-build-debug/CMakeFiles/GoTikZ.dir/Actions/ChangeMousePointerTypeAction.cpp.o"
-  "/home/pc/MEGAsync/C++/clion/GoTikZ/Actions/DeletePrimitiveAction.cpp" "/home/pc/MEGAsync/C++/clion/GoTikZ/cmake-build-debug/CMakeFiles/GoTikZ.dir/Actions/DeletePrimitiveAction.cpp.o"
-  "/home/pc/MEGAsync/C++/clion/GoTikZ/Actions/PenChangeAction.cpp" "/home/pc/MEGAsync/C++/clion/GoTikZ/cmake-build-debug/CMakeFiles/GoTikZ.dir/Actions/PenChangeAction.cpp.o"
-  "/home/pc/MEGAsync/C++/clion/GoTikZ/Actions/UndoableAction.cpp" "/home/pc/MEGAsync/C++/clion/GoTikZ/cmake-build-debug/CMakeFiles/GoTikZ.dir/Actions/UndoableAction.cpp.o"
+  "/home/pc/MEGAsync/C++/clion/GoTikZ/Controller/Actions/ActionHandler.cpp" "/home/pc/MEGAsync/C++/clion/GoTikZ/cmake-build-debug/CMakeFiles/GoTikZ.dir/Controller/Actions/ActionHandler.cpp.o"
+  "/home/pc/MEGAsync/C++/clion/GoTikZ/Controller/Actions/AddPrimitiveAction.cpp" "/home/pc/MEGAsync/C++/clion/GoTikZ/cmake-build-debug/CMakeFiles/GoTikZ.dir/Controller/Actions/AddPrimitiveAction.cpp.o"
+  "/home/pc/MEGAsync/C++/clion/GoTikZ/Controller/Actions/ChangeGridAction.cpp" "/home/pc/MEGAsync/C++/clion/GoTikZ/cmake-build-debug/CMakeFiles/GoTikZ.dir/Controller/Actions/ChangeGridAction.cpp.o"
+  "/home/pc/MEGAsync/C++/clion/GoTikZ/Controller/Actions/ChangeMousePointerTypeAction.cpp" "/home/pc/MEGAsync/C++/clion/GoTikZ/cmake-build-debug/CMakeFiles/GoTikZ.dir/Controller/Actions/ChangeMousePointerTypeAction.cpp.o"
+  "/home/pc/MEGAsync/C++/clion/GoTikZ/Controller/Actions/DeletePrimitiveAction.cpp" "/home/pc/MEGAsync/C++/clion/GoTikZ/cmake-build-debug/CMakeFiles/GoTikZ.dir/Controller/Actions/DeletePrimitiveAction.cpp.o"
+  "/home/pc/MEGAsync/C++/clion/GoTikZ/Controller/Actions/PenChangeAction.cpp" "/home/pc/MEGAsync/C++/clion/GoTikZ/cmake-build-debug/CMakeFiles/GoTikZ.dir/Controller/Actions/PenChangeAction.cpp.o"
+  "/home/pc/MEGAsync/C++/clion/GoTikZ/Controller/Actions/UndoableAction.cpp" "/home/pc/MEGAsync/C++/clion/GoTikZ/cmake-build-debug/CMakeFiles/GoTikZ.dir/Controller/Actions/UndoableAction.cpp.o"
   "/home/pc/MEGAsync/C++/clion/GoTikZ/Drawable/Circle.cpp" "/home/pc/MEGAsync/C++/clion/GoTikZ/cmake-build-debug/CMakeFiles/GoTikZ.dir/Drawable/Circle.cpp.o"
   "/home/pc/MEGAsync/C++/clion/GoTikZ/Drawable/CircleStream.cpp" "/home/pc/MEGAsync/C++/clion/GoTikZ/cmake-build-debug/CMakeFiles/GoTikZ.dir/Drawable/CircleStream.cpp.o"
   "/home/pc/MEGAsync/C++/clion/GoTikZ/Drawable/Drawable.cpp" "/home/pc/MEGAsync/C++/clion/GoTikZ/cmake-build-debug/CMakeFiles/GoTikZ.dir/Drawable/Drawable.cpp.o"

@@ -4,7 +4,7 @@
 
 #include "MousePointerTypeSelectWidget.h"
 
-#include "../Actions/ChangeMousePointerTypeAction.h"
+#include "../Controller/Actions/ChangeMousePointerTypeAction.h"
 
 #include <QButtonGroup>
 #include <QGroupBox>

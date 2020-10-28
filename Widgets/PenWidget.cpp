@@ -4,7 +4,7 @@
 
 #include "PenWidget.h"
 
-#include "../Actions/PenChangeAction.h"
+#include "../Controller/Actions/PenChangeAction.h"
 #include "ColorWidget.h"
 
 #include <QGroupBox>

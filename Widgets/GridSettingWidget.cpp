@@ -4,7 +4,7 @@
 
 #include "GridSettingWidget.h"
 
-#include "../Actions/ChangeGridAction.h"
+#include "../Controller/Actions/ChangeGridAction.h"
 
 #include <QtWidgets/QCheckBox>
 #include <QtWidgets/QGroupBox>

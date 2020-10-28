@@ -114,49 +114,49 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/pc/MEGAsync/C++/clion/GoTikZ/Actions/Action.h">
+		<Unit filename="/home/pc/MEGAsync/C++/clion/GoTikZ/Controller/Actions/Action.h">
 			<Option target="GoTikZ"/>
 		</Unit>
-		<Unit filename="/home/pc/MEGAsync/C++/clion/GoTikZ/Actions/ActionHandler.cpp">
+		<Unit filename="/home/pc/MEGAsync/C++/clion/GoTikZ/Controller/Actions/ActionHandler.cpp">
 			<Option target="GoTikZ"/>
 		</Unit>
-		<Unit filename="/home/pc/MEGAsync/C++/clion/GoTikZ/Actions/ActionHandler.h">
+		<Unit filename="/home/pc/MEGAsync/C++/clion/GoTikZ/Controller/Actions/ActionHandler.h">
 			<Option target="GoTikZ"/>
 		</Unit>
-		<Unit filename="/home/pc/MEGAsync/C++/clion/GoTikZ/Actions/AddPrimitiveAction.cpp">
+		<Unit filename="/home/pc/MEGAsync/C++/clion/GoTikZ/Controller/Actions/AddPrimitiveAction.cpp">
 			<Option target="GoTikZ"/>
 		</Unit>
-		<Unit filename="/home/pc/MEGAsync/C++/clion/GoTikZ/Actions/AddPrimitiveAction.h">
+		<Unit filename="/home/pc/MEGAsync/C++/clion/GoTikZ/Controller/Actions/AddPrimitiveAction.h">
 			<Option target="GoTikZ"/>
 		</Unit>
-		<Unit filename="/home/pc/MEGAsync/C++/clion/GoTikZ/Actions/ChangeGridAction.cpp">
+		<Unit filename="/home/pc/MEGAsync/C++/clion/GoTikZ/Controller/Actions/ChangeGridAction.cpp">
 			<Option target="GoTikZ"/>
 		</Unit>
-		<Unit filename="/home/pc/MEGAsync/C++/clion/GoTikZ/Actions/ChangeGridAction.h">
+		<Unit filename="/home/pc/MEGAsync/C++/clion/GoTikZ/Controller/Actions/ChangeGridAction.h">
 			<Option target="GoTikZ"/>
 		</Unit>
-		<Unit filename="/home/pc/MEGAsync/C++/clion/GoTikZ/Actions/ChangeMousePointerTypeAction.cpp">
+		<Unit filename="/home/pc/MEGAsync/C++/clion/GoTikZ/Controller/Actions/ChangeMousePointerTypeAction.cpp">
 			<Option target="GoTikZ"/>
 		</Unit>
-		<Unit filename="/home/pc/MEGAsync/C++/clion/GoTikZ/Actions/ChangeMousePointerTypeAction.h">
+		<Unit filename="/home/pc/MEGAsync/C++/clion/GoTikZ/Controller/Actions/ChangeMousePointerTypeAction.h">
 			<Option target="GoTikZ"/>
 		</Unit>
-		<Unit filename="/home/pc/MEGAsync/C++/clion/GoTikZ/Actions/DeletePrimitiveAction.cpp">
+		<Unit filename="/home/pc/MEGAsync/C++/clion/GoTikZ/Controller/Actions/DeletePrimitiveAction.cpp">
 			<Option target="GoTikZ"/>
 		</Unit>
-		<Unit filename="/home/pc/MEGAsync/C++/clion/GoTikZ/Actions/DeletePrimitiveAction.h">
+		<Unit filename="/home/pc/MEGAsync/C++/clion/GoTikZ/Controller/Actions/DeletePrimitiveAction.h">
 			<Option target="GoTikZ"/>
 		</Unit>
-		<Unit filename="/home/pc/MEGAsync/C++/clion/GoTikZ/Actions/PenChangeAction.cpp">
+		<Unit filename="/home/pc/MEGAsync/C++/clion/GoTikZ/Controller/Actions/PenChangeAction.cpp">
 			<Option target="GoTikZ"/>
 		</Unit>
-		<Unit filename="/home/pc/MEGAsync/C++/clion/GoTikZ/Actions/PenChangeAction.h">
+		<Unit filename="/home/pc/MEGAsync/C++/clion/GoTikZ/Controller/Actions/PenChangeAction.h">
 			<Option target="GoTikZ"/>
 		</Unit>
-		<Unit filename="/home/pc/MEGAsync/C++/clion/GoTikZ/Actions/UndoableAction.cpp">
+		<Unit filename="/home/pc/MEGAsync/C++/clion/GoTikZ/Controller/Actions/UndoableAction.cpp">
 			<Option target="GoTikZ"/>
 		</Unit>
-		<Unit filename="/home/pc/MEGAsync/C++/clion/GoTikZ/Actions/UndoableAction.h">
+		<Unit filename="/home/pc/MEGAsync/C++/clion/GoTikZ/Controller/Actions/UndoableAction.h">
 			<Option target="GoTikZ"/>
 		</Unit>
 		<Unit filename="/home/pc/MEGAsync/C++/clion/GoTikZ/Drawable/Circle.cpp">

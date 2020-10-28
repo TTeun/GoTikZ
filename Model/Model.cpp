@@ -4,10 +4,10 @@
 
 #include "Model.h"
 
+#include "../Controller/Actions/ActionHandler.h"
+#include "../Controller/Actions/AddPrimitiveAction.h"
 #include "../Widgets/DrawWidget.h"
-#include "Actions/ActionHandler.h"
 
-#include <Actions/AddPrimitiveAction.h>
 #include <Drawable/Point.h>
 #include <Drawable/StreamDrawableFactory.h>
 #include <QDebug>
