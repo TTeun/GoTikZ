@@ -9,19 +9,19 @@
 #include "View/Widgets/AuxWidgets/GroupBoxContainer.h"
 
 class Line;
-namespace Controller {
-    class ActionHandler;
+namespace controller {
+    class Controller;
 }
 
-namespace View {
+namespace view {
     class XyWidget;
 }
 
-class LineEditWidget : public View::DrawableEditWidget, public GroupBoxContainer {
+class LineEditWidget : public view::DrawableEditWidget, public GroupBoxContainer {
     Q_OBJECT
 
   public:
-    LineEditWidget(Line* line, Controller::ActionHandler* actionHandler);
+    LineEditWidget(Line* line, controller::Controller* actionHandler);
 
   public slots:
     void setPoint1(QPointF newPoint);
@@ -29,11 +29,11 @@ class LineEditWidget : public View::DrawableEditWidget, public GroupBoxContainer
     void needsUpdate() override;
 
   private:
-    View::XyWidget* m_point1Widget;
-    View::XyWidget* m_point2Widget;
+    view::XyWidget* m_point1Widget;
+    view::XyWidget* m_point2Widget;
 
     Line*                      m_line;
-    Controller::ActionHandler* m_actionHandler;
+    controller::Controller* m_actionHandler;
 };
 
 #endif // GOTIKZ_LINEEDITWIDGET_H

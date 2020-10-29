@@ -7,7 +7,7 @@
 
 #include <QPointF>
 
-namespace View {
+namespace view {
     class Transform {
       public:
         void    setTranslation(const QPointF& translation);
@@ -23,6 +23,6 @@ namespace View {
         double  m_scale          = 1.0;
         QPointF m_translation    = {0, 0};
     };
-} // namespace View
+} // namespace view
 
 #endif // GOTIKZ_TRANSFORM_H

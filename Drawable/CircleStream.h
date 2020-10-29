@@ -9,7 +9,7 @@
 
 #include <QPointF>
 
-namespace View {
+namespace view {
     class Transform;
 }
 
@@ -24,7 +24,7 @@ class CircleStream : public StreamDrawable {
 
     Drawable* drawable() override;
 
-    void draw(QPainter* painter, DRAW_FLAGS drawFlag, const View::Transform& transform) const override;
+    void draw(QPainter* painter, DRAW_FLAGS drawFlag, const view::Transform& transform) const override;
 
     std::pair<double, QPointF> snap(QPointF point) override;
     double                     dist(const QPointF& point) const override;

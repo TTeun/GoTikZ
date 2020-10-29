@@ -15,11 +15,6 @@
 			"DDMX5RIXQU/moc_Action.cpp"
 		],
 		[
-			"/home/pc/MEGAsync/C++/clion/GoTikZ/Controller/Actions/ActionHandler.h",
-			"MU",
-			"DDMX5RIXQU/moc_ActionHandler.cpp"
-		],
-		[
 			"/home/pc/MEGAsync/C++/clion/GoTikZ/Controller/Actions/AddPrimitiveAction.h",
 			"MU",
 			"DDMX5RIXQU/moc_AddPrimitiveAction.cpp"
@@ -53,6 +48,11 @@
 			"/home/pc/MEGAsync/C++/clion/GoTikZ/Controller/Actions/UndoableAction.h",
 			"MU",
 			"DDMX5RIXQU/moc_UndoableAction.cpp"
+		],
+		[
+			"/home/pc/MEGAsync/C++/clion/GoTikZ/Controller/Controller.h",
+			"MU",
+			"TTE4PTQQBL/moc_Controller.cpp"
 		],
 		[
 			"/home/pc/MEGAsync/C++/clion/GoTikZ/Controller/ModifierState.h",
@@ -130,9 +130,9 @@
 			"B3SUX3IICH/moc_Math.cpp"
 		],
 		[
-			"/home/pc/MEGAsync/C++/clion/GoTikZ/Model/ModelHandler.h",
+			"/home/pc/MEGAsync/C++/clion/GoTikZ/Model/Model.h",
 			"MU",
-			"EXHL2H62WB/moc_ModelHandler.cpp"
+			"EXHL2H62WB/moc_Model.cpp"
 		],
 		[
 			"/home/pc/MEGAsync/C++/clion/GoTikZ/Model/MousePointerTypeEnum.h",
@@ -283,10 +283,6 @@
 	"SOURCES" : 
 	[
 		[
-			"/home/pc/MEGAsync/C++/clion/GoTikZ/Controller/Actions/ActionHandler.cpp",
-			"MU"
-		],
-		[
 			"/home/pc/MEGAsync/C++/clion/GoTikZ/Controller/Actions/AddPrimitiveAction.cpp",
 			"MU"
 		],
@@ -314,6 +310,7 @@
 			"/home/pc/MEGAsync/C++/clion/GoTikZ/Controller/Actions/UndoableAction.cpp",
 			"MU"
 		],
+		[ "/home/pc/MEGAsync/C++/clion/GoTikZ/Controller/Controller.cpp", "MU" ],
 		[
 			"/home/pc/MEGAsync/C++/clion/GoTikZ/Controller/ModifierState.cpp",
 			"MU"
@@ -343,7 +340,7 @@
 		],
 		[ "/home/pc/MEGAsync/C++/clion/GoTikZ/MainWindow.cpp", "MU" ],
 		[ "/home/pc/MEGAsync/C++/clion/GoTikZ/Math/Math.cpp", "MU" ],
-		[ "/home/pc/MEGAsync/C++/clion/GoTikZ/Model/ModelHandler.cpp", "MU" ],
+		[ "/home/pc/MEGAsync/C++/clion/GoTikZ/Model/Model.cpp", "MU" ],
 		[
 			"/home/pc/MEGAsync/C++/clion/GoTikZ/Model/MousePointerTypeEnum.cpp",
 			"MU"

@@ -7,10 +7,8 @@
 
 class QString;
 
-namespace Model {
-    enum class MOUSE_POINTER_TYPE { LINE, POINT, CIRCLE, POLY_LINE, SELECT };
-}
+enum class MOUSE_POINTER_TYPE { LINE, POINT, CIRCLE, POLY_LINE, SELECT };
 
-Model::MOUSE_POINTER_TYPE mousePointerTypeFromString(const QString& str);
+MOUSE_POINTER_TYPE mousePointerTypeFromString(const QString& str);
 
 #endif // GOTIKZ_MOUSEPOINTERTYPEENUM_H

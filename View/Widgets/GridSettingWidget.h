@@ -12,8 +12,8 @@
 class QSpinBox;
 class QCheckBox;
 
-namespace View {
-    class GridSettingWidget : public View::ActionWidget, public GroupBoxContainer {
+namespace view {
+    class GridSettingWidget : public view::ActionWidget, public GroupBoxContainer {
 
       public:
         explicit GridSettingWidget(QWidget* parent);
@@ -26,6 +26,6 @@ namespace View {
         QCheckBox* m_showGridCheckBox;
         GridState  m_gridState;
     };
-} // namespace View
+} // namespace view
 
 #endif // GOTIKZ_GRIDSETTINGWIDGET_H

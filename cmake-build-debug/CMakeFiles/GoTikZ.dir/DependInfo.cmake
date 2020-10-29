@@ -4,7 +4,6 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/pc/MEGAsync/C++/clion/GoTikZ/Controller/Actions/ActionHandler.cpp" "/home/pc/MEGAsync/C++/clion/GoTikZ/cmake-build-debug/CMakeFiles/GoTikZ.dir/Controller/Actions/ActionHandler.cpp.o"
   "/home/pc/MEGAsync/C++/clion/GoTikZ/Controller/Actions/AddPrimitiveAction.cpp" "/home/pc/MEGAsync/C++/clion/GoTikZ/cmake-build-debug/CMakeFiles/GoTikZ.dir/Controller/Actions/AddPrimitiveAction.cpp.o"
   "/home/pc/MEGAsync/C++/clion/GoTikZ/Controller/Actions/ChangeGridAction.cpp" "/home/pc/MEGAsync/C++/clion/GoTikZ/cmake-build-debug/CMakeFiles/GoTikZ.dir/Controller/Actions/ChangeGridAction.cpp.o"
   "/home/pc/MEGAsync/C++/clion/GoTikZ/Controller/Actions/ChangeMousePointerTypeAction.cpp" "/home/pc/MEGAsync/C++/clion/GoTikZ/cmake-build-debug/CMakeFiles/GoTikZ.dir/Controller/Actions/ChangeMousePointerTypeAction.cpp.o"
@@ -12,6 +11,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/pc/MEGAsync/C++/clion/GoTikZ/Controller/Actions/PenChangeAction.cpp" "/home/pc/MEGAsync/C++/clion/GoTikZ/cmake-build-debug/CMakeFiles/GoTikZ.dir/Controller/Actions/PenChangeAction.cpp.o"
   "/home/pc/MEGAsync/C++/clion/GoTikZ/Controller/Actions/TranslatePrimitiveAction.cpp" "/home/pc/MEGAsync/C++/clion/GoTikZ/cmake-build-debug/CMakeFiles/GoTikZ.dir/Controller/Actions/TranslatePrimitiveAction.cpp.o"
   "/home/pc/MEGAsync/C++/clion/GoTikZ/Controller/Actions/UndoableAction.cpp" "/home/pc/MEGAsync/C++/clion/GoTikZ/cmake-build-debug/CMakeFiles/GoTikZ.dir/Controller/Actions/UndoableAction.cpp.o"
+  "/home/pc/MEGAsync/C++/clion/GoTikZ/Controller/Controller.cpp" "/home/pc/MEGAsync/C++/clion/GoTikZ/cmake-build-debug/CMakeFiles/GoTikZ.dir/Controller/Controller.cpp.o"
   "/home/pc/MEGAsync/C++/clion/GoTikZ/Controller/ModifierState.cpp" "/home/pc/MEGAsync/C++/clion/GoTikZ/cmake-build-debug/CMakeFiles/GoTikZ.dir/Controller/ModifierState.cpp.o"
   "/home/pc/MEGAsync/C++/clion/GoTikZ/Controller/MouseHandler.cpp" "/home/pc/MEGAsync/C++/clion/GoTikZ/cmake-build-debug/CMakeFiles/GoTikZ.dir/Controller/MouseHandler.cpp.o"
   "/home/pc/MEGAsync/C++/clion/GoTikZ/Drawable/Circle.cpp" "/home/pc/MEGAsync/C++/clion/GoTikZ/cmake-build-debug/CMakeFiles/GoTikZ.dir/Drawable/Circle.cpp.o"
@@ -27,7 +27,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/pc/MEGAsync/C++/clion/GoTikZ/cmake-build-debug/GoTikZ_autogen/mocs_compilation.cpp" "/home/pc/MEGAsync/C++/clion/GoTikZ/cmake-build-debug/CMakeFiles/GoTikZ.dir/GoTikZ_autogen/mocs_compilation.cpp.o"
   "/home/pc/MEGAsync/C++/clion/GoTikZ/MainWindow.cpp" "/home/pc/MEGAsync/C++/clion/GoTikZ/cmake-build-debug/CMakeFiles/GoTikZ.dir/MainWindow.cpp.o"
   "/home/pc/MEGAsync/C++/clion/GoTikZ/Math/Math.cpp" "/home/pc/MEGAsync/C++/clion/GoTikZ/cmake-build-debug/CMakeFiles/GoTikZ.dir/Math/Math.cpp.o"
-  "/home/pc/MEGAsync/C++/clion/GoTikZ/Model/ModelHandler.cpp" "/home/pc/MEGAsync/C++/clion/GoTikZ/cmake-build-debug/CMakeFiles/GoTikZ.dir/Model/ModelHandler.cpp.o"
+  "/home/pc/MEGAsync/C++/clion/GoTikZ/Model/Model.cpp" "/home/pc/MEGAsync/C++/clion/GoTikZ/cmake-build-debug/CMakeFiles/GoTikZ.dir/Model/Model.cpp.o"
   "/home/pc/MEGAsync/C++/clion/GoTikZ/Model/MousePointerTypeEnum.cpp" "/home/pc/MEGAsync/C++/clion/GoTikZ/cmake-build-debug/CMakeFiles/GoTikZ.dir/Model/MousePointerTypeEnum.cpp.o"
   "/home/pc/MEGAsync/C++/clion/GoTikZ/View/GridState.cpp" "/home/pc/MEGAsync/C++/clion/GoTikZ/cmake-build-debug/CMakeFiles/GoTikZ.dir/View/GridState.cpp.o"
   "/home/pc/MEGAsync/C++/clion/GoTikZ/View/Transform.cpp" "/home/pc/MEGAsync/C++/clion/GoTikZ/cmake-build-debug/CMakeFiles/GoTikZ.dir/View/Transform.cpp.o"

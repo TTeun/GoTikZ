@@ -4,16 +4,16 @@
 
 #include "AddPrimitiveAction.h"
 
-#include "ActionHandler.h"
-#include "Model/ModelHandler.h"
+#include "Controller/Controller.h"
+#include "Model/Model.h"
 #include "View/Widgets/DrawWidget.h"
 
 #include <QDebug>
 
-Controller::AddPrimitiveAction::AddPrimitiveAction(size_t indexOfPrimitive) : m_indexOfPrimitive(indexOfPrimitive) {
+controller::AddPrimitiveAction::AddPrimitiveAction(size_t indexOfPrimitive) : m_indexOfPrimitive(indexOfPrimitive) {
 }
 
-void Controller::AddPrimitiveAction::doAction(Controller::ActionHandler* actionHandler) {
+void controller::AddPrimitiveAction::doAction(controller::Controller* actionHandler) {
     qDebug() << "Do";
     actionHandler->modelHandler()->drawableHandler().addDrawable(m_drawable.release());
     actionHandler->modelHandler()->drawableHandler().clearSelectedAndHighlighted();
@@ -21,7 +21,7 @@ void Controller::AddPrimitiveAction::doAction(Controller::ActionHandler* actionH
     actionHandler->draw();
 }
 
-void Controller::AddPrimitiveAction::undoAction(Controller::ActionHandler* actionHandler) {
+void controller::AddPrimitiveAction::undoAction(controller::Controller* actionHandler) {
     qDebug() << "Undo";
     m_drawable = static_cast<std::unique_ptr<Drawable>>(
         actionHandler->modelHandler()->drawableHandler().removeDrawable(m_indexOfPrimitive));

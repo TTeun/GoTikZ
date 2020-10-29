@@ -11,7 +11,7 @@
 #include <QSpinBox>
 #include <QVBoxLayout>
 
-View::GridSettingWidget::GridSettingWidget(QWidget* parent) : GroupBoxContainer(parent, "Grid") {
+view::GridSettingWidget::GridSettingWidget(QWidget* parent) : GroupBoxContainer(parent, "Grid") {
     setLayout(new QHBoxLayout(this));
     auto* contentsLayout = m_groupBox->layout();
 
@@ -29,13 +29,13 @@ View::GridSettingWidget::GridSettingWidget(QWidget* parent) : GroupBoxContainer(
     layout()->addWidget(m_groupBox);
 }
 
-void View::GridSettingWidget::setSpacing(int spacing) {
+void view::GridSettingWidget::setSpacing(int spacing) {
     assert(spacing >= 0);
     m_gridState.setGridSpacing(static_cast<size_t>(spacing));
-    emit actionDone(new Controller::ChangeGridAction(m_gridState));
+    emit actionDone(new controller::ChangeGridAction(m_gridState));
 }
 
-void View::GridSettingWidget::setShowGrid(bool show) {
+void view::GridSettingWidget::setShowGrid(bool show) {
     m_gridState.setShowGrid(show);
-    emit actionDone(new Controller::ChangeGridAction(m_gridState));
+    emit actionDone(new controller::ChangeGridAction(m_gridState));
 }

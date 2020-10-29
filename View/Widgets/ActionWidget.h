@@ -7,12 +7,12 @@
 
 #include <QWidget>
 
-namespace Controller {
+namespace controller {
     class UndoableAction;
     class Action;
-} // namespace Controller
+} // namespace controller
 
-namespace View {
+namespace view {
     class ActionWidget : public QWidget {
         Q_OBJECT
 
@@ -20,9 +20,9 @@ namespace View {
         explicit ActionWidget() = default;
 
       signals:
-        void undoableActionDone(Controller::UndoableAction* action, bool isAlreadyDone);
-        void actionDone(Controller::Action* action);
+        void undoableActionDone(controller::UndoableAction* action, bool isAlreadyDone);
+        void actionDone(controller::Action* action);
     };
-} // namespace View
+} // namespace view
 
 #endif // GOTIKZ_ACTIONWIDGET_H

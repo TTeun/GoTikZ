@@ -8,20 +8,20 @@
 #include "Drawable/Drawable.h"
 #include "UndoableAction.h"
 
-namespace Controller {
-    class ActionHandler;
+namespace controller {
+    class Controller;
     class DeletePrimitiveAction : public UndoableAction {
 
       public:
         explicit DeletePrimitiveAction(size_t indexOfPrimitive);
 
-        void doAction(ActionHandler* actionHandler) override;
-        void undoAction(ActionHandler* actionHandler) override;
+        void doAction(Controller* actionHandler) override;
+        void undoAction(Controller* actionHandler) override;
 
       private:
         const size_t              m_indexOfPrimitive;
         std::unique_ptr<Drawable> m_drawable;
     };
-} // namespace Controller
+} // namespace controller
 
 #endif // GOTIKZ_DELETEPRIMITIVEACTION_H

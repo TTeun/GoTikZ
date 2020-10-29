@@ -9,7 +9,7 @@
 
 class QPushButton;
 
-namespace View {
+namespace view {
     class ColorWidget : public QWidget {
         Q_OBJECT
 
@@ -26,6 +26,6 @@ namespace View {
         QColor       m_color;
         QPushButton* m_pushButton;
     };
-} // namespace View
+} // namespace view
 
 #endif // GOTIKZ_COLORWIDGET_H

@@ -8,19 +8,19 @@
 #include "Action.h"
 #include "View/GridState.h"
 
-namespace Controller {
-    class ActionHandler;
+namespace controller {
+    class Controller;
 
     class ChangeGridAction : public Action {
 
       public:
-        explicit ChangeGridAction(View::GridState gridState);
+        explicit ChangeGridAction(view::GridState gridState);
 
-        void doAction(ActionHandler* actionHandler) override;
+        void doAction(Controller* actionHandler) override;
 
       private:
-        const View::GridState m_gridState;
+        const view::GridState m_gridState;
     };
-} // namespace Controller
+} // namespace controller
 
 #endif // GOTIKZ_CHANGEGRIDACTION_H

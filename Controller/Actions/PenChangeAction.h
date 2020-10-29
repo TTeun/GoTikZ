@@ -9,19 +9,19 @@
 
 #include <QPen>
 
-namespace Controller {
-    class ActionHandler;
+namespace controller {
+    class Controller;
 
     class PenChangeAction : public Action {
       public:
         PenChangeAction(QPen pen, size_t indexOfPrimitive);
 
-        void doAction(ActionHandler* actionHandler) override;
+        void doAction(Controller* actionHandler) override;
 
       private:
         QPen   m_pen;
         size_t m_indexOfPrimitive;
     };
-} // namespace Controller
+} // namespace controller
 
 #endif // GOTIKZ_PENCHANGEACTION_H

@@ -8,11 +8,11 @@
 #include <QPen>
 
 class QPainter;
-namespace Controller {
-    class ActionHandler;
+namespace controller {
+    class Controller;
 }
 
-namespace View {
+namespace view {
     class Transform;
 }
 
@@ -25,11 +25,11 @@ class Drawable {
   public:
     enum class DRAW_FLAGS { NONE, SELECTED, HIGHLIGHTED };
 
-    virtual void   draw(QPainter* painter, DRAW_FLAGS drawFlag, const View::Transform& transform) const;
+    virtual void   draw(QPainter* painter, DRAW_FLAGS drawFlag, const view::Transform& transform) const;
     virtual double dist(const QPointF& point) const        = 0;
     virtual std::pair<double, QPointF> snap(QPointF point) = 0;
     size_t                             index() const;
-    virtual QWidget*                   toWidget(Controller::ActionHandler* actionHandler);
+    virtual QWidget*                   toWidget(controller::Controller* actionHandler);
     void                               setPen(const QPen& pen);
 
     virtual void translate(const QPointF& translation) = 0;

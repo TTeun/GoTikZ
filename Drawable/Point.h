@@ -9,12 +9,12 @@
 
 #include <QPointF>
 
-namespace View {
+namespace view {
     class Transform;
 }
 
-namespace Controller {
-    class ActionHandler;
+namespace controller {
+    class Controller;
 }
 
 class Point : public Drawable {
@@ -22,13 +22,13 @@ class Point : public Drawable {
     Point(QPointF point, const QPen& pen) : Drawable(pen), m_point(point) {
     }
 
-    void draw(QPainter* painter, DRAW_FLAGS drawFlag, const View::Transform& transform) const override;
+    void draw(QPainter* painter, DRAW_FLAGS drawFlag, const view::Transform& transform) const override;
 
     std::pair<double, QPointF> snap(QPointF point) override;
     double                     dist(const QPointF& point) const override;
     void                       setPoint(const QPointF& newPoint);
     QPointF                    point() const;
-    QWidget*                   toWidget(Controller::ActionHandler* actionHandler) override;
+    QWidget*                   toWidget(controller::Controller* actionHandler) override;
 
     void translate(const QPointF& translation) override;
 

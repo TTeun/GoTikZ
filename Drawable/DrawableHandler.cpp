@@ -103,16 +103,33 @@ Drawable* DrawableHandler::getClosest(const QPointF& point) {
 }
 
 Drawable* DrawableHandler::selectClosest(const QPointF& point, bool shouldClearSelected) {
+    assert(false);
+    auto* closest = getClosest(point);
+    return closest;
+}
+
+Drawable* DrawableHandler::selectNew(const QPointF& point) {
     auto* closest = getClosest(point);
     if (closest == nullptr) {
         return nullptr;
-    }
-    if (shouldClearSelected) {
-        m_selectedDrawables = {closest};
     } else {
-        m_selectedDrawables.push_back(closest);
+        m_selectedDrawables = {closest};
+        return closest;
     }
-    m_highlightedDrawables.clear();
+}
+
+Drawable* DrawableHandler::addToSelected(const QPointF& point) {
+    auto* closest = getClosest(point);
+    if (closest == nullptr) {
+        return nullptr;
+    } else {
+        auto it = std::find(m_selectedDrawables.begin(), m_selectedDrawables.end(), closest);
+        if (it == m_selectedDrawables.end()) {
+            m_selectedDrawables.push_back(closest);
+        } else {
+            m_selectedDrawables.erase(it);
+        }
+    }
     return closest;
 }
 

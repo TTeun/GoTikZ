@@ -5,22 +5,22 @@
 #ifndef GOTIKZ_MAINWINDOW_H
 #define GOTIKZ_MAINWINDOW_H
 
-#include "Controller/Actions/ActionHandler.h"
-#include "Model/ModelHandler.h"
+#include "Controller/Controller.h"
+#include "Model/Model.h"
 
 #include <QMainWindow>
 #include <memory>
 
-namespace View {
+namespace view {
     class MainWidget;
 }
 
-namespace Model {
-    class ModelHandler;
+namespace model {
+    class Model;
 }
 
-namespace Controller {
-    class ActionHandler;
+namespace controller {
+    class Controller;
 }
 
 class MainWindow : public QMainWindow {
@@ -34,9 +34,9 @@ class MainWindow : public QMainWindow {
     void keyReleaseEvent(QKeyEvent* event) override;
 
   private:
-    std::unique_ptr<Controller::ActionHandler> m_actionHandler;
-    std::unique_ptr<Model::ModelHandler>       m_modelHandler;
-    View::MainWidget*                          m_mainWidget;
+    std::unique_ptr<controller::Controller> m_actionHandler;
+    std::unique_ptr<model::Model>       m_modelHandler;
+    view::MainWidget*                          m_mainWidget;
 };
 
 #endif // GOTIKZ_MAINWINDOW_H

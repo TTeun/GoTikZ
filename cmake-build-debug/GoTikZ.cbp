@@ -117,12 +117,6 @@
 		<Unit filename="/home/pc/MEGAsync/C++/clion/GoTikZ/Controller/Actions/Action.h">
 			<Option target="GoTikZ"/>
 		</Unit>
-		<Unit filename="/home/pc/MEGAsync/C++/clion/GoTikZ/Controller/Actions/ActionHandler.cpp">
-			<Option target="GoTikZ"/>
-		</Unit>
-		<Unit filename="/home/pc/MEGAsync/C++/clion/GoTikZ/Controller/Actions/ActionHandler.h">
-			<Option target="GoTikZ"/>
-		</Unit>
 		<Unit filename="/home/pc/MEGAsync/C++/clion/GoTikZ/Controller/Actions/AddPrimitiveAction.cpp">
 			<Option target="GoTikZ"/>
 		</Unit>
@@ -163,6 +157,12 @@
 			<Option target="GoTikZ"/>
 		</Unit>
 		<Unit filename="/home/pc/MEGAsync/C++/clion/GoTikZ/Controller/Actions/UndoableAction.h">
+			<Option target="GoTikZ"/>
+		</Unit>
+		<Unit filename="/home/pc/MEGAsync/C++/clion/GoTikZ/Controller/Controller.cpp">
+			<Option target="GoTikZ"/>
+		</Unit>
+		<Unit filename="/home/pc/MEGAsync/C++/clion/GoTikZ/Controller/Controller.h">
 			<Option target="GoTikZ"/>
 		</Unit>
 		<Unit filename="/home/pc/MEGAsync/C++/clion/GoTikZ/Controller/ModifierState.cpp">
@@ -252,10 +252,10 @@
 		<Unit filename="/home/pc/MEGAsync/C++/clion/GoTikZ/Math/Math.h">
 			<Option target="GoTikZ"/>
 		</Unit>
-		<Unit filename="/home/pc/MEGAsync/C++/clion/GoTikZ/Model/ModelHandler.cpp">
+		<Unit filename="/home/pc/MEGAsync/C++/clion/GoTikZ/Model/Model.cpp">
 			<Option target="GoTikZ"/>
 		</Unit>
-		<Unit filename="/home/pc/MEGAsync/C++/clion/GoTikZ/Model/ModelHandler.h">
+		<Unit filename="/home/pc/MEGAsync/C++/clion/GoTikZ/Model/Model.h">
 			<Option target="GoTikZ"/>
 		</Unit>
 		<Unit filename="/home/pc/MEGAsync/C++/clion/GoTikZ/Model/MousePointerTypeEnum.cpp">

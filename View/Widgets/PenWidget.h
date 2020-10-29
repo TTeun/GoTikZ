@@ -10,8 +10,8 @@
 
 #include <QPen>
 
-namespace View {
-    class PenWidget : public View::ActionWidget, public GroupBoxContainer {
+namespace view {
+    class PenWidget : public view::ActionWidget, public GroupBoxContainer {
 
         Q_OBJECT
 
@@ -29,6 +29,6 @@ namespace View {
         size_t m_indexOfPrimitive = std::numeric_limits<size_t>::max();
         QPen   m_pen              = QPen(Qt::black, 3);
     };
-} // namespace View
+} // namespace view
 
 #endif // GOTIKZ_PENWIDGET_H

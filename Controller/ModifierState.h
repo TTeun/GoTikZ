@@ -5,10 +5,10 @@
 #ifndef GOTIKZ_MODIFIERSTATE_H
 #define GOTIKZ_MODIFIERSTATE_H
 
-namespace Controller {
+namespace controller {
     class ModifierState {
 
-        friend class ActionHandler;
+        friend class Controller;
 
       public:
         ModifierState() = default;
@@ -21,6 +21,6 @@ namespace Controller {
         bool m_shiftPressed;
         bool m_controlPressed;
     };
-} // namespace Controller
+} // namespace controller
 
 #endif // GOTIKZ_MODIFIERSTATE_H

@@ -10,20 +10,20 @@
 #include <QPointF>
 #include <vector>
 
-namespace Controller {
+namespace controller {
 
     class TranslatePrimitiveAction : public UndoableAction {
       public:
         TranslatePrimitiveAction(std::vector<size_t> mIndices, const QPointF& mTranslation);
 
-        void doAction(ActionHandler* actionHandler) override;
+        void doAction(Controller* actionHandler) override;
 
-        void undoAction(ActionHandler* actionHandler) override;
+        void undoAction(Controller* actionHandler) override;
 
       private:
         std::vector<size_t> m_indices;
         const QPointF       m_translation;
     };
-} // namespace Controller
+} // namespace controller
 
 #endif // GOTIKZ_TRANSLATEPRIMITIVEACTION_H

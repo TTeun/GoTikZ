@@ -4,7 +4,7 @@
 
 #include "CircleEditWidget.h"
 
-#include "Controller/Actions/ActionHandler.h"
+#include "Controller/Controller.h"
 #include "Drawable/Circle.h"
 #include "DrawableEditWidget.h"
 #include "View/Widgets/AuxWidgets/XyWidget.h"
@@ -14,15 +14,15 @@
 #include <QGroupBox>
 #include <QLayout>
 
-View::CircleEditWidget::CircleEditWidget(Circle* circle, Controller::ActionHandler* actionHandler)
+view::CircleEditWidget::CircleEditWidget(Circle* circle, controller::Controller* actionHandler)
     : DrawableEditWidget(nullptr), GroupBoxContainer(nullptr, "Circle"), m_actionHandler(actionHandler),
       m_circle(circle) {
 
     setLayout(new QHBoxLayout(this));
     auto* contentsLayout = m_groupBox->layout();
-    m_centerWidget       = new View::XyWidget(circle->center(), "Center");
+    m_centerWidget       = new view::XyWidget(circle->center(), "Center");
     m_centerWidget->setObjectName("centerWidget");
-    QObject::connect(m_centerWidget, &View::XyWidget::sendValues, this, &CircleEditWidget::setCenter);
+    QObject::connect(m_centerWidget, &view::XyWidget::sendValues, this, &CircleEditWidget::setCenter);
 
     contentsLayout->addWidget(m_centerWidget);
 
@@ -35,28 +35,28 @@ View::CircleEditWidget::CircleEditWidget(Circle* circle, Controller::ActionHandl
                      &CircleEditWidget::setRadius);
     contentsLayout->addWidget(m_radiusSpinBox);
 
-    auto* penWidget = new View::PenWidget(nullptr, circle->index(), m_circle->pen());
-    QObject::connect(penWidget, &View::PenWidget::actionDone, m_actionHandler, &Controller::ActionHandler::doAction);
+    auto* penWidget = new view::PenWidget(nullptr, circle->index(), m_circle->pen());
+    QObject::connect(penWidget, &view::PenWidget::actionDone, m_actionHandler, &controller::Controller::doAction);
     contentsLayout->addWidget(penWidget);
     layout()->addWidget(m_groupBox);
 }
 
-void View::CircleEditWidget::setCenter(QPointF newCenter) {
+void view::CircleEditWidget::setCenter(QPointF newCenter) {
     m_circle->setCenter(newCenter);
     m_actionHandler->draw();
 }
 
-void View::CircleEditWidget::setRadius(double newCenter) {
+void view::CircleEditWidget::setRadius(double newCenter) {
     m_circle->setRadius(newCenter);
     m_actionHandler->draw();
 }
 
-void View::CircleEditWidget::needsUpdate() {
+void view::CircleEditWidget::needsUpdate() {
     m_radiusSpinBox->blockSignals(true);
     m_radiusSpinBox->setValue(m_circle->radius());
     m_radiusSpinBox->blockSignals(false);
     m_centerWidget->setValues(m_circle->center());
 }
 
-View::CircleEditWidget::~CircleEditWidget() {
+view::CircleEditWidget::~CircleEditWidget() {
 }

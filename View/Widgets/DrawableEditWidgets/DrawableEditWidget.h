@@ -7,7 +7,7 @@
 
 #include <QWidget>
 
-namespace View {
+namespace view {
     class DrawableEditWidget : public QWidget {
         Q_OBJECT
 
@@ -18,6 +18,6 @@ namespace View {
       public slots:
         virtual void needsUpdate() = 0;
     };
-} // namespace View
+} // namespace view
 
 #endif // GOTIKZ_DRAWABLEEDITWIDGET_H

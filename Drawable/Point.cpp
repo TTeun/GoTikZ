@@ -10,7 +10,7 @@
 #include <Math/Math.h>
 #include <QPainter>
 
-void Point::draw(QPainter* painter, DRAW_FLAGS drawFlag, const View::Transform& transform) const {
+void Point::draw(QPainter* painter, DRAW_FLAGS drawFlag, const view::Transform& transform) const {
     Drawable::draw(painter, drawFlag, transform);
     painter->drawPoint(transform.applyTransform(m_point));
 }
@@ -31,7 +31,7 @@ QPointF Point::point() const {
     return m_point;
 }
 
-QWidget* Point::toWidget(Controller::ActionHandler* actionHandler) {
+QWidget* Point::toWidget(controller::Controller* actionHandler) {
     return new PointEditWidget(this, actionHandler);
 }
 

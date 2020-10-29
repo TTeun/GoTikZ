@@ -7,7 +7,7 @@
 
 #include <cstddef>
 
-namespace View {
+namespace view {
     class GridState {
       public:
         bool   showGrid() const;
@@ -19,6 +19,6 @@ namespace View {
         bool   m_showGrid    = true;
         size_t m_gridSpacing = 50;
     };
-} // namespace View
+} // namespace view
 
 #endif // GOTIKZ_GRIDSTATE_H

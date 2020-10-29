@@ -9,7 +9,7 @@
 #include <QLabel>
 #include <QVBoxLayout>
 
-View::XyWidget::XyWidget(const QPointF& point, const QString& value) {
+view::XyWidget::XyWidget(const QPointF& point, const QString& value) {
     auto* layout = new QHBoxLayout(this);
     layout->setSpacing(0);
     m_xButton = new QDoubleSpinBox(this);
@@ -47,13 +47,13 @@ View::XyWidget::XyWidget(const QPointF& point, const QString& value) {
     setLayout(layout);
 }
 
-void View::XyWidget::valuesChanged(int dummy) {
+void view::XyWidget::valuesChanged(int dummy) {
     const double x = m_xButton->value();
     const double y = m_yButton->value();
     emit         sendValues(QPointF(x, y));
 }
 
-void View::XyWidget::setValues(const QPointF& values) {
+void view::XyWidget::setValues(const QPointF& values) {
     m_xButton->blockSignals(true);
     m_yButton->blockSignals(true);
     m_xButton->setValue(values.x());

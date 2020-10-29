@@ -9,7 +9,7 @@
 
 #include <QWidget>
 
-namespace View {
+namespace view {
     class PenWidget;
     class MousePointerTypeSelectWidget;
     class GridSettingWidget;
@@ -26,6 +26,6 @@ namespace View {
         GridSettingWidget*            gridSettingWidget() const;
         PenWidget*                    penWidget() const;
     };
-} // namespace View
+} // namespace view
 
 #endif // GOTIKZ_LEFTSIDEBAR_H

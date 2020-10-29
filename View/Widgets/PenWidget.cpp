@@ -11,22 +11,22 @@
 #include <QLayout>
 #include <QSpinBox>
 
-View::PenWidget::PenWidget(QWidget* parent) : GroupBoxContainer(parent, "Pen") {
+view::PenWidget::PenWidget(QWidget* parent) : GroupBoxContainer(parent, "Pen") {
     create();
 }
 
-View::PenWidget::PenWidget(QWidget* parent, size_t indexOfPrimitive, const QPen& pen)
+view::PenWidget::PenWidget(QWidget* parent, size_t indexOfPrimitive, const QPen& pen)
     : GroupBoxContainer(parent, "Pen"), m_indexOfPrimitive(indexOfPrimitive), m_pen(pen) {
     create();
 }
 
-void View::PenWidget::create() {
+void view::PenWidget::create() {
     setLayout(new QHBoxLayout(this));
     m_pen.setJoinStyle(Qt::RoundJoin);
     auto* contentsLayout = m_groupBox->layout();
 
-    auto* colorWidget = new View::ColorWidget(this, m_pen.color());
-    QObject::connect(colorWidget, &View::ColorWidget::colorUpdated, this, &PenWidget::setColor);
+    auto* colorWidget = new view::ColorWidget(this, m_pen.color());
+    QObject::connect(colorWidget, &view::ColorWidget::colorUpdated, this, &PenWidget::setColor);
     contentsLayout->addWidget(colorWidget);
 
     auto* spinBox = new QSpinBox(this);
@@ -38,13 +38,13 @@ void View::PenWidget::create() {
     layout()->addWidget(m_groupBox);
 }
 
-void View::PenWidget::setColor(const QColor& color) {
+void view::PenWidget::setColor(const QColor& color) {
     m_pen.setColor(color);
-    emit actionDone(new Controller::PenChangeAction(m_pen, m_indexOfPrimitive));
+    emit actionDone(new controller::PenChangeAction(m_pen, m_indexOfPrimitive));
 }
 
-void View::PenWidget::setWidth(int width) {
+void view::PenWidget::setWidth(int width) {
     assert(width > 0);
     m_pen.setWidth(width);
-    emit actionDone(new Controller::PenChangeAction(m_pen, m_indexOfPrimitive));
+    emit actionDone(new controller::PenChangeAction(m_pen, m_indexOfPrimitive));
 }

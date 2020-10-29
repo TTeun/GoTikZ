@@ -32,7 +32,12 @@ class DrawableHandler {
     size_t    indexOfSelectedDrawable() const;
     QPointF   snap(const QPointF& mousePoint) const;
     Drawable* removeDrawable(size_t index);
+
     Drawable* selectClosest(const QPointF& point, bool shouldClearSelected);
+
+    Drawable* selectNew(const QPointF& point);
+    Drawable* addToSelected(const QPointF& point);
+
     Drawable* getClosest(const QPointF& point);
 
     const std::vector<std::unique_ptr<Drawable>>& drawables() const;

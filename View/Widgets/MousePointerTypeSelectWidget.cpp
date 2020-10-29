@@ -12,7 +12,7 @@
 #include <QLayout>
 #include <QRadioButton>
 
-View::MousePointerTypeSelectWidget::MousePointerTypeSelectWidget(QWidget* parent) : GroupBoxContainer(nullptr, "Mode") {
+view::MousePointerTypeSelectWidget::MousePointerTypeSelectWidget(QWidget* parent) : GroupBoxContainer(nullptr, "Mode") {
     setLayout(new QHBoxLayout(this));
     m_buttonGroup = new QButtonGroup();
 
@@ -27,22 +27,22 @@ View::MousePointerTypeSelectWidget::MousePointerTypeSelectWidget(QWidget* parent
     layout()->addWidget(m_groupBox);
 }
 
-void View::MousePointerTypeSelectWidget::setSelectedButton(Model::MOUSE_POINTER_TYPE type) {
+void view::MousePointerTypeSelectWidget::setSelectedButton(MOUSE_POINTER_TYPE type) {
     QString string;
     switch (type) {
-        case Model::MOUSE_POINTER_TYPE::LINE:
+        case MOUSE_POINTER_TYPE::LINE:
             string = "Line";
             break;
-        case Model::MOUSE_POINTER_TYPE::POINT:
+        case MOUSE_POINTER_TYPE::POINT:
             string = "Point";
             break;
-        case Model::MOUSE_POINTER_TYPE::CIRCLE:
+        case MOUSE_POINTER_TYPE::CIRCLE:
             string = "Circle";
             break;
-        case Model::MOUSE_POINTER_TYPE::POLY_LINE:
+        case MOUSE_POINTER_TYPE::POLY_LINE:
             string = "PolyLine";
             break;
-        case Model::MOUSE_POINTER_TYPE::SELECT:
+        case MOUSE_POINTER_TYPE::SELECT:
             string = "Select";
             break;
     }
@@ -58,7 +58,7 @@ void View::MousePointerTypeSelectWidget::setSelectedButton(Model::MOUSE_POINTER_
     assert(false);
 }
 
-void View::MousePointerTypeSelectWidget::addTypeButton(const QString& title, bool selected) {
+void view::MousePointerTypeSelectWidget::addTypeButton(const QString& title, bool selected) {
     auto* radioButton = new QRadioButton(m_groupBox);
     radioButton->setChecked(selected);
     radioButton->setText(title);
@@ -67,23 +67,23 @@ void View::MousePointerTypeSelectWidget::addTypeButton(const QString& title, boo
     m_groupBox->layout()->addWidget(radioButton);
 }
 
-void View::MousePointerTypeSelectWidget::mousePointerTypeButtonClicked(QAbstractButton* button) {
+void view::MousePointerTypeSelectWidget::mousePointerTypeButtonClicked(QAbstractButton* button) {
     auto type = mousePointerTypeFromString(button->text());
     switch (type) {
-        case Model::MOUSE_POINTER_TYPE::POINT:
-            emit actionDone(new Controller::ChangeMousePointerTypeAction(Model::MOUSE_POINTER_TYPE::POINT));
+        case MOUSE_POINTER_TYPE::POINT:
+            emit actionDone(new controller::ChangeMousePointerTypeAction(MOUSE_POINTER_TYPE::POINT));
             break;
-        case Model::MOUSE_POINTER_TYPE::LINE:
-            emit actionDone(new Controller::ChangeMousePointerTypeAction(Model::MOUSE_POINTER_TYPE::LINE));
+        case MOUSE_POINTER_TYPE::LINE:
+            emit actionDone(new controller::ChangeMousePointerTypeAction(MOUSE_POINTER_TYPE::LINE));
             break;
-        case Model::MOUSE_POINTER_TYPE::CIRCLE:
-            emit actionDone(new Controller::ChangeMousePointerTypeAction(Model::MOUSE_POINTER_TYPE::CIRCLE));
+        case MOUSE_POINTER_TYPE::CIRCLE:
+            emit actionDone(new controller::ChangeMousePointerTypeAction(MOUSE_POINTER_TYPE::CIRCLE));
             break;
-        case Model::MOUSE_POINTER_TYPE::POLY_LINE:
-            emit actionDone(new Controller::ChangeMousePointerTypeAction(Model::MOUSE_POINTER_TYPE::POLY_LINE));
+        case MOUSE_POINTER_TYPE::POLY_LINE:
+            emit actionDone(new controller::ChangeMousePointerTypeAction(MOUSE_POINTER_TYPE::POLY_LINE));
             break;
-        case Model::MOUSE_POINTER_TYPE::SELECT:
-            emit actionDone(new Controller::ChangeMousePointerTypeAction(Model::MOUSE_POINTER_TYPE::SELECT));
+        case MOUSE_POINTER_TYPE::SELECT:
+            emit actionDone(new controller::ChangeMousePointerTypeAction(MOUSE_POINTER_TYPE::SELECT));
             break;
     }
 }

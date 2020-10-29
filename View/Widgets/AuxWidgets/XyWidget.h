@@ -9,7 +9,7 @@
 
 class QDoubleSpinBox;
 
-namespace View {
+namespace view {
     class XyWidget : public QWidget {
 
         Q_OBJECT
@@ -29,6 +29,6 @@ namespace View {
         QDoubleSpinBox* m_xButton;
         QDoubleSpinBox* m_yButton;
     };
-} // namespace View
+} // namespace view
 
 #endif // GOTIKZ_XYWIDGET_H

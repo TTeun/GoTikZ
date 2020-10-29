@@ -8,7 +8,7 @@
 #include <QPushButton>
 #include <QVBoxLayout>
 
-View::ColorWidget::ColorWidget(QWidget* parent, const QColor& color) : QWidget(parent) {
+view::ColorWidget::ColorWidget(QWidget* parent, const QColor& color) : QWidget(parent) {
     auto* layout     = new QVBoxLayout(this);
     auto* pushButton = new QPushButton();
     m_pushButton     = pushButton;
@@ -21,7 +21,7 @@ View::ColorWidget::ColorWidget(QWidget* parent, const QColor& color) : QWidget(p
     setLayout(layout);
 }
 
-void View::ColorWidget::getColor() {
+void view::ColorWidget::getColor() {
     m_color       = QColorDialog::getColor(m_color);
     QString style = "background-color: rgb(" + QString::number(m_color.red()) + "," + QString::number(m_color.green()) +
                     "," + QString::number(m_color.blue()) + ");";

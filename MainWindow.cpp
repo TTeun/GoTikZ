@@ -8,9 +8,9 @@
 #include "View/Widgets/MainWidget.h"
 
 MainWindow::MainWindow()
-    : QMainWindow(nullptr), m_actionHandler(new Controller::ActionHandler(this)),
-      m_modelHandler(new Model::ModelHandler(m_actionHandler.get())),
-      m_mainWidget(new View::MainWidget(this, m_modelHandler.get(), m_actionHandler.get())) {
+    : QMainWindow(nullptr), m_actionHandler(new controller::Controller(this)),
+      m_modelHandler(new model::Model(m_actionHandler.get())),
+      m_mainWidget(new view::MainWidget(this, m_modelHandler.get(), m_actionHandler.get())) {
     setCentralWidget(m_mainWidget);
     m_actionHandler->init(m_mainWidget, m_modelHandler.get());
 

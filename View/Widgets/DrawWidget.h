@@ -6,20 +6,20 @@
 
 #include <QWidget>
 
-namespace Model {
-    class ModelHandler;
+namespace model {
+    class Model;
 }
 
-namespace Controller {
-    class ActionHandler;
+namespace controller {
+    class Controller;
 }
 
-namespace View {
+namespace view {
     class DrawWidget : public QWidget {
         Q_OBJECT
 
       public:
-        DrawWidget(QWidget* parent, const Model::ModelHandler* model, Controller::ActionHandler* actionHandler);
+        DrawWidget(QWidget* parent, const model::Model* model, controller::Controller* actionHandler);
 
       public:
         void             setGridState(GridState newGridState);
@@ -41,9 +41,9 @@ namespace View {
         GridState m_gridState;
         Transform m_transform;
 
-        const Model::ModelHandler* m_modelHandler;
-        Controller::ActionHandler* m_actionHandler;
+        const model::Model* m_modelHandler;
+        controller::Controller* m_actionHandler;
     };
-} // namespace View
+} // namespace view
 
 #endif // GOTIKZ_DRAWWIDGET_H

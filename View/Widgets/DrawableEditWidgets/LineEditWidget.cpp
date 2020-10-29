@@ -12,24 +12,24 @@
 #include <QGroupBox>
 #include <QLayout>
 
-LineEditWidget::LineEditWidget(Line* line, Controller::ActionHandler* actionHandler)
-    : View::DrawableEditWidget(nullptr), GroupBoxContainer(nullptr, "Line"), m_line(line), m_actionHandler(actionHandler) {
+LineEditWidget::LineEditWidget(Line* line, controller::Controller* actionHandler)
+    : view::DrawableEditWidget(nullptr), GroupBoxContainer(nullptr, "Line"), m_line(line), m_actionHandler(actionHandler) {
     auto* contentsLayout = m_groupBox->layout();
 
     setLayout(new QHBoxLayout(this));
     layout()->addWidget(m_groupBox);
 
-    m_point1Widget = new View::XyWidget(m_line->point1(), "p1");
-    QObject::connect(m_point1Widget, &View::XyWidget::sendValues, this, &LineEditWidget::setPoint1);
+    m_point1Widget = new view::XyWidget(m_line->point1(), "p1");
+    QObject::connect(m_point1Widget, &view::XyWidget::sendValues, this, &LineEditWidget::setPoint1);
 
-    m_point2Widget = new View::XyWidget(m_line->point2(), "p2");
-    QObject::connect(m_point2Widget, &View::XyWidget::sendValues, this, &LineEditWidget::setPoint2);
+    m_point2Widget = new view::XyWidget(m_line->point2(), "p2");
+    QObject::connect(m_point2Widget, &view::XyWidget::sendValues, this, &LineEditWidget::setPoint2);
 
     contentsLayout->addWidget(m_point1Widget);
     contentsLayout->addWidget(m_point2Widget);
 
-    auto* penWidget = new View::PenWidget(nullptr, line->index(), m_line->pen());
-    QObject::connect(penWidget, &View::PenWidget::actionDone, m_actionHandler, &Controller::ActionHandler::doAction);
+    auto* penWidget = new view::PenWidget(nullptr, line->index(), m_line->pen());
+    QObject::connect(penWidget, &view::PenWidget::actionDone, m_actionHandler, &controller::Controller::doAction);
     contentsLayout->addWidget(penWidget);
 }
 

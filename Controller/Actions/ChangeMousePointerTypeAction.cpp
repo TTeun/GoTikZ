@@ -4,15 +4,15 @@
 
 #include "ChangeMousePointerTypeAction.h"
 
-#include "ActionHandler.h"
-#include "Model/ModelHandler.h"
+#include "Controller/Controller.h"
+#include "Model/Model.h"
 #include "Model/MousePointerTypeEnum.h"
 
-Controller::ChangeMousePointerTypeAction::ChangeMousePointerTypeAction(Model::MOUSE_POINTER_TYPE newPrimitive)
+controller::ChangeMousePointerTypeAction::ChangeMousePointerTypeAction(MOUSE_POINTER_TYPE newPrimitive)
     : m_mousePointerType(newPrimitive) {
 }
 
-void Controller::ChangeMousePointerTypeAction::doAction(Controller::ActionHandler* actionHandler) {
+void controller::ChangeMousePointerTypeAction::doAction(controller::Controller* actionHandler) {
     actionHandler->modelHandler()->setMousePointerType(m_mousePointerType);
     actionHandler->modelHandler()->drawableHandler().clearSelectedAndHighlighted();
 }

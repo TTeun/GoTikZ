@@ -11,11 +11,11 @@
 class Circle;
 class QSpinBox;
 
-namespace Controller {
-    class ActionHandler;
+namespace controller {
+    class Controller;
 }
 
-namespace View {
+namespace view {
     class XyWidget;
 
     class CircleEditWidget : public DrawableEditWidget, public GroupBoxContainer {
@@ -23,7 +23,7 @@ namespace View {
         Q_OBJECT
 
       public:
-        CircleEditWidget(Circle* circle, Controller::ActionHandler* actionHandler);
+        CircleEditWidget(Circle* circle, controller::Controller* actionHandler);
         ~CircleEditWidget();
 
       public slots:
@@ -35,13 +35,13 @@ namespace View {
         QSpinBox* m_radiusSpinBox;
         XyWidget* m_centerWidget;
 
-        Controller::ActionHandler* m_actionHandler;
+        controller::Controller* m_actionHandler;
         Circle*                    m_circle;
     };
-} // namespace View
+} // namespace view
 
-namespace Controller {
-    class ActionHandler;
+namespace controller {
+    class Controller;
 }
 
 #endif // GOTIKZ_CIRCLEEDITWIDGET_H

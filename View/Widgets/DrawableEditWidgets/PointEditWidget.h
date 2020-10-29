@@ -11,27 +11,27 @@
 
 class Point;
 
-namespace View {
+namespace view {
     class XyWidget;
 }
 
-namespace Controller {
-    class ActionHandler;
+namespace controller {
+    class Controller;
 }
 
-class PointEditWidget : public View::DrawableEditWidget, public GroupBoxContainer {
+class PointEditWidget : public view::DrawableEditWidget, public GroupBoxContainer {
     Q_OBJECT
 
   public:
-    PointEditWidget(Point* point, Controller::ActionHandler* actionHandler);
+    PointEditWidget(Point* point, controller::Controller* actionHandler);
 
   public slots:
     void setPoint(QPointF newPoint);
     void needsUpdate() override;
 
   private:
-    View::XyWidget*            m_point1Widget;
-    Controller::ActionHandler* m_actionHandler;
+    view::XyWidget*            m_point1Widget;
+    controller::Controller* m_actionHandler;
     Point*                     m_point;
 };
 

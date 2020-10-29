@@ -1,20 +1,19 @@
 #include "DrawWidget.h"
 
-#include "Controller/Actions/ActionHandler.h"
-#include "Model/ModelHandler.h"
+#include "Controller/Controller.h"
+#include "Model/Model.h"
 #include "View/Transform.h"
 
 #include <QMouseEvent>
 #include <QPainter>
 #include <cmath>
 
-View::DrawWidget::DrawWidget(QWidget* parent, const Model::ModelHandler* model,
-                             Controller::ActionHandler* actionHandler)
+view::DrawWidget::DrawWidget(QWidget* parent, const model::Model* model, controller::Controller* actionHandler)
     : QWidget(parent), m_modelHandler(model), m_actionHandler(actionHandler) {
     setMouseTracking(true);
 }
 
-void View::DrawWidget::paintEvent(QPaintEvent* e) {
+void view::DrawWidget::paintEvent(QPaintEvent* e) {
     QPainter painter(this);
     QBrush   brush(Qt::white);
     painter.fillRect(this->rect(), brush);
@@ -44,7 +43,7 @@ void View::DrawWidget::paintEvent(QPaintEvent* e) {
     drawMousePointer(&painter);
 }
 
-void View::DrawWidget::drawGrid(QPainter* painter) {
+void view::DrawWidget::drawGrid(QPainter* painter) {
     painter->setPen(QPen{QColor{220, 221, 228}, 1});
     const double scale             = m_transform.scale();
     const int    dx                = m_transform.translation().x();
@@ -96,34 +95,34 @@ void View::DrawWidget::drawGrid(QPainter* painter) {
     painter->drawLine(m_mousePoint.x(), 0, m_mousePoint.x(), height());
 }
 
-void View::DrawWidget::setGridState(GridState newGridState) {
+void view::DrawWidget::setGridState(GridState newGridState) {
     m_gridState = newGridState;
 }
 
-void View::DrawWidget::mousePressEvent(QMouseEvent* event) {
+void view::DrawWidget::mousePressEvent(QMouseEvent* event) {
     m_mousePoint = event->localPos();
     m_actionHandler->mousePressEvent(event);
 }
 
-void View::DrawWidget::mouseReleaseEvent(QMouseEvent* event) {
+void view::DrawWidget::mouseReleaseEvent(QMouseEvent* event) {
     m_mousePoint = event->localPos();
     m_actionHandler->mouseReleaseEvent(event);
 }
 
-void View::DrawWidget::mouseMoveEvent(QMouseEvent* event) {
+void view::DrawWidget::mouseMoveEvent(QMouseEvent* event) {
     m_mousePoint = event->localPos();
     m_actionHandler->mouseMoveEvent(event);
 }
 
-void View::DrawWidget::wheelEvent(QWheelEvent* event) {
+void view::DrawWidget::wheelEvent(QWheelEvent* event) {
     m_actionHandler->wheelEvent(event, m_mousePoint);
 }
 
-View::Transform& View::DrawWidget::transform() {
+view::Transform& view::DrawWidget::transform() {
     return m_transform;
 }
 
-void View::DrawWidget::drawMousePointer(QPainter* painter) {
+void view::DrawWidget::drawMousePointer(QPainter* painter) {
     const auto snappedMousePoint = m_transform.applyTransform(
         m_modelHandler->drawableHandler().snap(m_modelHandler->mousePointInWorldCoordinates(m_mousePoint)));
     painter->setPen(QPen{Qt::gray, 1});

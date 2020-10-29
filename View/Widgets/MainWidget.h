@@ -5,27 +5,26 @@
 
 class RightSideBar;
 class LeftSideBar;
-namespace Controller {
-    class ActionHandler;
+namespace controller {
+    class Controller;
 }
 
-namespace View {
+namespace view {
     class LeftSideBar;
     class RightSideBar;
     class DrawWidget;
-} // namespace View
+} // namespace view
 
-namespace Model {
-    class ModelHandler;
+namespace model {
+    class Model;
 }
 
-namespace View {
+namespace view {
     class MainWidget : public QWidget {
         Q_OBJECT
 
       public:
-        explicit MainWidget(QWidget* parent, const Model::ModelHandler* model,
-                            Controller::ActionHandler* actionHandler);
+        explicit MainWidget(QWidget* parent, const model::Model* model, controller::Controller* actionHandler);
 
         DrawWidget*         drawWidget();
         LeftSideBar*        leftSideBar();
@@ -39,6 +38,6 @@ namespace View {
         LeftSideBar*  m_leftSideBar;
         DrawWidget*   m_drawWidget;
     };
-} // namespace View
+} // namespace view
 
 #endif // GOTIKZ_MAINWIDGET_H

@@ -15,7 +15,7 @@ Line::Line(const LineStream& lineStream)
     : Drawable(lineStream.m_pen), m_point1(lineStream.m_point1), m_point2(lineStream.m_point2) {
 }
 
-void Line::draw(QPainter* painter, DRAW_FLAGS drawFlag, const View::Transform& transform) const {
+void Line::draw(QPainter* painter, DRAW_FLAGS drawFlag, const view::Transform& transform) const {
     Drawable::draw(painter, drawFlag, transform);
     painter->drawLine(transform.applyTransform(m_point1), transform.applyTransform(m_point2));
 }
@@ -47,6 +47,6 @@ QPointF Line::point1() const {
 QPointF Line::point2() const {
     return m_point2;
 }
-QWidget* Line::toWidget(Controller::ActionHandler* actionHandler) {
+QWidget* Line::toWidget(controller::Controller* actionHandler) {
     return new LineEditWidget(this, actionHandler);
 }

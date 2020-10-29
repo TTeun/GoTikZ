@@ -15,7 +15,7 @@ void LineStream::stream(const QPointF& point) {
     m_shouldDraw = true;
 }
 
-void LineStream::draw(QPainter* painter, DRAW_FLAGS drawFlag, const View::Transform& transform) const {
+void LineStream::draw(QPainter* painter, DRAW_FLAGS drawFlag, const view::Transform& transform) const {
     Drawable::draw(painter, drawFlag, transform);
     if (m_shouldDraw) {
         painter->drawLine(transform.applyTransform(m_point1), transform.applyTransform(m_point2));

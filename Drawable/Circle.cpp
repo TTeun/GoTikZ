@@ -15,7 +15,7 @@ Circle::Circle(const CircleStream& circleStream)
     : Drawable(circleStream.m_pen), m_center(circleStream.m_center), m_radius(circleStream.m_radius) {
 }
 
-void Circle::draw(QPainter* painter, DRAW_FLAGS drawFlag, const View::Transform& transform) const {
+void Circle::draw(QPainter* painter, DRAW_FLAGS drawFlag, const view::Transform& transform) const {
     Drawable::draw(painter, drawFlag, transform);
     painter->drawEllipse(transform.applyTransform(m_center), m_radius * transform.scale(),
                          m_radius * transform.scale());
@@ -33,8 +33,8 @@ double Circle::dist(const QPointF& point) const {
     return std::abs(distToCenter - m_radius);
 }
 
-QWidget* Circle::toWidget(Controller::ActionHandler* actionHandler) {
-    return new View::CircleEditWidget(this, actionHandler);
+QWidget* Circle::toWidget(controller::Controller* actionHandler) {
+    return new view::CircleEditWidget(this, actionHandler);
 }
 
 QPointF Circle::center() const {

@@ -18,7 +18,7 @@ Drawable::Drawable(QPen pen) : m_pen(std::move(pen)) {
     ++s_maxIndex;
 }
 
-void Drawable::draw(QPainter* painter, DRAW_FLAGS drawFlag, const View::Transform& transform) const {
+void Drawable::draw(QPainter* painter, DRAW_FLAGS drawFlag, const view::Transform& transform) const {
     painter->setRenderHint(QPainter::Antialiasing, true);
     switch (drawFlag) {
         case DRAW_FLAGS::NONE:
@@ -41,7 +41,7 @@ size_t Drawable::index() const {
     return m_index;
 }
 
-QWidget* Drawable::toWidget(Controller::ActionHandler* actionHandler) {
+QWidget* Drawable::toWidget(controller::Controller* actionHandler) {
     return new QWidget(nullptr);
 }
 

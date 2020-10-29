@@ -7,17 +7,17 @@
 
 #include "Action.h"
 
-namespace Controller {
-    class ActionHandler;
-    class UndoableAction : public Controller::Action {
+namespace controller {
+    class Controller;
+    class UndoableAction : public controller::Action {
       protected:
         explicit UndoableAction();
 
       public:
         ~UndoableAction() = default;
 
-        virtual void undoAction(ActionHandler* actionHandler) = 0;
+        virtual void undoAction(Controller* actionHandler) = 0;
     };
-} // namespace Controller
+} // namespace controller
 
 #endif // GOTIKZ_UNDOABLEACTION_H

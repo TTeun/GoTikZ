@@ -2,14 +2,14 @@
 // Created by pc on 16-10-20.
 //
 
-#include "ActionHandler.h"
+#include "Controller.h"
 
+#include "Controller/Actions/AddPrimitiveAction.h"
 #include "Controller/Actions/DeletePrimitiveAction.h"
 #include "Controller/Actions/TranslatePrimitiveAction.h"
 #include "Controller/Actions/UndoableAction.h"
-#include "Controller/ModifierState.h"
 #include "MainWindow.h"
-#include "Model/ModelHandler.h"
+#include "Model/Model.h"
 #include "Model/MousePointerTypeEnum.h"
 #include "View/Widgets/DrawWidget.h"
 #include "View/Widgets/DrawableEditWidgets/DrawableEditWidget.h"
@@ -22,25 +22,25 @@
 
 #include <QLayout>
 
-Controller::ActionHandler::ActionHandler(MainWindow* mainWindow) : m_mainWindow(mainWindow) {
+controller::Controller::Controller(MainWindow* mainWindow) : m_mainWindow(mainWindow) {
 }
 
-void Controller::ActionHandler::init(View::MainWidget* mainWidget, Model::ModelHandler* model) {
+void controller::Controller::init(view::MainWidget* mainWidget, model::Model* model) {
     m_drawWidget   = mainWidget->drawWidget();
     m_leftSideBar  = mainWidget->leftSideBar();
     m_rightSideBar = mainWidget->rightSideBar();
     m_modelHandler = model;
 
-    QObject::connect(m_leftSideBar->mousePointerTypeSelect(), &View::MousePointerTypeSelectWidget::undoableActionDone,
-                     this, &ActionHandler::addAction);
-    QObject::connect(m_leftSideBar->mousePointerTypeSelect(), &View::MousePointerTypeSelectWidget::actionDone, this,
-                     &ActionHandler::doAction);
-    QObject::connect(m_leftSideBar->gridSettingWidget(), &View::GridSettingWidget::actionDone, this,
-                     &ActionHandler::doAction);
-    QObject::connect(m_leftSideBar->penWidget(), &View::PenWidget::actionDone, this, &ActionHandler::doAction);
+    QObject::connect(m_leftSideBar->mousePointerTypeSelect(), &view::MousePointerTypeSelectWidget::undoableActionDone,
+                     this, &Controller::addAction);
+    QObject::connect(m_leftSideBar->mousePointerTypeSelect(), &view::MousePointerTypeSelectWidget::actionDone, this,
+                     &Controller::doAction);
+    QObject::connect(m_leftSideBar->gridSettingWidget(), &view::GridSettingWidget::actionDone, this,
+                     &Controller::doAction);
+    QObject::connect(m_leftSideBar->penWidget(), &view::PenWidget::actionDone, this, &Controller::doAction);
 }
 
-void Controller::ActionHandler::undoAction() {
+void controller::Controller::undoAction() {
     if (m_undoStack.empty()) {
         return;
     }
@@ -49,7 +49,7 @@ void Controller::ActionHandler::undoAction() {
     m_undoStack.pop();
 }
 
-void Controller::ActionHandler::redoAction() {
+void controller::Controller::redoAction() {
     if (m_redoStack.empty()) {
         return;
     }
@@ -58,7 +58,7 @@ void Controller::ActionHandler::redoAction() {
     m_redoStack.pop();
 }
 
-void Controller::ActionHandler::addAction(UndoableAction* action, bool isAlreadyDone) {
+void controller::Controller::addAction(UndoableAction* action, bool isAlreadyDone) {
     if (not isAlreadyDone) {
         action->doAction(this);
     }
@@ -66,20 +66,20 @@ void Controller::ActionHandler::addAction(UndoableAction* action, bool isAlready
     m_redoStack = {};
 }
 
-View::DrawWidget* Controller::ActionHandler::drawWidget() {
+view::DrawWidget* controller::Controller::drawWidget() {
     return m_drawWidget;
 }
 
-void Controller::ActionHandler::doAction(Action* action) {
+void controller::Controller::doAction(Action* action) {
     action->doAction(this);
     draw();
 }
 
-void Controller::ActionHandler::draw() {
+void controller::Controller::draw() {
     m_mainWindow->repaint();
 }
 
-void Controller::ActionHandler::mousePressEvent(QMouseEvent* event) {
+void controller::Controller::mousePressEvent(QMouseEvent* event) {
     if (!m_mainWindow->hasFocus()) {
         m_mainWindow->setFocus();
     }
@@ -87,11 +87,10 @@ void Controller::ActionHandler::mousePressEvent(QMouseEvent* event) {
         case Qt::NoButton:
             break;
         case Qt::RightButton:
-            m_rightClickedMousePoint = event->localPos();
-            m_modelHandler->mouseRightClick(event->localPos(), m_modifierState);
+            leftClickEvent(event);
             break;
         case Qt::LeftButton:
-            m_modelHandler->mouseLeftClick(event->localPos());
+            rightClickEvent(event);
             break;
         case Qt::MiddleButton:
             break;
@@ -99,11 +98,13 @@ void Controller::ActionHandler::mousePressEvent(QMouseEvent* event) {
     draw();
 }
 
-void Controller::ActionHandler::mouseReleaseEvent(QMouseEvent* event) {
+void controller::Controller::mouseReleaseEvent(QMouseEvent* event) {
     switch (event->button()) {
-        case Qt::NoButton:
+        case Qt::BackButton:
+            undoAction();
             break;
-        case Qt::LeftButton:
+        case Qt::ForwardButton:
+            redoAction();
             break;
         case Qt::RightButton:
             if (not m_modelHandler->drawableHandler().selectedDrawables().empty() &&
@@ -118,16 +119,13 @@ void Controller::ActionHandler::mouseReleaseEvent(QMouseEvent* event) {
                                                            m_drawWidget->transform().scale()),
                           true);
             }
-
-            break;
-        case Qt::MidButton:
             break;
         default:
             break;
     }
 }
 
-void Controller::ActionHandler::mouseMoveEvent(QMouseEvent* event) {
+void controller::Controller::mouseMoveEvent(QMouseEvent* event) {
     const auto newMousePoint = event->localPos();
     switch (event->buttons()) {
         case Qt::NoButton:
@@ -149,18 +147,18 @@ void Controller::ActionHandler::mouseMoveEvent(QMouseEvent* event) {
     m_previousFrameMousePoint = newMousePoint;
 }
 
-void Controller::ActionHandler::wheelEvent(QWheelEvent* event, const QPointF& mousePosition) {
+void controller::Controller::wheelEvent(QWheelEvent* event, const QPointF& mousePosition) {
     const auto mouseInWorld = m_modelHandler->mousePointInWorldCoordinates(mousePosition);
     m_drawWidget->transform().addToScaleParameter(event->angleDelta().y() / 100);
     m_drawWidget->transform().setTranslation(mousePosition - m_drawWidget->transform().scale() * mouseInWorld);
     draw();
 }
 
-Model::ModelHandler* Controller::ActionHandler::modelHandler() {
+model::Model* controller::Controller::modelHandler() {
     return m_modelHandler;
 }
 
-void Controller::ActionHandler::keyPressEvent(QKeyEvent* event) {
+void controller::Controller::keyPressEvent(QKeyEvent* event) {
     if (event->key() == Qt::Key_Shift) {
         m_modifierState.m_shiftPressed = true;
     } else if (event->key() == Qt::Key_Control) {
@@ -172,34 +170,37 @@ void Controller::ActionHandler::keyPressEvent(QKeyEvent* event) {
             keyPressEventNoModifier(event);
             break;
         case Qt::ControlModifier:
-            keyPressEventWithCtrl(event);
+            keyPressEventWithControl(event);
+            break;
+        case Qt::ControlModifier | Qt::ShiftModifier:
+            keyPressEventWithControlAndShift(event);
             break;
         default:
             break;
     }
 }
 
-void Controller::ActionHandler::keyPressEventNoModifier(QKeyEvent* event) {
+void controller::Controller::keyPressEventNoModifier(QKeyEvent* event) {
     switch (event->key()) {
         case Qt::Key_P:
             m_leftSideBar->m_mousePointerTypeSelectWidget->setSelectedButton(
-                Model::MOUSE_POINTER_TYPE::POINT); // Also sends signal
+                MOUSE_POINTER_TYPE::POINT); // Also sends signal
             break;
         case Qt::Key_L:
             m_leftSideBar->m_mousePointerTypeSelectWidget->setSelectedButton(
-                Model::MOUSE_POINTER_TYPE::LINE); // Also sends signal
+                MOUSE_POINTER_TYPE::LINE); // Also sends signal
             break;
         case Qt::Key_C:
             m_leftSideBar->m_mousePointerTypeSelectWidget->setSelectedButton(
-                Model::MOUSE_POINTER_TYPE::CIRCLE); // Also sends signal
+                MOUSE_POINTER_TYPE::CIRCLE); // Also sends signal
             break;
         case Qt::Key_Y:
             m_leftSideBar->m_mousePointerTypeSelectWidget->setSelectedButton(
-                Model::MOUSE_POINTER_TYPE::POLY_LINE); // Also sends signal
+                MOUSE_POINTER_TYPE::POLY_LINE); // Also sends signal
             break;
         case Qt::Key_S:
             m_leftSideBar->m_mousePointerTypeSelectWidget->setSelectedButton(
-                Model::MOUSE_POINTER_TYPE::SELECT); // Also sends signal
+                MOUSE_POINTER_TYPE::SELECT); // Also sends signal
             break;
         case Qt::Key_Escape:
             m_modelHandler->drawableHandler().stopStreaming();
@@ -215,7 +216,7 @@ void Controller::ActionHandler::keyPressEventNoModifier(QKeyEvent* event) {
     }
 }
 
-void Controller::ActionHandler::keyPressEventWithCtrl(QKeyEvent* event) {
+void controller::Controller::keyPressEventWithControl(QKeyEvent* event) {
     switch (event->key()) {
         case Qt::Key_Z:
             undoAction();
@@ -228,20 +229,54 @@ void Controller::ActionHandler::keyPressEventWithCtrl(QKeyEvent* event) {
     }
 }
 
-void Controller::ActionHandler::setEditWidget(QWidget* widget) {
+void controller::Controller::keyPressEventWithControlAndShift(QKeyEvent* event) {
+    switch (event->key()) {
+        case Qt::Key_Z:
+            redoAction();
+            break;
+        default:
+            break;
+    }
+}
+
+void controller::Controller::setEditWidget(QWidget* widget) {
     widget->setObjectName("EditWidget");
     m_rightSideBar->clearWidget();
     m_rightSideBar->addWidget(widget);
-    QObject::connect(this, &Controller::ActionHandler::updateRightSideBar,
-                     dynamic_cast<View::DrawableEditWidget*>(widget), &View::DrawableEditWidget::needsUpdate);
+    QObject::connect(this, &controller::Controller::updateRightSideBar, dynamic_cast<view::DrawableEditWidget*>(widget),
+                     &view::DrawableEditWidget::needsUpdate);
 
     draw();
 }
 
-void Controller::ActionHandler::keyReleaseEvent(QKeyEvent* event) {
+void controller::Controller::keyReleaseEvent(QKeyEvent* event) {
     if (event->key() == Qt::Key_Shift) {
         m_modifierState.m_shiftPressed = false;
     } else if (event->key() == Qt::Key_Control) {
         m_modifierState.m_controlPressed = false;
+    }
+}
+
+void controller::Controller::rightClickEvent(QMouseEvent* event) {
+    const auto leftClickedMousePoint = event->localPos();
+    if (m_modifierState.controlPressed()) {
+        if (m_modifierState.shiftPressed()) {
+            m_modelHandler->addToSelected(leftClickedMousePoint);
+        } else {
+            m_modelHandler->selectNew(leftClickedMousePoint);
+        }
+    } else {
+        m_modelHandler->setPoint(leftClickedMousePoint, m_modifierState);
+        m_rightSideBar->clearWidget();
+    }
+}
+
+void controller::Controller::leftClickEvent(QMouseEvent* event) {
+    m_rightClickedMousePoint = event->localPos();
+    if (m_modelHandler->drawableHandler().isStreaming()) {
+        m_modelHandler->drawableHandler().addPointToStreamDrawable(
+            m_modelHandler->drawableHandler().snap(m_rightClickedMousePoint), true);
+        addAction(new controller::AddPrimitiveAction(m_modelHandler->drawableHandler().drawables().back()->index()),
+                  true);
     }
 }

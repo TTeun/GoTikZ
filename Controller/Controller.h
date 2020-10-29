@@ -2,8 +2,8 @@
 // Created by pc on 16-10-20.
 //
 
-#ifndef GOTIKZ_ACTIONHANDLER_H
-#define GOTIKZ_ACTIONHANDLER_H
+#ifndef GOTIKZ_CONTROLLER_H
+#define GOTIKZ_CONTROLLER_H
 
 #include "Controller/Actions/UndoableAction.h"
 #include "Controller/ModifierState.h"
@@ -19,41 +19,44 @@ class QWheelEvent;
 class QMouseEvent;
 class QKeyEvent;
 
-namespace Model {
-    class ModelHandler;
+namespace model {
+    class Model;
 }
 
-namespace View {
+namespace view {
     class LeftSideBar;
     class MainWidget;
     class DrawWidget;
     class RightSideBar;
-} // namespace View
+} // namespace view
 
-namespace Controller {
+namespace controller {
     class Action;
-    class ActionHandler : public QObject {
+    class Controller : public QObject {
         Q_OBJECT
 
       public:
-        explicit ActionHandler(MainWindow* mainWindow);
-        ~ActionHandler() override = default;
+        explicit Controller(MainWindow* mainWindow);
+        ~Controller() override = default;
 
-        void                 init(View::MainWidget* mainWidget, Model::ModelHandler* model);
-        void                 undoAction();
-        void                 redoAction();
-        Model::ModelHandler* modelHandler();
-        View::DrawWidget*    drawWidget();
+        void              init(view::MainWidget* mainWidget, model::Model* model);
+        void              undoAction();
+        void              redoAction();
+        model::Model*     modelHandler();
+        view::DrawWidget* drawWidget();
 
         void draw();
         void mousePressEvent(QMouseEvent* event);
+        void rightClickEvent(QMouseEvent* event);
+        void leftClickEvent(QMouseEvent* event);
         void mouseReleaseEvent(QMouseEvent* event);
         void mouseMoveEvent(QMouseEvent* event);
         void wheelEvent(QWheelEvent* event, const QPointF& mousePosition);
         void keyPressEvent(QKeyEvent* event);
         void keyReleaseEvent(QKeyEvent* event);
         void keyPressEventNoModifier(QKeyEvent* event);
-        void keyPressEventWithCtrl(QKeyEvent* event);
+        void keyPressEventWithControl(QKeyEvent* event);
+        void keyPressEventWithControlAndShift(QKeyEvent* event);
 
         void setEditWidget(QWidget* widget);
 
@@ -68,16 +71,16 @@ namespace Controller {
         std::stack<std::unique_ptr<UndoableAction>> m_undoStack;
         std::stack<std::unique_ptr<UndoableAction>> m_redoStack;
 
-        View::DrawWidget*    m_drawWidget{};
-        View::LeftSideBar*   m_leftSideBar{};
-        View::RightSideBar*  m_rightSideBar{};
-        MainWindow*          m_mainWindow;
-        Model::ModelHandler* m_modelHandler{};
+        view::DrawWidget*   m_drawWidget{};
+        view::LeftSideBar*  m_leftSideBar{};
+        view::RightSideBar* m_rightSideBar{};
+        MainWindow*         m_mainWindow;
+        model::Model*       m_modelHandler{};
 
-        Controller::ModifierState m_modifierState;
+        controller::ModifierState m_modifierState;
         QPointF                   m_previousFrameMousePoint;
         QPointF                   m_rightClickedMousePoint;
     };
-} // namespace Controller
+} // namespace controller
 
-#endif // GOTIKZ_ACTIONHANDLER_H
+#endif // GOTIKZ_CONTROLLER_H

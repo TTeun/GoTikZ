@@ -7,15 +7,15 @@
 
 #include <QString>
 
-namespace Controller {
-    class ActionHandler;
+namespace controller {
+    class Controller;
     class Action {
       protected:
         Action() = default;
 
       public:
-        virtual void doAction(ActionHandler* actionHandler) = 0;
+        virtual void doAction(Controller* actionHandler) = 0;
     };
-} // namespace Controller
+} // namespace controller
 
 #endif // GOTIKZ_ACTION_H

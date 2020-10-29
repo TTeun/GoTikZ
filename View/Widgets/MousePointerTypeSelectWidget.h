@@ -14,12 +14,12 @@
 class QButtonGroup;
 class QAbstractButton;
 
-namespace View {
-    class MousePointerTypeSelectWidget : public View::ActionWidget, public GroupBoxContainer {
+namespace view {
+    class MousePointerTypeSelectWidget : public view::ActionWidget, public GroupBoxContainer {
       public:
         explicit MousePointerTypeSelectWidget(QWidget* parent);
 
-        void setSelectedButton(Model::MOUSE_POINTER_TYPE type);
+        void setSelectedButton(MOUSE_POINTER_TYPE type);
 
       public slots:
         void mousePointerTypeButtonClicked(QAbstractButton* button);
@@ -29,6 +29,6 @@ namespace View {
 
         QButtonGroup* m_buttonGroup;
     };
-} // namespace View
+} // namespace view
 
 #endif // GOTIKZ_MOUSEPOINTERTYPESELECTWIDGET_H

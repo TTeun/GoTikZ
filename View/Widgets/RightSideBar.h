@@ -9,7 +9,7 @@
 
 #include <QWidget>
 
-namespace View {
+namespace view {
     class RightSideBar : public QWidget, public GroupBoxContainer {
 
       public:
@@ -19,6 +19,6 @@ namespace View {
 
         void clearWidget();
     };
-} // namespace View
+} // namespace view
 
 #endif // GOTIKZ_RIGHTSIDEBAR_H
