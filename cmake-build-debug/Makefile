@@ -480,6 +480,33 @@ Drawable/CircleStream.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoTikZ.dir/build.make CMakeFiles/GoTikZ.dir/Drawable/CircleStream.cpp.s
 .PHONY : Drawable/CircleStream.cpp.s
 
+Drawable/ControlPoint/ControlPoint.o: Drawable/ControlPoint/ControlPoint.cpp.o
+
+.PHONY : Drawable/ControlPoint/ControlPoint.o
+
+# target to build an object file
+Drawable/ControlPoint/ControlPoint.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoTikZ.dir/build.make CMakeFiles/GoTikZ.dir/Drawable/ControlPoint/ControlPoint.cpp.o
+.PHONY : Drawable/ControlPoint/ControlPoint.cpp.o
+
+Drawable/ControlPoint/ControlPoint.i: Drawable/ControlPoint/ControlPoint.cpp.i
+
+.PHONY : Drawable/ControlPoint/ControlPoint.i
+
+# target to preprocess a source file
+Drawable/ControlPoint/ControlPoint.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoTikZ.dir/build.make CMakeFiles/GoTikZ.dir/Drawable/ControlPoint/ControlPoint.cpp.i
+.PHONY : Drawable/ControlPoint/ControlPoint.cpp.i
+
+Drawable/ControlPoint/ControlPoint.s: Drawable/ControlPoint/ControlPoint.cpp.s
+
+.PHONY : Drawable/ControlPoint/ControlPoint.s
+
+# target to generate assembly for a file
+Drawable/ControlPoint/ControlPoint.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoTikZ.dir/build.make CMakeFiles/GoTikZ.dir/Drawable/ControlPoint/ControlPoint.cpp.s
+.PHONY : Drawable/ControlPoint/ControlPoint.cpp.s
+
 Drawable/Drawable.o: Drawable/Drawable.cpp.o
 
 .PHONY : Drawable/Drawable.o
@@ -1336,6 +1363,9 @@ help:
 	@echo "... Drawable/CircleStream.o"
 	@echo "... Drawable/CircleStream.i"
 	@echo "... Drawable/CircleStream.s"
+	@echo "... Drawable/ControlPoint/ControlPoint.o"
+	@echo "... Drawable/ControlPoint/ControlPoint.i"
+	@echo "... Drawable/ControlPoint/ControlPoint.s"
 	@echo "... Drawable/Drawable.o"
 	@echo "... Drawable/Drawable.i"
 	@echo "... Drawable/Drawable.s"

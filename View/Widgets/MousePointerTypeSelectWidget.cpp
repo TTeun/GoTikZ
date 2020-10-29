@@ -20,7 +20,6 @@ view::MousePointerTypeSelectWidget::MousePointerTypeSelectWidget(QWidget* parent
     addTypeButton("Circle", false);
     addTypeButton("Point", false);
     addTypeButton("PolyLine", false);
-    addTypeButton("Select", false);
 
     QObject::connect(m_buttonGroup, static_cast<void (QButtonGroup::*)(QAbstractButton*)>(&QButtonGroup::buttonClicked),
                      this, &MousePointerTypeSelectWidget::mousePointerTypeButtonClicked);
@@ -41,9 +40,6 @@ void view::MousePointerTypeSelectWidget::setSelectedButton(MOUSE_POINTER_TYPE ty
             break;
         case MOUSE_POINTER_TYPE::POLY_LINE:
             string = "PolyLine";
-            break;
-        case MOUSE_POINTER_TYPE::SELECT:
-            string = "Select";
             break;
     }
 
@@ -81,9 +77,6 @@ void view::MousePointerTypeSelectWidget::mousePointerTypeButtonClicked(QAbstract
             break;
         case MOUSE_POINTER_TYPE::POLY_LINE:
             emit actionDone(new controller::ChangeMousePointerTypeAction(MOUSE_POINTER_TYPE::POLY_LINE));
-            break;
-        case MOUSE_POINTER_TYPE::SELECT:
-            emit actionDone(new controller::ChangeMousePointerTypeAction(MOUSE_POINTER_TYPE::SELECT));
             break;
     }
 }

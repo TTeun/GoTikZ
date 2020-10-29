@@ -6,7 +6,7 @@
 
 #include <QString>
 
-MOUSE_POINTER_TYPE mousePointerTypeFromString(const QString &str) {
+MOUSE_POINTER_TYPE mousePointerTypeFromString(const QString& str) {
 
     if (str == QString("Point")) {
         return MOUSE_POINTER_TYPE::POINT;
@@ -24,10 +24,6 @@ MOUSE_POINTER_TYPE mousePointerTypeFromString(const QString &str) {
         return MOUSE_POINTER_TYPE::POLY_LINE;
     }
 
-    if (str == QString("Select")) {
-        return MOUSE_POINTER_TYPE::SELECT;
-    }
-
     assert(false);
-    return MOUSE_POINTER_TYPE::SELECT;
+    return MOUSE_POINTER_TYPE::POINT;
 }

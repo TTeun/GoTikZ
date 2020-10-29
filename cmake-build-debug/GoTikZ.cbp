@@ -189,6 +189,12 @@
 		<Unit filename="/home/pc/MEGAsync/C++/clion/GoTikZ/Drawable/CircleStream.h">
 			<Option target="GoTikZ"/>
 		</Unit>
+		<Unit filename="/home/pc/MEGAsync/C++/clion/GoTikZ/Drawable/ControlPoint/ControlPoint.cpp">
+			<Option target="GoTikZ"/>
+		</Unit>
+		<Unit filename="/home/pc/MEGAsync/C++/clion/GoTikZ/Drawable/ControlPoint/ControlPoint.h">
+			<Option target="GoTikZ"/>
+		</Unit>
 		<Unit filename="/home/pc/MEGAsync/C++/clion/GoTikZ/Drawable/Drawable.cpp">
 			<Option target="GoTikZ"/>
 		</Unit>

@@ -8,14 +8,13 @@
 namespace controller {
     class ModifierState {
 
-        friend class Controller;
-
       public:
         ModifierState() = default;
 
-        bool shiftPressed() const ;
-
+        bool shiftPressed() const;
         bool controlPressed() const;
+        void setShiftPressed(bool shiftPressed);
+        void setControlPress(bool controlPressed);
 
       private:
         bool m_shiftPressed;

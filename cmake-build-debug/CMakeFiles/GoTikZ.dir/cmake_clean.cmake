@@ -14,6 +14,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/GoTikZ.dir/Controller/MouseHandler.cpp.o"
   "CMakeFiles/GoTikZ.dir/Drawable/Circle.cpp.o"
   "CMakeFiles/GoTikZ.dir/Drawable/CircleStream.cpp.o"
+  "CMakeFiles/GoTikZ.dir/Drawable/ControlPoint/ControlPoint.cpp.o"
   "CMakeFiles/GoTikZ.dir/Drawable/Drawable.cpp.o"
   "CMakeFiles/GoTikZ.dir/Drawable/DrawableHandler.cpp.o"
   "CMakeFiles/GoTikZ.dir/Drawable/Line.cpp.o"

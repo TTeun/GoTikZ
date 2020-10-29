@@ -11,3 +11,11 @@ bool controller::ModifierState::shiftPressed() const {
 bool controller::ModifierState::controlPressed() const {
     return m_controlPressed;
 }
+
+void controller::ModifierState::setShiftPressed(bool shiftPressed) {
+    m_shiftPressed = shiftPressed;
+}
+
+void controller::ModifierState::setControlPress(bool controlPressed) {
+    m_controlPressed = controlPressed;
+}

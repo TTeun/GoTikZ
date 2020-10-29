@@ -75,6 +75,11 @@
 			"K7CJA63GWH/moc_CircleStream.cpp"
 		],
 		[
+			"/home/pc/MEGAsync/C++/clion/GoTikZ/Drawable/ControlPoint/ControlPoint.h",
+			"MU",
+			"MHPYULKCXU/moc_ControlPoint.cpp"
+		],
+		[
 			"/home/pc/MEGAsync/C++/clion/GoTikZ/Drawable/Drawable.h",
 			"MU",
 			"K7CJA63GWH/moc_Drawable.cpp"
@@ -321,6 +326,10 @@
 		],
 		[ "/home/pc/MEGAsync/C++/clion/GoTikZ/Drawable/Circle.cpp", "MU" ],
 		[ "/home/pc/MEGAsync/C++/clion/GoTikZ/Drawable/CircleStream.cpp", "MU" ],
+		[
+			"/home/pc/MEGAsync/C++/clion/GoTikZ/Drawable/ControlPoint/ControlPoint.cpp",
+			"MU"
+		],
 		[ "/home/pc/MEGAsync/C++/clion/GoTikZ/Drawable/Drawable.cpp", "MU" ],
 		[
 			"/home/pc/MEGAsync/C++/clion/GoTikZ/Drawable/DrawableHandler.cpp",

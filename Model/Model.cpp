@@ -30,7 +30,7 @@ void model::Model::mouseMoveEvent(const QPointF& mousePosition) {
     const auto snappedMousePoint = m_drawableHandler->snap(mousePointInWorldCoordinates(mousePosition));
     if (m_drawableHandler->isStreaming()) {
         m_drawableHandler->stream(snappedMousePoint);
-    } else if (m_mousePointerType == MOUSE_POINTER_TYPE::SELECT) {
+    } else {
         m_drawableHandler->highlightClosest(mousePointInWorldCoordinates(mousePosition));
     }
 }

@@ -160,9 +160,9 @@ model::Model* controller::Controller::modelHandler() {
 
 void controller::Controller::keyPressEvent(QKeyEvent* event) {
     if (event->key() == Qt::Key_Shift) {
-        m_modifierState.m_shiftPressed = true;
+        m_modifierState.setShiftPressed(true);
     } else if (event->key() == Qt::Key_Control) {
-        m_modifierState.m_controlPressed = true;
+        m_modifierState.setControlPress(true);
     }
 
     switch (event->modifiers()) {
@@ -197,10 +197,6 @@ void controller::Controller::keyPressEventNoModifier(QKeyEvent* event) {
         case Qt::Key_Y:
             m_leftSideBar->m_mousePointerTypeSelectWidget->setSelectedButton(
                 MOUSE_POINTER_TYPE::POLY_LINE); // Also sends signal
-            break;
-        case Qt::Key_S:
-            m_leftSideBar->m_mousePointerTypeSelectWidget->setSelectedButton(
-                MOUSE_POINTER_TYPE::SELECT); // Also sends signal
             break;
         case Qt::Key_Escape:
             m_modelHandler->drawableHandler().stopStreaming();
@@ -251,9 +247,9 @@ void controller::Controller::setEditWidget(QWidget* widget) {
 
 void controller::Controller::keyReleaseEvent(QKeyEvent* event) {
     if (event->key() == Qt::Key_Shift) {
-        m_modifierState.m_shiftPressed = false;
+        m_modifierState.setShiftPressed(false);
     } else if (event->key() == Qt::Key_Control) {
-        m_modifierState.m_controlPressed = false;
+        m_modifierState.setControlPress(false);
     }
 }
 

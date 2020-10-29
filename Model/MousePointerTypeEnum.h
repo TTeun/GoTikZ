@@ -7,7 +7,7 @@
 
 class QString;
 
-enum class MOUSE_POINTER_TYPE { LINE, POINT, CIRCLE, POLY_LINE, SELECT };
+enum class MOUSE_POINTER_TYPE { LINE, POINT, CIRCLE, POLY_LINE };
 
 MOUSE_POINTER_TYPE mousePointerTypeFromString(const QString& str);
 
