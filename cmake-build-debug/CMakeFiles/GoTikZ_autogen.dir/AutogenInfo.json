@@ -45,9 +45,24 @@
 			"DDMX5RIXQU/moc_PenChangeAction.cpp"
 		],
 		[
+			"/home/pc/MEGAsync/C++/clion/GoTikZ/Controller/Actions/TranslatePrimitiveAction.h",
+			"MU",
+			"DDMX5RIXQU/moc_TranslatePrimitiveAction.cpp"
+		],
+		[
 			"/home/pc/MEGAsync/C++/clion/GoTikZ/Controller/Actions/UndoableAction.h",
 			"MU",
 			"DDMX5RIXQU/moc_UndoableAction.cpp"
+		],
+		[
+			"/home/pc/MEGAsync/C++/clion/GoTikZ/Controller/ModifierState.h",
+			"MU",
+			"TTE4PTQQBL/moc_ModifierState.cpp"
+		],
+		[
+			"/home/pc/MEGAsync/C++/clion/GoTikZ/Controller/MouseHandler.h",
+			"MU",
+			"TTE4PTQQBL/moc_MouseHandler.cpp"
 		],
 		[
 			"/home/pc/MEGAsync/C++/clion/GoTikZ/Drawable/Circle.h",
@@ -115,9 +130,9 @@
 			"B3SUX3IICH/moc_Math.cpp"
 		],
 		[
-			"/home/pc/MEGAsync/C++/clion/GoTikZ/Model/Model.h",
+			"/home/pc/MEGAsync/C++/clion/GoTikZ/Model/ModelHandler.h",
 			"MU",
-			"EXHL2H62WB/moc_Model.cpp"
+			"EXHL2H62WB/moc_ModelHandler.cpp"
 		],
 		[
 			"/home/pc/MEGAsync/C++/clion/GoTikZ/Model/MousePointerTypeEnum.h",
@@ -163,6 +178,11 @@
 			"/home/pc/MEGAsync/C++/clion/GoTikZ/View/Widgets/DrawableEditWidgets/CircleEditWidget.h",
 			"MU",
 			"ZPQCQFJ6CM/moc_CircleEditWidget.cpp"
+		],
+		[
+			"/home/pc/MEGAsync/C++/clion/GoTikZ/View/Widgets/DrawableEditWidgets/DrawableEditWidget.h",
+			"MU",
+			"ZPQCQFJ6CM/moc_DrawableEditWidget.cpp"
 		],
 		[
 			"/home/pc/MEGAsync/C++/clion/GoTikZ/View/Widgets/DrawableEditWidgets/LineEditWidget.h",
@@ -287,7 +307,19 @@
 			"MU"
 		],
 		[
+			"/home/pc/MEGAsync/C++/clion/GoTikZ/Controller/Actions/TranslatePrimitiveAction.cpp",
+			"MU"
+		],
+		[
 			"/home/pc/MEGAsync/C++/clion/GoTikZ/Controller/Actions/UndoableAction.cpp",
+			"MU"
+		],
+		[
+			"/home/pc/MEGAsync/C++/clion/GoTikZ/Controller/ModifierState.cpp",
+			"MU"
+		],
+		[
+			"/home/pc/MEGAsync/C++/clion/GoTikZ/Controller/MouseHandler.cpp",
 			"MU"
 		],
 		[ "/home/pc/MEGAsync/C++/clion/GoTikZ/Drawable/Circle.cpp", "MU" ],
@@ -311,7 +343,7 @@
 		],
 		[ "/home/pc/MEGAsync/C++/clion/GoTikZ/MainWindow.cpp", "MU" ],
 		[ "/home/pc/MEGAsync/C++/clion/GoTikZ/Math/Math.cpp", "MU" ],
-		[ "/home/pc/MEGAsync/C++/clion/GoTikZ/Model/Model.cpp", "MU" ],
+		[ "/home/pc/MEGAsync/C++/clion/GoTikZ/Model/ModelHandler.cpp", "MU" ],
 		[
 			"/home/pc/MEGAsync/C++/clion/GoTikZ/Model/MousePointerTypeEnum.cpp",
 			"MU"

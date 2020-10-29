@@ -5,7 +5,7 @@
 #ifndef GOTIKZ_COLORWIDGET_H
 #define GOTIKZ_COLORWIDGET_H
 
-#include <QtWidgets/QWidget>
+#include <QWidget>
 
 class QPushButton;
 

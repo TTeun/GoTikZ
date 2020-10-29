@@ -6,6 +6,7 @@
 #include "4X73NCSS6Q/moc_ColorWidget.cpp"
 #include "4X73NCSS6Q/moc_DrawWidget.cpp"
 #include "ZPQCQFJ6CM/moc_CircleEditWidget.cpp"
+#include "ZPQCQFJ6CM/moc_DrawableEditWidget.cpp"
 #include "ZPQCQFJ6CM/moc_LineEditWidget.cpp"
 #include "ZPQCQFJ6CM/moc_PointEditWidget.cpp"
 #include "4X73NCSS6Q/moc_MainWidget.cpp"

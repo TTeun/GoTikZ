@@ -153,10 +153,28 @@
 		<Unit filename="/home/pc/MEGAsync/C++/clion/GoTikZ/Controller/Actions/PenChangeAction.h">
 			<Option target="GoTikZ"/>
 		</Unit>
+		<Unit filename="/home/pc/MEGAsync/C++/clion/GoTikZ/Controller/Actions/TranslatePrimitiveAction.cpp">
+			<Option target="GoTikZ"/>
+		</Unit>
+		<Unit filename="/home/pc/MEGAsync/C++/clion/GoTikZ/Controller/Actions/TranslatePrimitiveAction.h">
+			<Option target="GoTikZ"/>
+		</Unit>
 		<Unit filename="/home/pc/MEGAsync/C++/clion/GoTikZ/Controller/Actions/UndoableAction.cpp">
 			<Option target="GoTikZ"/>
 		</Unit>
 		<Unit filename="/home/pc/MEGAsync/C++/clion/GoTikZ/Controller/Actions/UndoableAction.h">
+			<Option target="GoTikZ"/>
+		</Unit>
+		<Unit filename="/home/pc/MEGAsync/C++/clion/GoTikZ/Controller/ModifierState.cpp">
+			<Option target="GoTikZ"/>
+		</Unit>
+		<Unit filename="/home/pc/MEGAsync/C++/clion/GoTikZ/Controller/ModifierState.h">
+			<Option target="GoTikZ"/>
+		</Unit>
+		<Unit filename="/home/pc/MEGAsync/C++/clion/GoTikZ/Controller/MouseHandler.cpp">
+			<Option target="GoTikZ"/>
+		</Unit>
+		<Unit filename="/home/pc/MEGAsync/C++/clion/GoTikZ/Controller/MouseHandler.h">
 			<Option target="GoTikZ"/>
 		</Unit>
 		<Unit filename="/home/pc/MEGAsync/C++/clion/GoTikZ/Drawable/Circle.cpp">
@@ -234,10 +252,10 @@
 		<Unit filename="/home/pc/MEGAsync/C++/clion/GoTikZ/Math/Math.h">
 			<Option target="GoTikZ"/>
 		</Unit>
-		<Unit filename="/home/pc/MEGAsync/C++/clion/GoTikZ/Model/Model.cpp">
+		<Unit filename="/home/pc/MEGAsync/C++/clion/GoTikZ/Model/ModelHandler.cpp">
 			<Option target="GoTikZ"/>
 		</Unit>
-		<Unit filename="/home/pc/MEGAsync/C++/clion/GoTikZ/Model/Model.h">
+		<Unit filename="/home/pc/MEGAsync/C++/clion/GoTikZ/Model/ModelHandler.h">
 			<Option target="GoTikZ"/>
 		</Unit>
 		<Unit filename="/home/pc/MEGAsync/C++/clion/GoTikZ/Model/MousePointerTypeEnum.cpp">
@@ -289,6 +307,9 @@
 			<Option target="GoTikZ"/>
 		</Unit>
 		<Unit filename="/home/pc/MEGAsync/C++/clion/GoTikZ/View/Widgets/DrawableEditWidgets/CircleEditWidget.h">
+			<Option target="GoTikZ"/>
+		</Unit>
+		<Unit filename="/home/pc/MEGAsync/C++/clion/GoTikZ/View/Widgets/DrawableEditWidgets/DrawableEditWidget.h">
 			<Option target="GoTikZ"/>
 		</Unit>
 		<Unit filename="/home/pc/MEGAsync/C++/clion/GoTikZ/View/Widgets/DrawableEditWidgets/LineEditWidget.cpp">

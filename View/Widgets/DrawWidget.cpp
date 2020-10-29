@@ -1,17 +1,16 @@
 #include "DrawWidget.h"
 
 #include "Controller/Actions/ActionHandler.h"
-#include "Model/Model.h"
+#include "Model/ModelHandler.h"
 #include "View/Transform.h"
 
 #include <QMouseEvent>
 #include <QPainter>
+#include <cmath>
 
-View::DrawWidget::DrawWidget(QWidget* parent, Model* model, Controller::ActionHandler* actionHandler)
-    : QWidget(parent), m_model(model), m_actionHandler(actionHandler) {
-
-    assert(m_model);
-    assert(m_actionHandler);
+View::DrawWidget::DrawWidget(QWidget* parent, const Model::ModelHandler* model,
+                             Controller::ActionHandler* actionHandler)
+    : QWidget(parent), m_modelHandler(model), m_actionHandler(actionHandler) {
     setMouseTracking(true);
 }
 
@@ -19,13 +18,12 @@ void View::DrawWidget::paintEvent(QPaintEvent* e) {
     QPainter painter(this);
     QBrush   brush(Qt::white);
     painter.fillRect(this->rect(), brush);
-    painter.save();
     if (m_gridState.showGrid()) {
         drawGrid(&painter);
     }
     painter.setPen(QPen{Qt::black, 3});
 
-    const auto& drawableHandler = m_model->drawableHandler();
+    const auto& drawableHandler = m_modelHandler->drawableHandler();
 
     for (const auto& el : drawableHandler.selectedDrawables()) {
         el->draw(&painter, Drawable::DRAW_FLAGS::SELECTED, m_transform);
@@ -43,7 +41,6 @@ void View::DrawWidget::paintEvent(QPaintEvent* e) {
         drawableHandler.streamDrawable()->draw(&painter, Drawable::DRAW_FLAGS::NONE, m_transform);
     }
 
-    painter.restore();
     drawMousePointer(&painter);
 }
 
@@ -73,16 +70,16 @@ void View::DrawWidget::drawGrid(QPainter* painter) {
         assert(sideLineInterval < std::numeric_limits<int>::max() / 4);
     }
 
-    const int i_start = -dy / scaledGridSpacing;
-    for (int i = sideLineInterval * std::floor(i_start / sideLineInterval); dy + i * scaledGridSpacing < height();
+    const int iStart = -dy / scaledGridSpacing;
+    for (int i = sideLineInterval * std::floor(iStart / sideLineInterval); dy + i * scaledGridSpacing < height();
          i += sideLineInterval) {
         painter->drawLine(0, dy + i * scaledGridSpacing, 5, dy + i * scaledGridSpacing);
         painter->drawText(10, dy + i * scaledGridSpacing + 6, QString::number(i * gridSpacing, 10));
         painter->drawLine(width() - 5, dy + i * scaledGridSpacing, width(), dy + i * scaledGridSpacing);
     }
 
-    const int j_start = -dx / scaledGridSpacing;
-    for (int j = sideLineInterval * std::floor(j_start / sideLineInterval); dx + j * scaledGridSpacing < width();
+    const int jStart = -dx / scaledGridSpacing;
+    for (int j = sideLineInterval * std::floor(jStart / sideLineInterval); dx + j * scaledGridSpacing < width();
          j += sideLineInterval) {
         painter->drawLine(dx + j * scaledGridSpacing, 0, dx + j * scaledGridSpacing, 5);
         painter->drawText(dx + j * scaledGridSpacing, 20, QString::number(j * gridSpacing, 10));
@@ -108,6 +105,11 @@ void View::DrawWidget::mousePressEvent(QMouseEvent* event) {
     m_actionHandler->mousePressEvent(event);
 }
 
+void View::DrawWidget::mouseReleaseEvent(QMouseEvent* event) {
+    m_mousePoint = event->localPos();
+    m_actionHandler->mouseReleaseEvent(event);
+}
+
 void View::DrawWidget::mouseMoveEvent(QMouseEvent* event) {
     m_mousePoint = event->localPos();
     m_actionHandler->mouseMoveEvent(event);
@@ -123,7 +125,7 @@ View::Transform& View::DrawWidget::transform() {
 
 void View::DrawWidget::drawMousePointer(QPainter* painter) {
     const auto snappedMousePoint = m_transform.applyTransform(
-        m_model->drawableHandler().snap(m_model->mousePointInWorldCoordinates(m_mousePoint)));
+        m_modelHandler->drawableHandler().snap(m_modelHandler->mousePointInWorldCoordinates(m_mousePoint)));
     painter->setPen(QPen{Qt::gray, 1});
     painter->drawLine(snappedMousePoint - QPointF{0, 8}, snappedMousePoint + QPointF{0, 8});
     painter->drawLine(snappedMousePoint - QPointF{8, 0}, snappedMousePoint + QPointF{8, 0});

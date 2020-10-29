@@ -25,9 +25,9 @@ class Drawable {
   public:
     enum class DRAW_FLAGS { NONE, SELECTED, HIGHLIGHTED };
 
-    virtual void                       draw(QPainter* painter, DRAW_FLAGS drawFlag, const View::Transform& transform) const;
-    virtual double                     dist(const QPointF& point) const = 0;
-    virtual std::pair<double, QPointF> snap(QPointF point)              = 0;
+    virtual void   draw(QPainter* painter, DRAW_FLAGS drawFlag, const View::Transform& transform) const;
+    virtual double dist(const QPointF& point) const        = 0;
+    virtual std::pair<double, QPointF> snap(QPointF point) = 0;
     size_t                             index() const;
     virtual QWidget*                   toWidget(Controller::ActionHandler* actionHandler);
     void                               setPen(const QPen& pen);

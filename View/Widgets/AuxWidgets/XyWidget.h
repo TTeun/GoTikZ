@@ -5,27 +5,30 @@
 #ifndef GOTIKZ_XYWIDGET_H
 #define GOTIKZ_XYWIDGET_H
 
-#include <QDoubleSpinBox>
 #include <QWidget>
 
-class XyWidget : public QWidget {
+class QDoubleSpinBox;
 
-    Q_OBJECT
+namespace View {
+    class XyWidget : public QWidget {
 
-  public:
-    explicit XyWidget(const QPointF& point, const QString& value = "");
+        Q_OBJECT
 
-    void setValues(const QPointF& values);
+      public:
+        explicit XyWidget(const QPointF& point, const QString& value = "");
 
-  private slots:
-    void valuesChanged(int dummy);
+        void setValues(const QPointF& values);
 
-  signals:
-    void sendValues(QPointF points);
+      private slots:
+        void valuesChanged(int dummy);
 
-  private:
-    QDoubleSpinBox* m_xButton;
-    QDoubleSpinBox* m_yButton;
-};
+      signals:
+        void sendValues(QPointF points);
+
+      private:
+        QDoubleSpinBox* m_xButton;
+        QDoubleSpinBox* m_yButton;
+    };
+} // namespace View
 
 #endif // GOTIKZ_XYWIDGET_H

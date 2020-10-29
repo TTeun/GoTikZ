@@ -2,6 +2,7 @@
 
 #include "DrawWidget.h"
 #include "LeftSideBar.h"
+#include "Model/ModelHandler.h"
 #include "MousePointerTypeSelectWidget.h"
 #include "PenWidget.h"
 #include "RightSideBar.h"
@@ -9,7 +10,8 @@
 #include <QGroupBox>
 #include <QHBoxLayout>
 
-View::MainWidget::MainWidget(QWidget* parent, Model* model, Controller::ActionHandler* actionHandler)
+View::MainWidget::MainWidget(QWidget* parent, const Model::ModelHandler* model,
+                             Controller::ActionHandler* actionHandler)
     : QWidget(parent) {
     auto* layout = new QHBoxLayout(this);
     setLayout(layout);
@@ -36,4 +38,14 @@ View::RightSideBar* View::MainWidget::rightSideBar() {
     return m_rightSideBar;
 }
 
-View::MainWidget::~MainWidget() = default;
+const View::DrawWidget* View::MainWidget::drawWidget() const {
+    return m_drawWidget;
+}
+
+const View::LeftSideBar* View::MainWidget::leftSideBar() const {
+    return m_leftSideBar;
+}
+
+const View::RightSideBar* View::MainWidget::rightSideBar() const {
+    return m_rightSideBar;
+}

@@ -5,37 +5,43 @@
 #ifndef GOTIKZ_CIRCLEEDITWIDGET_H
 #define GOTIKZ_CIRCLEEDITWIDGET_H
 
-#include "Controller/Actions/ActionHandler.h"
+#include "View/Widgets/DrawableEditWidgets/DrawableEditWidget.h"
 #include "View/Widgets/AuxWidgets/GroupBoxContainer.h"
-
-#include <QWidget>
 
 class Circle;
 class QSpinBox;
-class XyWidget;
+
 namespace Controller {
-class ActionHandler;
+    class ActionHandler;
 }
 
-class CircleEditWidget : public QWidget, public GroupBoxContainer {
+namespace View {
+    class XyWidget;
 
-    Q_OBJECT
+    class CircleEditWidget : public DrawableEditWidget, public GroupBoxContainer {
 
-  public:
-    CircleEditWidget(Circle* circle, Controller::ActionHandler* actionHandler);
-    ~CircleEditWidget();
+        Q_OBJECT
 
-  public slots:
-    void setCenter(QPointF newCenter);
-    void setRadius(double newRadius);
-    void needsUpdate();
+      public:
+        CircleEditWidget(Circle* circle, Controller::ActionHandler* actionHandler);
+        ~CircleEditWidget();
 
-  private:
-    QSpinBox* m_radiusSpinBox;
-    XyWidget* m_centerWidget;
+      public slots:
+        void setCenter(QPointF newCenter);
+        void setRadius(double newRadius);
+        void needsUpdate() override;
 
-    Controller::ActionHandler* m_actionHandler;
-    Circle*                    m_circle;
-};
+      private:
+        QSpinBox* m_radiusSpinBox;
+        XyWidget* m_centerWidget;
+
+        Controller::ActionHandler* m_actionHandler;
+        Circle*                    m_circle;
+    };
+} // namespace View
+
+namespace Controller {
+    class ActionHandler;
+}
 
 #endif // GOTIKZ_CIRCLEEDITWIDGET_H

@@ -5,17 +5,19 @@
 #ifndef GOTIKZ_LINEEDITWIDGET_H
 #define GOTIKZ_LINEEDITWIDGET_H
 
-#include "Controller/Actions/ActionHandler.h"
+#include "View/Widgets/DrawableEditWidgets/DrawableEditWidget.h"
 #include "View/Widgets/AuxWidgets/GroupBoxContainer.h"
-
-#include <QWidget>
 
 class Line;
 namespace Controller {
-class ActionHandler;
+    class ActionHandler;
 }
 
-class LineEditWidget : public QWidget, public GroupBoxContainer {
+namespace View {
+    class XyWidget;
+}
+
+class LineEditWidget : public View::DrawableEditWidget, public GroupBoxContainer {
     Q_OBJECT
 
   public:
@@ -24,8 +26,12 @@ class LineEditWidget : public QWidget, public GroupBoxContainer {
   public slots:
     void setPoint1(QPointF newPoint);
     void setPoint2(QPointF newPoint);
+    void needsUpdate() override;
 
   private:
+    View::XyWidget* m_point1Widget;
+    View::XyWidget* m_point2Widget;
+
     Line*                      m_line;
     Controller::ActionHandler* m_actionHandler;
 };

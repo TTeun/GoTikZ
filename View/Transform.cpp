@@ -4,8 +4,7 @@
 
 #include "Transform.h"
 
-#include <QDebug>
-#include <QPainter>
+#include <cmath>
 
 void View::Transform::setTranslation(const QPointF& translation) {
     m_translation = translation;

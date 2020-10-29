@@ -4,8 +4,6 @@
 
 #include "DrawableHandler.h"
 
-#include <QPainter>
-
 void DrawableHandler::addDrawable(Drawable* drawable) {
     m_drawables.push_back(std::unique_ptr<Drawable>(drawable));
 }
@@ -104,12 +102,16 @@ Drawable* DrawableHandler::getClosest(const QPointF& point) {
     return closest;
 }
 
-Drawable* DrawableHandler::selectClosest(const QPointF& point) {
+Drawable* DrawableHandler::selectClosest(const QPointF& point, bool shouldClearSelected) {
     auto* closest = getClosest(point);
     if (closest == nullptr) {
         return nullptr;
     }
-    m_selectedDrawables = {closest};
+    if (shouldClearSelected) {
+        m_selectedDrawables = {closest};
+    } else {
+        m_selectedDrawables.push_back(closest);
+    }
     m_highlightedDrawables.clear();
     return closest;
 }
@@ -157,4 +159,14 @@ void DrawableHandler::translateSelected(const QPointF& translation) {
     for (auto& el : m_selectedDrawables) {
         el->translate(translation);
     }
+}
+
+void DrawableHandler::translate(size_t indexOfPrimitive, const QPointF& translation) {
+    for (auto& el : m_drawables) {
+        if (el->index() == indexOfPrimitive) {
+            el->translate(translation);
+            return;
+        }
+    }
+    assert(false);
 }

@@ -4,7 +4,6 @@
 
 #include "Drawable.h"
 
-#include "../Controller/Actions/ActionHandler.h"
 #include "View/Transform.h"
 
 #include <QPainter>

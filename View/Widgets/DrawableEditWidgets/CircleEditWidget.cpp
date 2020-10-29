@@ -6,22 +6,23 @@
 
 #include "Controller/Actions/ActionHandler.h"
 #include "Drawable/Circle.h"
+#include "DrawableEditWidget.h"
 #include "View/Widgets/AuxWidgets/XyWidget.h"
 #include "View/Widgets/PenWidget.h"
 
+#include <QDoubleSpinBox>
 #include <QGroupBox>
 #include <QLayout>
 
-CircleEditWidget::CircleEditWidget(Circle* circle, Controller::ActionHandler* actionHandler)
-    : GroupBoxContainer(nullptr, "Circle"), m_actionHandler(actionHandler), m_circle(circle) {
-    QObject::connect(m_actionHandler, &Controller::ActionHandler::updateRightSideBar, this,
-                     &CircleEditWidget::needsUpdate);
+View::CircleEditWidget::CircleEditWidget(Circle* circle, Controller::ActionHandler* actionHandler)
+    : DrawableEditWidget(nullptr), GroupBoxContainer(nullptr, "Circle"), m_actionHandler(actionHandler),
+      m_circle(circle) {
 
     setLayout(new QHBoxLayout(this));
     auto* contentsLayout = m_groupBox->layout();
-    m_centerWidget       = new XyWidget(circle->center(), "Center");
+    m_centerWidget       = new View::XyWidget(circle->center(), "Center");
     m_centerWidget->setObjectName("centerWidget");
-    QObject::connect(m_centerWidget, &XyWidget::sendValues, this, &CircleEditWidget::setCenter);
+    QObject::connect(m_centerWidget, &View::XyWidget::sendValues, this, &CircleEditWidget::setCenter);
 
     contentsLayout->addWidget(m_centerWidget);
 
@@ -40,22 +41,22 @@ CircleEditWidget::CircleEditWidget(Circle* circle, Controller::ActionHandler* ac
     layout()->addWidget(m_groupBox);
 }
 
-void CircleEditWidget::setCenter(QPointF newCenter) {
+void View::CircleEditWidget::setCenter(QPointF newCenter) {
     m_circle->setCenter(newCenter);
     m_actionHandler->draw();
 }
 
-void CircleEditWidget::setRadius(double newCenter) {
+void View::CircleEditWidget::setRadius(double newCenter) {
     m_circle->setRadius(newCenter);
     m_actionHandler->draw();
 }
 
-void CircleEditWidget::needsUpdate() {
+void View::CircleEditWidget::needsUpdate() {
     m_radiusSpinBox->blockSignals(true);
     m_radiusSpinBox->setValue(m_circle->radius());
     m_radiusSpinBox->blockSignals(false);
     m_centerWidget->setValues(m_circle->center());
 }
 
-CircleEditWidget::~CircleEditWidget() {
+View::CircleEditWidget::~CircleEditWidget() {
 }

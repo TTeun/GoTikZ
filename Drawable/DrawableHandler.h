@@ -25,13 +25,14 @@ class DrawableHandler {
     void      stopStreaming();
     void      setPen(const QPen& pen, size_t indexOfDrawable);
     void      translateAll(const QPointF& translation);
+    void      translate(size_t indexOfPrimitive, const QPointF& translation);
     void      translateSelected(const QPointF& translation);
     bool      isStreaming() const;
     bool      addPointToStreamDrawable(const QPointF& point, bool forceEnd);
     size_t    indexOfSelectedDrawable() const;
     QPointF   snap(const QPointF& mousePoint) const;
     Drawable* removeDrawable(size_t index);
-    Drawable* selectClosest(const QPointF& point);
+    Drawable* selectClosest(const QPointF& point, bool shouldClearSelected);
     Drawable* getClosest(const QPointF& point);
 
     const std::vector<std::unique_ptr<Drawable>>& drawables() const;

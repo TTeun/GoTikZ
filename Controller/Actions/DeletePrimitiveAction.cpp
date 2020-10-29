@@ -5,7 +5,7 @@
 #include "DeletePrimitiveAction.h"
 
 #include "ActionHandler.h"
-#include "Model/Model.h"
+#include "Model/ModelHandler.h"
 #include "View/Widgets/DrawWidget.h"
 
 Controller::DeletePrimitiveAction::DeletePrimitiveAction(size_t indexOfPrimitive) : m_indexOfPrimitive(indexOfPrimitive) {
@@ -13,15 +13,15 @@ Controller::DeletePrimitiveAction::DeletePrimitiveAction(size_t indexOfPrimitive
 
 void Controller::DeletePrimitiveAction::doAction(Controller::ActionHandler* actionHandler) {
     m_drawable = static_cast<std::unique_ptr<Drawable>>(
-        actionHandler->model()->drawableHandler().removeDrawable(m_indexOfPrimitive));
-    actionHandler->model()->drawableHandler().clearSelectedAndHighlighted();
-    actionHandler->model()->drawableHandler().clearSelectedAndHighlighted();
+        actionHandler->modelHandler()->drawableHandler().removeDrawable(m_indexOfPrimitive));
+    actionHandler->modelHandler()->drawableHandler().clearSelectedAndHighlighted();
+    actionHandler->modelHandler()->drawableHandler().clearSelectedAndHighlighted();
     actionHandler->draw();
 }
 
 void Controller::DeletePrimitiveAction::undoAction(Controller::ActionHandler* actionHandler) {
-    actionHandler->model()->drawableHandler().addDrawable(m_drawable.release());
-    actionHandler->model()->drawableHandler().clearSelectedAndHighlighted();
+    actionHandler->modelHandler()->drawableHandler().addDrawable(m_drawable.release());
+    actionHandler->modelHandler()->drawableHandler().clearSelectedAndHighlighted();
     assert(m_drawable == nullptr);
     actionHandler->draw();
 }

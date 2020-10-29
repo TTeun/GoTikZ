@@ -5,8 +5,6 @@
 #ifndef GOTIKZ_ACTIONWIDGET_H
 #define GOTIKZ_ACTIONWIDGET_H
 
-#include "Controller/Actions/Action.h"
-
 #include <QWidget>
 
 namespace Controller {

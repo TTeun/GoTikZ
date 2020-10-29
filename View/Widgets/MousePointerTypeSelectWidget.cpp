@@ -5,6 +5,7 @@
 #include "MousePointerTypeSelectWidget.h"
 
 #include "Controller/Actions/ChangeMousePointerTypeAction.h"
+#include "Model/MousePointerTypeEnum.h"
 
 #include <QButtonGroup>
 #include <QGroupBox>
@@ -26,22 +27,22 @@ View::MousePointerTypeSelectWidget::MousePointerTypeSelectWidget(QWidget* parent
     layout()->addWidget(m_groupBox);
 }
 
-void View::MousePointerTypeSelectWidget::setSelectedButton(MOUSE_POINTER_TYPE type) {
+void View::MousePointerTypeSelectWidget::setSelectedButton(Model::MOUSE_POINTER_TYPE type) {
     QString string;
     switch (type) {
-        case MOUSE_POINTER_TYPE::LINE:
+        case Model::MOUSE_POINTER_TYPE::LINE:
             string = "Line";
             break;
-        case MOUSE_POINTER_TYPE::POINT:
+        case Model::MOUSE_POINTER_TYPE::POINT:
             string = "Point";
             break;
-        case MOUSE_POINTER_TYPE::CIRCLE:
+        case Model::MOUSE_POINTER_TYPE::CIRCLE:
             string = "Circle";
             break;
-        case MOUSE_POINTER_TYPE::POLY_LINE:
+        case Model::MOUSE_POINTER_TYPE::POLY_LINE:
             string = "PolyLine";
             break;
-        case MOUSE_POINTER_TYPE::SELECT:
+        case Model::MOUSE_POINTER_TYPE::SELECT:
             string = "Select";
             break;
     }
@@ -69,20 +70,20 @@ void View::MousePointerTypeSelectWidget::addTypeButton(const QString& title, boo
 void View::MousePointerTypeSelectWidget::mousePointerTypeButtonClicked(QAbstractButton* button) {
     auto type = mousePointerTypeFromString(button->text());
     switch (type) {
-        case MOUSE_POINTER_TYPE::POINT:
-            emit actionDone(new Controller::ChangeMousePointerTypeAction(MOUSE_POINTER_TYPE::POINT));
+        case Model::MOUSE_POINTER_TYPE::POINT:
+            emit actionDone(new Controller::ChangeMousePointerTypeAction(Model::MOUSE_POINTER_TYPE::POINT));
             break;
-        case MOUSE_POINTER_TYPE::LINE:
-            emit actionDone(new Controller::ChangeMousePointerTypeAction(MOUSE_POINTER_TYPE::LINE));
+        case Model::MOUSE_POINTER_TYPE::LINE:
+            emit actionDone(new Controller::ChangeMousePointerTypeAction(Model::MOUSE_POINTER_TYPE::LINE));
             break;
-        case MOUSE_POINTER_TYPE::CIRCLE:
-            emit actionDone(new Controller::ChangeMousePointerTypeAction(MOUSE_POINTER_TYPE::CIRCLE));
+        case Model::MOUSE_POINTER_TYPE::CIRCLE:
+            emit actionDone(new Controller::ChangeMousePointerTypeAction(Model::MOUSE_POINTER_TYPE::CIRCLE));
             break;
-        case MOUSE_POINTER_TYPE::POLY_LINE:
-            emit actionDone(new Controller::ChangeMousePointerTypeAction(MOUSE_POINTER_TYPE::POLY_LINE));
+        case Model::MOUSE_POINTER_TYPE::POLY_LINE:
+            emit actionDone(new Controller::ChangeMousePointerTypeAction(Model::MOUSE_POINTER_TYPE::POLY_LINE));
             break;
-        case MOUSE_POINTER_TYPE::SELECT:
-            emit actionDone(new Controller::ChangeMousePointerTypeAction(MOUSE_POINTER_TYPE::SELECT));
+        case Model::MOUSE_POINTER_TYPE::SELECT:
+            emit actionDone(new Controller::ChangeMousePointerTypeAction(Model::MOUSE_POINTER_TYPE::SELECT));
             break;
     }
 }

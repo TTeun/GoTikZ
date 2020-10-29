@@ -5,9 +5,9 @@
 #ifndef GOTIKZ_ACTIONHANDLER_H
 #define GOTIKZ_ACTIONHANDLER_H
 
-#include "Action.h"
-#include "UndoableAction.h"
-#include "View/Widgets/LeftSideBar.h"
+#include "Controller/Actions/UndoableAction.h"
+#include "Controller/ModifierState.h"
+#include "Controller/MouseHandler.h"
 
 #include <QObject>
 #include <QPointF>
@@ -15,11 +15,13 @@
 #include <stack>
 
 class MainWindow;
-class Model;
 class QWheelEvent;
-class GroupBoxContainer;
 class QMouseEvent;
 class QKeyEvent;
+
+namespace Model {
+    class ModelHandler;
+}
 
 namespace View {
     class LeftSideBar;
@@ -29,6 +31,7 @@ namespace View {
 } // namespace View
 
 namespace Controller {
+    class Action;
     class ActionHandler : public QObject {
         Q_OBJECT
 
@@ -36,17 +39,19 @@ namespace Controller {
         explicit ActionHandler(MainWindow* mainWindow);
         ~ActionHandler() override = default;
 
-        void              init(View::MainWidget* mainWidget, Model* model);
-        void              undoAction();
-        void              redoAction();
-        Model*            model();
-        View::DrawWidget* drawWidget();
+        void                 init(View::MainWidget* mainWidget, Model::ModelHandler* model);
+        void                 undoAction();
+        void                 redoAction();
+        Model::ModelHandler* modelHandler();
+        View::DrawWidget*    drawWidget();
 
         void draw();
         void mousePressEvent(QMouseEvent* event);
+        void mouseReleaseEvent(QMouseEvent* event);
         void mouseMoveEvent(QMouseEvent* event);
         void wheelEvent(QWheelEvent* event, const QPointF& mousePosition);
         void keyPressEvent(QKeyEvent* event);
+        void keyReleaseEvent(QKeyEvent* event);
         void keyPressEventNoModifier(QKeyEvent* event);
         void keyPressEventWithCtrl(QKeyEvent* event);
 
@@ -63,13 +68,15 @@ namespace Controller {
         std::stack<std::unique_ptr<UndoableAction>> m_undoStack;
         std::stack<std::unique_ptr<UndoableAction>> m_redoStack;
 
-        View::DrawWidget*   m_drawWidget{};
-        View::LeftSideBar*  m_leftSideBar{};
-        View::RightSideBar* m_rightSideBar{};
-        MainWindow*         m_mainWindow;
-        Model*              m_model{};
+        View::DrawWidget*    m_drawWidget{};
+        View::LeftSideBar*   m_leftSideBar{};
+        View::RightSideBar*  m_rightSideBar{};
+        MainWindow*          m_mainWindow;
+        Model::ModelHandler* m_modelHandler{};
 
-        QPointF m_previousMousePoint;
+        Controller::ModifierState m_modifierState;
+        QPointF                   m_previousFrameMousePoint;
+        QPointF                   m_rightClickedMousePoint;
     };
 } // namespace Controller
 

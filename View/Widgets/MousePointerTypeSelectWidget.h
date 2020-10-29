@@ -11,7 +11,6 @@
 
 #include <QGroupBox>
 
-class UndoableAction;
 class QButtonGroup;
 class QAbstractButton;
 
@@ -20,7 +19,7 @@ namespace View {
       public:
         explicit MousePointerTypeSelectWidget(QWidget* parent);
 
-        void setSelectedButton(MOUSE_POINTER_TYPE type);
+        void setSelectedButton(Model::MOUSE_POINTER_TYPE type);
 
       public slots:
         void mousePointerTypeButtonClicked(QAbstractButton* button);

@@ -13,7 +13,9 @@
 
 View::LeftSideBar::LeftSideBar(QWidget* parent) : QWidget(parent), GroupBoxContainer(parent, "Settings") {
     setLayout(new QVBoxLayout(this));
-
+    layout()->addWidget(m_groupBox);
+    layout()->setSpacing(0);
+    layout()->setMargin(0);
     QSizePolicy sizePolicy(QSizePolicy::Maximum, QSizePolicy::Maximum);
     setSizePolicy(sizePolicy);
 
@@ -24,7 +26,6 @@ View::LeftSideBar::LeftSideBar(QWidget* parent) : QWidget(parent), GroupBoxConta
     contentsLayout->addWidget(m_mousePointerTypeSelectWidget);
     contentsLayout->addWidget(m_gridSettingWidget);
     contentsLayout->addWidget(m_penWidget);
-    layout()->addWidget(m_groupBox);
 }
 
 View::MousePointerTypeSelectWidget* View::LeftSideBar::mousePointerTypeSelect() const {

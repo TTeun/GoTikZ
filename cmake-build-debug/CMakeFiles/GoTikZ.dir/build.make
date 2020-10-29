@@ -454,18 +454,18 @@ CMakeFiles/GoTikZ.dir/MainWindow.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/GoTikZ.dir/MainWindow.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/pc/MEGAsync/C++/clion/GoTikZ/MainWindow.cpp -o CMakeFiles/GoTikZ.dir/MainWindow.cpp.s
 
-CMakeFiles/GoTikZ.dir/Model/Model.cpp.o: CMakeFiles/GoTikZ.dir/flags.make
-CMakeFiles/GoTikZ.dir/Model/Model.cpp.o: ../Model/Model.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pc/MEGAsync/C++/clion/GoTikZ/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_30) "Building CXX object CMakeFiles/GoTikZ.dir/Model/Model.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/GoTikZ.dir/Model/Model.cpp.o -c /home/pc/MEGAsync/C++/clion/GoTikZ/Model/Model.cpp
+CMakeFiles/GoTikZ.dir/Model/ModelHandler.cpp.o: CMakeFiles/GoTikZ.dir/flags.make
+CMakeFiles/GoTikZ.dir/Model/ModelHandler.cpp.o: ../Model/ModelHandler.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pc/MEGAsync/C++/clion/GoTikZ/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_30) "Building CXX object CMakeFiles/GoTikZ.dir/Model/ModelHandler.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/GoTikZ.dir/Model/ModelHandler.cpp.o -c /home/pc/MEGAsync/C++/clion/GoTikZ/Model/ModelHandler.cpp
 
-CMakeFiles/GoTikZ.dir/Model/Model.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/GoTikZ.dir/Model/Model.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/pc/MEGAsync/C++/clion/GoTikZ/Model/Model.cpp > CMakeFiles/GoTikZ.dir/Model/Model.cpp.i
+CMakeFiles/GoTikZ.dir/Model/ModelHandler.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/GoTikZ.dir/Model/ModelHandler.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/pc/MEGAsync/C++/clion/GoTikZ/Model/ModelHandler.cpp > CMakeFiles/GoTikZ.dir/Model/ModelHandler.cpp.i
 
-CMakeFiles/GoTikZ.dir/Model/Model.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/GoTikZ.dir/Model/Model.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/pc/MEGAsync/C++/clion/GoTikZ/Model/Model.cpp -o CMakeFiles/GoTikZ.dir/Model/Model.cpp.s
+CMakeFiles/GoTikZ.dir/Model/ModelHandler.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/GoTikZ.dir/Model/ModelHandler.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/pc/MEGAsync/C++/clion/GoTikZ/Model/ModelHandler.cpp -o CMakeFiles/GoTikZ.dir/Model/ModelHandler.cpp.s
 
 CMakeFiles/GoTikZ.dir/Drawable/DrawableHandler.cpp.o: CMakeFiles/GoTikZ.dir/flags.make
 CMakeFiles/GoTikZ.dir/Drawable/DrawableHandler.cpp.o: ../Drawable/DrawableHandler.cpp
@@ -584,6 +584,45 @@ CMakeFiles/GoTikZ.dir/Controller/Actions/DeletePrimitiveAction.cpp.s: cmake_forc
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/GoTikZ.dir/Controller/Actions/DeletePrimitiveAction.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/pc/MEGAsync/C++/clion/GoTikZ/Controller/Actions/DeletePrimitiveAction.cpp -o CMakeFiles/GoTikZ.dir/Controller/Actions/DeletePrimitiveAction.cpp.s
 
+CMakeFiles/GoTikZ.dir/Controller/Actions/TranslatePrimitiveAction.cpp.o: CMakeFiles/GoTikZ.dir/flags.make
+CMakeFiles/GoTikZ.dir/Controller/Actions/TranslatePrimitiveAction.cpp.o: ../Controller/Actions/TranslatePrimitiveAction.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pc/MEGAsync/C++/clion/GoTikZ/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_40) "Building CXX object CMakeFiles/GoTikZ.dir/Controller/Actions/TranslatePrimitiveAction.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/GoTikZ.dir/Controller/Actions/TranslatePrimitiveAction.cpp.o -c /home/pc/MEGAsync/C++/clion/GoTikZ/Controller/Actions/TranslatePrimitiveAction.cpp
+
+CMakeFiles/GoTikZ.dir/Controller/Actions/TranslatePrimitiveAction.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/GoTikZ.dir/Controller/Actions/TranslatePrimitiveAction.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/pc/MEGAsync/C++/clion/GoTikZ/Controller/Actions/TranslatePrimitiveAction.cpp > CMakeFiles/GoTikZ.dir/Controller/Actions/TranslatePrimitiveAction.cpp.i
+
+CMakeFiles/GoTikZ.dir/Controller/Actions/TranslatePrimitiveAction.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/GoTikZ.dir/Controller/Actions/TranslatePrimitiveAction.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/pc/MEGAsync/C++/clion/GoTikZ/Controller/Actions/TranslatePrimitiveAction.cpp -o CMakeFiles/GoTikZ.dir/Controller/Actions/TranslatePrimitiveAction.cpp.s
+
+CMakeFiles/GoTikZ.dir/Controller/ModifierState.cpp.o: CMakeFiles/GoTikZ.dir/flags.make
+CMakeFiles/GoTikZ.dir/Controller/ModifierState.cpp.o: ../Controller/ModifierState.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pc/MEGAsync/C++/clion/GoTikZ/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_41) "Building CXX object CMakeFiles/GoTikZ.dir/Controller/ModifierState.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/GoTikZ.dir/Controller/ModifierState.cpp.o -c /home/pc/MEGAsync/C++/clion/GoTikZ/Controller/ModifierState.cpp
+
+CMakeFiles/GoTikZ.dir/Controller/ModifierState.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/GoTikZ.dir/Controller/ModifierState.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/pc/MEGAsync/C++/clion/GoTikZ/Controller/ModifierState.cpp > CMakeFiles/GoTikZ.dir/Controller/ModifierState.cpp.i
+
+CMakeFiles/GoTikZ.dir/Controller/ModifierState.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/GoTikZ.dir/Controller/ModifierState.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/pc/MEGAsync/C++/clion/GoTikZ/Controller/ModifierState.cpp -o CMakeFiles/GoTikZ.dir/Controller/ModifierState.cpp.s
+
+CMakeFiles/GoTikZ.dir/Controller/MouseHandler.cpp.o: CMakeFiles/GoTikZ.dir/flags.make
+CMakeFiles/GoTikZ.dir/Controller/MouseHandler.cpp.o: ../Controller/MouseHandler.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pc/MEGAsync/C++/clion/GoTikZ/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_42) "Building CXX object CMakeFiles/GoTikZ.dir/Controller/MouseHandler.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/GoTikZ.dir/Controller/MouseHandler.cpp.o -c /home/pc/MEGAsync/C++/clion/GoTikZ/Controller/MouseHandler.cpp
+
+CMakeFiles/GoTikZ.dir/Controller/MouseHandler.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/GoTikZ.dir/Controller/MouseHandler.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/pc/MEGAsync/C++/clion/GoTikZ/Controller/MouseHandler.cpp > CMakeFiles/GoTikZ.dir/Controller/MouseHandler.cpp.i
+
+CMakeFiles/GoTikZ.dir/Controller/MouseHandler.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/GoTikZ.dir/Controller/MouseHandler.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/pc/MEGAsync/C++/clion/GoTikZ/Controller/MouseHandler.cpp -o CMakeFiles/GoTikZ.dir/Controller/MouseHandler.cpp.s
+
 # Object files for target GoTikZ
 GoTikZ_OBJECTS = \
 "CMakeFiles/GoTikZ.dir/GoTikZ_autogen/mocs_compilation.cpp.o" \
@@ -615,7 +654,7 @@ GoTikZ_OBJECTS = \
 "CMakeFiles/GoTikZ.dir/Controller/Actions/PenChangeAction.cpp.o" \
 "CMakeFiles/GoTikZ.dir/View/Widgets/AuxWidgets/GroupBoxContainer.cpp.o" \
 "CMakeFiles/GoTikZ.dir/MainWindow.cpp.o" \
-"CMakeFiles/GoTikZ.dir/Model/Model.cpp.o" \
+"CMakeFiles/GoTikZ.dir/Model/ModelHandler.cpp.o" \
 "CMakeFiles/GoTikZ.dir/Drawable/DrawableHandler.cpp.o" \
 "CMakeFiles/GoTikZ.dir/Model/MousePointerTypeEnum.cpp.o" \
 "CMakeFiles/GoTikZ.dir/View/Widgets/DrawableEditWidgets/CircleEditWidget.cpp.o" \
@@ -624,7 +663,10 @@ GoTikZ_OBJECTS = \
 "CMakeFiles/GoTikZ.dir/View/Widgets/DrawableEditWidgets/PolyLineEditWidget.cpp.o" \
 "CMakeFiles/GoTikZ.dir/View/Widgets/AuxWidgets/XyWidget.cpp.o" \
 "CMakeFiles/GoTikZ.dir/View/Transform.cpp.o" \
-"CMakeFiles/GoTikZ.dir/Controller/Actions/DeletePrimitiveAction.cpp.o"
+"CMakeFiles/GoTikZ.dir/Controller/Actions/DeletePrimitiveAction.cpp.o" \
+"CMakeFiles/GoTikZ.dir/Controller/Actions/TranslatePrimitiveAction.cpp.o" \
+"CMakeFiles/GoTikZ.dir/Controller/ModifierState.cpp.o" \
+"CMakeFiles/GoTikZ.dir/Controller/MouseHandler.cpp.o"
 
 # External object files for target GoTikZ
 GoTikZ_EXTERNAL_OBJECTS =
@@ -658,7 +700,7 @@ GoTikZ: CMakeFiles/GoTikZ.dir/View/Widgets/PenWidget.cpp.o
 GoTikZ: CMakeFiles/GoTikZ.dir/Controller/Actions/PenChangeAction.cpp.o
 GoTikZ: CMakeFiles/GoTikZ.dir/View/Widgets/AuxWidgets/GroupBoxContainer.cpp.o
 GoTikZ: CMakeFiles/GoTikZ.dir/MainWindow.cpp.o
-GoTikZ: CMakeFiles/GoTikZ.dir/Model/Model.cpp.o
+GoTikZ: CMakeFiles/GoTikZ.dir/Model/ModelHandler.cpp.o
 GoTikZ: CMakeFiles/GoTikZ.dir/Drawable/DrawableHandler.cpp.o
 GoTikZ: CMakeFiles/GoTikZ.dir/Model/MousePointerTypeEnum.cpp.o
 GoTikZ: CMakeFiles/GoTikZ.dir/View/Widgets/DrawableEditWidgets/CircleEditWidget.cpp.o
@@ -668,12 +710,15 @@ GoTikZ: CMakeFiles/GoTikZ.dir/View/Widgets/DrawableEditWidgets/PolyLineEditWidge
 GoTikZ: CMakeFiles/GoTikZ.dir/View/Widgets/AuxWidgets/XyWidget.cpp.o
 GoTikZ: CMakeFiles/GoTikZ.dir/View/Transform.cpp.o
 GoTikZ: CMakeFiles/GoTikZ.dir/Controller/Actions/DeletePrimitiveAction.cpp.o
+GoTikZ: CMakeFiles/GoTikZ.dir/Controller/Actions/TranslatePrimitiveAction.cpp.o
+GoTikZ: CMakeFiles/GoTikZ.dir/Controller/ModifierState.cpp.o
+GoTikZ: CMakeFiles/GoTikZ.dir/Controller/MouseHandler.cpp.o
 GoTikZ: CMakeFiles/GoTikZ.dir/build.make
 GoTikZ: /usr/lib/libQt5Widgets.so.5.15.1
 GoTikZ: /usr/lib/libQt5Gui.so.5.15.1
 GoTikZ: /usr/lib/libQt5Core.so.5.15.1
 GoTikZ: CMakeFiles/GoTikZ.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/pc/MEGAsync/C++/clion/GoTikZ/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_40) "Linking CXX executable GoTikZ"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/pc/MEGAsync/C++/clion/GoTikZ/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_43) "Linking CXX executable GoTikZ"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/GoTikZ.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

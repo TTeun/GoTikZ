@@ -9,7 +9,6 @@
 
 class QWidget;
 class QString;
-class QLayout;
 class QGroupBox;
 
 class GroupBoxContainer {

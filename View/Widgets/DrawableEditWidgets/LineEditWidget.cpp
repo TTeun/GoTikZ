@@ -5,6 +5,7 @@
 #include "LineEditWidget.h"
 
 #include "Drawable/Line.h"
+#include "DrawableEditWidget.h"
 #include "View/Widgets/AuxWidgets/XyWidget.h"
 #include "View/Widgets/PenWidget.h"
 
@@ -12,20 +13,20 @@
 #include <QLayout>
 
 LineEditWidget::LineEditWidget(Line* line, Controller::ActionHandler* actionHandler)
-    : GroupBoxContainer(nullptr, "Line"), m_line(line), m_actionHandler(actionHandler) {
+    : View::DrawableEditWidget(nullptr), GroupBoxContainer(nullptr, "Line"), m_line(line), m_actionHandler(actionHandler) {
     auto* contentsLayout = m_groupBox->layout();
 
     setLayout(new QHBoxLayout(this));
     layout()->addWidget(m_groupBox);
 
-    auto* point1Widget = new XyWidget(m_line->point1(), "p1");
-    QObject::connect(point1Widget, &XyWidget::sendValues, this, &LineEditWidget::setPoint1);
+    m_point1Widget = new View::XyWidget(m_line->point1(), "p1");
+    QObject::connect(m_point1Widget, &View::XyWidget::sendValues, this, &LineEditWidget::setPoint1);
 
-    auto* point2Widget = new XyWidget(m_line->point2(), "p2");
-    QObject::connect(point2Widget, &XyWidget::sendValues, this, &LineEditWidget::setPoint2);
+    m_point2Widget = new View::XyWidget(m_line->point2(), "p2");
+    QObject::connect(m_point2Widget, &View::XyWidget::sendValues, this, &LineEditWidget::setPoint2);
 
-    contentsLayout->addWidget(point1Widget);
-    contentsLayout->addWidget(point2Widget);
+    contentsLayout->addWidget(m_point1Widget);
+    contentsLayout->addWidget(m_point2Widget);
 
     auto* penWidget = new View::PenWidget(nullptr, line->index(), m_line->pen());
     QObject::connect(penWidget, &View::PenWidget::actionDone, m_actionHandler, &Controller::ActionHandler::doAction);
@@ -40,4 +41,14 @@ void LineEditWidget::setPoint1(QPointF newPoint) {
 void LineEditWidget::setPoint2(QPointF newPoint) {
     m_line->setPoint2(newPoint);
     m_actionHandler->draw();
+}
+
+void LineEditWidget::needsUpdate() {
+    m_point1Widget->blockSignals(true);
+    m_point1Widget->setValues(m_line->point1());
+    m_point1Widget->blockSignals(false);
+
+    m_point2Widget->blockSignals(true);
+    m_point2Widget->setValues(m_line->point2());
+    m_point2Widget->blockSignals(false);
 }

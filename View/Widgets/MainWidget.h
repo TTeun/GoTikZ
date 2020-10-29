@@ -1,11 +1,6 @@
 #ifndef GOTIKZ_MAINWIDGET_H
 #define GOTIKZ_MAINWIDGET_H
 
-#include "Controller/Actions/ActionHandler.h"
-#include "DrawWidget.h"
-#include "LeftSideBar.h"
-#include "RightSideBar.h"
-
 #include <QWidget>
 
 class RightSideBar;
@@ -13,22 +8,31 @@ class LeftSideBar;
 namespace Controller {
     class ActionHandler;
 }
-class DrawWidget;
-class Model;
+
+namespace View {
+    class LeftSideBar;
+    class RightSideBar;
+    class DrawWidget;
+} // namespace View
+
+namespace Model {
+    class ModelHandler;
+}
 
 namespace View {
     class MainWidget : public QWidget {
         Q_OBJECT
 
       public:
-        explicit MainWidget(QWidget* parent, Model* model, Controller::ActionHandler* actionHandler);
-        ~MainWidget() override;
+        explicit MainWidget(QWidget* parent, const Model::ModelHandler* model,
+                            Controller::ActionHandler* actionHandler);
 
-        DrawWidget* drawWidget();
-
-        LeftSideBar* leftSideBar();
-
-        RightSideBar* rightSideBar();
+        DrawWidget*         drawWidget();
+        LeftSideBar*        leftSideBar();
+        RightSideBar*       rightSideBar();
+        const DrawWidget*   drawWidget() const;
+        const LeftSideBar*  leftSideBar() const;
+        const RightSideBar* rightSideBar() const;
 
       private:
         RightSideBar* m_rightSideBar;

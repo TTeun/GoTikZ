@@ -8,7 +8,7 @@
 
 #include <QGroupBox>
 #include <QLayout>
-#include <QtWidgets/QPushButton>
+#include <QPushButton>
 
 View::RightSideBar::RightSideBar(QWidget* parent) : QWidget(parent), GroupBoxContainer(parent, "Edit") {
     setLayout(new QVBoxLayout(this));

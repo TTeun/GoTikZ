@@ -5,16 +5,21 @@
 #ifndef GOTIKZ_POINTEDITWIDGET_H
 #define GOTIKZ_POINTEDITWIDGET_H
 
-#include "Controller/Actions/ActionHandler.h"
+#include "View/Widgets/DrawableEditWidgets/DrawableEditWidget.h"
 #include "View/Widgets/AuxWidgets/GroupBoxContainer.h"
-
-#include <QWidget>
+#include "View/Widgets/DrawableEditWidgets/DrawableEditWidget.h"
 
 class Point;
-namespace Controller {
-class ActionHandler;
+
+namespace View {
+    class XyWidget;
 }
-class PointEditWidget : public QWidget, public GroupBoxContainer {
+
+namespace Controller {
+    class ActionHandler;
+}
+
+class PointEditWidget : public View::DrawableEditWidget, public GroupBoxContainer {
     Q_OBJECT
 
   public:
@@ -22,8 +27,10 @@ class PointEditWidget : public QWidget, public GroupBoxContainer {
 
   public slots:
     void setPoint(QPointF newPoint);
+    void needsUpdate() override;
 
   private:
+    View::XyWidget*            m_point1Widget;
     Controller::ActionHandler* m_actionHandler;
     Point*                     m_point;
 };

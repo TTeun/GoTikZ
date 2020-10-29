@@ -6,9 +6,6 @@
 #define GOTIKZ_TRANSFORM_H
 
 #include <QPointF>
-#include <cmath>
-
-class QPainter;
 
 namespace View {
     class Transform {
@@ -22,8 +19,8 @@ namespace View {
         double  scale() const;
 
       private:
-        double  m_scaleParameter = 0;
-        double  m_scale          = pow(1.1, m_scaleParameter);
+        double  m_scaleParameter = 0.0;
+        double  m_scale          = 1.0;
         QPointF m_translation    = {0, 0};
     };
 } // namespace View

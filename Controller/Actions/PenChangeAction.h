@@ -6,11 +6,12 @@
 #define GOTIKZ_PENCHANGEACTION_H
 
 #include "Action.h"
-#include "ActionHandler.h"
 
 #include <QPen>
 
 namespace Controller {
+    class ActionHandler;
+
     class PenChangeAction : public Action {
       public:
         PenChangeAction(QPen pen, size_t indexOfPrimitive);

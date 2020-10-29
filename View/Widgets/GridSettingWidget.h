@@ -5,7 +5,6 @@
 #ifndef GOTIKZ_GRIDSETTINGWIDGET_H
 #define GOTIKZ_GRIDSETTINGWIDGET_H
 
-#include "ActionWidget.h"
 #include "View/GridState.h"
 #include "View/Widgets/ActionWidget.h"
 #include "View/Widgets/AuxWidgets/GroupBoxContainer.h"

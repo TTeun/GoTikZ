@@ -5,13 +5,11 @@
 #ifndef GOTIKZ_DELETEPRIMITIVEACTION_H
 #define GOTIKZ_DELETEPRIMITIVEACTION_H
 
-#include "ActionHandler.h"
 #include "Drawable/Drawable.h"
 #include "UndoableAction.h"
 
-class ActionHandler;
-
 namespace Controller {
+    class ActionHandler;
     class DeletePrimitiveAction : public UndoableAction {
 
       public:

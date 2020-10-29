@@ -5,7 +5,7 @@
 #include "PenChangeAction.h"
 
 #include "ActionHandler.h"
-#include "Model/Model.h"
+#include "Model/ModelHandler.h"
 #include "View/Widgets/DrawWidget.h"
 
 Controller::PenChangeAction::PenChangeAction(QPen pen, size_t indexOfPrimitive)
@@ -14,8 +14,8 @@ Controller::PenChangeAction::PenChangeAction(QPen pen, size_t indexOfPrimitive)
 
 void Controller::PenChangeAction::doAction(Controller::ActionHandler* actionHandler) {
     if (m_indexOfPrimitive == std::numeric_limits<size_t>::max()) {
-        actionHandler->model()->setPen(m_pen);
+        actionHandler->modelHandler()->setPen(m_pen);
     } else {
-        actionHandler->model()->drawableHandler().setPen(m_pen, m_indexOfPrimitive);
+        actionHandler->modelHandler()->drawableHandler().setPen(m_pen, m_indexOfPrimitive);
     }
 }

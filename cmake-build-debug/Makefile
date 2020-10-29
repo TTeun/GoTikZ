@@ -318,6 +318,33 @@ Controller/Actions/PenChangeAction.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoTikZ.dir/build.make CMakeFiles/GoTikZ.dir/Controller/Actions/PenChangeAction.cpp.s
 .PHONY : Controller/Actions/PenChangeAction.cpp.s
 
+Controller/Actions/TranslatePrimitiveAction.o: Controller/Actions/TranslatePrimitiveAction.cpp.o
+
+.PHONY : Controller/Actions/TranslatePrimitiveAction.o
+
+# target to build an object file
+Controller/Actions/TranslatePrimitiveAction.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoTikZ.dir/build.make CMakeFiles/GoTikZ.dir/Controller/Actions/TranslatePrimitiveAction.cpp.o
+.PHONY : Controller/Actions/TranslatePrimitiveAction.cpp.o
+
+Controller/Actions/TranslatePrimitiveAction.i: Controller/Actions/TranslatePrimitiveAction.cpp.i
+
+.PHONY : Controller/Actions/TranslatePrimitiveAction.i
+
+# target to preprocess a source file
+Controller/Actions/TranslatePrimitiveAction.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoTikZ.dir/build.make CMakeFiles/GoTikZ.dir/Controller/Actions/TranslatePrimitiveAction.cpp.i
+.PHONY : Controller/Actions/TranslatePrimitiveAction.cpp.i
+
+Controller/Actions/TranslatePrimitiveAction.s: Controller/Actions/TranslatePrimitiveAction.cpp.s
+
+.PHONY : Controller/Actions/TranslatePrimitiveAction.s
+
+# target to generate assembly for a file
+Controller/Actions/TranslatePrimitiveAction.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoTikZ.dir/build.make CMakeFiles/GoTikZ.dir/Controller/Actions/TranslatePrimitiveAction.cpp.s
+.PHONY : Controller/Actions/TranslatePrimitiveAction.cpp.s
+
 Controller/Actions/UndoableAction.o: Controller/Actions/UndoableAction.cpp.o
 
 .PHONY : Controller/Actions/UndoableAction.o
@@ -344,6 +371,60 @@ Controller/Actions/UndoableAction.s: Controller/Actions/UndoableAction.cpp.s
 Controller/Actions/UndoableAction.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoTikZ.dir/build.make CMakeFiles/GoTikZ.dir/Controller/Actions/UndoableAction.cpp.s
 .PHONY : Controller/Actions/UndoableAction.cpp.s
+
+Controller/ModifierState.o: Controller/ModifierState.cpp.o
+
+.PHONY : Controller/ModifierState.o
+
+# target to build an object file
+Controller/ModifierState.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoTikZ.dir/build.make CMakeFiles/GoTikZ.dir/Controller/ModifierState.cpp.o
+.PHONY : Controller/ModifierState.cpp.o
+
+Controller/ModifierState.i: Controller/ModifierState.cpp.i
+
+.PHONY : Controller/ModifierState.i
+
+# target to preprocess a source file
+Controller/ModifierState.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoTikZ.dir/build.make CMakeFiles/GoTikZ.dir/Controller/ModifierState.cpp.i
+.PHONY : Controller/ModifierState.cpp.i
+
+Controller/ModifierState.s: Controller/ModifierState.cpp.s
+
+.PHONY : Controller/ModifierState.s
+
+# target to generate assembly for a file
+Controller/ModifierState.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoTikZ.dir/build.make CMakeFiles/GoTikZ.dir/Controller/ModifierState.cpp.s
+.PHONY : Controller/ModifierState.cpp.s
+
+Controller/MouseHandler.o: Controller/MouseHandler.cpp.o
+
+.PHONY : Controller/MouseHandler.o
+
+# target to build an object file
+Controller/MouseHandler.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoTikZ.dir/build.make CMakeFiles/GoTikZ.dir/Controller/MouseHandler.cpp.o
+.PHONY : Controller/MouseHandler.cpp.o
+
+Controller/MouseHandler.i: Controller/MouseHandler.cpp.i
+
+.PHONY : Controller/MouseHandler.i
+
+# target to preprocess a source file
+Controller/MouseHandler.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoTikZ.dir/build.make CMakeFiles/GoTikZ.dir/Controller/MouseHandler.cpp.i
+.PHONY : Controller/MouseHandler.cpp.i
+
+Controller/MouseHandler.s: Controller/MouseHandler.cpp.s
+
+.PHONY : Controller/MouseHandler.s
+
+# target to generate assembly for a file
+Controller/MouseHandler.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoTikZ.dir/build.make CMakeFiles/GoTikZ.dir/Controller/MouseHandler.cpp.s
+.PHONY : Controller/MouseHandler.cpp.s
 
 Drawable/Circle.o: Drawable/Circle.cpp.o
 
@@ -696,32 +777,32 @@ Math/Math.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoTikZ.dir/build.make CMakeFiles/GoTikZ.dir/Math/Math.cpp.s
 .PHONY : Math/Math.cpp.s
 
-Model/Model.o: Model/Model.cpp.o
+Model/ModelHandler.o: Model/ModelHandler.cpp.o
 
-.PHONY : Model/Model.o
+.PHONY : Model/ModelHandler.o
 
 # target to build an object file
-Model/Model.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoTikZ.dir/build.make CMakeFiles/GoTikZ.dir/Model/Model.cpp.o
-.PHONY : Model/Model.cpp.o
+Model/ModelHandler.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoTikZ.dir/build.make CMakeFiles/GoTikZ.dir/Model/ModelHandler.cpp.o
+.PHONY : Model/ModelHandler.cpp.o
 
-Model/Model.i: Model/Model.cpp.i
+Model/ModelHandler.i: Model/ModelHandler.cpp.i
 
-.PHONY : Model/Model.i
+.PHONY : Model/ModelHandler.i
 
 # target to preprocess a source file
-Model/Model.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoTikZ.dir/build.make CMakeFiles/GoTikZ.dir/Model/Model.cpp.i
-.PHONY : Model/Model.cpp.i
+Model/ModelHandler.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoTikZ.dir/build.make CMakeFiles/GoTikZ.dir/Model/ModelHandler.cpp.i
+.PHONY : Model/ModelHandler.cpp.i
 
-Model/Model.s: Model/Model.cpp.s
+Model/ModelHandler.s: Model/ModelHandler.cpp.s
 
-.PHONY : Model/Model.s
+.PHONY : Model/ModelHandler.s
 
 # target to generate assembly for a file
-Model/Model.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoTikZ.dir/build.make CMakeFiles/GoTikZ.dir/Model/Model.cpp.s
-.PHONY : Model/Model.cpp.s
+Model/ModelHandler.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoTikZ.dir/build.make CMakeFiles/GoTikZ.dir/Model/ModelHandler.cpp.s
+.PHONY : Model/ModelHandler.cpp.s
 
 Model/MousePointerTypeEnum.o: Model/MousePointerTypeEnum.cpp.o
 
@@ -1237,9 +1318,18 @@ help:
 	@echo "... Controller/Actions/PenChangeAction.o"
 	@echo "... Controller/Actions/PenChangeAction.i"
 	@echo "... Controller/Actions/PenChangeAction.s"
+	@echo "... Controller/Actions/TranslatePrimitiveAction.o"
+	@echo "... Controller/Actions/TranslatePrimitiveAction.i"
+	@echo "... Controller/Actions/TranslatePrimitiveAction.s"
 	@echo "... Controller/Actions/UndoableAction.o"
 	@echo "... Controller/Actions/UndoableAction.i"
 	@echo "... Controller/Actions/UndoableAction.s"
+	@echo "... Controller/ModifierState.o"
+	@echo "... Controller/ModifierState.i"
+	@echo "... Controller/ModifierState.s"
+	@echo "... Controller/MouseHandler.o"
+	@echo "... Controller/MouseHandler.i"
+	@echo "... Controller/MouseHandler.s"
 	@echo "... Drawable/Circle.o"
 	@echo "... Drawable/Circle.i"
 	@echo "... Drawable/Circle.s"
@@ -1279,9 +1369,9 @@ help:
 	@echo "... Math/Math.o"
 	@echo "... Math/Math.i"
 	@echo "... Math/Math.s"
-	@echo "... Model/Model.o"
-	@echo "... Model/Model.i"
-	@echo "... Model/Model.s"
+	@echo "... Model/ModelHandler.o"
+	@echo "... Model/ModelHandler.i"
+	@echo "... Model/ModelHandler.s"
 	@echo "... Model/MousePointerTypeEnum.o"
 	@echo "... Model/MousePointerTypeEnum.i"
 	@echo "... Model/MousePointerTypeEnum.s"

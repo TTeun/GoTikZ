@@ -5,13 +5,10 @@
 #ifndef GOTIKZ_PENWIDGET_H
 #define GOTIKZ_PENWIDGET_H
 
-#include "ActionWidget.h"
 #include "View/Widgets/ActionWidget.h"
 #include "View/Widgets/AuxWidgets/GroupBoxContainer.h"
 
 #include <QPen>
-
-class ColorWidget;
 
 namespace View {
     class PenWidget : public View::ActionWidget, public GroupBoxContainer {

@@ -34,7 +34,7 @@ double Circle::dist(const QPointF& point) const {
 }
 
 QWidget* Circle::toWidget(Controller::ActionHandler* actionHandler) {
-    return new CircleEditWidget(this, actionHandler);
+    return new View::CircleEditWidget(this, actionHandler);
 }
 
 QPointF Circle::center() const {
