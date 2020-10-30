@@ -34,8 +34,8 @@ class MainWindow : public QMainWindow {
     void keyReleaseEvent(QKeyEvent* event) override;
 
   private:
-    std::unique_ptr<controller::Controller> m_actionHandler;
-    std::unique_ptr<model::Model>       m_modelHandler;
+    std::unique_ptr<controller::Controller> m_controller;
+    std::unique_ptr<model::Model>       m_model;
     view::MainWidget*                          m_mainWidget;
 };
 

@@ -10,6 +10,9 @@
 #include <Math/Math.h>
 #include <QPainter>
 
+LineStream::LineStream(const QPointF& point, const QPen& pen) : StreamDrawable(pen), m_point1(point) {
+}
+
 void LineStream::stream(const QPointF& point) {
     m_point2     = point;
     m_shouldDraw = true;
@@ -38,8 +41,19 @@ std::pair<double, QPointF> LineStream::snap(QPointF point) {
 double LineStream::dist(const QPointF& point) const {
     return std::min(Math::distance(point, m_point1), Math::distance(point, m_point2));
 }
-
 void LineStream::translate(const QPointF& translation) {
     m_point1 += translation;
     m_point2 += translation;
+}
+PRIMITIVE_TYPE LineStream::type() const {
+    return PRIMITIVE_TYPE::STREAM;
+}
+
+void LineStream::setPoint(size_t index, const QPointF& point) {
+    assert(false);
+}
+
+QPointF LineStream::point(size_t index) const {
+    assert(false);
+    return QPointF{};
 }

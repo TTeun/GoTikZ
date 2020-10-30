@@ -15,8 +15,8 @@ namespace controller {
       public:
         explicit DeletePrimitiveAction(size_t indexOfPrimitive);
 
-        void doAction(Controller* actionHandler) override;
-        void undoAction(Controller* actionHandler) override;
+        void doAction(Controller* controller) override;
+        void undoAction(Controller* controller) override;
 
       private:
         const size_t              m_indexOfPrimitive;

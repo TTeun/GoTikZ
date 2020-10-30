@@ -5,8 +5,8 @@
 #include "LeftSideBar.h"
 
 #include "GridSettingWidget.h"
-#include "MousePointerTypeSelectWidget.h"
 #include "PenWidget.h"
+#include "PrimitiveTypeSelectWidget.h"
 
 #include <QLayout>
 #include <QToolBox>
@@ -20,7 +20,7 @@ view::LeftSideBar::LeftSideBar(QWidget* parent) : QWidget(parent), GroupBoxConta
     setSizePolicy(sizePolicy);
 
     auto* contentsLayout           = m_groupBox->layout();
-    m_mousePointerTypeSelectWidget = new view::MousePointerTypeSelectWidget(m_groupBox);
+    m_mousePointerTypeSelectWidget = new view::PrimitiveTypeSelectWidget(m_groupBox);
     m_gridSettingWidget            = new view::GridSettingWidget(m_groupBox);
     m_penWidget                    = new view::PenWidget(m_groupBox);
     contentsLayout->addWidget(m_mousePointerTypeSelectWidget);
@@ -28,7 +28,7 @@ view::LeftSideBar::LeftSideBar(QWidget* parent) : QWidget(parent), GroupBoxConta
     contentsLayout->addWidget(m_penWidget);
 }
 
-view::MousePointerTypeSelectWidget* view::LeftSideBar::mousePointerTypeSelect() const {
+view::PrimitiveTypeSelectWidget* view::LeftSideBar::mousePointerTypeSelect() const {
     return m_mousePointerTypeSelectWidget;
 }
 

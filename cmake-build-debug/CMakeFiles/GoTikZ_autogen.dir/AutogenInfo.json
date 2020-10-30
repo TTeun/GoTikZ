@@ -25,9 +25,9 @@
 			"DDMX5RIXQU/moc_ChangeGridAction.cpp"
 		],
 		[
-			"/home/pc/MEGAsync/C++/clion/GoTikZ/Controller/Actions/ChangeMousePointerTypeAction.h",
+			"/home/pc/MEGAsync/C++/clion/GoTikZ/Controller/Actions/ChangePrimitiveTypeAction.h",
 			"MU",
-			"DDMX5RIXQU/moc_ChangeMousePointerTypeAction.cpp"
+			"DDMX5RIXQU/moc_ChangePrimitiveTypeAction.cpp"
 		],
 		[
 			"/home/pc/MEGAsync/C++/clion/GoTikZ/Controller/Actions/DeletePrimitiveAction.h",
@@ -78,6 +78,16 @@
 			"/home/pc/MEGAsync/C++/clion/GoTikZ/Drawable/ControlPoint/ControlPoint.h",
 			"MU",
 			"MHPYULKCXU/moc_ControlPoint.cpp"
+		],
+		[
+			"/home/pc/MEGAsync/C++/clion/GoTikZ/Drawable/ControlPoint/ControlPointFactory.h",
+			"MU",
+			"MHPYULKCXU/moc_ControlPointFactory.cpp"
+		],
+		[
+			"/home/pc/MEGAsync/C++/clion/GoTikZ/Drawable/ControlPoint/PointSetFunctor.h",
+			"MU",
+			"MHPYULKCXU/moc_PointSetFunctor.cpp"
 		],
 		[
 			"/home/pc/MEGAsync/C++/clion/GoTikZ/Drawable/Drawable.h",
@@ -140,9 +150,9 @@
 			"EXHL2H62WB/moc_Model.cpp"
 		],
 		[
-			"/home/pc/MEGAsync/C++/clion/GoTikZ/Model/MousePointerTypeEnum.h",
+			"/home/pc/MEGAsync/C++/clion/GoTikZ/Model/PrimitiveTypeEnum.h",
 			"MU",
-			"EXHL2H62WB/moc_MousePointerTypeEnum.cpp"
+			"EXHL2H62WB/moc_PrimitiveTypeEnum.cpp"
 		],
 		[
 			"/home/pc/MEGAsync/C++/clion/GoTikZ/View/GridState.h",
@@ -190,6 +200,11 @@
 			"ZPQCQFJ6CM/moc_DrawableEditWidget.cpp"
 		],
 		[
+			"/home/pc/MEGAsync/C++/clion/GoTikZ/View/Widgets/DrawableEditWidgets/DrawableEditWidgetFactory.h",
+			"MU",
+			"ZPQCQFJ6CM/moc_DrawableEditWidgetFactory.cpp"
+		],
+		[
 			"/home/pc/MEGAsync/C++/clion/GoTikZ/View/Widgets/DrawableEditWidgets/LineEditWidget.h",
 			"MU",
 			"ZPQCQFJ6CM/moc_LineEditWidget.cpp"
@@ -220,14 +235,14 @@
 			"4X73NCSS6Q/moc_MainWidget.cpp"
 		],
 		[
-			"/home/pc/MEGAsync/C++/clion/GoTikZ/View/Widgets/MousePointerTypeSelectWidget.h",
-			"MU",
-			"4X73NCSS6Q/moc_MousePointerTypeSelectWidget.cpp"
-		],
-		[
 			"/home/pc/MEGAsync/C++/clion/GoTikZ/View/Widgets/PenWidget.h",
 			"MU",
 			"4X73NCSS6Q/moc_PenWidget.cpp"
+		],
+		[
+			"/home/pc/MEGAsync/C++/clion/GoTikZ/View/Widgets/PrimitiveTypeSelectWidget.h",
+			"MU",
+			"4X73NCSS6Q/moc_PrimitiveTypeSelectWidget.cpp"
 		],
 		[
 			"/home/pc/MEGAsync/C++/clion/GoTikZ/View/Widgets/RightSideBar.h",
@@ -296,7 +311,7 @@
 			"MU"
 		],
 		[
-			"/home/pc/MEGAsync/C++/clion/GoTikZ/Controller/Actions/ChangeMousePointerTypeAction.cpp",
+			"/home/pc/MEGAsync/C++/clion/GoTikZ/Controller/Actions/ChangePrimitiveTypeAction.cpp",
 			"MU"
 		],
 		[
@@ -330,6 +345,14 @@
 			"/home/pc/MEGAsync/C++/clion/GoTikZ/Drawable/ControlPoint/ControlPoint.cpp",
 			"MU"
 		],
+		[
+			"/home/pc/MEGAsync/C++/clion/GoTikZ/Drawable/ControlPoint/ControlPointFactory.cpp",
+			"MU"
+		],
+		[
+			"/home/pc/MEGAsync/C++/clion/GoTikZ/Drawable/ControlPoint/PointSetFunctor.cpp",
+			"MU"
+		],
 		[ "/home/pc/MEGAsync/C++/clion/GoTikZ/Drawable/Drawable.cpp", "MU" ],
 		[
 			"/home/pc/MEGAsync/C++/clion/GoTikZ/Drawable/DrawableHandler.cpp",
@@ -351,7 +374,7 @@
 		[ "/home/pc/MEGAsync/C++/clion/GoTikZ/Math/Math.cpp", "MU" ],
 		[ "/home/pc/MEGAsync/C++/clion/GoTikZ/Model/Model.cpp", "MU" ],
 		[
-			"/home/pc/MEGAsync/C++/clion/GoTikZ/Model/MousePointerTypeEnum.cpp",
+			"/home/pc/MEGAsync/C++/clion/GoTikZ/Model/PrimitiveTypeEnum.cpp",
 			"MU"
 		],
 		[ "/home/pc/MEGAsync/C++/clion/GoTikZ/View/GridState.cpp", "MU" ],
@@ -374,6 +397,10 @@
 		],
 		[
 			"/home/pc/MEGAsync/C++/clion/GoTikZ/View/Widgets/DrawableEditWidgets/CircleEditWidget.cpp",
+			"MU"
+		],
+		[
+			"/home/pc/MEGAsync/C++/clion/GoTikZ/View/Widgets/DrawableEditWidgets/DrawableEditWidgetFactory.cpp",
 			"MU"
 		],
 		[
@@ -400,11 +427,11 @@
 			"/home/pc/MEGAsync/C++/clion/GoTikZ/View/Widgets/MainWidget.cpp",
 			"MU"
 		],
+		[ "/home/pc/MEGAsync/C++/clion/GoTikZ/View/Widgets/PenWidget.cpp", "MU" ],
 		[
-			"/home/pc/MEGAsync/C++/clion/GoTikZ/View/Widgets/MousePointerTypeSelectWidget.cpp",
+			"/home/pc/MEGAsync/C++/clion/GoTikZ/View/Widgets/PrimitiveTypeSelectWidget.cpp",
 			"MU"
 		],
-		[ "/home/pc/MEGAsync/C++/clion/GoTikZ/View/Widgets/PenWidget.cpp", "MU" ],
 		[
 			"/home/pc/MEGAsync/C++/clion/GoTikZ/View/Widgets/RightSideBar.cpp",
 			"MU"

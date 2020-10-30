@@ -8,8 +8,8 @@
 #include <QPainter>
 #include <cmath>
 
-view::DrawWidget::DrawWidget(QWidget* parent, const model::Model* model, controller::Controller* actionHandler)
-    : QWidget(parent), m_modelHandler(model), m_actionHandler(actionHandler) {
+view::DrawWidget::DrawWidget(QWidget* parent, const model::Model* model, controller::Controller* controller)
+    : QWidget(parent), m_model(model), m_controller(controller) {
     setMouseTracking(true);
 }
 
@@ -22,7 +22,7 @@ void view::DrawWidget::paintEvent(QPaintEvent* e) {
     }
     painter.setPen(QPen{Qt::black, 3});
 
-    const auto& drawableHandler = m_modelHandler->drawableHandler();
+    const auto& drawableHandler = m_model->drawableHandler();
 
     for (const auto& el : drawableHandler.selectedDrawables()) {
         el->draw(&painter, Drawable::DRAW_FLAGS::SELECTED, m_transform);
@@ -34,6 +34,10 @@ void view::DrawWidget::paintEvent(QPaintEvent* e) {
 
     for (const auto& el : drawableHandler.highlightedDrawables()) {
         el->draw(&painter, Drawable::DRAW_FLAGS::HIGHLIGHTED, m_transform);
+    }
+
+    for (const auto& el : drawableHandler.controlPoints()) {
+        el->draw(&painter, Drawable::DRAW_FLAGS::NONE, m_transform);
     }
 
     if (drawableHandler.isStreaming()) {
@@ -101,21 +105,21 @@ void view::DrawWidget::setGridState(GridState newGridState) {
 
 void view::DrawWidget::mousePressEvent(QMouseEvent* event) {
     m_mousePoint = event->localPos();
-    m_actionHandler->mousePressEvent(event);
+    m_controller->mousePressEvent(event);
 }
 
 void view::DrawWidget::mouseReleaseEvent(QMouseEvent* event) {
     m_mousePoint = event->localPos();
-    m_actionHandler->mouseReleaseEvent(event);
+    m_controller->mouseReleaseEvent(event);
 }
 
 void view::DrawWidget::mouseMoveEvent(QMouseEvent* event) {
     m_mousePoint = event->localPos();
-    m_actionHandler->mouseMoveEvent(event);
+    m_controller->mouseMoveEvent(event);
 }
 
 void view::DrawWidget::wheelEvent(QWheelEvent* event) {
-    m_actionHandler->wheelEvent(event, m_mousePoint);
+    m_controller->wheelEvent(event, m_mousePoint);
 }
 
 view::Transform& view::DrawWidget::transform() {
@@ -124,7 +128,7 @@ view::Transform& view::DrawWidget::transform() {
 
 void view::DrawWidget::drawMousePointer(QPainter* painter) {
     const auto snappedMousePoint = m_transform.applyTransform(
-        m_modelHandler->drawableHandler().snap(m_modelHandler->mousePointInWorldCoordinates(m_mousePoint)));
+        m_model->drawableHandler().snap(m_model->mousePointInWorldCoordinates(m_mousePoint)));
     painter->setPen(QPen{Qt::gray, 1});
     painter->drawLine(snappedMousePoint - QPointF{0, 8}, snappedMousePoint + QPointF{0, 8});
     painter->drawLine(snappedMousePoint - QPointF{8, 0}, snappedMousePoint + QPointF{8, 0});

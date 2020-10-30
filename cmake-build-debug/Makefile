@@ -210,32 +210,32 @@ Controller/Actions/ChangeGridAction.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoTikZ.dir/build.make CMakeFiles/GoTikZ.dir/Controller/Actions/ChangeGridAction.cpp.s
 .PHONY : Controller/Actions/ChangeGridAction.cpp.s
 
-Controller/Actions/ChangeMousePointerTypeAction.o: Controller/Actions/ChangeMousePointerTypeAction.cpp.o
+Controller/Actions/ChangePrimitiveTypeAction.o: Controller/Actions/ChangePrimitiveTypeAction.cpp.o
 
-.PHONY : Controller/Actions/ChangeMousePointerTypeAction.o
+.PHONY : Controller/Actions/ChangePrimitiveTypeAction.o
 
 # target to build an object file
-Controller/Actions/ChangeMousePointerTypeAction.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoTikZ.dir/build.make CMakeFiles/GoTikZ.dir/Controller/Actions/ChangeMousePointerTypeAction.cpp.o
-.PHONY : Controller/Actions/ChangeMousePointerTypeAction.cpp.o
+Controller/Actions/ChangePrimitiveTypeAction.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoTikZ.dir/build.make CMakeFiles/GoTikZ.dir/Controller/Actions/ChangePrimitiveTypeAction.cpp.o
+.PHONY : Controller/Actions/ChangePrimitiveTypeAction.cpp.o
 
-Controller/Actions/ChangeMousePointerTypeAction.i: Controller/Actions/ChangeMousePointerTypeAction.cpp.i
+Controller/Actions/ChangePrimitiveTypeAction.i: Controller/Actions/ChangePrimitiveTypeAction.cpp.i
 
-.PHONY : Controller/Actions/ChangeMousePointerTypeAction.i
+.PHONY : Controller/Actions/ChangePrimitiveTypeAction.i
 
 # target to preprocess a source file
-Controller/Actions/ChangeMousePointerTypeAction.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoTikZ.dir/build.make CMakeFiles/GoTikZ.dir/Controller/Actions/ChangeMousePointerTypeAction.cpp.i
-.PHONY : Controller/Actions/ChangeMousePointerTypeAction.cpp.i
+Controller/Actions/ChangePrimitiveTypeAction.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoTikZ.dir/build.make CMakeFiles/GoTikZ.dir/Controller/Actions/ChangePrimitiveTypeAction.cpp.i
+.PHONY : Controller/Actions/ChangePrimitiveTypeAction.cpp.i
 
-Controller/Actions/ChangeMousePointerTypeAction.s: Controller/Actions/ChangeMousePointerTypeAction.cpp.s
+Controller/Actions/ChangePrimitiveTypeAction.s: Controller/Actions/ChangePrimitiveTypeAction.cpp.s
 
-.PHONY : Controller/Actions/ChangeMousePointerTypeAction.s
+.PHONY : Controller/Actions/ChangePrimitiveTypeAction.s
 
 # target to generate assembly for a file
-Controller/Actions/ChangeMousePointerTypeAction.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoTikZ.dir/build.make CMakeFiles/GoTikZ.dir/Controller/Actions/ChangeMousePointerTypeAction.cpp.s
-.PHONY : Controller/Actions/ChangeMousePointerTypeAction.cpp.s
+Controller/Actions/ChangePrimitiveTypeAction.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoTikZ.dir/build.make CMakeFiles/GoTikZ.dir/Controller/Actions/ChangePrimitiveTypeAction.cpp.s
+.PHONY : Controller/Actions/ChangePrimitiveTypeAction.cpp.s
 
 Controller/Actions/DeletePrimitiveAction.o: Controller/Actions/DeletePrimitiveAction.cpp.o
 
@@ -506,6 +506,60 @@ Drawable/ControlPoint/ControlPoint.s: Drawable/ControlPoint/ControlPoint.cpp.s
 Drawable/ControlPoint/ControlPoint.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoTikZ.dir/build.make CMakeFiles/GoTikZ.dir/Drawable/ControlPoint/ControlPoint.cpp.s
 .PHONY : Drawable/ControlPoint/ControlPoint.cpp.s
+
+Drawable/ControlPoint/ControlPointFactory.o: Drawable/ControlPoint/ControlPointFactory.cpp.o
+
+.PHONY : Drawable/ControlPoint/ControlPointFactory.o
+
+# target to build an object file
+Drawable/ControlPoint/ControlPointFactory.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoTikZ.dir/build.make CMakeFiles/GoTikZ.dir/Drawable/ControlPoint/ControlPointFactory.cpp.o
+.PHONY : Drawable/ControlPoint/ControlPointFactory.cpp.o
+
+Drawable/ControlPoint/ControlPointFactory.i: Drawable/ControlPoint/ControlPointFactory.cpp.i
+
+.PHONY : Drawable/ControlPoint/ControlPointFactory.i
+
+# target to preprocess a source file
+Drawable/ControlPoint/ControlPointFactory.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoTikZ.dir/build.make CMakeFiles/GoTikZ.dir/Drawable/ControlPoint/ControlPointFactory.cpp.i
+.PHONY : Drawable/ControlPoint/ControlPointFactory.cpp.i
+
+Drawable/ControlPoint/ControlPointFactory.s: Drawable/ControlPoint/ControlPointFactory.cpp.s
+
+.PHONY : Drawable/ControlPoint/ControlPointFactory.s
+
+# target to generate assembly for a file
+Drawable/ControlPoint/ControlPointFactory.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoTikZ.dir/build.make CMakeFiles/GoTikZ.dir/Drawable/ControlPoint/ControlPointFactory.cpp.s
+.PHONY : Drawable/ControlPoint/ControlPointFactory.cpp.s
+
+Drawable/ControlPoint/PointSetFunctor.o: Drawable/ControlPoint/PointSetFunctor.cpp.o
+
+.PHONY : Drawable/ControlPoint/PointSetFunctor.o
+
+# target to build an object file
+Drawable/ControlPoint/PointSetFunctor.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoTikZ.dir/build.make CMakeFiles/GoTikZ.dir/Drawable/ControlPoint/PointSetFunctor.cpp.o
+.PHONY : Drawable/ControlPoint/PointSetFunctor.cpp.o
+
+Drawable/ControlPoint/PointSetFunctor.i: Drawable/ControlPoint/PointSetFunctor.cpp.i
+
+.PHONY : Drawable/ControlPoint/PointSetFunctor.i
+
+# target to preprocess a source file
+Drawable/ControlPoint/PointSetFunctor.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoTikZ.dir/build.make CMakeFiles/GoTikZ.dir/Drawable/ControlPoint/PointSetFunctor.cpp.i
+.PHONY : Drawable/ControlPoint/PointSetFunctor.cpp.i
+
+Drawable/ControlPoint/PointSetFunctor.s: Drawable/ControlPoint/PointSetFunctor.cpp.s
+
+.PHONY : Drawable/ControlPoint/PointSetFunctor.s
+
+# target to generate assembly for a file
+Drawable/ControlPoint/PointSetFunctor.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoTikZ.dir/build.make CMakeFiles/GoTikZ.dir/Drawable/ControlPoint/PointSetFunctor.cpp.s
+.PHONY : Drawable/ControlPoint/PointSetFunctor.cpp.s
 
 Drawable/Drawable.o: Drawable/Drawable.cpp.o
 
@@ -831,32 +885,32 @@ Model/Model.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoTikZ.dir/build.make CMakeFiles/GoTikZ.dir/Model/Model.cpp.s
 .PHONY : Model/Model.cpp.s
 
-Model/MousePointerTypeEnum.o: Model/MousePointerTypeEnum.cpp.o
+Model/PrimitiveTypeEnum.o: Model/PrimitiveTypeEnum.cpp.o
 
-.PHONY : Model/MousePointerTypeEnum.o
+.PHONY : Model/PrimitiveTypeEnum.o
 
 # target to build an object file
-Model/MousePointerTypeEnum.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoTikZ.dir/build.make CMakeFiles/GoTikZ.dir/Model/MousePointerTypeEnum.cpp.o
-.PHONY : Model/MousePointerTypeEnum.cpp.o
+Model/PrimitiveTypeEnum.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoTikZ.dir/build.make CMakeFiles/GoTikZ.dir/Model/PrimitiveTypeEnum.cpp.o
+.PHONY : Model/PrimitiveTypeEnum.cpp.o
 
-Model/MousePointerTypeEnum.i: Model/MousePointerTypeEnum.cpp.i
+Model/PrimitiveTypeEnum.i: Model/PrimitiveTypeEnum.cpp.i
 
-.PHONY : Model/MousePointerTypeEnum.i
+.PHONY : Model/PrimitiveTypeEnum.i
 
 # target to preprocess a source file
-Model/MousePointerTypeEnum.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoTikZ.dir/build.make CMakeFiles/GoTikZ.dir/Model/MousePointerTypeEnum.cpp.i
-.PHONY : Model/MousePointerTypeEnum.cpp.i
+Model/PrimitiveTypeEnum.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoTikZ.dir/build.make CMakeFiles/GoTikZ.dir/Model/PrimitiveTypeEnum.cpp.i
+.PHONY : Model/PrimitiveTypeEnum.cpp.i
 
-Model/MousePointerTypeEnum.s: Model/MousePointerTypeEnum.cpp.s
+Model/PrimitiveTypeEnum.s: Model/PrimitiveTypeEnum.cpp.s
 
-.PHONY : Model/MousePointerTypeEnum.s
+.PHONY : Model/PrimitiveTypeEnum.s
 
 # target to generate assembly for a file
-Model/MousePointerTypeEnum.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoTikZ.dir/build.make CMakeFiles/GoTikZ.dir/Model/MousePointerTypeEnum.cpp.s
-.PHONY : Model/MousePointerTypeEnum.cpp.s
+Model/PrimitiveTypeEnum.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoTikZ.dir/build.make CMakeFiles/GoTikZ.dir/Model/PrimitiveTypeEnum.cpp.s
+.PHONY : Model/PrimitiveTypeEnum.cpp.s
 
 View/GridState.o: View/GridState.cpp.o
 
@@ -1047,6 +1101,33 @@ View/Widgets/DrawableEditWidgets/CircleEditWidget.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoTikZ.dir/build.make CMakeFiles/GoTikZ.dir/View/Widgets/DrawableEditWidgets/CircleEditWidget.cpp.s
 .PHONY : View/Widgets/DrawableEditWidgets/CircleEditWidget.cpp.s
 
+View/Widgets/DrawableEditWidgets/DrawableEditWidgetFactory.o: View/Widgets/DrawableEditWidgets/DrawableEditWidgetFactory.cpp.o
+
+.PHONY : View/Widgets/DrawableEditWidgets/DrawableEditWidgetFactory.o
+
+# target to build an object file
+View/Widgets/DrawableEditWidgets/DrawableEditWidgetFactory.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoTikZ.dir/build.make CMakeFiles/GoTikZ.dir/View/Widgets/DrawableEditWidgets/DrawableEditWidgetFactory.cpp.o
+.PHONY : View/Widgets/DrawableEditWidgets/DrawableEditWidgetFactory.cpp.o
+
+View/Widgets/DrawableEditWidgets/DrawableEditWidgetFactory.i: View/Widgets/DrawableEditWidgets/DrawableEditWidgetFactory.cpp.i
+
+.PHONY : View/Widgets/DrawableEditWidgets/DrawableEditWidgetFactory.i
+
+# target to preprocess a source file
+View/Widgets/DrawableEditWidgets/DrawableEditWidgetFactory.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoTikZ.dir/build.make CMakeFiles/GoTikZ.dir/View/Widgets/DrawableEditWidgets/DrawableEditWidgetFactory.cpp.i
+.PHONY : View/Widgets/DrawableEditWidgets/DrawableEditWidgetFactory.cpp.i
+
+View/Widgets/DrawableEditWidgets/DrawableEditWidgetFactory.s: View/Widgets/DrawableEditWidgets/DrawableEditWidgetFactory.cpp.s
+
+.PHONY : View/Widgets/DrawableEditWidgets/DrawableEditWidgetFactory.s
+
+# target to generate assembly for a file
+View/Widgets/DrawableEditWidgets/DrawableEditWidgetFactory.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoTikZ.dir/build.make CMakeFiles/GoTikZ.dir/View/Widgets/DrawableEditWidgets/DrawableEditWidgetFactory.cpp.s
+.PHONY : View/Widgets/DrawableEditWidgets/DrawableEditWidgetFactory.cpp.s
+
 View/Widgets/DrawableEditWidgets/LineEditWidget.o: View/Widgets/DrawableEditWidgets/LineEditWidget.cpp.o
 
 .PHONY : View/Widgets/DrawableEditWidgets/LineEditWidget.o
@@ -1209,33 +1290,6 @@ View/Widgets/MainWidget.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoTikZ.dir/build.make CMakeFiles/GoTikZ.dir/View/Widgets/MainWidget.cpp.s
 .PHONY : View/Widgets/MainWidget.cpp.s
 
-View/Widgets/MousePointerTypeSelectWidget.o: View/Widgets/MousePointerTypeSelectWidget.cpp.o
-
-.PHONY : View/Widgets/MousePointerTypeSelectWidget.o
-
-# target to build an object file
-View/Widgets/MousePointerTypeSelectWidget.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoTikZ.dir/build.make CMakeFiles/GoTikZ.dir/View/Widgets/MousePointerTypeSelectWidget.cpp.o
-.PHONY : View/Widgets/MousePointerTypeSelectWidget.cpp.o
-
-View/Widgets/MousePointerTypeSelectWidget.i: View/Widgets/MousePointerTypeSelectWidget.cpp.i
-
-.PHONY : View/Widgets/MousePointerTypeSelectWidget.i
-
-# target to preprocess a source file
-View/Widgets/MousePointerTypeSelectWidget.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoTikZ.dir/build.make CMakeFiles/GoTikZ.dir/View/Widgets/MousePointerTypeSelectWidget.cpp.i
-.PHONY : View/Widgets/MousePointerTypeSelectWidget.cpp.i
-
-View/Widgets/MousePointerTypeSelectWidget.s: View/Widgets/MousePointerTypeSelectWidget.cpp.s
-
-.PHONY : View/Widgets/MousePointerTypeSelectWidget.s
-
-# target to generate assembly for a file
-View/Widgets/MousePointerTypeSelectWidget.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoTikZ.dir/build.make CMakeFiles/GoTikZ.dir/View/Widgets/MousePointerTypeSelectWidget.cpp.s
-.PHONY : View/Widgets/MousePointerTypeSelectWidget.cpp.s
-
 View/Widgets/PenWidget.o: View/Widgets/PenWidget.cpp.o
 
 .PHONY : View/Widgets/PenWidget.o
@@ -1262,6 +1316,33 @@ View/Widgets/PenWidget.s: View/Widgets/PenWidget.cpp.s
 View/Widgets/PenWidget.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoTikZ.dir/build.make CMakeFiles/GoTikZ.dir/View/Widgets/PenWidget.cpp.s
 .PHONY : View/Widgets/PenWidget.cpp.s
+
+View/Widgets/PrimitiveTypeSelectWidget.o: View/Widgets/PrimitiveTypeSelectWidget.cpp.o
+
+.PHONY : View/Widgets/PrimitiveTypeSelectWidget.o
+
+# target to build an object file
+View/Widgets/PrimitiveTypeSelectWidget.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoTikZ.dir/build.make CMakeFiles/GoTikZ.dir/View/Widgets/PrimitiveTypeSelectWidget.cpp.o
+.PHONY : View/Widgets/PrimitiveTypeSelectWidget.cpp.o
+
+View/Widgets/PrimitiveTypeSelectWidget.i: View/Widgets/PrimitiveTypeSelectWidget.cpp.i
+
+.PHONY : View/Widgets/PrimitiveTypeSelectWidget.i
+
+# target to preprocess a source file
+View/Widgets/PrimitiveTypeSelectWidget.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoTikZ.dir/build.make CMakeFiles/GoTikZ.dir/View/Widgets/PrimitiveTypeSelectWidget.cpp.i
+.PHONY : View/Widgets/PrimitiveTypeSelectWidget.cpp.i
+
+View/Widgets/PrimitiveTypeSelectWidget.s: View/Widgets/PrimitiveTypeSelectWidget.cpp.s
+
+.PHONY : View/Widgets/PrimitiveTypeSelectWidget.s
+
+# target to generate assembly for a file
+View/Widgets/PrimitiveTypeSelectWidget.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoTikZ.dir/build.make CMakeFiles/GoTikZ.dir/View/Widgets/PrimitiveTypeSelectWidget.cpp.s
+.PHONY : View/Widgets/PrimitiveTypeSelectWidget.cpp.s
 
 View/Widgets/RightSideBar.o: View/Widgets/RightSideBar.cpp.o
 
@@ -1333,9 +1414,9 @@ help:
 	@echo "... Controller/Actions/ChangeGridAction.o"
 	@echo "... Controller/Actions/ChangeGridAction.i"
 	@echo "... Controller/Actions/ChangeGridAction.s"
-	@echo "... Controller/Actions/ChangeMousePointerTypeAction.o"
-	@echo "... Controller/Actions/ChangeMousePointerTypeAction.i"
-	@echo "... Controller/Actions/ChangeMousePointerTypeAction.s"
+	@echo "... Controller/Actions/ChangePrimitiveTypeAction.o"
+	@echo "... Controller/Actions/ChangePrimitiveTypeAction.i"
+	@echo "... Controller/Actions/ChangePrimitiveTypeAction.s"
 	@echo "... Controller/Actions/DeletePrimitiveAction.o"
 	@echo "... Controller/Actions/DeletePrimitiveAction.i"
 	@echo "... Controller/Actions/DeletePrimitiveAction.s"
@@ -1366,6 +1447,12 @@ help:
 	@echo "... Drawable/ControlPoint/ControlPoint.o"
 	@echo "... Drawable/ControlPoint/ControlPoint.i"
 	@echo "... Drawable/ControlPoint/ControlPoint.s"
+	@echo "... Drawable/ControlPoint/ControlPointFactory.o"
+	@echo "... Drawable/ControlPoint/ControlPointFactory.i"
+	@echo "... Drawable/ControlPoint/ControlPointFactory.s"
+	@echo "... Drawable/ControlPoint/PointSetFunctor.o"
+	@echo "... Drawable/ControlPoint/PointSetFunctor.i"
+	@echo "... Drawable/ControlPoint/PointSetFunctor.s"
 	@echo "... Drawable/Drawable.o"
 	@echo "... Drawable/Drawable.i"
 	@echo "... Drawable/Drawable.s"
@@ -1402,9 +1489,9 @@ help:
 	@echo "... Model/Model.o"
 	@echo "... Model/Model.i"
 	@echo "... Model/Model.s"
-	@echo "... Model/MousePointerTypeEnum.o"
-	@echo "... Model/MousePointerTypeEnum.i"
-	@echo "... Model/MousePointerTypeEnum.s"
+	@echo "... Model/PrimitiveTypeEnum.o"
+	@echo "... Model/PrimitiveTypeEnum.i"
+	@echo "... Model/PrimitiveTypeEnum.s"
 	@echo "... View/GridState.o"
 	@echo "... View/GridState.i"
 	@echo "... View/GridState.s"
@@ -1426,6 +1513,9 @@ help:
 	@echo "... View/Widgets/DrawableEditWidgets/CircleEditWidget.o"
 	@echo "... View/Widgets/DrawableEditWidgets/CircleEditWidget.i"
 	@echo "... View/Widgets/DrawableEditWidgets/CircleEditWidget.s"
+	@echo "... View/Widgets/DrawableEditWidgets/DrawableEditWidgetFactory.o"
+	@echo "... View/Widgets/DrawableEditWidgets/DrawableEditWidgetFactory.i"
+	@echo "... View/Widgets/DrawableEditWidgets/DrawableEditWidgetFactory.s"
 	@echo "... View/Widgets/DrawableEditWidgets/LineEditWidget.o"
 	@echo "... View/Widgets/DrawableEditWidgets/LineEditWidget.i"
 	@echo "... View/Widgets/DrawableEditWidgets/LineEditWidget.s"
@@ -1444,12 +1534,12 @@ help:
 	@echo "... View/Widgets/MainWidget.o"
 	@echo "... View/Widgets/MainWidget.i"
 	@echo "... View/Widgets/MainWidget.s"
-	@echo "... View/Widgets/MousePointerTypeSelectWidget.o"
-	@echo "... View/Widgets/MousePointerTypeSelectWidget.i"
-	@echo "... View/Widgets/MousePointerTypeSelectWidget.s"
 	@echo "... View/Widgets/PenWidget.o"
 	@echo "... View/Widgets/PenWidget.i"
 	@echo "... View/Widgets/PenWidget.s"
+	@echo "... View/Widgets/PrimitiveTypeSelectWidget.o"
+	@echo "... View/Widgets/PrimitiveTypeSelectWidget.i"
+	@echo "... View/Widgets/PrimitiveTypeSelectWidget.s"
 	@echo "... View/Widgets/RightSideBar.o"
 	@echo "... View/Widgets/RightSideBar.i"
 	@echo "... View/Widgets/RightSideBar.s"

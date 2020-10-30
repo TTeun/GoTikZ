@@ -41,10 +41,6 @@ size_t Drawable::index() const {
     return m_index;
 }
 
-QWidget* Drawable::toWidget(controller::Controller* actionHandler) {
-    return new QWidget(nullptr);
-}
-
 void Drawable::setPen(const QPen& pen) {
     m_pen = pen;
 }

@@ -16,7 +16,7 @@ namespace controller {
       public:
         ~UndoableAction() = default;
 
-        virtual void undoAction(Controller* actionHandler) = 0;
+        virtual void undoAction(Controller* controller) = 0;
     };
 } // namespace controller
 

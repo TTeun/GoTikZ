@@ -2,10 +2,10 @@
 // Created by pc on 16-10-20.
 //
 
-#ifndef GOTIKZ_MOUSEPOINTERTYPESELECTWIDGET_H
-#define GOTIKZ_MOUSEPOINTERTYPESELECTWIDGET_H
+#ifndef GOTIKZ_PRIMITIVETYPESELECTWIDGET_H
+#define GOTIKZ_PRIMITIVETYPESELECTWIDGET_H
 
-#include "Model/MousePointerTypeEnum.h"
+#include "Model/PrimitiveTypeEnum.h"
 #include "View/Widgets/ActionWidget.h"
 #include "View/Widgets/AuxWidgets/GroupBoxContainer.h"
 
@@ -15,11 +15,11 @@ class QButtonGroup;
 class QAbstractButton;
 
 namespace view {
-    class MousePointerTypeSelectWidget : public view::ActionWidget, public GroupBoxContainer {
+    class PrimitiveTypeSelectWidget : public view::ActionWidget, public GroupBoxContainer {
       public:
-        explicit MousePointerTypeSelectWidget(QWidget* parent);
+        explicit PrimitiveTypeSelectWidget(QWidget* parent);
 
-        void setSelectedButton(MOUSE_POINTER_TYPE type);
+        void setSelectedButton(PRIMITIVE_TYPE type);
 
       public slots:
         void mousePointerTypeButtonClicked(QAbstractButton* button);
@@ -31,4 +31,4 @@ namespace view {
     };
 } // namespace view
 
-#endif // GOTIKZ_MOUSEPOINTERTYPESELECTWIDGET_H
+#endif // GOTIKZ_PRIMITIVETYPESELECTWIDGET_H

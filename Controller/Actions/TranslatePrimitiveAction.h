@@ -16,9 +16,9 @@ namespace controller {
       public:
         TranslatePrimitiveAction(std::vector<size_t> mIndices, const QPointF& mTranslation);
 
-        void doAction(Controller* actionHandler) override;
+        void doAction(Controller* controller) override;
 
-        void undoAction(Controller* actionHandler) override;
+        void undoAction(Controller* controller) override;
 
       private:
         std::vector<size_t> m_indices;

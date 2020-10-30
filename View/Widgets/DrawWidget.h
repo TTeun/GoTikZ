@@ -19,7 +19,7 @@ namespace view {
         Q_OBJECT
 
       public:
-        DrawWidget(QWidget* parent, const model::Model* model, controller::Controller* actionHandler);
+        DrawWidget(QWidget* parent, const model::Model* model, controller::Controller* controller);
 
       public:
         void             setGridState(GridState newGridState);
@@ -41,8 +41,8 @@ namespace view {
         GridState m_gridState;
         Transform m_transform;
 
-        const model::Model* m_modelHandler;
-        controller::Controller* m_actionHandler;
+        const model::Model* m_model;
+        controller::Controller* m_controller;
     };
 } // namespace view
 

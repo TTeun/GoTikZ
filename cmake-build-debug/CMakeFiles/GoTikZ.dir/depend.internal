@@ -6,11 +6,14 @@ CMakeFiles/GoTikZ.dir/Controller/Actions/AddPrimitiveAction.cpp.o
  ../Controller/Controller.h
  ../Controller/ModifierState.h
  ../Controller/MouseHandler.h
+ ../Drawable/ControlPoint/ControlPoint.h
+ ../Drawable/ControlPoint/PointSetFunctor.h
  ../Drawable/Drawable.h
  ../Drawable/DrawableHandler.h
+ ../Drawable/Point.h
  ../Drawable/StreamDrawable.h
  ../Model/Model.h
- ../Model/MousePointerTypeEnum.h
+ ../Model/PrimitiveTypeEnum.h
  ../View/GridState.h
  ../View/Transform.h
  ../View/Widgets/DrawWidget.h
@@ -245,19 +248,23 @@ CMakeFiles/GoTikZ.dir/Controller/Actions/ChangeGridAction.cpp.o
  /usr/include/qt/QtWidgets/qtwidgets-config.h
  /usr/include/qt/QtWidgets/qtwidgetsglobal.h
  /usr/include/qt/QtWidgets/qwidget.h
-CMakeFiles/GoTikZ.dir/Controller/Actions/ChangeMousePointerTypeAction.cpp.o
+CMakeFiles/GoTikZ.dir/Controller/Actions/ChangePrimitiveTypeAction.cpp.o
  ../Controller/Actions/UndoableAction.h
  ../Controller/Controller.h
  ../Controller/ModifierState.h
  ../Controller/MouseHandler.h
+ ../Drawable/ControlPoint/ControlPoint.h
+ ../Drawable/ControlPoint/PointSetFunctor.h
  ../Drawable/Drawable.h
  ../Drawable/DrawableHandler.h
+ ../Drawable/Point.h
  ../Drawable/StreamDrawable.h
  ../Model/Model.h
- ../Model/MousePointerTypeEnum.h
+ ../Model/PrimitiveTypeEnum.h
  /home/pc/MEGAsync/C++/clion/GoTikZ/Controller/Actions/Action.h
- /home/pc/MEGAsync/C++/clion/GoTikZ/Controller/Actions/ChangeMousePointerTypeAction.cpp
- /home/pc/MEGAsync/C++/clion/GoTikZ/Controller/Actions/ChangeMousePointerTypeAction.h
+ /home/pc/MEGAsync/C++/clion/GoTikZ/Controller/Actions/ChangePrimitiveTypeAction.cpp
+ /home/pc/MEGAsync/C++/clion/GoTikZ/Controller/Actions/ChangePrimitiveTypeAction.h
+ /usr/include/qt/QtCore/QDebug
  /usr/include/qt/QtCore/QObject
  /usr/include/qt/QtCore/QPointF
  /usr/include/qt/QtCore/QString
@@ -362,11 +369,14 @@ CMakeFiles/GoTikZ.dir/Controller/Actions/DeletePrimitiveAction.cpp.o
  ../Controller/Controller.h
  ../Controller/ModifierState.h
  ../Controller/MouseHandler.h
+ ../Drawable/ControlPoint/ControlPoint.h
+ ../Drawable/ControlPoint/PointSetFunctor.h
  ../Drawable/Drawable.h
  ../Drawable/DrawableHandler.h
+ ../Drawable/Point.h
  ../Drawable/StreamDrawable.h
  ../Model/Model.h
- ../Model/MousePointerTypeEnum.h
+ ../Model/PrimitiveTypeEnum.h
  ../View/GridState.h
  ../View/Transform.h
  ../View/Widgets/DrawWidget.h
@@ -374,6 +384,7 @@ CMakeFiles/GoTikZ.dir/Controller/Actions/DeletePrimitiveAction.cpp.o
  /home/pc/MEGAsync/C++/clion/GoTikZ/Controller/Actions/DeletePrimitiveAction.cpp
  /home/pc/MEGAsync/C++/clion/GoTikZ/Controller/Actions/DeletePrimitiveAction.h
  /home/pc/MEGAsync/C++/clion/GoTikZ/Controller/Actions/UndoableAction.h
+ /usr/include/qt/QtCore/QDebug
  /usr/include/qt/QtCore/QObject
  /usr/include/qt/QtCore/QPointF
  /usr/include/qt/QtCore/QString
@@ -488,17 +499,21 @@ CMakeFiles/GoTikZ.dir/Controller/Actions/PenChangeAction.cpp.o
  ../Controller/Controller.h
  ../Controller/ModifierState.h
  ../Controller/MouseHandler.h
+ ../Drawable/ControlPoint/ControlPoint.h
+ ../Drawable/ControlPoint/PointSetFunctor.h
  ../Drawable/Drawable.h
  ../Drawable/DrawableHandler.h
+ ../Drawable/Point.h
  ../Drawable/StreamDrawable.h
  ../Model/Model.h
- ../Model/MousePointerTypeEnum.h
+ ../Model/PrimitiveTypeEnum.h
  ../View/GridState.h
  ../View/Transform.h
  ../View/Widgets/DrawWidget.h
  /home/pc/MEGAsync/C++/clion/GoTikZ/Controller/Actions/Action.h
  /home/pc/MEGAsync/C++/clion/GoTikZ/Controller/Actions/PenChangeAction.cpp
  /home/pc/MEGAsync/C++/clion/GoTikZ/Controller/Actions/PenChangeAction.h
+ /usr/include/qt/QtCore/QDebug
  /usr/include/qt/QtCore/QObject
  /usr/include/qt/QtCore/QPointF
  /usr/include/qt/QtCore/QString
@@ -614,13 +629,17 @@ CMakeFiles/GoTikZ.dir/Controller/Actions/TranslatePrimitiveAction.cpp.o
  ../Controller/Controller.h
  ../Controller/ModifierState.h
  ../Controller/MouseHandler.h
+ ../Drawable/ControlPoint/ControlPoint.h
+ ../Drawable/ControlPoint/PointSetFunctor.h
  ../Drawable/Drawable.h
  ../Drawable/DrawableHandler.h
+ ../Drawable/Point.h
  ../Drawable/StreamDrawable.h
  ../Model/Model.h
- ../Model/MousePointerTypeEnum.h
+ ../Model/PrimitiveTypeEnum.h
  /home/pc/MEGAsync/C++/clion/GoTikZ/Controller/Actions/TranslatePrimitiveAction.cpp
  /home/pc/MEGAsync/C++/clion/GoTikZ/Controller/Actions/TranslatePrimitiveAction.h
+ /usr/include/qt/QtCore/QDebug
  /usr/include/qt/QtCore/QObject
  /usr/include/qt/QtCore/QPointF
  /usr/include/qt/QtCore/QString
@@ -765,23 +784,30 @@ CMakeFiles/GoTikZ.dir/Controller/Controller.cpp.o
  ../Controller/Controller.h
  ../Controller/ModifierState.h
  ../Controller/MouseHandler.h
+ ../Drawable/Circle.h
+ ../Drawable/ControlPoint/ControlPoint.h
+ ../Drawable/ControlPoint/PointSetFunctor.h
  ../Drawable/Drawable.h
  ../Drawable/DrawableHandler.h
+ ../Drawable/Line.h
+ ../Drawable/Point.h
+ ../Drawable/PolyLine.h
  ../Drawable/StreamDrawable.h
  ../MainWindow.h
  ../Model/Model.h
- ../Model/MousePointerTypeEnum.h
+ ../Model/PrimitiveTypeEnum.h
  ../View/GridState.h
  ../View/Transform.h
  ../View/Widgets/ActionWidget.h
  ../View/Widgets/AuxWidgets/GroupBoxContainer.h
  ../View/Widgets/DrawWidget.h
  ../View/Widgets/DrawableEditWidgets/DrawableEditWidget.h
+ ../View/Widgets/DrawableEditWidgets/DrawableEditWidgetFactory.h
  ../View/Widgets/GridSettingWidget.h
  ../View/Widgets/LeftSideBar.h
  ../View/Widgets/MainWidget.h
- ../View/Widgets/MousePointerTypeSelectWidget.h
  ../View/Widgets/PenWidget.h
+ ../View/Widgets/PrimitiveTypeSelectWidget.h
  ../View/Widgets/RightSideBar.h
  /home/pc/MEGAsync/C++/clion/GoTikZ/Controller/Controller.cpp
  /home/pc/MEGAsync/C++/clion/GoTikZ/Controller/Controller.h
@@ -919,6 +945,7 @@ CMakeFiles/GoTikZ.dir/Drawable/Circle.cpp.o
  ../Controller/ModifierState.h
  ../Controller/MouseHandler.h
  ../Math/Math.h
+ ../Model/PrimitiveTypeEnum.h
  ../View/Transform.h
  ../View/Widgets/AuxWidgets/GroupBoxContainer.h
  ../View/Widgets/DrawableEditWidgets/CircleEditWidget.h
@@ -1047,6 +1074,7 @@ CMakeFiles/GoTikZ.dir/Drawable/CircleStream.cpp.o
  ../Controller/ModifierState.h
  ../Controller/MouseHandler.h
  ../Math/Math.h
+ ../Model/PrimitiveTypeEnum.h
  ../View/Transform.h
  /home/pc/MEGAsync/C++/clion/GoTikZ/Drawable/Circle.h
  /home/pc/MEGAsync/C++/clion/GoTikZ/Drawable/CircleStream.cpp
@@ -1142,7 +1170,313 @@ CMakeFiles/GoTikZ.dir/Drawable/CircleStream.cpp.o
  /usr/include/qt/QtGui/qtransform.h
  /usr/include/qt/QtGui/qwindowdefs.h
  /usr/include/qt/QtGui/qwindowdefs_win.h
+CMakeFiles/GoTikZ.dir/Drawable/ControlPoint/ControlPoint.cpp.o
+ ../Drawable/ControlPoint/PointSetFunctor.h
+ ../Drawable/Drawable.h
+ ../Drawable/Point.h
+ ../Model/PrimitiveTypeEnum.h
+ ../View/Transform.h
+ /home/pc/MEGAsync/C++/clion/GoTikZ/Drawable/ControlPoint/ControlPoint.cpp
+ /home/pc/MEGAsync/C++/clion/GoTikZ/Drawable/ControlPoint/ControlPoint.h
+ /usr/include/qt/QtCore/QDebug
+ /usr/include/qt/QtCore/QPointF
+ /usr/include/qt/QtCore/qalgorithms.h
+ /usr/include/qt/QtCore/qarraydata.h
+ /usr/include/qt/QtCore/qatomic.h
+ /usr/include/qt/QtCore/qatomic_bootstrap.h
+ /usr/include/qt/QtCore/qatomic_cxx11.h
+ /usr/include/qt/QtCore/qatomic_msvc.h
+ /usr/include/qt/QtCore/qbasicatomic.h
+ /usr/include/qt/QtCore/qbytearray.h
+ /usr/include/qt/QtCore/qbytearraylist.h
+ /usr/include/qt/QtCore/qchar.h
+ /usr/include/qt/QtCore/qcompilerdetection.h
+ /usr/include/qt/QtCore/qconfig-bootstrapped.h
+ /usr/include/qt/QtCore/qconfig.h
+ /usr/include/qt/QtCore/qcontainerfwd.h
+ /usr/include/qt/QtCore/qcontainertools_impl.h
+ /usr/include/qt/QtCore/qcontiguouscache.h
+ /usr/include/qt/QtCore/qcoreevent.h
+ /usr/include/qt/QtCore/qdatastream.h
+ /usr/include/qt/QtCore/qdebug.h
+ /usr/include/qt/QtCore/qflags.h
+ /usr/include/qt/QtCore/qgenericatomic.h
+ /usr/include/qt/QtCore/qglobal.h
+ /usr/include/qt/QtCore/qglobalstatic.h
+ /usr/include/qt/QtCore/qhash.h
+ /usr/include/qt/QtCore/qhashfunctions.h
+ /usr/include/qt/QtCore/qiodevice.h
+ /usr/include/qt/QtCore/qiterator.h
+ /usr/include/qt/QtCore/qline.h
+ /usr/include/qt/QtCore/qlist.h
+ /usr/include/qt/QtCore/qlocale.h
+ /usr/include/qt/QtCore/qlogging.h
+ /usr/include/qt/QtCore/qmap.h
+ /usr/include/qt/QtCore/qmargins.h
+ /usr/include/qt/QtCore/qmetatype.h
+ /usr/include/qt/QtCore/qmutex.h
+ /usr/include/qt/QtCore/qnamespace.h
+ /usr/include/qt/QtCore/qnumeric.h
+ /usr/include/qt/QtCore/qobject.h
+ /usr/include/qt/QtCore/qobject_impl.h
+ /usr/include/qt/QtCore/qobjectdefs.h
+ /usr/include/qt/QtCore/qobjectdefs_impl.h
+ /usr/include/qt/QtCore/qpair.h
+ /usr/include/qt/QtCore/qpoint.h
+ /usr/include/qt/QtCore/qprocessordetection.h
+ /usr/include/qt/QtCore/qrect.h
+ /usr/include/qt/QtCore/qrefcount.h
+ /usr/include/qt/QtCore/qregexp.h
+ /usr/include/qt/QtCore/qscopedpointer.h
+ /usr/include/qt/QtCore/qset.h
+ /usr/include/qt/QtCore/qshareddata.h
+ /usr/include/qt/QtCore/qsharedpointer.h
+ /usr/include/qt/QtCore/qsharedpointer_impl.h
+ /usr/include/qt/QtCore/qsize.h
+ /usr/include/qt/QtCore/qstring.h
+ /usr/include/qt/QtCore/qstringalgorithms.h
+ /usr/include/qt/QtCore/qstringbuilder.h
+ /usr/include/qt/QtCore/qstringlist.h
+ /usr/include/qt/QtCore/qstringliteral.h
+ /usr/include/qt/QtCore/qstringmatcher.h
+ /usr/include/qt/QtCore/qstringview.h
+ /usr/include/qt/QtCore/qsysinfo.h
+ /usr/include/qt/QtCore/qsystemdetection.h
+ /usr/include/qt/QtCore/qtcore-config.h
+ /usr/include/qt/QtCore/qtextstream.h
+ /usr/include/qt/QtCore/qtypeinfo.h
+ /usr/include/qt/QtCore/qvariant.h
+ /usr/include/qt/QtCore/qvarlengtharray.h
+ /usr/include/qt/QtCore/qvector.h
+ /usr/include/qt/QtCore/qversiontagging.h
+ /usr/include/qt/QtGui/QPainter
+ /usr/include/qt/QtGui/QPen
+ /usr/include/qt/QtGui/qbrush.h
+ /usr/include/qt/QtGui/qcolor.h
+ /usr/include/qt/QtGui/qfont.h
+ /usr/include/qt/QtGui/qfontinfo.h
+ /usr/include/qt/QtGui/qfontmetrics.h
+ /usr/include/qt/QtGui/qimage.h
+ /usr/include/qt/QtGui/qmatrix.h
+ /usr/include/qt/QtGui/qpaintdevice.h
+ /usr/include/qt/QtGui/qpainter.h
+ /usr/include/qt/QtGui/qpen.h
+ /usr/include/qt/QtGui/qpixelformat.h
+ /usr/include/qt/QtGui/qpixmap.h
+ /usr/include/qt/QtGui/qpolygon.h
+ /usr/include/qt/QtGui/qregion.h
+ /usr/include/qt/QtGui/qrgb.h
+ /usr/include/qt/QtGui/qrgba64.h
+ /usr/include/qt/QtGui/qtextoption.h
+ /usr/include/qt/QtGui/qtgui-config.h
+ /usr/include/qt/QtGui/qtguiglobal.h
+ /usr/include/qt/QtGui/qtransform.h
+ /usr/include/qt/QtGui/qwindowdefs.h
+ /usr/include/qt/QtGui/qwindowdefs_win.h
+CMakeFiles/GoTikZ.dir/Drawable/ControlPoint/ControlPointFactory.cpp.o
+ ../Controller/Actions/Action.h
+ ../Controller/Actions/UndoableAction.h
+ ../Controller/Controller.h
+ ../Controller/ModifierState.h
+ ../Controller/MouseHandler.h
+ ../Drawable/Circle.h
+ ../Drawable/ControlPoint/ControlPoint.h
+ ../Drawable/ControlPoint/ControlPointFactory.h
+ ../Drawable/ControlPoint/PointSetFunctor.h
+ ../Drawable/Drawable.h
+ ../Drawable/Line.h
+ ../Drawable/Point.h
+ ../Drawable/PolyLine.h
+ ../Model/PrimitiveTypeEnum.h
+ /home/pc/MEGAsync/C++/clion/GoTikZ/Drawable/ControlPoint/ControlPointFactory.cpp
+ /usr/include/qt/QtCore/QDebug
+ /usr/include/qt/QtCore/QObject
+ /usr/include/qt/QtCore/QPointF
+ /usr/include/qt/QtCore/QString
+ /usr/include/qt/QtCore/qalgorithms.h
+ /usr/include/qt/QtCore/qarraydata.h
+ /usr/include/qt/QtCore/qatomic.h
+ /usr/include/qt/QtCore/qatomic_bootstrap.h
+ /usr/include/qt/QtCore/qatomic_cxx11.h
+ /usr/include/qt/QtCore/qatomic_msvc.h
+ /usr/include/qt/QtCore/qbasicatomic.h
+ /usr/include/qt/QtCore/qbytearray.h
+ /usr/include/qt/QtCore/qbytearraylist.h
+ /usr/include/qt/QtCore/qchar.h
+ /usr/include/qt/QtCore/qcompilerdetection.h
+ /usr/include/qt/QtCore/qconfig-bootstrapped.h
+ /usr/include/qt/QtCore/qconfig.h
+ /usr/include/qt/QtCore/qcontainerfwd.h
+ /usr/include/qt/QtCore/qcontainertools_impl.h
+ /usr/include/qt/QtCore/qcontiguouscache.h
+ /usr/include/qt/QtCore/qcoreevent.h
+ /usr/include/qt/QtCore/qdatastream.h
+ /usr/include/qt/QtCore/qdebug.h
+ /usr/include/qt/QtCore/qflags.h
+ /usr/include/qt/QtCore/qgenericatomic.h
+ /usr/include/qt/QtCore/qglobal.h
+ /usr/include/qt/QtCore/qglobalstatic.h
+ /usr/include/qt/QtCore/qhash.h
+ /usr/include/qt/QtCore/qhashfunctions.h
+ /usr/include/qt/QtCore/qiodevice.h
+ /usr/include/qt/QtCore/qiterator.h
+ /usr/include/qt/QtCore/qline.h
+ /usr/include/qt/QtCore/qlist.h
+ /usr/include/qt/QtCore/qlocale.h
+ /usr/include/qt/QtCore/qlogging.h
+ /usr/include/qt/QtCore/qmap.h
+ /usr/include/qt/QtCore/qmargins.h
+ /usr/include/qt/QtCore/qmetatype.h
+ /usr/include/qt/QtCore/qmutex.h
+ /usr/include/qt/QtCore/qnamespace.h
+ /usr/include/qt/QtCore/qnumeric.h
+ /usr/include/qt/QtCore/qobject.h
+ /usr/include/qt/QtCore/qobject_impl.h
+ /usr/include/qt/QtCore/qobjectdefs.h
+ /usr/include/qt/QtCore/qobjectdefs_impl.h
+ /usr/include/qt/QtCore/qpair.h
+ /usr/include/qt/QtCore/qpoint.h
+ /usr/include/qt/QtCore/qprocessordetection.h
+ /usr/include/qt/QtCore/qrect.h
+ /usr/include/qt/QtCore/qrefcount.h
+ /usr/include/qt/QtCore/qregexp.h
+ /usr/include/qt/QtCore/qscopedpointer.h
+ /usr/include/qt/QtCore/qset.h
+ /usr/include/qt/QtCore/qshareddata.h
+ /usr/include/qt/QtCore/qsharedpointer.h
+ /usr/include/qt/QtCore/qsharedpointer_impl.h
+ /usr/include/qt/QtCore/qsize.h
+ /usr/include/qt/QtCore/qstring.h
+ /usr/include/qt/QtCore/qstringalgorithms.h
+ /usr/include/qt/QtCore/qstringbuilder.h
+ /usr/include/qt/QtCore/qstringlist.h
+ /usr/include/qt/QtCore/qstringliteral.h
+ /usr/include/qt/QtCore/qstringmatcher.h
+ /usr/include/qt/QtCore/qstringview.h
+ /usr/include/qt/QtCore/qsysinfo.h
+ /usr/include/qt/QtCore/qsystemdetection.h
+ /usr/include/qt/QtCore/qtcore-config.h
+ /usr/include/qt/QtCore/qtextstream.h
+ /usr/include/qt/QtCore/qtypeinfo.h
+ /usr/include/qt/QtCore/qvariant.h
+ /usr/include/qt/QtCore/qvarlengtharray.h
+ /usr/include/qt/QtCore/qvector.h
+ /usr/include/qt/QtCore/qversiontagging.h
+ /usr/include/qt/QtGui/QPen
+ /usr/include/qt/QtGui/qbrush.h
+ /usr/include/qt/QtGui/qcolor.h
+ /usr/include/qt/QtGui/qimage.h
+ /usr/include/qt/QtGui/qmatrix.h
+ /usr/include/qt/QtGui/qpaintdevice.h
+ /usr/include/qt/QtGui/qpen.h
+ /usr/include/qt/QtGui/qpixelformat.h
+ /usr/include/qt/QtGui/qpixmap.h
+ /usr/include/qt/QtGui/qpolygon.h
+ /usr/include/qt/QtGui/qregion.h
+ /usr/include/qt/QtGui/qrgb.h
+ /usr/include/qt/QtGui/qrgba64.h
+ /usr/include/qt/QtGui/qtgui-config.h
+ /usr/include/qt/QtGui/qtguiglobal.h
+ /usr/include/qt/QtGui/qtransform.h
+ /usr/include/qt/QtGui/qwindowdefs.h
+ /usr/include/qt/QtGui/qwindowdefs_win.h
+CMakeFiles/GoTikZ.dir/Drawable/ControlPoint/PointSetFunctor.cpp.o
+ ../Drawable/Drawable.h
+ ../Drawable/PolyLine.h
+ ../Model/PrimitiveTypeEnum.h
+ /home/pc/MEGAsync/C++/clion/GoTikZ/Drawable/ControlPoint/PointSetFunctor.cpp
+ /home/pc/MEGAsync/C++/clion/GoTikZ/Drawable/ControlPoint/PointSetFunctor.h
+ /usr/include/qt/QtCore/QDebug
+ /usr/include/qt/QtCore/QPointF
+ /usr/include/qt/QtCore/qalgorithms.h
+ /usr/include/qt/QtCore/qarraydata.h
+ /usr/include/qt/QtCore/qatomic.h
+ /usr/include/qt/QtCore/qatomic_bootstrap.h
+ /usr/include/qt/QtCore/qatomic_cxx11.h
+ /usr/include/qt/QtCore/qatomic_msvc.h
+ /usr/include/qt/QtCore/qbasicatomic.h
+ /usr/include/qt/QtCore/qbytearray.h
+ /usr/include/qt/QtCore/qbytearraylist.h
+ /usr/include/qt/QtCore/qchar.h
+ /usr/include/qt/QtCore/qcompilerdetection.h
+ /usr/include/qt/QtCore/qconfig-bootstrapped.h
+ /usr/include/qt/QtCore/qconfig.h
+ /usr/include/qt/QtCore/qcontainerfwd.h
+ /usr/include/qt/QtCore/qcontainertools_impl.h
+ /usr/include/qt/QtCore/qcontiguouscache.h
+ /usr/include/qt/QtCore/qcoreevent.h
+ /usr/include/qt/QtCore/qdatastream.h
+ /usr/include/qt/QtCore/qdebug.h
+ /usr/include/qt/QtCore/qflags.h
+ /usr/include/qt/QtCore/qgenericatomic.h
+ /usr/include/qt/QtCore/qglobal.h
+ /usr/include/qt/QtCore/qglobalstatic.h
+ /usr/include/qt/QtCore/qhash.h
+ /usr/include/qt/QtCore/qhashfunctions.h
+ /usr/include/qt/QtCore/qiodevice.h
+ /usr/include/qt/QtCore/qiterator.h
+ /usr/include/qt/QtCore/qline.h
+ /usr/include/qt/QtCore/qlist.h
+ /usr/include/qt/QtCore/qlocale.h
+ /usr/include/qt/QtCore/qlogging.h
+ /usr/include/qt/QtCore/qmap.h
+ /usr/include/qt/QtCore/qmargins.h
+ /usr/include/qt/QtCore/qmetatype.h
+ /usr/include/qt/QtCore/qmutex.h
+ /usr/include/qt/QtCore/qnamespace.h
+ /usr/include/qt/QtCore/qnumeric.h
+ /usr/include/qt/QtCore/qobject.h
+ /usr/include/qt/QtCore/qobject_impl.h
+ /usr/include/qt/QtCore/qobjectdefs.h
+ /usr/include/qt/QtCore/qobjectdefs_impl.h
+ /usr/include/qt/QtCore/qpair.h
+ /usr/include/qt/QtCore/qpoint.h
+ /usr/include/qt/QtCore/qprocessordetection.h
+ /usr/include/qt/QtCore/qrect.h
+ /usr/include/qt/QtCore/qrefcount.h
+ /usr/include/qt/QtCore/qregexp.h
+ /usr/include/qt/QtCore/qscopedpointer.h
+ /usr/include/qt/QtCore/qset.h
+ /usr/include/qt/QtCore/qshareddata.h
+ /usr/include/qt/QtCore/qsharedpointer.h
+ /usr/include/qt/QtCore/qsharedpointer_impl.h
+ /usr/include/qt/QtCore/qsize.h
+ /usr/include/qt/QtCore/qstring.h
+ /usr/include/qt/QtCore/qstringalgorithms.h
+ /usr/include/qt/QtCore/qstringbuilder.h
+ /usr/include/qt/QtCore/qstringlist.h
+ /usr/include/qt/QtCore/qstringliteral.h
+ /usr/include/qt/QtCore/qstringmatcher.h
+ /usr/include/qt/QtCore/qstringview.h
+ /usr/include/qt/QtCore/qsysinfo.h
+ /usr/include/qt/QtCore/qsystemdetection.h
+ /usr/include/qt/QtCore/qtcore-config.h
+ /usr/include/qt/QtCore/qtextstream.h
+ /usr/include/qt/QtCore/qtypeinfo.h
+ /usr/include/qt/QtCore/qvariant.h
+ /usr/include/qt/QtCore/qvarlengtharray.h
+ /usr/include/qt/QtCore/qvector.h
+ /usr/include/qt/QtCore/qversiontagging.h
+ /usr/include/qt/QtGui/QPen
+ /usr/include/qt/QtGui/qbrush.h
+ /usr/include/qt/QtGui/qcolor.h
+ /usr/include/qt/QtGui/qimage.h
+ /usr/include/qt/QtGui/qmatrix.h
+ /usr/include/qt/QtGui/qpaintdevice.h
+ /usr/include/qt/QtGui/qpen.h
+ /usr/include/qt/QtGui/qpixelformat.h
+ /usr/include/qt/QtGui/qpixmap.h
+ /usr/include/qt/QtGui/qpolygon.h
+ /usr/include/qt/QtGui/qregion.h
+ /usr/include/qt/QtGui/qrgb.h
+ /usr/include/qt/QtGui/qrgba64.h
+ /usr/include/qt/QtGui/qtgui-config.h
+ /usr/include/qt/QtGui/qtguiglobal.h
+ /usr/include/qt/QtGui/qtransform.h
+ /usr/include/qt/QtGui/qwindowdefs.h
+ /usr/include/qt/QtGui/qwindowdefs_win.h
 CMakeFiles/GoTikZ.dir/Drawable/Drawable.cpp.o
+ ../Model/PrimitiveTypeEnum.h
  ../View/Transform.h
  /home/pc/MEGAsync/C++/clion/GoTikZ/Drawable/Drawable.cpp
  /home/pc/MEGAsync/C++/clion/GoTikZ/Drawable/Drawable.h
@@ -1256,10 +1590,27 @@ CMakeFiles/GoTikZ.dir/Drawable/Drawable.cpp.o
  /usr/include/qt/QtWidgets/qtwidgetsglobal.h
  /usr/include/qt/QtWidgets/qwidget.h
 CMakeFiles/GoTikZ.dir/Drawable/DrawableHandler.cpp.o
- /home/pc/MEGAsync/C++/clion/GoTikZ/Drawable/Drawable.h
+ ../Controller/Actions/Action.h
+ ../Controller/Actions/UndoableAction.h
+ ../Controller/Controller.h
+ ../Controller/ModifierState.h
+ ../Controller/MouseHandler.h
+ ../Drawable/Circle.h
+ ../Drawable/ControlPoint/ControlPoint.h
+ ../Drawable/ControlPoint/ControlPointFactory.h
+ ../Drawable/ControlPoint/PointSetFunctor.h
+ ../Drawable/Drawable.h
+ ../Drawable/Line.h
+ ../Drawable/Point.h
+ ../Drawable/PolyLine.h
+ ../Drawable/StreamDrawable.h
+ ../Model/PrimitiveTypeEnum.h
  /home/pc/MEGAsync/C++/clion/GoTikZ/Drawable/DrawableHandler.cpp
  /home/pc/MEGAsync/C++/clion/GoTikZ/Drawable/DrawableHandler.h
- /home/pc/MEGAsync/C++/clion/GoTikZ/Drawable/StreamDrawable.h
+ /usr/include/qt/QtCore/QDebug
+ /usr/include/qt/QtCore/QObject
+ /usr/include/qt/QtCore/QPointF
+ /usr/include/qt/QtCore/QString
  /usr/include/qt/QtCore/qalgorithms.h
  /usr/include/qt/QtCore/qarraydata.h
  /usr/include/qt/QtCore/qatomic.h
@@ -1275,8 +1626,10 @@ CMakeFiles/GoTikZ.dir/Drawable/DrawableHandler.cpp.o
  /usr/include/qt/QtCore/qconfig.h
  /usr/include/qt/QtCore/qcontainerfwd.h
  /usr/include/qt/QtCore/qcontainertools_impl.h
+ /usr/include/qt/QtCore/qcontiguouscache.h
  /usr/include/qt/QtCore/qcoreevent.h
  /usr/include/qt/QtCore/qdatastream.h
+ /usr/include/qt/QtCore/qdebug.h
  /usr/include/qt/QtCore/qflags.h
  /usr/include/qt/QtCore/qgenericatomic.h
  /usr/include/qt/QtCore/qglobal.h
@@ -1287,7 +1640,9 @@ CMakeFiles/GoTikZ.dir/Drawable/DrawableHandler.cpp.o
  /usr/include/qt/QtCore/qiterator.h
  /usr/include/qt/QtCore/qline.h
  /usr/include/qt/QtCore/qlist.h
+ /usr/include/qt/QtCore/qlocale.h
  /usr/include/qt/QtCore/qlogging.h
+ /usr/include/qt/QtCore/qmap.h
  /usr/include/qt/QtCore/qmargins.h
  /usr/include/qt/QtCore/qmetatype.h
  /usr/include/qt/QtCore/qmutex.h
@@ -1304,6 +1659,7 @@ CMakeFiles/GoTikZ.dir/Drawable/DrawableHandler.cpp.o
  /usr/include/qt/QtCore/qrefcount.h
  /usr/include/qt/QtCore/qregexp.h
  /usr/include/qt/QtCore/qscopedpointer.h
+ /usr/include/qt/QtCore/qset.h
  /usr/include/qt/QtCore/qshareddata.h
  /usr/include/qt/QtCore/qsharedpointer.h
  /usr/include/qt/QtCore/qsharedpointer_impl.h
@@ -1318,7 +1674,9 @@ CMakeFiles/GoTikZ.dir/Drawable/DrawableHandler.cpp.o
  /usr/include/qt/QtCore/qsysinfo.h
  /usr/include/qt/QtCore/qsystemdetection.h
  /usr/include/qt/QtCore/qtcore-config.h
+ /usr/include/qt/QtCore/qtextstream.h
  /usr/include/qt/QtCore/qtypeinfo.h
+ /usr/include/qt/QtCore/qvariant.h
  /usr/include/qt/QtCore/qvarlengtharray.h
  /usr/include/qt/QtCore/qvector.h
  /usr/include/qt/QtCore/qversiontagging.h
@@ -1346,7 +1704,13 @@ CMakeFiles/GoTikZ.dir/Drawable/Line.cpp.o
  ../Controller/Controller.h
  ../Controller/ModifierState.h
  ../Controller/MouseHandler.h
+ ../Drawable/ControlPoint/ControlPoint.h
+ ../Drawable/ControlPoint/PointSetFunctor.h
+ ../Drawable/LineStream.h
+ ../Drawable/Point.h
+ ../Drawable/StreamDrawable.h
  ../Math/Math.h
+ ../Model/PrimitiveTypeEnum.h
  ../View/Transform.h
  ../View/Widgets/AuxWidgets/GroupBoxContainer.h
  ../View/Widgets/DrawableEditWidgets/DrawableEditWidget.h
@@ -1354,8 +1718,6 @@ CMakeFiles/GoTikZ.dir/Drawable/Line.cpp.o
  /home/pc/MEGAsync/C++/clion/GoTikZ/Drawable/Drawable.h
  /home/pc/MEGAsync/C++/clion/GoTikZ/Drawable/Line.cpp
  /home/pc/MEGAsync/C++/clion/GoTikZ/Drawable/Line.h
- /home/pc/MEGAsync/C++/clion/GoTikZ/Drawable/LineStream.h
- /home/pc/MEGAsync/C++/clion/GoTikZ/Drawable/StreamDrawable.h
  /usr/include/qt/QtCore/QDebug
  /usr/include/qt/QtCore/QObject
  /usr/include/qt/QtCore/QPointF
@@ -1475,6 +1837,7 @@ CMakeFiles/GoTikZ.dir/Drawable/LineStream.cpp.o
  ../Controller/ModifierState.h
  ../Controller/MouseHandler.h
  ../Math/Math.h
+ ../Model/PrimitiveTypeEnum.h
  ../View/Transform.h
  /home/pc/MEGAsync/C++/clion/GoTikZ/Drawable/Drawable.h
  /home/pc/MEGAsync/C++/clion/GoTikZ/Drawable/Line.h
@@ -1572,6 +1935,7 @@ CMakeFiles/GoTikZ.dir/Drawable/LineStream.cpp.o
  /usr/include/qt/QtGui/qwindowdefs_win.h
 CMakeFiles/GoTikZ.dir/Drawable/Point.cpp.o
  ../Math/Math.h
+ ../Model/PrimitiveTypeEnum.h
  ../View/Transform.h
  ../View/Widgets/AuxWidgets/GroupBoxContainer.h
  ../View/Widgets/DrawableEditWidgets/DrawableEditWidget.h
@@ -1691,6 +2055,7 @@ CMakeFiles/GoTikZ.dir/Drawable/Point.cpp.o
  /usr/include/qt/QtWidgets/qwidget.h
 CMakeFiles/GoTikZ.dir/Drawable/PolyLine.cpp.o
  ../Math/Math.h
+ ../Model/PrimitiveTypeEnum.h
  ../View/Transform.h
  /home/pc/MEGAsync/C++/clion/GoTikZ/Drawable/Drawable.h
  /home/pc/MEGAsync/C++/clion/GoTikZ/Drawable/PolyLine.cpp
@@ -1786,6 +2151,7 @@ CMakeFiles/GoTikZ.dir/Drawable/PolyLine.cpp.o
  /usr/include/qt/QtGui/qwindowdefs_win.h
 CMakeFiles/GoTikZ.dir/Drawable/PolyLineStream.cpp.o
  ../Math/Math.h
+ ../Model/PrimitiveTypeEnum.h
  ../View/Transform.h
  /home/pc/MEGAsync/C++/clion/GoTikZ/Drawable/Drawable.h
  /home/pc/MEGAsync/C++/clion/GoTikZ/Drawable/PolyLine.h
@@ -1880,7 +2246,7 @@ CMakeFiles/GoTikZ.dir/Drawable/PolyLineStream.cpp.o
  /usr/include/qt/QtGui/qwindowdefs.h
  /usr/include/qt/QtGui/qwindowdefs_win.h
 CMakeFiles/GoTikZ.dir/Drawable/StreamDrawableFactory.cpp.o
- ../Model/MousePointerTypeEnum.h
+ ../Model/PrimitiveTypeEnum.h
  /home/pc/MEGAsync/C++/clion/GoTikZ/Drawable/CircleStream.h
  /home/pc/MEGAsync/C++/clion/GoTikZ/Drawable/Drawable.h
  /home/pc/MEGAsync/C++/clion/GoTikZ/Drawable/LineStream.h
@@ -1975,12 +2341,15 @@ CMakeFiles/GoTikZ.dir/GoTikZ_autogen/mocs_compilation.cpp.o
  ../Controller/Controller.h
  ../Controller/ModifierState.h
  ../Controller/MouseHandler.h
+ ../Drawable/ControlPoint/ControlPoint.h
+ ../Drawable/ControlPoint/PointSetFunctor.h
  ../Drawable/Drawable.h
  ../Drawable/DrawableHandler.h
+ ../Drawable/Point.h
  ../Drawable/StreamDrawable.h
  ../MainWindow.h
  ../Model/Model.h
- ../Model/MousePointerTypeEnum.h
+ ../Model/PrimitiveTypeEnum.h
  ../View/GridState.h
  ../View/Transform.h
  ../View/Widgets/ActionWidget.h
@@ -2126,10 +2495,13 @@ CMakeFiles/GoTikZ.dir/MainWindow.cpp.o
  ../Controller/Actions/UndoableAction.h
  ../Controller/ModifierState.h
  ../Controller/MouseHandler.h
+ ../Drawable/ControlPoint/ControlPoint.h
+ ../Drawable/ControlPoint/PointSetFunctor.h
  ../Drawable/Drawable.h
  ../Drawable/DrawableHandler.h
+ ../Drawable/Point.h
  ../Drawable/StreamDrawable.h
- ../Model/MousePointerTypeEnum.h
+ ../Model/PrimitiveTypeEnum.h
  /home/pc/MEGAsync/C++/clion/GoTikZ/Controller/Controller.h
  /home/pc/MEGAsync/C++/clion/GoTikZ/MainWindow.cpp
  /home/pc/MEGAsync/C++/clion/GoTikZ/MainWindow.h
@@ -2284,12 +2656,14 @@ CMakeFiles/GoTikZ.dir/Model/Model.cpp.o
  ../Controller/Controller.h
  ../Controller/ModifierState.h
  ../Controller/MouseHandler.h
+ ../Drawable/ControlPoint/ControlPoint.h
+ ../Drawable/ControlPoint/PointSetFunctor.h
  ../Drawable/Drawable.h
  ../Drawable/DrawableHandler.h
  ../Drawable/Point.h
  ../Drawable/StreamDrawable.h
  ../Drawable/StreamDrawableFactory.h
- ../Model/MousePointerTypeEnum.h
+ ../Model/PrimitiveTypeEnum.h
  ../View/GridState.h
  ../View/Transform.h
  ../View/Widgets/DrawWidget.h
@@ -2405,9 +2779,9 @@ CMakeFiles/GoTikZ.dir/Model/Model.cpp.o
  /usr/include/qt/QtWidgets/qtwidgets-config.h
  /usr/include/qt/QtWidgets/qtwidgetsglobal.h
  /usr/include/qt/QtWidgets/qwidget.h
-CMakeFiles/GoTikZ.dir/Model/MousePointerTypeEnum.cpp.o
- /home/pc/MEGAsync/C++/clion/GoTikZ/Model/MousePointerTypeEnum.cpp
- /home/pc/MEGAsync/C++/clion/GoTikZ/Model/MousePointerTypeEnum.h
+CMakeFiles/GoTikZ.dir/Model/PrimitiveTypeEnum.cpp.o
+ /home/pc/MEGAsync/C++/clion/GoTikZ/Model/PrimitiveTypeEnum.cpp
+ /home/pc/MEGAsync/C++/clion/GoTikZ/Model/PrimitiveTypeEnum.h
  /usr/include/qt/QtCore/QString
  /usr/include/qt/QtCore/qarraydata.h
  /usr/include/qt/QtCore/qatomic.h
@@ -2829,15 +3203,19 @@ CMakeFiles/GoTikZ.dir/View/Widgets/DrawWidget.cpp.o
  ../Controller/Controller.h
  ../Controller/ModifierState.h
  ../Controller/MouseHandler.h
+ ../Drawable/ControlPoint/ControlPoint.h
+ ../Drawable/ControlPoint/PointSetFunctor.h
  ../Drawable/Drawable.h
  ../Drawable/DrawableHandler.h
+ ../Drawable/Point.h
  ../Drawable/StreamDrawable.h
  ../Model/Model.h
- ../Model/MousePointerTypeEnum.h
+ ../Model/PrimitiveTypeEnum.h
  ../View/GridState.h
  ../View/Transform.h
  /home/pc/MEGAsync/C++/clion/GoTikZ/View/Widgets/DrawWidget.cpp
  /home/pc/MEGAsync/C++/clion/GoTikZ/View/Widgets/DrawWidget.h
+ /usr/include/qt/QtCore/QDebug
  /usr/include/qt/QtCore/QObject
  /usr/include/qt/QtCore/QPointF
  /usr/include/qt/QtCore/QString
@@ -2958,6 +3336,7 @@ CMakeFiles/GoTikZ.dir/View/Widgets/DrawableEditWidgets/CircleEditWidget.cpp.o
  ../Controller/MouseHandler.h
  ../Drawable/Circle.h
  ../Drawable/Drawable.h
+ ../Model/PrimitiveTypeEnum.h
  ../View/Widgets/ActionWidget.h
  ../View/Widgets/AuxWidgets/GroupBoxContainer.h
  ../View/Widgets/AuxWidgets/XyWidget.h
@@ -3088,6 +3467,134 @@ CMakeFiles/GoTikZ.dir/View/Widgets/DrawableEditWidgets/CircleEditWidget.cpp.o
  /usr/include/qt/QtWidgets/qtwidgets-config.h
  /usr/include/qt/QtWidgets/qtwidgetsglobal.h
  /usr/include/qt/QtWidgets/qwidget.h
+CMakeFiles/GoTikZ.dir/View/Widgets/DrawableEditWidgets/DrawableEditWidgetFactory.cpp.o
+ ../Controller/Actions/Action.h
+ ../Controller/Actions/UndoableAction.h
+ ../Controller/Controller.h
+ ../Controller/ModifierState.h
+ ../Controller/MouseHandler.h
+ ../Drawable/Circle.h
+ ../Drawable/Drawable.h
+ ../Drawable/Line.h
+ ../Drawable/Point.h
+ ../Drawable/PolyLine.h
+ ../Model/PrimitiveTypeEnum.h
+ ../View/Widgets/AuxWidgets/GroupBoxContainer.h
+ ../View/Widgets/DrawableEditWidgets/CircleEditWidget.h
+ ../View/Widgets/DrawableEditWidgets/DrawableEditWidget.h
+ ../View/Widgets/DrawableEditWidgets/LineEditWidget.h
+ ../View/Widgets/DrawableEditWidgets/PointEditWidget.h
+ /home/pc/MEGAsync/C++/clion/GoTikZ/View/Widgets/DrawableEditWidgets/DrawableEditWidgetFactory.cpp
+ /home/pc/MEGAsync/C++/clion/GoTikZ/View/Widgets/DrawableEditWidgets/DrawableEditWidgetFactory.h
+ /usr/include/qt/QtCore/QDebug
+ /usr/include/qt/QtCore/QObject
+ /usr/include/qt/QtCore/QPointF
+ /usr/include/qt/QtCore/QString
+ /usr/include/qt/QtCore/qalgorithms.h
+ /usr/include/qt/QtCore/qarraydata.h
+ /usr/include/qt/QtCore/qatomic.h
+ /usr/include/qt/QtCore/qatomic_bootstrap.h
+ /usr/include/qt/QtCore/qatomic_cxx11.h
+ /usr/include/qt/QtCore/qatomic_msvc.h
+ /usr/include/qt/QtCore/qbasicatomic.h
+ /usr/include/qt/QtCore/qbytearray.h
+ /usr/include/qt/QtCore/qbytearraylist.h
+ /usr/include/qt/QtCore/qchar.h
+ /usr/include/qt/QtCore/qcompilerdetection.h
+ /usr/include/qt/QtCore/qconfig-bootstrapped.h
+ /usr/include/qt/QtCore/qconfig.h
+ /usr/include/qt/QtCore/qcontainerfwd.h
+ /usr/include/qt/QtCore/qcontainertools_impl.h
+ /usr/include/qt/QtCore/qcontiguouscache.h
+ /usr/include/qt/QtCore/qcoreevent.h
+ /usr/include/qt/QtCore/qdatastream.h
+ /usr/include/qt/QtCore/qdebug.h
+ /usr/include/qt/QtCore/qfile.h
+ /usr/include/qt/QtCore/qfiledevice.h
+ /usr/include/qt/QtCore/qflags.h
+ /usr/include/qt/QtCore/qgenericatomic.h
+ /usr/include/qt/QtCore/qglobal.h
+ /usr/include/qt/QtCore/qglobalstatic.h
+ /usr/include/qt/QtCore/qhash.h
+ /usr/include/qt/QtCore/qhashfunctions.h
+ /usr/include/qt/QtCore/qiodevice.h
+ /usr/include/qt/QtCore/qiterator.h
+ /usr/include/qt/QtCore/qline.h
+ /usr/include/qt/QtCore/qlist.h
+ /usr/include/qt/QtCore/qlocale.h
+ /usr/include/qt/QtCore/qlogging.h
+ /usr/include/qt/QtCore/qmap.h
+ /usr/include/qt/QtCore/qmargins.h
+ /usr/include/qt/QtCore/qmetatype.h
+ /usr/include/qt/QtCore/qmutex.h
+ /usr/include/qt/QtCore/qnamespace.h
+ /usr/include/qt/QtCore/qnumeric.h
+ /usr/include/qt/QtCore/qobject.h
+ /usr/include/qt/QtCore/qobject_impl.h
+ /usr/include/qt/QtCore/qobjectdefs.h
+ /usr/include/qt/QtCore/qobjectdefs_impl.h
+ /usr/include/qt/QtCore/qpair.h
+ /usr/include/qt/QtCore/qpoint.h
+ /usr/include/qt/QtCore/qprocessordetection.h
+ /usr/include/qt/QtCore/qrect.h
+ /usr/include/qt/QtCore/qrefcount.h
+ /usr/include/qt/QtCore/qregexp.h
+ /usr/include/qt/QtCore/qscopedpointer.h
+ /usr/include/qt/QtCore/qset.h
+ /usr/include/qt/QtCore/qshareddata.h
+ /usr/include/qt/QtCore/qsharedpointer.h
+ /usr/include/qt/QtCore/qsharedpointer_impl.h
+ /usr/include/qt/QtCore/qsize.h
+ /usr/include/qt/QtCore/qstring.h
+ /usr/include/qt/QtCore/qstringalgorithms.h
+ /usr/include/qt/QtCore/qstringbuilder.h
+ /usr/include/qt/QtCore/qstringlist.h
+ /usr/include/qt/QtCore/qstringliteral.h
+ /usr/include/qt/QtCore/qstringmatcher.h
+ /usr/include/qt/QtCore/qstringview.h
+ /usr/include/qt/QtCore/qsysinfo.h
+ /usr/include/qt/QtCore/qsystemdetection.h
+ /usr/include/qt/QtCore/qtcore-config.h
+ /usr/include/qt/QtCore/qtextstream.h
+ /usr/include/qt/QtCore/qtypeinfo.h
+ /usr/include/qt/QtCore/qurl.h
+ /usr/include/qt/QtCore/qurlquery.h
+ /usr/include/qt/QtCore/qvariant.h
+ /usr/include/qt/QtCore/qvarlengtharray.h
+ /usr/include/qt/QtCore/qvector.h
+ /usr/include/qt/QtCore/qversiontagging.h
+ /usr/include/qt/QtGui/QPen
+ /usr/include/qt/QtGui/qbrush.h
+ /usr/include/qt/QtGui/qcolor.h
+ /usr/include/qt/QtGui/qcursor.h
+ /usr/include/qt/QtGui/qevent.h
+ /usr/include/qt/QtGui/qfont.h
+ /usr/include/qt/QtGui/qfontinfo.h
+ /usr/include/qt/QtGui/qfontmetrics.h
+ /usr/include/qt/QtGui/qimage.h
+ /usr/include/qt/QtGui/qkeysequence.h
+ /usr/include/qt/QtGui/qmatrix.h
+ /usr/include/qt/QtGui/qpaintdevice.h
+ /usr/include/qt/QtGui/qpalette.h
+ /usr/include/qt/QtGui/qpen.h
+ /usr/include/qt/QtGui/qpixelformat.h
+ /usr/include/qt/QtGui/qpixmap.h
+ /usr/include/qt/QtGui/qpolygon.h
+ /usr/include/qt/QtGui/qregion.h
+ /usr/include/qt/QtGui/qrgb.h
+ /usr/include/qt/QtGui/qrgba64.h
+ /usr/include/qt/QtGui/qtgui-config.h
+ /usr/include/qt/QtGui/qtguiglobal.h
+ /usr/include/qt/QtGui/qtouchdevice.h
+ /usr/include/qt/QtGui/qtransform.h
+ /usr/include/qt/QtGui/qvector2d.h
+ /usr/include/qt/QtGui/qwindowdefs.h
+ /usr/include/qt/QtGui/qwindowdefs_win.h
+ /usr/include/qt/QtWidgets/QWidget
+ /usr/include/qt/QtWidgets/qsizepolicy.h
+ /usr/include/qt/QtWidgets/qtwidgets-config.h
+ /usr/include/qt/QtWidgets/qtwidgetsglobal.h
+ /usr/include/qt/QtWidgets/qwidget.h
 CMakeFiles/GoTikZ.dir/View/Widgets/DrawableEditWidgets/LineEditWidget.cpp.o
  ../Controller/Actions/Action.h
  ../Controller/Actions/UndoableAction.h
@@ -3096,6 +3603,7 @@ CMakeFiles/GoTikZ.dir/View/Widgets/DrawableEditWidgets/LineEditWidget.cpp.o
  ../Controller/MouseHandler.h
  ../Drawable/Drawable.h
  ../Drawable/Line.h
+ ../Model/PrimitiveTypeEnum.h
  ../View/Widgets/ActionWidget.h
  ../View/Widgets/AuxWidgets/GroupBoxContainer.h
  ../View/Widgets/AuxWidgets/XyWidget.h
@@ -3229,6 +3737,7 @@ CMakeFiles/GoTikZ.dir/View/Widgets/DrawableEditWidgets/PointEditWidget.cpp.o
  ../Controller/MouseHandler.h
  ../Drawable/Drawable.h
  ../Drawable/Point.h
+ ../Model/PrimitiveTypeEnum.h
  ../View/Widgets/ActionWidget.h
  ../View/Widgets/AuxWidgets/GroupBoxContainer.h
  ../View/Widgets/AuxWidgets/XyWidget.h
@@ -3488,7 +3997,7 @@ CMakeFiles/GoTikZ.dir/View/Widgets/GridSettingWidget.cpp.o
  /usr/include/qt/QtWidgets/qtwidgetsglobal.h
  /usr/include/qt/QtWidgets/qwidget.h
 CMakeFiles/GoTikZ.dir/View/Widgets/LeftSideBar.cpp.o
- ../Model/MousePointerTypeEnum.h
+ ../Model/PrimitiveTypeEnum.h
  ../View/GridState.h
  ../View/Widgets/ActionWidget.h
  ../View/Widgets/AuxWidgets/GroupBoxContainer.h
@@ -3496,8 +4005,8 @@ CMakeFiles/GoTikZ.dir/View/Widgets/LeftSideBar.cpp.o
  /home/pc/MEGAsync/C++/clion/GoTikZ/View/Widgets/GridSettingWidget.h
  /home/pc/MEGAsync/C++/clion/GoTikZ/View/Widgets/LeftSideBar.cpp
  /home/pc/MEGAsync/C++/clion/GoTikZ/View/Widgets/LeftSideBar.h
- /home/pc/MEGAsync/C++/clion/GoTikZ/View/Widgets/MousePointerTypeSelectWidget.h
  /home/pc/MEGAsync/C++/clion/GoTikZ/View/Widgets/PenWidget.h
+ /home/pc/MEGAsync/C++/clion/GoTikZ/View/Widgets/PrimitiveTypeSelectWidget.h
  /usr/include/qt/QtCore/QDebug
  /usr/include/qt/QtCore/qalgorithms.h
  /usr/include/qt/QtCore/qarraydata.h
@@ -3617,11 +4126,14 @@ CMakeFiles/GoTikZ.dir/View/Widgets/LeftSideBar.cpp.o
  /usr/include/qt/QtWidgets/qwidget.h
 CMakeFiles/GoTikZ.dir/View/Widgets/MainWidget.cpp.o
  ../Controller/ModifierState.h
+ ../Drawable/ControlPoint/ControlPoint.h
+ ../Drawable/ControlPoint/PointSetFunctor.h
  ../Drawable/Drawable.h
  ../Drawable/DrawableHandler.h
+ ../Drawable/Point.h
  ../Drawable/StreamDrawable.h
  ../Model/Model.h
- ../Model/MousePointerTypeEnum.h
+ ../Model/PrimitiveTypeEnum.h
  ../View/GridState.h
  ../View/Transform.h
  ../View/Widgets/ActionWidget.h
@@ -3631,8 +4143,8 @@ CMakeFiles/GoTikZ.dir/View/Widgets/MainWidget.cpp.o
  /home/pc/MEGAsync/C++/clion/GoTikZ/View/Widgets/LeftSideBar.h
  /home/pc/MEGAsync/C++/clion/GoTikZ/View/Widgets/MainWidget.cpp
  /home/pc/MEGAsync/C++/clion/GoTikZ/View/Widgets/MainWidget.h
- /home/pc/MEGAsync/C++/clion/GoTikZ/View/Widgets/MousePointerTypeSelectWidget.h
  /home/pc/MEGAsync/C++/clion/GoTikZ/View/Widgets/PenWidget.h
+ /home/pc/MEGAsync/C++/clion/GoTikZ/View/Widgets/PrimitiveTypeSelectWidget.h
  /home/pc/MEGAsync/C++/clion/GoTikZ/View/Widgets/RightSideBar.h
  /usr/include/qt/QtCore/QDebug
  /usr/include/qt/QtCore/QPointF
@@ -3746,133 +4258,6 @@ CMakeFiles/GoTikZ.dir/View/Widgets/MainWidget.cpp.o
  /usr/include/qt/QtWidgets/qgroupbox.h
  /usr/include/qt/QtWidgets/qlayout.h
  /usr/include/qt/QtWidgets/qlayoutitem.h
- /usr/include/qt/QtWidgets/qsizepolicy.h
- /usr/include/qt/QtWidgets/qtwidgets-config.h
- /usr/include/qt/QtWidgets/qtwidgetsglobal.h
- /usr/include/qt/QtWidgets/qwidget.h
-CMakeFiles/GoTikZ.dir/View/Widgets/MousePointerTypeSelectWidget.cpp.o
- ../Controller/Actions/Action.h
- ../Controller/Actions/ChangeMousePointerTypeAction.h
- ../Model/MousePointerTypeEnum.h
- ../View/Widgets/ActionWidget.h
- ../View/Widgets/AuxWidgets/GroupBoxContainer.h
- /home/pc/MEGAsync/C++/clion/GoTikZ/View/Widgets/MousePointerTypeSelectWidget.cpp
- /home/pc/MEGAsync/C++/clion/GoTikZ/View/Widgets/MousePointerTypeSelectWidget.h
- /usr/include/qt/QtCore/QDebug
- /usr/include/qt/QtCore/QString
- /usr/include/qt/QtCore/qalgorithms.h
- /usr/include/qt/QtCore/qarraydata.h
- /usr/include/qt/QtCore/qatomic.h
- /usr/include/qt/QtCore/qatomic_bootstrap.h
- /usr/include/qt/QtCore/qatomic_cxx11.h
- /usr/include/qt/QtCore/qatomic_msvc.h
- /usr/include/qt/QtCore/qbasicatomic.h
- /usr/include/qt/QtCore/qbytearray.h
- /usr/include/qt/QtCore/qbytearraylist.h
- /usr/include/qt/QtCore/qchar.h
- /usr/include/qt/QtCore/qcompilerdetection.h
- /usr/include/qt/QtCore/qconfig-bootstrapped.h
- /usr/include/qt/QtCore/qconfig.h
- /usr/include/qt/QtCore/qcontainerfwd.h
- /usr/include/qt/QtCore/qcontainertools_impl.h
- /usr/include/qt/QtCore/qcontiguouscache.h
- /usr/include/qt/QtCore/qcoreevent.h
- /usr/include/qt/QtCore/qdatastream.h
- /usr/include/qt/QtCore/qdebug.h
- /usr/include/qt/QtCore/qfile.h
- /usr/include/qt/QtCore/qfiledevice.h
- /usr/include/qt/QtCore/qflags.h
- /usr/include/qt/QtCore/qgenericatomic.h
- /usr/include/qt/QtCore/qglobal.h
- /usr/include/qt/QtCore/qglobalstatic.h
- /usr/include/qt/QtCore/qhash.h
- /usr/include/qt/QtCore/qhashfunctions.h
- /usr/include/qt/QtCore/qiodevice.h
- /usr/include/qt/QtCore/qiterator.h
- /usr/include/qt/QtCore/qline.h
- /usr/include/qt/QtCore/qlist.h
- /usr/include/qt/QtCore/qlocale.h
- /usr/include/qt/QtCore/qlogging.h
- /usr/include/qt/QtCore/qmap.h
- /usr/include/qt/QtCore/qmargins.h
- /usr/include/qt/QtCore/qmetatype.h
- /usr/include/qt/QtCore/qmutex.h
- /usr/include/qt/QtCore/qnamespace.h
- /usr/include/qt/QtCore/qnumeric.h
- /usr/include/qt/QtCore/qobject.h
- /usr/include/qt/QtCore/qobject_impl.h
- /usr/include/qt/QtCore/qobjectdefs.h
- /usr/include/qt/QtCore/qobjectdefs_impl.h
- /usr/include/qt/QtCore/qpair.h
- /usr/include/qt/QtCore/qpoint.h
- /usr/include/qt/QtCore/qprocessordetection.h
- /usr/include/qt/QtCore/qrect.h
- /usr/include/qt/QtCore/qrefcount.h
- /usr/include/qt/QtCore/qregexp.h
- /usr/include/qt/QtCore/qscopedpointer.h
- /usr/include/qt/QtCore/qset.h
- /usr/include/qt/QtCore/qshareddata.h
- /usr/include/qt/QtCore/qsharedpointer.h
- /usr/include/qt/QtCore/qsharedpointer_impl.h
- /usr/include/qt/QtCore/qsize.h
- /usr/include/qt/QtCore/qstring.h
- /usr/include/qt/QtCore/qstringalgorithms.h
- /usr/include/qt/QtCore/qstringbuilder.h
- /usr/include/qt/QtCore/qstringlist.h
- /usr/include/qt/QtCore/qstringliteral.h
- /usr/include/qt/QtCore/qstringmatcher.h
- /usr/include/qt/QtCore/qstringview.h
- /usr/include/qt/QtCore/qsysinfo.h
- /usr/include/qt/QtCore/qsystemdetection.h
- /usr/include/qt/QtCore/qtcore-config.h
- /usr/include/qt/QtCore/qtextstream.h
- /usr/include/qt/QtCore/qtypeinfo.h
- /usr/include/qt/QtCore/qurl.h
- /usr/include/qt/QtCore/qurlquery.h
- /usr/include/qt/QtCore/qvariant.h
- /usr/include/qt/QtCore/qvarlengtharray.h
- /usr/include/qt/QtCore/qvector.h
- /usr/include/qt/QtCore/qversiontagging.h
- /usr/include/qt/QtGui/qbrush.h
- /usr/include/qt/QtGui/qcolor.h
- /usr/include/qt/QtGui/qcursor.h
- /usr/include/qt/QtGui/qevent.h
- /usr/include/qt/QtGui/qfont.h
- /usr/include/qt/QtGui/qfontinfo.h
- /usr/include/qt/QtGui/qfontmetrics.h
- /usr/include/qt/QtGui/qicon.h
- /usr/include/qt/QtGui/qimage.h
- /usr/include/qt/QtGui/qkeysequence.h
- /usr/include/qt/QtGui/qmatrix.h
- /usr/include/qt/QtGui/qpaintdevice.h
- /usr/include/qt/QtGui/qpalette.h
- /usr/include/qt/QtGui/qpixelformat.h
- /usr/include/qt/QtGui/qpixmap.h
- /usr/include/qt/QtGui/qpolygon.h
- /usr/include/qt/QtGui/qregion.h
- /usr/include/qt/QtGui/qrgb.h
- /usr/include/qt/QtGui/qrgba64.h
- /usr/include/qt/QtGui/qtgui-config.h
- /usr/include/qt/QtGui/qtguiglobal.h
- /usr/include/qt/QtGui/qtouchdevice.h
- /usr/include/qt/QtGui/qtransform.h
- /usr/include/qt/QtGui/qvector2d.h
- /usr/include/qt/QtGui/qwindowdefs.h
- /usr/include/qt/QtGui/qwindowdefs_win.h
- /usr/include/qt/QtWidgets/QButtonGroup
- /usr/include/qt/QtWidgets/QGroupBox
- /usr/include/qt/QtWidgets/QLayout
- /usr/include/qt/QtWidgets/QRadioButton
- /usr/include/qt/QtWidgets/QWidget
- /usr/include/qt/QtWidgets/qabstractbutton.h
- /usr/include/qt/QtWidgets/qboxlayout.h
- /usr/include/qt/QtWidgets/qbuttongroup.h
- /usr/include/qt/QtWidgets/qframe.h
- /usr/include/qt/QtWidgets/qgridlayout.h
- /usr/include/qt/QtWidgets/qgroupbox.h
- /usr/include/qt/QtWidgets/qlayout.h
- /usr/include/qt/QtWidgets/qlayoutitem.h
- /usr/include/qt/QtWidgets/qradiobutton.h
  /usr/include/qt/QtWidgets/qsizepolicy.h
  /usr/include/qt/QtWidgets/qtwidgets-config.h
  /usr/include/qt/QtWidgets/qtwidgetsglobal.h
@@ -4005,6 +4390,133 @@ CMakeFiles/GoTikZ.dir/View/Widgets/PenWidget.cpp.o
  /usr/include/qt/QtWidgets/qtwidgets-config.h
  /usr/include/qt/QtWidgets/qtwidgetsglobal.h
  /usr/include/qt/QtWidgets/qwidget.h
+CMakeFiles/GoTikZ.dir/View/Widgets/PrimitiveTypeSelectWidget.cpp.o
+ ../Controller/Actions/Action.h
+ ../Controller/Actions/ChangePrimitiveTypeAction.h
+ ../Model/PrimitiveTypeEnum.h
+ ../View/Widgets/ActionWidget.h
+ ../View/Widgets/AuxWidgets/GroupBoxContainer.h
+ /home/pc/MEGAsync/C++/clion/GoTikZ/View/Widgets/PrimitiveTypeSelectWidget.cpp
+ /home/pc/MEGAsync/C++/clion/GoTikZ/View/Widgets/PrimitiveTypeSelectWidget.h
+ /usr/include/qt/QtCore/QDebug
+ /usr/include/qt/QtCore/QString
+ /usr/include/qt/QtCore/qalgorithms.h
+ /usr/include/qt/QtCore/qarraydata.h
+ /usr/include/qt/QtCore/qatomic.h
+ /usr/include/qt/QtCore/qatomic_bootstrap.h
+ /usr/include/qt/QtCore/qatomic_cxx11.h
+ /usr/include/qt/QtCore/qatomic_msvc.h
+ /usr/include/qt/QtCore/qbasicatomic.h
+ /usr/include/qt/QtCore/qbytearray.h
+ /usr/include/qt/QtCore/qbytearraylist.h
+ /usr/include/qt/QtCore/qchar.h
+ /usr/include/qt/QtCore/qcompilerdetection.h
+ /usr/include/qt/QtCore/qconfig-bootstrapped.h
+ /usr/include/qt/QtCore/qconfig.h
+ /usr/include/qt/QtCore/qcontainerfwd.h
+ /usr/include/qt/QtCore/qcontainertools_impl.h
+ /usr/include/qt/QtCore/qcontiguouscache.h
+ /usr/include/qt/QtCore/qcoreevent.h
+ /usr/include/qt/QtCore/qdatastream.h
+ /usr/include/qt/QtCore/qdebug.h
+ /usr/include/qt/QtCore/qfile.h
+ /usr/include/qt/QtCore/qfiledevice.h
+ /usr/include/qt/QtCore/qflags.h
+ /usr/include/qt/QtCore/qgenericatomic.h
+ /usr/include/qt/QtCore/qglobal.h
+ /usr/include/qt/QtCore/qglobalstatic.h
+ /usr/include/qt/QtCore/qhash.h
+ /usr/include/qt/QtCore/qhashfunctions.h
+ /usr/include/qt/QtCore/qiodevice.h
+ /usr/include/qt/QtCore/qiterator.h
+ /usr/include/qt/QtCore/qline.h
+ /usr/include/qt/QtCore/qlist.h
+ /usr/include/qt/QtCore/qlocale.h
+ /usr/include/qt/QtCore/qlogging.h
+ /usr/include/qt/QtCore/qmap.h
+ /usr/include/qt/QtCore/qmargins.h
+ /usr/include/qt/QtCore/qmetatype.h
+ /usr/include/qt/QtCore/qmutex.h
+ /usr/include/qt/QtCore/qnamespace.h
+ /usr/include/qt/QtCore/qnumeric.h
+ /usr/include/qt/QtCore/qobject.h
+ /usr/include/qt/QtCore/qobject_impl.h
+ /usr/include/qt/QtCore/qobjectdefs.h
+ /usr/include/qt/QtCore/qobjectdefs_impl.h
+ /usr/include/qt/QtCore/qpair.h
+ /usr/include/qt/QtCore/qpoint.h
+ /usr/include/qt/QtCore/qprocessordetection.h
+ /usr/include/qt/QtCore/qrect.h
+ /usr/include/qt/QtCore/qrefcount.h
+ /usr/include/qt/QtCore/qregexp.h
+ /usr/include/qt/QtCore/qscopedpointer.h
+ /usr/include/qt/QtCore/qset.h
+ /usr/include/qt/QtCore/qshareddata.h
+ /usr/include/qt/QtCore/qsharedpointer.h
+ /usr/include/qt/QtCore/qsharedpointer_impl.h
+ /usr/include/qt/QtCore/qsize.h
+ /usr/include/qt/QtCore/qstring.h
+ /usr/include/qt/QtCore/qstringalgorithms.h
+ /usr/include/qt/QtCore/qstringbuilder.h
+ /usr/include/qt/QtCore/qstringlist.h
+ /usr/include/qt/QtCore/qstringliteral.h
+ /usr/include/qt/QtCore/qstringmatcher.h
+ /usr/include/qt/QtCore/qstringview.h
+ /usr/include/qt/QtCore/qsysinfo.h
+ /usr/include/qt/QtCore/qsystemdetection.h
+ /usr/include/qt/QtCore/qtcore-config.h
+ /usr/include/qt/QtCore/qtextstream.h
+ /usr/include/qt/QtCore/qtypeinfo.h
+ /usr/include/qt/QtCore/qurl.h
+ /usr/include/qt/QtCore/qurlquery.h
+ /usr/include/qt/QtCore/qvariant.h
+ /usr/include/qt/QtCore/qvarlengtharray.h
+ /usr/include/qt/QtCore/qvector.h
+ /usr/include/qt/QtCore/qversiontagging.h
+ /usr/include/qt/QtGui/qbrush.h
+ /usr/include/qt/QtGui/qcolor.h
+ /usr/include/qt/QtGui/qcursor.h
+ /usr/include/qt/QtGui/qevent.h
+ /usr/include/qt/QtGui/qfont.h
+ /usr/include/qt/QtGui/qfontinfo.h
+ /usr/include/qt/QtGui/qfontmetrics.h
+ /usr/include/qt/QtGui/qicon.h
+ /usr/include/qt/QtGui/qimage.h
+ /usr/include/qt/QtGui/qkeysequence.h
+ /usr/include/qt/QtGui/qmatrix.h
+ /usr/include/qt/QtGui/qpaintdevice.h
+ /usr/include/qt/QtGui/qpalette.h
+ /usr/include/qt/QtGui/qpixelformat.h
+ /usr/include/qt/QtGui/qpixmap.h
+ /usr/include/qt/QtGui/qpolygon.h
+ /usr/include/qt/QtGui/qregion.h
+ /usr/include/qt/QtGui/qrgb.h
+ /usr/include/qt/QtGui/qrgba64.h
+ /usr/include/qt/QtGui/qtgui-config.h
+ /usr/include/qt/QtGui/qtguiglobal.h
+ /usr/include/qt/QtGui/qtouchdevice.h
+ /usr/include/qt/QtGui/qtransform.h
+ /usr/include/qt/QtGui/qvector2d.h
+ /usr/include/qt/QtGui/qwindowdefs.h
+ /usr/include/qt/QtGui/qwindowdefs_win.h
+ /usr/include/qt/QtWidgets/QButtonGroup
+ /usr/include/qt/QtWidgets/QGroupBox
+ /usr/include/qt/QtWidgets/QLayout
+ /usr/include/qt/QtWidgets/QRadioButton
+ /usr/include/qt/QtWidgets/QWidget
+ /usr/include/qt/QtWidgets/qabstractbutton.h
+ /usr/include/qt/QtWidgets/qboxlayout.h
+ /usr/include/qt/QtWidgets/qbuttongroup.h
+ /usr/include/qt/QtWidgets/qframe.h
+ /usr/include/qt/QtWidgets/qgridlayout.h
+ /usr/include/qt/QtWidgets/qgroupbox.h
+ /usr/include/qt/QtWidgets/qlayout.h
+ /usr/include/qt/QtWidgets/qlayoutitem.h
+ /usr/include/qt/QtWidgets/qradiobutton.h
+ /usr/include/qt/QtWidgets/qsizepolicy.h
+ /usr/include/qt/QtWidgets/qtwidgets-config.h
+ /usr/include/qt/QtWidgets/qtwidgetsglobal.h
+ /usr/include/qt/QtWidgets/qwidget.h
 CMakeFiles/GoTikZ.dir/View/Widgets/RightSideBar.cpp.o
  /home/pc/MEGAsync/C++/clion/GoTikZ/View/Widgets/AuxWidgets/GroupBoxContainer.h
  /home/pc/MEGAsync/C++/clion/GoTikZ/View/Widgets/AuxWidgets/XyWidget.h
@@ -4131,14 +4643,18 @@ CMakeFiles/GoTikZ.dir/main.cpp.o
  ../Controller/Actions/UndoableAction.h
  ../Controller/ModifierState.h
  ../Controller/MouseHandler.h
+ ../Drawable/ControlPoint/ControlPoint.h
+ ../Drawable/ControlPoint/PointSetFunctor.h
  ../Drawable/Drawable.h
  ../Drawable/DrawableHandler.h
+ ../Drawable/Point.h
  ../Drawable/StreamDrawable.h
- ../Model/MousePointerTypeEnum.h
+ ../Model/PrimitiveTypeEnum.h
  /home/pc/MEGAsync/C++/clion/GoTikZ/Controller/Controller.h
  /home/pc/MEGAsync/C++/clion/GoTikZ/MainWindow.h
  /home/pc/MEGAsync/C++/clion/GoTikZ/Model/Model.h
  /home/pc/MEGAsync/C++/clion/GoTikZ/main.cpp
+ /usr/include/qt/QtCore/QDebug
  /usr/include/qt/QtCore/QObject
  /usr/include/qt/QtCore/QPointF
  /usr/include/qt/QtCore/QString

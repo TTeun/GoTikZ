@@ -4,8 +4,14 @@
 
 #include "DrawableHandler.h"
 
+#include "Drawable/ControlPoint/ControlPointFactory.h"
+
 void DrawableHandler::addDrawable(Drawable* drawable) {
     m_drawables.push_back(std::unique_ptr<Drawable>(drawable));
+    ControlPointFactory fac(drawable);
+    for (size_t i = 0; i != fac.numberOfControlPoints(); ++i) {
+        m_controlPoints.push_back(std::unique_ptr<ControlPoint>(fac.controlPoint(i)));
+    }
 }
 
 void DrawableHandler::addStreamDrawable(StreamDrawable* streamDrawable) {
@@ -27,6 +33,15 @@ Drawable* DrawableHandler::removeDrawable(const size_t index) {
         }
     }
     assert(returnPointer != nullptr);
+    auto it = m_controlPoints.begin();
+    while (it != m_controlPoints.end()) {
+        assert((*it)->drawable() != nullptr);
+        if ((*it)->drawable() == returnPointer) {
+            it = m_controlPoints.erase(it);
+        } else {
+            ++it;
+        }
+    }
     return returnPointer;
 }
 
@@ -73,6 +88,7 @@ QPointF DrawableHandler::snap(const QPointF& mousePoint) const {
 }
 
 void DrawableHandler::clearSelectedAndHighlighted() {
+    updateControlPoints();
     m_selectedDrawables.clear();
     m_highlightedDrawables.clear();
 }
@@ -102,35 +118,37 @@ Drawable* DrawableHandler::getClosest(const QPointF& point) {
     return closest;
 }
 
-Drawable* DrawableHandler::selectClosest(const QPointF& point, bool shouldClearSelected) {
-    assert(false);
-    auto* closest = getClosest(point);
-    return closest;
-}
-
 Drawable* DrawableHandler::selectNew(const QPointF& point) {
+    m_highlightedDrawables.clear();
     auto* closest = getClosest(point);
     if (closest == nullptr) {
+        updateControlPoints();
         return nullptr;
     } else {
         m_selectedDrawables = {closest};
+        updateControlPoints();
         return closest;
     }
 }
 
 Drawable* DrawableHandler::addToSelected(const QPointF& point) {
+    m_highlightedDrawables.clear();
     auto* closest = getClosest(point);
     if (closest == nullptr) {
+        updateControlPoints();
         return nullptr;
     } else {
         auto it = std::find(m_selectedDrawables.begin(), m_selectedDrawables.end(), closest);
         if (it == m_selectedDrawables.end()) {
             m_selectedDrawables.push_back(closest);
+            updateControlPoints();
+            return closest;
         } else {
             m_selectedDrawables.erase(it);
+            updateControlPoints();
+            return nullptr;
         }
     }
-    return closest;
 }
 
 void DrawableHandler::stopStreaming() {
@@ -166,12 +184,6 @@ const StreamDrawable* DrawableHandler::streamDrawable() const {
     return m_streamDrawable.get();
 }
 
-void DrawableHandler::translateAll(const QPointF& translation) {
-    for (auto& el : m_drawables) {
-        el->translate(translation);
-    }
-}
-
 void DrawableHandler::translateSelected(const QPointF& translation) {
     for (auto& el : m_selectedDrawables) {
         el->translate(translation);
@@ -186,4 +198,31 @@ void DrawableHandler::translate(size_t indexOfPrimitive, const QPointF& translat
         }
     }
     assert(false);
+}
+
+const std::vector<std::unique_ptr<ControlPoint>>& DrawableHandler::controlPoints() const {
+    return m_controlPoints;
+}
+
+void DrawableHandler::updateControlPoints() {
+    for (auto& el : m_controlPoints) {
+        el->update();
+    }
+}
+
+ControlPoint* DrawableHandler::closestControlPoint(const QPointF& mousePosition, size_t maximumDistance) const {
+    if (m_controlPoints.empty()) {
+        return nullptr;
+    }
+    ControlPoint* closest = m_controlPoints.front().get();
+    for (const auto& el : m_controlPoints) {
+        if (el->dist(mousePosition) < closest->dist(mousePosition)) {
+            closest = el.get();
+        }
+    }
+    if (closest->dist(mousePosition) < maximumDistance) {
+        return closest;
+    } else {
+        return nullptr;
+    }
 }

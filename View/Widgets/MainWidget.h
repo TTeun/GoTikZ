@@ -24,7 +24,7 @@ namespace view {
         Q_OBJECT
 
       public:
-        explicit MainWidget(QWidget* parent, const model::Model* model, controller::Controller* actionHandler);
+        explicit MainWidget(QWidget* parent, const model::Model* model, controller::Controller* controller);
 
         DrawWidget*         drawWidget();
         LeftSideBar*        leftSideBar();

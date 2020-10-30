@@ -8,14 +8,14 @@
 #include "Controller/Controller.h"
 #include "Drawable/Point.h"
 #include "Drawable/StreamDrawableFactory.h"
-#include "Model/MousePointerTypeEnum.h"
+#include "Model/PrimitiveTypeEnum.h"
 #include "View/Widgets/DrawWidget.h"
 
 #include <QDebug>
 
-model::Model::Model(controller::Controller* actionHandler)
-    : m_drawableHandler(new DrawableHandler()), m_actionHandler(actionHandler) {
-    assert(m_actionHandler);
+model::Model::Model(controller::Controller* controller)
+    : m_drawableHandler(new DrawableHandler()), m_controller(controller) {
+    assert(m_controller);
 }
 
 const DrawableHandler& model::Model::drawableHandler() const {
@@ -39,7 +39,7 @@ void model::Model::setPen(const QPen& pen) {
     m_drawPen = pen;
 }
 
-void model::Model::setMousePointerType(MOUSE_POINTER_TYPE newType) {
+void model::Model::setMousePointerType(PRIMITIVE_TYPE newType) {
     if (m_drawableHandler->isStreaming()) {
         m_drawableHandler->stopStreaming();
     }
@@ -48,7 +48,7 @@ void model::Model::setMousePointerType(MOUSE_POINTER_TYPE newType) {
 }
 
 QPointF model::Model::mousePointInWorldCoordinates(const QPointF& mousePoint) const {
-    return m_actionHandler->drawWidget()->transform().invertTransform(mousePoint);
+    return m_controller->drawWidget()->transform().invertTransform(mousePoint);
 }
 
 void model::Model::setPoint(const QPointF& mousePosition, const controller::ModifierState& modifierState) {
@@ -57,9 +57,9 @@ void model::Model::setPoint(const QPointF& mousePosition, const controller::Modi
     m_drawableHandler->clearSelectedAndHighlighted();
     if (not m_drawableHandler->isStreaming()) {
         switch (m_mousePointerType) {
-            case MOUSE_POINTER_TYPE::POINT:
+            case PRIMITIVE_TYPE::POINT:
                 m_drawableHandler->addDrawable(new Point(snappedPoint, m_drawPen));
-                m_actionHandler->addAction(
+                m_controller->addAction(
                     new controller::AddPrimitiveAction(m_drawableHandler->drawables().back()->index()), true);
                 break;
             default:
@@ -69,22 +69,16 @@ void model::Model::setPoint(const QPointF& mousePosition, const controller::Modi
         }
     } else {
         if (m_drawableHandler->addPointToStreamDrawable(snappedPoint, false)) {
-            m_actionHandler->addAction(
+            m_controller->addAction(
                 new controller::AddPrimitiveAction(m_drawableHandler->drawables().back()->index()), true);
         }
     }
 }
 
-void model::Model::selectNew(const QPointF& mousePosition) {
-    auto* selected = m_drawableHandler->selectNew(mousePointInWorldCoordinates(mousePosition));
-    if (selected != nullptr) {
-        m_actionHandler->setEditWidget(selected->toWidget(m_actionHandler));
-    }
+Drawable* model::Model::selectNew(const QPointF& mousePosition) {
+    return m_drawableHandler->selectNew(mousePointInWorldCoordinates(mousePosition));
 }
 
-void model::Model::addToSelected(const QPointF& mousePosition) {
-    auto* selected = m_drawableHandler->addToSelected(mousePointInWorldCoordinates(mousePosition));
-    if (selected != nullptr) {
-        m_actionHandler->setEditWidget(selected->toWidget(m_actionHandler));
-    }
+Drawable* model::Model::addToSelected(const QPointF& mousePosition) {
+    return m_drawableHandler->addToSelected(mousePointInWorldCoordinates(mousePosition));
 }

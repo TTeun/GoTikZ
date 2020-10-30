@@ -8,11 +8,11 @@
 #include "View/Widgets/MainWidget.h"
 
 MainWindow::MainWindow()
-    : QMainWindow(nullptr), m_actionHandler(new controller::Controller(this)),
-      m_modelHandler(new model::Model(m_actionHandler.get())),
-      m_mainWidget(new view::MainWidget(this, m_modelHandler.get(), m_actionHandler.get())) {
+    : QMainWindow(nullptr), m_controller(new controller::Controller(this)),
+      m_model(new model::Model(m_controller.get())),
+      m_mainWidget(new view::MainWidget(this, m_model.get(), m_controller.get())) {
     setCentralWidget(m_mainWidget);
-    m_actionHandler->init(m_mainWidget, m_modelHandler.get());
+    m_controller->init(m_mainWidget, m_model.get());
 
     setStyleSheet("QGroupBox{"
                   "   background-color: rgb(123,255,255);"
@@ -33,9 +33,9 @@ MainWindow::MainWindow()
 }
 
 void MainWindow::keyPressEvent(QKeyEvent* event) {
-    m_actionHandler->keyPressEvent(event);
+    m_controller->keyPressEvent(event);
 }
 
 void MainWindow::keyReleaseEvent(QKeyEvent* event) {
-    m_actionHandler->keyReleaseEvent(event);
+    m_controller->keyReleaseEvent(event);
 }

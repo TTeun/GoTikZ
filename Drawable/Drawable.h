@@ -5,18 +5,18 @@
 #ifndef GOTIKZ_DRAWABLE_H
 #define GOTIKZ_DRAWABLE_H
 
+#include "Model/PrimitiveTypeEnum.h"
+
 #include <QPen>
 
 class QPainter;
-namespace controller {
-    class Controller;
-}
 
 namespace view {
     class Transform;
 }
 
 class GroupBoxContainer;
+class ControlPoint;
 
 class Drawable {
   protected:
@@ -25,15 +25,17 @@ class Drawable {
   public:
     enum class DRAW_FLAGS { NONE, SELECTED, HIGHLIGHTED };
 
-    virtual void   draw(QPainter* painter, DRAW_FLAGS drawFlag, const view::Transform& transform) const;
-    virtual double dist(const QPointF& point) const        = 0;
-    virtual std::pair<double, QPointF> snap(QPointF point) = 0;
-    size_t                             index() const;
-    virtual QWidget*                   toWidget(controller::Controller* actionHandler);
-    void                               setPen(const QPen& pen);
+    size_t      index() const;
+    void        setPen(const QPen& pen);
+    const QPen& pen() const;
 
-    virtual void translate(const QPointF& translation) = 0;
-    const QPen&  pen() const;
+    virtual void    draw(QPainter* painter, DRAW_FLAGS drawFlag, const view::Transform& transform) const;
+    virtual void    translate(const QPointF& translation)        = 0;
+    virtual void    setPoint(size_t index, const QPointF& point) = 0;
+    virtual double  dist(const QPointF& point) const             = 0;
+    virtual QPointF point(size_t index) const                    = 0;
+    virtual std::pair<double, QPointF> snap(QPointF point)       = 0;
+    virtual PRIMITIVE_TYPE             type() const              = 0;
 
   protected:
     QPen m_pen;

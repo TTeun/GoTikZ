@@ -23,7 +23,7 @@ class PointEditWidget : public view::DrawableEditWidget, public GroupBoxContaine
     Q_OBJECT
 
   public:
-    PointEditWidget(Point* point, controller::Controller* actionHandler);
+    PointEditWidget(Point* point, controller::Controller* controller);
 
   public slots:
     void setPoint(QPointF newPoint);
@@ -31,7 +31,7 @@ class PointEditWidget : public view::DrawableEditWidget, public GroupBoxContaine
 
   private:
     view::XyWidget*            m_point1Widget;
-    controller::Controller* m_actionHandler;
+    controller::Controller* m_controller;
     Point*                     m_point;
 };
 

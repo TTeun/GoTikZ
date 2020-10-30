@@ -12,8 +12,8 @@
 #include <QGroupBox>
 #include <QLayout>
 
-LineEditWidget::LineEditWidget(Line* line, controller::Controller* actionHandler)
-    : view::DrawableEditWidget(nullptr), GroupBoxContainer(nullptr, "Line"), m_line(line), m_actionHandler(actionHandler) {
+LineEditWidget::LineEditWidget(Line* line, controller::Controller* controller)
+    : view::DrawableEditWidget(nullptr), GroupBoxContainer(nullptr, "Line"), m_line(line), m_controller(controller) {
     auto* contentsLayout = m_groupBox->layout();
 
     setLayout(new QHBoxLayout(this));
@@ -29,18 +29,18 @@ LineEditWidget::LineEditWidget(Line* line, controller::Controller* actionHandler
     contentsLayout->addWidget(m_point2Widget);
 
     auto* penWidget = new view::PenWidget(nullptr, line->index(), m_line->pen());
-    QObject::connect(penWidget, &view::PenWidget::actionDone, m_actionHandler, &controller::Controller::doAction);
+    QObject::connect(penWidget, &view::PenWidget::actionDone, m_controller, &controller::Controller::doAction);
     contentsLayout->addWidget(penWidget);
 }
 
 void LineEditWidget::setPoint1(QPointF newPoint) {
     m_line->setPoint1(newPoint);
-    m_actionHandler->draw();
+    m_controller->draw();
 }
 
 void LineEditWidget::setPoint2(QPointF newPoint) {
     m_line->setPoint2(newPoint);
-    m_actionHandler->draw();
+    m_controller->draw();
 }
 
 void LineEditWidget::needsUpdate() {

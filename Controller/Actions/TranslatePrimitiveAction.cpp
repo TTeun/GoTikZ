@@ -16,16 +16,18 @@ controller::TranslatePrimitiveAction::TranslatePrimitiveAction(std::vector<size_
     assert(not m_indices.empty());
 }
 
-void controller::TranslatePrimitiveAction::doAction(controller::Controller* actionHandler) {
+void controller::TranslatePrimitiveAction::doAction(controller::Controller* controller) {
     for (auto index : m_indices) {
-        actionHandler->modelHandler()->drawableHandler().translate(index, m_translation);
+        controller->modelHandler()->drawableHandler().translate(index, m_translation);
     }
-    actionHandler->draw();
+    controller->updateControlPoints();
+    controller->draw();
 }
 
-void controller::TranslatePrimitiveAction::undoAction(controller::Controller* actionHandler) {
+void controller::TranslatePrimitiveAction::undoAction(controller::Controller* controller) {
     for (auto index : m_indices) {
-        actionHandler->modelHandler()->drawableHandler().translate(index, -m_translation);
+        controller->modelHandler()->drawableHandler().translate(index, -m_translation);
     }
-    actionHandler->draw();
+    controller->updateControlPoints();
+    controller->draw();
 }

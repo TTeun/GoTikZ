@@ -33,10 +33,6 @@ double Circle::dist(const QPointF& point) const {
     return std::abs(distToCenter - m_radius);
 }
 
-QWidget* Circle::toWidget(controller::Controller* actionHandler) {
-    return new view::CircleEditWidget(this, actionHandler);
-}
-
 QPointF Circle::center() const {
     return m_center;
 }
@@ -54,4 +50,23 @@ void Circle::setRadius(double newRadius) {
 }
 void Circle::translate(const QPointF& translation) {
     m_center += translation;
+}
+
+PRIMITIVE_TYPE Circle::type() const {
+    return PRIMITIVE_TYPE::CIRCLE;
+}
+void Circle::setPoint(size_t index, const QPointF& point) {
+    if (index == 0) {
+        setCenter(point);
+    } else {
+        setRadius(Math::distance(point, m_center));
+    }
+}
+
+QPointF Circle::point(size_t index) const {
+    if (index == 0) {
+        return m_center;
+    } else {
+        return m_center + QPointF(m_radius, 0);
+    }
 }

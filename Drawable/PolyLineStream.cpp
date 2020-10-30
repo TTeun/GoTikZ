@@ -60,3 +60,13 @@ void PolyLineStream::translate(const QPointF& translation) {
         el += translation;
     }
 }
+PRIMITIVE_TYPE PolyLineStream::type() const {
+    return PRIMITIVE_TYPE::STREAM;
+}
+void PolyLineStream::setPoint(size_t index, const QPointF& point) {
+    assert(false);
+}
+QPointF PolyLineStream::point(size_t index) const {
+    assert(false);
+    return QPointF{};
+}

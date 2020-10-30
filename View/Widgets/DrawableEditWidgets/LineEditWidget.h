@@ -21,7 +21,7 @@ class LineEditWidget : public view::DrawableEditWidget, public GroupBoxContainer
     Q_OBJECT
 
   public:
-    LineEditWidget(Line* line, controller::Controller* actionHandler);
+    LineEditWidget(Line* line, controller::Controller* controller);
 
   public slots:
     void setPoint1(QPointF newPoint);
@@ -33,7 +33,7 @@ class LineEditWidget : public view::DrawableEditWidget, public GroupBoxContainer
     view::XyWidget* m_point2Widget;
 
     Line*                      m_line;
-    controller::Controller* m_actionHandler;
+    controller::Controller* m_controller;
 };
 
 #endif // GOTIKZ_LINEEDITWIDGET_H

@@ -14,9 +14,8 @@
 #include <QGroupBox>
 #include <QLayout>
 
-view::CircleEditWidget::CircleEditWidget(Circle* circle, controller::Controller* actionHandler)
-    : DrawableEditWidget(nullptr), GroupBoxContainer(nullptr, "Circle"), m_actionHandler(actionHandler),
-      m_circle(circle) {
+view::CircleEditWidget::CircleEditWidget(Circle* circle, controller::Controller* controller)
+    : DrawableEditWidget(nullptr), GroupBoxContainer(nullptr, "Circle"), m_controller(controller), m_circle(circle) {
 
     setLayout(new QHBoxLayout(this));
     auto* contentsLayout = m_groupBox->layout();
@@ -36,19 +35,21 @@ view::CircleEditWidget::CircleEditWidget(Circle* circle, controller::Controller*
     contentsLayout->addWidget(m_radiusSpinBox);
 
     auto* penWidget = new view::PenWidget(nullptr, circle->index(), m_circle->pen());
-    QObject::connect(penWidget, &view::PenWidget::actionDone, m_actionHandler, &controller::Controller::doAction);
+    QObject::connect(penWidget, &view::PenWidget::actionDone, m_controller, &controller::Controller::doAction);
     contentsLayout->addWidget(penWidget);
     layout()->addWidget(m_groupBox);
 }
 
 void view::CircleEditWidget::setCenter(QPointF newCenter) {
     m_circle->setCenter(newCenter);
-    m_actionHandler->draw();
+    m_controller->updateControlPoints();
+    m_controller->draw();
 }
 
 void view::CircleEditWidget::setRadius(double newCenter) {
     m_circle->setRadius(newCenter);
-    m_actionHandler->draw();
+    m_controller->updateControlPoints();
+    m_controller->draw();
 }
 
 void view::CircleEditWidget::needsUpdate() {
@@ -56,7 +57,4 @@ void view::CircleEditWidget::needsUpdate() {
     m_radiusSpinBox->setValue(m_circle->radius());
     m_radiusSpinBox->blockSignals(false);
     m_centerWidget->setValues(m_circle->center());
-}
-
-view::CircleEditWidget::~CircleEditWidget() {
 }

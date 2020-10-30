@@ -5,11 +5,14 @@
   /home/pc/MEGAsync/C++/clion/GoTikZ/Controller/Controller.h \
   /home/pc/MEGAsync/C++/clion/GoTikZ/Controller/ModifierState.h \
   /home/pc/MEGAsync/C++/clion/GoTikZ/Controller/MouseHandler.h \
+  /home/pc/MEGAsync/C++/clion/GoTikZ/Drawable/ControlPoint/ControlPoint.h \
+  /home/pc/MEGAsync/C++/clion/GoTikZ/Drawable/ControlPoint/PointSetFunctor.h \
   /home/pc/MEGAsync/C++/clion/GoTikZ/Drawable/Drawable.h \
   /home/pc/MEGAsync/C++/clion/GoTikZ/Drawable/DrawableHandler.h \
+  /home/pc/MEGAsync/C++/clion/GoTikZ/Drawable/Point.h \
   /home/pc/MEGAsync/C++/clion/GoTikZ/Drawable/StreamDrawable.h \
   /home/pc/MEGAsync/C++/clion/GoTikZ/Model/Model.h \
-  /home/pc/MEGAsync/C++/clion/GoTikZ/Model/MousePointerTypeEnum.h \
+  /home/pc/MEGAsync/C++/clion/GoTikZ/Model/PrimitiveTypeEnum.h \
   /usr/include/assert.h \
   /usr/include/bits/cpu-set.h \
   /usr/include/bits/endian.h \
@@ -217,6 +220,7 @@
   /usr/include/gnu/stubs.h \
   /usr/include/locale.h \
   /usr/include/pthread.h \
+  /usr/include/qt/QtCore/QDebug \
   /usr/include/qt/QtCore/QObject \
   /usr/include/qt/QtCore/QPointF \
   /usr/include/qt/QtCore/QString \
@@ -232,8 +236,10 @@
   /usr/include/qt/QtCore/qconfig.h \
   /usr/include/qt/QtCore/qcontainerfwd.h \
   /usr/include/qt/QtCore/qcontainertools_impl.h \
+  /usr/include/qt/QtCore/qcontiguouscache.h \
   /usr/include/qt/QtCore/qcoreevent.h \
   /usr/include/qt/QtCore/qdatastream.h \
+  /usr/include/qt/QtCore/qdebug.h \
   /usr/include/qt/QtCore/qfile.h \
   /usr/include/qt/QtCore/qfiledevice.h \
   /usr/include/qt/QtCore/qflags.h \
@@ -246,6 +252,7 @@
   /usr/include/qt/QtCore/qiterator.h \
   /usr/include/qt/QtCore/qline.h \
   /usr/include/qt/QtCore/qlist.h \
+  /usr/include/qt/QtCore/qlocale.h \
   /usr/include/qt/QtCore/qlogging.h \
   /usr/include/qt/QtCore/qmap.h \
   /usr/include/qt/QtCore/qmargins.h \
@@ -277,6 +284,7 @@
   /usr/include/qt/QtCore/qsysinfo.h \
   /usr/include/qt/QtCore/qsystemdetection.h \
   /usr/include/qt/QtCore/qtcore-config.h \
+  /usr/include/qt/QtCore/qtextstream.h \
   /usr/include/qt/QtCore/qtypeinfo.h \
   /usr/include/qt/QtCore/qurl.h \
   /usr/include/qt/QtCore/qvariant.h \

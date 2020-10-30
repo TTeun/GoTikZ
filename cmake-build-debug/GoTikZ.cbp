@@ -129,10 +129,10 @@
 		<Unit filename="/home/pc/MEGAsync/C++/clion/GoTikZ/Controller/Actions/ChangeGridAction.h">
 			<Option target="GoTikZ"/>
 		</Unit>
-		<Unit filename="/home/pc/MEGAsync/C++/clion/GoTikZ/Controller/Actions/ChangeMousePointerTypeAction.cpp">
+		<Unit filename="/home/pc/MEGAsync/C++/clion/GoTikZ/Controller/Actions/ChangePrimitiveTypeAction.cpp">
 			<Option target="GoTikZ"/>
 		</Unit>
-		<Unit filename="/home/pc/MEGAsync/C++/clion/GoTikZ/Controller/Actions/ChangeMousePointerTypeAction.h">
+		<Unit filename="/home/pc/MEGAsync/C++/clion/GoTikZ/Controller/Actions/ChangePrimitiveTypeAction.h">
 			<Option target="GoTikZ"/>
 		</Unit>
 		<Unit filename="/home/pc/MEGAsync/C++/clion/GoTikZ/Controller/Actions/DeletePrimitiveAction.cpp">
@@ -193,6 +193,18 @@
 			<Option target="GoTikZ"/>
 		</Unit>
 		<Unit filename="/home/pc/MEGAsync/C++/clion/GoTikZ/Drawable/ControlPoint/ControlPoint.h">
+			<Option target="GoTikZ"/>
+		</Unit>
+		<Unit filename="/home/pc/MEGAsync/C++/clion/GoTikZ/Drawable/ControlPoint/ControlPointFactory.cpp">
+			<Option target="GoTikZ"/>
+		</Unit>
+		<Unit filename="/home/pc/MEGAsync/C++/clion/GoTikZ/Drawable/ControlPoint/ControlPointFactory.h">
+			<Option target="GoTikZ"/>
+		</Unit>
+		<Unit filename="/home/pc/MEGAsync/C++/clion/GoTikZ/Drawable/ControlPoint/PointSetFunctor.cpp">
+			<Option target="GoTikZ"/>
+		</Unit>
+		<Unit filename="/home/pc/MEGAsync/C++/clion/GoTikZ/Drawable/ControlPoint/PointSetFunctor.h">
 			<Option target="GoTikZ"/>
 		</Unit>
 		<Unit filename="/home/pc/MEGAsync/C++/clion/GoTikZ/Drawable/Drawable.cpp">
@@ -264,10 +276,10 @@
 		<Unit filename="/home/pc/MEGAsync/C++/clion/GoTikZ/Model/Model.h">
 			<Option target="GoTikZ"/>
 		</Unit>
-		<Unit filename="/home/pc/MEGAsync/C++/clion/GoTikZ/Model/MousePointerTypeEnum.cpp">
+		<Unit filename="/home/pc/MEGAsync/C++/clion/GoTikZ/Model/PrimitiveTypeEnum.cpp">
 			<Option target="GoTikZ"/>
 		</Unit>
-		<Unit filename="/home/pc/MEGAsync/C++/clion/GoTikZ/Model/MousePointerTypeEnum.h">
+		<Unit filename="/home/pc/MEGAsync/C++/clion/GoTikZ/Model/PrimitiveTypeEnum.h">
 			<Option target="GoTikZ"/>
 		</Unit>
 		<Unit filename="/home/pc/MEGAsync/C++/clion/GoTikZ/View/GridState.cpp">
@@ -318,6 +330,12 @@
 		<Unit filename="/home/pc/MEGAsync/C++/clion/GoTikZ/View/Widgets/DrawableEditWidgets/DrawableEditWidget.h">
 			<Option target="GoTikZ"/>
 		</Unit>
+		<Unit filename="/home/pc/MEGAsync/C++/clion/GoTikZ/View/Widgets/DrawableEditWidgets/DrawableEditWidgetFactory.cpp">
+			<Option target="GoTikZ"/>
+		</Unit>
+		<Unit filename="/home/pc/MEGAsync/C++/clion/GoTikZ/View/Widgets/DrawableEditWidgets/DrawableEditWidgetFactory.h">
+			<Option target="GoTikZ"/>
+		</Unit>
 		<Unit filename="/home/pc/MEGAsync/C++/clion/GoTikZ/View/Widgets/DrawableEditWidgets/LineEditWidget.cpp">
 			<Option target="GoTikZ"/>
 		</Unit>
@@ -354,16 +372,16 @@
 		<Unit filename="/home/pc/MEGAsync/C++/clion/GoTikZ/View/Widgets/MainWidget.h">
 			<Option target="GoTikZ"/>
 		</Unit>
-		<Unit filename="/home/pc/MEGAsync/C++/clion/GoTikZ/View/Widgets/MousePointerTypeSelectWidget.cpp">
-			<Option target="GoTikZ"/>
-		</Unit>
-		<Unit filename="/home/pc/MEGAsync/C++/clion/GoTikZ/View/Widgets/MousePointerTypeSelectWidget.h">
-			<Option target="GoTikZ"/>
-		</Unit>
 		<Unit filename="/home/pc/MEGAsync/C++/clion/GoTikZ/View/Widgets/PenWidget.cpp">
 			<Option target="GoTikZ"/>
 		</Unit>
 		<Unit filename="/home/pc/MEGAsync/C++/clion/GoTikZ/View/Widgets/PenWidget.h">
+			<Option target="GoTikZ"/>
+		</Unit>
+		<Unit filename="/home/pc/MEGAsync/C++/clion/GoTikZ/View/Widgets/PrimitiveTypeSelectWidget.cpp">
+			<Option target="GoTikZ"/>
+		</Unit>
+		<Unit filename="/home/pc/MEGAsync/C++/clion/GoTikZ/View/Widgets/PrimitiveTypeSelectWidget.h">
 			<Option target="GoTikZ"/>
 		</Unit>
 		<Unit filename="/home/pc/MEGAsync/C++/clion/GoTikZ/View/Widgets/RightSideBar.cpp">

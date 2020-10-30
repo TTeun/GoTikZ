@@ -3,14 +3,14 @@
 #include "DrawWidget.h"
 #include "LeftSideBar.h"
 #include "Model/Model.h"
-#include "MousePointerTypeSelectWidget.h"
 #include "PenWidget.h"
+#include "PrimitiveTypeSelectWidget.h"
 #include "RightSideBar.h"
 
 #include <QGroupBox>
 #include <QHBoxLayout>
 
-view::MainWidget::MainWidget(QWidget* parent, const model::Model* model, controller::Controller* actionHandler)
+view::MainWidget::MainWidget(QWidget* parent, const model::Model* model, controller::Controller* controller)
     : QWidget(parent) {
     auto* layout = new QHBoxLayout(this);
     setLayout(layout);
@@ -18,7 +18,7 @@ view::MainWidget::MainWidget(QWidget* parent, const model::Model* model, control
     m_leftSideBar = new LeftSideBar(nullptr);
     layout->addWidget(m_leftSideBar);
 
-    m_drawWidget = new view::DrawWidget(nullptr, model, actionHandler);
+    m_drawWidget = new view::DrawWidget(nullptr, model, controller);
     layout->addWidget(m_drawWidget);
 
     m_rightSideBar = new view::RightSideBar(nullptr);

@@ -5,7 +5,7 @@
 #ifndef GOTIKZ_STREAMDRAWABLEFACTORY_H
 #define GOTIKZ_STREAMDRAWABLEFACTORY_H
 
-#include "Model/MousePointerTypeEnum.h"
+#include "Model/PrimitiveTypeEnum.h"
 
 #include <QPen>
 
@@ -14,7 +14,7 @@ class StreamDrawable;
 
 class StreamDrawableFactory {
   public:
-    static StreamDrawable* make(const QPointF& point, MOUSE_POINTER_TYPE type, const QPen& pen);
+    static StreamDrawable* make(const QPointF& point, PRIMITIVE_TYPE type, const QPen& pen);
 };
 
 #endif // GOTIKZ_STREAMDRAWABLEFACTORY_H

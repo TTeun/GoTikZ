@@ -16,7 +16,7 @@ namespace controller {
       public:
         explicit ChangeGridAction(view::GridState gridState);
 
-        void doAction(Controller* actionHandler) override;
+        void doAction(Controller* controller) override;
 
       private:
         const view::GridState m_gridState;

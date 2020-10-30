@@ -14,7 +14,7 @@ namespace controller {
         Action() = default;
 
       public:
-        virtual void doAction(Controller* actionHandler) = 0;
+        virtual void doAction(Controller* controller) = 0;
     };
 } // namespace controller
 

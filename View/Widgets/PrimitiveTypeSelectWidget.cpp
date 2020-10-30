@@ -2,17 +2,17 @@
 // Created by pc on 16-10-20.
 //
 
-#include "MousePointerTypeSelectWidget.h"
+#include "PrimitiveTypeSelectWidget.h"
 
-#include "Controller/Actions/ChangeMousePointerTypeAction.h"
-#include "Model/MousePointerTypeEnum.h"
+#include "Controller/Actions/ChangePrimitiveTypeAction.h"
+#include "Model/PrimitiveTypeEnum.h"
 
 #include <QButtonGroup>
 #include <QGroupBox>
 #include <QLayout>
 #include <QRadioButton>
 
-view::MousePointerTypeSelectWidget::MousePointerTypeSelectWidget(QWidget* parent) : GroupBoxContainer(nullptr, "Mode") {
+view::PrimitiveTypeSelectWidget::PrimitiveTypeSelectWidget(QWidget* parent) : GroupBoxContainer(nullptr, "Mode") {
     setLayout(new QHBoxLayout(this));
     m_buttonGroup = new QButtonGroup();
 
@@ -22,24 +22,26 @@ view::MousePointerTypeSelectWidget::MousePointerTypeSelectWidget(QWidget* parent
     addTypeButton("PolyLine", false);
 
     QObject::connect(m_buttonGroup, static_cast<void (QButtonGroup::*)(QAbstractButton*)>(&QButtonGroup::buttonClicked),
-                     this, &MousePointerTypeSelectWidget::mousePointerTypeButtonClicked);
+                     this, &PrimitiveTypeSelectWidget::mousePointerTypeButtonClicked);
     layout()->addWidget(m_groupBox);
 }
 
-void view::MousePointerTypeSelectWidget::setSelectedButton(MOUSE_POINTER_TYPE type) {
+void view::PrimitiveTypeSelectWidget::setSelectedButton(PRIMITIVE_TYPE type) {
     QString string;
     switch (type) {
-        case MOUSE_POINTER_TYPE::LINE:
+        case PRIMITIVE_TYPE::LINE:
             string = "Line";
             break;
-        case MOUSE_POINTER_TYPE::POINT:
+        case PRIMITIVE_TYPE::POINT:
             string = "Point";
             break;
-        case MOUSE_POINTER_TYPE::CIRCLE:
+        case PRIMITIVE_TYPE::CIRCLE:
             string = "Circle";
             break;
-        case MOUSE_POINTER_TYPE::POLY_LINE:
+        case PRIMITIVE_TYPE::POLY_LINE:
             string = "PolyLine";
+            break;
+        case PRIMITIVE_TYPE::STREAM:
             break;
     }
 
@@ -54,7 +56,7 @@ void view::MousePointerTypeSelectWidget::setSelectedButton(MOUSE_POINTER_TYPE ty
     assert(false);
 }
 
-void view::MousePointerTypeSelectWidget::addTypeButton(const QString& title, bool selected) {
+void view::PrimitiveTypeSelectWidget::addTypeButton(const QString& title, bool selected) {
     auto* radioButton = new QRadioButton(m_groupBox);
     radioButton->setChecked(selected);
     radioButton->setText(title);
@@ -63,20 +65,22 @@ void view::MousePointerTypeSelectWidget::addTypeButton(const QString& title, boo
     m_groupBox->layout()->addWidget(radioButton);
 }
 
-void view::MousePointerTypeSelectWidget::mousePointerTypeButtonClicked(QAbstractButton* button) {
-    auto type = mousePointerTypeFromString(button->text());
+void view::PrimitiveTypeSelectWidget::mousePointerTypeButtonClicked(QAbstractButton* button) {
+    auto type = primitiveTypeFromString(button->text());
     switch (type) {
-        case MOUSE_POINTER_TYPE::POINT:
-            emit actionDone(new controller::ChangeMousePointerTypeAction(MOUSE_POINTER_TYPE::POINT));
+        case PRIMITIVE_TYPE::POINT:
+            emit actionDone(new controller::ChangePrimitiveTypeAction(PRIMITIVE_TYPE::POINT));
             break;
-        case MOUSE_POINTER_TYPE::LINE:
-            emit actionDone(new controller::ChangeMousePointerTypeAction(MOUSE_POINTER_TYPE::LINE));
+        case PRIMITIVE_TYPE::LINE:
+            emit actionDone(new controller::ChangePrimitiveTypeAction(PRIMITIVE_TYPE::LINE));
             break;
-        case MOUSE_POINTER_TYPE::CIRCLE:
-            emit actionDone(new controller::ChangeMousePointerTypeAction(MOUSE_POINTER_TYPE::CIRCLE));
+        case PRIMITIVE_TYPE::CIRCLE:
+            emit actionDone(new controller::ChangePrimitiveTypeAction(PRIMITIVE_TYPE::CIRCLE));
             break;
-        case MOUSE_POINTER_TYPE::POLY_LINE:
-            emit actionDone(new controller::ChangeMousePointerTypeAction(MOUSE_POINTER_TYPE::POLY_LINE));
+        case PRIMITIVE_TYPE::POLY_LINE:
+            emit actionDone(new controller::ChangePrimitiveTypeAction(PRIMITIVE_TYPE::POLY_LINE));
+            break;
+        case PRIMITIVE_TYPE::STREAM:
             break;
     }
 }

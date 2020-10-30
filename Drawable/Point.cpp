@@ -31,10 +31,17 @@ QPointF Point::point() const {
     return m_point;
 }
 
-QWidget* Point::toWidget(controller::Controller* actionHandler) {
-    return new PointEditWidget(this, actionHandler);
-}
-
 void Point::translate(const QPointF& translation) {
     m_point += translation;
+}
+PRIMITIVE_TYPE Point::type() const {
+    return PRIMITIVE_TYPE::POINT;
+}
+
+void Point::setPoint(size_t index, const QPointF& point) {
+    m_point = point;
+}
+
+QPointF Point::point(size_t index) const {
+    return m_point;
 }

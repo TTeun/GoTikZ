@@ -13,19 +13,19 @@
 controller::AddPrimitiveAction::AddPrimitiveAction(size_t indexOfPrimitive) : m_indexOfPrimitive(indexOfPrimitive) {
 }
 
-void controller::AddPrimitiveAction::doAction(controller::Controller* actionHandler) {
+void controller::AddPrimitiveAction::doAction(controller::Controller* controller) {
     qDebug() << "Do";
-    actionHandler->modelHandler()->drawableHandler().addDrawable(m_drawable.release());
-    actionHandler->modelHandler()->drawableHandler().clearSelectedAndHighlighted();
+    controller->modelHandler()->drawableHandler().addDrawable(m_drawable.release());
+    controller->modelHandler()->drawableHandler().clearSelectedAndHighlighted();
     assert(m_drawable == nullptr);
-    actionHandler->draw();
+    controller->draw();
 }
 
-void controller::AddPrimitiveAction::undoAction(controller::Controller* actionHandler) {
+void controller::AddPrimitiveAction::undoAction(controller::Controller* controller) {
     qDebug() << "Undo";
     m_drawable = static_cast<std::unique_ptr<Drawable>>(
-        actionHandler->modelHandler()->drawableHandler().removeDrawable(m_indexOfPrimitive));
-    actionHandler->modelHandler()->drawableHandler().clearSelectedAndHighlighted();
-    actionHandler->modelHandler()->drawableHandler().clearSelectedAndHighlighted();
-    actionHandler->draw();
+        controller->modelHandler()->drawableHandler().removeDrawable(m_indexOfPrimitive));
+    controller->modelHandler()->drawableHandler().clearSelectedAndHighlighted();
+    controller->modelHandler()->drawableHandler().clearSelectedAndHighlighted();
+    controller->draw();
 }

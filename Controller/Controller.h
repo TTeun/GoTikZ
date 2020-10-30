@@ -18,6 +18,7 @@ class MainWindow;
 class QWheelEvent;
 class QMouseEvent;
 class QKeyEvent;
+class ControlPoint;
 
 namespace model {
     class Model;
@@ -47,8 +48,8 @@ namespace controller {
 
         void draw();
         void mousePressEvent(QMouseEvent* event);
-        void rightClickEvent(QMouseEvent* event);
         void leftClickEvent(QMouseEvent* event);
+        void rightClickEvent(QMouseEvent* event);
         void mouseReleaseEvent(QMouseEvent* event);
         void mouseMoveEvent(QMouseEvent* event);
         void wheelEvent(QWheelEvent* event, const QPointF& mousePosition);
@@ -63,6 +64,7 @@ namespace controller {
       public slots:
         void addAction(UndoableAction* action, bool isAlreadyDone);
         void doAction(Action* action);
+        void updateControlPoints();
 
       signals:
         void updateRightSideBar();
@@ -75,11 +77,12 @@ namespace controller {
         view::LeftSideBar*  m_leftSideBar{};
         view::RightSideBar* m_rightSideBar{};
         MainWindow*         m_mainWindow;
-        model::Model*       m_modelHandler{};
+        model::Model*       m_model{};
 
         controller::ModifierState m_modifierState;
         QPointF                   m_previousFrameMousePoint;
         QPointF                   m_rightClickedMousePoint;
+        ControlPoint*             m_selectedControlPoint;
     };
 } // namespace controller
 

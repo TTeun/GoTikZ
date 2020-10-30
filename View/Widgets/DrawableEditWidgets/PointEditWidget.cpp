@@ -13,8 +13,8 @@
 #include <QGroupBox>
 #include <QLayout>
 
-PointEditWidget::PointEditWidget(Point* point, controller::Controller* actionHandler)
-    : DrawableEditWidget(nullptr), GroupBoxContainer(nullptr, "Point"), m_actionHandler(actionHandler), m_point(point) {
+PointEditWidget::PointEditWidget(Point* point, controller::Controller* controller)
+    : DrawableEditWidget(nullptr), GroupBoxContainer(nullptr, "Point"), m_controller(controller), m_point(point) {
     auto* contentsLayout = m_groupBox->layout();
 
     setLayout(new QHBoxLayout(this));
@@ -26,13 +26,13 @@ PointEditWidget::PointEditWidget(Point* point, controller::Controller* actionHan
     contentsLayout->addWidget(m_point1Widget);
 
     auto* penWidget = new view::PenWidget(nullptr, m_point->index(), m_point->pen());
-    QObject::connect(penWidget, &view::PenWidget::actionDone, m_actionHandler, &controller::Controller::doAction);
+    QObject::connect(penWidget, &view::PenWidget::actionDone, m_controller, &controller::Controller::doAction);
     contentsLayout->addWidget(penWidget);
 }
 
 void PointEditWidget::setPoint(QPointF newPoint) {
     m_point->setPoint(newPoint);
-    m_actionHandler->draw();
+    m_controller->draw();
 }
 
 void PointEditWidget::needsUpdate() {

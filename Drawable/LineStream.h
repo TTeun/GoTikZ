@@ -17,17 +17,18 @@ class Line;
 
 class LineStream : public StreamDrawable {
   public:
-    LineStream(const QPointF& point, const QPen& pen) : StreamDrawable(pen), m_point1(point) {
-    }
+    LineStream(const QPointF& point, const QPen& pen);
 
-    void                       stream(const QPointF& point) override;
-    bool                       addPoint(const QPointF& point, bool forceEnd) override;
-    Drawable*                  drawable() override;
-    void                       draw(QPainter* painter, DRAW_FLAGS drawFlag, const view::Transform& transform) const override;
+    void      stream(const QPointF& point) override;
+    bool      addPoint(const QPointF& point, bool forceEnd) override;
+    Drawable* drawable() override;
+    void      draw(QPainter* painter, DRAW_FLAGS drawFlag, const view::Transform& transform) const override;
     std::pair<double, QPointF> snap(QPointF point) override;
-
-    double dist(const QPointF& point) const override;
-    void   translate(const QPointF& translation) override;
+    double                     dist(const QPointF& point) const override;
+    void                       translate(const QPointF& translation) override;
+    PRIMITIVE_TYPE             type() const override;
+    void                       setPoint(size_t index, const QPointF& point) override;
+    QPointF                    point(size_t index) const override;
 
   private:
     friend class Line;

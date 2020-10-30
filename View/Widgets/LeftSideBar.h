@@ -11,18 +11,18 @@
 
 namespace view {
     class PenWidget;
-    class MousePointerTypeSelectWidget;
+    class PrimitiveTypeSelectWidget;
     class GridSettingWidget;
 
     class LeftSideBar : public QWidget, public GroupBoxContainer {
 
       public:
         explicit LeftSideBar(QWidget* parent);
-        MousePointerTypeSelectWidget* m_mousePointerTypeSelectWidget;
+        PrimitiveTypeSelectWidget* m_mousePointerTypeSelectWidget;
         GridSettingWidget*            m_gridSettingWidget;
         PenWidget*                    m_penWidget;
 
-        MousePointerTypeSelectWidget* mousePointerTypeSelect() const;
+        PrimitiveTypeSelectWidget* mousePointerTypeSelect() const;
         GridSettingWidget*            gridSettingWidget() const;
         PenWidget*                    penWidget() const;
     };

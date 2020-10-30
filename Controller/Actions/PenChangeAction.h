@@ -16,7 +16,7 @@ namespace controller {
       public:
         PenChangeAction(QPen pen, size_t indexOfPrimitive);
 
-        void doAction(Controller* actionHandler) override;
+        void doAction(Controller* controller) override;
 
       private:
         QPen   m_pen;

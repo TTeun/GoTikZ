@@ -22,17 +22,18 @@ class Point : public Drawable {
     Point(QPointF point, const QPen& pen) : Drawable(pen), m_point(point) {
     }
 
-    void draw(QPainter* painter, DRAW_FLAGS drawFlag, const view::Transform& transform) const override;
-
+    void           draw(QPainter* painter, DRAW_FLAGS drawFlag, const view::Transform& transform) const override;
+    void           setPoint(const QPointF& newPoint);
+    void           translate(const QPointF& translation) override;
+    double         dist(const QPointF& point) const override;
+    QPointF        point() const;
+    QPointF                    point(size_t index) const override;
+    PRIMITIVE_TYPE type() const override;
     std::pair<double, QPointF> snap(QPointF point) override;
-    double                     dist(const QPointF& point) const override;
-    void                       setPoint(const QPointF& newPoint);
-    QPointF                    point() const;
-    QWidget*                   toWidget(controller::Controller* actionHandler) override;
 
-    void translate(const QPointF& translation) override;
+    void setPoint(size_t index, const QPointF& point) override;
 
-  private:
+  protected:
     QPointF m_point;
 };
 

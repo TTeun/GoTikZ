@@ -6,19 +6,19 @@
 
 #include "CircleStream.h"
 #include "LineStream.h"
-#include "Model/MousePointerTypeEnum.h"
+#include "Model/PrimitiveTypeEnum.h"
 #include "PolyLineStream.h"
 
-StreamDrawable* StreamDrawableFactory::make(const QPointF& point, MOUSE_POINTER_TYPE type, const QPen& pen) {
-    assert(type != MOUSE_POINTER_TYPE::POINT);
+StreamDrawable* StreamDrawableFactory::make(const QPointF& point, PRIMITIVE_TYPE type, const QPen& pen) {
+    assert(type != PRIMITIVE_TYPE::POINT);
     switch (type) {
-        case MOUSE_POINTER_TYPE::LINE:
+        case PRIMITIVE_TYPE::LINE:
             return new LineStream(point, pen);
             break;
-        case MOUSE_POINTER_TYPE::CIRCLE:
+        case PRIMITIVE_TYPE::CIRCLE:
             return new CircleStream(point, pen);
             break;
-        case MOUSE_POINTER_TYPE::POLY_LINE:
+        case PRIMITIVE_TYPE::POLY_LINE:
             return new PolyLineStream(point, pen);
             break;
         default:

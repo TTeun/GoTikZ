@@ -16,7 +16,7 @@ PolyLine::PolyLine(const PolyLineStream& polyLineStream)
     m_points.resize(m_points.size() - 1ul);
 }
 
-void PolyLine::draw(QPainter* painter, DRAW_FLAGS drawFlag, const view::Transform &transform) const {
+void PolyLine::draw(QPainter* painter, DRAW_FLAGS drawFlag, const view::Transform& transform) const {
     assert(m_points.size() > 1);
     Drawable::draw(painter, drawFlag, transform);
     for (size_t i = 1; i != m_points.size(); ++i) {
@@ -43,7 +43,24 @@ double PolyLine::dist(const QPointF& point) const {
 }
 
 void PolyLine::translate(const QPointF& translation) {
-    for (auto& el : m_points){
+    for (auto& el : m_points) {
         el += translation;
     }
+}
+PRIMITIVE_TYPE PolyLine::type() const {
+    return PRIMITIVE_TYPE::POLY_LINE;
+}
+
+size_t PolyLine::numberOfPoints() const {
+    return m_points.size();
+}
+
+const std::vector<QPointF>& PolyLine::points() const {
+    return m_points;
+}
+void PolyLine::setPoint(size_t index, const QPointF& point) {
+    m_points[index] = point;
+}
+QPointF PolyLine::point(size_t index) const {
+    return m_points[index];
 }

@@ -5,8 +5,8 @@
 #ifndef GOTIKZ_CIRCLEEDITWIDGET_H
 #define GOTIKZ_CIRCLEEDITWIDGET_H
 
-#include "View/Widgets/DrawableEditWidgets/DrawableEditWidget.h"
 #include "View/Widgets/AuxWidgets/GroupBoxContainer.h"
+#include "View/Widgets/DrawableEditWidgets/DrawableEditWidget.h"
 
 class Circle;
 class QSpinBox;
@@ -23,8 +23,7 @@ namespace view {
         Q_OBJECT
 
       public:
-        CircleEditWidget(Circle* circle, controller::Controller* actionHandler);
-        ~CircleEditWidget();
+        CircleEditWidget(Circle* circle, controller::Controller* controller);
 
       public slots:
         void setCenter(QPointF newCenter);
@@ -35,8 +34,8 @@ namespace view {
         QSpinBox* m_radiusSpinBox;
         XyWidget* m_centerWidget;
 
-        controller::Controller* m_actionHandler;
-        Circle*                    m_circle;
+        controller::Controller* m_controller;
+        Circle*                 m_circle;
     };
 } // namespace view
 

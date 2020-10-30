@@ -10,7 +10,7 @@
 controller::ChangeGridAction::ChangeGridAction(view::GridState gridState) : m_gridState(gridState) {
 }
 
-void controller::ChangeGridAction::doAction(controller::Controller* actionHandler) {
-    actionHandler->drawWidget()->setGridState(m_gridState);
-    actionHandler->draw();
+void controller::ChangeGridAction::doAction(controller::Controller* controller) {
+    controller->drawWidget()->setGridState(m_gridState);
+    controller->draw();
 }

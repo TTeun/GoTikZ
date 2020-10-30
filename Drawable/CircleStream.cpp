@@ -44,3 +44,15 @@ double CircleStream::dist(const QPointF& point) const {
 void CircleStream::translate(const QPointF& translation) {
     m_center += translation;
 }
+
+PRIMITIVE_TYPE CircleStream::type() const {
+    return PRIMITIVE_TYPE::STREAM;
+}
+
+void CircleStream::setPoint(size_t index, const QPointF& point) {
+    assert(false);
+}
+QPointF CircleStream::point(size_t index) const {
+    assert(false);
+    return QPointF{};
+}

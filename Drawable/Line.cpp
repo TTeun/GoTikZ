@@ -4,7 +4,8 @@
 
 #include "Line.h"
 
-#include "LineStream.h"
+#include "Drawable/ControlPoint/ControlPoint.h"
+#include "Drawable/LineStream.h"
 #include "Math/Math.h"
 #include "View/Transform.h"
 #include "View/Widgets/DrawableEditWidgets/LineEditWidget.h"
@@ -19,6 +20,7 @@ void Line::draw(QPainter* painter, DRAW_FLAGS drawFlag, const view::Transform& t
     Drawable::draw(painter, drawFlag, transform);
     painter->drawLine(transform.applyTransform(m_point1), transform.applyTransform(m_point2));
 }
+
 std::pair<double, QPointF> Line::snap(QPointF point) {
     const double d1 = Math::magnitude(point - m_point1);
     const double d2 = Math::magnitude(point - m_point2);
@@ -47,6 +49,26 @@ QPointF Line::point1() const {
 QPointF Line::point2() const {
     return m_point2;
 }
-QWidget* Line::toWidget(controller::Controller* actionHandler) {
-    return new LineEditWidget(this, actionHandler);
+
+void Line::translate(const QPointF& translation) {
+    m_point1 += translation;
+    m_point2 += translation;
+}
+
+PRIMITIVE_TYPE Line::type() const {
+    return PRIMITIVE_TYPE::LINE;
+}
+void Line::setPoint(size_t index, const QPointF& point) {
+    if (index == 0) {
+        setPoint1(point);
+    } else {
+        setPoint2(point);
+    }
+}
+QPointF Line::point(size_t index) const {
+    if (index == 0) {
+        return m_point1;
+    } else {
+        return m_point2;
+    }
 }
