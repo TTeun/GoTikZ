@@ -534,32 +534,32 @@ Drawable/ControlPoint/ControlPointFactory.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoTikZ.dir/build.make CMakeFiles/GoTikZ.dir/Drawable/ControlPoint/ControlPointFactory.cpp.s
 .PHONY : Drawable/ControlPoint/ControlPointFactory.cpp.s
 
-Drawable/ControlPoint/PointSetFunctor.o: Drawable/ControlPoint/PointSetFunctor.cpp.o
+Drawable/ControlPoint/PointLinkFunctor.o: Drawable/ControlPoint/PointLinkFunctor.cpp.o
 
-.PHONY : Drawable/ControlPoint/PointSetFunctor.o
+.PHONY : Drawable/ControlPoint/PointLinkFunctor.o
 
 # target to build an object file
-Drawable/ControlPoint/PointSetFunctor.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoTikZ.dir/build.make CMakeFiles/GoTikZ.dir/Drawable/ControlPoint/PointSetFunctor.cpp.o
-.PHONY : Drawable/ControlPoint/PointSetFunctor.cpp.o
+Drawable/ControlPoint/PointLinkFunctor.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoTikZ.dir/build.make CMakeFiles/GoTikZ.dir/Drawable/ControlPoint/PointLinkFunctor.cpp.o
+.PHONY : Drawable/ControlPoint/PointLinkFunctor.cpp.o
 
-Drawable/ControlPoint/PointSetFunctor.i: Drawable/ControlPoint/PointSetFunctor.cpp.i
+Drawable/ControlPoint/PointLinkFunctor.i: Drawable/ControlPoint/PointLinkFunctor.cpp.i
 
-.PHONY : Drawable/ControlPoint/PointSetFunctor.i
+.PHONY : Drawable/ControlPoint/PointLinkFunctor.i
 
 # target to preprocess a source file
-Drawable/ControlPoint/PointSetFunctor.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoTikZ.dir/build.make CMakeFiles/GoTikZ.dir/Drawable/ControlPoint/PointSetFunctor.cpp.i
-.PHONY : Drawable/ControlPoint/PointSetFunctor.cpp.i
+Drawable/ControlPoint/PointLinkFunctor.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoTikZ.dir/build.make CMakeFiles/GoTikZ.dir/Drawable/ControlPoint/PointLinkFunctor.cpp.i
+.PHONY : Drawable/ControlPoint/PointLinkFunctor.cpp.i
 
-Drawable/ControlPoint/PointSetFunctor.s: Drawable/ControlPoint/PointSetFunctor.cpp.s
+Drawable/ControlPoint/PointLinkFunctor.s: Drawable/ControlPoint/PointLinkFunctor.cpp.s
 
-.PHONY : Drawable/ControlPoint/PointSetFunctor.s
+.PHONY : Drawable/ControlPoint/PointLinkFunctor.s
 
 # target to generate assembly for a file
-Drawable/ControlPoint/PointSetFunctor.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoTikZ.dir/build.make CMakeFiles/GoTikZ.dir/Drawable/ControlPoint/PointSetFunctor.cpp.s
-.PHONY : Drawable/ControlPoint/PointSetFunctor.cpp.s
+Drawable/ControlPoint/PointLinkFunctor.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoTikZ.dir/build.make CMakeFiles/GoTikZ.dir/Drawable/ControlPoint/PointLinkFunctor.cpp.s
+.PHONY : Drawable/ControlPoint/PointLinkFunctor.cpp.s
 
 Drawable/Drawable.o: Drawable/Drawable.cpp.o
 
@@ -911,6 +911,33 @@ Model/PrimitiveTypeEnum.s: Model/PrimitiveTypeEnum.cpp.s
 Model/PrimitiveTypeEnum.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoTikZ.dir/build.make CMakeFiles/GoTikZ.dir/Model/PrimitiveTypeEnum.cpp.s
 .PHONY : Model/PrimitiveTypeEnum.cpp.s
+
+View/ColorPresets.o: View/ColorPresets.cpp.o
+
+.PHONY : View/ColorPresets.o
+
+# target to build an object file
+View/ColorPresets.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoTikZ.dir/build.make CMakeFiles/GoTikZ.dir/View/ColorPresets.cpp.o
+.PHONY : View/ColorPresets.cpp.o
+
+View/ColorPresets.i: View/ColorPresets.cpp.i
+
+.PHONY : View/ColorPresets.i
+
+# target to preprocess a source file
+View/ColorPresets.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoTikZ.dir/build.make CMakeFiles/GoTikZ.dir/View/ColorPresets.cpp.i
+.PHONY : View/ColorPresets.cpp.i
+
+View/ColorPresets.s: View/ColorPresets.cpp.s
+
+.PHONY : View/ColorPresets.s
+
+# target to generate assembly for a file
+View/ColorPresets.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoTikZ.dir/build.make CMakeFiles/GoTikZ.dir/View/ColorPresets.cpp.s
+.PHONY : View/ColorPresets.cpp.s
 
 View/GridState.o: View/GridState.cpp.o
 
@@ -1450,9 +1477,9 @@ help:
 	@echo "... Drawable/ControlPoint/ControlPointFactory.o"
 	@echo "... Drawable/ControlPoint/ControlPointFactory.i"
 	@echo "... Drawable/ControlPoint/ControlPointFactory.s"
-	@echo "... Drawable/ControlPoint/PointSetFunctor.o"
-	@echo "... Drawable/ControlPoint/PointSetFunctor.i"
-	@echo "... Drawable/ControlPoint/PointSetFunctor.s"
+	@echo "... Drawable/ControlPoint/PointLinkFunctor.o"
+	@echo "... Drawable/ControlPoint/PointLinkFunctor.i"
+	@echo "... Drawable/ControlPoint/PointLinkFunctor.s"
 	@echo "... Drawable/Drawable.o"
 	@echo "... Drawable/Drawable.i"
 	@echo "... Drawable/Drawable.s"
@@ -1492,6 +1519,9 @@ help:
 	@echo "... Model/PrimitiveTypeEnum.o"
 	@echo "... Model/PrimitiveTypeEnum.i"
 	@echo "... Model/PrimitiveTypeEnum.s"
+	@echo "... View/ColorPresets.o"
+	@echo "... View/ColorPresets.i"
+	@echo "... View/ColorPresets.s"
 	@echo "... View/GridState.o"
 	@echo "... View/GridState.i"
 	@echo "... View/GridState.s"

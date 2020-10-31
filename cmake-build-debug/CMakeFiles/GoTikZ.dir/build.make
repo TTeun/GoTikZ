@@ -662,18 +662,31 @@ CMakeFiles/GoTikZ.dir/Drawable/ControlPoint/ControlPointFactory.cpp.s: cmake_for
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/GoTikZ.dir/Drawable/ControlPoint/ControlPointFactory.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/pc/MEGAsync/C++/clion/GoTikZ/Drawable/ControlPoint/ControlPointFactory.cpp -o CMakeFiles/GoTikZ.dir/Drawable/ControlPoint/ControlPointFactory.cpp.s
 
-CMakeFiles/GoTikZ.dir/Drawable/ControlPoint/PointSetFunctor.cpp.o: CMakeFiles/GoTikZ.dir/flags.make
-CMakeFiles/GoTikZ.dir/Drawable/ControlPoint/PointSetFunctor.cpp.o: ../Drawable/ControlPoint/PointSetFunctor.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pc/MEGAsync/C++/clion/GoTikZ/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_46) "Building CXX object CMakeFiles/GoTikZ.dir/Drawable/ControlPoint/PointSetFunctor.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/GoTikZ.dir/Drawable/ControlPoint/PointSetFunctor.cpp.o -c /home/pc/MEGAsync/C++/clion/GoTikZ/Drawable/ControlPoint/PointSetFunctor.cpp
+CMakeFiles/GoTikZ.dir/Drawable/ControlPoint/PointLinkFunctor.cpp.o: CMakeFiles/GoTikZ.dir/flags.make
+CMakeFiles/GoTikZ.dir/Drawable/ControlPoint/PointLinkFunctor.cpp.o: ../Drawable/ControlPoint/PointLinkFunctor.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pc/MEGAsync/C++/clion/GoTikZ/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_46) "Building CXX object CMakeFiles/GoTikZ.dir/Drawable/ControlPoint/PointLinkFunctor.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/GoTikZ.dir/Drawable/ControlPoint/PointLinkFunctor.cpp.o -c /home/pc/MEGAsync/C++/clion/GoTikZ/Drawable/ControlPoint/PointLinkFunctor.cpp
 
-CMakeFiles/GoTikZ.dir/Drawable/ControlPoint/PointSetFunctor.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/GoTikZ.dir/Drawable/ControlPoint/PointSetFunctor.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/pc/MEGAsync/C++/clion/GoTikZ/Drawable/ControlPoint/PointSetFunctor.cpp > CMakeFiles/GoTikZ.dir/Drawable/ControlPoint/PointSetFunctor.cpp.i
+CMakeFiles/GoTikZ.dir/Drawable/ControlPoint/PointLinkFunctor.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/GoTikZ.dir/Drawable/ControlPoint/PointLinkFunctor.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/pc/MEGAsync/C++/clion/GoTikZ/Drawable/ControlPoint/PointLinkFunctor.cpp > CMakeFiles/GoTikZ.dir/Drawable/ControlPoint/PointLinkFunctor.cpp.i
 
-CMakeFiles/GoTikZ.dir/Drawable/ControlPoint/PointSetFunctor.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/GoTikZ.dir/Drawable/ControlPoint/PointSetFunctor.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/pc/MEGAsync/C++/clion/GoTikZ/Drawable/ControlPoint/PointSetFunctor.cpp -o CMakeFiles/GoTikZ.dir/Drawable/ControlPoint/PointSetFunctor.cpp.s
+CMakeFiles/GoTikZ.dir/Drawable/ControlPoint/PointLinkFunctor.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/GoTikZ.dir/Drawable/ControlPoint/PointLinkFunctor.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/pc/MEGAsync/C++/clion/GoTikZ/Drawable/ControlPoint/PointLinkFunctor.cpp -o CMakeFiles/GoTikZ.dir/Drawable/ControlPoint/PointLinkFunctor.cpp.s
+
+CMakeFiles/GoTikZ.dir/View/ColorPresets.cpp.o: CMakeFiles/GoTikZ.dir/flags.make
+CMakeFiles/GoTikZ.dir/View/ColorPresets.cpp.o: ../View/ColorPresets.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pc/MEGAsync/C++/clion/GoTikZ/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_47) "Building CXX object CMakeFiles/GoTikZ.dir/View/ColorPresets.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/GoTikZ.dir/View/ColorPresets.cpp.o -c /home/pc/MEGAsync/C++/clion/GoTikZ/View/ColorPresets.cpp
+
+CMakeFiles/GoTikZ.dir/View/ColorPresets.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/GoTikZ.dir/View/ColorPresets.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/pc/MEGAsync/C++/clion/GoTikZ/View/ColorPresets.cpp > CMakeFiles/GoTikZ.dir/View/ColorPresets.cpp.i
+
+CMakeFiles/GoTikZ.dir/View/ColorPresets.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/GoTikZ.dir/View/ColorPresets.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/pc/MEGAsync/C++/clion/GoTikZ/View/ColorPresets.cpp -o CMakeFiles/GoTikZ.dir/View/ColorPresets.cpp.s
 
 # Object files for target GoTikZ
 GoTikZ_OBJECTS = \
@@ -722,7 +735,8 @@ GoTikZ_OBJECTS = \
 "CMakeFiles/GoTikZ.dir/View/Widgets/DrawableEditWidgets/DrawableEditWidgetFactory.cpp.o" \
 "CMakeFiles/GoTikZ.dir/Drawable/ControlPoint/ControlPoint.cpp.o" \
 "CMakeFiles/GoTikZ.dir/Drawable/ControlPoint/ControlPointFactory.cpp.o" \
-"CMakeFiles/GoTikZ.dir/Drawable/ControlPoint/PointSetFunctor.cpp.o"
+"CMakeFiles/GoTikZ.dir/Drawable/ControlPoint/PointLinkFunctor.cpp.o" \
+"CMakeFiles/GoTikZ.dir/View/ColorPresets.cpp.o"
 
 # External object files for target GoTikZ
 GoTikZ_EXTERNAL_OBJECTS =
@@ -772,13 +786,14 @@ GoTikZ: CMakeFiles/GoTikZ.dir/Controller/MouseHandler.cpp.o
 GoTikZ: CMakeFiles/GoTikZ.dir/View/Widgets/DrawableEditWidgets/DrawableEditWidgetFactory.cpp.o
 GoTikZ: CMakeFiles/GoTikZ.dir/Drawable/ControlPoint/ControlPoint.cpp.o
 GoTikZ: CMakeFiles/GoTikZ.dir/Drawable/ControlPoint/ControlPointFactory.cpp.o
-GoTikZ: CMakeFiles/GoTikZ.dir/Drawable/ControlPoint/PointSetFunctor.cpp.o
+GoTikZ: CMakeFiles/GoTikZ.dir/Drawable/ControlPoint/PointLinkFunctor.cpp.o
+GoTikZ: CMakeFiles/GoTikZ.dir/View/ColorPresets.cpp.o
 GoTikZ: CMakeFiles/GoTikZ.dir/build.make
 GoTikZ: /usr/lib/libQt5Widgets.so.5.15.1
 GoTikZ: /usr/lib/libQt5Gui.so.5.15.1
 GoTikZ: /usr/lib/libQt5Core.so.5.15.1
 GoTikZ: CMakeFiles/GoTikZ.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/pc/MEGAsync/C++/clion/GoTikZ/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_47) "Linking CXX executable GoTikZ"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/pc/MEGAsync/C++/clion/GoTikZ/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_48) "Linking CXX executable GoTikZ"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/GoTikZ.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

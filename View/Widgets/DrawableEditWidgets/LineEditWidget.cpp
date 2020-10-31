@@ -35,11 +35,13 @@ LineEditWidget::LineEditWidget(Line* line, controller::Controller* controller)
 
 void LineEditWidget::setPoint1(QPointF newPoint) {
     m_line->setPoint1(newPoint);
+    m_controller->updateControlPoints();
     m_controller->draw();
 }
 
 void LineEditWidget::setPoint2(QPointF newPoint) {
     m_line->setPoint2(newPoint);
+    m_controller->updateControlPoints();
     m_controller->draw();
 }
 

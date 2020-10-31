@@ -17,6 +17,7 @@ PolyLine::PolyLine(const PolyLineStream& polyLineStream)
 }
 
 void PolyLine::draw(QPainter* painter, DRAW_FLAGS drawFlag, const view::Transform& transform) const {
+    assert(m_isVisible);
     assert(m_points.size() > 1);
     Drawable::draw(painter, drawFlag, transform);
     for (size_t i = 1; i != m_points.size(); ++i) {
@@ -25,6 +26,7 @@ void PolyLine::draw(QPainter* painter, DRAW_FLAGS drawFlag, const view::Transfor
 }
 
 std::pair<double, QPointF> PolyLine::snap(QPointF point) {
+    assert(m_isVisible);
     auto snapData = std::pair<double, QPointF>(std::numeric_limits<double>::max(), point);
     for (auto& el : m_points) {
         if (Math::magnitude(point - el) < snapData.first) {
@@ -35,6 +37,7 @@ std::pair<double, QPointF> PolyLine::snap(QPointF point) {
 }
 
 double PolyLine::dist(const QPointF& point) const {
+    assert(m_isVisible);
     double result = std::numeric_limits<double>::max();
     for (size_t i = 1; i != m_points.size(); ++i) {
         result = std::min(result, Math::pointToLineDistance({m_points[i - 1], m_points[i]}, point));
@@ -43,24 +46,33 @@ double PolyLine::dist(const QPointF& point) const {
 }
 
 void PolyLine::translate(const QPointF& translation) {
+    assert(m_isVisible);
     for (auto& el : m_points) {
         el += translation;
     }
 }
+
 PRIMITIVE_TYPE PolyLine::type() const {
+    assert(m_isVisible);
     return PRIMITIVE_TYPE::POLY_LINE;
 }
 
 size_t PolyLine::numberOfPoints() const {
+    assert(m_isVisible);
     return m_points.size();
 }
 
 const std::vector<QPointF>& PolyLine::points() const {
+    assert(m_isVisible);
     return m_points;
 }
+
 void PolyLine::setPoint(size_t index, const QPointF& point) {
+    assert(m_isVisible);
     m_points[index] = point;
 }
+
 QPointF PolyLine::point(size_t index) const {
+    assert(m_isVisible);
     return m_points[index];
 }

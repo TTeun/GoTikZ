@@ -215,10 +215,11 @@ void controller::Controller::keyPressEventNoModifier(QKeyEvent* event) {
             m_model->drawableHandler().stopStreaming();
             break;
         case Qt::Key_Delete: {
-            size_t indexOfSelected = m_model->drawableHandler().indexOfSelectedDrawable();
-            if (indexOfSelected != std::numeric_limits<size_t>::max()) {
-                addAction(new DeletePrimitiveAction(indexOfSelected), false);
+            auto indicesOfSelected = m_model->drawableHandler().indicesOfSelectedDrawable();
+            if (not indicesOfSelected.empty()) {
+                addAction(new DeletePrimitiveAction(indicesOfSelected), false);
             }
+            m_rightSideBar->clearWidget();
         } break;
         default:
             break;
@@ -290,13 +291,14 @@ void controller::Controller::leftClickEvent(QMouseEvent* event) {
 }
 
 void controller::Controller::rightClickEvent(QMouseEvent* event) {
-    m_rightClickedMousePoint = event->localPos();
     if (m_model->drawableHandler().isStreaming()) {
+        m_rightClickedMousePoint = event->localPos();
         m_model->drawableHandler().addPointToStreamDrawable(m_model->drawableHandler().snap(m_rightClickedMousePoint),
                                                             true);
         addAction(new controller::AddPrimitiveAction(m_model->drawableHandler().drawables().back()->index()), true);
     }
-    m_selectedControlPoint = m_model->drawableHandler().closestControlPoint(event->localPos(), 40);
+    m_selectedControlPoint = m_model->drawableHandler().getClosestControlPoint(
+        m_model->mousePointInWorldCoordinates(event->localPos()), 40 / m_drawWidget->transform().scale());
 }
 
 void controller::Controller::updateControlPoints() {

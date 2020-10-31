@@ -25,8 +25,10 @@ class Drawable {
   public:
     enum class DRAW_FLAGS { NONE, SELECTED, HIGHLIGHTED };
 
-    size_t      index() const;
     void        setPen(const QPen& pen);
+    void        setVisible(bool visible);
+    bool        visible() const;
+    size_t      index() const;
     const QPen& pen() const;
 
     virtual void    draw(QPainter* painter, DRAW_FLAGS drawFlag, const view::Transform& transform) const;
@@ -38,6 +40,7 @@ class Drawable {
     virtual PRIMITIVE_TYPE             type() const              = 0;
 
   protected:
+    bool m_isVisible = true;
     QPen m_pen;
 
   private:

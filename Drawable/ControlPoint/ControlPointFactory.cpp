@@ -36,27 +36,27 @@ size_t ControlPointFactory::numberOfControlPoints() const {
 
 ControlPoint* ControlPointFactory::controlPoint(Line* line, size_t index) {
     if (index == 0) {
-        return new ControlPoint(line->point1(), line->pen(), PointSetFunctor(index, line));
+        return new ControlPoint(line->point1(), line->pen(), PointLinkFunctor(index, line));
     } else {
-        return new ControlPoint(line->point2(), line->pen(), PointSetFunctor(index, line));
+        return new ControlPoint(line->point2(), line->pen(), PointLinkFunctor(index, line));
     }
 }
 
 ControlPoint* ControlPointFactory::controlPoint(Point* point, size_t index) {
-    return new ControlPoint(point->point(), point->pen(), PointSetFunctor(index, point));
+    return new ControlPoint(point->point(), point->pen(), PointLinkFunctor(index, point));
 }
 
 ControlPoint* ControlPointFactory::controlPoint(Circle* circle, size_t index) {
     if (index == 0) {
-        return new ControlPoint(circle->center(), circle->pen(), PointSetFunctor(index, circle));
+        return new ControlPoint(circle->center(), circle->pen(), PointLinkFunctor(index, circle));
     } else {
         return new ControlPoint(circle->center() + QPointF{circle->radius(), 0}, circle->pen(),
-                                PointSetFunctor(index, circle));
+                                PointLinkFunctor(index, circle));
     }
 }
 
 ControlPoint* ControlPointFactory::controlPoint(PolyLine* polyLine, size_t index) {
-    return new ControlPoint(polyLine->points().at(index), polyLine->pen(), PointSetFunctor(index, polyLine));
+    return new ControlPoint(polyLine->points().at(index), polyLine->pen(), PointLinkFunctor(index, polyLine));
 }
 
 ControlPoint* ControlPointFactory::controlPoint(size_t index) const {

@@ -8,19 +8,22 @@
 #include "Drawable/Drawable.h"
 #include "UndoableAction.h"
 
+#include <vector>
+
 namespace controller {
     class Controller;
+
     class DeletePrimitiveAction : public UndoableAction {
 
       public:
-        explicit DeletePrimitiveAction(size_t indexOfPrimitive);
+        explicit DeletePrimitiveAction(std::vector<size_t> indices);
 
         void doAction(Controller* controller) override;
         void undoAction(Controller* controller) override;
 
       private:
-        const size_t              m_indexOfPrimitive;
-        std::unique_ptr<Drawable> m_drawable;
+        const std::vector<size_t>              m_indices;
+        std::vector<std::unique_ptr<Drawable>> m_drawables;
     };
 } // namespace controller
 

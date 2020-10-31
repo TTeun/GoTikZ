@@ -7,7 +7,7 @@ CMakeFiles/GoTikZ.dir/Controller/Actions/AddPrimitiveAction.cpp.o
  ../Controller/ModifierState.h
  ../Controller/MouseHandler.h
  ../Drawable/ControlPoint/ControlPoint.h
- ../Drawable/ControlPoint/PointSetFunctor.h
+ ../Drawable/ControlPoint/PointLinkFunctor.h
  ../Drawable/Drawable.h
  ../Drawable/DrawableHandler.h
  ../Drawable/Point.h
@@ -254,7 +254,7 @@ CMakeFiles/GoTikZ.dir/Controller/Actions/ChangePrimitiveTypeAction.cpp.o
  ../Controller/ModifierState.h
  ../Controller/MouseHandler.h
  ../Drawable/ControlPoint/ControlPoint.h
- ../Drawable/ControlPoint/PointSetFunctor.h
+ ../Drawable/ControlPoint/PointLinkFunctor.h
  ../Drawable/Drawable.h
  ../Drawable/DrawableHandler.h
  ../Drawable/Point.h
@@ -370,7 +370,7 @@ CMakeFiles/GoTikZ.dir/Controller/Actions/DeletePrimitiveAction.cpp.o
  ../Controller/ModifierState.h
  ../Controller/MouseHandler.h
  ../Drawable/ControlPoint/ControlPoint.h
- ../Drawable/ControlPoint/PointSetFunctor.h
+ ../Drawable/ControlPoint/PointLinkFunctor.h
  ../Drawable/Drawable.h
  ../Drawable/DrawableHandler.h
  ../Drawable/Point.h
@@ -500,7 +500,7 @@ CMakeFiles/GoTikZ.dir/Controller/Actions/PenChangeAction.cpp.o
  ../Controller/ModifierState.h
  ../Controller/MouseHandler.h
  ../Drawable/ControlPoint/ControlPoint.h
- ../Drawable/ControlPoint/PointSetFunctor.h
+ ../Drawable/ControlPoint/PointLinkFunctor.h
  ../Drawable/Drawable.h
  ../Drawable/DrawableHandler.h
  ../Drawable/Point.h
@@ -630,7 +630,7 @@ CMakeFiles/GoTikZ.dir/Controller/Actions/TranslatePrimitiveAction.cpp.o
  ../Controller/ModifierState.h
  ../Controller/MouseHandler.h
  ../Drawable/ControlPoint/ControlPoint.h
- ../Drawable/ControlPoint/PointSetFunctor.h
+ ../Drawable/ControlPoint/PointLinkFunctor.h
  ../Drawable/Drawable.h
  ../Drawable/DrawableHandler.h
  ../Drawable/Point.h
@@ -786,7 +786,7 @@ CMakeFiles/GoTikZ.dir/Controller/Controller.cpp.o
  ../Controller/MouseHandler.h
  ../Drawable/Circle.h
  ../Drawable/ControlPoint/ControlPoint.h
- ../Drawable/ControlPoint/PointSetFunctor.h
+ ../Drawable/ControlPoint/PointLinkFunctor.h
  ../Drawable/Drawable.h
  ../Drawable/DrawableHandler.h
  ../Drawable/Line.h
@@ -1171,10 +1171,11 @@ CMakeFiles/GoTikZ.dir/Drawable/CircleStream.cpp.o
  /usr/include/qt/QtGui/qwindowdefs.h
  /usr/include/qt/QtGui/qwindowdefs_win.h
 CMakeFiles/GoTikZ.dir/Drawable/ControlPoint/ControlPoint.cpp.o
- ../Drawable/ControlPoint/PointSetFunctor.h
+ ../Drawable/ControlPoint/PointLinkFunctor.h
  ../Drawable/Drawable.h
  ../Drawable/Point.h
  ../Model/PrimitiveTypeEnum.h
+ ../View/ColorPresets.h
  ../View/Transform.h
  /home/pc/MEGAsync/C++/clion/GoTikZ/Drawable/ControlPoint/ControlPoint.cpp
  /home/pc/MEGAsync/C++/clion/GoTikZ/Drawable/ControlPoint/ControlPoint.h
@@ -1249,6 +1250,7 @@ CMakeFiles/GoTikZ.dir/Drawable/ControlPoint/ControlPoint.cpp.o
  /usr/include/qt/QtCore/qvarlengtharray.h
  /usr/include/qt/QtCore/qvector.h
  /usr/include/qt/QtCore/qversiontagging.h
+ /usr/include/qt/QtGui/QColor
  /usr/include/qt/QtGui/QPainter
  /usr/include/qt/QtGui/QPen
  /usr/include/qt/QtGui/qbrush.h
@@ -1282,7 +1284,7 @@ CMakeFiles/GoTikZ.dir/Drawable/ControlPoint/ControlPointFactory.cpp.o
  ../Drawable/Circle.h
  ../Drawable/ControlPoint/ControlPoint.h
  ../Drawable/ControlPoint/ControlPointFactory.h
- ../Drawable/ControlPoint/PointSetFunctor.h
+ ../Drawable/ControlPoint/PointLinkFunctor.h
  ../Drawable/Drawable.h
  ../Drawable/Line.h
  ../Drawable/Point.h
@@ -1380,13 +1382,12 @@ CMakeFiles/GoTikZ.dir/Drawable/ControlPoint/ControlPointFactory.cpp.o
  /usr/include/qt/QtGui/qtransform.h
  /usr/include/qt/QtGui/qwindowdefs.h
  /usr/include/qt/QtGui/qwindowdefs_win.h
-CMakeFiles/GoTikZ.dir/Drawable/ControlPoint/PointSetFunctor.cpp.o
+CMakeFiles/GoTikZ.dir/Drawable/ControlPoint/PointLinkFunctor.cpp.o
  ../Drawable/Drawable.h
  ../Drawable/PolyLine.h
  ../Model/PrimitiveTypeEnum.h
- /home/pc/MEGAsync/C++/clion/GoTikZ/Drawable/ControlPoint/PointSetFunctor.cpp
- /home/pc/MEGAsync/C++/clion/GoTikZ/Drawable/ControlPoint/PointSetFunctor.h
- /usr/include/qt/QtCore/QDebug
+ /home/pc/MEGAsync/C++/clion/GoTikZ/Drawable/ControlPoint/PointLinkFunctor.cpp
+ /home/pc/MEGAsync/C++/clion/GoTikZ/Drawable/ControlPoint/PointLinkFunctor.h
  /usr/include/qt/QtCore/QPointF
  /usr/include/qt/QtCore/qalgorithms.h
  /usr/include/qt/QtCore/qarraydata.h
@@ -1403,10 +1404,8 @@ CMakeFiles/GoTikZ.dir/Drawable/ControlPoint/PointSetFunctor.cpp.o
  /usr/include/qt/QtCore/qconfig.h
  /usr/include/qt/QtCore/qcontainerfwd.h
  /usr/include/qt/QtCore/qcontainertools_impl.h
- /usr/include/qt/QtCore/qcontiguouscache.h
  /usr/include/qt/QtCore/qcoreevent.h
  /usr/include/qt/QtCore/qdatastream.h
- /usr/include/qt/QtCore/qdebug.h
  /usr/include/qt/QtCore/qflags.h
  /usr/include/qt/QtCore/qgenericatomic.h
  /usr/include/qt/QtCore/qglobal.h
@@ -1417,9 +1416,7 @@ CMakeFiles/GoTikZ.dir/Drawable/ControlPoint/PointSetFunctor.cpp.o
  /usr/include/qt/QtCore/qiterator.h
  /usr/include/qt/QtCore/qline.h
  /usr/include/qt/QtCore/qlist.h
- /usr/include/qt/QtCore/qlocale.h
  /usr/include/qt/QtCore/qlogging.h
- /usr/include/qt/QtCore/qmap.h
  /usr/include/qt/QtCore/qmargins.h
  /usr/include/qt/QtCore/qmetatype.h
  /usr/include/qt/QtCore/qmutex.h
@@ -1436,7 +1433,6 @@ CMakeFiles/GoTikZ.dir/Drawable/ControlPoint/PointSetFunctor.cpp.o
  /usr/include/qt/QtCore/qrefcount.h
  /usr/include/qt/QtCore/qregexp.h
  /usr/include/qt/QtCore/qscopedpointer.h
- /usr/include/qt/QtCore/qset.h
  /usr/include/qt/QtCore/qshareddata.h
  /usr/include/qt/QtCore/qsharedpointer.h
  /usr/include/qt/QtCore/qsharedpointer_impl.h
@@ -1451,9 +1447,7 @@ CMakeFiles/GoTikZ.dir/Drawable/ControlPoint/PointSetFunctor.cpp.o
  /usr/include/qt/QtCore/qsysinfo.h
  /usr/include/qt/QtCore/qsystemdetection.h
  /usr/include/qt/QtCore/qtcore-config.h
- /usr/include/qt/QtCore/qtextstream.h
  /usr/include/qt/QtCore/qtypeinfo.h
- /usr/include/qt/QtCore/qvariant.h
  /usr/include/qt/QtCore/qvarlengtharray.h
  /usr/include/qt/QtCore/qvector.h
  /usr/include/qt/QtCore/qversiontagging.h
@@ -1477,10 +1471,9 @@ CMakeFiles/GoTikZ.dir/Drawable/ControlPoint/PointSetFunctor.cpp.o
  /usr/include/qt/QtGui/qwindowdefs_win.h
 CMakeFiles/GoTikZ.dir/Drawable/Drawable.cpp.o
  ../Model/PrimitiveTypeEnum.h
- ../View/Transform.h
+ ../View/ColorPresets.h
  /home/pc/MEGAsync/C++/clion/GoTikZ/Drawable/Drawable.cpp
  /home/pc/MEGAsync/C++/clion/GoTikZ/Drawable/Drawable.h
- /usr/include/qt/QtCore/QPointF
  /usr/include/qt/QtCore/qalgorithms.h
  /usr/include/qt/QtCore/qarraydata.h
  /usr/include/qt/QtCore/qatomic.h
@@ -1496,12 +1489,8 @@ CMakeFiles/GoTikZ.dir/Drawable/Drawable.cpp.o
  /usr/include/qt/QtCore/qconfig.h
  /usr/include/qt/QtCore/qcontainerfwd.h
  /usr/include/qt/QtCore/qcontainertools_impl.h
- /usr/include/qt/QtCore/qcontiguouscache.h
  /usr/include/qt/QtCore/qcoreevent.h
  /usr/include/qt/QtCore/qdatastream.h
- /usr/include/qt/QtCore/qdebug.h
- /usr/include/qt/QtCore/qfile.h
- /usr/include/qt/QtCore/qfiledevice.h
  /usr/include/qt/QtCore/qflags.h
  /usr/include/qt/QtCore/qgenericatomic.h
  /usr/include/qt/QtCore/qglobal.h
@@ -1512,9 +1501,7 @@ CMakeFiles/GoTikZ.dir/Drawable/Drawable.cpp.o
  /usr/include/qt/QtCore/qiterator.h
  /usr/include/qt/QtCore/qline.h
  /usr/include/qt/QtCore/qlist.h
- /usr/include/qt/QtCore/qlocale.h
  /usr/include/qt/QtCore/qlogging.h
- /usr/include/qt/QtCore/qmap.h
  /usr/include/qt/QtCore/qmargins.h
  /usr/include/qt/QtCore/qmetatype.h
  /usr/include/qt/QtCore/qmutex.h
@@ -1531,7 +1518,6 @@ CMakeFiles/GoTikZ.dir/Drawable/Drawable.cpp.o
  /usr/include/qt/QtCore/qrefcount.h
  /usr/include/qt/QtCore/qregexp.h
  /usr/include/qt/QtCore/qscopedpointer.h
- /usr/include/qt/QtCore/qset.h
  /usr/include/qt/QtCore/qshareddata.h
  /usr/include/qt/QtCore/qsharedpointer.h
  /usr/include/qt/QtCore/qsharedpointer_impl.h
@@ -1546,29 +1532,22 @@ CMakeFiles/GoTikZ.dir/Drawable/Drawable.cpp.o
  /usr/include/qt/QtCore/qsysinfo.h
  /usr/include/qt/QtCore/qsystemdetection.h
  /usr/include/qt/QtCore/qtcore-config.h
- /usr/include/qt/QtCore/qtextstream.h
  /usr/include/qt/QtCore/qtypeinfo.h
- /usr/include/qt/QtCore/qurl.h
- /usr/include/qt/QtCore/qurlquery.h
- /usr/include/qt/QtCore/qvariant.h
  /usr/include/qt/QtCore/qvarlengtharray.h
  /usr/include/qt/QtCore/qvector.h
  /usr/include/qt/QtCore/qversiontagging.h
+ /usr/include/qt/QtGui/QColor
  /usr/include/qt/QtGui/QPainter
  /usr/include/qt/QtGui/QPen
  /usr/include/qt/QtGui/qbrush.h
  /usr/include/qt/QtGui/qcolor.h
- /usr/include/qt/QtGui/qcursor.h
- /usr/include/qt/QtGui/qevent.h
  /usr/include/qt/QtGui/qfont.h
  /usr/include/qt/QtGui/qfontinfo.h
  /usr/include/qt/QtGui/qfontmetrics.h
  /usr/include/qt/QtGui/qimage.h
- /usr/include/qt/QtGui/qkeysequence.h
  /usr/include/qt/QtGui/qmatrix.h
  /usr/include/qt/QtGui/qpaintdevice.h
  /usr/include/qt/QtGui/qpainter.h
- /usr/include/qt/QtGui/qpalette.h
  /usr/include/qt/QtGui/qpen.h
  /usr/include/qt/QtGui/qpixelformat.h
  /usr/include/qt/QtGui/qpixmap.h
@@ -1579,16 +1558,9 @@ CMakeFiles/GoTikZ.dir/Drawable/Drawable.cpp.o
  /usr/include/qt/QtGui/qtextoption.h
  /usr/include/qt/QtGui/qtgui-config.h
  /usr/include/qt/QtGui/qtguiglobal.h
- /usr/include/qt/QtGui/qtouchdevice.h
  /usr/include/qt/QtGui/qtransform.h
- /usr/include/qt/QtGui/qvector2d.h
  /usr/include/qt/QtGui/qwindowdefs.h
  /usr/include/qt/QtGui/qwindowdefs_win.h
- /usr/include/qt/QtWidgets/QWidget
- /usr/include/qt/QtWidgets/qsizepolicy.h
- /usr/include/qt/QtWidgets/qtwidgets-config.h
- /usr/include/qt/QtWidgets/qtwidgetsglobal.h
- /usr/include/qt/QtWidgets/qwidget.h
 CMakeFiles/GoTikZ.dir/Drawable/DrawableHandler.cpp.o
  ../Controller/Actions/Action.h
  ../Controller/Actions/UndoableAction.h
@@ -1598,7 +1570,7 @@ CMakeFiles/GoTikZ.dir/Drawable/DrawableHandler.cpp.o
  ../Drawable/Circle.h
  ../Drawable/ControlPoint/ControlPoint.h
  ../Drawable/ControlPoint/ControlPointFactory.h
- ../Drawable/ControlPoint/PointSetFunctor.h
+ ../Drawable/ControlPoint/PointLinkFunctor.h
  ../Drawable/Drawable.h
  ../Drawable/Line.h
  ../Drawable/Point.h
@@ -1705,7 +1677,7 @@ CMakeFiles/GoTikZ.dir/Drawable/Line.cpp.o
  ../Controller/ModifierState.h
  ../Controller/MouseHandler.h
  ../Drawable/ControlPoint/ControlPoint.h
- ../Drawable/ControlPoint/PointSetFunctor.h
+ ../Drawable/ControlPoint/PointLinkFunctor.h
  ../Drawable/LineStream.h
  ../Drawable/Point.h
  ../Drawable/StreamDrawable.h
@@ -2342,7 +2314,7 @@ CMakeFiles/GoTikZ.dir/GoTikZ_autogen/mocs_compilation.cpp.o
  ../Controller/ModifierState.h
  ../Controller/MouseHandler.h
  ../Drawable/ControlPoint/ControlPoint.h
- ../Drawable/ControlPoint/PointSetFunctor.h
+ ../Drawable/ControlPoint/PointLinkFunctor.h
  ../Drawable/Drawable.h
  ../Drawable/DrawableHandler.h
  ../Drawable/Point.h
@@ -2496,7 +2468,7 @@ CMakeFiles/GoTikZ.dir/MainWindow.cpp.o
  ../Controller/ModifierState.h
  ../Controller/MouseHandler.h
  ../Drawable/ControlPoint/ControlPoint.h
- ../Drawable/ControlPoint/PointSetFunctor.h
+ ../Drawable/ControlPoint/PointLinkFunctor.h
  ../Drawable/Drawable.h
  ../Drawable/DrawableHandler.h
  ../Drawable/Point.h
@@ -2657,7 +2629,7 @@ CMakeFiles/GoTikZ.dir/Model/Model.cpp.o
  ../Controller/ModifierState.h
  ../Controller/MouseHandler.h
  ../Drawable/ControlPoint/ControlPoint.h
- ../Drawable/ControlPoint/PointSetFunctor.h
+ ../Drawable/ControlPoint/PointLinkFunctor.h
  ../Drawable/Drawable.h
  ../Drawable/DrawableHandler.h
  ../Drawable/Point.h
@@ -2814,6 +2786,58 @@ CMakeFiles/GoTikZ.dir/Model/PrimitiveTypeEnum.cpp.o
  /usr/include/qt/QtCore/qtcore-config.h
  /usr/include/qt/QtCore/qtypeinfo.h
  /usr/include/qt/QtCore/qversiontagging.h
+CMakeFiles/GoTikZ.dir/View/ColorPresets.cpp.o
+ /home/pc/MEGAsync/C++/clion/GoTikZ/View/ColorPresets.cpp
+ /home/pc/MEGAsync/C++/clion/GoTikZ/View/ColorPresets.h
+ /usr/include/qt/QtCore/qalgorithms.h
+ /usr/include/qt/QtCore/qarraydata.h
+ /usr/include/qt/QtCore/qatomic.h
+ /usr/include/qt/QtCore/qatomic_bootstrap.h
+ /usr/include/qt/QtCore/qatomic_cxx11.h
+ /usr/include/qt/QtCore/qatomic_msvc.h
+ /usr/include/qt/QtCore/qbasicatomic.h
+ /usr/include/qt/QtCore/qbytearray.h
+ /usr/include/qt/QtCore/qbytearraylist.h
+ /usr/include/qt/QtCore/qchar.h
+ /usr/include/qt/QtCore/qcompilerdetection.h
+ /usr/include/qt/QtCore/qconfig-bootstrapped.h
+ /usr/include/qt/QtCore/qconfig.h
+ /usr/include/qt/QtCore/qcontainertools_impl.h
+ /usr/include/qt/QtCore/qflags.h
+ /usr/include/qt/QtCore/qgenericatomic.h
+ /usr/include/qt/QtCore/qglobal.h
+ /usr/include/qt/QtCore/qglobalstatic.h
+ /usr/include/qt/QtCore/qhashfunctions.h
+ /usr/include/qt/QtCore/qiterator.h
+ /usr/include/qt/QtCore/qlist.h
+ /usr/include/qt/QtCore/qlogging.h
+ /usr/include/qt/QtCore/qmutex.h
+ /usr/include/qt/QtCore/qnamespace.h
+ /usr/include/qt/QtCore/qnumeric.h
+ /usr/include/qt/QtCore/qpair.h
+ /usr/include/qt/QtCore/qpoint.h
+ /usr/include/qt/QtCore/qprocessordetection.h
+ /usr/include/qt/QtCore/qrefcount.h
+ /usr/include/qt/QtCore/qregexp.h
+ /usr/include/qt/QtCore/qstring.h
+ /usr/include/qt/QtCore/qstringalgorithms.h
+ /usr/include/qt/QtCore/qstringbuilder.h
+ /usr/include/qt/QtCore/qstringlist.h
+ /usr/include/qt/QtCore/qstringliteral.h
+ /usr/include/qt/QtCore/qstringmatcher.h
+ /usr/include/qt/QtCore/qstringview.h
+ /usr/include/qt/QtCore/qsysinfo.h
+ /usr/include/qt/QtCore/qsystemdetection.h
+ /usr/include/qt/QtCore/qtcore-config.h
+ /usr/include/qt/QtCore/qtypeinfo.h
+ /usr/include/qt/QtCore/qvector.h
+ /usr/include/qt/QtCore/qversiontagging.h
+ /usr/include/qt/QtGui/QColor
+ /usr/include/qt/QtGui/qcolor.h
+ /usr/include/qt/QtGui/qrgb.h
+ /usr/include/qt/QtGui/qrgba64.h
+ /usr/include/qt/QtGui/qtgui-config.h
+ /usr/include/qt/QtGui/qtguiglobal.h
 CMakeFiles/GoTikZ.dir/View/GridState.cpp.o
  /home/pc/MEGAsync/C++/clion/GoTikZ/View/GridState.cpp
  /home/pc/MEGAsync/C++/clion/GoTikZ/View/GridState.h
@@ -3204,7 +3228,7 @@ CMakeFiles/GoTikZ.dir/View/Widgets/DrawWidget.cpp.o
  ../Controller/ModifierState.h
  ../Controller/MouseHandler.h
  ../Drawable/ControlPoint/ControlPoint.h
- ../Drawable/ControlPoint/PointSetFunctor.h
+ ../Drawable/ControlPoint/PointLinkFunctor.h
  ../Drawable/Drawable.h
  ../Drawable/DrawableHandler.h
  ../Drawable/Point.h
@@ -4127,7 +4151,7 @@ CMakeFiles/GoTikZ.dir/View/Widgets/LeftSideBar.cpp.o
 CMakeFiles/GoTikZ.dir/View/Widgets/MainWidget.cpp.o
  ../Controller/ModifierState.h
  ../Drawable/ControlPoint/ControlPoint.h
- ../Drawable/ControlPoint/PointSetFunctor.h
+ ../Drawable/ControlPoint/PointLinkFunctor.h
  ../Drawable/Drawable.h
  ../Drawable/DrawableHandler.h
  ../Drawable/Point.h
@@ -4644,7 +4668,7 @@ CMakeFiles/GoTikZ.dir/main.cpp.o
  ../Controller/ModifierState.h
  ../Controller/MouseHandler.h
  ../Drawable/ControlPoint/ControlPoint.h
- ../Drawable/ControlPoint/PointSetFunctor.h
+ ../Drawable/ControlPoint/PointLinkFunctor.h
  ../Drawable/Drawable.h
  ../Drawable/DrawableHandler.h
  ../Drawable/Point.h

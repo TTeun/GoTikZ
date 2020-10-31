@@ -29,7 +29,7 @@ MainWindow::MainWindow()
                   "   background-color: rgb(23,255,255);"
                   "}");
 
-    resize(800, 600);
+    resize(1200, 900);
 }
 
 void MainWindow::keyPressEvent(QKeyEvent* event) {

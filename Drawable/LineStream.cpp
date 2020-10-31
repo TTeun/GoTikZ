@@ -14,11 +14,13 @@ LineStream::LineStream(const QPointF& point, const QPen& pen) : StreamDrawable(p
 }
 
 void LineStream::stream(const QPointF& point) {
+    assert(m_isVisible);
     m_point2     = point;
     m_shouldDraw = true;
 }
 
 void LineStream::draw(QPainter* painter, DRAW_FLAGS drawFlag, const view::Transform& transform) const {
+    assert(m_isVisible);
     Drawable::draw(painter, drawFlag, transform);
     if (m_shouldDraw) {
         painter->drawLine(transform.applyTransform(m_point1), transform.applyTransform(m_point2));
@@ -26,26 +28,34 @@ void LineStream::draw(QPainter* painter, DRAW_FLAGS drawFlag, const view::Transf
 }
 
 bool LineStream::addPoint(const QPointF& point, bool forceEnd) {
+    assert(m_isVisible);
     m_point2 = point;
     return true;
 }
 
 Drawable* LineStream::drawable() {
+    assert(m_isVisible);
     return new Line(*this);
 }
 
 std::pair<double, QPointF> LineStream::snap(QPointF point) {
+    assert(m_isVisible);
     return {std::numeric_limits<double>::max(), point};
 }
 
 double LineStream::dist(const QPointF& point) const {
+    assert(m_isVisible);
     return std::min(Math::distance(point, m_point1), Math::distance(point, m_point2));
 }
+
 void LineStream::translate(const QPointF& translation) {
+    assert(m_isVisible);
     m_point1 += translation;
     m_point2 += translation;
 }
+
 PRIMITIVE_TYPE LineStream::type() const {
+    assert(m_isVisible);
     return PRIMITIVE_TYPE::STREAM;
 }
 

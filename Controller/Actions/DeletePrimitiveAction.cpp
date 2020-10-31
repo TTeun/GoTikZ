@@ -8,20 +8,36 @@
 #include "Model/Model.h"
 #include "View/Widgets/DrawWidget.h"
 
-controller::DeletePrimitiveAction::DeletePrimitiveAction(size_t indexOfPrimitive) : m_indexOfPrimitive(indexOfPrimitive) {
+#include <utility>
+
+controller::DeletePrimitiveAction::DeletePrimitiveAction(std::vector<size_t> indices) : m_indices(std::move(indices)) {
 }
 
 void controller::DeletePrimitiveAction::doAction(controller::Controller* controller) {
-    m_drawable = static_cast<std::unique_ptr<Drawable>>(
-        controller->modelHandler()->drawableHandler().removeDrawable(m_indexOfPrimitive));
+    assert(m_drawables.empty());
+    for (auto index : m_indices) {
+        m_drawables.push_back(static_cast<std::unique_ptr<Drawable>>(
+            controller->modelHandler()->drawableHandler().removeDrawable(index)));
+    }
+
+    for (auto& el : m_drawables) {
+        el->setVisible(false);
+    }
+
     controller->modelHandler()->drawableHandler().clearSelectedAndHighlighted();
     controller->modelHandler()->drawableHandler().clearSelectedAndHighlighted();
     controller->draw();
 }
 
 void controller::DeletePrimitiveAction::undoAction(controller::Controller* controller) {
-    controller->modelHandler()->drawableHandler().addDrawable(m_drawable.release());
+    for (auto& el : m_drawables) {
+        el->setVisible(true);
+        controller->modelHandler()->drawableHandler().addDrawable(el.release());
+    }
     controller->modelHandler()->drawableHandler().clearSelectedAndHighlighted();
-    assert(m_drawable == nullptr);
+    for (auto& el : m_drawables) {
+        assert(el.get() == nullptr);
+    }
+    m_drawables.clear();
     controller->draw();
 }

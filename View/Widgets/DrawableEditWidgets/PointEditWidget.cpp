@@ -32,6 +32,7 @@ PointEditWidget::PointEditWidget(Point* point, controller::Controller* controlle
 
 void PointEditWidget::setPoint(QPointF newPoint) {
     m_point->setPoint(newPoint);
+    m_controller->updateControlPoints();
     m_controller->draw();
 }
 

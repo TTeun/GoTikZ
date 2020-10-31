@@ -201,10 +201,10 @@
 		<Unit filename="/home/pc/MEGAsync/C++/clion/GoTikZ/Drawable/ControlPoint/ControlPointFactory.h">
 			<Option target="GoTikZ"/>
 		</Unit>
-		<Unit filename="/home/pc/MEGAsync/C++/clion/GoTikZ/Drawable/ControlPoint/PointSetFunctor.cpp">
+		<Unit filename="/home/pc/MEGAsync/C++/clion/GoTikZ/Drawable/ControlPoint/PointLinkFunctor.cpp">
 			<Option target="GoTikZ"/>
 		</Unit>
-		<Unit filename="/home/pc/MEGAsync/C++/clion/GoTikZ/Drawable/ControlPoint/PointSetFunctor.h">
+		<Unit filename="/home/pc/MEGAsync/C++/clion/GoTikZ/Drawable/ControlPoint/PointLinkFunctor.h">
 			<Option target="GoTikZ"/>
 		</Unit>
 		<Unit filename="/home/pc/MEGAsync/C++/clion/GoTikZ/Drawable/Drawable.cpp">
@@ -280,6 +280,12 @@
 			<Option target="GoTikZ"/>
 		</Unit>
 		<Unit filename="/home/pc/MEGAsync/C++/clion/GoTikZ/Model/PrimitiveTypeEnum.h">
+			<Option target="GoTikZ"/>
+		</Unit>
+		<Unit filename="/home/pc/MEGAsync/C++/clion/GoTikZ/View/ColorPresets.cpp">
+			<Option target="GoTikZ"/>
+		</Unit>
+		<Unit filename="/home/pc/MEGAsync/C++/clion/GoTikZ/View/ColorPresets.h">
 			<Option target="GoTikZ"/>
 		</Unit>
 		<Unit filename="/home/pc/MEGAsync/C++/clion/GoTikZ/View/GridState.cpp">

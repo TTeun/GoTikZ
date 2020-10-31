@@ -85,9 +85,9 @@
 			"MHPYULKCXU/moc_ControlPointFactory.cpp"
 		],
 		[
-			"/home/pc/MEGAsync/C++/clion/GoTikZ/Drawable/ControlPoint/PointSetFunctor.h",
+			"/home/pc/MEGAsync/C++/clion/GoTikZ/Drawable/ControlPoint/PointLinkFunctor.h",
 			"MU",
-			"MHPYULKCXU/moc_PointSetFunctor.cpp"
+			"MHPYULKCXU/moc_PointLinkFunctor.cpp"
 		],
 		[
 			"/home/pc/MEGAsync/C++/clion/GoTikZ/Drawable/Drawable.h",
@@ -153,6 +153,11 @@
 			"/home/pc/MEGAsync/C++/clion/GoTikZ/Model/PrimitiveTypeEnum.h",
 			"MU",
 			"EXHL2H62WB/moc_PrimitiveTypeEnum.cpp"
+		],
+		[
+			"/home/pc/MEGAsync/C++/clion/GoTikZ/View/ColorPresets.h",
+			"MU",
+			"WB4RFHLAU6/moc_ColorPresets.cpp"
 		],
 		[
 			"/home/pc/MEGAsync/C++/clion/GoTikZ/View/GridState.h",
@@ -350,7 +355,7 @@
 			"MU"
 		],
 		[
-			"/home/pc/MEGAsync/C++/clion/GoTikZ/Drawable/ControlPoint/PointSetFunctor.cpp",
+			"/home/pc/MEGAsync/C++/clion/GoTikZ/Drawable/ControlPoint/PointLinkFunctor.cpp",
 			"MU"
 		],
 		[ "/home/pc/MEGAsync/C++/clion/GoTikZ/Drawable/Drawable.cpp", "MU" ],
@@ -377,6 +382,7 @@
 			"/home/pc/MEGAsync/C++/clion/GoTikZ/Model/PrimitiveTypeEnum.cpp",
 			"MU"
 		],
+		[ "/home/pc/MEGAsync/C++/clion/GoTikZ/View/ColorPresets.cpp", "MU" ],
 		[ "/home/pc/MEGAsync/C++/clion/GoTikZ/View/GridState.cpp", "MU" ],
 		[ "/home/pc/MEGAsync/C++/clion/GoTikZ/View/Transform.cpp", "MU" ],
 		[

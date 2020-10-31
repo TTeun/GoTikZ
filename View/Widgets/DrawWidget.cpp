@@ -32,8 +32,8 @@ void view::DrawWidget::paintEvent(QPaintEvent* e) {
         el->draw(&painter, Drawable::DRAW_FLAGS::NONE, m_transform);
     }
 
-    for (const auto& el : drawableHandler.highlightedDrawables()) {
-        el->draw(&painter, Drawable::DRAW_FLAGS::HIGHLIGHTED, m_transform);
+    if (drawableHandler.highlightedDrawable()) {
+        drawableHandler.highlightedDrawable()->draw(&painter, Drawable::DRAW_FLAGS::HIGHLIGHTED, m_transform);
     }
 
     for (const auto& el : drawableHandler.controlPoints()) {

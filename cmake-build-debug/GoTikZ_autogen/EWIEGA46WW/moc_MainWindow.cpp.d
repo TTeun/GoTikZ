@@ -6,7 +6,7 @@
   /home/pc/MEGAsync/C++/clion/GoTikZ/Controller/ModifierState.h \
   /home/pc/MEGAsync/C++/clion/GoTikZ/Controller/MouseHandler.h \
   /home/pc/MEGAsync/C++/clion/GoTikZ/Drawable/ControlPoint/ControlPoint.h \
-  /home/pc/MEGAsync/C++/clion/GoTikZ/Drawable/ControlPoint/PointSetFunctor.h \
+  /home/pc/MEGAsync/C++/clion/GoTikZ/Drawable/ControlPoint/PointLinkFunctor.h \
   /home/pc/MEGAsync/C++/clion/GoTikZ/Drawable/Drawable.h \
   /home/pc/MEGAsync/C++/clion/GoTikZ/Drawable/DrawableHandler.h \
   /home/pc/MEGAsync/C++/clion/GoTikZ/Drawable/Point.h \

@@ -2,15 +2,15 @@
 // Created by pc on 30-10-20.
 //
 
-#include "PointSetFunctor.h"
+#include "PointLinkFunctor.h"
 
 #include "Drawable/Drawable.h"
 #include "Drawable/PolyLine.h"
 
-#include <QDebug>
 #include <QPointF>
 
-PointSetFunctor::PointSetFunctor(size_t index, Drawable* drawable) : m_index(index), m_drawable(drawable) {
+PointLinkFunctor::PointLinkFunctor(size_t index, Drawable* drawable) : m_index(index), m_drawable(drawable) {
+    assert(m_drawable->visible());
     switch (m_drawable->type()) {
         case PRIMITIVE_TYPE::LINE:
             assert(index < 2);
@@ -28,17 +28,19 @@ PointSetFunctor::PointSetFunctor(size_t index, Drawable* drawable) : m_index(ind
             assert(false);
             break;
     }
-    qDebug() << m_drawable;
 }
 
-void PointSetFunctor::setPoint(const QPointF& newPoint) const {
+void PointLinkFunctor::setPoint(const QPointF& newPoint) const {
+    assert(m_drawable->visible());
     m_drawable->setPoint(m_index, newPoint);
 }
 
-Drawable* PointSetFunctor::drawable() const {
+Drawable* PointLinkFunctor::drawable() const {
+    assert(m_drawable->visible());
     return m_drawable;
 }
 
-QPointF PointSetFunctor::point() const {
+QPointF PointLinkFunctor::point() const {
+    assert(m_drawable->visible());
     return m_drawable->point(m_index);
 }

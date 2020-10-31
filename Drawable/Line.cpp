@@ -17,11 +17,13 @@ Line::Line(const LineStream& lineStream)
 }
 
 void Line::draw(QPainter* painter, DRAW_FLAGS drawFlag, const view::Transform& transform) const {
+    assert(m_isVisible);
     Drawable::draw(painter, drawFlag, transform);
     painter->drawLine(transform.applyTransform(m_point1), transform.applyTransform(m_point2));
 }
 
 std::pair<double, QPointF> Line::snap(QPointF point) {
+    assert(m_isVisible);
     const double d1 = Math::magnitude(point - m_point1);
     const double d2 = Math::magnitude(point - m_point2);
     if (d1 < d2) {
@@ -32,40 +34,52 @@ std::pair<double, QPointF> Line::snap(QPointF point) {
 }
 
 double Line::dist(const QPointF& point) const {
+    assert(m_isVisible);
     return Math::pointToLineDistance({m_point1, m_point2}, point);
 }
 
 void Line::setPoint1(const QPointF& newPoint) {
+    assert(m_isVisible);
     m_point1 = newPoint;
 }
 
 void Line::setPoint2(const QPointF& newPoint) {
+    assert(m_isVisible);
     m_point2 = newPoint;
 }
 
 QPointF Line::point1() const {
+    assert(m_isVisible);
     return m_point1;
 }
+
 QPointF Line::point2() const {
+    assert(m_isVisible);
     return m_point2;
 }
 
 void Line::translate(const QPointF& translation) {
+    assert(m_isVisible);
     m_point1 += translation;
     m_point2 += translation;
 }
 
 PRIMITIVE_TYPE Line::type() const {
+    assert(m_isVisible);
     return PRIMITIVE_TYPE::LINE;
 }
+
 void Line::setPoint(size_t index, const QPointF& point) {
+    assert(m_isVisible);
     if (index == 0) {
         setPoint1(point);
     } else {
         setPoint2(point);
     }
 }
+
 QPointF Line::point(size_t index) const {
+    assert(m_isVisible);
     if (index == 0) {
         return m_point1;
     } else {

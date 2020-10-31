@@ -4,11 +4,9 @@
 
 #include "Drawable.h"
 
-#include "View/Transform.h"
+#include "View/ColorPresets.h"
 
 #include <QPainter>
-#include <QWidget>
-#include <utility>
 
 size_t Drawable::s_maxIndex = 0;
 
@@ -25,12 +23,12 @@ void Drawable::draw(QPainter* painter, DRAW_FLAGS drawFlag, const view::Transfor
             painter->setPen(m_pen);
             break;
         case DRAW_FLAGS::SELECTED: {
-            auto selectedPen = QPen(Qt::green, m_pen.width() + 2);
+            auto selectedPen = QPen(ColorPresets::s_selectedColor, m_pen.width() + 2);
             selectedPen.setCapStyle(Qt::RoundCap);
             painter->setPen(selectedPen);
         } break;
         case DRAW_FLAGS::HIGHLIGHTED: {
-            auto highlightedPen = QPen(m_pen.color(), m_pen.width() * 1.4 + 2);
+            auto highlightedPen = QPen(m_pen.color(), m_pen.width() + 1);
             highlightedPen.setCapStyle(Qt::RoundCap);
             painter->setPen(highlightedPen);
         } break;
@@ -47,4 +45,12 @@ void Drawable::setPen(const QPen& pen) {
 
 const QPen& Drawable::pen() const {
     return m_pen;
+}
+
+void Drawable::setVisible(bool visible) {
+    m_isVisible = visible;
+}
+
+bool Drawable::visible() const {
+    return m_isVisible;
 }

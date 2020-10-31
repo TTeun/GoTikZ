@@ -43,11 +43,13 @@ view::CircleEditWidget::CircleEditWidget(Circle* circle, controller::Controller*
 void view::CircleEditWidget::setCenter(QPointF newCenter) {
     m_circle->setCenter(newCenter);
     m_controller->updateControlPoints();
+    m_controller->updateControlPoints();
     m_controller->draw();
 }
 
 void view::CircleEditWidget::setRadius(double newCenter) {
     m_circle->setRadius(newCenter);
+    m_controller->updateControlPoints();
     m_controller->updateControlPoints();
     m_controller->draw();
 }

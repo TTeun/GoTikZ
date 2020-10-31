@@ -7,6 +7,7 @@
 #include "Drawable/ControlPoint/ControlPointFactory.h"
 
 void DrawableHandler::addDrawable(Drawable* drawable) {
+    drawable->setVisible(true);
     m_drawables.push_back(std::unique_ptr<Drawable>(drawable));
     ControlPointFactory fac(drawable);
     for (size_t i = 0; i != fac.numberOfControlPoints(); ++i) {
@@ -42,6 +43,7 @@ Drawable* DrawableHandler::removeDrawable(const size_t index) {
             ++it;
         }
     }
+    returnPointer->setVisible(false);
     return returnPointer;
 }
 
@@ -88,20 +90,28 @@ QPointF DrawableHandler::snap(const QPointF& mousePoint) const {
 }
 
 void DrawableHandler::clearSelectedAndHighlighted() {
-    updateControlPoints();
     m_selectedDrawables.clear();
-    m_highlightedDrawables.clear();
+    m_highlightedDrawable = nullptr;
 }
 
 void DrawableHandler::highlightClosest(const QPointF& point) {
-    auto* closest = getClosest(point);
-    if (closest == nullptr) {
-        return;
+    m_highlightedDrawable = nullptr;
+    for (auto& el : m_controlPoints) {
+        el->setHighlighted(false);
     }
-    if (std::find(m_selectedDrawables.begin(), m_selectedDrawables.end(), closest) == m_selectedDrawables.end()) {
-        m_highlightedDrawables = {closest};
-    } else {
-        m_highlightedDrawables.clear();
+    auto* closestDrawable = getClosest(point);
+    if (closestDrawable != nullptr) {
+        ControlPoint* closestControlPoint = getClosestControlPoint(point, std::numeric_limits<size_t>::max());
+        if (closestControlPoint->dist(point) < 2 * closestDrawable->dist(point)) {
+            closestControlPoint->setHighlighted(true);
+        } else {
+            if (std::find(m_selectedDrawables.begin(), m_selectedDrawables.end(), closestDrawable) ==
+                m_selectedDrawables.end()) {
+                m_highlightedDrawable = closestDrawable;
+            } else {
+                m_highlightedDrawable = nullptr;
+            }
+        }
     }
 }
 
@@ -119,8 +129,8 @@ Drawable* DrawableHandler::getClosest(const QPointF& point) {
 }
 
 Drawable* DrawableHandler::selectNew(const QPointF& point) {
-    m_highlightedDrawables.clear();
-    auto* closest = getClosest(point);
+    m_highlightedDrawable = nullptr;
+    auto* closest         = getClosest(point);
     if (closest == nullptr) {
         updateControlPoints();
         return nullptr;
@@ -132,8 +142,8 @@ Drawable* DrawableHandler::selectNew(const QPointF& point) {
 }
 
 Drawable* DrawableHandler::addToSelected(const QPointF& point) {
-    m_highlightedDrawables.clear();
-    auto* closest = getClosest(point);
+    m_highlightedDrawable = nullptr;
+    auto* closest         = getClosest(point);
     if (closest == nullptr) {
         updateControlPoints();
         return nullptr;
@@ -165,19 +175,20 @@ void DrawableHandler::setPen(const QPen& pen, size_t indexOfDrawable) {
     assert(false);
 }
 
-size_t DrawableHandler::indexOfSelectedDrawable() const {
-    if (m_selectedDrawables.empty()) {
-        return std::numeric_limits<size_t>::max();
+std::vector<size_t> DrawableHandler::indicesOfSelectedDrawable() const {
+    std::vector<size_t> indices;
+    for (auto& el : m_selectedDrawables) {
+        indices.push_back(el->index());
     }
-    return m_selectedDrawables.front()->index();
+    return indices;
 }
 
 const std::vector<Drawable*>& DrawableHandler::selectedDrawables() const {
     return m_selectedDrawables;
 }
 
-const std::vector<Drawable*>& DrawableHandler::highlightedDrawables() const {
-    return m_highlightedDrawables;
+const Drawable* DrawableHandler::highlightedDrawable() const {
+    return m_highlightedDrawable;
 }
 
 const StreamDrawable* DrawableHandler::streamDrawable() const {
@@ -210,7 +221,7 @@ void DrawableHandler::updateControlPoints() {
     }
 }
 
-ControlPoint* DrawableHandler::closestControlPoint(const QPointF& mousePosition, size_t maximumDistance) const {
+ControlPoint* DrawableHandler::getClosestControlPoint(const QPointF& mousePosition, size_t maximumDistance) const {
     if (m_controlPoints.empty()) {
         return nullptr;
     }

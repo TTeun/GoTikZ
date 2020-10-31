@@ -69,8 +69,8 @@ void model::Model::setPoint(const QPointF& mousePosition, const controller::Modi
         }
     } else {
         if (m_drawableHandler->addPointToStreamDrawable(snappedPoint, false)) {
-            m_controller->addAction(
-                new controller::AddPrimitiveAction(m_drawableHandler->drawables().back()->index()), true);
+            m_controller->addAction(new controller::AddPrimitiveAction(m_drawableHandler->drawables().back()->index()),
+                                    true);
         }
     }
 }
