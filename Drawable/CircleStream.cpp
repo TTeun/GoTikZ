@@ -15,12 +15,13 @@ void CircleStream::stream(const QPointF& point) {
     m_shouldDraw = true;
 }
 
-void CircleStream::draw(QPainter* painter, DRAW_FLAGS drawFlag, const view::Transform& transform) const {
+void CircleStream::draw(QPainter* painter, DRAW_FLAGS drawFlag,
+                        const controller::CoordinateConverter& coordinateConverter) const {
     assert(m_isVisible);
-    Drawable::draw(painter, drawFlag, transform);
+    Drawable::draw(painter, drawFlag, coordinateConverter);
     if (m_shouldDraw) {
-        painter->drawEllipse(transform.applyTransform(m_center), m_radius * transform.scale(),
-                             m_radius * transform.scale());
+        painter->drawEllipse(coordinateConverter.worldToScreen(m_center), coordinateConverter.scale(m_radius),
+                             coordinateConverter.scale(m_radius));
     }
 }
 

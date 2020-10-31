@@ -4,10 +4,10 @@
 
 #include "Line.h"
 
+#include "Controller/CoordinateConverter.h"
 #include "Drawable/ControlPoint/ControlPoint.h"
 #include "Drawable/LineStream.h"
 #include "Math/Math.h"
-#include "View/Transform.h"
 #include "View/Widgets/DrawableEditWidgets/LineEditWidget.h"
 
 #include <QPainter>
@@ -16,10 +16,11 @@ Line::Line(const LineStream& lineStream)
     : Drawable(lineStream.m_pen), m_point1(lineStream.m_point1), m_point2(lineStream.m_point2) {
 }
 
-void Line::draw(QPainter* painter, DRAW_FLAGS drawFlag, const view::Transform& transform) const {
+void Line::draw(QPainter* painter, DRAW_FLAGS drawFlag,
+                const controller::CoordinateConverter& coordinateConverter) const {
     assert(m_isVisible);
-    Drawable::draw(painter, drawFlag, transform);
-    painter->drawLine(transform.applyTransform(m_point1), transform.applyTransform(m_point2));
+    Drawable::draw(painter, drawFlag, coordinateConverter);
+    painter->drawLine(coordinateConverter.worldToScreen(m_point1), coordinateConverter.worldToScreen(m_point2));
 }
 
 std::pair<double, QPointF> Line::snap(QPointF point) {

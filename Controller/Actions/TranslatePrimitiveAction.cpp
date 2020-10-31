@@ -2,7 +2,7 @@
 // Created by pc on 29-10-20.
 //
 
-#include "TranslatePrimitiveAction.h"
+#include "Controller/Actions/TranslatePrimitiveAction.h"
 
 #include "Controller/Controller.h"
 #include "Drawable/DrawableHandler.h"
@@ -18,7 +18,7 @@ controller::TranslatePrimitiveAction::TranslatePrimitiveAction(std::vector<size_
 
 void controller::TranslatePrimitiveAction::doAction(controller::Controller* controller) {
     for (auto index : m_indices) {
-        controller->modelHandler()->drawableHandler().translate(index, m_translation);
+        controller->model()->drawableHandler().translate(index, m_translation);
     }
     controller->updateControlPoints();
     controller->draw();
@@ -26,7 +26,7 @@ void controller::TranslatePrimitiveAction::doAction(controller::Controller* cont
 
 void controller::TranslatePrimitiveAction::undoAction(controller::Controller* controller) {
     for (auto index : m_indices) {
-        controller->modelHandler()->drawableHandler().translate(index, -m_translation);
+        controller->model()->drawableHandler().translate(index, -m_translation);
     }
     controller->updateControlPoints();
     controller->draw();

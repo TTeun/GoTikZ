@@ -16,7 +16,8 @@ Drawable::Drawable(QPen pen) : m_pen(std::move(pen)) {
     ++s_maxIndex;
 }
 
-void Drawable::draw(QPainter* painter, DRAW_FLAGS drawFlag, const view::Transform& transform) const {
+void Drawable::draw(QPainter* painter, DRAW_FLAGS drawFlag,
+                    const controller::CoordinateConverter& coordinateConverter) const {
     painter->setRenderHint(QPainter::Antialiasing, true);
     switch (drawFlag) {
         case DRAW_FLAGS::NONE:

@@ -22,17 +22,16 @@ namespace model {
       public:
         explicit Model(controller::Controller* controller);
 
-        const DrawableHandler& drawableHandler() const;
-        DrawableHandler&       drawableHandler();
-
         void setPoint(const QPointF& mousePosition, const controller::ModifierState& modifierState);
-        Drawable* selectNew(const QPointF& mousePosition);
-        Drawable* addToSelected(const QPointF& mousePosition);
 
-        void    mouseMoveEvent(const QPointF& mousePosition);
-        void    setPen(const QPen& pen);
-        void    setMousePointerType(PRIMITIVE_TYPE newType);
-        QPointF mousePointInWorldCoordinates(const QPointF& mousePoint) const;
+        void                   mouseMoveEvent(const QPointF& mousePosition);
+        void                   setPen(const QPen& pen);
+        void                   setMousePointerType(PRIMITIVE_TYPE newType);
+        void                   deleteSelected();
+        DrawableHandler&       drawableHandler();
+        const DrawableHandler& drawableHandler() const;
+        Drawable*              selectNew(const QPointF& mousePosition);
+        Drawable*              addToSelected(const QPointF& mousePosition);
 
       private:
         std::unique_ptr<DrawableHandler> m_drawableHandler;

@@ -22,7 +22,8 @@ class Line : public Drawable {
     explicit Line(const LineStream& lineStream);
     Line(const QPointF& point1, const QPointF& point2);
 
-    void           draw(QPainter* painter, DRAW_FLAGS drawFlag, const view::Transform& transform) const override;
+    void           draw(QPainter* painter, DRAW_FLAGS drawFlag,
+                                    const controller::CoordinateConverter& coordinateConverter) const override;
     void           setPoint1(const QPointF& newPoint);
     void           setPoint2(const QPointF& newPoint);
     void           translate(const QPointF& translation) override;

@@ -15,10 +15,11 @@ Circle::Circle(const CircleStream& circleStream)
     : Drawable(circleStream.m_pen), m_center(circleStream.m_center), m_radius(circleStream.m_radius) {
 }
 
-void Circle::draw(QPainter* painter, DRAW_FLAGS drawFlag, const view::Transform& transform) const {
-    Drawable::draw(painter, drawFlag, transform);
-    painter->drawEllipse(transform.applyTransform(m_center), m_radius * transform.scale(),
-                         m_radius * transform.scale());
+void Circle::draw(QPainter* painter, DRAW_FLAGS drawFlag,
+                  const controller::CoordinateConverter& coordinateConverter) const {
+    Drawable::draw(painter, drawFlag, coordinateConverter);
+    painter->drawEllipse(coordinateConverter.worldToScreen(m_center), coordinateConverter.scale(m_radius),
+                         coordinateConverter.scale(m_radius));
 }
 
 std::pair<double, QPointF> Circle::snap(QPointF point) {

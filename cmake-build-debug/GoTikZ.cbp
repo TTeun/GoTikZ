@@ -117,12 +117,6 @@
 		<Unit filename="/home/pc/MEGAsync/C++/clion/GoTikZ/Controller/Actions/Action.h">
 			<Option target="GoTikZ"/>
 		</Unit>
-		<Unit filename="/home/pc/MEGAsync/C++/clion/GoTikZ/Controller/Actions/AddPrimitiveAction.cpp">
-			<Option target="GoTikZ"/>
-		</Unit>
-		<Unit filename="/home/pc/MEGAsync/C++/clion/GoTikZ/Controller/Actions/AddPrimitiveAction.h">
-			<Option target="GoTikZ"/>
-		</Unit>
 		<Unit filename="/home/pc/MEGAsync/C++/clion/GoTikZ/Controller/Actions/ChangeGridAction.cpp">
 			<Option target="GoTikZ"/>
 		</Unit>
@@ -135,16 +129,28 @@
 		<Unit filename="/home/pc/MEGAsync/C++/clion/GoTikZ/Controller/Actions/ChangePrimitiveTypeAction.h">
 			<Option target="GoTikZ"/>
 		</Unit>
-		<Unit filename="/home/pc/MEGAsync/C++/clion/GoTikZ/Controller/Actions/DeletePrimitiveAction.cpp">
+		<Unit filename="/home/pc/MEGAsync/C++/clion/GoTikZ/Controller/Actions/HidePrimitiveAction.cpp">
 			<Option target="GoTikZ"/>
 		</Unit>
-		<Unit filename="/home/pc/MEGAsync/C++/clion/GoTikZ/Controller/Actions/DeletePrimitiveAction.h">
+		<Unit filename="/home/pc/MEGAsync/C++/clion/GoTikZ/Controller/Actions/HidePrimitiveAction.h">
 			<Option target="GoTikZ"/>
 		</Unit>
 		<Unit filename="/home/pc/MEGAsync/C++/clion/GoTikZ/Controller/Actions/PenChangeAction.cpp">
 			<Option target="GoTikZ"/>
 		</Unit>
 		<Unit filename="/home/pc/MEGAsync/C++/clion/GoTikZ/Controller/Actions/PenChangeAction.h">
+			<Option target="GoTikZ"/>
+		</Unit>
+		<Unit filename="/home/pc/MEGAsync/C++/clion/GoTikZ/Controller/Actions/ShowPrimitiveAction.cpp">
+			<Option target="GoTikZ"/>
+		</Unit>
+		<Unit filename="/home/pc/MEGAsync/C++/clion/GoTikZ/Controller/Actions/ShowPrimitiveAction.h">
+			<Option target="GoTikZ"/>
+		</Unit>
+		<Unit filename="/home/pc/MEGAsync/C++/clion/GoTikZ/Controller/Actions/TranslateControlPointAction.cpp">
+			<Option target="GoTikZ"/>
+		</Unit>
+		<Unit filename="/home/pc/MEGAsync/C++/clion/GoTikZ/Controller/Actions/TranslateControlPointAction.h">
 			<Option target="GoTikZ"/>
 		</Unit>
 		<Unit filename="/home/pc/MEGAsync/C++/clion/GoTikZ/Controller/Actions/TranslatePrimitiveAction.cpp">
@@ -163,6 +169,12 @@
 			<Option target="GoTikZ"/>
 		</Unit>
 		<Unit filename="/home/pc/MEGAsync/C++/clion/GoTikZ/Controller/Controller.h">
+			<Option target="GoTikZ"/>
+		</Unit>
+		<Unit filename="/home/pc/MEGAsync/C++/clion/GoTikZ/Controller/CoordinateConverter.cpp">
+			<Option target="GoTikZ"/>
+		</Unit>
+		<Unit filename="/home/pc/MEGAsync/C++/clion/GoTikZ/Controller/CoordinateConverter.h">
 			<Option target="GoTikZ"/>
 		</Unit>
 		<Unit filename="/home/pc/MEGAsync/C++/clion/GoTikZ/Controller/ModifierState.cpp">
@@ -201,10 +213,10 @@
 		<Unit filename="/home/pc/MEGAsync/C++/clion/GoTikZ/Drawable/ControlPoint/ControlPointFactory.h">
 			<Option target="GoTikZ"/>
 		</Unit>
-		<Unit filename="/home/pc/MEGAsync/C++/clion/GoTikZ/Drawable/ControlPoint/PointLinkFunctor.cpp">
+		<Unit filename="/home/pc/MEGAsync/C++/clion/GoTikZ/Drawable/ControlPoint/PointInterface.cpp">
 			<Option target="GoTikZ"/>
 		</Unit>
-		<Unit filename="/home/pc/MEGAsync/C++/clion/GoTikZ/Drawable/ControlPoint/PointLinkFunctor.h">
+		<Unit filename="/home/pc/MEGAsync/C++/clion/GoTikZ/Drawable/ControlPoint/PointInterface.h">
 			<Option target="GoTikZ"/>
 		</Unit>
 		<Unit filename="/home/pc/MEGAsync/C++/clion/GoTikZ/Drawable/Drawable.cpp">

@@ -11,6 +11,10 @@
 
 class QPainter;
 
+namespace controller {
+    class CoordinateConverter;
+}
+
 namespace view {
     class Transform;
 }
@@ -31,13 +35,14 @@ class Drawable {
     size_t      index() const;
     const QPen& pen() const;
 
-    virtual void    draw(QPainter* painter, DRAW_FLAGS drawFlag, const view::Transform& transform) const;
-    virtual void    translate(const QPointF& translation)        = 0;
-    virtual void    setPoint(size_t index, const QPointF& point) = 0;
-    virtual double  dist(const QPointF& point) const             = 0;
-    virtual QPointF point(size_t index) const                    = 0;
-    virtual std::pair<double, QPointF> snap(QPointF point)       = 0;
-    virtual PRIMITIVE_TYPE             type() const              = 0;
+    virtual void                       draw(QPainter* painter, DRAW_FLAGS drawFlag,
+                                            const controller::CoordinateConverter& coordinateConverter) const;
+    virtual void                       translate(const QPointF& translation)        = 0;
+    virtual void                       setPoint(size_t index, const QPointF& point) = 0;
+    virtual double                     dist(const QPointF& point) const             = 0;
+    virtual QPointF                    point(size_t index) const                    = 0;
+    virtual std::pair<double, QPointF> snap(QPointF point)                          = 0;
+    virtual PRIMITIVE_TYPE             type() const                                 = 0;
 
   protected:
     bool m_isVisible = true;

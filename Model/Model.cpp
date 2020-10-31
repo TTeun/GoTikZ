@@ -4,7 +4,8 @@
 
 #include "Model.h"
 
-#include "Controller/Actions/AddPrimitiveAction.h"
+#include "Controller/Actions/HidePrimitiveAction.h"
+#include "Controller/Actions/ShowPrimitiveAction.h"
 #include "Controller/Controller.h"
 #include "Drawable/Point.h"
 #include "Drawable/StreamDrawableFactory.h"
@@ -27,11 +28,12 @@ DrawableHandler& model::Model::drawableHandler() {
 }
 
 void model::Model::mouseMoveEvent(const QPointF& mousePosition) {
-    const auto snappedMousePoint = m_drawableHandler->snap(mousePointInWorldCoordinates(mousePosition));
+    const auto snappedMousePoint =
+        m_drawableHandler->snap(m_controller->coordinateConverter().screenToWorld(mousePosition));
     if (m_drawableHandler->isStreaming()) {
         m_drawableHandler->stream(snappedMousePoint);
     } else {
-        m_drawableHandler->highlightClosest(mousePointInWorldCoordinates(mousePosition));
+        m_drawableHandler->highlightClosest(m_controller->coordinateConverter().screenToWorld(mousePosition));
     }
 }
 
@@ -47,20 +49,15 @@ void model::Model::setMousePointerType(PRIMITIVE_TYPE newType) {
     m_mousePointerType = newType;
 }
 
-QPointF model::Model::mousePointInWorldCoordinates(const QPointF& mousePoint) const {
-    return m_controller->drawWidget()->transform().invertTransform(mousePoint);
-}
-
 void model::Model::setPoint(const QPointF& mousePosition, const controller::ModifierState& modifierState) {
-    const auto snappedPoint = m_drawableHandler->snap(mousePointInWorldCoordinates(mousePosition));
-
     m_drawableHandler->clearSelectedAndHighlighted();
+    const auto snappedPoint = m_drawableHandler->snap(m_controller->coordinateConverter().screenToWorld(mousePosition));
     if (not m_drawableHandler->isStreaming()) {
         switch (m_mousePointerType) {
             case PRIMITIVE_TYPE::POINT:
                 m_drawableHandler->addDrawable(new Point(snappedPoint, m_drawPen));
                 m_controller->addAction(
-                    new controller::AddPrimitiveAction(m_drawableHandler->drawables().back()->index()), true);
+                    new controller::ShowPrimitiveAction(m_drawableHandler->drawables().back()->index()), true);
                 break;
             default:
                 m_drawableHandler->addStreamDrawable(
@@ -69,16 +66,23 @@ void model::Model::setPoint(const QPointF& mousePosition, const controller::Modi
         }
     } else {
         if (m_drawableHandler->addPointToStreamDrawable(snappedPoint, false)) {
-            m_controller->addAction(new controller::AddPrimitiveAction(m_drawableHandler->drawables().back()->index()),
+            m_controller->addAction(new controller::ShowPrimitiveAction(m_drawableHandler->drawables().back()->index()),
                                     true);
         }
     }
 }
 
 Drawable* model::Model::selectNew(const QPointF& mousePosition) {
-    return m_drawableHandler->selectNew(mousePointInWorldCoordinates(mousePosition));
+    return m_drawableHandler->selectNew(m_controller->coordinateConverter().screenToWorld(mousePosition));
 }
 
 Drawable* model::Model::addToSelected(const QPointF& mousePosition) {
-    return m_drawableHandler->addToSelected(mousePointInWorldCoordinates(mousePosition));
+    return m_drawableHandler->addToSelected(m_controller->coordinateConverter().screenToWorld(mousePosition));
+}
+
+void model::Model::deleteSelected() {
+    if (not m_drawableHandler->selectedDrawables().empty()) {
+        m_controller->addAction(new controller::HidePrimitiveAction(drawableHandler().indicesOfSelectedDrawable()),
+                                false);
+    }
 }

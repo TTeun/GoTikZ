@@ -22,7 +22,8 @@ class Point : public Drawable {
     Point(QPointF point, const QPen& pen) : Drawable(pen), m_point(point) {
     }
 
-    void           draw(QPainter* painter, DRAW_FLAGS drawFlag, const view::Transform& transform) const override;
+    void           draw(QPainter* painter, DRAW_FLAGS drawFlag,
+                                    const controller::CoordinateConverter& coordinateConverter) const override;
     void           setPoint(const QPointF& newPoint);
     void           translate(const QPointF& translation) override;
     double         dist(const QPointF& point) const override;

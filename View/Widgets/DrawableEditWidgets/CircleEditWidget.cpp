@@ -20,13 +20,11 @@ view::CircleEditWidget::CircleEditWidget(Circle* circle, controller::Controller*
     setLayout(new QHBoxLayout(this));
     auto* contentsLayout = m_groupBox->layout();
     m_centerWidget       = new view::XyWidget(circle->center(), "Center");
-    m_centerWidget->setObjectName("centerWidget");
     QObject::connect(m_centerWidget, &view::XyWidget::sendValues, this, &CircleEditWidget::setCenter);
 
     contentsLayout->addWidget(m_centerWidget);
 
     m_radiusSpinBox = new QSpinBox(m_groupBox);
-    m_radiusSpinBox->setObjectName("radiusSpinBox");
     m_radiusSpinBox->setMaximum(std::numeric_limits<int>::max());
     m_radiusSpinBox->setValue(circle->radius());
 

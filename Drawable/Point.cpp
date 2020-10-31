@@ -4,15 +4,16 @@
 
 #include "Point.h"
 
-#include "View/Transform.h"
+#include "Controller/CoordinateConverter.h"
 #include "View/Widgets/DrawableEditWidgets/PointEditWidget.h"
 
 #include <Math/Math.h>
 #include <QPainter>
 
-void Point::draw(QPainter* painter, DRAW_FLAGS drawFlag, const view::Transform& transform) const {
-    Drawable::draw(painter, drawFlag, transform);
-    painter->drawPoint(transform.applyTransform(m_point));
+void Point::draw(QPainter* painter, DRAW_FLAGS drawFlag,
+                 const controller::CoordinateConverter& coordinateConverter) const {
+    Drawable::draw(painter, drawFlag, coordinateConverter);
+    painter->drawPoint(coordinateConverter.worldToScreen(m_point));
 }
 
 std::pair<double, QPointF> Point::snap(QPointF point) {

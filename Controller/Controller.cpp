@@ -4,8 +4,9 @@
 
 #include "Controller.h"
 
-#include "Controller/Actions/AddPrimitiveAction.h"
-#include "Controller/Actions/DeletePrimitiveAction.h"
+#include "Controller/Actions/HidePrimitiveAction.h"
+#include "Controller/Actions/ShowPrimitiveAction.h"
+#include "Controller/Actions/TranslateControlPointAction.h"
 #include "Controller/Actions/TranslatePrimitiveAction.h"
 #include "Controller/Actions/UndoableAction.h"
 #include "Drawable/Circle.h"
@@ -36,6 +37,8 @@ void controller::Controller::init(view::MainWidget* mainWidget, model::Model* mo
     m_leftSideBar  = mainWidget->leftSideBar();
     m_rightSideBar = mainWidget->rightSideBar();
     m_model        = model;
+    m_coordinateConverter.reset(
+        new controller::CoordinateConverter(&m_drawWidget->transform(), &m_model->drawableHandler()));
 
     QObject::connect(m_leftSideBar->mousePointerTypeSelect(), &view::PrimitiveTypeSelectWidget::undoableActionDone,
                      this, &Controller::addAction);
@@ -114,19 +117,28 @@ void controller::Controller::mouseReleaseEvent(QMouseEvent* event) {
             break;
         case Qt::RightButton:
             if (m_selectedControlPoint != nullptr) {
+                addAction(new TranslateControlPointAction(m_selectedControlPoint->index(),
+                                                          (event->localPos() - m_rightClickedMousePosition) /
+                                                              m_drawWidget->transform().scale()),
+                          true);
 
-            } else if (not m_model->drawableHandler().selectedDrawables().empty() &&
-                       event->localPos() != m_rightClickedMousePoint) {
+            } else if (not m_model->drawableHandler().selectedDrawables().empty()) {
                 std::vector<size_t> indicesOfTranslatedPrimitives;
                 indicesOfTranslatedPrimitives.reserve(m_model->drawableHandler().selectedDrawables().size());
                 for (const auto& el : m_model->drawableHandler().selectedDrawables()) {
                     indicesOfTranslatedPrimitives.push_back(el->index());
                 }
                 addAction(new TranslatePrimitiveAction(indicesOfTranslatedPrimitives,
-                                                       (event->localPos() - m_rightClickedMousePoint) /
+                                                       (event->localPos() - m_rightClickedMousePosition) /
+                                                           m_drawWidget->transform().scale()),
+                          true);
+            } else if (m_model->drawableHandler().highlightedDrawable()) {
+                addAction(new TranslatePrimitiveAction({m_model->drawableHandler().highlightedDrawable()->index()},
+                                                       (event->localPos() - m_rightClickedMousePosition) /
                                                            m_drawWidget->transform().scale()),
                           true);
             }
+
             break;
         default:
             break;
@@ -140,15 +152,7 @@ void controller::Controller::mouseMoveEvent(QMouseEvent* event) {
             m_model->mouseMoveEvent(newMousePoint);
             break;
         case Qt::RightButton:
-            if (m_selectedControlPoint != nullptr) {
-                m_selectedControlPoint->translate((newMousePoint - m_previousFrameMousePoint) /
-                                                  m_drawWidget->transform().scale());
-                emit updateRightSideBar();
-            } else {
-                m_model->drawableHandler().translateSelected((newMousePoint - m_previousFrameMousePoint) /
-                                                             m_drawWidget->transform().scale());
-            }
-            updateControlPoints();
+            rightMouseMoveEvent(newMousePoint);
             break;
         case Qt::LeftButton:
             m_model->mouseMoveEvent(newMousePoint);
@@ -162,13 +166,13 @@ void controller::Controller::mouseMoveEvent(QMouseEvent* event) {
 }
 
 void controller::Controller::wheelEvent(QWheelEvent* event, const QPointF& mousePosition) {
-    const auto mouseInWorld = m_model->mousePointInWorldCoordinates(mousePosition);
     m_drawWidget->transform().addToScaleParameter(event->angleDelta().y() / 100);
+    const auto mouseInWorld = m_coordinateConverter->screenToWorld(mousePosition);
     m_drawWidget->transform().setTranslation(mousePosition - m_drawWidget->transform().scale() * mouseInWorld);
     draw();
 }
 
-model::Model* controller::Controller::modelHandler() {
+model::Model* controller::Controller::model() {
     return m_model;
 }
 
@@ -213,12 +217,11 @@ void controller::Controller::keyPressEventNoModifier(QKeyEvent* event) {
             break;
         case Qt::Key_Escape:
             m_model->drawableHandler().stopStreaming();
+            m_model->drawableHandler().clearSelectedAndHighlighted();
+            draw();
             break;
         case Qt::Key_Delete: {
-            auto indicesOfSelected = m_model->drawableHandler().indicesOfSelectedDrawable();
-            if (not indicesOfSelected.empty()) {
-                addAction(new DeletePrimitiveAction(indicesOfSelected), false);
-            }
+            m_model->deleteSelected();
             m_rightSideBar->clearWidget();
         } break;
         default:
@@ -268,13 +271,13 @@ void controller::Controller::keyReleaseEvent(QKeyEvent* event) {
 }
 
 void controller::Controller::leftClickEvent(QMouseEvent* event) {
-    const auto leftClickedMousePoint = event->localPos();
+    const auto leftClickedMousePosition = event->localPos();
     if (m_modifierState.controlPressed()) {
         Drawable* newlySelectedDrawable = nullptr;
         if (m_modifierState.shiftPressed()) {
-            newlySelectedDrawable = m_model->addToSelected(leftClickedMousePoint);
+            newlySelectedDrawable = m_model->addToSelected(leftClickedMousePosition);
         } else {
-            newlySelectedDrawable = m_model->selectNew(leftClickedMousePoint);
+            newlySelectedDrawable = m_model->selectNew(leftClickedMousePosition);
         }
         if (newlySelectedDrawable != nullptr) {
             setEditWidget(
@@ -285,22 +288,45 @@ void controller::Controller::leftClickEvent(QMouseEvent* event) {
             m_rightSideBar->clearWidget();
         }
     } else {
-        m_model->setPoint(leftClickedMousePoint, m_modifierState);
+        m_model->setPoint(leftClickedMousePosition, m_modifierState);
         m_rightSideBar->clearWidget();
     }
 }
 
 void controller::Controller::rightClickEvent(QMouseEvent* event) {
+    m_rightClickedMousePosition = event->localPos();
     if (m_model->drawableHandler().isStreaming()) {
-        m_rightClickedMousePoint = event->localPos();
-        m_model->drawableHandler().addPointToStreamDrawable(m_model->drawableHandler().snap(m_rightClickedMousePoint),
-                                                            true);
-        addAction(new controller::AddPrimitiveAction(m_model->drawableHandler().drawables().back()->index()), true);
+        m_model->drawableHandler().addPointToStreamDrawable(
+            m_model->drawableHandler().snap(m_rightClickedMousePosition), true);
+        addAction(new controller::ShowPrimitiveAction(m_model->drawableHandler().drawables().back()->index()), true);
     }
     m_selectedControlPoint = m_model->drawableHandler().getClosestControlPoint(
-        m_model->mousePointInWorldCoordinates(event->localPos()), 40 / m_drawWidget->transform().scale());
+        m_coordinateConverter->screenToWorld(event->localPos()), 40 / m_drawWidget->transform().scale());
 }
 
 void controller::Controller::updateControlPoints() {
     m_model->drawableHandler().updateControlPoints();
+}
+
+void controller::Controller::setSelectedControlPoint(ControlPoint* selectedControlPoint) {
+    m_selectedControlPoint = selectedControlPoint;
+}
+
+void controller::Controller::rightMouseMoveEvent(const QPointF& newMousePosition) {
+    if (m_selectedControlPoint != nullptr) {
+        m_selectedControlPoint->translate((newMousePosition - m_previousFrameMousePoint) /
+                                          m_drawWidget->transform().scale());
+        emit updateRightSideBar();
+    } else if (not m_model->drawableHandler().selectedDrawables().empty()) {
+        m_model->drawableHandler().translateSelected((newMousePosition - m_previousFrameMousePoint) /
+                                                     m_drawWidget->transform().scale());
+    } else if (m_model->drawableHandler().highlightedDrawable()) {
+        m_model->drawableHandler().translateHighlighted((newMousePosition - m_previousFrameMousePoint) /
+                                                        m_drawWidget->transform().scale());
+    }
+    updateControlPoints();
+}
+
+const controller::CoordinateConverter& controller::Controller::coordinateConverter() const {
+    return *m_coordinateConverter;
 }

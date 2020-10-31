@@ -15,11 +15,6 @@
 			"DDMX5RIXQU/moc_Action.cpp"
 		],
 		[
-			"/home/pc/MEGAsync/C++/clion/GoTikZ/Controller/Actions/AddPrimitiveAction.h",
-			"MU",
-			"DDMX5RIXQU/moc_AddPrimitiveAction.cpp"
-		],
-		[
 			"/home/pc/MEGAsync/C++/clion/GoTikZ/Controller/Actions/ChangeGridAction.h",
 			"MU",
 			"DDMX5RIXQU/moc_ChangeGridAction.cpp"
@@ -30,14 +25,24 @@
 			"DDMX5RIXQU/moc_ChangePrimitiveTypeAction.cpp"
 		],
 		[
-			"/home/pc/MEGAsync/C++/clion/GoTikZ/Controller/Actions/DeletePrimitiveAction.h",
+			"/home/pc/MEGAsync/C++/clion/GoTikZ/Controller/Actions/HidePrimitiveAction.h",
 			"MU",
-			"DDMX5RIXQU/moc_DeletePrimitiveAction.cpp"
+			"DDMX5RIXQU/moc_HidePrimitiveAction.cpp"
 		],
 		[
 			"/home/pc/MEGAsync/C++/clion/GoTikZ/Controller/Actions/PenChangeAction.h",
 			"MU",
 			"DDMX5RIXQU/moc_PenChangeAction.cpp"
+		],
+		[
+			"/home/pc/MEGAsync/C++/clion/GoTikZ/Controller/Actions/ShowPrimitiveAction.h",
+			"MU",
+			"DDMX5RIXQU/moc_ShowPrimitiveAction.cpp"
+		],
+		[
+			"/home/pc/MEGAsync/C++/clion/GoTikZ/Controller/Actions/TranslateControlPointAction.h",
+			"MU",
+			"DDMX5RIXQU/moc_TranslateControlPointAction.cpp"
 		],
 		[
 			"/home/pc/MEGAsync/C++/clion/GoTikZ/Controller/Actions/TranslatePrimitiveAction.h",
@@ -53,6 +58,11 @@
 			"/home/pc/MEGAsync/C++/clion/GoTikZ/Controller/Controller.h",
 			"MU",
 			"TTE4PTQQBL/moc_Controller.cpp"
+		],
+		[
+			"/home/pc/MEGAsync/C++/clion/GoTikZ/Controller/CoordinateConverter.h",
+			"MU",
+			"TTE4PTQQBL/moc_CoordinateConverter.cpp"
 		],
 		[
 			"/home/pc/MEGAsync/C++/clion/GoTikZ/Controller/ModifierState.h",
@@ -85,9 +95,9 @@
 			"MHPYULKCXU/moc_ControlPointFactory.cpp"
 		],
 		[
-			"/home/pc/MEGAsync/C++/clion/GoTikZ/Drawable/ControlPoint/PointLinkFunctor.h",
+			"/home/pc/MEGAsync/C++/clion/GoTikZ/Drawable/ControlPoint/PointInterface.h",
 			"MU",
-			"MHPYULKCXU/moc_PointLinkFunctor.cpp"
+			"MHPYULKCXU/moc_PointInterface.cpp"
 		],
 		[
 			"/home/pc/MEGAsync/C++/clion/GoTikZ/Drawable/Drawable.h",
@@ -308,10 +318,6 @@
 	"SOURCES" : 
 	[
 		[
-			"/home/pc/MEGAsync/C++/clion/GoTikZ/Controller/Actions/AddPrimitiveAction.cpp",
-			"MU"
-		],
-		[
 			"/home/pc/MEGAsync/C++/clion/GoTikZ/Controller/Actions/ChangeGridAction.cpp",
 			"MU"
 		],
@@ -320,11 +326,19 @@
 			"MU"
 		],
 		[
-			"/home/pc/MEGAsync/C++/clion/GoTikZ/Controller/Actions/DeletePrimitiveAction.cpp",
+			"/home/pc/MEGAsync/C++/clion/GoTikZ/Controller/Actions/HidePrimitiveAction.cpp",
 			"MU"
 		],
 		[
 			"/home/pc/MEGAsync/C++/clion/GoTikZ/Controller/Actions/PenChangeAction.cpp",
+			"MU"
+		],
+		[
+			"/home/pc/MEGAsync/C++/clion/GoTikZ/Controller/Actions/ShowPrimitiveAction.cpp",
+			"MU"
+		],
+		[
+			"/home/pc/MEGAsync/C++/clion/GoTikZ/Controller/Actions/TranslateControlPointAction.cpp",
 			"MU"
 		],
 		[
@@ -336,6 +350,10 @@
 			"MU"
 		],
 		[ "/home/pc/MEGAsync/C++/clion/GoTikZ/Controller/Controller.cpp", "MU" ],
+		[
+			"/home/pc/MEGAsync/C++/clion/GoTikZ/Controller/CoordinateConverter.cpp",
+			"MU"
+		],
 		[
 			"/home/pc/MEGAsync/C++/clion/GoTikZ/Controller/ModifierState.cpp",
 			"MU"
@@ -355,7 +373,7 @@
 			"MU"
 		],
 		[
-			"/home/pc/MEGAsync/C++/clion/GoTikZ/Drawable/ControlPoint/PointLinkFunctor.cpp",
+			"/home/pc/MEGAsync/C++/clion/GoTikZ/Drawable/ControlPoint/PointInterface.cpp",
 			"MU"
 		],
 		[ "/home/pc/MEGAsync/C++/clion/GoTikZ/Drawable/Drawable.cpp", "MU" ],

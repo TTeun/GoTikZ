@@ -21,7 +21,8 @@ class PolyLineStream : public StreamDrawable {
   public:
     PolyLineStream(const QPointF& point, const QPen& pen);
 
-    void      draw(QPainter* painter, DRAW_FLAGS drawFlag, const view::Transform& transform) const override;
+    void      draw(QPainter* painter, DRAW_FLAGS drawFlag,
+                                    const controller::CoordinateConverter& coordinateConverter) const override;
     void      stream(const QPointF& point) override;
     bool      addPoint(const QPointF& point, bool forceEnd) override;
     Drawable* drawable() override;

@@ -4,8 +4,8 @@
 
 #include "LineStream.h"
 
-#include "Line.h"
-#include "View/Transform.h"
+#include "Controller/CoordinateConverter.h"
+#include "Drawable/Line.h"
 
 #include <Math/Math.h>
 #include <QPainter>
@@ -19,11 +19,12 @@ void LineStream::stream(const QPointF& point) {
     m_shouldDraw = true;
 }
 
-void LineStream::draw(QPainter* painter, DRAW_FLAGS drawFlag, const view::Transform& transform) const {
+void LineStream::draw(QPainter* painter, DRAW_FLAGS drawFlag,
+                      const controller::CoordinateConverter& coordinateConverter) const {
     assert(m_isVisible);
-    Drawable::draw(painter, drawFlag, transform);
+    Drawable::draw(painter, drawFlag, coordinateConverter);
     if (m_shouldDraw) {
-        painter->drawLine(transform.applyTransform(m_point1), transform.applyTransform(m_point2));
+        painter->drawLine(coordinateConverter.worldToScreen(m_point1), coordinateConverter.worldToScreen(m_point2));
     }
 }
 

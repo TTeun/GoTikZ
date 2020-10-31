@@ -21,8 +21,8 @@ namespace controller {
         void undoAction(Controller* controller) override;
 
       private:
-        std::vector<size_t> m_indices;
-        const QPointF       m_translation;
+        const std::vector<size_t> m_indices;
+        const QPointF             m_translation;
     };
 } // namespace controller
 

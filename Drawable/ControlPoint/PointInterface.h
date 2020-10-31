@@ -2,18 +2,18 @@
 // Created by pc on 30-10-20.
 //
 
-#ifndef GOTIKZ_POINTLINKFUNCTOR_H
-#define GOTIKZ_POINTLINKFUNCTOR_H
+#ifndef GOTIKZ_POINTINTERFACE_H
+#define GOTIKZ_POINTINTERFACE_H
 
 #include <cstddef>
 
 class Drawable;
 class QPointF;
 
-class PointLinkFunctor {
+class PointInterface {
 
   public:
-    PointLinkFunctor(size_t index, Drawable* drawable);
+    PointInterface(size_t index, Drawable* drawable);
 
     void      setPoint(const QPointF& newPoint) const;
     QPointF   point() const;
@@ -24,4 +24,4 @@ class PointLinkFunctor {
     Drawable* const m_drawable;
 };
 
-#endif // GOTIKZ_POINTLINKFUNCTOR_H
+#endif // GOTIKZ_POINTINTERFACE_H

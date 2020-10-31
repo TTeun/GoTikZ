@@ -3,10 +3,11 @@
   /home/pc/MEGAsync/C++/clion/GoTikZ/Controller/Actions/Action.h \
   /home/pc/MEGAsync/C++/clion/GoTikZ/Controller/Actions/UndoableAction.h \
   /home/pc/MEGAsync/C++/clion/GoTikZ/Controller/Controller.h \
+  /home/pc/MEGAsync/C++/clion/GoTikZ/Controller/CoordinateConverter.h \
   /home/pc/MEGAsync/C++/clion/GoTikZ/Controller/ModifierState.h \
   /home/pc/MEGAsync/C++/clion/GoTikZ/Controller/MouseHandler.h \
   /home/pc/MEGAsync/C++/clion/GoTikZ/Drawable/ControlPoint/ControlPoint.h \
-  /home/pc/MEGAsync/C++/clion/GoTikZ/Drawable/ControlPoint/PointLinkFunctor.h \
+  /home/pc/MEGAsync/C++/clion/GoTikZ/Drawable/ControlPoint/PointInterface.h \
   /home/pc/MEGAsync/C++/clion/GoTikZ/Drawable/Drawable.h \
   /home/pc/MEGAsync/C++/clion/GoTikZ/Drawable/DrawableHandler.h \
   /home/pc/MEGAsync/C++/clion/GoTikZ/Drawable/Point.h \

@@ -25,23 +25,32 @@ void view::DrawWidget::paintEvent(QPaintEvent* e) {
     const auto& drawableHandler = m_model->drawableHandler();
 
     for (const auto& el : drawableHandler.selectedDrawables()) {
-        el->draw(&painter, Drawable::DRAW_FLAGS::SELECTED, m_transform);
+        if (el->visible()) {
+            el->draw(&painter, Drawable::DRAW_FLAGS::SELECTED, m_controller->coordinateConverter());
+        }
     }
 
     for (const auto& el : drawableHandler.drawables()) {
-        el->draw(&painter, Drawable::DRAW_FLAGS::NONE, m_transform);
+        if (el->visible()) {
+            el->draw(&painter, Drawable::DRAW_FLAGS::NONE, m_controller->coordinateConverter());
+        }
     }
 
     if (drawableHandler.highlightedDrawable()) {
-        drawableHandler.highlightedDrawable()->draw(&painter, Drawable::DRAW_FLAGS::HIGHLIGHTED, m_transform);
+        assert(drawableHandler.highlightedDrawable()->visible());
+        drawableHandler.highlightedDrawable()->draw(&painter, Drawable::DRAW_FLAGS::HIGHLIGHTED,
+                                                    m_controller->coordinateConverter());
     }
 
     for (const auto& el : drawableHandler.controlPoints()) {
-        el->draw(&painter, Drawable::DRAW_FLAGS::NONE, m_transform);
+        if (el->visible()) {
+            el->draw(&painter, Drawable::DRAW_FLAGS::NONE, m_controller->coordinateConverter());
+        }
     }
 
     if (drawableHandler.isStreaming()) {
-        drawableHandler.streamDrawable()->draw(&painter, Drawable::DRAW_FLAGS::NONE, m_transform);
+        drawableHandler.streamDrawable()->draw(&painter, Drawable::DRAW_FLAGS::NONE,
+                                               m_controller->coordinateConverter());
     }
 
     drawMousePointer(&painter);
@@ -127,8 +136,8 @@ view::Transform& view::DrawWidget::transform() {
 }
 
 void view::DrawWidget::drawMousePointer(QPainter* painter) {
-    const auto snappedMousePoint = m_transform.applyTransform(
-        m_model->drawableHandler().snap(m_model->mousePointInWorldCoordinates(m_mousePoint)));
+    const auto snappedMousePoint = m_controller->coordinateConverter().snapScreen(m_mousePoint);
+
     painter->setPen(QPen{Qt::gray, 1});
     painter->drawLine(snappedMousePoint - QPointF{0, 8}, snappedMousePoint + QPointF{0, 8});
     painter->drawLine(snappedMousePoint - QPointF{8, 0}, snappedMousePoint + QPointF{8, 0});

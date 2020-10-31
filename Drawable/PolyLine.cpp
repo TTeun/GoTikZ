@@ -4,8 +4,8 @@
 
 #include "PolyLine.h"
 
-#include "PolyLineStream.h"
-#include "View/Transform.h"
+#include "Controller/CoordinateConverter.h"
+#include "Drawable/PolyLineStream.h"
 
 #include <Math/Math.h>
 #include <QPainter>
@@ -16,12 +16,14 @@ PolyLine::PolyLine(const PolyLineStream& polyLineStream)
     m_points.resize(m_points.size() - 1ul);
 }
 
-void PolyLine::draw(QPainter* painter, DRAW_FLAGS drawFlag, const view::Transform& transform) const {
+void PolyLine::draw(QPainter* painter, DRAW_FLAGS drawFlag,
+                    const controller::CoordinateConverter& coordinateConverter) const {
     assert(m_isVisible);
     assert(m_points.size() > 1);
-    Drawable::draw(painter, drawFlag, transform);
+    Drawable::draw(painter, drawFlag, coordinateConverter);
     for (size_t i = 1; i != m_points.size(); ++i) {
-        painter->drawLine(transform.applyTransform(m_points[i - 1]), transform.applyTransform(m_points[i]));
+        painter->drawLine(coordinateConverter.worldToScreen(m_points[i - 1]),
+                          coordinateConverter.worldToScreen(m_points[i]));
     }
 }
 

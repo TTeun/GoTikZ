@@ -13,6 +13,6 @@ controller::ChangePrimitiveTypeAction::ChangePrimitiveTypeAction(PRIMITIVE_TYPE 
 }
 
 void controller::ChangePrimitiveTypeAction::doAction(controller::Controller* controller) {
-    controller->modelHandler()->setMousePointerType(m_mousePointerType);
-    controller->modelHandler()->drawableHandler().clearSelectedAndHighlighted();
+    controller->model()->setMousePointerType(m_mousePointerType);
+    controller->model()->drawableHandler().clearSelectedAndHighlighted();
 }
