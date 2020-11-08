@@ -23,10 +23,10 @@ void Line::draw(QPainter* painter, DRAW_FLAGS drawFlag,
     painter->drawLine(coordinateConverter.worldToScreen(m_point1), coordinateConverter.worldToScreen(m_point2));
 }
 
-std::pair<double, QPointF> Line::snap(QPointF point) {
+std::pair<double, QPointF> Line::snap(const QPointF& point) const {
     assert(m_isVisible);
-    const double d1 = Math::magnitude(point - m_point1);
-    const double d2 = Math::magnitude(point - m_point2);
+    const double d1 = math::magnitude(point - m_point1);
+    const double d2 = math::magnitude(point - m_point2);
     if (d1 < d2) {
         return {d1, m_point1};
     } else {
@@ -36,7 +36,7 @@ std::pair<double, QPointF> Line::snap(QPointF point) {
 
 double Line::dist(const QPointF& point) const {
     assert(m_isVisible);
-    return Math::pointToLineDistance({m_point1, m_point2}, point);
+    return math::pointToLineDistance({m_point1, m_point2}, point);
 }
 
 void Line::setPoint1(const QPointF& newPoint) {

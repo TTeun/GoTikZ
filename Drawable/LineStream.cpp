@@ -28,7 +28,7 @@ void LineStream::draw(QPainter* painter, DRAW_FLAGS drawFlag,
     }
 }
 
-bool LineStream::addPoint(const QPointF& point, bool forceEnd) {
+bool LineStream::addPoint(const QPointF& point, [[maybe_unused]] bool forceEnd) {
     assert(m_isVisible);
     m_point2 = point;
     return true;
@@ -39,14 +39,14 @@ Drawable* LineStream::drawable() {
     return new Line(*this);
 }
 
-std::pair<double, QPointF> LineStream::snap(QPointF point) {
+std::pair<double, QPointF> LineStream::snap(const QPointF& point) const {
     assert(m_isVisible);
     return {std::numeric_limits<double>::max(), point};
 }
 
 double LineStream::dist(const QPointF& point) const {
     assert(m_isVisible);
-    return std::min(Math::distance(point, m_point1), Math::distance(point, m_point2));
+    return std::min(math::distance(point, m_point1), math::distance(point, m_point2));
 }
 
 void LineStream::translate(const QPointF& translation) {

@@ -16,14 +16,14 @@ void Point::draw(QPainter* painter, DRAW_FLAGS drawFlag,
     painter->drawPoint(coordinateConverter.worldToScreen(m_point));
 }
 
-std::pair<double, QPointF> Point::snap(QPointF point) {
+std::pair<double, QPointF> Point::snap(const QPointF& point) const {
     assert(m_isVisible);
-    return {Math::magnitude(point - m_point), m_point};
+    return {math::magnitude(point - m_point), m_point};
 }
 
 double Point::dist(const QPointF& point) const {
     assert(m_isVisible);
-    return Math::distance(point, m_point);
+    return math::distance(point, m_point);
 }
 
 void Point::setPoint(const QPointF& newPoint) {

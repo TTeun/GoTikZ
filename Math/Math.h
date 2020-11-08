@@ -9,20 +9,20 @@
 
 class QPointF;
 
-namespace Math {
+namespace math {
 
-double magnitudeSquared(const QPointF& point);
+    double magnitudeSquared(const QPointF& point);
 
-double distanceSquared(const QPointF& point1, const QPointF& point2);
+    double distanceSquared(const QPointF& point1, const QPointF& point2);
 
-double magnitude(const QPointF& point);
+    double magnitude(const QPointF& point);
 
-double distance(const QPointF& point1, const QPointF& point2);
+    double distance(const QPointF& point1, const QPointF& point2);
 
-double dot(const QPointF& point1, const QPointF& point2);
+    double dot(const QPointF& point1, const QPointF& point2);
 
-double pointToLineDistance(std::pair<const QPointF&, const QPointF&> line, const QPointF& point);
+    double pointToLineDistance(std::pair<const QPointF&, const QPointF&> line, const QPointF& point);
 
-} // namespace Math
+} // namespace math
 
 #endif // GOTIKZ_MATH_H

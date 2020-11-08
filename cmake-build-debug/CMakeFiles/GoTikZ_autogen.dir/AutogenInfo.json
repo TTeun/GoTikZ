@@ -70,11 +70,6 @@
 			"TTE4PTQQBL/moc_ModifierState.cpp"
 		],
 		[
-			"/home/pc/MEGAsync/C++/clion/GoTikZ/Controller/MouseHandler.h",
-			"MU",
-			"TTE4PTQQBL/moc_MouseHandler.cpp"
-		],
-		[
 			"/home/pc/MEGAsync/C++/clion/GoTikZ/Drawable/Circle.h",
 			"MU",
 			"K7CJA63GWH/moc_Circle.cpp"
@@ -356,10 +351,6 @@
 		],
 		[
 			"/home/pc/MEGAsync/C++/clion/GoTikZ/Controller/ModifierState.cpp",
-			"MU"
-		],
-		[
-			"/home/pc/MEGAsync/C++/clion/GoTikZ/Controller/MouseHandler.cpp",
 			"MU"
 		],
 		[ "/home/pc/MEGAsync/C++/clion/GoTikZ/Drawable/Circle.cpp", "MU" ],

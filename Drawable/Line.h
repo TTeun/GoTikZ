@@ -33,7 +33,7 @@ class Line : public Drawable {
     QPointF        point1() const;
     QPointF        point2() const;
     PRIMITIVE_TYPE type() const override;
-    std::pair<double, QPointF> snap(QPointF point) override;
+    std::pair<double, QPointF> snap(const QPointF& point) const override;
 
   private:
     QPointF m_point1;

@@ -20,19 +20,17 @@ class PolyLine : public Drawable {
   public:
     explicit PolyLine(const PolyLineStream& polyLineStream);
 
-    void draw(QPainter* painter, DRAW_FLAGS drawFlag,
-                                    const controller::CoordinateConverter& coordinateConverter) const override;
-    std::pair<double, QPointF> snap(QPointF point) override;
-    double                     dist(const QPointF& point) const override;
-    void                       translate(const QPointF& translation) override;
-    PRIMITIVE_TYPE             type() const override;
-    size_t                     numberOfPoints() const;
-    void                       setPoint(size_t index, const QPointF& point) override;
-    QPointF                    point(size_t index) const override;
-
-  private:
-  public:
+    void                        draw(QPainter* painter, DRAW_FLAGS drawFlag,
+                                     const controller::CoordinateConverter& coordinateConverter) const override;
+    void                        setPoint(size_t index, const QPointF& point) override;
+    void                        translate(const QPointF& translation) override;
+    double                      dist(const QPointF& point) const override;
+    size_t                      numberOfPoints() const;
+    PRIMITIVE_TYPE              type() const override;
+    QPointF                     point(size_t index) const override;
+    std::pair<double, QPointF>  snap(const QPointF& point) const override;
     const std::vector<QPointF>& points() const;
+
   private:
     std::vector<QPointF> m_points;
 };

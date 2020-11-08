@@ -10,8 +10,6 @@
 #include "Drawable/Point.h"
 #include "Drawable/PolyLine.h"
 
-#include <cstddef>
-
 class ControlPointFactory {
   public:
     explicit ControlPointFactory(Drawable* drawable);

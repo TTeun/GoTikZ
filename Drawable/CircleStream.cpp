@@ -11,7 +11,7 @@
 #include <QPainter>
 
 void CircleStream::stream(const QPointF& point) {
-    m_radius     = Math::distance(m_center, point);
+    m_radius     = math::distance(m_center, point);
     m_shouldDraw = true;
 }
 
@@ -20,14 +20,15 @@ void CircleStream::draw(QPainter* painter, DRAW_FLAGS drawFlag,
     assert(m_isVisible);
     Drawable::draw(painter, drawFlag, coordinateConverter);
     if (m_shouldDraw) {
-        painter->drawEllipse(coordinateConverter.worldToScreen(m_center), coordinateConverter.scale(m_radius),
-                             coordinateConverter.scale(m_radius));
+        painter->drawEllipse(coordinateConverter.worldToScreen(m_center),
+                             coordinateConverter.worldToScreenDistance(m_radius),
+                             coordinateConverter.worldToScreenDistance(m_radius));
     }
 }
 
 bool CircleStream::addPoint(const QPointF& point, bool forceEnd) {
     assert(m_isVisible);
-    m_radius = Math::distance(m_center, point);
+    m_radius = math::distance(m_center, point);
     return true;
 }
 
@@ -36,14 +37,14 @@ Drawable* CircleStream::drawable() {
     return new Circle(*this);
 }
 
-std::pair<double, QPointF> CircleStream::snap(QPointF point) {
+std::pair<double, QPointF> CircleStream::snap(const QPointF& point) const {
     assert(m_isVisible);
     return {std::numeric_limits<double>::max(), QPointF()};
 }
 
 double CircleStream::dist(const QPointF& point) const {
     assert(m_isVisible);
-    const double distToCenter = Math::distance(point, m_center);
+    const double distToCenter = math::distance(point, m_center);
     return std::abs(distToCenter - m_radius);
 }
 

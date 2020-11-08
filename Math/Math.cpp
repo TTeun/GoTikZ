@@ -7,7 +7,7 @@
 #include <QPointF>
 #include <cmath>
 
-namespace Math {
+namespace math {
     double magnitudeSquared(const QPointF& point) {
         const auto x = point.x();
         const auto y = point.y();
@@ -31,14 +31,14 @@ namespace Math {
     }
 
     double pointToLineDistance(std::pair<const QPointF&, const QPointF&> line, const QPointF& point) {
-        const double lineLength = Math::distanceSquared(line.first, line.second);
+        const double lineLength = math::distanceSquared(line.first, line.second);
         if (lineLength == 0.0) {
             return distance(line.first, point);
         }
         const float parameter =
-            std::max(0.0, std::min(1.0, Math::dot(point - line.first, line.second - line.first) / lineLength));
+            std::max(0.0, std::min(1.0, math::dot(point - line.first, line.second - line.first) / lineLength));
         const auto projection = line.first + parameter * (line.second - line.first);
         return distance(point, projection);
     }
 
-} // namespace Math
+} // namespace math

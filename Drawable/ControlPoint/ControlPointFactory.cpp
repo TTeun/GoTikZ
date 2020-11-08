@@ -11,24 +11,21 @@ void f(const QPointF& point) {
 }
 
 ControlPointFactory::ControlPointFactory(Drawable* drawable) : m_drawable(drawable) {
+    assert(m_drawable);
+    assert(m_drawable->type() != PRIMITIVE_TYPE::STREAM);
 }
 
 size_t ControlPointFactory::numberOfControlPoints() const {
     switch (m_drawable->type()) {
         case PRIMITIVE_TYPE::LINE:
             return 2;
-            break;
         case PRIMITIVE_TYPE::POINT:
             return 1;
-            break;
         case PRIMITIVE_TYPE::CIRCLE:
             return 2;
-            break;
         case PRIMITIVE_TYPE::POLY_LINE:
             return dynamic_cast<const PolyLine*>(m_drawable)->numberOfPoints();
-            break;
         case PRIMITIVE_TYPE::STREAM:
-            assert(false);
             break;
     }
     return 0;

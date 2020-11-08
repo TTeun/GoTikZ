@@ -41,7 +41,7 @@ class Drawable {
     virtual void                       setPoint(size_t index, const QPointF& point) = 0;
     virtual double                     dist(const QPointF& point) const             = 0;
     virtual QPointF                    point(size_t index) const                    = 0;
-    virtual std::pair<double, QPointF> snap(QPointF point)                          = 0;
+    virtual std::pair<double, QPointF> snap(const QPointF& point) const                    = 0;
     virtual PRIMITIVE_TYPE             type() const                                 = 0;
 
   protected:

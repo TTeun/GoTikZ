@@ -15,7 +15,6 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/pc/MEGAsync/C++/clion/GoTikZ/Controller/Controller.cpp" "/home/pc/MEGAsync/C++/clion/GoTikZ/cmake-build-debug/CMakeFiles/GoTikZ.dir/Controller/Controller.cpp.o"
   "/home/pc/MEGAsync/C++/clion/GoTikZ/Controller/CoordinateConverter.cpp" "/home/pc/MEGAsync/C++/clion/GoTikZ/cmake-build-debug/CMakeFiles/GoTikZ.dir/Controller/CoordinateConverter.cpp.o"
   "/home/pc/MEGAsync/C++/clion/GoTikZ/Controller/ModifierState.cpp" "/home/pc/MEGAsync/C++/clion/GoTikZ/cmake-build-debug/CMakeFiles/GoTikZ.dir/Controller/ModifierState.cpp.o"
-  "/home/pc/MEGAsync/C++/clion/GoTikZ/Controller/MouseHandler.cpp" "/home/pc/MEGAsync/C++/clion/GoTikZ/cmake-build-debug/CMakeFiles/GoTikZ.dir/Controller/MouseHandler.cpp.o"
   "/home/pc/MEGAsync/C++/clion/GoTikZ/Drawable/Circle.cpp" "/home/pc/MEGAsync/C++/clion/GoTikZ/cmake-build-debug/CMakeFiles/GoTikZ.dir/Drawable/Circle.cpp.o"
   "/home/pc/MEGAsync/C++/clion/GoTikZ/Drawable/CircleStream.cpp" "/home/pc/MEGAsync/C++/clion/GoTikZ/cmake-build-debug/CMakeFiles/GoTikZ.dir/Drawable/CircleStream.cpp.o"
   "/home/pc/MEGAsync/C++/clion/GoTikZ/Drawable/ControlPoint/ControlPoint.cpp" "/home/pc/MEGAsync/C++/clion/GoTikZ/cmake-build-debug/CMakeFiles/GoTikZ.dir/Drawable/ControlPoint/ControlPoint.cpp.o"

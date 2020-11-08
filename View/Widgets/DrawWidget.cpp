@@ -136,7 +136,7 @@ view::Transform& view::DrawWidget::transform() {
 }
 
 void view::DrawWidget::drawMousePointer(QPainter* painter) {
-    const auto snappedMousePoint = m_controller->coordinateConverter().snapScreen(m_mousePoint);
+    const auto snappedMousePoint = m_controller->coordinateConverter().snapScreen(m_mousePoint, 30);
 
     painter->setPen(QPen{Qt::gray, 1});
     painter->drawLine(snappedMousePoint - QPointF{0, 8}, snappedMousePoint + QPointF{0, 8});

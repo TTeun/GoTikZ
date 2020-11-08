@@ -13,7 +13,6 @@ file(REMOVE_RECURSE
   "CMakeFiles/GoTikZ.dir/Controller/Controller.cpp.o"
   "CMakeFiles/GoTikZ.dir/Controller/CoordinateConverter.cpp.o"
   "CMakeFiles/GoTikZ.dir/Controller/ModifierState.cpp.o"
-  "CMakeFiles/GoTikZ.dir/Controller/MouseHandler.cpp.o"
   "CMakeFiles/GoTikZ.dir/Drawable/Circle.cpp.o"
   "CMakeFiles/GoTikZ.dir/Drawable/CircleStream.cpp.o"
   "CMakeFiles/GoTikZ.dir/Drawable/ControlPoint/ControlPoint.cpp.o"

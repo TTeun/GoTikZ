@@ -5,7 +5,6 @@ CMakeFiles/GoTikZ.dir/Controller/Actions/ChangeGridAction.cpp.o: ../Controller/A
 CMakeFiles/GoTikZ.dir/Controller/Actions/ChangeGridAction.cpp.o: ../Controller/Controller.h
 CMakeFiles/GoTikZ.dir/Controller/Actions/ChangeGridAction.cpp.o: ../Controller/CoordinateConverter.h
 CMakeFiles/GoTikZ.dir/Controller/Actions/ChangeGridAction.cpp.o: ../Controller/ModifierState.h
-CMakeFiles/GoTikZ.dir/Controller/Actions/ChangeGridAction.cpp.o: ../Controller/MouseHandler.h
 CMakeFiles/GoTikZ.dir/Controller/Actions/ChangeGridAction.cpp.o: ../View/GridState.h
 CMakeFiles/GoTikZ.dir/Controller/Actions/ChangeGridAction.cpp.o: ../View/Transform.h
 CMakeFiles/GoTikZ.dir/Controller/Actions/ChangeGridAction.cpp.o: ../View/Widgets/DrawWidget.h
@@ -123,7 +122,6 @@ CMakeFiles/GoTikZ.dir/Controller/Actions/ChangePrimitiveTypeAction.cpp.o: ../Con
 CMakeFiles/GoTikZ.dir/Controller/Actions/ChangePrimitiveTypeAction.cpp.o: ../Controller/Controller.h
 CMakeFiles/GoTikZ.dir/Controller/Actions/ChangePrimitiveTypeAction.cpp.o: ../Controller/CoordinateConverter.h
 CMakeFiles/GoTikZ.dir/Controller/Actions/ChangePrimitiveTypeAction.cpp.o: ../Controller/ModifierState.h
-CMakeFiles/GoTikZ.dir/Controller/Actions/ChangePrimitiveTypeAction.cpp.o: ../Controller/MouseHandler.h
 CMakeFiles/GoTikZ.dir/Controller/Actions/ChangePrimitiveTypeAction.cpp.o: ../Drawable/ControlPoint/ControlPoint.h
 CMakeFiles/GoTikZ.dir/Controller/Actions/ChangePrimitiveTypeAction.cpp.o: ../Drawable/ControlPoint/PointInterface.h
 CMakeFiles/GoTikZ.dir/Controller/Actions/ChangePrimitiveTypeAction.cpp.o: ../Drawable/Drawable.h
@@ -240,7 +238,6 @@ CMakeFiles/GoTikZ.dir/Controller/Actions/HidePrimitiveAction.cpp.o: ../Controlle
 CMakeFiles/GoTikZ.dir/Controller/Actions/HidePrimitiveAction.cpp.o: ../Controller/Controller.h
 CMakeFiles/GoTikZ.dir/Controller/Actions/HidePrimitiveAction.cpp.o: ../Controller/CoordinateConverter.h
 CMakeFiles/GoTikZ.dir/Controller/Actions/HidePrimitiveAction.cpp.o: ../Controller/ModifierState.h
-CMakeFiles/GoTikZ.dir/Controller/Actions/HidePrimitiveAction.cpp.o: ../Controller/MouseHandler.h
 CMakeFiles/GoTikZ.dir/Controller/Actions/HidePrimitiveAction.cpp.o: ../Drawable/ControlPoint/ControlPoint.h
 CMakeFiles/GoTikZ.dir/Controller/Actions/HidePrimitiveAction.cpp.o: ../Drawable/ControlPoint/PointInterface.h
 CMakeFiles/GoTikZ.dir/Controller/Actions/HidePrimitiveAction.cpp.o: ../Drawable/Drawable.h
@@ -371,7 +368,6 @@ CMakeFiles/GoTikZ.dir/Controller/Actions/PenChangeAction.cpp.o: ../Controller/Ac
 CMakeFiles/GoTikZ.dir/Controller/Actions/PenChangeAction.cpp.o: ../Controller/Controller.h
 CMakeFiles/GoTikZ.dir/Controller/Actions/PenChangeAction.cpp.o: ../Controller/CoordinateConverter.h
 CMakeFiles/GoTikZ.dir/Controller/Actions/PenChangeAction.cpp.o: ../Controller/ModifierState.h
-CMakeFiles/GoTikZ.dir/Controller/Actions/PenChangeAction.cpp.o: ../Controller/MouseHandler.h
 CMakeFiles/GoTikZ.dir/Controller/Actions/PenChangeAction.cpp.o: ../Drawable/ControlPoint/ControlPoint.h
 CMakeFiles/GoTikZ.dir/Controller/Actions/PenChangeAction.cpp.o: ../Drawable/ControlPoint/PointInterface.h
 CMakeFiles/GoTikZ.dir/Controller/Actions/PenChangeAction.cpp.o: ../Drawable/Drawable.h
@@ -501,7 +497,6 @@ CMakeFiles/GoTikZ.dir/Controller/Actions/ShowPrimitiveAction.cpp.o: ../Controlle
 CMakeFiles/GoTikZ.dir/Controller/Actions/ShowPrimitiveAction.cpp.o: ../Controller/Controller.h
 CMakeFiles/GoTikZ.dir/Controller/Actions/ShowPrimitiveAction.cpp.o: ../Controller/CoordinateConverter.h
 CMakeFiles/GoTikZ.dir/Controller/Actions/ShowPrimitiveAction.cpp.o: ../Controller/ModifierState.h
-CMakeFiles/GoTikZ.dir/Controller/Actions/ShowPrimitiveAction.cpp.o: ../Controller/MouseHandler.h
 CMakeFiles/GoTikZ.dir/Controller/Actions/ShowPrimitiveAction.cpp.o: ../Drawable/ControlPoint/ControlPoint.h
 CMakeFiles/GoTikZ.dir/Controller/Actions/ShowPrimitiveAction.cpp.o: ../Drawable/ControlPoint/PointInterface.h
 CMakeFiles/GoTikZ.dir/Controller/Actions/ShowPrimitiveAction.cpp.o: ../Drawable/Drawable.h
@@ -634,7 +629,6 @@ CMakeFiles/GoTikZ.dir/Controller/Actions/TranslateControlPointAction.cpp.o: ../C
 CMakeFiles/GoTikZ.dir/Controller/Actions/TranslateControlPointAction.cpp.o: ../Controller/Controller.h
 CMakeFiles/GoTikZ.dir/Controller/Actions/TranslateControlPointAction.cpp.o: ../Controller/CoordinateConverter.h
 CMakeFiles/GoTikZ.dir/Controller/Actions/TranslateControlPointAction.cpp.o: ../Controller/ModifierState.h
-CMakeFiles/GoTikZ.dir/Controller/Actions/TranslateControlPointAction.cpp.o: ../Controller/MouseHandler.h
 CMakeFiles/GoTikZ.dir/Controller/Actions/TranslateControlPointAction.cpp.o: ../Drawable/ControlPoint/ControlPoint.h
 CMakeFiles/GoTikZ.dir/Controller/Actions/TranslateControlPointAction.cpp.o: ../Drawable/ControlPoint/PointInterface.h
 CMakeFiles/GoTikZ.dir/Controller/Actions/TranslateControlPointAction.cpp.o: ../Drawable/Drawable.h
@@ -751,7 +745,6 @@ CMakeFiles/GoTikZ.dir/Controller/Actions/TranslatePrimitiveAction.cpp.o: ../Cont
 CMakeFiles/GoTikZ.dir/Controller/Actions/TranslatePrimitiveAction.cpp.o: ../Controller/Controller.h
 CMakeFiles/GoTikZ.dir/Controller/Actions/TranslatePrimitiveAction.cpp.o: ../Controller/CoordinateConverter.h
 CMakeFiles/GoTikZ.dir/Controller/Actions/TranslatePrimitiveAction.cpp.o: ../Controller/ModifierState.h
-CMakeFiles/GoTikZ.dir/Controller/Actions/TranslatePrimitiveAction.cpp.o: ../Controller/MouseHandler.h
 CMakeFiles/GoTikZ.dir/Controller/Actions/TranslatePrimitiveAction.cpp.o: ../Drawable/ControlPoint/ControlPoint.h
 CMakeFiles/GoTikZ.dir/Controller/Actions/TranslatePrimitiveAction.cpp.o: ../Drawable/ControlPoint/PointInterface.h
 CMakeFiles/GoTikZ.dir/Controller/Actions/TranslatePrimitiveAction.cpp.o: ../Drawable/Drawable.h
@@ -907,7 +900,6 @@ CMakeFiles/GoTikZ.dir/Controller/Controller.cpp.o: ../Controller/Actions/Undoabl
 CMakeFiles/GoTikZ.dir/Controller/Controller.cpp.o: ../Controller/Controller.h
 CMakeFiles/GoTikZ.dir/Controller/Controller.cpp.o: ../Controller/CoordinateConverter.h
 CMakeFiles/GoTikZ.dir/Controller/Controller.cpp.o: ../Controller/ModifierState.h
-CMakeFiles/GoTikZ.dir/Controller/Controller.cpp.o: ../Controller/MouseHandler.h
 CMakeFiles/GoTikZ.dir/Controller/Controller.cpp.o: ../Drawable/Circle.h
 CMakeFiles/GoTikZ.dir/Controller/Controller.cpp.o: ../Drawable/ControlPoint/ControlPoint.h
 CMakeFiles/GoTikZ.dir/Controller/Controller.cpp.o: ../Drawable/ControlPoint/PointInterface.h
@@ -1162,14 +1154,11 @@ CMakeFiles/GoTikZ.dir/Controller/CoordinateConverter.cpp.o: /usr/include/qt/QtGu
 CMakeFiles/GoTikZ.dir/Controller/ModifierState.cpp.o: ../Controller/ModifierState.cpp
 CMakeFiles/GoTikZ.dir/Controller/ModifierState.cpp.o: ../Controller/ModifierState.h
 
-CMakeFiles/GoTikZ.dir/Controller/MouseHandler.cpp.o: ../Controller/MouseHandler.cpp
-
 CMakeFiles/GoTikZ.dir/Drawable/Circle.cpp.o: ../Controller/Actions/Action.h
 CMakeFiles/GoTikZ.dir/Drawable/Circle.cpp.o: ../Controller/Actions/UndoableAction.h
 CMakeFiles/GoTikZ.dir/Drawable/Circle.cpp.o: ../Controller/Controller.h
 CMakeFiles/GoTikZ.dir/Drawable/Circle.cpp.o: ../Controller/CoordinateConverter.h
 CMakeFiles/GoTikZ.dir/Drawable/Circle.cpp.o: ../Controller/ModifierState.h
-CMakeFiles/GoTikZ.dir/Drawable/Circle.cpp.o: ../Controller/MouseHandler.h
 CMakeFiles/GoTikZ.dir/Drawable/Circle.cpp.o: ../Math/Math.h
 CMakeFiles/GoTikZ.dir/Drawable/Circle.cpp.o: ../Model/PrimitiveTypeEnum.h
 CMakeFiles/GoTikZ.dir/Drawable/Circle.cpp.o: ../View/Transform.h
@@ -1299,7 +1288,6 @@ CMakeFiles/GoTikZ.dir/Drawable/CircleStream.cpp.o: ../Controller/Actions/Undoabl
 CMakeFiles/GoTikZ.dir/Drawable/CircleStream.cpp.o: ../Controller/Controller.h
 CMakeFiles/GoTikZ.dir/Drawable/CircleStream.cpp.o: ../Controller/CoordinateConverter.h
 CMakeFiles/GoTikZ.dir/Drawable/CircleStream.cpp.o: ../Controller/ModifierState.h
-CMakeFiles/GoTikZ.dir/Drawable/CircleStream.cpp.o: ../Controller/MouseHandler.h
 CMakeFiles/GoTikZ.dir/Drawable/CircleStream.cpp.o: ../Math/Math.h
 CMakeFiles/GoTikZ.dir/Drawable/CircleStream.cpp.o: ../Model/PrimitiveTypeEnum.h
 CMakeFiles/GoTikZ.dir/Drawable/CircleStream.cpp.o: ../View/Transform.h
@@ -1508,7 +1496,6 @@ CMakeFiles/GoTikZ.dir/Drawable/ControlPoint/ControlPointFactory.cpp.o: ../Contro
 CMakeFiles/GoTikZ.dir/Drawable/ControlPoint/ControlPointFactory.cpp.o: ../Controller/Controller.h
 CMakeFiles/GoTikZ.dir/Drawable/ControlPoint/ControlPointFactory.cpp.o: ../Controller/CoordinateConverter.h
 CMakeFiles/GoTikZ.dir/Drawable/ControlPoint/ControlPointFactory.cpp.o: ../Controller/ModifierState.h
-CMakeFiles/GoTikZ.dir/Drawable/ControlPoint/ControlPointFactory.cpp.o: ../Controller/MouseHandler.h
 CMakeFiles/GoTikZ.dir/Drawable/ControlPoint/ControlPointFactory.cpp.o: ../Drawable/Circle.h
 CMakeFiles/GoTikZ.dir/Drawable/ControlPoint/ControlPointFactory.cpp.o: ../Drawable/ControlPoint/ControlPoint.h
 CMakeFiles/GoTikZ.dir/Drawable/ControlPoint/ControlPointFactory.cpp.o: ../Drawable/ControlPoint/ControlPointFactory.h
@@ -1795,7 +1782,6 @@ CMakeFiles/GoTikZ.dir/Drawable/DrawableHandler.cpp.o: ../Controller/Actions/Undo
 CMakeFiles/GoTikZ.dir/Drawable/DrawableHandler.cpp.o: ../Controller/Controller.h
 CMakeFiles/GoTikZ.dir/Drawable/DrawableHandler.cpp.o: ../Controller/CoordinateConverter.h
 CMakeFiles/GoTikZ.dir/Drawable/DrawableHandler.cpp.o: ../Controller/ModifierState.h
-CMakeFiles/GoTikZ.dir/Drawable/DrawableHandler.cpp.o: ../Controller/MouseHandler.h
 CMakeFiles/GoTikZ.dir/Drawable/DrawableHandler.cpp.o: ../Drawable/Circle.h
 CMakeFiles/GoTikZ.dir/Drawable/DrawableHandler.cpp.o: ../Drawable/ControlPoint/ControlPoint.h
 CMakeFiles/GoTikZ.dir/Drawable/DrawableHandler.cpp.o: ../Drawable/ControlPoint/ControlPointFactory.h
@@ -1905,7 +1891,6 @@ CMakeFiles/GoTikZ.dir/Drawable/Line.cpp.o: ../Controller/Actions/UndoableAction.
 CMakeFiles/GoTikZ.dir/Drawable/Line.cpp.o: ../Controller/Controller.h
 CMakeFiles/GoTikZ.dir/Drawable/Line.cpp.o: ../Controller/CoordinateConverter.h
 CMakeFiles/GoTikZ.dir/Drawable/Line.cpp.o: ../Controller/ModifierState.h
-CMakeFiles/GoTikZ.dir/Drawable/Line.cpp.o: ../Controller/MouseHandler.h
 CMakeFiles/GoTikZ.dir/Drawable/Line.cpp.o: ../Drawable/ControlPoint/ControlPoint.h
 CMakeFiles/GoTikZ.dir/Drawable/Line.cpp.o: ../Drawable/ControlPoint/PointInterface.h
 CMakeFiles/GoTikZ.dir/Drawable/Line.cpp.o: ../Drawable/LineStream.h
@@ -2037,7 +2022,6 @@ CMakeFiles/GoTikZ.dir/Drawable/LineStream.cpp.o: ../Controller/Actions/UndoableA
 CMakeFiles/GoTikZ.dir/Drawable/LineStream.cpp.o: ../Controller/Controller.h
 CMakeFiles/GoTikZ.dir/Drawable/LineStream.cpp.o: ../Controller/CoordinateConverter.h
 CMakeFiles/GoTikZ.dir/Drawable/LineStream.cpp.o: ../Controller/ModifierState.h
-CMakeFiles/GoTikZ.dir/Drawable/LineStream.cpp.o: ../Controller/MouseHandler.h
 CMakeFiles/GoTikZ.dir/Drawable/LineStream.cpp.o: ../Drawable/Drawable.h
 CMakeFiles/GoTikZ.dir/Drawable/LineStream.cpp.o: ../Drawable/Line.h
 CMakeFiles/GoTikZ.dir/Drawable/LineStream.cpp.o: ../Math/Math.h
@@ -2542,7 +2526,6 @@ CMakeFiles/GoTikZ.dir/GoTikZ_autogen/mocs_compilation.cpp.o: ../Controller/Actio
 CMakeFiles/GoTikZ.dir/GoTikZ_autogen/mocs_compilation.cpp.o: ../Controller/Controller.h
 CMakeFiles/GoTikZ.dir/GoTikZ_autogen/mocs_compilation.cpp.o: ../Controller/CoordinateConverter.h
 CMakeFiles/GoTikZ.dir/GoTikZ_autogen/mocs_compilation.cpp.o: ../Controller/ModifierState.h
-CMakeFiles/GoTikZ.dir/GoTikZ_autogen/mocs_compilation.cpp.o: ../Controller/MouseHandler.h
 CMakeFiles/GoTikZ.dir/GoTikZ_autogen/mocs_compilation.cpp.o: ../Drawable/ControlPoint/ControlPoint.h
 CMakeFiles/GoTikZ.dir/GoTikZ_autogen/mocs_compilation.cpp.o: ../Drawable/ControlPoint/PointInterface.h
 CMakeFiles/GoTikZ.dir/GoTikZ_autogen/mocs_compilation.cpp.o: ../Drawable/Drawable.h
@@ -2697,7 +2680,6 @@ CMakeFiles/GoTikZ.dir/MainWindow.cpp.o: ../Controller/Actions/Action.h
 CMakeFiles/GoTikZ.dir/MainWindow.cpp.o: ../Controller/Actions/UndoableAction.h
 CMakeFiles/GoTikZ.dir/MainWindow.cpp.o: ../Controller/CoordinateConverter.h
 CMakeFiles/GoTikZ.dir/MainWindow.cpp.o: ../Controller/ModifierState.h
-CMakeFiles/GoTikZ.dir/MainWindow.cpp.o: ../Controller/MouseHandler.h
 CMakeFiles/GoTikZ.dir/MainWindow.cpp.o: ../Drawable/ControlPoint/ControlPoint.h
 CMakeFiles/GoTikZ.dir/MainWindow.cpp.o: ../Drawable/ControlPoint/PointInterface.h
 CMakeFiles/GoTikZ.dir/MainWindow.cpp.o: ../Drawable/Drawable.h
@@ -2861,7 +2843,6 @@ CMakeFiles/GoTikZ.dir/Model/Model.cpp.o: ../Controller/Actions/UndoableAction.h
 CMakeFiles/GoTikZ.dir/Model/Model.cpp.o: ../Controller/Controller.h
 CMakeFiles/GoTikZ.dir/Model/Model.cpp.o: ../Controller/CoordinateConverter.h
 CMakeFiles/GoTikZ.dir/Model/Model.cpp.o: ../Controller/ModifierState.h
-CMakeFiles/GoTikZ.dir/Model/Model.cpp.o: ../Controller/MouseHandler.h
 CMakeFiles/GoTikZ.dir/Model/Model.cpp.o: ../Drawable/ControlPoint/ControlPoint.h
 CMakeFiles/GoTikZ.dir/Model/Model.cpp.o: ../Drawable/ControlPoint/PointInterface.h
 CMakeFiles/GoTikZ.dir/Model/Model.cpp.o: ../Drawable/Drawable.h
@@ -3461,7 +3442,6 @@ CMakeFiles/GoTikZ.dir/View/Widgets/DrawWidget.cpp.o: ../Controller/Actions/Undoa
 CMakeFiles/GoTikZ.dir/View/Widgets/DrawWidget.cpp.o: ../Controller/Controller.h
 CMakeFiles/GoTikZ.dir/View/Widgets/DrawWidget.cpp.o: ../Controller/CoordinateConverter.h
 CMakeFiles/GoTikZ.dir/View/Widgets/DrawWidget.cpp.o: ../Controller/ModifierState.h
-CMakeFiles/GoTikZ.dir/View/Widgets/DrawWidget.cpp.o: ../Controller/MouseHandler.h
 CMakeFiles/GoTikZ.dir/View/Widgets/DrawWidget.cpp.o: ../Drawable/ControlPoint/ControlPoint.h
 CMakeFiles/GoTikZ.dir/View/Widgets/DrawWidget.cpp.o: ../Drawable/ControlPoint/PointInterface.h
 CMakeFiles/GoTikZ.dir/View/Widgets/DrawWidget.cpp.o: ../Drawable/Drawable.h
@@ -3593,7 +3573,6 @@ CMakeFiles/GoTikZ.dir/View/Widgets/DrawableEditWidgets/CircleEditWidget.cpp.o: .
 CMakeFiles/GoTikZ.dir/View/Widgets/DrawableEditWidgets/CircleEditWidget.cpp.o: ../Controller/Controller.h
 CMakeFiles/GoTikZ.dir/View/Widgets/DrawableEditWidgets/CircleEditWidget.cpp.o: ../Controller/CoordinateConverter.h
 CMakeFiles/GoTikZ.dir/View/Widgets/DrawableEditWidgets/CircleEditWidget.cpp.o: ../Controller/ModifierState.h
-CMakeFiles/GoTikZ.dir/View/Widgets/DrawableEditWidgets/CircleEditWidget.cpp.o: ../Controller/MouseHandler.h
 CMakeFiles/GoTikZ.dir/View/Widgets/DrawableEditWidgets/CircleEditWidget.cpp.o: ../Drawable/Circle.h
 CMakeFiles/GoTikZ.dir/View/Widgets/DrawableEditWidgets/CircleEditWidget.cpp.o: ../Drawable/Drawable.h
 CMakeFiles/GoTikZ.dir/View/Widgets/DrawableEditWidgets/CircleEditWidget.cpp.o: ../Model/PrimitiveTypeEnum.h
@@ -3733,7 +3712,6 @@ CMakeFiles/GoTikZ.dir/View/Widgets/DrawableEditWidgets/DrawableEditWidgetFactory
 CMakeFiles/GoTikZ.dir/View/Widgets/DrawableEditWidgets/DrawableEditWidgetFactory.cpp.o: ../Controller/Controller.h
 CMakeFiles/GoTikZ.dir/View/Widgets/DrawableEditWidgets/DrawableEditWidgetFactory.cpp.o: ../Controller/CoordinateConverter.h
 CMakeFiles/GoTikZ.dir/View/Widgets/DrawableEditWidgets/DrawableEditWidgetFactory.cpp.o: ../Controller/ModifierState.h
-CMakeFiles/GoTikZ.dir/View/Widgets/DrawableEditWidgets/DrawableEditWidgetFactory.cpp.o: ../Controller/MouseHandler.h
 CMakeFiles/GoTikZ.dir/View/Widgets/DrawableEditWidgets/DrawableEditWidgetFactory.cpp.o: ../Drawable/Circle.h
 CMakeFiles/GoTikZ.dir/View/Widgets/DrawableEditWidgets/DrawableEditWidgetFactory.cpp.o: ../Drawable/Drawable.h
 CMakeFiles/GoTikZ.dir/View/Widgets/DrawableEditWidgets/DrawableEditWidgetFactory.cpp.o: ../Drawable/Line.h
@@ -3862,7 +3840,6 @@ CMakeFiles/GoTikZ.dir/View/Widgets/DrawableEditWidgets/LineEditWidget.cpp.o: ../
 CMakeFiles/GoTikZ.dir/View/Widgets/DrawableEditWidgets/LineEditWidget.cpp.o: ../Controller/Controller.h
 CMakeFiles/GoTikZ.dir/View/Widgets/DrawableEditWidgets/LineEditWidget.cpp.o: ../Controller/CoordinateConverter.h
 CMakeFiles/GoTikZ.dir/View/Widgets/DrawableEditWidgets/LineEditWidget.cpp.o: ../Controller/ModifierState.h
-CMakeFiles/GoTikZ.dir/View/Widgets/DrawableEditWidgets/LineEditWidget.cpp.o: ../Controller/MouseHandler.h
 CMakeFiles/GoTikZ.dir/View/Widgets/DrawableEditWidgets/LineEditWidget.cpp.o: ../Drawable/Drawable.h
 CMakeFiles/GoTikZ.dir/View/Widgets/DrawableEditWidgets/LineEditWidget.cpp.o: ../Drawable/Line.h
 CMakeFiles/GoTikZ.dir/View/Widgets/DrawableEditWidgets/LineEditWidget.cpp.o: ../Model/PrimitiveTypeEnum.h
@@ -3997,7 +3974,6 @@ CMakeFiles/GoTikZ.dir/View/Widgets/DrawableEditWidgets/PointEditWidget.cpp.o: ..
 CMakeFiles/GoTikZ.dir/View/Widgets/DrawableEditWidgets/PointEditWidget.cpp.o: ../Controller/Controller.h
 CMakeFiles/GoTikZ.dir/View/Widgets/DrawableEditWidgets/PointEditWidget.cpp.o: ../Controller/CoordinateConverter.h
 CMakeFiles/GoTikZ.dir/View/Widgets/DrawableEditWidgets/PointEditWidget.cpp.o: ../Controller/ModifierState.h
-CMakeFiles/GoTikZ.dir/View/Widgets/DrawableEditWidgets/PointEditWidget.cpp.o: ../Controller/MouseHandler.h
 CMakeFiles/GoTikZ.dir/View/Widgets/DrawableEditWidgets/PointEditWidget.cpp.o: ../Drawable/Drawable.h
 CMakeFiles/GoTikZ.dir/View/Widgets/DrawableEditWidgets/PointEditWidget.cpp.o: ../Drawable/Point.h
 CMakeFiles/GoTikZ.dir/View/Widgets/DrawableEditWidgets/PointEditWidget.cpp.o: ../Model/PrimitiveTypeEnum.h
@@ -4906,7 +4882,6 @@ CMakeFiles/GoTikZ.dir/main.cpp.o: ../Controller/Actions/Action.h
 CMakeFiles/GoTikZ.dir/main.cpp.o: ../Controller/Actions/UndoableAction.h
 CMakeFiles/GoTikZ.dir/main.cpp.o: ../Controller/CoordinateConverter.h
 CMakeFiles/GoTikZ.dir/main.cpp.o: ../Controller/ModifierState.h
-CMakeFiles/GoTikZ.dir/main.cpp.o: ../Controller/MouseHandler.h
 CMakeFiles/GoTikZ.dir/main.cpp.o: ../Drawable/ControlPoint/ControlPoint.h
 CMakeFiles/GoTikZ.dir/main.cpp.o: ../Drawable/ControlPoint/PointInterface.h
 CMakeFiles/GoTikZ.dir/main.cpp.o: ../Drawable/Drawable.h

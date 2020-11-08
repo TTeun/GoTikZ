@@ -453,33 +453,6 @@ Controller/ModifierState.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoTikZ.dir/build.make CMakeFiles/GoTikZ.dir/Controller/ModifierState.cpp.s
 .PHONY : Controller/ModifierState.cpp.s
 
-Controller/MouseHandler.o: Controller/MouseHandler.cpp.o
-
-.PHONY : Controller/MouseHandler.o
-
-# target to build an object file
-Controller/MouseHandler.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoTikZ.dir/build.make CMakeFiles/GoTikZ.dir/Controller/MouseHandler.cpp.o
-.PHONY : Controller/MouseHandler.cpp.o
-
-Controller/MouseHandler.i: Controller/MouseHandler.cpp.i
-
-.PHONY : Controller/MouseHandler.i
-
-# target to preprocess a source file
-Controller/MouseHandler.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoTikZ.dir/build.make CMakeFiles/GoTikZ.dir/Controller/MouseHandler.cpp.i
-.PHONY : Controller/MouseHandler.cpp.i
-
-Controller/MouseHandler.s: Controller/MouseHandler.cpp.s
-
-.PHONY : Controller/MouseHandler.s
-
-# target to generate assembly for a file
-Controller/MouseHandler.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoTikZ.dir/build.make CMakeFiles/GoTikZ.dir/Controller/MouseHandler.cpp.s
-.PHONY : Controller/MouseHandler.cpp.s
-
 Drawable/Circle.o: Drawable/Circle.cpp.o
 
 .PHONY : Drawable/Circle.o
@@ -1522,9 +1495,6 @@ help:
 	@echo "... Controller/ModifierState.o"
 	@echo "... Controller/ModifierState.i"
 	@echo "... Controller/ModifierState.s"
-	@echo "... Controller/MouseHandler.o"
-	@echo "... Controller/MouseHandler.i"
-	@echo "... Controller/MouseHandler.s"
 	@echo "... Drawable/Circle.o"
 	@echo "... Drawable/Circle.i"
 	@echo "... Drawable/Circle.s"

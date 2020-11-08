@@ -8,7 +8,6 @@
 #include "Controller/Actions/UndoableAction.h"
 #include "Controller/CoordinateConverter.h"
 #include "Controller/ModifierState.h"
-#include "Controller/MouseHandler.h"
 #include "CoordinateConverter.h"
 
 #include <QObject>

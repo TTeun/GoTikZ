@@ -183,12 +183,6 @@
 		<Unit filename="/home/pc/MEGAsync/C++/clion/GoTikZ/Controller/ModifierState.h">
 			<Option target="GoTikZ"/>
 		</Unit>
-		<Unit filename="/home/pc/MEGAsync/C++/clion/GoTikZ/Controller/MouseHandler.cpp">
-			<Option target="GoTikZ"/>
-		</Unit>
-		<Unit filename="/home/pc/MEGAsync/C++/clion/GoTikZ/Controller/MouseHandler.h">
-			<Option target="GoTikZ"/>
-		</Unit>
 		<Unit filename="/home/pc/MEGAsync/C++/clion/GoTikZ/Drawable/Circle.cpp">
 			<Option target="GoTikZ"/>
 		</Unit>

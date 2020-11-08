@@ -22,7 +22,7 @@ namespace model {
       public:
         explicit Model(controller::Controller* controller);
 
-        void setPoint(const QPointF& mousePosition, const controller::ModifierState& modifierState);
+        void setPoint(const QPointF& pointPosition, const controller::ModifierState& modifierState);
 
         void                   mouseMoveEvent(const QPointF& mousePosition);
         void                   setPen(const QPen& pen);

@@ -66,7 +66,7 @@ void DrawableHandler::stream(const QPointF& point) {
     m_streamDrawable->stream(point);
 }
 
-QPointF DrawableHandler::snap(const QPointF& mousePoint) const {
+QPointF DrawableHandler::snap(const QPointF& mousePoint, const double maximumSnapDistance) const {
     std::pair<double, QPointF> snapData(std::numeric_limits<double>::max(), mousePoint);
     if (m_streamDrawable) {
         snapData = m_streamDrawable->snap(mousePoint);
@@ -80,7 +80,7 @@ QPointF DrawableHandler::snap(const QPointF& mousePoint) const {
             snapData = currentSnap;
         }
     }
-    if (snapData.first < 20) {
+    if (snapData.first < maximumSnapDistance) {
         return snapData.second;
     } else {
         return mousePoint;
@@ -90,6 +90,9 @@ QPointF DrawableHandler::snap(const QPointF& mousePoint) const {
 void DrawableHandler::clearSelectedAndHighlighted() {
     m_selectedDrawables.clear();
     m_highlightedDrawable = nullptr;
+    for (auto& el : m_controlPoints) {
+        el->setHighlighted(false);
+    }
 }
 
 void DrawableHandler::highlightClosest(const QPointF& point) {

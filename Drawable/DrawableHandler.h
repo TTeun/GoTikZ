@@ -34,7 +34,7 @@ class DrawableHandler {
     void                hideDrawable(size_t index);
     void                showDrawable(size_t index);
     std::vector<size_t> indicesOfSelectedDrawable() const;
-    QPointF             snap(const QPointF& mousePoint) const;
+    QPointF             snap(const QPointF& mousePoint, const double maximumSnapDistance) const;
     Drawable*           selectNew(const QPointF& point);
     Drawable*           addToSelected(const QPointF& point);
     Drawable*           getClosestDrawable(const QPointF& point);

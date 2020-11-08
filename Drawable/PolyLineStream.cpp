@@ -43,13 +43,13 @@ Drawable* PolyLineStream::drawable() {
     return new PolyLine(*this);
 }
 
-std::pair<double, QPointF> PolyLineStream::snap(QPointF point) {
+std::pair<double, QPointF> PolyLineStream::snap(const QPointF& point) const {
     assert(m_isVisible);
     auto snapData = std::pair<double, QPointF>(std::numeric_limits<double>::max(), point);
     for (size_t i = 0; i != m_points.size() - 2; ++i) {
         const auto& el = m_points[i];
-        if (Math::magnitude(point - el) < snapData.first) {
-            snapData = {Math::magnitude(point - el), el};
+        if (math::magnitude(point - el) < snapData.first) {
+            snapData = {math::magnitude(point - el), el};
         }
     }
     return snapData;
@@ -59,7 +59,7 @@ double PolyLineStream::dist(const QPointF& point) const {
     assert(m_isVisible);
     double result = std::numeric_limits<double>::max();
     for (const auto& el : m_points) {
-        result = std::min(Math::distance(point, el), result);
+        result = std::min(math::distance(point, el), result);
     }
     return result;
 }

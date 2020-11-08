@@ -22,7 +22,6 @@ class ControlPoint : public Point {
     void      setHighlighted(bool highlighted);
     Drawable* drawable() const;
 
-
   private:
     bool                 m_isHighlighted = false;
     const PointInterface m_pointInterface;

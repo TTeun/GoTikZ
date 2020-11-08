@@ -18,21 +18,22 @@ Circle::Circle(const CircleStream& circleStream)
 void Circle::draw(QPainter* painter, DRAW_FLAGS drawFlag,
                   const controller::CoordinateConverter& coordinateConverter) const {
     Drawable::draw(painter, drawFlag, coordinateConverter);
-    painter->drawEllipse(coordinateConverter.worldToScreen(m_center), coordinateConverter.scale(m_radius),
-                         coordinateConverter.scale(m_radius));
+    painter->drawEllipse(coordinateConverter.worldToScreen(m_center),
+                         coordinateConverter.worldToScreenDistance(m_radius),
+                         coordinateConverter.worldToScreenDistance(m_radius));
 }
 
-std::pair<double, QPointF> Circle::snap(QPointF point) {
+std::pair<double, QPointF> Circle::snap(const QPointF& point) const {
     assert(m_isVisible);
     const auto difference = point - m_center;
-    const auto closest    = m_center + m_radius * difference / Math::magnitude(difference);
+    const auto closest    = m_center + m_radius * difference / math::magnitude(difference);
 
-    return {Math::magnitude(point - closest), closest};
+    return {math::magnitude(point - closest), closest};
 }
 
 double Circle::dist(const QPointF& point) const {
     assert(m_isVisible);
-    const double distToCenter = Math::distance(point, m_center);
+    const double distToCenter = math::distance(point, m_center);
     return std::abs(distToCenter - m_radius);
 }
 

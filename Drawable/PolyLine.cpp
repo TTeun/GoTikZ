@@ -27,12 +27,12 @@ void PolyLine::draw(QPainter* painter, DRAW_FLAGS drawFlag,
     }
 }
 
-std::pair<double, QPointF> PolyLine::snap(QPointF point) {
+std::pair<double, QPointF> PolyLine::snap(const QPointF& point) const {
     assert(m_isVisible);
     auto snapData = std::pair<double, QPointF>(std::numeric_limits<double>::max(), point);
     for (auto& el : m_points) {
-        if (Math::magnitude(point - el) < snapData.first) {
-            snapData = {Math::magnitude(point - el), el};
+        if (math::magnitude(point - el) < snapData.first) {
+            snapData = {math::magnitude(point - el), el};
         }
     }
     return snapData;
@@ -42,7 +42,7 @@ double PolyLine::dist(const QPointF& point) const {
     assert(m_isVisible);
     double result = std::numeric_limits<double>::max();
     for (size_t i = 1; i != m_points.size(); ++i) {
-        result = std::min(result, Math::pointToLineDistance({m_points[i - 1], m_points[i]}, point));
+        result = std::min(result, math::pointToLineDistance({m_points[i - 1], m_points[i]}, point));
     }
     return result;
 }

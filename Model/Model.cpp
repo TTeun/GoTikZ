@@ -28,10 +28,10 @@ DrawableHandler& model::Model::drawableHandler() {
 }
 
 void model::Model::mouseMoveEvent(const QPointF& mousePosition) {
-    const auto snappedMousePoint =
-        m_drawableHandler->snap(m_controller->coordinateConverter().screenToWorld(mousePosition));
     if (m_drawableHandler->isStreaming()) {
-        m_drawableHandler->stream(snappedMousePoint);
+        m_drawableHandler->stream(
+            m_drawableHandler->snap(m_controller->coordinateConverter().screenToWorld(mousePosition),
+                                    m_controller->coordinateConverter().screenToWorldDistance(30)));
     } else {
         m_drawableHandler->highlightClosest(m_controller->coordinateConverter().screenToWorld(mousePosition));
     }
@@ -49,23 +49,22 @@ void model::Model::setMousePointerType(PRIMITIVE_TYPE newType) {
     m_mousePointerType = newType;
 }
 
-void model::Model::setPoint(const QPointF& mousePosition, const controller::ModifierState& modifierState) {
+void model::Model::setPoint(const QPointF& pointPosition, const controller::ModifierState& modifierState) {
     m_drawableHandler->clearSelectedAndHighlighted();
-    const auto snappedPoint = m_drawableHandler->snap(m_controller->coordinateConverter().screenToWorld(mousePosition));
     if (not m_drawableHandler->isStreaming()) {
         switch (m_mousePointerType) {
             case PRIMITIVE_TYPE::POINT:
-                m_drawableHandler->addDrawable(new Point(snappedPoint, m_drawPen));
+                m_drawableHandler->addDrawable(new Point(pointPosition, m_drawPen));
                 m_controller->addAction(
                     new controller::ShowPrimitiveAction(m_drawableHandler->drawables().back()->index()), true);
                 break;
             default:
                 m_drawableHandler->addStreamDrawable(
-                    StreamDrawableFactory::make(snappedPoint, m_mousePointerType, m_drawPen));
+                    StreamDrawableFactory::make(pointPosition, m_mousePointerType, m_drawPen));
                 break;
         }
     } else {
-        if (m_drawableHandler->addPointToStreamDrawable(snappedPoint, false)) {
+        if (m_drawableHandler->addPointToStreamDrawable(pointPosition, false)) {
             m_controller->addAction(new controller::ShowPrimitiveAction(m_drawableHandler->drawables().back()->index()),
                                     true);
         }

@@ -18,11 +18,14 @@ namespace controller {
       public:
         CoordinateConverter(const view::Transform* transform, const DrawableHandler* drawableHandler);
 
+        double  worldToScreenDistance(const double value) const;
+        double  screenToWorldDistance(const double value) const;
         QPointF screenToWorld(const QPointF& screenPoint) const;
+        QPointF screenToWorldSnap(const QPointF& screenPoint,
+                                  const double   maximumSnapScreenDistance = std::numeric_limits<double>::max()) const;
         QPointF worldToScreen(const QPointF& worldPoint) const;
-        QPointF snapScreen(const QPointF& worldPoint) const;
-
-        double scale(const double value) const;
+        QPointF snapScreen(const QPointF& worldPoint,
+                           const double   maximumSnapScreenDistance = std::numeric_limits<double>::max()) const;
 
       private:
         const view::Transform* m_transform;

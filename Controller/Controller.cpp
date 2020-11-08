@@ -271,9 +271,9 @@ void controller::Controller::keyReleaseEvent(QKeyEvent* event) {
 }
 
 void controller::Controller::leftClickEvent(QMouseEvent* event) {
-    const auto leftClickedMousePosition = event->localPos();
     if (m_modifierState.controlPressed()) {
-        Drawable* newlySelectedDrawable = nullptr;
+        const auto leftClickedMousePosition = event->localPos();
+        Drawable*  newlySelectedDrawable;
         if (m_modifierState.shiftPressed()) {
             newlySelectedDrawable = m_model->addToSelected(leftClickedMousePosition);
         } else {
@@ -288,7 +288,8 @@ void controller::Controller::leftClickEvent(QMouseEvent* event) {
             m_rightSideBar->clearWidget();
         }
     } else {
-        m_model->setPoint(leftClickedMousePosition, m_modifierState);
+        const auto leftClickedMousePosition = m_coordinateConverter->snapScreen(event->localPos(), 30);
+        m_model->setPoint(m_coordinateConverter->screenToWorld(leftClickedMousePosition), m_modifierState);
         m_rightSideBar->clearWidget();
     }
 }
@@ -297,7 +298,7 @@ void controller::Controller::rightClickEvent(QMouseEvent* event) {
     m_rightClickedMousePosition = event->localPos();
     if (m_model->drawableHandler().isStreaming()) {
         m_model->drawableHandler().addPointToStreamDrawable(
-            m_model->drawableHandler().snap(m_rightClickedMousePosition), true);
+            m_coordinateConverter->screenToWorldSnap(m_rightClickedMousePosition, 30), true);
         addAction(new controller::ShowPrimitiveAction(m_model->drawableHandler().drawables().back()->index()), true);
     }
     m_selectedControlPoint = m_model->drawableHandler().getClosestControlPoint(
